@@ -8,7 +8,7 @@ from utils import read_json
 from constants import CONFIG_PATH
 
 import account, background, building, campaignV2, char, charBuild, charm, \
-        crisis, deepsea, mail, online, tower, quest, pay, rlv2, shop, story, \
+        crisis, deepsea, gacha, mail, online, tower, quest, pay, rlv2, shop, story, \
         user, asset.assetbundle, config.prod
 
 server_config = read_json(CONFIG_PATH)
@@ -140,6 +140,13 @@ app.add_url_rule('/user/oauth2/v1/grant', methods=['POST'], view_func=user.userO
 app.add_url_rule('/user/info/v1/need_cloud_auth', methods=['POST'], view_func=user.userV1NeedCloudAuth)
 app.add_url_rule('/user/yostar_createlogin', methods=['POST'], view_func=user.userYostarCreatelogin)
 app.add_url_rule('/u8/user/v1/getToken', methods=['POST'], view_func=user.userV1getToken)
+
+app.add_url_rule('/gacha/syncNormalGacha', methods=['POST'], view_func=gacha.syncNormalGacha)
+app.add_url_rule('/gacha/normalGacha', methods=['POST'], view_func=gacha.gachanormalGacha)
+app.add_url_rule('/gacha/finishNormalGacha', methods=['POST'], view_func=gacha.finishNormalGacha)
+app.add_url_rule('/gacha/getPoolDetail', methods=['POST'], view_func=gacha.getPoolDetail)
+app.add_url_rule('/gacha/advancedGacha', methods=['POST'], view_func=gacha.advancedGacha)
+app.add_url_rule('/gahca/tenAdvancedGacha', methods=['POST'], view_func=gacha.tenAdvancedGacha)
 
 app.add_url_rule(
     '/user/auth/v1/token_by_phone_password',
