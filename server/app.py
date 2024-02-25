@@ -102,6 +102,10 @@ app.add_url_rule('/tower/settleGame', methods=['POST'], view_func=tower.towerSet
 
 app.add_url_rule('/pay/getUnconfirmedOrderIdList', methods=['POST'], view_func=pay.payGetUnconfirmedOrderIdList)
 app.add_url_rule('/u8/pay/getAllProductList', methods=['POST'], view_func=pay.paygetAllProductList)
+app.add_url_rule('/u8/pay/getAllProductList', methods=['POST'], view_func=pay.paygetAllProductList)
+app.add_url_rule('/pay/createOrder', methods=['POST'], view_func=pay.paygetcreateOrder)
+app.add_url_rule('/pay/createOrderAlipay', methods=['POST'], view_func=pay.createOrderAlipay)
+app.add_url_rule('/pay/createOrderWechat', methods=['POST'], view_func=pay.createOrderWechat)
 
 app.add_url_rule('/quest/battleStart', methods=['POST'], view_func=quest.questBattleStart)
 app.add_url_rule('/quest/battleFinish', methods=['POST'], view_func=quest.questBattleFinish)
@@ -138,7 +142,18 @@ app.add_url_rule('/rlv2/buyGoods', methods=['POST'], view_func=rlv2.rlv2BuyGoods
 app.add_url_rule('/rlv2/leaveShop', methods=['POST'], view_func=rlv2.rlv2LeaveShop)
 app.add_url_rule('/rlv2/chooseBattleReward', methods=['POST'], view_func=rlv2.rlv2ChooseBattleReward)
 
-app.add_url_rule('/shop/getSkinGoodList', methods=['POST'], view_func=shop.shopGetSkinGoodList)
+app.add_url_rule('/shop/getGoodPurchaseState', methods=['POST'], view_func=shop.getGoodPurchaseState)
+app.add_url_rule('/shop/getCashGoodList', methods=['POST'], view_func=shop.getCashGoodList)
+app.add_url_rule('/shop/getGPGoodList', methods=['POST'], view_func=shop.getGPGoodList)
+app.add_url_rule('/shop/getSkinGoodList', methods=['POST'], view_func=shop.getSkinGoodList)
+app.add_url_rule('/shop/getLowGoodList', methods=['POST'], view_func=shop.getLowGoodList)
+app.add_url_rule('/shop/getHighGoodList', methods=['POST'], view_func=shop.getHighGoodList)
+app.add_url_rule('/shop/getExtraGoodList', methods=['POST'], view_func=shop.getExtraGoodList)
+app.add_url_rule('/shop/getEPGSGoodList', methods=['POST'], view_func=shop.getEPGSGoodList)
+app.add_url_rule('/shop/getRepGoodList', methods=['POST'], view_func=shop.getRepGoodList)
+app.add_url_rule('/shop/getFurniGoodList', methods=['POST'], view_func=shop.getFurniGoodList)
+app.add_url_rule('/shop/getSocialGoodList', methods=['POST'], view_func=shop.getSocialGoodList)
+app.add_url_rule('/shop/getClassicGoodList', methods=['POST'], view_func=shop.getClassicGoodList)
 
 app.add_url_rule('/story/finishStory', methods=['POST'], view_func=story.storyFinishStory)
 app.add_url_rule('/quest/finishStoryStage', methods=['POST'], view_func=story.storyFinishStory)
