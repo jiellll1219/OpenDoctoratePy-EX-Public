@@ -154,6 +154,11 @@ app.add_url_rule('/shop/getRepGoodList', methods=['POST'], view_func=shop.getRep
 app.add_url_rule('/shop/getFurniGoodList', methods=['POST'], view_func=shop.getFurniGoodList)
 app.add_url_rule('/shop/getSocialGoodList', methods=['POST'], view_func=shop.getSocialGoodList)
 app.add_url_rule('/shop/getClassicGoodList', methods=['POST'], view_func=shop.getClassicGoodList)
+app.add_url_rule('/shop/buySkinGood', methods=['POST'], view_func=shop.buySkinGood)
+app.add_url_rule('/shop/buyLowGood', methods=['POST'], view_func=shop.buyLowGood)
+app.add_url_rule('/shop/buyHighGood', methods=['POST'], view_func=shop.buyHighGood)
+app.add_url_rule('/shop/buyExtraGood', methods=['POST'], view_func=shop.buyExtraGood)
+app.add_url_rule('/shop/buyClassicGood', methods=['POST'], view_func=shop.buyClassicGood)
 
 app.add_url_rule('/story/finishStory', methods=['POST'], view_func=story.storyFinishStory)
 app.add_url_rule('/quest/finishStoryStage', methods=['POST'], view_func=story.storyFinishStory)
