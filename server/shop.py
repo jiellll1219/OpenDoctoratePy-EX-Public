@@ -265,3 +265,110 @@ def buyClassicGood():
     }
 
     return result
+
+def buyFurniGroup():
+
+    # 读取SyncData和FurniGoodList数据
+    syncdata = read_json(SYNC_DATA_TEMPLATE_PATH)
+    furnigoodlist = read_json(FURNIGOODLIST_PATH)
+
+    # 根据请求信息更新数据
+    def buy_furni_group(request_info):
+        goods = request_info["goods"]
+        cost_type = request_info["costType"]
+
+        total_cost = 0
+        
+        # 计算总购买花费
+        for good in goods:
+            good_id = good["id"]
+            count = good["count"]
+            for furni in furnigoodlist["goods"]:
+                if furni["goodid"] == good_id:
+                    if cost_type == "DIAMOND":
+                        total_cost += count * furni["priceDia"]
+                    elif cost_type == "COIN_FURN":
+                        total_cost += count * furni["priceCoin"]
+
+        # 扣除货币
+        if cost_type == "DIAMOND":
+            syncdata["status"]["androidDiamond"] -= total_cost
+        elif cost_type == "COIN_FURN":
+            syncdata["inventory"]["3401"] -= total_cost
+
+        # 添加物品
+        for good in goods:
+            good_id = good["id"]
+            count = good["count"]
+            for furni_info in syncdata["FURNI"]["info"]:
+                if furni_info["id"] == good_id:
+                    furni_info["count"] += count
+
+        # 更新数据
+        buy_furni_group(request_info)
+
+        # 将更新后的数据保存回文件
+        write_json(SYNC_DATA_TEMPLATE_PATH, syncdata)
+
+    items = []
+
+    result = {
+        "playerDataDelta": {
+            "deleted": {},
+            "modified": {
+                "skin": SYNC_DATA_TEMPLATE_PATH['skin'],
+                "status": SYNC_DATA_TEMPLATE_PATH['status'],
+                "shop": SYNC_DATA_TEMPLATE_PATH['shop'],
+                "troop": SYNC_DATA_TEMPLATE_PATH['troop'],
+                "inventory": SYNC_DATA_TEMPLATE_PATH['inventory']
+            }
+        },
+        "items": items,
+        "result": 0
+    }
+
+    return result
+
+def buyFurniGood():
+
+    syncdata = read_json(SYNC_DATA_TEMPLATE_PATH)
+    furnigoodlist = read_json(FURNIGOODLIST_PATH)
+
+    def update_data(request_info):
+        good_id = request_info["goodId"]
+        buy_count = request_info["buyCount"]
+        cost_type = request_info["costType"]
+
+        for furni_info in syncdata["FURNI"]["info"]:
+            if furni_info["id"] == good_id:
+                furni_info["count"] += buy_count
+
+        for good in furnigoodlist["goods"]:
+            if good["goodid"] == good_id:
+                if cost_type == "DIAMOND":
+                    syncdata["status"]["androidDiamond"] -= buy_count * good["priceDia"]
+                elif cost_type == "COIN_FURN":
+                    syncdata["inventory"]["3401"] -= buy_count * good["priceCoin"]
+
+        update_data(request_info)
+
+        write_json(SYNC_DATA_TEMPLATE_PATH, syncdata)
+
+    items = []
+
+    result = {
+        "playerDataDelta": {
+            "deleted": {},
+            "modified": {
+                "skin": SYNC_DATA_TEMPLATE_PATH['skin'],
+                "status": SYNC_DATA_TEMPLATE_PATH['status'],
+                "shop": SYNC_DATA_TEMPLATE_PATH['shop'],
+                "troop": SYNC_DATA_TEMPLATE_PATH['troop'],
+                "inventory": SYNC_DATA_TEMPLATE_PATH['inventory']
+            }
+        },
+        "items": items,
+        "result": 0
+    }
+
+    return result
