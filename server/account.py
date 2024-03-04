@@ -128,7 +128,7 @@ def accountSyncData():
             "defaultSkillIndex": len(character_table[i]["skills"])-1,
             "gainTime": int(time()),
             "skills": [],
-            "voiceLan": "JP",
+            "voiceLan": edit_json["voiceLan"],
             "currentEquip": None,
             "equip": {},
             "starMark": 0

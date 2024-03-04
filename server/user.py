@@ -3,7 +3,7 @@ import json
 import requests
 from flask import request
 
-from constants import USER_JSON_PATH
+from constants import USER_JSON_PATH, SYNC_DATA_TEMPLATE_PATH
 from utils import read_json, write_json
 
 import time
@@ -24,27 +24,34 @@ def userCheckIn():
 
 
 def userChangeSecretary():
-
     data = request.data
     request_data = request.get_json()
     charInstId = request_data["charInstId"]
     skinId = request_data["skinId"]
     data = {
-        "playerDataDelta":{
-            "modified":{
-                "status":{
+        "playerDataDelta": {
+            "modified": {
+                "status": {
                     "secretary": "",
                     "secretarySkinId": "",
                 }
             },
-            "deleted":{}
+            "deleted": {},
         }
     }
 
     if charInstId and skinId:
-        data["playerDataDelta"]["modified"]["status"]["secretary"] = skinId.split("@")[0] if "@" in skinId else skinId.split("#")[0]
+        data["playerDataDelta"]["modified"]["status"]["secretary"] = (
+            skinId.split("@")[0] if "@" in skinId else skinId.split("#")[0]
+        )
         data["playerDataDelta"]["modified"]["status"]["secretarySkinId"] = skinId
-        return data
+        saved_data = read_json(SYNC_DATA_TEMPLATE_PATH, encoding="utf-8")
+        saved_data["user"]["status"]["secretary"] = (
+            skinId.split("@")[0] if "@" in skinId else skinId.split("#")[0]
+        )
+        saved_data["user"]["status"]["secretarySkinId"] = skinId
+        write_json(saved_data, SYNC_DATA_TEMPLATE_PATH)
+    return data
 
 
 def userLogin():

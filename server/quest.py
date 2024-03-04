@@ -2,7 +2,7 @@ from time import time
 
 from flask import request
 
-from constants import BATTLE_REPLAY_JSON_PATH, USER_JSON_PATH, CONFIG_PATH
+from constants import BATTLE_REPLAY_JSON_PATH, USER_JSON_PATH, CONFIG_PATH, SYNC_DATA_TEMPLATE_PATH
 from utils import read_json, write_json
 
 
@@ -26,6 +26,7 @@ def questBattleStart():
     replay_data = read_json(BATTLE_REPLAY_JSON_PATH)
     replay_data["current"] = request_data["stageId"]
     write_json(replay_data, BATTLE_REPLAY_JSON_PATH)
+    write_json(replay_data, SYNC_DATA_TEMPLATE_PATH)
 
     return data
 
@@ -93,6 +94,7 @@ def questSaveBattleReplay():
         })
     replay_data["current"] = None
     write_json(replay_data, BATTLE_REPLAY_JSON_PATH)
+    write_json(replay_data, SYNC_DATA_TEMPLATE_PATH)
 
     return data
 
@@ -136,9 +138,10 @@ def questChangeSquadName():
             }
         })
 
-        saved_data = read_json(USER_JSON_PATH)
+        saved_data = read_json(USER_JSON_PATH, encoding="utf-8")
         saved_data["user"]["troop"]["squads"][str(request_data["squadId"])]["name"] = request_data["name"]
         write_json(saved_data, USER_JSON_PATH)
+        write_json(saved_data, SYNC_DATA_TEMPLATE_PATH)
 
         return data
 
@@ -165,9 +168,10 @@ def questSquadFormation():
             }
         })
 
-        saved_data = read_json(USER_JSON_PATH)
+        saved_data = read_json(USER_JSON_PATH, encoding="utf-8")
         saved_data["user"]["troop"]["squads"][str(request_data["squadId"])]["slots"] = request_data["slots"]
         write_json(saved_data, USER_JSON_PATH)
+        write_json(saved_data, SYNC_DATA_TEMPLATE_PATH)
 
         return data
 
@@ -176,7 +180,7 @@ def questGetAssistList():
 
     data = request.data
     assist_unit_config = read_json(CONFIG_PATH)["charConfig"]["assistUnit"]
-    saved_data = read_json(USER_JSON_PATH)["user"]["troop"]["chars"]
+    saved_data = read_json(USER_JSON_PATH, encoding="utf-8")["user"]["troop"]["chars"]
     assist_unit = {}
 
     for _, char in saved_data.items():
@@ -228,27 +232,3 @@ def questGetAssistList():
     }
 
     return data
-
-
-def markStoryAcceKnown():
-    return {"playerDataDelta": {"modified": {"storyreview": {"tags": {"knownStoryAcceleration": 1}}}, "deleted": {}}}
-
-
-def confirmBattleCar():
-    return {
-        "playerDataDelta": {
-            "modified": {
-                "car": {
-                    "battleCar": request.get_json()["car"]
-                }
-            },
-            "deleted": {}
-        }
-    }
-
-def typeAct20side_competitionStart():
-    return {"result": 0, "battleId": "abcdefgh-1234-5678-a1b2c3d4e5f6", "playerDataDelta": {"modified": {}, "deleted": {}}}
-
-
-def typeAct20side_competitionFinish():
-    return {"performance": 0, "expression": 0, "operation": 0, "total": 0, "level": "B", "isNew": False, "playerDataDelta": {"modified": {}, "deleted": {}}}
