@@ -100,12 +100,12 @@ app.add_url_rule('/tower/recruit', methods=['POST'], view_func=tower.towerRecrui
 app.add_url_rule('/tower/chooseSubGodCard', methods=['POST'], view_func=tower.towerChooseSubGodCard)
 app.add_url_rule('/tower/settleGame', methods=['POST'], view_func=tower.towerSettleGame)
 
-app.add_url_rule('/pay/getUnconfirmedOrderIdList', methods=['POST'], view_func=pay.payGetUnconfirmedOrderIdList)
-app.add_url_rule('/u8/pay/getAllProductList', methods=['POST'], view_func=pay.paygetAllProductList)
-app.add_url_rule('/u8/pay/getAllProductList', methods=['POST'], view_func=pay.paygetAllProductList)
-app.add_url_rule('/pay/createOrder', methods=['POST'], view_func=pay.paygetcreateOrder)
+app.add_url_rule('/pay/getUnconfirmedOrderIdList', methods=['POST'], view_func=pay.GetUnconfirmedOrderIdList)
+app.add_url_rule('/u8/pay/getAllProductList', methods=['POST'], view_func=pay.getAllProductList)
+app.add_url_rule('/pay/createOrder', methods=['POST'], view_func=pay.getcreateOrder)
 app.add_url_rule('/pay/createOrderAlipay', methods=['POST'], view_func=pay.createOrderAlipay)
 app.add_url_rule('/pay/createOrderWechat', methods=['POST'], view_func=pay.createOrderWechat)
+app.add_url_rule('/u8/pay/confirmOrderState', methods=['POST'], view_func=pay.confirmOrderState)
 
 app.add_url_rule('/quest/battleStart', methods=['POST'], view_func=quest.questBattleStart)
 app.add_url_rule('/quest/battleFinish', methods=['POST'], view_func=quest.questBattleFinish)
