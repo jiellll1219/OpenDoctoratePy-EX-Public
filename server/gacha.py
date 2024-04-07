@@ -147,7 +147,7 @@ def finishNormalGacha():
         char_group = {"favorPoint": 0}  # 角色分组
         sync_data_template = read_json(SYNC_DATA_TEMPLATE_PATH)
         sync_data_template["troop"]["charGroup"][random_char_id] = char_group  # 更新玩家角色组
-        write_json(SYNC_DATA_TEMPLATE_PATH, sync_data_template)
+        write_json(sync_data_template, SYNC_DATA_TEMPLATE_PATH)
 
         building_char = {
             "charId": random_char_id,

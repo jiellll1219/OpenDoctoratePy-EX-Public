@@ -141,6 +141,87 @@ def GiveItem(reward_id, reward_type, reward_count, items):
 
             item["type"] = reward_type
     if reward_type == "HGG_SHD":
-        user_data["status"]["practiceTicket"] += reward_count
+        user_data['status']['practiceTicket'] += reward_count
 
-    write_json(USER_JSON_PATH, user_data)
+    if reward_type == "LGG_SHD":
+        user_data['status']['practiceTicket'] += reward_count
+
+    if reward_type == "MATERIAL":
+        user_data['inventory'][reward_id] += reward_count
+
+    if reward_type == "CARD_EXP":
+        user_data['inventory'][reward_id] += reward_count
+
+    if reward_type == "SOCIAL_PT":
+        user_data['status']['socialPoint'] += reward_count
+
+    if reward_type == "AP_GAMEPLAY":
+        user_data['status']['ap'] += reward_count
+
+    if reward_type == "AP_ITEM":
+        if "60" in reward_id:
+            user_data['status']['ap'] += 60
+        elif "200" in reward_id:
+            user_data['status']['ap'] += 200
+        else:
+            user_data['status']['ap'] += 100
+
+    if reward_type == "TKT_TRY":
+        user_data['status']['practiceTicket'] += reward_count
+
+    if reward_type == "DIAMOND":
+        user_data['status']['androidDiamond'] += reward_count
+        user_data['status']['iosDiamond'] += reward_count
+
+    if reward_type == "DIAMOND_SHD":
+        user_data['status']['diamondShard'] += reward_count
+
+    if reward_type == "GOLD":
+        user_data['status']['gold'] += reward_count
+
+    if reward_type == "TKT_RECRUIT":
+        user_data['status']['recruitLicense'] += reward_count
+
+    if reward_type == "TKT_INST_FIN":
+        user_data['status']['instantFinishTicket'] += reward_count
+
+    if reward_type == "TKT_GACHA_PRSV":
+        user_data['inventory'][reward_id] += reward_count
+
+    if reward_type == "RENAMING_CARD":
+        user_data['inventory'][reward_id] += reward_count
+
+    if reward_type == "RETRO_COIN":
+        user_data['inventory'][reward_id] += reward_count
+
+    if reward_type == "AP_SUPPLY":
+        user_data['inventory'][reward_id] += reward_count
+
+    if reward_type == "TKT_GACHA_10":
+        user_data['status']['tenGachaTicket'] += reward_count
+
+    if reward_type == "TKT_GACHA":
+        user_data['status']['gachaTicket'] += reward_count
+
+    if "VOUCHER" in reward_type:
+        if reward_id not in user_data['consumable']:
+            consumables = {"0": {"ts": -1, "count": 0}}
+            user_data['consumable'][reward_id] = consumables
+        user_data['consumable'][reward_id]["0"]["count"] += reward_count
+
+    if reward_type == "CHAR_SKIN":
+        user_data['skin']['characterSkins'][reward_id] = 1
+        user_data['skin']['skinTs'][reward_id] = int(datetime.now().timestamp())
+
+    if reward_type != "CHAR":
+        item = {"id": reward_id, "type": reward_type, "count": reward_count}
+        items.append(item)
+
+    else:
+        return {
+            "statusCode": 400,
+            "error": "Bad Request",
+            "message": "Not Found Info"
+        }
+
+    write_json(user_data, USER_JSON_PATH)
