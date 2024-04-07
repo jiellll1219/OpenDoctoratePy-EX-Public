@@ -1,7 +1,7 @@
 from time import time
 from flask import request
 from utils import read_json, write_json
-from constants import SYNC_DATA_TEMPLATE_PATH
+from constants import SYNC_DATA_TEMPLATE_PATH, USER_JSON_PATH
 
 def Sync():
 
@@ -68,6 +68,7 @@ def AssignChar(json_body):
             training_room["trainer"]["state"] = 3
 
     write_json(user_sync_data, SYNC_DATA_TEMPLATE_PATH)
+    write_json(user_sync_data, USER_JSON_PATH)
 
     player_data_delta = {
         "modified": {
@@ -166,6 +167,7 @@ def ChangeManufactureSolution(json_body):
     user_sync_data['building']['rooms']['MANUFACTURE'][room_slot_id]['outputSolutionCnt'] = solution_count
 
     write_json(user_sync_data, SYNC_DATA_TEMPLATE_PATH)
+    write_json(user_sync_data, USER_JSON_PATH)
 
     modified = {
         "building": user_sync_data['building'],
@@ -240,6 +242,7 @@ def SettleManufacture(json_body):
         room['outputSolutionCnt'] = 0
 
     write_json(user_sync_data, SYNC_DATA_TEMPLATE_PATH)
+    write_json(user_sync_data, USER_JSON_PATH)
 
     player_data_delta = {
         "modified": {
@@ -303,4 +306,40 @@ def getAssistReport():
         }
     }
     
+    return result
+
+def setBuildingAssist(json_body):
+    
+    type = json_body["type"]
+    char_ins_id = json_body["charInsId"]
+
+    user_sync_data = SYNC_DATA_TEMPLATE_PATH
+
+    if type == 1:
+        user_sync_data["building"]["assist"][0] = char_ins_id
+    elif type == 2:
+        user_sync_data["building"]["assist"][1] = char_ins_id
+    elif type == 3:
+        user_sync_data["building"]["assist"][2] = char_ins_id
+    elif type == 4:
+        user_sync_data["building"]["assist"][3] = char_ins_id
+    elif type == 5:
+        user_sync_data["building"]["assist"][4] = char_ins_id
+
+    write_json(user_sync_data, SYNC_DATA_TEMPLATE_PATH)
+    write_json(user_sync_data, USER_JSON_PATH)
+
+    modified = {
+        "building": user_sync_data['building'],
+        "event": user_sync_data['event']
+    }
+
+    result = {
+        "reports": [],
+        "playerDataDelta": {
+            "deleted": {},
+            "modified": modified
+        }
+    }
+
     return result
