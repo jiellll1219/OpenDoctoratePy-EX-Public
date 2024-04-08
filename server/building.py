@@ -308,37 +308,44 @@ def getAssistReport():
     
     return result
 
-def setBuildingAssist(json_body):
+def setBuildingAssist():
     
-    type = json_body["type"]
-    char_ins_id = json_body["charInsId"]
+    # 解析请求数据
+    json_body = json.loads(request.data)
+    type = int(json_body["type"])
+    char_inst_id = str(json_body["charInstId"])
+    # 读取 SYNC_DATA_TEMPLATE_PATH 对应的文件内容并转换为字典
+    user_sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
 
-    user_sync_data = SYNC_DATA_TEMPLATE_PATH
+    # 获取当前 assist 列表
+    assist_list = user_sync_data["user"]["building"]["assist"]
 
-    if type == 1:
-        user_sync_data["building"]["assist"][0] = char_ins_id
-    elif type == 2:
-        user_sync_data["building"]["assist"][1] = char_ins_id
-    elif type == 3:
-        user_sync_data["building"]["assist"][2] = char_ins_id
-    elif type == 4:
-        user_sync_data["building"]["assist"][3] = char_ins_id
-    elif type == 5:
-        user_sync_data["building"]["assist"][4] = char_ins_id
+    # 检查 assist 中是否已经存在相同的 charInstId，如果有，将其位置修改为 空位（-1）
+    for index, value in enumerate(assist_list):
+        if value == char_inst_id:
+            assist_list[index] = -1
+
+    # 在传入的 type 位置写入 charInstId
+    assist_list[type] = char_inst_id
+        
+    # 更新 user_sync_data 中的 assist 列表
+    user_sync_data["user"]["building"]["assist"] = assist_list
 
     write_json(user_sync_data, SYNC_DATA_TEMPLATE_PATH)
-    write_json(user_sync_data, USER_JSON_PATH)
 
-    modified = {
-        "building": user_sync_data['building'],
-        "event": user_sync_data['event']
-    }
+    # 处理 modified 数据
+    user_sync_data_building = user_sync_data["user"]["building"]
+    user_sync_data_event = user_sync_data["user"]['event']
 
+    # 返回结果
     result = {
         "reports": [],
         "playerDataDelta": {
             "deleted": {},
-            "modified": modified
+            "modified": {
+                "building": user_sync_data_building,
+                "event": user_sync_data_event
+            }
         }
     }
 
