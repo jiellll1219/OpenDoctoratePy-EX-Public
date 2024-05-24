@@ -9,7 +9,7 @@ from constants import CONFIG_PATH
 
 import account, background, building, campaignV2, char, charBuild, charm, \
         crisis, deepsea, gacha, mail, online, tower, quest, pay, rlv2, shop, story, \
-        user, asset.assetbundle, config.prod
+        user, asset.assetbundle, config.prod, social
 
 server_config = read_json(CONFIG_PATH)
 
@@ -48,6 +48,7 @@ app.add_url_rule('/building/deliveryOrder', methods=['POST'], view_func=building
 app.add_url_rule('/bulding/deliveryBatchOrder',methods=['POST'], view_func=building.DeliveryBatchOrder)
 app.add_url_rule('/building/cleanRoomSlot', methods=['POST'], view_func=building.CleanRoomSlot)
 app.add_url_rule('/building/getAssistReport', methods=['POST'], view_func=building.getAssistReport)
+app.add_url_rule('/building/setBuildingAssist', methods=['POST'], view_func=building.setBuildingAssist)
 
 app.add_url_rule('/campaignV2/battleStart', methods=['POST'], view_func=campaignV2.campaignV2BattleStart)
 app.add_url_rule('/campaignV2/battleFinish', methods=['POST'], view_func=campaignV2.campaignV2BattleFinish)
@@ -67,12 +68,11 @@ app.add_url_rule('/charBuild/changeCharTemplate', methods=['POST'], view_func=ch
 
 app.add_url_rule('/charm/setSquad', methods=['POST'], view_func=charm.charmSetSquad)
 
-app.add_url_rule('/config/prod/announce_meta/Android/preannouncement.meta.json', methods=['GET'], view_func=config.prod.prodPreAnnouncement)
-app.add_url_rule('/config/prod/announce_meta/Android/announcement.meta.json', methods=['GET'], view_func=config.prod.prodAnnouncement)
-app.add_url_rule('/config/prod/official/Android/version', methods=['GET'], view_func=config.prod.prodAndroidVersion)
-app.add_url_rule('/config/prod/official/network_config', methods=['GET'], view_func=config.prod.prodNetworkConfig)
-app.add_url_rule('/config/prod/official/refresh_config', methods=['GET'], view_func=config.prod.prodRefreshConfig)
-app.add_url_rule('/config/prod/official/remote_config', methods=['GET'], view_func=config.prod.prodRemoteConfig)
+app.add_url_rule('/mail/getMetaInfoList', methods=['POST'], view_func=mail.mailGetMetaInfoList)
+app.add_url_rule('/mail/listMailBox', methods=['POST'], view_func=mail.mailListMailBox)
+app.add_url_rule('/mail/receiveMail', methods=['POST'], view_func=mail.mailReceiveMail)
+app.add_url_rule('/mail/receiveAllMail', methods=['POST'], view_func=mail.mailReceiveAllMail)
+app.add_url_rule('/mail/removeAllReceivedMail', methods=['POST'], view_func=mail.mailRemoveAllReceivedMail)
 
 app.add_url_rule('/crisis/getInfo', methods=['POST'], view_func=crisis.crisisGetCrisisInfo)
 app.add_url_rule('/crisis/battleStart', methods=['POST'], view_func=crisis.crisisBattleStart)
@@ -81,30 +81,18 @@ app.add_url_rule('/crisis/battleFinish', methods=['POST'], view_func=crisis.cris
 app.add_url_rule('/deepSea/branch', methods=['POST'], view_func=deepsea.deepSeaBranch)
 app.add_url_rule('/deepSea/event', methods=['POST'], view_func=deepsea.deepSeaEvent)
 
-app.add_url_rule('/mail/getMetaInfoList', methods=['POST'], view_func=mail.mailGetMetaInfoList)
-app.add_url_rule('/mail/listMailBox', methods=['POST'], view_func=mail.mailListMailBox)
-app.add_url_rule('/mail/receiveMail', methods=['POST'], view_func=mail.mailReceiveMail)
-app.add_url_rule('/mail/receiveAllMail', methods=['POST'], view_func=mail.mailReceiveAllMail)
-app.add_url_rule('/mail/removeAllReceivedMail', methods=['POST'], view_func=mail.mailRemoveAllReceivedMail)
 
 app.add_url_rule('/online/v1/ping', methods=['POST'], view_func=online.onlineV1Ping)
 app.add_url_rule('/online/v1/loginout', methods=['POST'], view_func=online.onlineV1LoginOut)
 
-app.add_url_rule('/tower/createGame', methods=['POST'], view_func=tower.towerCreateGame)
-app.add_url_rule('/tower/initGodCard', methods=['POST'], view_func=tower.towerInitGodCard)
-app.add_url_rule('/tower/initGame', methods=['POST'], view_func=tower.towerInitGame)
-app.add_url_rule('/tower/initCard', methods=['POST'], view_func=tower.towerInitCard)
-app.add_url_rule('/tower/battleStart', methods=['POST'], view_func=tower.towerBattleStart)
-app.add_url_rule('/tower/battleFinish', methods=['POST'], view_func=tower.towerBattleFinish)
-app.add_url_rule('/tower/recruit', methods=['POST'], view_func=tower.towerRecruit)
-app.add_url_rule('/tower/chooseSubGodCard', methods=['POST'], view_func=tower.towerChooseSubGodCard)
-app.add_url_rule('/tower/settleGame', methods=['POST'], view_func=tower.towerSettleGame)
-
-app.add_url_rule('/pay/getUnconfirmedOrderIdList', methods=['POST'], view_func=pay.GetUnconfirmedOrderIdList)
+app.add_url_rule('/pay/getUnconfirmedOrderIdList', methods=['POST'], view_func=pay.payGetUnconfirmedOrderIdList)
 app.add_url_rule('/u8/pay/getAllProductList', methods=['POST'], view_func=pay.getAllProductList)
 app.add_url_rule('/pay/createOrder', methods=['POST'], view_func=pay.getcreateOrder)
 app.add_url_rule('/pay/createOrderAlipay', methods=['POST'], view_func=pay.createOrderAlipay)
 app.add_url_rule('/pay/createOrderWechat', methods=['POST'], view_func=pay.createOrderWechat)
+app.add_url_rule('/pay/confirmOrder', methods=['POST'], view_func=pay.confirmorder)
+app.add_url_rule('/pay/confirmOrderAlipay', methods=['POST'], view_func=pay.confirmOrderAlipay)
+app.add_url_rule('/pay/confirmOrderWechat', methods=['POST'], view_func=pay.confirmOrderWechat)
 app.add_url_rule('/u8/pay/confirmOrderState', methods=['POST'], view_func=pay.confirmOrderState)
 
 app.add_url_rule('/quest/battleStart', methods=['POST'], view_func=quest.questBattleStart)
@@ -165,16 +153,55 @@ app.add_url_rule('/shop/buyFurniGroup', methods=['POST'], view_func=shop.buyFurn
 app.add_url_rule('/story/finishStory', methods=['POST'], view_func=story.storyFinishStory)
 app.add_url_rule('/quest/finishStoryStage', methods=['POST'], view_func=story.storyFinishStory)
 
-app.add_url_rule('/user/auth', methods=['POST'], view_func=user.userAuth)
-app.add_url_rule('/user/agreement', methods=['GET'], view_func=user.userAgreement)
-app.add_url_rule('/user/checkIn', methods=['POST'], view_func=user.userCheckIn)
-app.add_url_rule('/user/changeSecretary', methods=['POST'], view_func=user.userChangeSecretary)
-app.add_url_rule('/user/login', methods=['POST'], view_func=user.userLogin)
-app.add_url_rule('/user/changeAvatar', methods=['POST'], view_func=user.userChangeAvatar)
-app.add_url_rule('/user/oauth2/v1/grant', methods=['POST'], view_func=user.userOAuth2V1Grant)
-app.add_url_rule('/user/info/v1/need_cloud_auth', methods=['POST'], view_func=user.userV1NeedCloudAuth)
-app.add_url_rule('/user/yostar_createlogin', methods=['POST'], view_func=user.userYostarCreatelogin)
-app.add_url_rule('/u8/user/v1/getToken', methods=['POST'], view_func=user.userV1getToken)
+app.add_url_rule('/user/buyAP', methods=['POST'], view_func=user.BuyAP)
+app.add_url_rule('/user/auth', methods=['POST'], view_func=user.Auth)
+app.add_url_rule('/user/checkIn', methods=['POST'], view_func=user.CheckIn)
+app.add_url_rule('/user/changeSecretary', methods=['POST'], view_func=user.ChangeSecretary)
+app.add_url_rule('/user/login', methods=['POST'], view_func=user.Login)
+app.add_url_rule('/user/changeAvatar', methods=['POST'], view_func=user.ChangeAvatar)
+app.add_url_rule('/user/oauth2/v1/grant', methods=['POST'], view_func=user.OAuth2V1Grant)
+app.add_url_rule('/user/info/v1/need_cloud_auth', methods=['POST'], view_func=user.V1NeedCloudAuth)
+app.add_url_rule('/u8/user/v1/getToken', methods=['POST'], view_func=user.V1getToken)
+app.add_url_rule('/user/changeResume', methods=['POST'], view_func=user.changeResume)
+app.add_url_rule('/user/auth/v1/token_by_phone_password',methods=['POST'], view_func=user.auth_v1_token_by_phone_password)
+app.add_url_rule('/user/info/v1/basic',methods=['GET'], view_func=user.info_v1_basic)
+app.add_url_rule('/user/oauth2/v2/grant',methods=['POST'], view_func=user.oauth2_v2_grant)
+app.add_url_rule('/user/exchangeDiamondShard', methods=['POST'], view_func=user.exchangeDiamondShard)
+app.add_url_rule('/app/v1/config',methods=['GET'], view_func=user.app_v1_config)
+app.add_url_rule('/general/v1/server_time',methods=['GET'], view_func=user.general_v1_server_time)
+
+app.add_url_rule('/tower/createGame', methods=['POST'], view_func=tower.towerCreateGame)
+app.add_url_rule('/tower/battleStart', methods=['POST'], view_func=tower.towerBattleStart)
+app.add_url_rule('/tower/battleFinish', methods=['POST'], view_func=tower.towerBattleFinish)
+app.add_url_rule('/tower/settleGame', methods=['POST'], view_func=tower.towerSettleGame)
+app.add_url_rule('/tower/initGodCard', methods=['POST'], view_func=tower.towerInitGodCard)
+app.add_url_rule('/tower/initGame', methods=['POST'], view_func=tower.towerInitGame)
+app.add_url_rule('/tower/initCard', methods=['POST'], view_func=tower.towerInitCard)
+app.add_url_rule('/tower/chooseSubGodCard', methods=['POST'], view_func=tower.towerChooseSubGodCard)
+app.add_url_rule('/tower/recruit', methods=['POST'], view_func=tower.towerRecruit)
+
+app.add_url_rule('/config/prod/announce_meta/Android/preannouncement.meta.json', methods=['GET'], view_func=config.prod.prodPreAnnouncement)
+app.add_url_rule('/config/prod/announce_meta/Android/announcement.meta.json', methods=['GET'], view_func=config.prod.prodAnnouncement)
+app.add_url_rule('/config/prod/official/Android/version', methods=['GET'], view_func=config.prod.prodAndroidVersion)
+app.add_url_rule('/config/prod/official/network_config', methods=['GET'], view_func=config.prod.prodNetworkConfig)
+app.add_url_rule('/config/prod/official/refresh_config', methods=['GET'], view_func=config.prod.prodRefreshConfig)
+app.add_url_rule('/config/prod/official/remote_config', methods=['GET'], view_func=config.prod.prodRemoteConfig)
+
+app.add_url_rule('/quest/getAssistList', methods=['POST'], view_func=quest.questGetAssistList)
+
+app.add_url_rule('/act25side/battleStart', methods=['POST'], view_func=quest.questBattleStart)
+app.add_url_rule('/act25side/battleFinish', methods=['POST'], view_func=quest.questBattleFinish)
+app.add_url_rule('/rlv2/giveUpGame', methods=['POST'], view_func=rlv2.rlv2GiveUpGame)
+
+app.add_url_rule('/social/setAssistCharList', methods=['POST'], view_func=social.socialsetAssistCharList)
+app.add_url_rule('/social/getSortListInfo', methods=['POST'], view_func=social.socialgetSortListInfo)
+app.add_url_rule('/social/getFriendList', methods=['POST'], view_func=social.socialgetFriendList)
+app.add_url_rule('/social/getFriendRequestList', methods=['POST'], view_func=social.socialgetFriendRequestList)
+app.add_url_rule('/social/processFriendRequest', methods=['POST'], view_func=social.socialprocessFriendRequest)
+app.add_url_rule('/social/sendFriendRequest', methods=['POST'], view_func=social.socialsendFriendRequest)
+app.add_url_rule('/social/setFriendAlias', methods=['POST'], view_func=social.socialsetFriendAlias)
+app.add_url_rule('/social/deleteFriend', methods=['POST'], view_func=social.socialdeleteFriend)
+app.add_url_rule('/social/searchPlayer', methods=['POST'], view_func=social.socialsearchPlayer)
 
 app.add_url_rule('/gacha/syncNormalGacha', methods=['POST'], view_func=gacha.syncNormalGacha)
 app.add_url_rule('/gacha/normalGacha', methods=['POST'], view_func=gacha.gachanormalGacha)
@@ -182,28 +209,6 @@ app.add_url_rule('/gacha/finishNormalGacha', methods=['POST'], view_func=gacha.f
 app.add_url_rule('/gacha/getPoolDetail', methods=['POST'], view_func=gacha.getPoolDetail)
 app.add_url_rule('/gacha/advancedGacha', methods=['POST'], view_func=gacha.advancedGacha)
 app.add_url_rule('/gahca/tenAdvancedGacha', methods=['POST'], view_func=gacha.tenAdvancedGacha)
-
-app.add_url_rule(
-    '/user/auth/v1/token_by_phone_password',
-    methods=['POST'], view_func=user.auth_v1_token_by_phone_password
-)
-app.add_url_rule(
-    '/user/info/v1/basic',
-    methods=['GET'], view_func=user.info_v1_basic
-)
-app.add_url_rule(
-    '/user/oauth2/v2/grant',
-    methods=['POST'], view_func=user.oauth2_v2_grant
-)
-app.add_url_rule(
-    '/app/v1/config',
-    methods=['GET'], view_func=user.app_v1_config
-)
-app.add_url_rule(
-    '/general/v1/server_time',
-    methods=['GET'], view_func=user.general_v1_server_time
-)
-
 
 def writeLog(data):
     print(f'[{datetime.utcnow()}] {data}')
