@@ -9,7 +9,7 @@ from utils import read_json, write_json
 import time
 
 
-def userCheckIn():
+def CheckIn():
 
     data = request.data
     data = {
@@ -23,7 +23,7 @@ def userCheckIn():
     return data
 
 
-def userChangeSecretary():
+def ChangeSecretary():
     data = request.data
     request_data = request.get_json()
     charInstId = request_data["charInstId"]
@@ -54,7 +54,7 @@ def userChangeSecretary():
     return data
 
 
-def userLogin():
+def Login():
 
     data = request.data
     data = {
@@ -75,7 +75,7 @@ def userLogin():
     return data
 
 
-def userOAuth2V1Grant():
+def OAuth2V1Grant():
     
     data = request.data
     data = {
@@ -90,7 +90,7 @@ def userOAuth2V1Grant():
     return data
 
 
-def userV1NeedCloudAuth():
+def V1NeedCloudAuth():
 
     data = request.data
     data = {
@@ -101,7 +101,7 @@ def userV1NeedCloudAuth():
     return data
 
 
-def userV1getToken():
+def V1getToken():
 
     data = request.data
     data = {
@@ -120,7 +120,7 @@ def userV1getToken():
     return data
 
 
-def userAuth():
+def Auth():
 
     data = request.data
     data = {
@@ -135,7 +135,7 @@ def userAuth():
     return data
 
 
-def userChangeAvatar():
+def ChangeAvatar():
 
     data = request.data
     avatar = request.get_json()
@@ -172,7 +172,7 @@ def appGetCode():
     return data
 
 
-def userYostarCreatelogin():
+def YostarCreatelogin():
 
     data = request.data
     data = {
@@ -186,7 +186,7 @@ def userYostarCreatelogin():
 
     return data
 
-def userAgreement():
+def Agreement():
 
     data = request.data
     data = {
@@ -293,5 +293,135 @@ def general_v1_server_time():
         "data": {
             "serverTime": int(time.time()),
             "isHoliday": False
+        }
+    }
+
+def exchangeDiamondShard():
+    json_body = json.loads(request.data)
+    user_sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
+
+    #debug code
+    print(request.data)
+
+    use_count = json_body["count"]
+    user_androidDiamond = user_sync_data["user"]["status"]["androidDiamond"]
+
+    if user_androidDiamond < use_count:
+        return {
+            "result": 1,
+            "errMsg": "剩余源石无法兑换合成玉"
+        }
+    else:
+        user_sync_data["user"]["status"]["androidDiamond"] -= use_count
+        user_sync_data["user"]["status"]["diamondShard"] += use_count * 180
+        user_sync_data["user"]["status"]["iosDiamond"] = user_sync_data["user"]["status"]["androidDiamond"]
+        
+    write_json(user_sync_data, SYNC_DATA_TEMPLATE_PATH)
+    write_json(user_sync_data, USER_JSON_PATH)
+    
+    result = {
+        "playerDataDelta": {
+            "modified": {
+                "androidDiamond": user_sync_data["user"]["status"]["androidDiamond"],
+                "iosDiamond": user_sync_data["user"]["status"]["iosDiamond"],
+                "diamondShard":user_sync_data["user"]["status"]["diamondShard"]
+            },
+            "deleted": {}
+        }
+    }
+
+    return result
+
+def bindNickName():
+    json_body = json.loads(request.data)
+    user_sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
+
+    nickName = json_body["nickName"]
+
+    if len(nickName) > 8 :
+        return {
+            "result": 1
+        }
+    elif '/' in nickName:
+        return {
+            "result": 2
+        }
+    else:
+        #nickNumber = f"{len(user_sql.query_nick_name(nick_name)) + 1:04d}"  #在sql中使用
+        nickNumber = "0001"  #在单人服务器中使用
+        user_sync_data = (user_sync_data["user"]["status"]["nickNumber"], nickNumber)
+        user_sync_data = (user_sync_data["user"]["status"]["nickName"], nickName)
+
+    write_json(user_sync_data, SYNC_DATA_TEMPLATE_PATH)
+    write_json(user_sync_data, USER_JSON_PATH)
+
+    result = {
+        "deleted": {},
+        "modified": {
+            "status": {
+                "nickName": nickName
+            }
+        }
+    }
+
+    return result
+    
+def rebindNickName():
+    json_body = json.loads(request.data)
+    user_sync_data = SYNC_DATA_TEMPLATE_PATH
+
+    nick_name = json_body['nickName']
+
+    user_sync_data["user"]["status"]["nickName"] = nick_name
+    user_sync_data["user"]["inventory"]["renamingCard"] -= 1
+
+    write_json(user_sync_data, SYNC_DATA_TEMPLATE_PATH)
+    write_json(user_sync_data, USER_JSON_PATH)
+
+    return {
+        "playerDataDelta": {
+        "deleted": {},
+        "modified": {
+            "status": {"nickName": nick_name},
+            "inventory": {"renamingCard": user_sync_data["inventory"]["renamingCard"]}
+            }
+        }
+    }
+    
+def BuyAP():
+    user_sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
+
+    now_time = time()
+
+    add_ap = (now_time - user_sync_data["user"]["status"]["lastApAddTime"]) // 360
+
+    if user_sync_data["user"]["status"]["ap"] < user_sync_data["user"]["status"]["maxAp"]:
+        if user_sync_data["user"]["status"]["ap"] + add_ap >= user_sync_data["user"]["status"]["maxAp"]:
+            user_sync_data["user"]["status"]["ap"] = user_sync_data["user"]["status"]["maxAp"]
+            user_sync_data["user"]["status"]["lastApAddTime"] = now_time
+        elif add_ap != 0:
+            user_sync_data["user"]["status"]["ap"] += add_ap
+            user_sync_data["user"]["status"]["lastApAddTime"] = now_time
+
+    user_sync_data["user"]["status"]["androidDiamond"] -= 1
+    user_sync_data["user"]["status"]["iosDiamond"] = user_sync_data["user"]["status"]["androidDiamond"]
+    user_sync_data["user"]["status"]["ap"] += user_sync_data["user"]["status"]["maxAp"]
+    user_sync_data["user"]["status"]["lastApAddTime"] = now_time
+    user_sync_data["user"]["status"]["buyApRemainTimes"] = user_sync_data["user"]["status"]["buyApRemainTimes"]
+
+    write_json(user_sync_data, SYNC_DATA_TEMPLATE_PATH)
+
+    return {
+        "playerDataDelta": {
+            "deleted": {},
+            "modified": {
+                "status": {
+                    "androidDiamond": user_sync_data["user"]["status"]["androidDiamond"],
+                    "iosDiamond": user_sync_data["user"]["status"]["iosDiamond"],
+                    "ap": user_sync_data["user"]["status"]["ap"],
+                    "lastApAddTime": user_sync_data["user"]["status"]["lastApAddTime"],
+                    "buyApRemainTimes": user_sync_data["user"]["status"]["buyApRemainTimes"]
+                }
+            }
         }
     }

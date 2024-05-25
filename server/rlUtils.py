@@ -1,4 +1,4 @@
-from time import time
+from virtualtime import time
 from random import choice, choices, random
 
 from constants import RL_TABLE_URL, CHARACTER_TABLE_URL, USER_JSON_PATH, \

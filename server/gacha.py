@@ -1,16 +1,12 @@
-from flask import request, jsonify
+from flask import request
 from datetime import datetime
 
-from constants import NORMALGACHA_PATH
-from constants import SYNC_DATA_TEMPLATE_PATH
-from constants import USER_JSON_PATH
-from constants import EQUIP_TABLE_URL
-from constants import CHARACTER_TABLE_URL
-from constants import CHARWORD_TABLE_URL
+from constants import NORMALGACHA_PATH, SYNC_DATA_TEMPLATE_PATH, USER_JSON_PATH, EQUIP_TABLE_URL, CHARACTER_TABLE_URL, CHARWORD_TABLE_URL, GACHA_TEMP_JSON_PATH
 from utils import read_json, write_json
 
 import json
 import random
+import os
 
 def syncNormalGacha():
 
@@ -37,44 +33,43 @@ def syncNormalGacha():
     
 
 def gachanormalGacha():
-    json_body = request.json
+    json_body = json.loads(request.data)
 
     # 从请求体中获取slotId和tagList
-    slot_id = json_body.get("slotId")
-    tag_list = json_body.get("tagList")
+    slot_id = json_body["slotId"]
+    tag_list = json_body["tagList"]
 
     # 修改招募相关信息
     user_sync_data = read_json(USER_JSON_PATH, encoding="utf-8")
-    user_sync_data["recruit"]["normal"]["slots"][str(slot_id)]["state"] = 2
+    user_sync_data["user"]["recruit"]["normal"]["slots"][str(slot_id)]["state"] = 2
     select_tags = [{"pick": 1, "tagId": tag} for tag in tag_list]
-    user_sync_data["recruit"]["normal"]["slots"][str(slot_id)]["selectTags"] = select_tags
+    user_sync_data["user"]["recruit"]["normal"]["slots"][str(slot_id)]["selectTags"] = select_tags
 
     # 减少招募许可数量
-    user_sync_data["status"]["recruitLicense"] -= 1
+    user_sync_data["user"]["status"]["recruitLicense"] -= 1
 
     # 更新用户数据并将其写回JSON文件
     write_json(USER_JSON_PATH, user_sync_data)
 
     # 构造返回的结果JSON对象
-    result = {
+    return {
         "playerDataDelta": {
             "modified": {
-                "recruit": user_sync_data["recruit"],
-                "status": user_sync_data["status"]
+                "recruit": user_sync_data["user"]["recruit"],
+                "status": user_sync_data["user"]["status"]
             },
             "deleted": {}
         }
     }
 
-    return jsonify(result)
 
 def finishNormalGacha():
 
-    json_body = request.json
-    slot_id = json_body.get("slotId")
+    json_body = json.loads(request.data)
+    slot_id = json_body["slotId"]
 
-    chars = read_json(USER_JSON_PATH)["troop"]["chars"]  # 玩家角色数据
-    building_chars = read_json(SYNC_DATA_TEMPLATE_PATH)["building"]["chars"]  # 建筑角色数据
+    chars = read_json(USER_JSON_PATH)["user"]["troop"]["chars"]  # 玩家角色数据
+    building_chars = read_json(SYNC_DATA_TEMPLATE_PATH)["user"]["building"]["chars"]  # 建筑角色数据
     avail_char_info = read_json(NORMALGACHA_PATH)["detailInfo"]["availCharInfo"]["perAvailList"]  # 可用角色信息
     random_rank_array = []  # 随机等级数组
 
@@ -216,7 +211,7 @@ def finishNormalGacha():
         "isNew": is_new  # 是否新角色
     }
 
-    data = {
+    return {
         "playerDataDelta": {
             "modified": {
                 "recruit": user_json_path["recruit"],  # 修改的招募数据
@@ -228,13 +223,10 @@ def finishNormalGacha():
         "charGet": char_get  # 获得的角色数据
     }
 
-    return data  # 返回结果
 
 def getPoolDetail():
 
-    data = request.data
-
-    return data
+    return read_json(f"{GACHA_TEMP_JSON_PATH}pool.json")
 
 def advancedGacha():
 
@@ -247,3 +239,226 @@ def tenAdvancedGacha():
     data = request.data
 
     return data
+
+def Gacha():
+
+    json_body = json.loads(request.data)
+    use_diamond_shard = json_body["useDiamondShard"]
+
+    user_sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
+    pool_id = json_body['poolId']
+    pool_path = os.path.join(os.getcwd(), 'data', 'gacha', f'{pool_id}.json')
+
+    use_tkt = json_body['useTkt']
+
+    if not os.path.exists(pool_path):
+        return {
+            "result": 1,
+            "errMsg": "该当前干员寻访无法使用，详情请关注公告"
+        }
+
+    with open(pool_path, 'r') as file:
+        pool_json = json.load(file)
+
+    gacha_result_list = []
+    new_chars = []
+    char_get = {}
+    troop = {}
+    chars = user_sync_data['troop']['chars']
+
+    used_immond = use_diamond_shard // 380 if json_body['poolId'] == "BOOT_0_1_1" else use_diamond_shard // 600
+
+    for count in range(used_immond):
+        if use_tkt in [1, 2]:
+            if user_sync_data['status'][type] <= 0:
+                return {
+                    "result": 2,
+                    "errMsg": "剩余寻访凭证不足"
+                }
+        elif user_sync_data['status']['diamondShard'] < use_diamond_shard:
+            return {
+                "result": 3,
+                "errMsg": "剩余合成玉不足"
+            }
+
+        minimum = False
+        pool_object_name = "newbee" if json_body['poolId'] == "BOOT_0_1_1" else "normal"
+        pool = user_sync_data['gacha'].get(pool_object_name, {})
+
+        if json_body['poolId'] == "BOOT_0_1_1":
+            pool = user_sync_data['gacha'].get(pool_object_name, {})
+            cnt = pool.get('cnt', 0) - 1
+            user_sync_data['gacha'][pool_object_name]['cnt'] = cnt
+            user_sync_data['status']['gachaCount'] += 1
+
+            if cnt == 0:
+                user_sync_data['gacha'][pool_object_name]['openFlag'] = 0
+        else:
+            if pool_object_name not in user_sync_data['gacha']:
+                user_sync_data['gacha'][pool_object_name] = {}
+
+            if pool_id not in user_sync_data['gacha'][pool_object_name]:
+                user_sync_data['gacha'][pool_object_name][pool_id] = {
+                    "cnt": 0,
+                    "maxCnt": 10,
+                    "rarity": 4,
+                    "avail": True
+                }
+
+            pool = user_sync_data['gacha'][pool_object_name][pool_id]
+            cnt = pool['cnt'] + 1
+            user_sync_data['gacha'][pool_object_name][pool_id]['cnt'] = cnt
+            user_sync_data['status']['gachaCount'] += 1
+
+            if cnt == 10 and pool['avail']:
+                user_sync_data['gacha'][pool_object_name][pool_id]['avail'] = False
+                minimum = True
+
+        avail_char_info = pool_json['detailInfo']['availCharInfo']['perAvailList']
+        up_char_info = pool_json['detailInfo']['upCharInfo']['perCharList']
+        random_rank_array = []
+
+        for i, char_info in enumerate(avail_char_info):
+            total_percent = int(char_info['totalPercent'] * 200)
+            rarity_rank = char_info['rarityRank']
+            if rarity_rank == 5:
+                total_percent += (user_sync_data['status']['gachaCount'] + 50) // 50 * 2
+
+            if not minimum or rarity_rank >= pool['rarity']:
+                for _ in range(total_percent):
+                    random_rank_array.append({
+                        "rarityRank": rarity_rank,
+                        "index": i
+                    })
+
+        random.shuffle(random_rank_array)
+        random_rank = random.choice(random_rank_array)
+        if json_body['poolId'] != "BOOT_0_1_1" and random_rank['rarityRank'] >= pool['rarity']:
+            user_sync_data['gacha'][pool_object_name][pool_id]['avail'] = False
+
+        if random_rank['rarityRank'] == 5:
+            user_sync_data['status']['gachaCount'] = 0
+
+        random_char_array = avail_char_info[random_rank['index']]['charIdList']
+
+        for up_char in up_char_info:
+            if up_char['rarityRank'] == random_rank['rarityRank']:
+                percent = int(up_char['percent'] * 100) - 15
+                for char_id in up_char['charIdList']:
+                    random_char_array.extend([char_id] * percent)
+
+        random.shuffle(random_char_array)
+        random_char_id = random.choice(random_char_array)
+        repeat_char_id = 0
+
+        for k, char_data in user_sync_data['troop']['chars'].items():
+            if char_data['charId'] == random_char_id:
+                repeat_char_id = int(k)
+                break
+
+        if repeat_char_id == 0:
+            char_data = {
+                "instId": len(user_sync_data['troop']['chars']) + 1,
+                "charId": random_char_id,
+                "favorPoint": 0,
+                "potentialRank": 0,
+                "mainSkillLvl": 1,
+                "skin": f"{random_char_id}#1",
+                "level": 1,
+                "exp": 0,
+                "evolvePhase": 0,
+                "gainTime": int(datetime.now().timestamp()),
+                "skills": [],
+                "voiceLan": read_json(CHARWORD_TABLE_URL)['charDefaultTypeDict'][random_char_id],
+                "defaultSkillIndex": 0,
+                "currentEquip": None
+            }
+
+            skills = read_json(CHARACTER_TABLE_URL)[random_char_id]['skills']
+            for skill in skills:
+                char_data['skills'].append({
+                    "skillId": skill['skillId'],
+                    "state": 0,
+                    "specializeLevel": 0,
+                    "completeUpgradeTime": -1,
+                    "unlock": 1 if skill['unlockCond']['phase'] == 0 else 0
+                })
+
+            if f"uniequip_001_{random_char_id.split('_')[2]}" in EQUIP_TABLE_URL:
+                equip = {
+                    f"uniequip_001_{random_char_id.split('_')[2]}": {"hide": 0, "locked": 0, "level": 1},
+                    f"uniequip_002_{random_char_id.split('_')[2]}": {"hide": 0, "locked": 0, "level": 1}
+                }
+                char_data["equip"] = equip
+                char_data["currentEquip"] = f"uniequip_001_{random_char_id.split('_')[2]}"
+
+            user_sync_data['troop']['chars'][char_data['instId']] = char_data
+            user_sync_data['troop']['charGroup'][random_char_id] = {"favorPoint": 0}
+            user_sync_data['building']['chars'][char_data['instId']] = {
+                "charId": random_char_id,
+                "lastApAddTime": int(datetime.now().timestamp()),
+                "ap": 8640000,
+                "roomSlotId": "",
+                "index": -1,
+                "changeScale": 0,
+                "bubble": {
+                    "normal": {"add": -1, "ts": 0},
+                    "assist": {"add": -1, "ts": -1}
+                },
+                "workTime": 0
+            }
+
+            char_get = {
+                "charInstId": char_data['instId'],
+                "charId": random_char_id,
+                "isNew": 1,
+                "itemGet": [{
+                    "type": "HGG_SHD",
+                    "id": "4004",
+                    "count": 1
+                }]
+            }
+            user_sync_data['status']['hggShard'] += 1
+            user_sync_data['inventory'][f"p_{random_char_id}"] = 0
+            gacha_result_list.append(char_get)
+            new_chars.append(char_get)
+        else:
+            char_data = user_sync_data['troop']['chars'][str(repeat_char_id)]
+            potential_rank = char_data['potentialRank']
+            rarity = random_rank['rarityRank']
+
+            item_name = item_type = item_id = None
+            item_count = 0
+            if rarity == 0:
+                item_name, item_type, item_id, item_count = "lggShard", "LGG_SHD", "4005", 1
+            elif rarity == 1:
+                item_name, item_type, item_id, item_count = "bggShard", "BGG_SHD", "4003", 1
+            elif rarity == 2:
+                item_name, item_type, item_id, item_count = "goldCert", "GOLD_CERT", "3002", 2
+            elif rarity == 3:
+                item_name, item_type, item_id, item_count = "goldCert", "GOLD_CERT", "3002", 5
+            elif rarity == 4:
+                item_name, item_type, item_id, item_count = "diamondShard", "DIAMOND_SHARD", "4001", 15
+            elif rarity == 5:
+                item_name, item_type, item_id, item_count = "diamondShard", "DIAMOND_SHARD", "4001", 50
+
+            user_sync_data['status'][item_name] += item_count
+            char_get = {
+                "charInstId": repeat_char_id,
+                "charId": random_char_id,
+                "isNew": 0,
+                "itemGet": [{
+                    "type": item_type,
+                    "id": item_id,
+                    "count": item_count
+                }]
+            }
+            gacha_result_list.append(char_get)
+
+    return {
+        "result": 0,
+        "data": {
+            "userSyncData": user_sync_data,
+            "gachaResultList": gacha_result_list
+        }
+    }

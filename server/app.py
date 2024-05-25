@@ -169,6 +169,8 @@ app.add_url_rule('/user/oauth2/v2/grant',methods=['POST'], view_func=user.oauth2
 app.add_url_rule('/user/exchangeDiamondShard', methods=['POST'], view_func=user.exchangeDiamondShard)
 app.add_url_rule('/app/v1/config',methods=['GET'], view_func=user.app_v1_config)
 app.add_url_rule('/general/v1/server_time',methods=['GET'], view_func=user.general_v1_server_time)
+app.add_url_rule('/user/bindNickName',methods=['POST'], view_func=user.bindNickName)
+app.add_url_rule('/user/rebindNickName',methods=['POST'], view_func=user.rebindNickName)
 
 app.add_url_rule('/tower/createGame', methods=['POST'], view_func=tower.towerCreateGame)
 app.add_url_rule('/tower/battleStart', methods=['POST'], view_func=tower.towerBattleStart)

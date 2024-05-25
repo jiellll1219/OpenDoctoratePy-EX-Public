@@ -1,6 +1,6 @@
 import json
 from os.path import exists
-from time import time
+from virtualtime import time
 from copy import deepcopy
 from base64 import b64encode
 from hashlib import md5

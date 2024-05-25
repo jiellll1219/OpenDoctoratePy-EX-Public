@@ -1,4 +1,4 @@
-from time import time
+from virtualtime import time
 
 from flask import request
 
