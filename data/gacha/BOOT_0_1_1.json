@@ -1,0 +1,125 @@
+{
+    "detailInfo": {
+        "availCharInfo": {
+            "perAvailList": [
+                {
+                    "charIdList": [
+                        "char_103_angel",
+                        "char_112_siege",
+                        "char_291_aglina",
+                        "char_147_shining",
+                        "char_136_hsguma",
+                        "char_172_svrash"
+                    ],
+                    "rarityRank": 5,
+                    "totalPercent": 0.02
+                },
+                {
+                    "charIdList": [
+                        "char_128_plosis",
+                        "char_115_headbr",
+                        "char_102_texas",
+                        "char_106_franka",
+                        "char_140_whitew",
+                        "char_143_ghost",
+                        "char_129_bluep",
+                        "char_204_platnm",
+                        "char_219_meteo",
+                        "char_166_skfire",
+                        "char_108_silent",
+                        "char_148_nearl",
+                        "char_144_red",
+                        "char_107_liskam",
+                        "char_174_slbell",
+                        "char_195_glassb"
+                    ],
+                    "rarityRank": 4,
+                    "totalPercent": 0.08
+                },
+                {
+                    "charIdList": [
+                        "char_141_nights",
+                        "char_109_fmout",
+                        "char_126_shotst",
+                        "char_118_yuki",
+                        "char_149_scave",
+                        "char_290_vigna",
+                        "char_130_doberm",
+                        "char_289_gyuki",
+                        "char_185_frncat",
+                        "char_237_gravel",
+                        "char_236_rope",
+                        "char_117_myrrh",
+                        "char_181_flower",
+                        "char_199_yak",
+                        "char_150_snakek",
+                        "char_110_deepcl",
+                        "char_183_skgoat"
+                    ],
+                    "rarityRank": 3,
+                    "totalPercent": 0.5
+                },
+                {
+                    "charIdList": [
+                        "char_123_fang",
+                        "char_240_wyvern",
+                        "char_192_falco",
+                        "char_208_melan",
+                        "char_209_ardign",
+                        "char_122_beagle",
+                        "char_124_kroos",
+                        "char_121_lava",
+                        "char_120_hibisc",
+                        "char_212_ansel",
+                        "char_210_stward",
+                        "char_278_orchid"
+                    ],
+                    "rarityRank": 2,
+                    "totalPercent": 0.4
+                }
+            ]
+        },
+        "upCharInfo": null,
+        "weightUpCharInfoList": null,
+        "limitedChar": null,
+        "gachaObjList": [
+            {
+                "gachaObject": 0,
+                "type": 3,
+                "imageType": 0,
+                "param": "卡池干员列表"
+            },
+            {
+                "gachaObject": 0,
+                "type": 4,
+                "imageType": 0,
+                "param": "只包含为新人特别挑选的干员"
+            },
+            {
+                "gachaObject": 0,
+                "type": 1,
+                "imageType": 0,
+                "param": "全部可能出现的干员"
+            },
+            {
+                "gachaObject": 2,
+                "type": 0,
+                "imageType": 0,
+                "param": null
+            },
+            {
+                "gachaObject": 0,
+                "type": 3,
+                "imageType": 0,
+                "param": "该寻访为【新人特惠寻访】"
+            },
+            {
+                "gachaObject": 0,
+                "type": 5,
+                "imageType": 0,
+                "param": "<@ga.nbGacha>【新人特惠寻访】</>中，每次寻访的价格低于<@ga.adGacha>【标准寻访】</>，能够获得的干员为特别指定，如上所列。"
+            }
+        ],
+        "gachaObjGroupType": 0
+    }
+}

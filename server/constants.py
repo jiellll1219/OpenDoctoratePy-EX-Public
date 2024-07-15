@@ -2,6 +2,7 @@ from utils import read_json
 
 # Config Data
 CONFIG_PATH = "config/config.json"
+EX_CONFIG_PATH  = "config/exConfig.json"
 MAILLIST_PATH = "config/mails.json"
 RLV2_CONFIG_PATH = "config/rlv2Config.json"
 SQUADS_PATH = "config/squads.json"

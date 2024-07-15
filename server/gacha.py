@@ -1,5 +1,5 @@
 from flask import request
-from datetime import datetime
+from virtualtime import time
 
 from constants import NORMALGACHA_PATH, SYNC_DATA_TEMPLATE_PATH, USER_JSON_PATH, EQUIP_TABLE_URL, CHARACTER_TABLE_URL, CHARWORD_TABLE_URL, GACHA_TEMP_JSON_PATH
 from utils import read_json, write_json
@@ -120,7 +120,7 @@ def finishNormalGacha():
         char_data["level"] = 1  # 等级
         char_data["exp"] = 0  # 经验值
         char_data["evolvePhase"] = 0  # 精英阶段
-        char_data["gainTime"] = int(datetime.now().timestamp())  # 获得时间
+        char_data["gainTime"] = int(time)  # 获得时间
         char_data["skills"] = skils  # 技能
         char_data["equip"] = {}  # 装备
         char_data["voiceLan"] = read_json(CHARWORD_TABLE_URL)["charDefaultTypeDict"][random_char_id]  # 角色语音
@@ -146,7 +146,7 @@ def finishNormalGacha():
 
         building_char = {
             "charId": random_char_id,
-            "lastApAddTime": int(datetime.now().timestamp()),
+            "lastApAddTime": int(time),
             "ap": 8640000,
             "roomSlotId": "",
             "index": -1,
@@ -226,77 +226,116 @@ def finishNormalGacha():
 
 def getPoolDetail():
 
-    return read_json(f"{GACHA_TEMP_JSON_PATH}pool.json")
+    json_body = request.get_json()
+    pool_Id = json_body["poolId"]
+
+    pool = read_json(f"data/gacha/{pool_Id}.json", encoding="utf-8")
+    return pool
 
 def advancedGacha():
 
-    data = request.data
+    json_body = request.json
+    use_Tkt_type = json_body["useTkt"]
+    pool_Id = json_body["poolId"]
 
-    return data
+    if use_Tkt_type == 6:
+        return Gacha("classicGachaTicket", 600, json_body)
+    elif pool_Id.startswith("BOOT"):
+        return Gacha("gachaTicket", 380, json_body)
+    else:
+        return Gacha("gachaTicket", 600, json_body)
 
 def tenAdvancedGacha():
     
-    data = request.data
+    json_body = request.json
+    use_Tkt_type = json_body["useTkt"]
+    pool_Id = json_body["poolId"]
 
-    return data
+    if use_Tkt_type == 6:
+        return Gacha("classicTenGachaTicket", 6000, json_body)
+    elif use_Tkt_type == 1:
+        return Gacha("gachaTicket", 6000, json_body)
+    elif pool_Id.startswith("BOOT"):
+        return Gacha("tenGachaTicket", 3800, json_body)
+    else:
+        return Gacha("tenGachaTicket", 6000, json_body)
 
-def Gacha():
+def Gacha(ticket_type, use_diamond_shard, json_body):
 
-    json_body = json.loads(request.data)
+    # 解析请求中的json数据
     use_diamond_shard = json_body["useDiamondShard"]
 
+    # 读取用户同步数据
     user_sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
     pool_id = json_body['poolId']
     pool_path = os.path.join(os.getcwd(), 'data', 'gacha', f'{pool_id}.json')
 
+    # 获取是否使用寻访凭证
     use_tkt = json_body['useTkt']
 
+    # 判断当前干员寻访是否可以使用
     if not os.path.exists(pool_path):
         return {
             "result": 1,
             "errMsg": "该当前干员寻访无法使用，详情请关注公告"
         }
 
+    # 读取当前干员寻访的json数据
     with open(pool_path, 'r') as file:
         pool_json = json.load(file)
 
+    # 初始化结果列表和新的角色列表
     gacha_result_list = []
     new_chars = []
     char_get = {}
     troop = {}
     chars = user_sync_data['troop']['chars']
 
-    used_immond = use_diamond_shard // 380 if json_body['poolId'] == "BOOT_0_1_1" else use_diamond_shard // 600
+    # 计算使用的合成玉数量
+    if json_body['poolId'].startswith("BOOT"):
 
-    for count in range(used_immond):
-        if use_tkt in [1, 2]:
-            if user_sync_data['status'][type] <= 0:
+        used_diammond = use_diamond_shard // 380    #used_diamond为抽卡次数
+    else:
+        used_diammond = use_diamond_shard // 600
+
+    # 循环使用合成玉
+    for count in range(used_diammond):
+        # 判断是否使用寻访凭证
+        if use_tkt in [1, 2, 6, 7]:
+            # 判断剩余寻访凭证是否足够
+            if user_sync_data['status'][ticket_type] <= 0:
                 return {
                     "result": 2,
                     "errMsg": "剩余寻访凭证不足"
                 }
+        # 判断剩余合成玉是否足够
         elif user_sync_data['status']['diamondShard'] < use_diamond_shard:
             return {
                 "result": 3,
                 "errMsg": "剩余合成玉不足"
             }
 
+        # 初始化最小值和寻访池对象名称
         minimum = False
-        pool_object_name = "newbee" if json_body['poolId'] == "BOOT_0_1_1" else "normal"
+        pool_object_name = "newbee" if json_body['poolId'].startswith("BOOT") else "normal"
         pool = user_sync_data['gacha'].get(pool_object_name, {})
 
-        if json_body['poolId'] == "BOOT_0_1_1":
+        # 判断是否为新手寻访池
+        if json_body['poolId'].startswith("BOOT"):
             pool = user_sync_data['gacha'].get(pool_object_name, {})
             cnt = pool.get('cnt', 0) - 1
             user_sync_data['gacha'][pool_object_name]['cnt'] = cnt
             user_sync_data['status']['gachaCount'] += 1
 
+            # 判断是否已经达到最大寻访次数
             if cnt == 0:
                 user_sync_data['gacha'][pool_object_name]['openFlag'] = 0
         else:
+            # 判断是否为新寻访池
             if pool_object_name not in user_sync_data['gacha']:
                 user_sync_data['gacha'][pool_object_name] = {}
 
+            # 判断是否为新寻访池中的某个池子
             if pool_id not in user_sync_data['gacha'][pool_object_name]:
                 user_sync_data['gacha'][pool_object_name][pool_id] = {
                     "cnt": 0,
@@ -310,20 +349,24 @@ def Gacha():
             user_sync_data['gacha'][pool_object_name][pool_id]['cnt'] = cnt
             user_sync_data['status']['gachaCount'] += 1
 
+            # 判断是否已经达到最大寻访次数
             if cnt == 10 and pool['avail']:
                 user_sync_data['gacha'][pool_object_name][pool_id]['avail'] = False
                 minimum = True
 
+        # 获取可寻访的角色信息
         avail_char_info = pool_json['detailInfo']['availCharInfo']['perAvailList']
         up_char_info = pool_json['detailInfo']['upCharInfo']['perCharList']
         random_rank_array = []
 
+        # 计算每个稀有等级的概率
         for i, char_info in enumerate(avail_char_info):
             total_percent = int(char_info['totalPercent'] * 200)
             rarity_rank = char_info['rarityRank']
             if rarity_rank == 5:
                 total_percent += (user_sync_data['status']['gachaCount'] + 50) // 50 * 2
 
+            # 判断是否为最小值
             if not minimum or rarity_rank >= pool['rarity']:
                 for _ in range(total_percent):
                     random_rank_array.append({
@@ -331,31 +374,38 @@ def Gacha():
                         "index": i
                     })
 
+        # 随机选择一个角色
         random.shuffle(random_rank_array)
         random_rank = random.choice(random_rank_array)
         if json_body['poolId'] != "BOOT_0_1_1" and random_rank['rarityRank'] >= pool['rarity']:
             user_sync_data['gacha'][pool_object_name][pool_id]['avail'] = False
 
+        # 判断是否为六星角色
         if random_rank['rarityRank'] == 5:
             user_sync_data['status']['gachaCount'] = 0
 
+        # 获取角色的id列表
         random_char_array = avail_char_info[random_rank['index']]['charIdList']
 
+        # 计算五星角色的概率
         for up_char in up_char_info:
             if up_char['rarityRank'] == random_rank['rarityRank']:
                 percent = int(up_char['percent'] * 100) - 15
                 for char_id in up_char['charIdList']:
                     random_char_array.extend([char_id] * percent)
 
+        # 随机选择一个角色
         random.shuffle(random_char_array)
         random_char_id = random.choice(random_char_array)
         repeat_char_id = 0
 
+        # 判断是否已经拥有该角色
         for k, char_data in user_sync_data['troop']['chars'].items():
             if char_data['charId'] == random_char_id:
                 repeat_char_id = int(k)
                 break
 
+        # 判断是否为新角色
         if repeat_char_id == 0:
             char_data = {
                 "instId": len(user_sync_data['troop']['chars']) + 1,
@@ -367,13 +417,14 @@ def Gacha():
                 "level": 1,
                 "exp": 0,
                 "evolvePhase": 0,
-                "gainTime": int(datetime.now().timestamp()),
+                "gainTime": int(time),
                 "skills": [],
                 "voiceLan": read_json(CHARWORD_TABLE_URL)['charDefaultTypeDict'][random_char_id],
                 "defaultSkillIndex": 0,
                 "currentEquip": None
             }
 
+            # 获取角色的技能信息
             skills = read_json(CHARACTER_TABLE_URL)[random_char_id]['skills']
             for skill in skills:
                 char_data['skills'].append({
@@ -384,6 +435,7 @@ def Gacha():
                     "unlock": 1 if skill['unlockCond']['phase'] == 0 else 0
                 })
 
+            # 判断是否为特殊角色
             if f"uniequip_001_{random_char_id.split('_')[2]}" in EQUIP_TABLE_URL:
                 equip = {
                     f"uniequip_001_{random_char_id.split('_')[2]}": {"hide": 0, "locked": 0, "level": 1},
@@ -392,22 +444,27 @@ def Gacha():
                 char_data["equip"] = equip
                 char_data["currentEquip"] = f"uniequip_001_{random_char_id.split('_')[2]}"
 
-            user_sync_data['troop']['chars'][char_data['instId']] = char_data
-            user_sync_data['troop']['charGroup'][random_char_id] = {"favorPoint": 0}
-            user_sync_data['building']['chars'][char_data['instId']] = {
-                "charId": random_char_id,
-                "lastApAddTime": int(datetime.now().timestamp()),
-                "ap": 8640000,
-                "roomSlotId": "",
-                "index": -1,
-                "changeScale": 0,
-                "bubble": {
-                    "normal": {"add": -1, "ts": 0},
-                    "assist": {"add": -1, "ts": -1}
-                },
-                "workTime": 0
-            }
+            # 将新角色添加到用户同步数据中（目前用不到）
+            # user_sync_data['troop']['chars'][char_data['instId']] = char_data
+            # user_sync_data['troop']['charGroup'][random_char_id] = {"favorPoint": 0}
+            # user_sync_data['building']['chars'][char_data['instId']] = {
+            #     "charId": random_char_id,
+            #     "lastApAddTime": int(datetime.now().timestamp()),
+            #     "ap": 8640000,
+            #     "roomSlotId": "",
+            #     "index": -1,
+            #     "changeScale": 0,
+            #     "bubble": {
+            #         "normal": {"add": -1, "ts": 0},
+            #         "assist": {"add": -1, "ts": -1}
+            #     },
+            #     "workTime": 0
+            # }
+                
+            # 扣除对应抽卡资源
+            user_sync_data['status'][item_name] -= 1
 
+            # 将新角色添加到结果列表中
             char_get = {
                 "charInstId": char_data['instId'],
                 "charId": random_char_id,
@@ -423,10 +480,12 @@ def Gacha():
             gacha_result_list.append(char_get)
             new_chars.append(char_get)
         else:
+            # 获取已拥有角色的信息
             char_data = user_sync_data['troop']['chars'][str(repeat_char_id)]
             potential_rank = char_data['potentialRank']
             rarity = random_rank['rarityRank']
 
+            # 根据角色星级获取奖励
             item_name = item_type = item_id = None
             item_count = 0
             if rarity == 0:
@@ -442,7 +501,15 @@ def Gacha():
             elif rarity == 5:
                 item_name, item_type, item_id, item_count = "diamondShard", "DIAMOND_SHARD", "4001", 50
 
-            user_sync_data['status'][item_name] += item_count
+            # 将奖励添加到用户同步数据中
+            # user_sync_data['status'][item_name] += item_count
+
+            # 扣除对应消耗的抽卡资源（目前用不到）
+            # if use_tkt in [1, 2, 6, 7]:
+            #     user_sync_data['status'][ticket_type] -= 1
+            # else:
+            #     user_sync_data['status']["diamondShard"] -= use_diamond_shard
+
             char_get = {
                 "charInstId": repeat_char_id,
                 "charId": random_char_id,
@@ -455,6 +522,7 @@ def Gacha():
             }
             gacha_result_list.append(char_get)
 
+    # 返回结果
     return {
         "result": 0,
         "data": {
