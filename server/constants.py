@@ -64,3 +64,6 @@ REPGOODLIST_PATH = "data/shop/RepGoodList.json"
 SKINGOODLIST_PATH = "data/shop/SkinGoodList.json"
 SOCIALGOODLIST_PATH = "data/shop/SocialGoodList.json"
 CLASSICGOODLIST_PATH = "data/shop/ClassicGoodList.json"
+
+# Activity Shop Data
+TEMPLATEGOODLIST_PATH = "data/shop/templateGoodList.json"

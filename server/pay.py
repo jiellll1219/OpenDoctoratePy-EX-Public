@@ -1,11 +1,10 @@
 from flask import request
 from utils import read_json, write_json
 from datetime import datetime, timezone
-from constants import SYNC_DATA_TEMPLATE_PATH, GPGOODLIST_PATH
 from admin.GiveItem import GiveItem
 import json
 
-from constants import ALLPRODUCTLIST_PATH, CASHGOODLIST_PATH
+from constants import ALLPRODUCTLIST_PATH, CASHGOODLIST_PATH, SYNC_DATA_TEMPLATE_PATH, GPGOODLIST_PATH
 
 timestamp = datetime.now(timezone.utc).isoformat()
 

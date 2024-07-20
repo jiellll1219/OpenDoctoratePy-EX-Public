@@ -1,0 +1,16 @@
+{
+    "data":{
+        "shopId": "",
+        "shopName": "",
+        "type":"",
+        "price": {
+            "id": "",
+            "count": 0,
+            "type": ""
+        },
+        "playerDataDelta": {
+            "modified": {},
+            "deleted": {}
+        }
+    }
+}

@@ -1,7 +1,15 @@
 from flask import request
 from virtualtime import time
 
-from constants import NORMALGACHA_PATH, SYNC_DATA_TEMPLATE_PATH, USER_JSON_PATH, EQUIP_TABLE_URL, CHARACTER_TABLE_URL, CHARWORD_TABLE_URL, GACHA_TEMP_JSON_PATH
+from constants import (
+    NORMALGACHA_PATH, 
+    SYNC_DATA_TEMPLATE_PATH, 
+    USER_JSON_PATH, 
+    EQUIP_TABLE_URL, 
+    CHARACTER_TABLE_URL, 
+    CHARWORD_TABLE_URL, 
+    EX_CONFIG_PATH
+)
 from utils import read_json, write_json
 
 import json
@@ -142,7 +150,8 @@ def finishNormalGacha():
         char_group = {"favorPoint": 0}  # 角色分组
         sync_data_template = read_json(SYNC_DATA_TEMPLATE_PATH)
         sync_data_template["troop"]["charGroup"][random_char_id] = char_group  # 更新玩家角色组
-        write_json(sync_data_template, SYNC_DATA_TEMPLATE_PATH)
+        if EX_CONFIG_PATH["gacha"]["saveCharacter"] == True:
+            write_json(sync_data_template, SYNC_DATA_TEMPLATE_PATH) # 更新同步数据
 
         building_char = {
             "charId": random_char_id,
@@ -163,7 +172,8 @@ def finishNormalGacha():
         is_new = 1  # 是新角色
         user_json_path = read_json(USER_JSON_PATH)
         user_json_path["status"]["hggShard"] += 1  # 更新玩家状态
-        write_json(USER_JSON_PATH, user_json_path)
+        if EX_CONFIG_PATH["gacha"]["saveCharacter"] == True:
+            write_json(USER_JSON_PATH, user_json_path)
     else:
         repeat_char = chars[str(repeat_char_id)]  # 重复角色
         potential_rank = repeat_char["potentialRank"]  # 潜能等级
@@ -195,7 +205,8 @@ def finishNormalGacha():
         user_json_path = read_json(USER_JSON_PATH)
         user_json_path["status"][item_name] += item_count  # 更新玩家状态
         user_json_path["inventory"][f"p_{random_char_id}"] += 1  # 更新玩家库存
-        write_json(USER_JSON_PATH, user_json_path)
+        if EX_CONFIG_PATH["gacha"]["saveCharacter"] == True:
+            write_json(USER_JSON_PATH, user_json_path) # 保存玩家数据
 
         chars[str(repeat_char_id)] = repeat_char  # 更新角色数据
 
@@ -262,15 +273,12 @@ def tenAdvancedGacha():
 
 def Gacha(ticket_type, use_diamond_shard, json_body):
 
-    # 解析请求中的json数据
-    use_diamond_shard = json_body["useDiamondShard"]
-
     # 读取用户同步数据
     user_sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
     pool_id = json_body['poolId']
     pool_path = os.path.join(os.getcwd(), 'data', 'gacha', f'{pool_id}.json')
 
-    # 获取是否使用寻访凭证
+    # 获取使用的寻访凭证的类型编号
     use_tkt = json_body['useTkt']
 
     # 判断当前干员寻访是否可以使用
@@ -293,7 +301,6 @@ def Gacha(ticket_type, use_diamond_shard, json_body):
 
     # 计算使用的合成玉数量
     if json_body['poolId'].startswith("BOOT"):
-
         used_diammond = use_diamond_shard // 380    #used_diamond为抽卡次数
     else:
         used_diammond = use_diamond_shard // 600
@@ -444,25 +451,22 @@ def Gacha(ticket_type, use_diamond_shard, json_body):
                 char_data["equip"] = equip
                 char_data["currentEquip"] = f"uniequip_001_{random_char_id.split('_')[2]}"
 
-            # 将新角色添加到用户同步数据中（目前用不到）
-            # user_sync_data['troop']['chars'][char_data['instId']] = char_data
-            # user_sync_data['troop']['charGroup'][random_char_id] = {"favorPoint": 0}
-            # user_sync_data['building']['chars'][char_data['instId']] = {
-            #     "charId": random_char_id,
-            #     "lastApAddTime": int(datetime.now().timestamp()),
-            #     "ap": 8640000,
-            #     "roomSlotId": "",
-            #     "index": -1,
-            #     "changeScale": 0,
-            #     "bubble": {
-            #         "normal": {"add": -1, "ts": 0},
-            #         "assist": {"add": -1, "ts": -1}
-            #     },
-            #     "workTime": 0
-            # }
-                
-            # 扣除对应抽卡资源
-            user_sync_data['status'][item_name] -= 1
+            # 将新角色添加到用户同步数据中
+            user_sync_data['troop']['chars'][char_data['instId']] = char_data
+            user_sync_data['troop']['charGroup'][random_char_id] = {"favorPoint": 0}
+            user_sync_data['building']['chars'][char_data['instId']] = {
+                "charId": random_char_id,
+                "lastApAddTime": int(time),
+                "ap": 8640000,
+                "roomSlotId": "",
+                "index": -1,
+                "changeScale": 0,
+                "bubble": {
+                    "normal": {"add": -1, "ts": 0},
+                    "assist": {"add": -1, "ts": -1}
+                },
+                "workTime": 0
+            }
 
             # 将新角色添加到结果列表中
             char_get = {
@@ -501,15 +505,6 @@ def Gacha(ticket_type, use_diamond_shard, json_body):
             elif rarity == 5:
                 item_name, item_type, item_id, item_count = "diamondShard", "DIAMOND_SHARD", "4001", 50
 
-            # 将奖励添加到用户同步数据中
-            # user_sync_data['status'][item_name] += item_count
-
-            # 扣除对应消耗的抽卡资源（目前用不到）
-            # if use_tkt in [1, 2, 6, 7]:
-            #     user_sync_data['status'][ticket_type] -= 1
-            # else:
-            #     user_sync_data['status']["diamondShard"] -= use_diamond_shard
-
             char_get = {
                 "charInstId": repeat_char_id,
                 "charId": random_char_id,
@@ -521,6 +516,20 @@ def Gacha(ticket_type, use_diamond_shard, json_body):
                 }]
             }
             gacha_result_list.append(char_get)
+        
+    # 将奖励添加到用户同步数据中
+    user_sync_data['status'][item_name] += item_count
+
+    # 扣除对应消耗的抽卡资源
+    if EX_CONFIG_PATH["gacha"]["isFree"] == False:
+        if use_tkt in [1, 2, 6, 7] and user_sync_data['status'][ticket_type] >= used_diammond:
+            user_sync_data['status'][ticket_type] -= used_diammond
+        else:
+            user_sync_data['status']["diamondShard"] -= use_diamond_shard
+
+    if EX_CONFIG_PATH["gacha"]["saveCharacter"] == True:
+        write_json(user_sync_data, USER_JSON_PATH)
+
 
     # 返回结果
     return {

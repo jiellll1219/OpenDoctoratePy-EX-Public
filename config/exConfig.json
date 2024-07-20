@@ -1,3 +1,7 @@
 {
-    "virtualtime": -114514
+    "virtualtime": -114514,
+    "gachaInfo": {
+        "isFree": false,
+        "saveCharacter": true
+    }
 }

@@ -9,7 +9,7 @@ from constants import CONFIG_PATH
 
 import account, background, building, campaignV2, char, charBuild, charm, \
         crisis, deepsea, gacha, mail, online, tower, quest, pay, rlv2, shop, story, \
-        user, asset.assetbundle, config.prod, social
+        user, asset.assetbundle, config.prod, social, templateShop
 
 server_config = read_json(CONFIG_PATH)
 
@@ -149,6 +149,9 @@ app.add_url_rule('/shop/buyExtraGood', methods=['POST'], view_func=shop.buyExtra
 app.add_url_rule('/shop/buyClassicGood', methods=['POST'], view_func=shop.buyClassicGood)
 app.add_url_rule('/shop/buyFurniGood', methods=['POST'], view_func=shop.buyFurniGood)
 app.add_url_rule('/shop/buyFurniGroup', methods=['POST'], view_func=shop.buyFurniGroup)
+
+app.add_url_rule("/templateShop/getGoodList", methods = ["POST"], view_func = templateShop.getGoodList)
+app.add_url_rule("/templateShop/buyGood", methods = ["POST"], view_func = templateShop.buyGood)
 
 app.add_url_rule('/story/finishStory', methods=['POST'], view_func=story.storyFinishStory)
 app.add_url_rule('/quest/finishStoryStage', methods=['POST'], view_func=story.storyFinishStory)
