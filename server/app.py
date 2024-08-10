@@ -9,7 +9,7 @@ from constants import CONFIG_PATH
 
 import account, background, building, campaignV2, char, charBuild, charm, \
         crisis, deepsea, gacha, mail, online, tower, quest, pay, rlv2, shop, story, \
-        user, asset.assetbundle, config.prod, social, templateShop
+        user, asset.assetbundle, config.prod, social, templateShop, logs
 
 server_config = read_json(CONFIG_PATH)
 
@@ -214,6 +214,12 @@ app.add_url_rule('/gacha/finishNormalGacha', methods=['POST'], view_func=gacha.f
 app.add_url_rule('/gacha/getPoolDetail', methods=['POST'], view_func=gacha.getPoolDetail)
 app.add_url_rule('/gacha/advancedGacha', methods=['POST'], view_func=gacha.advancedGacha)
 app.add_url_rule('/gahca/tenAdvancedGacha', methods=['POST'], view_func=gacha.tenAdvancedGacha)
+
+app.add_url_rule("/iedsafe/Client/android/19791/config2.xml", methods = ["GET"], view_func = logs.anticheat)
+app.add_url_rule("/event", methods = ["POST"], view_func = logs.event)
+app.add_url_rule("/batch_event", methods = ["POST"], view_func = logs.batch_event)
+app.add_url_rule("/beat", methods = ["POST"], view_func = logs.beat)
+app.add_url_rule("/account/syncPushMessage", methods = ["POST"], view_func = account.syncPushMessage)
 
 def writeLog(data):
     print(f'[{datetime.utcnow()}] {data}')

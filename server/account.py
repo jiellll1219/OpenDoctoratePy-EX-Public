@@ -572,3 +572,12 @@ def accountYostarAuthSubmit():
     }
 
     return data
+
+def syncPushMessage():
+
+    # 数据同步参数，不做处理
+
+    return {
+        "code": 200,
+        "msg": "OK",
+    }
