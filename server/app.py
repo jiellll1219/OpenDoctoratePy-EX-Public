@@ -9,7 +9,7 @@ from constants import CONFIG_PATH
 
 import account, background, building, campaignV2, char, charBuild, charm, \
         crisis, deepsea, gacha, mail, online, tower, quest, pay, rlv2, shop, story, \
-        user, asset.assetbundle, config.prod, social, templateShop, logs
+        user, asset.assetbundle, config.prod, social, templateShop, logs, sandbox
 
 server_config = read_json(CONFIG_PATH)
 
@@ -220,6 +220,17 @@ app.add_url_rule("/event", methods = ["POST"], view_func = logs.event)
 app.add_url_rule("/batch_event", methods = ["POST"], view_func = logs.batch_event)
 app.add_url_rule("/beat", methods = ["POST"], view_func = logs.beat)
 app.add_url_rule("/account/syncPushMessage", methods = ["POST"], view_func = account.syncPushMessage)
+
+app.add_url_rule("/sandboxPerm/sandboxV2/createGame", methods = ["POST"], view_func = sandbox.createGame)
+app.add_url_rule("/sandboxPerm/sandboxV2/battleStart", methods = ["POST"], view_func = sandbox.battleStart)
+app.add_url_rule("/sandboxPerm/sandboxV2/battleFinish", methods = ["POST"], view_func = sandbox.battleFinish)
+app.add_url_rule("/sandboxPerm/sandboxV2/eatFood", methods = ["POST"], view_func = sandbox.eatFood)
+app.add_url_rule("/sandboxPerm/sandboxV2/setSquad", methods = ["POST"], view_func = sandbox.setSquad)
+app.add_url_rule("/sandboxPerm/sandboxV2/settleGame", methods = ["POST"], view_func = sandbox.settleGame)
+app.add_url_rule("/sandboxPerm/sandboxV2/homeBuildSave", methods = ["POST"], view_func = sandbox.homeBuildSave)
+app.add_url_rule("/sandboxPerm/sandboxV2/exploreMode", methods = ["POST"], view_func = sandbox.exploreMode)
+app.add_url_rule("/sandboxPerm/sandboxV2/monthBattleStart", methods = ["POST"], view_func = sandbox.monthBattleStart)
+app.add_url_rule("/sandboxPerm/sandboxV2/monthBattleFinish", methods = ["POST"], view_func = sandbox.monthBattleFinish)
 
 def writeLog(data):
     print(f'[{datetime.utcnow()}] {data}')

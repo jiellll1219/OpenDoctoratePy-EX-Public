@@ -1,14 +1,6 @@
-from flask import Response, request
-from datetime import datetime
-from utils import write_json, read_json
-from constants import USER_JSON_PATH
-import gzip
-import json
+from flask import Response
 
 def anticheat():
-
-    # 获取当前的GMT时间
-    date_time = datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S GMT')
 
     # XML内容
     xml_content = '''
@@ -35,9 +27,7 @@ def anticheat():
     response = Response(xml_content, content_type='application/xml')
     
     # 添加HTTP头信息
-    response.headers['Date'] = date_time
     response.headers['Content-Length'] = str(len(xml_content))
-    response.headers['Connection'] = 'keep-alive'
     response.headers['Accept-Ranges'] = 'bytes'
     response.headers['ETag'] = '"26c70887ede81610f1b93be458c472c5"'
     response.headers['Last-Modified'] = 'Thu, 08 Dec 2022 03:06:00 GMT'
@@ -58,19 +48,22 @@ def event():
     return {
         "code": 200,
         "msg": "OK",
-        "next": 180
     }
     
 def batch_event():
 
-    return {
-        "code": 200,
-        "msg": "OK",
+    {
+    "code": 200,
+    "msg": "OK",
+    "next": 180
     }
 
 def beat():
 
-    return {
-        "code": 200,
-        "msg": "OK",
+    # 来自bi-track.hypergryph.com:443 101.132.113.1:443
+
+    {
+    "code": 200,
+    "msg": "ok",
+    "next": 257
     }

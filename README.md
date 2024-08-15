@@ -19,6 +19,14 @@
 | 生息演算 | 正在研究 |  |  |
 | 好友 | 正在研究 |  |  |
 
+## data数据结构说明
+
+本项目部分数据的存放结构参考了 [LocalArknight](https://github.com/jiellll1219/LocalArknight)
+
+详细的文件结构与相关文件请查看此仓库 [LocalArknight-res](https://github.com/jiellll1219/LocalArknight-res)
+
+Tips：如果你的user.json数据缺失，可参考 [LocalArknight](https://github.com/jiellll1219/LocalArknight) 项目的user数据，例如shop、skin等
+
 ## EX_Config参数说明
 
 ### virtualtime
@@ -36,6 +44,16 @@ isFree控制抽卡是否消耗资源，但抽卡时仍需拥有足够资源才�
 saveCharacter控制是否保存抽取角色
 
 ## 更新日志
+
+- 2024 年 8 月 27 日
+
+    修复：来自issues [关于商店购买东西出错 #2](https://github.com/jiellll1219/OpenDoctoratePy-EX-Public/issues/2) 关于shop购买部分的报告
+
+- 2024 年 8 月 15 日
+
+    添加：sandbox框架搭建
+
+    修改： 游戏日志上报处理代码简化
 
 - 2024 年 8 月 10 日
 
