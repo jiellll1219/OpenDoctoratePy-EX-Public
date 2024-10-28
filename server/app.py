@@ -129,6 +129,7 @@ app.add_url_rule('/rlv2/moveTo', methods=['POST'], view_func=rlv2.rlv2MoveTo)
 app.add_url_rule('/rlv2/buyGoods', methods=['POST'], view_func=rlv2.rlv2BuyGoods)
 app.add_url_rule('/rlv2/leaveShop', methods=['POST'], view_func=rlv2.rlv2LeaveShop)
 app.add_url_rule('/rlv2/chooseBattleReward', methods=['POST'], view_func=rlv2.rlv2ChooseBattleReward)
+app.add_url_rule("/rlv2/shopAction", methods = ["POST"], view_func = rlv2.rlv2shopAction)
 
 app.add_url_rule('/shop/getGoodPurchaseState', methods=['POST'], view_func=shop.getGoodPurchaseState)
 app.add_url_rule('/shop/getCashGoodList', methods=['POST'], view_func=shop.getCashGoodList)

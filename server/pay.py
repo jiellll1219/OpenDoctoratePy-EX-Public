@@ -52,9 +52,9 @@ def queryshowappproduct():
     result = {
         "data": {
             "amount": 114514,
-            "productName": "开采源石"
+            "productName": "开采一箱源石"
         },
-        "isBox": True,
+        "isBox": False,
         "msg": "OK",
         "type": "A",
         "status": 0
@@ -130,17 +130,19 @@ def wechat():
 def state():
 
     result = {
+        "status": 101,
+        "msg": "支付成功",
         "data": {
-            "pc": 1,
-            "createtime": time,
-            "productName": "开采源石",
-            "amount": 114514,
-            "productType": 2,
-            "appCode": "7318def77669979d"
-        },
-        "msg": "已支付",
-        "status": 116,
-        "type": "A"
+            "endTime": time() - 10,
+            "productList": [
+                {
+                    "name": "开采一箱源石",
+                    "amount": 6480,
+                    "productCode": "CS_6_r1",
+                    "status": 1
+                }
+            ]
+        }
     }
 
     return result

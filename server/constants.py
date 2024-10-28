@@ -17,6 +17,8 @@ USER_JSON_PATH = "data/user/user.json"
 BATTLE_REPLAY_JSON_PATH = "data/user/battleReplays.json"
 RLV2_JSON_PATH = "data/user/rlv2.json"
 RLV2_TEMPBUFF_JSON_PATH = "data/user/rlv2TempBuffs.json"
+RLV2_USER_SETTINGS_PATH = "data/user/rlv2UserSettings.json"
+RLV2_SETTINGS_PATH = "data/user/rlv2Settings.json"
 CRISIS_JSON_BASE_PATH = "data/crisis/"
 RUNE_JSON_PATH = "data/user/rune.json"
 
