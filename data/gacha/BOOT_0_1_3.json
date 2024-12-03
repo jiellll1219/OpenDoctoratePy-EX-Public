@@ -1,8 +1,10 @@
 {
     "detailInfo": {
+        "gachaObjGroups": null,
         "availCharInfo": {
             "perAvailList": [
                 {
+                    "rarityRank": 5,
                     "charIdList": [
                         "char_172_svrash",
                         "char_103_angel",
@@ -11,10 +13,10 @@
                         "char_202_demkni",
                         "char_017_huang"
                     ],
-                    "rarityRank": 5,
                     "totalPercent": 0.02
                 },
                 {
+                    "rarityRank": 4,
                     "charIdList": [
                         "char_204_platnm",
                         "char_128_plosis",
@@ -33,10 +35,10 @@
                         "char_436_whispr",
                         "char_143_ghost"
                     ],
-                    "rarityRank": 4,
                     "totalPercent": 0.08
                 },
                 {
+                    "rarityRank": 3,
                     "charIdList": [
                         "char_141_nights",
                         "char_109_fmout",
@@ -56,10 +58,10 @@
                         "char_110_deepcl",
                         "char_183_skgoat"
                     ],
-                    "rarityRank": 3,
                     "totalPercent": 0.5
                 },
                 {
+                    "rarityRank": 2,
                     "charIdList": [
                         "char_123_fang",
                         "char_240_wyvern",
@@ -74,52 +76,50 @@
                         "char_210_stward",
                         "char_278_orchid"
                     ],
-                    "rarityRank": 2,
                     "totalPercent": 0.4
                 }
             ]
         },
         "upCharInfo": null,
-        "weightUpCharInfoList": null,
         "limitedChar": null,
+        "weightUpCharInfoList": null,
         "gachaObjList": [
             {
-                "gachaObject": 0,
+                "gachaObject": "TEXT",
                 "type": 3,
                 "imageType": 0,
                 "param": "卡池干员列表"
             },
             {
-                "gachaObject": 0,
+                "gachaObject": "TEXT",
                 "type": 4,
                 "imageType": 0,
                 "param": "只包含为新人特别挑选的干员"
             },
             {
-                "gachaObject": 0,
+                "gachaObject": "TEXT",
                 "type": 1,
                 "imageType": 0,
                 "param": "全部可能出现的干员"
             },
             {
-                "gachaObject": 2,
+                "gachaObject": "AVAIL_CHAR",
                 "type": 0,
                 "imageType": 0,
                 "param": null
             },
             {
-                "gachaObject": 0,
+                "gachaObject": "TEXT",
                 "type": 3,
                 "imageType": 0,
                 "param": "该寻访为【新人特惠寻访】"
             },
             {
-                "gachaObject": 0,
+                "gachaObject": "TEXT",
                 "type": 5,
                 "imageType": 0,
                 "param": "<@ga.nbGacha>【新人特惠寻访】</>中，每次寻访的价格低于<@ga.adGacha>【标准寻访】</>，能够获得的干员为特别指定，如上所列。"
             }
-        ],
-        "gachaObjGroupType": 0
+        ]
     }
 }

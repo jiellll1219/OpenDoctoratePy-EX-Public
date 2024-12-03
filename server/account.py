@@ -6,10 +6,25 @@ from base64 import b64encode
 from hashlib import md5
 from flask import request
 
-from constants import USER_JSON_PATH, CONFIG_PATH, BATTLE_REPLAY_JSON_PATH, \
-                    SKIN_TABLE_URL, CHARACTER_TABLE_URL, EQUIP_TABLE_URL, STORY_TABLE_URL, STAGE_TABLE_URL, \
-                    SYNC_DATA_TEMPLATE_PATH, BATTLEEQUIP_TABLE_URL, DM_TABLE_URL, RETRO_TABLE_URL, \
-                    HANDBOOK_INFO_TABLE_URL, MAILLIST_PATH, CHARM_TABLE_URL, ACTIVITY_TABLE_URL, SQUADS_PATH
+from constants import (
+    USER_JSON_PATH,
+    CONFIG_PATH,
+    BATTLE_REPLAY_JSON_PATH,
+    SKIN_TABLE_PATH,
+    CHARACTER_TABLE_PATH,
+    EQUIP_TABLE_PATH,
+    STORY_TABLE_PATH,
+    STAGE_TABLE_PATH,
+    SYNC_DATA_TEMPLATE_PATH,
+    BATTLEEQUIP_TABLE_PATH,
+    DM_TABLE_PATH,
+    RETRO_TABLE_PATH,
+    HANDBOOK_INFO_TABLE_PATH,
+    MAILLIST_PATH,
+    CHARM_TABLE_PATH,
+    ACTIVITY_TABLE_PATH,
+    SQUADS_PATH
+)
 from utils import read_json, write_json
 from core.function.update import updateData
 import uuid
@@ -39,19 +54,21 @@ def accountSyncData():
         write_json({}, USER_JSON_PATH)
 
     saved_data = read_json(USER_JSON_PATH)
-    mail_data = read_json(MAILLIST_PATH, encoding="utf-8")
-    player_data = read_json(SYNC_DATA_TEMPLATE_PATH, encoding="utf-8")
+    mail_data = read_json(MAILLIST_PATH,
+    encoding="utf-8")
+    player_data = read_json(SYNC_DATA_TEMPLATE_PATH,
+    encoding="utf-8")
     config = read_json(CONFIG_PATH)
 
     # Load newest data
-    data_skin = updateData(SKIN_TABLE_URL)
-    character_table = updateData(CHARACTER_TABLE_URL)
-    equip_table = updateData(EQUIP_TABLE_URL)
-    battle_equip_table = updateData(BATTLEEQUIP_TABLE_URL)
-    display_meta_table = updateData(DM_TABLE_URL)
-    retro_table = updateData(RETRO_TABLE_URL)
-    charm_table = updateData(CHARM_TABLE_URL)
-    activity_table = updateData(ACTIVITY_TABLE_URL)
+    data_skin = updateData(SKIN_TABLE_PATH)
+    character_table = updateData(CHARACTER_TABLE_PATH)
+    equip_table = updateData(EQUIP_TABLE_PATH)
+    battle_equip_table = updateData(BATTLEEQUIP_TABLE_PATH)
+    display_meta_table = updateData(DM_TABLE_PATH)
+    retro_table = updateData(RETRO_TABLE_PATH)
+    charm_table = updateData(CHARM_TABLE_PATH)
+    activity_table = updateData(ACTIVITY_TABLE_PATH)
 
     ts = round(time())
     cnt = 0
@@ -286,7 +303,7 @@ def accountSyncData():
 
     # Tamper story
     myStoryList = {"init": 1}
-    story_table = updateData(STORY_TABLE_URL)
+    story_table = updateData(STORY_TABLE_PATH)
     for story in story_table:
         myStoryList.update({story:1})
 
@@ -294,7 +311,7 @@ def accountSyncData():
 
     # Tamper Stages
     myStageList = {}
-    stage_table = updateData(STAGE_TABLE_URL)
+    stage_table = updateData(STAGE_TABLE_PATH)
     for stage in stage_table["stages"]:
         myStageList.update({
             stage: {
@@ -312,7 +329,7 @@ def accountSyncData():
 
     # Tamper addon [paradox&records]
     addonList = {}
-    addon_table = updateData(HANDBOOK_INFO_TABLE_URL)
+    addon_table = updateData(HANDBOOK_INFO_TABLE_PATH)
     for charId in addon_table["handbookDict"]:
         addonList[charId] = {"story":{}}
         story = addon_table["handbookDict"][charId]["handbookAvgList"]

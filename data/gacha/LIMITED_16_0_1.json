@@ -1,8 +1,10 @@
 {
     "detailInfo": {
+        "gachaObjGroups": null,
         "availCharInfo": {
             "perAvailList": [
                 {
+                    "rarityRank": 5,
                     "charIdList": [
                         "char_103_angel",
                         "char_112_siege",
@@ -37,10 +39,10 @@
                         "char_264_f12yin",
                         "char_332_archet"
                     ],
-                    "rarityRank": 5,
                     "totalPercent": 0.02
                 },
                 {
+                    "rarityRank": 4,
                     "charIdList": [
                         "char_128_plosis",
                         "char_115_headbr",
@@ -95,10 +97,10 @@
                         "char_214_kafka",
                         "char_338_iris"
                     ],
-                    "rarityRank": 4,
                     "totalPercent": 0.08
                 },
                 {
+                    "rarityRank": 3,
                     "charIdList": [
                         "char_141_nights",
                         "char_109_fmout",
@@ -140,10 +142,10 @@
                         "char_440_pinecn",
                         "char_452_bstalk"
                     ],
-                    "rarityRank": 3,
                     "totalPercent": 0.5
                 },
                 {
+                    "rarityRank": 2,
                     "charIdList": [
                         "char_123_fang",
                         "char_240_wyvern",
@@ -162,7 +164,6 @@
                         "char_284_spot",
                         "char_281_popka"
                     ],
-                    "rarityRank": 2,
                     "totalPercent": 0.4
                 }
             ]
@@ -170,72 +171,77 @@
         "upCharInfo": {
             "perCharList": [
                 {
+                    "rarityRank": 5,
                     "charIdList": [
                         "char_2014_nian",
                         "char_225_haak"
                     ],
-                    "count": 2,
                     "percent": 0.35,
-                    "rarityRank": 5
+                    "count": 2
                 },
                 {
+                    "rarityRank": 4,
                     "charIdList": [
                         "char_226_hmau"
                     ],
-                    "count": 1,
                     "percent": 0.5,
-                    "rarityRank": 4
+                    "count": 1
                 }
             ]
         },
-        "weightUpCharInfoList": [],
         "limitedChar": [
             "char_2014_nian"
         ],
+        "weightUpCharInfoList": [],
         "gachaObjList": [
             {
-                "gachaObject": 0,
+                "gachaObject": "TEXT",
                 "type": 0,
                 "imageType": 0,
                 "param": "卡池干员列表"
             },
             {
-                "gachaObject": 0,
+                "gachaObject": "RATE_UP_6",
+                "type": 0,
+                "imageType": 0,
+                "param": "限定寻访"
+            },
+            {
+                "gachaObject": "TEXT",
                 "type": 2,
                 "imageType": 0,
                 "param": "出现概率上升"
             },
             {
-                "gachaObject": 5,
+                "gachaObject": "UP_CHAR_WITH_LIMIT",
                 "type": 0,
                 "imageType": 0,
                 "param": null
             },
             {
-                "gachaObject": 0,
+                "gachaObject": "TEXT",
                 "type": 1,
                 "imageType": 0,
                 "param": "全部可能出现的干员"
             },
             {
-                "gachaObject": 2,
+                "gachaObject": "AVAIL_CHAR",
                 "type": 0,
                 "imageType": 0,
                 "param": null
             },
             {
-                "gachaObject": 0,
+                "gachaObject": "TEXT",
                 "type": 0,
                 "imageType": 0,
                 "param": "该寻访为【限定寻访】"
             },
             {
-                "gachaObject": 0,
+                "gachaObject": "TEXT",
                 "type": 5,
                 "imageType": 0,
                 "param": "【地生五金】为<@limtedGa.21>【限定寻访·春节】</>系列寻访。\n<@limtedGa.21>【限定寻访·春节】</>寻访为<@limtedGa.21>【限定寻访】</>。\n在所有<@limtedGa.21>【限定寻访】</>中，如果连续<@limtedGa.percent>50</>次没有获得6星干员，则下一次获得6星干员的概率将从原本的<@limtedGa.percent>2%</>提升至<@limtedGa.percent>4%</>，如果该次还没有寻访到6星干员，则下一次寻访获得6星的概率由<@limtedGa.percent>4%</>提升到<@limtedGa.percent>6%</>。依此类推，每次提高<@limtedGa.percent>2%</>获得6星干员的概率，直至达到<@limtedGa.percent>100%</>时必定获得6星干员。\n在任意两个不同的<@limtedGa.21>【限定寻访】</>中，没有获得6星干员的累计次数不会累计，该次数会因为<@limtedGa.21>【限定寻访】</>的结束而清零。因为累计次数而增加的获得概率，不会应用于接下来任意一次<@limtedGa.21>【限定寻访】</>。\n在所有<@limtedGa.21>【限定寻访】</>中，每进行一次寻访，可获取一张<@limtedGa.attention>【寻访数据契约】</>，寻访十次则可获取十张<@limtedGa.attention>【寻访数据契约】</>，<@limtedGa.attention>【寻访数据契约】</>可用于当期<@limtedGa.attention>【寻访数据契约交换所】</>兑换指定干员。\n<@limtedGa.attention>【注意1】</>任何时候在<@limtedGa.21>【限定寻访】</>中获得一位6星干员，则下一次在<@limtedGa.21>【限定寻访】</>中获得6星干员的概率将恢复到<@limtedGa.percent>2%</>。\n<@limtedGa.attention>【注意2】</>在当期<@limtedGa.21>【限定寻访】</>中所获得的<@limtedGa.attention>【寻访数据契约】</>存在使用期限。在当期<@limtedGa.attention>【寻访数据契约交换所】</>关闭后，剩余未兑换的<@limtedGa.attention>【寻访数据契约】</>将会被自动兑换成<@limtedGa.lAttention>【寻访参数模型】</>，每张<@limtedGa.attention>【寻访数据契约】</>自动兑换成六张<@limtedGa.lAttention>【寻访参数模型】</>。<@limtedGa.lAttention>【寻访参数模型】</>不存在使用期限，可用于<@limtedGa.lAttention>【寻访参数模型交换所】</>兑换指定物品。"
             }
-        ],
-        "gachaObjGroupType": 0
+        ]
     }
 }

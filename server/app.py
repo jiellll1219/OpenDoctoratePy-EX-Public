@@ -49,6 +49,8 @@ app.add_url_rule('/bulding/deliveryBatchOrder',methods=['POST'], view_func=build
 app.add_url_rule('/building/cleanRoomSlot', methods=['POST'], view_func=building.CleanRoomSlot)
 app.add_url_rule('/building/getAssistReport', methods=['POST'], view_func=building.getAssistReport)
 app.add_url_rule('/building/setBuildingAssist', methods=['POST'], view_func=building.setBuildingAssist)
+app.add_url_rule("/building/degradeRoom", methods=["POST"], view_func=building.changRoomLevel)
+app.add_url_rule("/building/upgradeRoom", methods=["POST"], view_func=building.changRoomLevel)
 
 app.add_url_rule('/campaignV2/battleStart', methods=['POST'], view_func=campaignV2.campaignV2BattleStart)
 app.add_url_rule('/campaignV2/battleFinish', methods=['POST'], view_func=campaignV2.campaignV2BattleFinish)
@@ -215,6 +217,10 @@ app.add_url_rule('/gacha/finishNormalGacha', methods=['POST'], view_func=gacha.f
 app.add_url_rule('/gacha/getPoolDetail', methods=['POST'], view_func=gacha.getPoolDetail)
 app.add_url_rule('/gacha/advancedGacha', methods=['POST'], view_func=gacha.advancedGacha)
 app.add_url_rule('/gahca/tenAdvancedGacha', methods=['POST'], view_func=gacha.tenAdvancedGacha)
+app.add_url_rule("/gacha", methods = ["GET"], view_func = gacha.gacha)
+app.add_url_rule("/api/gacha/cate", methods = ["GET"], view_func = gacha.cate)
+app.add_url_rule("/api/is/rogue_1/bulletinVersion", methods = ["GET"], view_func = gacha.bulletinVersion)
+app.add_url_rule("/api/gacha/history", methods = ["GET"], view_func = gacha.history)
 
 app.add_url_rule("/iedsafe/Client/android/19791/config2.xml", methods = ["GET"], view_func = logs.anticheat)
 app.add_url_rule("/event", methods = ["POST"], view_func = logs.event)

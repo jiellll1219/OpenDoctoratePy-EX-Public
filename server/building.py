@@ -93,7 +93,7 @@ def ChangeDiySolution():
     roomSlotId = json_body["roomSlotId"]
     solution = json_body["solution"]
 
-    user_sync_data = SYNC_DATA_TEMPLATE_PATH
+    user_sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
 
     dormitory = user_sync_data["user"]["building"]["rooms"]["DORMITORY"]
     dormitory[roomSlotId]["diySolution"] = solution
@@ -122,7 +122,7 @@ def ChangeManufactureSolution():
     roomSlotId = str(json_body["roomSlotId"])
     target_FormulaId = str(json_body["targetFormulaId"])
     solution_count = str(json_body["solutionCount"])
-    user_sync_data = SYNC_DATA_TEMPLATE_PATH
+    user_sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
 
     outputSolutionCnt = user_sync_data["user"]['building']['rooms']['MANUFACTURE'][roomSlotId]['outputSolutionCnt']
     FormulaId = user_sync_data["user"]['building']['rooms']['MANUFACTURE'][roomSlotId]['formulaId']
@@ -193,7 +193,7 @@ def SettleManufacture():
 
     json_body = json.loads(request.data)
     roomSlotId = json_body["roomSlotId"]
-    user_sync_data = SYNC_DATA_TEMPLATE_PATH
+    user_sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
 
     outputSolutionCnt = user_sync_data["user"]["building"]["rooms"]["MANUFACTURE"][roomSlotId]["outputSolutionCnt"]
     FormulaId = user_sync_data["user"]["building"]["rooms"]["MANUFACTURE"][roomSlotId]["formulaId"]
@@ -263,7 +263,7 @@ def WorkshopSynthesis():
     roomSlotId = json_body["roomSlotId"]
     work_count = json_body["times"]
 
-    user_sync_data = SYNC_DATA_TEMPLATE_PATH
+    user_sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
     workshop_formulas = user_sync_data["user"]["building"]["rooms"]["MANUFACTURE"][roomSlotId]["formulaId"]
 
     costs = workshop_formulas["costs"]
@@ -319,7 +319,7 @@ def DeliveryOrder():
     slotId = json_body["slotId"]
     orderId = json_body["orderId"]
 
-    user_sync_data = SYNC_DATA_TEMPLATE_PATH
+    user_sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
 
     gold_num = user_sync_data["user"]["building"]["rooms"]["TRADING"][slotId]["stock"]["count"]
 
@@ -349,7 +349,7 @@ def DeliveryBatchOrder():
     slotId = json_body["slotId"]
     orderId = json_body["orderId"]
 
-    user_sync_data = SYNC_DATA_TEMPLATE_PATH
+    user_sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
 
     gold_num = user_sync_data["user"]["building"]["rooms"]["TRADING"][slotId]["stock"]["count"]
 
@@ -445,12 +445,33 @@ def changeStrategy():
 
     slot_id = json_body["slotId"]
     strategy = json_body["strategy"]
-    user_sync_data = SYNC_DATA_TEMPLATE_PATH
+    user_sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
 
     user_sync_data["user"]["building"]["rooms"]["TRADING"][slot_id]["type"] = strategy
     write_json(user_sync_data, SYNC_DATA_TEMPLATE_PATH)
 
     modified = user_sync_data["user"]["building"]["rooms"]["TRADING"][slot_id]
+    result = {
+        "playerDataDelta": {
+            "deleted": {},
+            "modified": modified
+        }
+    }
+
+    return result
+
+def changRoomLevel():
+
+    json_body = request.get_json()
+    roomSlotId = json_body["roomSlotId"]
+    targetLevel = json_body["targetLevel"]
+    user_sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
+
+    user_sync_data["user"]["building"]["roomSlots"][roomSlotId]["level"] = targetLevel
+
+    write_json(user_sync_data, SYNC_DATA_TEMPLATE_PATH)
+    modified = user_sync_data["user"]["building"]["roomSlots"][roomSlotId]
+
     result = {
         "playerDataDelta": {
             "deleted": {},

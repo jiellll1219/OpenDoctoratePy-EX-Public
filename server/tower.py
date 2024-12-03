@@ -2,7 +2,7 @@ from virtualtime import time
 from random import sample
 from flask import request
 
-from constants import TOWERDATA_PATH, TOWER_TABLE_URL, USER_JSON_PATH
+from constants import TOWERDATA_PATH, TOWER_TABLE_PATH, USER_JSON_PATH
 
 from utils import read_json, write_json, decrypt_battle_data, writeLog
 from core.function.update import updateData
@@ -11,7 +11,7 @@ from core.function.update import updateData
 # - 我的号打不太过困难模式，所以困难模式如果有什么问题的话，欢迎提出来
 
 
-TOWER_TABLE = updateData(TOWER_TABLE_URL)
+TOWER_TABLE = updateData(TOWER_TABLE_PATH)
 
 def currentCoords(stageid: str):
     tower = read_json(TOWERDATA_PATH)

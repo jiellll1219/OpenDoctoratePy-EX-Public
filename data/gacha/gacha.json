@@ -1,0 +1,35 @@
+{
+    "detailInfo": {
+        "availCharInfo": {
+            "perAvailList": [
+                {
+                    "charIdList": [],
+                    "rarityRank": 5,
+                    "totalPercent": null
+                },
+                {
+                    "charIdList": [],
+                    "rarityRank": 4,
+                    "totalPercent": null
+                },
+                {
+                    "charIdList": [],
+                    "rarityRank": 3,
+                    "totalPercent": null
+                },
+                {
+                    "charIdList": [],
+                    "rarityRank": 2,
+                    "totalPercent": null
+                }
+            ]
+        },
+        "gachaObjList": [],
+        "limitedChar": null,
+        "showRecruit6StarHint": false,
+        "upCharInfo": {
+            "perCharList": []
+        },
+        "weightUpCharInfoList": null
+    }
+}

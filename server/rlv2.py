@@ -2,12 +2,13 @@ from flask import request
 from copy import deepcopy
 from virtualtime import time
 import random
+import json
 
 from constants import (
     RLV2_JSON_PATH,
     RLV2_USER_SETTINGS_PATH,
     USER_JSON_PATH,
-    RL_TABLE_URL,
+    RL_TABLE_PATH,
     CONFIG_PATH,
     RLV2_SETTINGS_PATH,
 )
@@ -33,7 +34,7 @@ def rlv2GiveUpGame():
                     }
                 }
             },
-            "deleted": {}
+            "deleted": {},
         },
     }
 
@@ -124,7 +125,7 @@ def rlv2CreateGame():
                 "rogue_1_band_9",
                 "rogue_1_band_10",
             ]
-            ending = "ro_ending_1"
+            ending = random.choice(["ro_ending_1", "ro_ending_2", "ro_ending_3", "ro_ending_4"])
         case "rogue_2":
             bands = [
                 "rogue_2_band_1",
@@ -150,7 +151,7 @@ def rlv2CreateGame():
                 "rogue_2_band_21",
                 "rogue_2_band_22",
             ]
-            ending = "ro2_ending_1"
+            ending = random.choice(["ro2_ending_1", "ro2_ending_2", "ro2_ending_3", "ro2_ending_4"])
         case "rogue_3":
             bands = [
                 "rogue_3_band_1",
@@ -167,7 +168,7 @@ def rlv2CreateGame():
                 "rogue_3_band_12",
                 "rogue_3_band_13",
             ]
-            ending = "ro3_ending_1"
+            ending = random.choice(["ro3_ending_1", "ro3_ending_2", "ro3_ending_3", "ro3_ending_4"])
         case "rogue_4":
             bands = [
                 "rogue_4_band_1",
@@ -180,8 +181,11 @@ def rlv2CreateGame():
                 "rogue_4_band_8",
                 "rogue_4_band_9",
                 "rogue_4_band_10",
-                "rogue_4_band_11"
+                "rogue_4_band_11",
+                "rogue_4_band_12",
+                "rogue_4_band_13"
             ]
+            ending = random.choice(["ro4_ending_1", "ro4_ending_2", "ro4_ending_3", "ro4_ending_4"])
         case _:
             bands = []
             ending = ""
@@ -549,7 +553,8 @@ def rlv2CloseRecruitTicket():
 
 
 def getMap(theme):
-    rlv2_table = update_data(RL_TABLE_URL)
+    with open (RL_TABLE_PATH, encoding='utf-8') as a:
+        rlv2_table = json.load(a)
     stages = [i for i in rlv2_table["details"][theme]["stages"]]
     match theme:
         case "rogue_1":
@@ -661,7 +666,7 @@ def getZone(stage_id):
 
 
 def getBuffs(rlv2, stage_id):
-    rlv2_table = update_data(RL_TABLE_URL)
+    rlv2_table = update_data(RL_TABLE_PATH)
     theme = rlv2["game"]["theme"]
     buffs = []
 
@@ -1569,7 +1574,7 @@ def rlv2MoveAndBattleStart():
         case "rogue_4":
             box_info = {
                 random.choice(
-                    []
+                    ["trap_757_skzbox", "trap_758_skzmbx", "trap_759_skzwyx"]
                 ): 100
             }
         case _:
@@ -1766,7 +1771,7 @@ def getGoods(theme):
         }
     ]
     i = 1
-    rlv2_table = update_data(RL_TABLE_URL)
+    rlv2_table = update_data(RL_TABLE_PATH)
     for j in rlv2_table["details"][theme]["archiveComp"]["relic"]["relic"]:
         goods.append(
             {
@@ -1884,6 +1889,32 @@ def getNextExploreToolIndex(rlv2):
     return f"e_{i}"
 
 
+def rlv2LeaveShop():
+    rlv2 = read_json(RLV2_JSON_PATH)
+    rlv2["player"]["state"] = "WAIT_MOVE"
+    rlv2["player"]["pending"] = []
+    if rlv2["player"]["cursor"]["position"]["x"] > 1:
+        rlv2["player"]["cursor"]["zone"] += 1
+        rlv2["player"]["cursor"]["position"] = None
+    elif rlv2["player"]["cursor"]["position"]["x"] == 1:
+        rlv2["player"]["cursor"]["position"]["x"] = 0
+        rlv2["player"]["cursor"]["position"]["y"] = 0
+        rlv2["player"]["trace"].pop()
+    write_json(rlv2, RLV2_JSON_PATH)
+
+    data = {
+        "playerDataDelta": {
+            "modified": {
+                "rlv2": {
+                    "current": rlv2,
+                }
+            },
+            "deleted": {},
+        }
+    }
+
+    return data
+
 def rlv2BuyGoods():
     request_data = request.get_json()
     select = int(request_data["select"][0])
@@ -1926,14 +1957,21 @@ def rlv2BuyGoods():
                     "current": rlv2,
                 }
             },
-            "deleted": {}
+            "deleted": {},
         }
     }
 
     return data
 
 
-def rlv2LeaveShop():
+def rlv2shopAction():
+
+    json_body = request.get_json()
+    try:
+        select = int (json_body["buy"][0])
+    except (KeyError, IndexError):
+        return rlv2LeaveShop
+
     rlv2 = read_json(RLV2_JSON_PATH)
     rlv2["player"]["state"] = "WAIT_MOVE"
     rlv2["player"]["pending"] = []
@@ -1969,40 +2007,6 @@ def rlv2ChooseBattleReward():
         ticket_id = getNextTicketIndex(rlv2)
         addTicket(rlv2, ticket_id)
         activateTicket(rlv2, ticket_id)
-    write_json(rlv2, RLV2_JSON_PATH)
-
-    data = {
-        "playerDataDelta": {
-            "modified": {
-                "rlv2": {
-                    "current": rlv2,
-                }
-            },
-            "deleted": {}
-        }
-    }
-
-    return data
-
-
-def rlv2shopAction():
-
-    json_body = request.get_json()
-    try:
-        select = int (json_body["buy"][0])
-    except (KeyError, IndexError):
-        return rlv2LeaveShop
-
-    rlv2 = read_json(RLV2_JSON_PATH)
-    rlv2["player"]["state"] = "WAIT_MOVE"
-    rlv2["player"]["pending"] = []
-    if rlv2["player"]["cursor"]["position"]["x"] > 1:
-        rlv2["player"]["cursor"]["zone"] += 1
-        rlv2["player"]["cursor"]["position"] = None
-    elif rlv2["player"]["cursor"]["position"]["x"] == 1:
-        rlv2["player"]["cursor"]["position"]["x"] = 0
-        rlv2["player"]["cursor"]["position"]["y"] = 0
-        rlv2["player"]["trace"].pop()
     write_json(rlv2, RLV2_JSON_PATH)
 
     data = {
