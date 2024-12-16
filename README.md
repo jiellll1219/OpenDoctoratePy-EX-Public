@@ -1,5 +1,7 @@
 # DoctoratePy-EX-Public
 
+[更新日志](https://github.com/jiellll1219/OpenDoctoratePy-EX-Public/tree/main/docs/updata_log.md)
+
 本项目旨在作为OpenDoctoratePy的分支，拓展与完善功能。短期目标为尽可能防止因404或未知错误被踹回登录界面，长期目标为实现类似SPT-AKI项目的单人游玩本地服务
 
 此仓库部分功能实现的代码与数据结构参考了[LocalArknight](https://github.com/jiellll1219/LocalArknight)
@@ -11,6 +13,8 @@
 如果需要联系我，请提出issue或向我的邮箱发送邮件：jiege0019@gmail.com
 
 此项目无任何交流群，且禁止任何以盈利为目的的分发、二次开发等行为
+
+如果您希望为此仓库贡献代码，但苦于没有数据，可以使用 [这份](https://drive.google.com/file/d/1q7I_cAFzMtyZ2EYqd1IlZLez1uRElgTv/view?usp=sharing) il2cpp文件进行参考
 
 ## 拓展进度
 
@@ -46,101 +50,58 @@ Tips：如果你的user.json数据缺失，可参考 [LocalArknight](https://git
 
 兼容更多时间类型，可直接输入时间戳，亦可输入如“2024/02/02 12:12:12”、“2024-02-02 12:12:12”的时间格式。请注意，在输入此类时间时请使用英文双引号""，在日期与时间之间需要一个空格，请确保填写的时间完整且合理
 
-## 更新日志
+## user.json与syncData.json的值
 
-- 2024 年 12 月 3 日
+在这两个文件中的user字典中，存在的项如下
 
-    修改：修复抽卡功能实现代码，兼容至游戏版本2.4.01，基建支持房间升降级，统一constants中部分函数的命名，修复部分bug
-
-    添加：抽卡记录查询功能，gacha文件更新
-
-    感谢某位好心人提供的gacha文件
-
-- 2024 年 10 月 28 日
-
-    修改：对rlv2和pay的部分代码进行优化和bug修复
-
-- 2024 年 10 月 11 日
-
-    添加：充值系统基本功能
-
-    由于我完全不充钱，导致充值成功的数据无法抓取，充值成功的实现方法从逆向代码中推测而来
-
-- 2024 年 8 月 27 日
-
-    修复：来自issues [关于商店购买东西出错 #2](https://github.com/jiellll1219/OpenDoctoratePy-EX-Public/issues/2) 关于shop购买部分的报告
-
-- 2024 年 8 月 15 日
-
-    添加：sandbox框架搭建
-
-    修改： 游戏日志上报处理代码简化
-
-- 2024 年 8 月 10 日
-
-    添加：游戏日志上报处理，卡池文件更新
-
-- 2024 年 8 月 3 日
-
-    添加：自定义时间戳功能支持输入更易读的时间格式
-
-- 2024年 7 月 20日
-
-    添加：卡池消耗资源与保存抽取信息开关，活动商店获取数据与购买相关代码的初始化
-
-    修改：优化pay模块导入，mail模块添加注释
-
-- 2024 年 7 月 15 日
-
-    添加：gacha寻访功能完善，全部卡池信息文件
-
-    修改：virtualtime移至exConfig.json中保存
-
-- 2024 年 5 月 25 日
-
-    添加：virtualtime功能，social模块，building部分功能
-
-    修改：全部time函数从virtualtime获取
-
-- 2024 年 4 月 8 日
-
-    修改：building基建副手功能完善
-
-- 2024 年 4 月 7 日
-
-    添加：building部分功能（别问为什么水，我自己看得也迷糊）
-
-- 2024 年 3 月 22 日
-
-    添加：pay充值功能，GiveItem函数
-
--  2024 年 3 月 4 日
-
-    添加：助理更换保存功能
-    
-    修改：从config设置全角色语音语言
-
-- 2024 年 3 月 2 日
-
-    添加：背景修改保存功能
-
-- 2024 年 2 月 28 日
-
-    添加：shop家具商店购买功能
-
-- 2024 年 2 月 26 日
-
-    添加：shop皮肤商店购买、资质凭证商店购买、高级凭证商店购买、通用凭证功商店能
-
-- 2024 年 2 月 25 日
-
-    初始化：building相关内容
-
-    初始化：shop相关内容
-
-- 2024 年 2 月 23 日
-
-    初始化仓库、上传源代码
-    
-    增加env与README
-
+```json
+"dungeon": {},
+"activity": {},
+"status": {},
+"troop": {},
+"npcAudio": {},
+"pushFlags": {},
+"equipment": {},
+"skin": {},
+"shop": {},
+"mission": {},
+"social": {},
+"building": {},
+"dexNav": {},
+"crisis": {},
+"crisisV2": {},
+"nameCardStyle": {},
+"tshop": {},
+"gacha": {},
+"backflow": {},
+"mainline": {},
+"avatar": {},
+"background": {},
+"homeTheme": {},
+"rlv2": {},
+"deepSea": {},
+"tower": {},
+"siracusaMap": {},
+"sandboxPerm": {},
+"openServer": {},
+"trainingGround": {},
+"storyreview": {},
+"medal": {},
+"inventory": {},
+"limitedBuff": {},
+"carousel": {},
+"car": {},
+"collectionReward": {},
+"consumable": {},
+"ticket": {},
+"aprilFool": {},
+"retro": {},
+"campaignsV2": {},
+"recruit": {},
+"checkIn": {},
+"share": {},
+"charRotation": {},
+"charm": {},
+"firework": {},
+"event": {}
+```

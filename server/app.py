@@ -9,7 +9,7 @@ from constants import CONFIG_PATH
 
 import account, background, building, campaignV2, char, charBuild, charm, \
         crisis, deepsea, gacha, mail, online, tower, quest, pay, rlv2, shop, story, \
-        user, asset.assetbundle, config.prod, social, templateShop, logs, sandbox
+        user, asset.assetbundle, config.prod, social, templateShop, logs, sandbox, charrotation \
 
 server_config = read_json(CONFIG_PATH)
 
@@ -238,6 +238,11 @@ app.add_url_rule("/sandboxPerm/sandboxV2/homeBuildSave", methods = ["POST"], vie
 app.add_url_rule("/sandboxPerm/sandboxV2/exploreMode", methods = ["POST"], view_func = sandbox.exploreMode)
 app.add_url_rule("/sandboxPerm/sandboxV2/monthBattleStart", methods = ["POST"], view_func = sandbox.monthBattleStart)
 app.add_url_rule("/sandboxPerm/sandboxV2/monthBattleFinish", methods = ["POST"], view_func = sandbox.monthBattleFinish)
+
+app.add_url_rule("/charRotation/setCurrent", methods = ["POST"], view_func = charrotation.setCurrent)
+app.add_url_rule("/cahrRotation/createPreset", methods = ["POST"], view_func = charrotation.createPreset)
+app.add_url_rule("/charRotation/deletePreset", methods = ["POST"], view_func = charrotation.deletePreset)
+app.add_url_rule("/charRotation/updatePreset", methods = ["POST"], view_func = charrotation.updatePreset)
 
 def writeLog(data):
     print(f'[{datetime.utcnow()}] {data}')

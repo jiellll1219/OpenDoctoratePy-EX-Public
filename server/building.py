@@ -393,7 +393,32 @@ def CleanRoomSlot():
 def getAssistReport():
 
     result = {
-        "reports": [],
+        "reports": [
+            {
+            "ts": time(),
+            "manufacture": {},
+            "trading": {},
+            "favor": []
+            },
+            {
+            "ts": time() - 86400,
+            "manufacture": {},
+            "trading": {},
+            "favor": []
+            },
+            {
+            "ts": time() - 172800,
+            "manufacture": {},
+            "trading": {},
+            "favor": []
+            },
+            {
+            "ts": time() - 345600,
+            "manufacture": {},
+            "trading": {},
+            "favor": []
+            }
+        ],
         "playerDataDelta": {
             "deleted": {},
             "modified": {}
