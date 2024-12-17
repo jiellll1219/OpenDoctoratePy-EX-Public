@@ -78,6 +78,40 @@ def accountSyncData():
     charGroup = {}
     buildingChars = {}
 
+    # charRotation
+    default_char_rotation = {
+        "current": "1",
+        "preset": {
+            "1": {
+                "background": "bg_rhodes_day",
+                "homeTheme": "tm_rhodes_day",
+                "name": "unname",
+                "profile": "char_171_bldsk@witch#1",
+                "profileInst": "171",
+                "slots": [
+                    {
+                        "charId": "char_171_bldsk",
+                        "skinId": "char_171_bldsk@witch#1"
+                    }
+                ]
+            }
+        }
+    }
+    player_data["user"].setdefault("charRotation", default_char_rotation)
+    saved_data["user"]["charRotation"] = player_data["user"]["charRotation"]
+    target_current = player_data["user"]["charRotation"]["current"]
+    use_profile = player_data["user"]["charRotation"]["preset"][target_current]["profile"]
+    for slots in player_data["user"]["charRotation"]["preset"][target_current]["slots"]:
+        if slots.get("skinId") == use_profile:
+            use_charid = slots.get("charId")
+            break
+    player_data["user"]["status"]["secretary"] = use_charid
+    player_data["user"]["status"]["secretarySkinId"] = use_profile
+    player_data["user"]["background"]["selected"] = player_data["user"]["charRotation"]["preset"][target_current]["background"]
+
+    write_json(player_data, SYNC_DATA_TEMPLATE_PATH, encoding="utf-8")
+    write_json(saved_data, USER_JSON_PATH)
+
     #Tamper Skins
     skinKeys = list(data_skin["charSkins"].keys())
     player_data["user"]["skin"]["characterSkins"] = {}
@@ -539,65 +573,6 @@ def accountSyncData():
             player_data["user"]["troop"]["chars"][index]["skin"] = saved_character["skin"]
             player_data["user"]["troop"]["chars"][index]["defaultSkillIndex"] = saved_character["defaultSkillIndex"]
             player_data["user"]["troop"]["chars"][index]["currentEquip"] = saved_character["currentEquip"]
-
-    secretary = config["userConfig"]["secretary"]
-    secretarySkinId = config["userConfig"]["secretarySkinId"]
-    background = config["userConfig"]["background"]
-
-    current_version = config["version"]["android"]["clientVersion"]
-    required_version = "2.4.21"
-
-    current_parts = map(int, current_version.split('.'))
-    required_parts = map(int, required_version.split('.'))
-
-    for current, required in zip(current_parts, required_parts):
-        if current > required:
-            try:
-                charRotation_data = saved_data["user"]["charRotation"]
-            except:
-                saved_data["user"]["charRotation"] = {
-                    "current": "1",
-                    "preset": {
-                        "1": {
-                            "background": "bg_rhodes_day",
-                            "homeTheme": "tm_rhodes_day",
-                            "name": "unname",
-                            "profile": "char_171_bldsk@witch#1",
-                            "profileInst": "171",
-                            "slots": [
-                                {
-                                    "charId": "char_171_bldsk",
-                                    "skinId": "char_171_bldsk@witch#1"
-                                }
-                            ]
-                        }
-                    }
-                }
-                player_data["user"]["charRotation"] = charRotation_data
-                write_json(saved_data, USER_JSON_PATH)
-
-            target_current = player_data["user"]["charRotation"]["current"]
-            has_secretary = any(slot.get("charId") == "secretary" for slot in player_data["user"]["charRotation"]["preset"][target_current]["slots"])
-            has_secretary_skin = any(slot.get("skinId") == "secretarySkinId" for slot in player_data["user"]["charRotation"]["preset"][target_current]["slots"])
-
-            if not has_secretary or not has_secretary_skin:
-                new_slot = {
-                    "charId": secretary if not has_secretary else None,
-                    "skinId": secretarySkinId if not has_secretary_skin else None
-                }
-                new_slot = {k: v for k, v in new_slot.items() if v is not None}
-                player_data["user"]["charRotation"]["preset"][target_current]["slots"].append(new_slot)
-
-            player_data["user"]["status"]["secretary"] = re.search(r"(char_.*?)(?=@)", player_data["user"]["charRotation"]["preset"][target_current]["profile"])
-            target_secretarySkinId = player_data["user"]["charRotation"]["preset"][target_current]["profile"] = secretarySkinId
-            target_background = player_data["user"]["charRotation"]["preset"][target_current]["background"] = background
-            player_data["user"]["status"]["secretarySkinId"] = target_secretarySkinId
-            player_data["user"]["background"]["selected"] = target_background
-        
-        elif current < required:
-            player_data["user"]["status"]["secretary"] = secretary
-            player_data["user"]["status"]["secretarySkinId"] = secretarySkinId
-            player_data["user"]["background"]["selected"] = background
 
     season = config["towerConfig"]["season"]
 

@@ -5,19 +5,22 @@ import json
 
 def setCurrent():
     json_body = request.get_json()
-    target_instid = json_body["instId"]
+    target_instid = str(json_body["instId"])
     sync_data = read_json(SYNC_DATA_TEMPLATE_PATH, encoding="utf8")
     user_json_data = read_json(USER_JSON_PATH, encoding="utf8")
 
-    sync_data["user"]["charRotation"]["current"] = target_instid
-    user_json_data["user"]["charRotation"]["current"] = target_instid
-    target_instid_data = sync_data["user"]["charRotation"]["presets"][target_instid]
+    user_json_data["user"]["charRotation"]["current"] = sync_data["user"]["charRotation"]["current"] = target_instid
+    profile = sync_data["user"]["charRotation"]["preset"][target_instid]["profile"]
 
-    profile_str = target_instid_data["profile"]
-    user_json_data["user"]["status"]["secretary"] = sync_data["user"]["status"]["secretary"] = profile_str.split('@')[0]
-    user_json_data["user"]["status"]["secretarySkinId"] = sync_data["user"]["status"]["secretarySkinId"] = target_instid_data["profile"]
-    user_json_data["user"]["background"]["selected"] = sync_data["user"]["background"]["selected"] = target_instid_data["background"]
-    user_json_data["user"]["homeTheme"]["selected"] = sync_data["user"]["homeTheme"]["selected"] = target_instid_data["homeTheme"]
+    for slots in sync_data["user"]["charRotation"]["preset"][target_instid]["slots"]:
+        if slots.get("skinId") == profile:
+            charid = slots.get("charId")
+            break
+
+    user_json_data["user"]["status"]["secretary"] = sync_data["user"]["status"]["secretary"] = charid
+    user_json_data["user"]["status"]["secretarySkinId"] = sync_data["user"]["status"]["secretarySkinId"] = sync_data["user"]["charRotation"]["preset"][target_instid]["profile"]
+    user_json_data["user"]["background"]["selected"] = sync_data["user"]["background"]["selected"] = sync_data["user"]["charRotation"]["preset"][target_instid]["background"]
+    user_json_data["user"]["homeTheme"]["selected"] = sync_data["user"]["homeTheme"]["selected"] = sync_data["user"]["charRotation"]["preset"][target_instid]["homeTheme"]
 
     write_json(sync_data, SYNC_DATA_TEMPLATE_PATH, encoding="utf8")
     write_json(user_json_data, USER_JSON_PATH, encoding="utf8")
@@ -26,7 +29,7 @@ def setCurrent():
         "playerDataDelta": {
             "modified": {
                 "charRotation": {
-                    "current": ""
+                    "current": target_instid
                 },
                 "status": {
                     "secretary": sync_data["user"]["status"]["secretary"],
@@ -45,9 +48,9 @@ def setCurrent():
     }
 
 def createPreset():
-    json_body = request.get_json()
 
-    charrotation_data = read_json(SYNC_DATA_TEMPLATE_PATH, encoding="utf8")["user"]["charRotation"]
+    sync_data = read_json(SYNC_DATA_TEMPLATE_PATH, encoding="utf8")
+    charrotation_data = sync_data["user"]["charRotation"]
     user_data = read_json(USER_JSON_PATH, encoding="utf8")
     defult_preset_data = {
         "background": "bg_rhodes_day",
@@ -63,11 +66,14 @@ def createPreset():
         ]
     }
 
-    new_id = str(len(charrotation_data["presets"]) + 1)
-    charrotation_data["presets"][new_id].append(defult_preset_data)
+    new_id = str(len(charrotation_data["preset"]) + 1)
+    if new_id not in charrotation_data["preset"]:
+        sync_data["user"]["charRotation"]["preset"][new_id] = charrotation_data["preset"][new_id] = {}
+    sync_data["user"]["charRotation"]["preset"][new_id] = charrotation_data["preset"][new_id] = defult_preset_data
 
-    user_data["user"]["charRotation"] = charrotation_data
-    write_json(charrotation_data, SYNC_DATA_TEMPLATE_PATH, encoding="utf8")
+    sync_data["user"]["charRotation"] = user_data["user"]["charRotation"] = charrotation_data
+    write_json(sync_data, SYNC_DATA_TEMPLATE_PATH, encoding="utf8")
+    write_json(user_data, USER_JSON_PATH, encoding="utf8")
 
     return {
         "playerDataDelta": {
@@ -86,20 +92,22 @@ def deletePreset():
     sync_data = read_json(SYNC_DATA_TEMPLATE_PATH, encoding="utf8")
     user_json_data = read_json(USER_JSON_PATH, encoding="utf8")
 
-    sync_data["user"]["charRotation"]["presets"].pop(target_instid)
-    user_json_data["user"]["charRotation"]["presets"].pop(target_instid)
+    sync_data["user"]["charRotation"]["preset"].pop(target_instid)
+    user_json_data["user"]["charRotation"]["preset"].pop(target_instid)
 
     write_json(sync_data, SYNC_DATA_TEMPLATE_PATH, encoding="utf8")
     write_json(user_json_data, USER_JSON_PATH, encoding="utf8")
 
     return {
         "playerDataDelta": {
-            "modified": {
-                "charRotation": sync_data["user"]["charRotation"],
+            "modified": {},
+            "deleted": {
+                "charRotation": {
+                    "preset": target_instid
+                } 
             }
         },
-        "pushMessage": [],
-        "result": 0
+        "pushMessage": []
     }
 
 def updatePreset():
