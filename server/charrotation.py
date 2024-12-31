@@ -115,29 +115,11 @@ def updatePreset():
     sync_data = read_json(SYNC_DATA_TEMPLATE_PATH, encoding="utf8")
     user_json_data = read_json(USER_JSON_PATH, encoding="utf8")
     config = read_json(CONFIG_PATH, encoding="utf8")
-    charrotation_data = sync_data["user"]["charRotation"]
-
-    # 获取报文的 instId
     inst_id = json_body.get("instId")
-    # 从 charrotation_data 中获取对应的 preset 数据
-    preset_data = charrotation_data.get("charRotation", {}).get("preset", {}).get(inst_id)
-    # 更新数据
-    for key, value in preset_data.items():
-        if value is not None:
-            json_body["data"][key] = value  # 更新请求的 data 部分
-
-    user_json_data["user"]["charRotation"] = sync_data["user"]["charRotation"]
-    write_json(sync_data, SYNC_DATA_TEMPLATE_PATH)
-    write_json(user_json_data, USER_JSON_PATH)
-
     result = {
         "playerDataDelta": {
             "modified": {
-                "charRotation": sync_data["user"]["charRotation"]["preset"],
-                "status": {
-                    "secretary": config["userConfig"]["secretary"],
-                    "secretatySkinId": config["userConfig"]["secretarySkinId"]
-                }
+                "charRotation": sync_data["user"]["charRotation"]
             },
             "deleted": {}
         },
@@ -145,5 +127,39 @@ def updatePreset():
         "result": "@@@SUC@@@"
     }
 
-    json_str = json.dumps(result, indent=4)
-    return json_str.replace('"@@@SUC@@@"', 'SUCCESS')
+    preset_data = sync_data["user"]["charRotation"]["preset"][inst_id]
+    for key, value in json_body["data"].items():
+        if value is not None:
+            preset_data[key] = value
+
+    if json_body.get("data", {}).get("background") is not None:
+        try:
+            config["userConfig"]["background"] = json_body["data"]["background"]
+        except:
+            pass
+        result["playerDataDelta"]["modified"]["background"]["selected"] = sync_data["user"]["background"]["selected"] = json_body["data"]["homeTheme"]
+
+    if json_body.get("data", {}).get("homeTheme") is not None:
+        try:
+            config["userConfig"]["theme"] = json_body["data"]["homeTheme"]
+        except:
+            pass
+        result["playerDataDelta"]["modified"]["homeTheme"]["selected"] = sync_data["user"]["homeTheme"]["selected"] = json_body["data"]["homeTheme"]
+
+    if json_body.get("data", {}).get("profile") is not None:
+        try:
+            str_char = re.search(r'([^@]+)@', json_body["data"]["profile"])
+            config["userConfig"]["secretary"] = str_char.group(1)
+            config["userConfig"]["secretarySkinId"] = json_body["data"]["profile"]
+        except:
+            pass
+        result["playerDataDelta"]["modified"]["status"]["secretary"] = sync_data["user"]["profile"]["secretary"] = str_char.group(1)
+        result["playerDataDelta"]["modified"]["status"]["secretarySkinId"] = sync_data["user"]["profile"]["secretarySkinId"] = json_body["data"]["profile"]
+
+    user_json_data["user"]["charRotation"] = sync_data["user"]["charRotation"]
+
+    write_json(sync_data, SYNC_DATA_TEMPLATE_PATH)
+    write_json(user_json_data, USER_JSON_PATH)
+    write_json(config, CONFIG_PATH)
+
+    return json.dumps(result, indent=4).replace('"@@@SUC@@@"', 'SUCCESS')

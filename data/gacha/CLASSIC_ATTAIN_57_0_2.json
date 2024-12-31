@@ -1,0 +1,242 @@
+{
+    "detailInfo": {
+        "gachaObjGroups": null,
+        "availCharInfo": {
+            "perAvailList": [
+                {
+                    "rarityRank": 5,
+                    "charIdList": [
+                        "char_103_angel",
+                        "char_112_siege",
+                        "char_134_ifrit",
+                        "char_180_amgoat",
+                        "char_291_aglina",
+                        "char_147_shining",
+                        "char_179_cgbird",
+                        "char_136_hsguma",
+                        "char_202_demkni",
+                        "char_172_svrash",
+                        "char_263_skadi",
+                        "char_010_chen",
+                        "char_340_shwaz",
+                        "char_188_helage",
+                        "char_248_mgllan",
+                        "char_213_mostma",
+                        "char_017_huang",
+                        "char_225_haak",
+                        "char_2013_cerber",
+                        "char_222_bpipe",
+                        "char_250_phatom",
+                        "char_400_weedy",
+                        "char_197_poca",
+                        "char_358_lisa",
+                        "char_293_thorns",
+                        "char_416_zumama",
+                        "char_350_surtr",
+                        "char_423_blemsh",
+                        "char_311_mudrok",
+                        "char_264_f12yin",
+                        "char_332_archet",
+                        "char_362_saga",
+                        "char_472_pasngr"
+                    ],
+                    "totalPercent": 0.02
+                },
+                {
+                    "rarityRank": 4,
+                    "charIdList": [
+                        "char_128_plosis",
+                        "char_115_headbr",
+                        "char_102_texas",
+                        "char_106_franka",
+                        "char_140_whitew",
+                        "char_143_ghost",
+                        "char_129_bluep",
+                        "char_204_platnm",
+                        "char_219_meteo",
+                        "char_166_skfire",
+                        "char_242_otter",
+                        "char_108_silent",
+                        "char_171_bldsk",
+                        "char_148_nearl",
+                        "char_144_red",
+                        "char_107_liskam",
+                        "char_201_moeshd",
+                        "char_145_prove",
+                        "char_158_milu",
+                        "char_173_slchan",
+                        "char_174_slbell",
+                        "char_195_glassb",
+                        "char_101_sora",
+                        "char_215_mantic",
+                        "char_241_panda",
+                        "char_164_nightm",
+                        "char_308_swire",
+                        "char_326_glacus",
+                        "char_274_astesi",
+                        "char_279_excu",
+                        "char_243_waaifu",
+                        "char_261_sddrag",
+                        "char_356_broca",
+                        "char_367_swllow",
+                        "char_226_hmau",
+                        "char_306_leizi",
+                        "char_379_sesa",
+                        "char_254_vodfox",
+                        "char_401_elysm",
+                        "char_378_asbest",
+                        "char_343_tknogi",
+                        "char_373_lionhd",
+                        "char_294_ayer",
+                        "char_349_chiave",
+                        "char_344_beewax",
+                        "char_218_cuttle",
+                        "char_415_flint",
+                        "char_365_aprl",
+                        "char_346_aosta",
+                        "char_436_whispr",
+                        "char_214_kafka",
+                        "char_338_iris",
+                        "char_455_nothin",
+                        "char_363_toddi"
+                    ],
+                    "totalPercent": 0.08
+                },
+                {
+                    "rarityRank": 3,
+                    "charIdList": [
+                        "char_141_nights",
+                        "char_109_fmout",
+                        "char_235_jesica",
+                        "char_126_shotst",
+                        "char_118_yuki",
+                        "char_149_scave",
+                        "char_290_vigna",
+                        "char_130_doberm",
+                        "char_289_gyuki",
+                        "char_193_frostl",
+                        "char_185_frncat",
+                        "char_237_gravel",
+                        "char_236_rope",
+                        "char_117_myrrh",
+                        "char_181_flower",
+                        "char_199_yak",
+                        "char_150_snakek",
+                        "char_196_sunbr",
+                        "char_110_deepcl",
+                        "char_183_skgoat",
+                        "char_277_sqrrel",
+                        "char_137_brownb",
+                        "char_253_greyy",
+                        "char_298_susuro",
+                        "char_151_myrtle",
+                        "char_190_clour",
+                        "char_133_mm",
+                        "char_302_glaze",
+                        "char_337_utage",
+                        "char_301_cutter",
+                        "char_258_podego",
+                        "char_328_cammou",
+                        "char_272_strong",
+                        "char_366_acdrop",
+                        "char_271_spikes",
+                        "char_381_bubble",
+                        "char_347_jaksel",
+                        "char_440_pinecn",
+                        "char_452_bstalk",
+                        "char_469_indigo",
+                        "char_484_robrta",
+                        "char_4041_chnut",
+                        "char_4062_totter",
+                        "char_491_humus",
+                        "char_4107_vrdant"
+                    ],
+                    "totalPercent": 0.5
+                },
+                {
+                    "rarityRank": 2,
+                    "charIdList": [
+                        "char_123_fang",
+                        "char_240_wyvern",
+                        "char_192_falco",
+                        "char_208_melan",
+                        "char_209_ardign",
+                        "char_122_beagle",
+                        "char_124_kroos",
+                        "char_121_lava",
+                        "char_120_hibisc",
+                        "char_212_ansel",
+                        "char_210_stward",
+                        "char_278_orchid",
+                        "char_282_catap",
+                        "char_283_midn",
+                        "char_284_spot",
+                        "char_281_popka"
+                    ],
+                    "totalPercent": 0.4
+                }
+            ]
+        },
+        "upCharInfo": {
+            "perCharList": []
+        },
+        "limitedChar": null,
+        "weightUpCharInfoList": null,
+        "gachaObjList": [
+            {
+                "gachaObject": "TEXT",
+                "type": 0,
+                "imageType": 0,
+                "param": "卡池干员列表"
+            },
+            {
+                "gachaObject": "RATE_UP_6",
+                "type": 0,
+                "imageType": 0,
+                "param": "跨年欢庆·中坚"
+            },
+            {
+                "gachaObject": "ATTAIN_CHAR",
+                "type": 0,
+                "imageType": 0,
+                "param": "首次获得的6★干员必为以下干员之一;<@attainGa.desc2>（仅限一次）</>"
+            },
+            {
+                "gachaObject": "TEXT",
+                "type": 1,
+                "imageType": 0,
+                "param": "全部可能出现的干员"
+            },
+            {
+                "gachaObject": "AVAIL_CHAR",
+                "type": 0,
+                "imageType": 0,
+                "param": null
+            },
+            {
+                "gachaObject": "TEXT",
+                "type": 0,
+                "imageType": 0,
+                "param": "该寻访为【跨年欢庆·中坚】"
+            },
+            {
+                "gachaObject": "TEXT",
+                "type": 5,
+                "imageType": 0,
+                "param": "在<@ga.classicGacha>【跨年欢庆·中坚】</>系列寻访中，首次获得的6星干员必定为可出现的干员中未获得过的6星中坚干员。如果可出现的6星干员均已获得，则首次获得的6星干员为可出现的6星中坚干员中的一位。\n在<@ga.classicGacha>【跨年欢庆·中坚】</>中，如果连续<@ga.percent>50</>次没有获得6星干员，则下一次获得6星干员的概率将从原本<@ga.percent>2%</>提升至<@ga.percent>4%</>，如果该次还没有寻访到6星干员，则下一次寻访获得6星的概率由<@ga.percent>4%</>提升到<@ga.percent>6%</>。依此类推，每次提高<@ga.percent>2%</>获得6星干员的概率，直至达到<@ga.percent>100%</>时必定获得6星干员。\n在任意两个不同的<@ga.classicGacha>【跨年欢庆·中坚】</>中，没有获得6星干员的累计次数不会累计，该次数会因为<@ga.classicGacha>【跨年欢庆·中坚】</>的结束而清零。因为累计次数而增加的获得概率，不会应用于接下来任意一次<@ga.classicGacha>【跨年欢庆·中坚】</>。\n<@ga.classicGacha>【跨年欢庆·中坚】</>中，没有获得6星干员的抽取次数不会累计/应用到其他任意寻访，与其他任意寻访的已有累计次数互不影响。\n<@ga.attention>【注意】</>任何时候在任意一个<@ga.classicGacha>【跨年欢庆·中坚】</>中获得6星干员，下一次在<@ga.classicGacha>【跨年欢庆·中坚】</>中获得6星干员的概率将恢复到<@ga.percent>2%</>。"
+            },
+            {
+                "gachaObject": "TEXT",
+                "type": 0,
+                "imageType": 0,
+                "param": "【通用凭证】获取规则"
+            },
+            {
+                "gachaObject": "IMAGE",
+                "type": 0,
+                "imageType": 0,
+                "param": null
+            }
+        ]
+    }
+}

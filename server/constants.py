@@ -11,7 +11,7 @@ CHARWORD_TABLE_PATH = "data/excel/charword_table.json"
 
 # Gacha Data
 NORMALGACHA_PATH = "data/gacha/normalGacha.json"
-GACHA_HISTORY_PATH = "data/gacha/history.json"
+GACHA_HISTORY_PATH = "data/user/gachaHistory.json"
 
 # User Data
 USER_JSON_PATH = "data/user/user.json"
