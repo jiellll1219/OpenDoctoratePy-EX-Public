@@ -124,7 +124,7 @@ def updatePreset():
             "deleted": {}
         },
         "pushMessage": [],
-        "result": "@@@SUC@@@"
+        "result": 0
     }
 
     preset_data = sync_data["user"]["charRotation"]["preset"][inst_id]
@@ -137,6 +137,8 @@ def updatePreset():
             config["userConfig"]["background"] = json_body["data"]["background"]
         except:
             pass
+        result["playerDataDelta"]["modified"]["background"] = {}
+        result["playerDataDelta"]["modified"]["background"]["selected"] = ""
         result["playerDataDelta"]["modified"]["background"]["selected"] = sync_data["user"]["background"]["selected"] = json_body["data"]["homeTheme"]
 
     if json_body.get("data", {}).get("homeTheme") is not None:
@@ -144,6 +146,8 @@ def updatePreset():
             config["userConfig"]["theme"] = json_body["data"]["homeTheme"]
         except:
             pass
+        result["playerDataDelta"]["modified"]["homeTheme"] = {}
+        result["playerDataDelta"]["modified"]["homeTheme"]["selected"] = ""
         result["playerDataDelta"]["modified"]["homeTheme"]["selected"] = sync_data["user"]["homeTheme"]["selected"] = json_body["data"]["homeTheme"]
 
     if json_body.get("data", {}).get("profile") is not None:
@@ -153,7 +157,10 @@ def updatePreset():
             config["userConfig"]["secretarySkinId"] = json_body["data"]["profile"]
         except:
             pass
-        result["playerDataDelta"]["modified"]["status"]["secretary"] = sync_data["user"]["profile"]["secretary"] = str_char.group(1)
+        result["playerDataDelta"]["modified"]["status"] = {}
+        result["playerDataDelta"]["modified"]["status"]["secretary"] = ""
+        result["playerDataDelta"]["modified"]["status"]["secretary"] = sync_data["user"]["status"]["secretary"] = str_char.group(1)
+        result["playerDataDelta"]["modified"]["status"]["secretarySkinId"] = ""
         result["playerDataDelta"]["modified"]["status"]["secretarySkinId"] = sync_data["user"]["profile"]["secretarySkinId"] = json_body["data"]["profile"]
 
     user_json_data["user"]["charRotation"] = sync_data["user"]["charRotation"]
@@ -161,5 +168,5 @@ def updatePreset():
     write_json(sync_data, SYNC_DATA_TEMPLATE_PATH)
     write_json(user_json_data, USER_JSON_PATH)
     write_json(config, CONFIG_PATH)
-
-    return json.dumps(result, indent=4).replace('"@@@SUC@@@"', 'SUCCESS')
+    
+    return result
