@@ -1,5 +1,7 @@
 # DoctoratePy-EX-Public
 
+[简中](https://github.com/jiellll1219/OpenDoctoratePy-EX-Public/tree/main/README.md) | [EN](https://github.com/jiellll1219/OpenDoctoratePy-EX-Public/blob/main/docs/README_EN.md)
+
 [更新日志](https://github.com/jiellll1219/OpenDoctoratePy-EX-Public/tree/main/docs/updata_log.md)
 
 本项目旨在作为OpenDoctoratePy的分支，拓展与完善功能。短期目标为尽可能防止因404或未知错误被踹回登录界面，长期目标为实现类似SPT-AKI项目的单人游玩本地服务
@@ -43,7 +45,7 @@
 
 补充：由于其它DoctoratePy仓库的部分数据结构不同，会导致需要补全、修改的内容不同，请自行阅读本仓库的代码进行修改。如果对此仍有疑惑，请在本仓库的issue提出，并附上你启动local_server时的完整日志，我在空闲时会尝试帮助你
 
-如果您觉得这很麻烦，也可以连接到我的公共服务器上进行体验，服务器地址为http://8.138.148.178:8443/，我的功能开发进度也会实时同步到此服务器中。注意！此服务器的版本仍为单人游玩版本，不支持多用户游玩，此服务器位于中国境内
+如果您觉得这很麻烦，也可以连接到我的公共服务器上进行体验，服务器地址为`http://8.138.148.178:8443/`，我的功能开发进度也会实时同步到此服务器中。注意！此服务器的版本仍为单人游玩版本，不支持多用户游玩，此服务器位于中国境内
 
 ## data数据结构说明
 
