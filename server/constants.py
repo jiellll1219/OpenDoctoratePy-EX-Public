@@ -4,6 +4,7 @@ from utils import read_json
 CONFIG_PATH = "config/config.json"
 EX_CONFIG_PATH  = "config/exConfig.json"
 MAILLIST_PATH = "config/mails.json"
+MAILCOLLECTION_PATH = "config/mailCollection.json"
 RLV2_CONFIG_PATH = "config/rlv2Config.json"
 SQUADS_PATH = "config/squads.json"
 SYNC_DATA_TEMPLATE_PATH = "syncData.json"
@@ -12,6 +13,7 @@ CHARWORD_TABLE_PATH = "data/excel/charword_table.json"
 # Gacha Data
 NORMALGACHA_PATH = "data/gacha/normalGacha.json"
 GACHA_HISTORY_PATH = "data/user/gachaHistory.json"
+EX_GACHA_DATA = "data/user/exGachaData.json"
 
 # User Data
 USER_JSON_PATH = "data/user/user.json"

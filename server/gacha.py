@@ -11,7 +11,8 @@ from constants import (
     EX_CONFIG_PATH,
     GACHA_HISTORY_PATH,
     GACHA_TABLE_PATH,
-    CHARACTER_TABLE_PATH
+    CHARACTER_TABLE_PATH,
+    EX_GACHA_DATA
 )
 from utils import read_json, write_json
 
@@ -275,7 +276,6 @@ def tenAdvancedGacha():
         return Gacha("tenGachaTicket", 6000, json_body)
 
 def Gacha(ticket_type, use_diamond_shard, json_body):
-
     # 读取用户同步数据
     user_json_data = read_json(USER_JSON_PATH, encoding="utf-8")
     # 读取卡池历史记录数据
@@ -286,8 +286,18 @@ def Gacha(ticket_type, use_diamond_shard, json_body):
     pool_id = json_body['poolId']
     # 获取卡池路径
     pool_path = os.path.join(os.getcwd(), 'data', 'gacha', f'{pool_id}.json')
+    #读取卡池信息
+    ex_gacha_data = read_json(EX_GACHA_DATA, encoding="utf-8")
     # 获取当前时间戳
     ts = time()
+
+    prefix_mapping = {
+        "NORM": "NORM",
+        "BOOT": "BOOT",
+        "CLASSIC": "CLASSIC"
+    }
+
+    gacha_type = next((value for prefix, value in prefix_mapping.items() if json_body["poolId"].startswith(prefix)), json_body["poolId"])
 
     # 如果卡池文件不存在，返回错误信息
     if not os.path.exists(pool_path):
@@ -299,9 +309,8 @@ def Gacha(ticket_type, use_diamond_shard, json_body):
     # 读取卡池数据
     pool_json = read_json(pool_path, encoding='utf-8')
 
-    # 尝试获取 gachaCount 的值，如果不存在则设置为 0
-    # gachaCount为全局六星保底值
-    gacha_count = user_json_data["user"]["status"].setdefault('gachaCount', 0)
+    # 获取目标卡池的保底数，如果不存在则设置为 0
+    gacha_count = ex_gacha_data[gacha_type].setdefault(gacha_type, 0)
 
     # 初始化需要的变量
     gacha_results = []

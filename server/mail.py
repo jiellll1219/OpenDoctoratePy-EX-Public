@@ -2,7 +2,7 @@ from virtualtime import time
 
 from flask import request
 
-from constants import MAILLIST_PATH
+from constants import MAILLIST_PATH, MAILCOLLECTION_PATH
 from utils import read_json, write_json
 
 
@@ -232,3 +232,9 @@ def mailRemoveAllReceivedMail():
 
     # 返回数据
     return data
+
+def mailCollectionGetList():
+
+    mailcollect_data = read_json(MAILCOLLECTION_PATH, encoding="utf-8")
+
+    return mailcollect_data

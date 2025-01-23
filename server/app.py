@@ -51,6 +51,10 @@ app.add_url_rule('/building/getAssistReport', methods=['POST'], view_func=buildi
 app.add_url_rule('/building/setBuildingAssist', methods=['POST'], view_func=building.setBuildingAssist)
 app.add_url_rule("/building/degradeRoom", methods=["POST"], view_func=building.changRoomLevel)
 app.add_url_rule("/building/upgradeRoom", methods=["POST"], view_func=building.changRoomLevel)
+app.add_url_rule("/building/addPresetQueue", methods=["POST"], view_func=building.addPresetQueue)
+app.add_url_rule("/building/deletePresetQueue", methods=["POST"], view_func=building.deletePresetQueue)
+app.add_url_rule("/building/editPresetQueue", methods=["POST"], view_func=building.editPresetQueue)
+app.add_url_rule("/building/usePresetQueue", methods=["POST"], view_func=building.usePresetQueue)
 
 app.add_url_rule('/campaignV2/battleStart', methods=['POST'], view_func=campaignV2.campaignV2BattleStart)
 app.add_url_rule('/campaignV2/battleFinish', methods=['POST'], view_func=campaignV2.campaignV2BattleFinish)
@@ -75,6 +79,7 @@ app.add_url_rule('/mail/listMailBox', methods=['POST'], view_func=mail.mailListM
 app.add_url_rule('/mail/receiveMail', methods=['POST'], view_func=mail.mailReceiveMail)
 app.add_url_rule('/mail/receiveAllMail', methods=['POST'], view_func=mail.mailReceiveAllMail)
 app.add_url_rule('/mail/removeAllReceivedMail', methods=['POST'], view_func=mail.mailRemoveAllReceivedMail)
+app.add_url_rule("/mailCollection/getList", methods = ["POST"], view_func = mail.mailCollectionGetList)
 
 app.add_url_rule('/crisis/getInfo', methods=['POST'], view_func=crisis.crisisGetCrisisInfo)
 app.add_url_rule('/crisis/battleStart', methods=['POST'], view_func=crisis.crisisBattleStart)

@@ -1,7 +1,7 @@
 from utils import read_json, write_json
 from flask import request
 from constants import SYNC_DATA_TEMPLATE_PATH, USER_JSON_PATH, CONFIG_PATH
-import json
+import re
 
 def setCurrent():
     json_body = request.get_json()

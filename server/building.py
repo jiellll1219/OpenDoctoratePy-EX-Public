@@ -505,3 +505,74 @@ def changRoomLevel():
     }
 
     return result
+
+def addPresetQueue():
+    json_body = request.get_json()
+    # {'slotId': 'slot_36'}
+
+    result = {
+        "playerDataDelta": {
+            "modified": {
+                "building": {
+                    "chars": {},
+                    "roomSlots": {},
+                    "rooms": {},
+                    "status": {}
+                }
+            },
+            "deleted": {}
+        }
+    }
+
+    return result
+
+def deletePresetQueue():
+    json_body = request.get_json()
+
+    return {
+        "playerDataDelta": {
+            "modified": {
+                "building": {
+                    "chars": {},
+                    "roomSlots": {},
+                    "rooms": {},
+                    "status": {}
+                }
+            },
+            "deleted": {}
+        }
+    }
+
+def editPresetQueue():
+    json_body = request.get_json()
+
+    return {
+        "playerDataDelta": {
+            "modified": {
+                "building": {
+                    "chars": {},
+                    "roomSlots": {},
+                    "rooms": {},
+                    "status": {}
+                }
+            },
+            "deleted": {}
+        }
+    }
+
+def usePresetQueue():
+    json_body = request.get_json()
+
+    return {
+        "playerDataDelta": {
+            "modified": {
+                "building": {
+                    "chars": {},
+                    "roomSlots": {},
+                    "rooms": {},
+                    "status": {}
+                }
+            },
+            "deleted": {}
+        }
+    }
