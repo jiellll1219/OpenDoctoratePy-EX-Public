@@ -1,0 +1,98 @@
+{
+    "goodList": [
+        {
+            "goodId": "LIMITED_23_0_1_1",
+            "goodType": "NORMAL",
+            "startTime": 1635739200,
+            "endTime": 1637179199,
+            "availCount": -1,
+            "item": {
+                "id": "char_1014_nearl2",
+                "count": 1,
+                "type": "CHAR"
+            },
+            "price": {
+                "id": "LMTGS_COIN_2301",
+                "count": 300,
+                "type": "LMTGS_COIN"
+            },
+            "sortId": 1
+        },
+        {
+            "goodId": "LIMITED_23_0_1_2",
+            "goodType": "NORMAL",
+            "startTime": 1635739200,
+            "endTime": 1637179199,
+            "availCount": -1,
+            "item": {
+                "id": "char_420_flamtl",
+                "count": 1,
+                "type": "CHAR"
+            },
+            "price": {
+                "id": "LMTGS_COIN_2301",
+                "count": 300,
+                "type": "LMTGS_COIN"
+            },
+            "sortId": 2
+        },
+        {
+            "goodId": "LIMITED_23_0_1_3",
+            "goodType": "NORMAL",
+            "startTime": 1635739200,
+            "endTime": 1637179199,
+            "availCount": -1,
+            "item": {
+                "id": "char_391_rosmon",
+                "count": 1,
+                "type": "CHAR"
+            },
+            "price": {
+                "id": "LMTGS_COIN_2301",
+                "count": 300,
+                "type": "LMTGS_COIN"
+            },
+            "sortId": 3
+        },
+        {
+            "goodId": "LIMITED_23_0_1_4",
+            "goodType": "NORMAL",
+            "startTime": 1635739200,
+            "endTime": 1637179199,
+            "availCount": -1,
+            "item": {
+                "id": "char_113_cqbw",
+                "count": 1,
+                "type": "CHAR"
+            },
+            "price": {
+                "id": "LMTGS_COIN_2301",
+                "count": 300,
+                "type": "LMTGS_COIN"
+            },
+            "sortId": 4
+        },
+        {
+            "goodId": "LIMITED_23_0_1_5",
+            "goodType": "NORMAL",
+            "startTime": 1635739200,
+            "endTime": 1637179199,
+            "availCount": -1,
+            "item": {
+                "id": "char_489_serum",
+                "count": 1,
+                "type": "CHAR"
+            },
+            "price": {
+                "id": "LMTGS_COIN_2301",
+                "count": 75,
+                "type": "LMTGS_COIN"
+            },
+            "sortId": 5
+        }
+    ],
+    "playerDataDelta": {
+        "modified": {},
+        "deleted": {}
+    }
+}

@@ -1,0 +1,235 @@
+{
+    "goodList": [
+        {
+            "goodId": "ES_xShdShopnumber2_1",
+            "displayName": "伊桑",
+            "originPrice": 150,
+            "price": 150,
+            "discount": 0,
+            "slotId": 19,
+            "availCount": 1,
+            "item": {
+                "id": "char_355_ethan",
+                "count": 1,
+                "type": "CHAR"
+            },
+            "newFlagTimeStamp": -1,
+            "goodEndTime": -1,
+            "shopType": 1
+        },
+        {
+            "goodId": "ES_xShdShopnumber2_2",
+            "displayName": "微风",
+            "originPrice": 600,
+            "price": 600,
+            "discount": 0,
+            "slotId": 20,
+            "availCount": 1,
+            "item": {
+                "id": "char_275_breeze",
+                "count": 1,
+                "type": "CHAR"
+            },
+            "newFlagTimeStamp": -1,
+            "goodEndTime": -1,
+            "shopType": 1
+        },
+        {
+            "goodId": "ES_xShdShopPerm1_3",
+            "displayName": "芯片助剂",
+            "originPrice": 90,
+            "price": 90,
+            "discount": 0,
+            "slotId": 100,
+            "availCount": -1,
+            "item": {
+                "id": "32001",
+                "count": 1,
+                "type": "MATERIAL"
+            },
+            "newFlagTimeStamp": -1,
+            "goodEndTime": -1,
+            "shopType": 1
+        },
+        {
+            "goodId": "ES_xShdShopPerm3_1",
+            "displayName": "布丁",
+            "originPrice": 150,
+            "price": 150,
+            "discount": 0,
+            "slotId": 17,
+            "availCount": 1,
+            "item": {
+                "id": "char_4004_pudd",
+                "count": 1,
+                "type": "CHAR"
+            },
+            "newFlagTimeStamp": 1635753600,
+            "goodEndTime": -1,
+            "shopType": 1
+        },
+        {
+            "goodId": "ES_xShdShopPerm3_2",
+            "displayName": "蜜莓",
+            "originPrice": 600,
+            "price": 600,
+            "discount": 0,
+            "slotId": 18,
+            "availCount": 1,
+            "item": {
+                "id": "char_449_glider",
+                "count": 1,
+                "type": "CHAR"
+            },
+            "newFlagTimeStamp": 1635753600,
+            "goodEndTime": -1,
+            "shopType": 1
+        },
+        {
+            "goodId": "ES_xShdShopTemp2_1",
+            "displayName": "先锋传承信物",
+            "originPrice": 45,
+            "price": 45,
+            "discount": 0,
+            "slotId": 20,
+            "availCount": -1,
+            "item": {
+                "id": "tier4_pioneer",
+                "count": 1,
+                "type": "MATERIAL"
+            },
+            "newFlagTimeStamp": -1,
+            "goodEndTime": -1,
+            "shopType": 0
+        },
+        {
+            "goodId": "ES_xShdShopTemp2_2",
+            "displayName": "近卫传承信物",
+            "originPrice": 45,
+            "price": 45,
+            "discount": 0,
+            "slotId": 21,
+            "availCount": -1,
+            "item": {
+                "id": "tier4_guard",
+                "count": 1,
+                "type": "MATERIAL"
+            },
+            "newFlagTimeStamp": -1,
+            "goodEndTime": -1,
+            "shopType": 0
+        },
+        {
+            "goodId": "ES_xShdShopTemp2_3",
+            "displayName": "辅助传承信物",
+            "originPrice": 45,
+            "price": 45,
+            "discount": 0,
+            "slotId": 22,
+            "availCount": -1,
+            "item": {
+                "id": "tier4_supporter",
+                "count": 1,
+                "type": "MATERIAL"
+            },
+            "newFlagTimeStamp": -1,
+            "goodEndTime": -1,
+            "shopType": 0
+        },
+        {
+            "goodId": "ES_xShdShopTemp2_4",
+            "displayName": "特种传承信物",
+            "originPrice": 45,
+            "price": 45,
+            "discount": 0,
+            "slotId": 23,
+            "availCount": -1,
+            "item": {
+                "id": "tier4_special",
+                "count": 1,
+                "type": "MATERIAL"
+            },
+            "newFlagTimeStamp": -1,
+            "goodEndTime": -1,
+            "shopType": 0
+        },
+        {
+            "goodId": "ES_xShdShopTemp2_5",
+            "displayName": "医疗遗产信物",
+            "originPrice": 180,
+            "price": 180,
+            "discount": 0,
+            "slotId": 24,
+            "availCount": -1,
+            "item": {
+                "id": "tier5_medic",
+                "count": 1,
+                "type": "MATERIAL"
+            },
+            "newFlagTimeStamp": -1,
+            "goodEndTime": -1,
+            "shopType": 0
+        },
+        {
+            "goodId": "ES_xShdShopTemp2_6",
+            "displayName": "狙击遗产信物",
+            "originPrice": 180,
+            "price": 180,
+            "discount": 0,
+            "slotId": 25,
+            "availCount": -1,
+            "item": {
+                "id": "tier5_sniper",
+                "count": 1,
+                "type": "MATERIAL"
+            },
+            "newFlagTimeStamp": -1,
+            "goodEndTime": -1,
+            "shopType": 0
+        },
+        {
+            "goodId": "ES_xShdShopTemp2_7",
+            "displayName": "重装皇家信物",
+            "originPrice": 720,
+            "price": 720,
+            "discount": 0,
+            "slotId": 26,
+            "availCount": -1,
+            "item": {
+                "id": "tier6_tank",
+                "count": 1,
+                "type": "MATERIAL"
+            },
+            "newFlagTimeStamp": -1,
+            "goodEndTime": -1,
+            "shopType": 0
+        },
+        {
+            "goodId": "ES_xShdShopTemp2_8",
+            "displayName": "术师皇家信物",
+            "originPrice": 720,
+            "price": 720,
+            "discount": 0,
+            "slotId": 27,
+            "availCount": -1,
+            "item": {
+                "id": "tier6_caster",
+                "count": 1,
+                "type": "MATERIAL"
+            },
+            "newFlagTimeStamp": -1,
+            "goodEndTime": -1,
+            "shopType": 0
+        }
+    ],
+    "playerDataDelta": {
+        "modified": {
+            "shop": {
+                "ES": {
+                    "lastClick": 1636167628
+                }
+            }
+        },
+        "deleted": {}
+    }
+}

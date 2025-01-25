@@ -1,0 +1,1872 @@
+{
+    "ts": 1666023325,
+    "data": {
+        "seasonInfo": [
+            {
+                "seasonId": "rune_season_3_1",
+                "stages": {
+                    "level_rune_05-01": {
+                        "stageId": "level_rune_05-01",
+                        "levelId": "Obt/Rune/level_rune_05-01",
+                        "mapId": "rune_05-01",
+                        "code": "Barrenlands",
+                        "name": "Windswept Highland",
+                        "loadingPicId": "loading3",
+                        "description": "These perennially windswept highlands, far away from the paths of any nomadic cities, are believed to harbor hostile enemy forces. Investigate the situation and repel the threat.",
+                        "picId": "ccmap_highland",
+                        "logoPicId": "logo_wild",
+                        "slotId": 0,
+                        "type": "PERMANENT"
+                    }
+                },
+                "permStageGroup": [
+                    {
+                        "stageId": "level_rune_05-01",
+                        "stagePointLevelInfo": {},
+                        "stageChallengeInfo": [],
+                        "_mapChallenge": {},
+                        "runeList": [
+                            {
+                                "runeId": "enemy_dbskar_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_dbskar_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_dbskar_3",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_dlancer_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_dlancer_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_dmgswd_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_dmgswd_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_dmgswd_3",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_dscout_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_dscout_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_dscout_3",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_atk_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_atk_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_atk_3",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_hp_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_hp_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_hp_3",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_atkatkspeed_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_atkatkspeed_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_atkatkspeed_3",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_hp_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_hp_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_hp_3",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "global_squadnum_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "global_forbidloc_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "global_forbidloc_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "global_forbidloc_3",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "token_blower_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "token_blower_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_cost_special_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_cost_special_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "global_lifepoint_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_def_1",
+                                "unlockPercent": 0
+                            }
+                        ]
+                    }
+                ],
+                "tempStageGroup": [],
+                "trainStageGroup": []
+            }
+        ],
+        "trainingInfo": {
+            "stages": {},
+            "runeInfo": {}
+        },
+        "runeInfoList": {
+            "level_rune_05-01": [
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_dbskar",
+                    "iconId": "enemy_dbskar_1",
+                    "runeId": "enemy_dbskar_1",
+                    "runeName": "None",
+                    "sortId": 1,
+                    "stageId": "level_rune_05-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_dbskar",
+                    "iconId": "enemy_dbskar_2",
+                    "runeId": "enemy_dbskar_2",
+                    "runeName": "None",
+                    "sortId": 2,
+                    "stageId": "level_rune_05-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_dbskar",
+                    "iconId": "enemy_dbskar_3",
+                    "runeId": "enemy_dbskar_3",
+                    "runeName": "None",
+                    "sortId": 3,
+                    "stageId": "level_rune_05-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_dlancer",
+                    "iconId": "enemy_dlancer_1",
+                    "runeId": "enemy_dlancer_1",
+                    "runeName": "None",
+                    "sortId": 4,
+                    "stageId": "level_rune_05-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_dlancer",
+                    "iconId": "enemy_dlancer_2",
+                    "runeId": "enemy_dlancer_2",
+                    "runeName": "None",
+                    "sortId": 5,
+                    "stageId": "level_rune_05-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_dmgswd",
+                    "iconId": "enemy_dmgswd_1",
+                    "runeId": "enemy_dmgswd_1",
+                    "runeName": "None",
+                    "sortId": 6,
+                    "stageId": "level_rune_05-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_dmgswd",
+                    "iconId": "enemy_dmgswd_2",
+                    "runeId": "enemy_dmgswd_2",
+                    "runeName": "None",
+                    "sortId": 7,
+                    "stageId": "level_rune_05-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_dmgswd",
+                    "iconId": "enemy_dmgswd_3",
+                    "runeId": "enemy_dmgswd_3",
+                    "runeName": "None",
+                    "sortId": 8,
+                    "stageId": "level_rune_05-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_dscout",
+                    "iconId": "enemy_dscout_1",
+                    "runeId": "enemy_dscout_1",
+                    "runeName": "None",
+                    "sortId": 9,
+                    "stageId": "level_rune_05-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_dscout",
+                    "iconId": "enemy_dscout_2",
+                    "runeId": "enemy_dscout_2",
+                    "runeName": "None",
+                    "sortId": 10,
+                    "stageId": "level_rune_05-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_dscout",
+                    "iconId": "enemy_dscout_3",
+                    "runeId": "enemy_dscout_3",
+                    "runeName": "None",
+                    "sortId": 11,
+                    "stageId": "level_rune_05-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_atk",
+                    "iconId": "enemy_atk_1",
+                    "runeId": "enemy_atk_1",
+                    "runeName": "None",
+                    "sortId": 12,
+                    "stageId": "level_rune_05-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_atk",
+                    "iconId": "enemy_atk_2",
+                    "runeId": "enemy_atk_2",
+                    "runeName": "None",
+                    "sortId": 13,
+                    "stageId": "level_rune_05-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_atk",
+                    "iconId": "enemy_atk_3",
+                    "runeId": "enemy_atk_3",
+                    "runeName": "None",
+                    "sortId": 14,
+                    "stageId": "level_rune_05-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_hp",
+                    "iconId": "enemy_hp_1",
+                    "runeId": "enemy_hp_1",
+                    "runeName": "None",
+                    "sortId": 15,
+                    "stageId": "level_rune_05-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_hp",
+                    "iconId": "enemy_hp_2",
+                    "runeId": "enemy_hp_2",
+                    "runeName": "None",
+                    "sortId": 16,
+                    "stageId": "level_rune_05-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_hp",
+                    "iconId": "enemy_hp_3",
+                    "runeId": "enemy_hp_3",
+                    "runeName": "None",
+                    "sortId": 17,
+                    "stageId": "level_rune_05-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "char_atkatkspeed",
+                    "iconId": "char_atkatkspeed_1",
+                    "runeId": "char_atkatkspeed_1",
+                    "runeName": "None",
+                    "sortId": 18,
+                    "stageId": "level_rune_05-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "char_atkatkspeed",
+                    "iconId": "char_atkatkspeed_2",
+                    "runeId": "char_atkatkspeed_2",
+                    "runeName": "None",
+                    "sortId": 19,
+                    "stageId": "level_rune_05-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "char_atkatkspeed",
+                    "iconId": "char_atkatkspeed_3",
+                    "runeId": "char_atkatkspeed_3",
+                    "runeName": "None",
+                    "sortId": 20,
+                    "stageId": "level_rune_05-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "char_hp",
+                    "iconId": "char_hp_1",
+                    "runeId": "char_hp_1",
+                    "runeName": "None",
+                    "sortId": 21,
+                    "stageId": "level_rune_05-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "char_hp",
+                    "iconId": "char_hp_2",
+                    "runeId": "char_hp_2",
+                    "runeName": "None",
+                    "sortId": 22,
+                    "stageId": "level_rune_05-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "char_hp",
+                    "iconId": "char_hp_3",
+                    "runeId": "char_hp_3",
+                    "runeName": "None",
+                    "sortId": 23,
+                    "stageId": "level_rune_05-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": null,
+                    "iconId": "global_squadnum_1",
+                    "runeId": "global_squadnum_1",
+                    "runeName": "None",
+                    "sortId": 24,
+                    "stageId": "level_rune_05-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "forbid_loc",
+                    "iconId": "global_forbidloc_1",
+                    "runeId": "global_forbidloc_1",
+                    "runeName": "None",
+                    "sortId": 25,
+                    "stageId": "level_rune_05-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "forbid_loc",
+                    "iconId": "global_forbidloc_2",
+                    "runeId": "global_forbidloc_2",
+                    "runeName": "None",
+                    "sortId": 26,
+                    "stageId": "level_rune_05-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "forbid_loc",
+                    "iconId": "global_forbidloc_3",
+                    "runeId": "global_forbidloc_3",
+                    "runeName": "None",
+                    "sortId": 27,
+                    "stageId": "level_rune_05-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "token_blower",
+                    "iconId": "token_blower_1",
+                    "runeId": "token_blower_1",
+                    "runeName": "None",
+                    "sortId": 28,
+                    "stageId": "level_rune_05-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "token_blower",
+                    "iconId": "token_blower_2",
+                    "runeId": "token_blower_2",
+                    "runeName": "None",
+                    "sortId": 29,
+                    "stageId": "level_rune_05-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "char_exclude",
+                    "iconId": "char_cost_special_1",
+                    "runeId": "char_cost_special_1",
+                    "runeName": "None",
+                    "sortId": 30,
+                    "stageId": "level_rune_05-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "char_exclude",
+                    "iconId": "char_cost_special_2",
+                    "runeId": "char_cost_special_2",
+                    "runeName": "None",
+                    "sortId": 31,
+                    "stageId": "level_rune_05-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": null,
+                    "iconId": "global_lifepoint_1",
+                    "runeId": "global_lifepoint_1",
+                    "runeName": "None",
+                    "sortId": 32,
+                    "stageId": "level_rune_05-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_def",
+                    "iconId": "enemy_def_1",
+                    "runeId": "enemy_def_1",
+                    "runeName": "None",
+                    "sortId": 33,
+                    "stageId": "level_rune_05-01"
+                }
+            ]
+        },
+        "stageRune": {
+            "level_rune_05-01": {
+                "enemy_dbskar_1": {
+                    "id": "enemy_dbskar_1",
+                    "description": "All [Sarkaz Grudgebearer] Max HP +30%, ATK +30%",
+                    "points": 1,
+                    "mutexGroupKey": "enemy_dbskar",
+                    "runes": [{
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [{
+                            "key": "max_hp",
+                            "value": 1.3,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "enemy",
+                            "value": 0,
+                            "valueStr": "enemy_1074_dbskar"
+                        },
+                        {
+                            "key": "atk",
+                            "value": 1.3,
+                            "valueStr": null
+                        }]
+                    }]
+                },
+                "enemy_dbskar_2": {
+                    "id": "enemy_dbskar_2",
+                    "description": "All [Sarkaz Grudgebearer] Max HP +60%, ATK +50%, attacks ignores target RES by 40%",
+                    "points": 2,
+                    "mutexGroupKey": "enemy_dbskar",
+                    "runes": [{
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [{
+                            "key": "max_hp",
+                            "value": 1.6,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "enemy",
+                            "value": 0,
+                            "valueStr": "enemy_1074_dbskar"
+                        },
+                        {
+                            "key": "atk",
+                            "value": 1.5,
+                            "valueStr": null
+                        }]
+                    },
+                    {
+                        "key": "enemy_dynamic_ability_new",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "enemy",
+                                "value": 0,
+                                "valueStr": "enemy_1074_dbskar"
+                            },
+                            {
+                                "key": "key",
+                                "value": 0,
+                                "valueStr": "MagicPenetration"
+                            },
+                            {
+                                "key": "magic_resist_penetrate",
+                                "value": 0.4,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "enemy_dbskar_3": {
+                    "id": "enemy_dbskar_3",
+                    "description": "All [Sarkaz Grudgebearer] Max HP +100%, ATK +80%, attacks ignores target RES by 70%",
+                    "points": 3,
+                    "mutexGroupKey": "enemy_dbskar",
+                    "runes": [{
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [{
+                            "key": "max_hp",
+                            "value": 2,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "enemy",
+                            "value": 0,
+                            "valueStr": "enemy_1074_dbskar"
+                        },
+                        {
+                            "key": "atk",
+                            "value": 1.8,
+                            "valueStr": null
+                        }]
+                    },
+                    {
+                        "key": "enemy_dynamic_ability_new",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "enemy",
+                                "value": 0,
+                                "valueStr": "enemy_1074_dbskar"
+                            },
+                            {
+                                "key": "key",
+                                "value": 0,
+                                "valueStr": "MagicPenetration"
+                            },
+                            {
+                                "key": "magic_resist_penetrate",
+                                "value": 0.7,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "enemy_dlancer_1": {
+                    "id": "enemy_dlancer_1",
+                    "description": "All [Sarkaz Lancers] Max HP +50%, speed-based dash damage becomes 600%",
+                    "points": 1,
+                    "mutexGroupKey": "enemy_dlancer",
+                    "runes": [{
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [{
+                            "key": "max_hp",
+                            "value": 1.5,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "enemy",
+                            "value": 0,
+                            "valueStr": "enemy_1072_dlancer"
+                        }]
+                    },
+                    {
+                        "key": "enemy_talent_blackb_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "enemy",
+                                "value": 0,
+                                "valueStr": "enemy_1072_dlancer"
+                            },
+                            {
+                                "key": "firstattack.atk_scale",
+                                "value": 6,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "enemy_dlancer_2": {
+                    "id": "enemy_dlancer_2",
+                    "description": "All [Sarkaz Lancers] Max HP +80%, speed-based dash damage becomes 1000%, dash acceleration is now 1.5x",
+                    "points": 2,
+                    "mutexGroupKey": "enemy_dlancer",
+                    "runes": [{
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [{
+                            "key": "max_hp",
+                            "value": 1.8,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "enemy",
+                            "value": 0,
+                            "valueStr": "enemy_1072_dlancer"
+                        }]
+                    },
+                    {
+                        "key": "enemy_talent_blackb_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "enemy",
+                                "value": 0,
+                                "valueStr": "enemy_1072_dlancer"
+                            },
+                            {
+                                "key": "firstattack.atk_scale",
+                                "value": 10,
+                                "valueStr": null
+                            },
+                            {
+                                "key": "rush.dlancer_t[trigger].move_speed",
+                                "value": 1.5,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "enemy_dmgswd_1": {
+                    "id": "enemy_dmgswd_1",
+                    "description": "All [Sarkaz Bladeweavers] Max HP +30%, ASPD +30, DEF +30%, Movement speed +20%",
+                    "points": 1,
+                    "mutexGroupKey": "enemy_dmgswd",
+                    "runes": [{
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [{
+                            "key": "max_hp",
+                            "value": 1.3,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "enemy",
+                            "value": 0,
+                            "valueStr": "enemy_1075_dmgswd"
+                        },
+                        {
+                            "key": "def",
+                            "value": 1.3,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "move_speed",
+                            "value": 1.2,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "attack_speed",
+                            "value": 1.3,
+                            "valueStr": null
+                        }]
+                    }]
+                },
+                "enemy_dmgswd_2": {
+                    "id": "enemy_dmgswd_2",
+                    "description": "All [Sarkaz Bladeweavers] Max HP +50%, ASPD +50, DEF +50%, movement speed +30%, Idle state timer decreased to 100s",
+                    "points": 2,
+                    "mutexGroupKey": "enemy_dmgswd",
+                    "runes": [{
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [{
+                            "key": "max_hp",
+                            "value": 1.5,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "enemy",
+                            "value": 0,
+                            "valueStr": "enemy_1075_dmgswd"
+                        },
+                        {
+                            "key": "def",
+                            "value": 1.5,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "move_speed",
+                            "value": 1.3,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "attack_speed",
+                            "value": 1.5,
+                            "valueStr": null
+                        }]
+                    },
+                    {
+                        "key": "enemy_talent_blackb_add",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "enemy",
+                                "value": 0,
+                                "valueStr": "enemy_1075_dmgswd"
+                            },
+                            {
+                                "key": "revive.unmove_duration",
+                                "value": -50,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "enemy_dmgswd_3": {
+                    "id": "enemy_dmgswd_3",
+                    "description": "All [Sarkaz Bladeweavers] Max HP +80%, ASPD +80, DEF +80%, movement speed +50%, Idle state timer decreased to 60s",
+                    "points": 3,
+                    "mutexGroupKey": "enemy_dmgswd",
+                    "runes": [{
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [{
+                            "key": "max_hp",
+                            "value": 1.8,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "enemy",
+                            "value": 0,
+                            "valueStr": "enemy_1075_dmgswd"
+                        },
+                        {
+                            "key": "def",
+                            "value": 1.8,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "move_speed",
+                            "value": 1.5,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "attack_speed",
+                            "value": 1.8,
+                            "valueStr": null
+                        }]
+                    },
+                    {
+                        "key": "enemy_talent_blackb_add",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "enemy",
+                                "value": 0,
+                                "valueStr": "enemy_1075_dmgswd"
+                            },
+                            {
+                                "key": "revive.unmove_duration",
+                                "value": -90,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "enemy_dscout_1": {
+                    "id": "enemy_dscout_1",
+                    "description": "All [Sarkaz Sentinel Leader] Movement Speed +10%, alerted state grants enemy 60% bonus ATK and DEF",
+                    "points": 1,
+                    "mutexGroupKey": "enemy_dscout",
+                    "runes": [{
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [{
+                            "key": "enemy",
+                            "value": 0,
+                            "valueStr": "enemy_1073_dscout_2"
+                        },
+                        {
+                            "key": "move_speed",
+                            "value": 1.1,
+                            "valueStr": null
+                        }]
+                    },
+                    {
+                        "key": "enemy_skill_blackb_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "enemy",
+                                "value": 0,
+                                "valueStr": "enemy_1073_dscout_2"
+                            },
+                            {
+                                "key": "atk",
+                                "value": 1.2,
+                                "valueStr": null
+                            },
+                            {
+                                "key": "def",
+                                "value": 1.2,
+                                "valueStr": null
+                            },
+                            {
+                                "key": "skill",
+                                "value": 0,
+                                "valueStr": "Awake"
+                            }
+                        ]
+                    }]
+                },
+                "enemy_dscout_2": {
+                    "id": "enemy_dscout_2",
+                    "description": "All [Sarkaz Sentinel Leader] Movement Speed +20%, alerted state grants enemy 75% bonus ATK and DEF",
+                    "points": 2,
+                    "mutexGroupKey": "enemy_dscout",
+                    "runes": [{
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [{
+                            "key": "enemy",
+                            "value": 0,
+                            "valueStr": "enemy_1073_dscout_2"
+                        },
+                        {
+                            "key": "move_speed",
+                            "value": 1.2,
+                            "valueStr": null
+                        }]
+                    },
+                    {
+                        "key": "enemy_skill_blackb_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "enemy",
+                                "value": 0,
+                                "valueStr": "enemy_1073_dscout_2"
+                            },
+                            {
+                                "key": "atk",
+                                "value": 1.5,
+                                "valueStr": null
+                            },
+                            {
+                                "key": "def",
+                                "value": 1.5,
+                                "valueStr": null
+                            },
+                            {
+                                "key": "skill",
+                                "value": 0,
+                                "valueStr": "Awake"
+                            }
+                        ]
+                    }]
+                },
+                "enemy_dscout_3": {
+                    "id": "enemy_dscout_3",
+                    "description": "All [Sarkaz Sentinel Leader] Movement Speed +30%, alerted state grants enemy 100% bonus ATK and DEF",
+                    "points": 3,
+                    "mutexGroupKey": "enemy_dscout",
+                    "runes": [{
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [{
+                            "key": "enemy",
+                            "value": 0,
+                            "valueStr": "enemy_1073_dscout_2"
+                        },
+                        {
+                            "key": "move_speed",
+                            "value": 1.3,
+                            "valueStr": null
+                        }]
+                    },
+                    {
+                        "key": "enemy_skill_blackb_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "enemy",
+                                "value": 0,
+                                "valueStr": "enemy_1073_dscout_2"
+                            },
+                            {
+                                "key": "atk",
+                                "value": 2,
+                                "valueStr": null
+                            },
+                            {
+                                "key": "def",
+                                "value": 2,
+                                "valueStr": null
+                            },
+                            {
+                                "key": "skill",
+                                "value": 0,
+                                "valueStr": "Awake"
+                            }
+                        ]
+                    }]
+                },
+                "enemy_atk_1": {
+                    "id": "enemy_atk_1",
+                    "description": "All enemies ATK +25%",
+                    "points": 1,
+                    "mutexGroupKey": "enemy_atk",
+                    "runes": [{
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 3,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "atk",
+                                "value": 1.25,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "enemy_atk_2": {
+                    "id": "enemy_atk_2",
+                    "description": "All enemies ATK +45%",
+                    "points": 2,
+                    "mutexGroupKey": "enemy_atk",
+                    "runes": [{
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 3,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "atk",
+                                "value": 1.45,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "enemy_atk_3": {
+                    "id": "enemy_atk_3",
+                    "description": "All enemies ATK +75%",
+                    "points": 3,
+                    "mutexGroupKey": "enemy_atk",
+                    "runes": [{
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 3,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "atk",
+                                "value": 1.75,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "enemy_hp_1": {
+                    "id": "enemy_hp_1",
+                    "description": "All enemies Max HP +30%",
+                    "points": 1,
+                    "mutexGroupKey": "enemy_hp",
+                    "runes": [{
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "max_hp",
+                                "value": 1.3,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "enemy_hp_2": {
+                    "id": "enemy_hp_2",
+                    "description": "All enemies Max HP +70%",
+                    "points": 2,
+                    "mutexGroupKey": "enemy_hp",
+                    "runes": [{
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "max_hp",
+                                "value": 1.7,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "enemy_hp_3": {
+                    "id": "enemy_hp_3",
+                    "description": "All enemies Max HP +120%",
+                    "points": 3,
+                    "mutexGroupKey": "enemy_hp",
+                    "runes": [{
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "max_hp",
+                                "value": 2.2,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "char_atkatkspeed_1": {
+                    "id": "char_atkatkspeed_1",
+                    "description": "Ally ATK -10%, ASPD -10",
+                    "points": 1,
+                    "mutexGroupKey": "char_atkatkspeed",
+                    "runes": [{
+                        "key": "char_attribute_mul",
+                        "selector": {
+                            "professionMask": 767,
+                            "buildableMask": 3,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "atk",
+                                "value": 0.9,
+                                "valueStr": null
+                            }
+                        ]
+                    },
+                    {
+                        "key": "char_attribute_add",
+                        "selector": {
+                            "professionMask": 767,
+                            "buildableMask": 3,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "attack_speed",
+                                "value": -10,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "char_atkatkspeed_2": {
+                    "id": "char_atkatkspeed_2",
+                    "description": "Ally ATK -20%, ASPD -20",
+                    "points": 2,
+                    "mutexGroupKey": "char_atkatkspeed",
+                    "runes": [{
+                        "key": "char_attribute_mul",
+                        "selector": {
+                            "professionMask": 767,
+                            "buildableMask": 3,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "atk",
+                                "value": 0.8,
+                                "valueStr": null
+                            }
+                        ]
+                    },
+                    {
+                        "key": "char_attribute_add",
+                        "selector": {
+                            "professionMask": 767,
+                            "buildableMask": 3,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "attack_speed",
+                                "value": -20,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "char_atkatkspeed_3": {
+                    "id": "char_atkatkspeed_3",
+                    "description": "Ally ATK -30%, ASPD -30",
+                    "points": 3,
+                    "mutexGroupKey": "char_atkatkspeed",
+                    "runes": [{
+                        "key": "char_attribute_mul",
+                        "selector": {
+                            "professionMask": 767,
+                            "buildableMask": 3,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "atk",
+                                "value": 0.7,
+                                "valueStr": null
+                            }
+                        ]
+                    },
+                    {
+                        "key": "char_attribute_add",
+                        "selector": {
+                            "professionMask": 767,
+                            "buildableMask": 3,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "attack_speed",
+                                "value": -30,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "char_hp_1": {
+                    "id": "char_hp_1",
+                    "description": "Ally Max HP -15%",
+                    "points": 1,
+                    "mutexGroupKey": "char_hp",
+                    "runes": [{
+                        "key": "char_attribute_mul",
+                        "selector": {
+                            "professionMask": 767,
+                            "buildableMask": 3,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "max_hp",
+                                "value": 0.85,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "char_hp_2": {
+                    "id": "char_hp_2",
+                    "description": "Ally Max HP -30%",
+                    "points": 2,
+                    "mutexGroupKey": "char_hp",
+                    "runes": [{
+                        "key": "char_attribute_mul",
+                        "selector": {
+                            "professionMask": 767,
+                            "buildableMask": 3,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "max_hp",
+                                "value": 0.7,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "char_hp_3": {
+                    "id": "char_hp_3",
+                    "description": "Ally Max HP -50%",
+                    "points": 3,
+                    "mutexGroupKey": "char_hp",
+                    "runes": [{
+                        "key": "char_attribute_mul",
+                        "selector": {
+                            "professionMask": 767,
+                            "buildableMask": 3,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "max_hp",
+                                "value": 0.5,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "global_squadnum_1": {
+                    "id": "global_squadnum_1",
+                    "description": "Maximum 10 operators in squad",
+                    "points": 1,
+                    "mutexGroupKey": null,
+                    "runes": [{
+                        "key": "global_squad_num_limit",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "value",
+                                "value": 10,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "global_forbidloc_1": {
+                    "id": "global_forbidloc_1",
+                    "description": "7 grids are forbidden for deployment",
+                    "points": 1,
+                    "mutexGroupKey": "forbid_loc",
+                    "runes": [{
+                        "key": "global_forbid_location",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "location",
+                                "value": 0,
+                                "valueStr": "(6,2)|(7,2)|(7,3)|(7,5)|(7,6)|(6,6)|(2,10)"
+                            }
+                        ]
+                    }]
+                },
+                "global_forbidloc_2": {
+                    "id": "global_forbidloc_2",
+                    "description": "10 grids are forbidden for deployment",
+                    "points": 2,
+                    "mutexGroupKey": "forbid_loc",
+                    "runes": [{
+                        "key": "global_forbid_location",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "location",
+                                "value": 0,
+                                "valueStr": "(6,2)|(7,2)|(7,3)|(7,5)|(7,6)|(6,6)|(2,10)|(6,1)|(7,1)|(6,7)"
+                            }
+                        ]
+                    }]
+                },
+                "global_forbidloc_3": {
+                    "id": "global_forbidloc_3",
+                    "description": "14 grids are forbidden for deployment",
+                    "points": 3,
+                    "mutexGroupKey": "forbid_loc",
+                    "runes": [{
+                        "key": "global_forbid_location",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "location",
+                                "value": 0,
+                                "valueStr": "(6,2)|(7,2)|(7,3)|(7,5)|(7,6)|(6,6)|(2,10)|(6,1)|(7,1)|(6,7)|(5,1)|(5,2)|(5,6)|(5,7)"
+                            }
+                        ]
+                    }]
+                },
+                "token_blower_1": {
+                    "id": "token_blower_1",
+                    "description": "4 [Originium Jetstreams] will have their locations and directions changed",
+                    "points": 1,
+                    "mutexGroupKey": "token_blower",
+                    "runes": [{
+                        "key": "level_predefines_enable",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [{
+                            "key": "trap_013_blower#1",
+                            "value": 0,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "trap_013_blower#2",
+                            "value": 0,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "trap_013_blower#3",
+                            "value": 0,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "trap_013_blower#4",
+                            "value": 0,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "trap_013_blower#11",
+                            "value": 1,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "trap_013_blower#12",
+                            "value": 1,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "trap_013_blower#13",
+                            "value": 1,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "trap_013_blower#14",
+                            "value": 1,
+                            "valueStr": null
+                        }]
+                    }]
+                },
+                "token_blower_2": {
+                    "id": "token_blower_2",
+                    "description": "7 [Originium Jetstreams] will have their locations and directions changed and if deployment orientation is perpendicular to air stream then ATK -15%",
+                    "points": 2,
+                    "mutexGroupKey": "token_blower",
+                    "runes": [{
+                        "key": "level_predefines_enable",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [{
+                            "key": "trap_013_blower#1",
+                            "value": 0,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "trap_013_blower#2",
+                            "value": 0,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "trap_013_blower#3",
+                            "value": 0,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "trap_013_blower#4",
+                            "value": 0,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "trap_013_blower#5",
+                            "value": 0,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "trap_013_blower#6",
+                            "value": 0,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "trap_013_blower#7",
+                            "value": 0,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "trap_013_blower#11",
+                            "value": 1,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "trap_013_blower#12",
+                            "value": 1,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "trap_013_blower#13",
+                            "value": 1,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "trap_013_blower#14",
+                            "value": 1,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "trap_013_blower#25",
+                            "value": 1,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "trap_013_blower#26",
+                            "value": 1,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "trap_013_blower#27",
+                            "value": 1,
+                            "valueStr": null
+                        }]
+                    },
+                    {
+                        "key": "char_skill_blackb_add",
+                        "selector": {
+                            "professionMask": 1023,
+                            "buildableMask": 3,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [{
+                            "key": "blower_s_character[vertical].atk",
+                            "value": -0.15,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "character",
+                            "value": 0.0,
+                            "valueStr": "trap_013_blower"
+                        }]
+                    }]
+                },
+                "char_cost_special_1": {
+                    "id": "char_cost_special_1",
+                    "description": "Specialists DP cost doubled",
+                    "points": 1,
+                    "mutexGroupKey": "char_exclude",
+                    "runes": [{
+                        "key": "char_cost_mul",
+                        "selector": {
+                            "professionMask": 64,
+                            "buildableMask": 3,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "scale",
+                                "value": 2,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "char_cost_special_2": {
+                    "id": "char_cost_special_2",
+                    "description": "Specialists DP cost tripled, Redeployment Time +50%.",
+                    "points": 2,
+                    "mutexGroupKey": "char_exclude",
+                    "runes": [{
+                        "key": "char_cost_mul",
+                        "selector": {
+                            "professionMask": 64,
+                            "buildableMask": 3,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "scale",
+                                "value": 3,
+                                "valueStr": null
+                            }
+                        ]
+                    },
+                    {
+                        "key": "char_respawntime_mul",
+                        "selector": {
+                            "professionMask": 64,
+                            "buildableMask": 3,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "scale",
+                                "value": 1.5,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "global_lifepoint_1": {
+                    "id": "global_lifepoint_1",
+                    "description": "HP seal decreased to 1",
+                    "points": 1,
+                    "mutexGroupKey": null,
+                    "runes": [{
+                        "key": "global_lifepoint",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [{
+                            "key": "value",
+                            "value": 1,
+                            "valueStr": null
+                        }]
+                    }]
+                },
+                "enemy_def_1": {
+                    "id": "enemy_def_1",
+                    "description": "Enemy DEF +150",
+                    "points": 1,
+                    "mutexGroupKey": "enemy_def",
+                    "runes": [{
+                        "key": "enemy_attribute_add",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "def",
+                                "value": 150,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                }
+            }
+        }
+    },
+    "playerDataDelta": {
+        "modified": {
+            "crisis": {
+                "current": "rune_season_3_1",
+                "lst": 1666023325,
+                "nst": 1666123325,
+                "map": {},
+                "shop": {},
+                "training": {
+                    "currentStage": [],
+                    "stage": {},
+                    "nst": 1666123325
+                },
+                "season": {
+                    "rune_season_3_1": {
+                        "coin": 14,
+                        "tCoin": 28,
+                        "permanent": {
+                            "nst": -1,
+                            "rune": {
+                                "global_lifepoint_1": 3,
+                                "enemy_def_1": 3,
+                                "char_atkatkspeed_1": 3,
+                                "char_cost_special_1": 3,
+                                "char_hp_1": 3,
+                                "enemy_atk_1": 3,
+                                "enemy_dbskar_1": 3,
+                                "global_forbidloc_1": 3,
+                                "enemy_dmgswd_1": 3,
+                                "enemy_dscout_1": 3,
+                                "token_blower_1": 3,
+                                "global_squadnum_1": 3,
+                                "global_forbidloc_2": 3,
+                                "char_atkatkspeed_2": 3,
+                                "enemy_dbskar_2": 3,
+                                "char_cost_special_2": 3,
+                                "enemy_dmgswd_2": 3,
+                                "enemy_dscout_2": 3,
+                                "enemy_hp_2": 3,
+                                "enemy_atk_2": 3,
+                                "enemy_dscout_3": 3,
+                                "enemy_hp_3": 3,
+                                "enemy_dbskar_3": 3,
+                                "char_atkatkspeed_3": 3,
+                                "enemy_atk_3": 3,
+                                "enemy_dmgswd_3": 3,
+                                "enemy_hp_1": 3,
+                                "enemy_dlancer_1": 3,
+                                "token_blower_2": 3,
+                                "char_hp_2": 3,
+                                "enemy_dlancer_2": 3,
+                                "char_hp_3": 3,
+                                "global_forbidloc_3": 3
+                            },
+                            "point": 9999,
+                            "challenge": {
+                                "taskList": {},
+                                "topPoint": 0,
+                                "pointList": {}
+                            }
+                        },
+                        "temporary": {},
+                        "sInfo": {}
+                    }
+                },
+                "box": []
+            }
+        },
+        "deleted": {}
+    }
+}

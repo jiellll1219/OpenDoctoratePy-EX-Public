@@ -1,0 +1,2123 @@
+{
+    "ts": 1666023325,
+    "data": {
+        "seasonInfo": [
+            {
+                "seasonId": "rune_season_4_1",
+                "stages": {
+                    "level_rune_06-01": {
+                        "stageId": "level_rune_06-01",
+                        "levelId": "Obt/Rune/level_rune_06-01",
+                        "mapId": "rune_06-01",
+                        "code": "Barrenlands",
+                        "name": "Abandoned Mine",
+                        "loadingPicId": "loadingE2",
+                        "description": "This abandoned mine far from the city has become a den of outlaws. Hurry up and clear them out to restore order to the area.",
+                        "picId": "ccmap_miningarea",
+                        "logoPicId": "logo_kazimierz",
+                        "slotId": 0,
+                        "type": "PERMANENT"
+                    }
+                },
+                "permStageGroup": [
+                    {
+                        "stageId": "level_rune_06-01",
+                        "stagePointLevelInfo": {},
+                        "stageChallengeInfo": [],
+                        "_mapChallenge": {},
+                        "runeList": [
+                            {
+                                "runeId": "enemy_bigbomdrock_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_bigbomdrock_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_bigbomdrock_3",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_mdgint_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_mdgint_amod_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_mdgint_amod_3",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_mdgint_bmod_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_mdgint_bmod_3",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_atk_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_atk_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_atk_3",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_hp_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_hp_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_hp_3",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_atk_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_atk_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_atk_3",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_hp_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_hp_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_hp_3",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "global_costrecovery_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "global_costrecovery_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_respawntime_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "global_squadnum_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "global_squadnum_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "global_pcharnum_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "global_forbidloc_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "global_forbidloc_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_cost_guardspecial_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_cost_guardspecial_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_cost_castersupporter_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_cost_castersupporter_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "global_lifepoint_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_magicresistance_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "trap_change_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_attackspeed_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_movespeed_1",
+                                "unlockPercent": 0
+                            }
+                        ]
+                    }
+                ],
+                "tempStageGroup": [],
+                "trainStageGroup": []
+            }
+        ],
+        "trainingInfo": {
+            "stages": {},
+            "runeInfo": {}
+        },
+        "runeInfoList": {
+            "level_rune_06-01": [
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_bigbomdrock",
+                    "iconId": "enemy_bigbomdrock_1",
+                    "runeId": "enemy_bigbomdrock_1",
+                    "runeName": "None",
+                    "sortId": 1,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_bigbomdrock",
+                    "iconId": "enemy_bigbomdrock_2",
+                    "runeId": "enemy_bigbomdrock_2",
+                    "runeName": "None",
+                    "sortId": 2,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_bigbomdrock",
+                    "iconId": "enemy_bigbomdrock_3",
+                    "runeId": "enemy_bigbomdrock_3",
+                    "runeName": "None",
+                    "sortId": 3,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_mdgint",
+                    "iconId": "enemy_mdgint_1",
+                    "runeId": "enemy_mdgint_1",
+                    "runeName": "None",
+                    "sortId": 4,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_mdgint",
+                    "iconId": "enemy_mdgint_amod_2",
+                    "runeId": "enemy_mdgint_amod_2",
+                    "runeName": "None",
+                    "sortId": 5,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_mdgint",
+                    "iconId": "enemy_mdgint_amod_3",
+                    "runeId": "enemy_mdgint_amod_3",
+                    "runeName": "None",
+                    "sortId": 6,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_mdgint",
+                    "iconId": "enemy_mdgint_bmod_2",
+                    "runeId": "enemy_mdgint_bmod_2",
+                    "runeName": "None",
+                    "sortId": 7,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_mdgint",
+                    "iconId": "enemy_mdgint_bmod_3",
+                    "runeId": "enemy_mdgint_bmod_3",
+                    "runeName": "None",
+                    "sortId": 8,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_atk",
+                    "iconId": "enemy_atk_1",
+                    "runeId": "enemy_atk_1",
+                    "runeName": "None",
+                    "sortId": 9,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_atk",
+                    "iconId": "enemy_atk_2",
+                    "runeId": "enemy_atk_2",
+                    "runeName": "None",
+                    "sortId": 10,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_atk",
+                    "iconId": "enemy_atk_3",
+                    "runeId": "enemy_atk_3",
+                    "runeName": "None",
+                    "sortId": 11,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_hp",
+                    "iconId": "enemy_hp_1",
+                    "runeId": "enemy_hp_1",
+                    "runeName": "None",
+                    "sortId": 12,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_hp",
+                    "iconId": "enemy_hp_2",
+                    "runeId": "enemy_hp_2",
+                    "runeName": "None",
+                    "sortId": 13,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_hp",
+                    "iconId": "enemy_hp_3",
+                    "runeId": "enemy_hp_3",
+                    "runeName": "None",
+                    "sortId": 14,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "char_atk",
+                    "iconId": "char_atk_1",
+                    "runeId": "char_atk_1",
+                    "runeName": "None",
+                    "sortId": 15,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "char_atk",
+                    "iconId": "char_atk_2",
+                    "runeId": "char_atk_2",
+                    "runeName": "None",
+                    "sortId": 16,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "char_atk",
+                    "iconId": "char_atk_3",
+                    "runeId": "char_atk_3",
+                    "runeName": "None",
+                    "sortId": 17,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "char_hp",
+                    "iconId": "char_hp_1",
+                    "runeId": "char_hp_1",
+                    "runeName": "None",
+                    "sortId": 18,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "char_hp",
+                    "iconId": "char_hp_2",
+                    "runeId": "char_hp_2",
+                    "runeName": "None",
+                    "sortId": 19,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "char_hp",
+                    "iconId": "char_hp_3",
+                    "runeId": "char_hp_3",
+                    "runeName": "None",
+                    "sortId": 20,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "costrecovery",
+                    "iconId": "global_costrecovery_1",
+                    "runeId": "global_costrecovery_1",
+                    "runeName": "None",
+                    "sortId": 21,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "costrecovery",
+                    "iconId": "global_costrecovery_2",
+                    "runeId": "global_costrecovery_2",
+                    "runeName": "None",
+                    "sortId": 22,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": null,
+                    "iconId": "char_respawntime_1",
+                    "runeId": "char_respawntime_1",
+                    "runeName": "None",
+                    "sortId": 23,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "squad_limit",
+                    "iconId": "global_squadnum_1",
+                    "runeId": "global_squadnum_1",
+                    "runeName": "None",
+                    "sortId": 24,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "squad_limit",
+                    "iconId": "global_squadnum_2",
+                    "runeId": "global_squadnum_2",
+                    "runeName": "None",
+                    "sortId": 25,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "squad_limit",
+                    "iconId": "global_pcharnum_2",
+                    "runeId": "global_pcharnum_2",
+                    "runeName": "None",
+                    "sortId": 26,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "forbid_loc",
+                    "iconId": "global_forbidloc_1",
+                    "runeId": "global_forbidloc_1",
+                    "runeName": "None",
+                    "sortId": 27,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "forbid_loc",
+                    "iconId": "global_forbidloc_2",
+                    "runeId": "global_forbidloc_2",
+                    "runeName": "None",
+                    "sortId": 28,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "char_exclude",
+                    "iconId": "char_cost_guardspecial_1",
+                    "runeId": "char_cost_guardspecial_1",
+                    "runeName": "None",
+                    "sortId": 29,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "char_exclude",
+                    "iconId": "char_cost_guardspecial_2",
+                    "runeId": "char_cost_guardspecial_2",
+                    "runeName": "None",
+                    "sortId": 30,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "char_exclude",
+                    "iconId": "char_cost_castersupporter_1",
+                    "runeId": "char_cost_castersupporter_1",
+                    "runeName": "None",
+                    "sortId": 31,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "char_exclude",
+                    "iconId": "char_cost_castersupporter_2",
+                    "runeId": "char_cost_castersupporter_2",
+                    "runeName": "None",
+                    "sortId": 32,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": null,
+                    "iconId": "global_lifepoint_1",
+                    "runeId": "global_lifepoint_1",
+                    "runeName": "None",
+                    "sortId": 33,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": null,
+                    "iconId": "enemy_magicresistance_1",
+                    "runeId": "enemy_magicresistance_1",
+                    "runeName": "None",
+                    "sortId": 34,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": null,
+                    "iconId": "trap_change_1",
+                    "runeId": "trap_change_1",
+                    "runeName": "None",
+                    "sortId": 35,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": null,
+                    "iconId": "char_attackspeed_1",
+                    "runeId": "char_attackspeed_1",
+                    "runeName": "None",
+                    "sortId": 36,
+                    "stageId": "level_rune_06-01"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": null,
+                    "iconId": "enemy_movespeed_1",
+                    "runeId": "enemy_movespeed_1",
+                    "runeName": "None",
+                    "sortId": 37,
+                    "stageId": "level_rune_06-01"
+                }
+            ]
+        },
+        "stageRune": {
+            "level_rune_06-01": {
+                "enemy_bigbomdrock_1": {
+                    "id": "enemy_bigbomdrock_1",
+                    "description": "[Big Bob] and [Mudrock] ATK +30%, Max HP +30%, RES +15",
+                    "points": 1,
+                    "mutexGroupKey": "enemy_bigbomdrock",
+                    "runes": [{
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [{
+                            "key": "max_hp",
+                            "value": 1.3,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "enemy",
+                            "value": 0,
+                            "valueStr": "enemy_1001_bigbo|enemy_1511_mdrock"
+                        },
+                        {
+                            "key": "atk",
+                            "value": 1.3,
+                            "valueStr": null
+                        }]
+                    },
+                    {
+                        "key": "enemy_attribute_add",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "magic_resistance",
+                                "value": 15,
+                                "valueStr": null
+                            },
+                            {
+                                "key": "enemy",
+                                "value": 0,
+                                "valueStr": "enemy_1001_bigbo|enemy_1511_mdrock"
+                            }
+                        ]
+                    }]
+                },
+                "enemy_bigbomdrock_2": {
+                    "id": "enemy_bigbomdrock_2",
+                    "description": "[Big Bob] and [Mudrock] ATK +60%, Max HP +60%, RES +30. [Big Bob] DEF +50%, [Mudrock] shield +50%",
+                    "points": 2,
+                    "mutexGroupKey": "enemy_bigbomdrock",
+                    "runes": [{
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "atk",
+                                "value": 1.6,
+                                "valueStr": null
+                            },
+                            {
+                                "key": "max_hp",
+                                "value": 1.6,
+                                "valueStr": null
+                            },
+                            {
+                                "key": "enemy",
+                                "value": 0,
+                                "valueStr": "enemy_1001_bigbo|enemy_1511_mdrock"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "enemy_attribute_add",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "magic_resistance",
+                                "value": 30,
+                                "valueStr": null
+                            },
+                            {
+                                "key": "enemy",
+                                "value": 0,
+                                "valueStr": "enemy_1001_bigbo|enemy_1511_mdrock"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "enemy",
+                                "value": 0,
+                                "valueStr": "enemy_1001_bigbo"
+                            },
+                            {
+                                "key": "def",
+                                "value": 1.5,
+                                "valueStr": null
+                            }
+                        ]
+                    },
+                    {
+                        "key": "enemy_talent_blackb_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "enemy",
+                                "value": 0,
+                                "valueStr": "enemy_1511_mdrock"
+                            },
+                            {
+                                "key": "shield.dynamic",
+                                "value": 1.5,
+                                "valueStr": null
+                            }
+                        ]
+                    },
+                    {
+                        "key": "enemy_skill_blackb_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "enemy",
+                                "value": 0,
+                                "valueStr": "enemy_1511_mdrock"
+                            },
+                            {
+                                "key": "RefreshShield.dynamic",
+                                "value": 1.5,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "enemy_bigbomdrock_3": {
+                    "id": "enemy_bigbomdrock_3",
+                    "description": "[Big Bob] and [Mudrock] ATK +90%, Max HP +100%, RES +45. [Big Bob] DEF +100%, [Mudrock] shield +100% and shield cooldown reduced to 70% of original value.",
+                    "points": 3,
+                    "mutexGroupKey": "enemy_bigbomdrock",
+                    "runes": [{
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "atk",
+                                "value": 1.9,
+                                "valueStr": null
+                            },
+                            {
+                                "key": "max_hp",
+                                "value": 2,
+                                "valueStr": null
+                            },
+                            {
+                                "key": "enemy",
+                                "value": 0,
+                                "valueStr": "enemy_1001_bigbo|enemy_1511_mdrock"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "enemy_attribute_add",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "magic_resistance",
+                                "value": 45,
+                                "valueStr": null
+                            },
+                            {
+                                "key": "enemy",
+                                "value": 0,
+                                "valueStr": "enemy_1001_bigbo|enemy_1511_mdrock"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "enemy",
+                                "value": 0,
+                                "valueStr": "enemy_1001_bigbo"
+                            },
+                            {
+                                "key": "def",
+                                "value": 2,
+                                "valueStr": null
+                            }
+                        ]
+                    },
+                    {
+                        "key": "enemy_talent_blackb_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "enemy",
+                                "value": 0,
+                                "valueStr": "enemy_1511_mdrock"
+                            },
+                            {
+                                "key": "shield.dynamic",
+                                "value": 2,
+                                "valueStr": null
+                            }
+                        ]
+                    },
+                    {
+                        "key": "enemy_skill_blackb_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "enemy",
+                                "value": 0,
+                                "valueStr": "enemy_1511_mdrock"
+                            },
+                            {
+                                "key": "RefreshShield.dynamic",
+                                "value": 2,
+                                "valueStr": null
+                            }
+                        ]
+                    },
+                    {
+                        "key": "enemy_skill_cd_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "enemy",
+                                "value": 0,
+                                "valueStr": "enemy_1511_mdrock"
+                            },
+                            {
+                                "key": "scale",
+                                "value": 0.7,
+                                "valueStr": null
+                            },
+                            {
+                                "key": "skill",
+                                "value": 0,
+                                "valueStr": "RefreshShield"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "enemy_skill_init_cd_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "enemy",
+                                "value": 0,
+                                "valueStr": "enemy_1511_mdrock"
+                            },
+                            {
+                                "key": "skill",
+                                "value": 0,
+                                "valueStr": "RefreshShield"
+                            },
+                            {
+                                "key": "scale",
+                                "value": 0.7,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "enemy_mdgint_1": {
+                    "id": "enemy_mdgint_1",
+                    "description": "All [Mudrock Colossus] Max HP +25%, ATK +30%, RES +15",
+                    "points": 1,
+                    "mutexGroupKey": "enemy_mdgint",
+                    "runes": [{
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [{
+                            "key": "max_hp",
+                            "value": 1.25,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "enemy",
+                            "value": 0,
+                            "valueStr": "enemy_1092_mdgint"
+                        },
+                        {
+                            "key": "atk",
+                            "value": 1.3,
+                            "valueStr": null
+                        }]
+                    },
+                    {
+                        "key": "enemy_attribute_add",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "magic_resistance",
+                                "value": 15,
+                                "valueStr": null
+                            },
+                            {
+                                "key": "enemy",
+                                "value": 0,
+                                "valueStr": "enemy_1092_mdgint"
+                            }
+                        ]
+                    }]
+                },
+                "enemy_mdgint_amod_2": {
+                    "id": "enemy_mdgint_amod_2",
+                    "description": "All [Mudrock Colossus] Max HP +50%, ATK +60%, RES +30. Immune to Slow (sluggish) and Bind.",
+                    "points": 2,
+                    "mutexGroupKey": "enemy_mdgint",
+                    "runes": [{
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [{
+                            "key": "max_hp",
+                            "value": 1.5,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "enemy",
+                            "value": 0,
+                            "valueStr": "enemy_1092_mdgint"
+                        },
+                        {
+                            "key": "atk",
+                            "value": 1.6,
+                            "valueStr": null
+                        }]
+                    },
+                    {
+                        "key": "enemy_attribute_add",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "magic_resistance",
+                                "value": 30,
+                                "valueStr": null
+                            },
+                            {
+                                "key": "enemy",
+                                "value": 0,
+                                "valueStr": "enemy_1092_mdgint"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "enemy_dynamic_ability_new",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "enemy",
+                                "value": 0,
+                                "valueStr": "enemy_1092_mdgint"
+                            },
+                            {
+                                "key": "key",
+                                "value": 0,
+                                "valueStr": "sluggishimmue"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "enemy_dynamic_ability_new",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "enemy",
+                                "value": 0,
+                                "valueStr": "enemy_1092_mdgint"
+                            },
+                            {
+                                "key": "key",
+                                "value": 0,
+                                "valueStr": "unmovableimmue"
+                            }
+                        ]
+                    }]
+                },
+                "enemy_mdgint_amod_3": {
+                    "id": "enemy_mdgint_amod_3",
+                    "description": "All [Mudrock Colossus] Max HP +90%, ATK +90%, RES +45. Immune to Slow (sluggish) and Bind.",
+                    "points": 3,
+                    "mutexGroupKey": "enemy_mdgint",
+                    "runes": [{
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [{
+                            "key": "max_hp",
+                            "value": 1.9,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "enemy",
+                            "value": 0,
+                            "valueStr": "enemy_1092_mdgint"
+                        },
+                        {
+                            "key": "atk",
+                            "value": 1.9,
+                            "valueStr": null
+                        }]
+                    },
+                    {
+                        "key": "enemy_attribute_add",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "magic_resistance",
+                                "value": 45,
+                                "valueStr": null
+                            },
+                            {
+                                "key": "enemy",
+                                "value": 0,
+                                "valueStr": "enemy_1092_mdgint"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "enemy_dynamic_ability_new",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "enemy",
+                                "value": 0,
+                                "valueStr": "enemy_1092_mdgint"
+                            },
+                            {
+                                "key": "key",
+                                "value": 0,
+                                "valueStr": "sluggishimmue"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "enemy_dynamic_ability_new",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "enemy",
+                                "value": 0,
+                                "valueStr": "enemy_1092_mdgint"
+                            },
+                            {
+                                "key": "key",
+                                "value": 0,
+                                "valueStr": "unmovableimmue"
+                            }
+                        ]
+                    }]
+                },
+                "enemy_mdgint_bmod_2": {
+                    "id": "enemy_mdgint_bmod_2",
+                    "description": "All [Mudrock Colossus] Max HP +50%, ATK +60%, RES +30. Immune to Stun",
+                    "points": 2,
+                    "mutexGroupKey": "enemy_mdgint",
+                    "runes": [{
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [{
+                            "key": "max_hp",
+                            "value": 1.5,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "enemy",
+                            "value": 0,
+                            "valueStr": "enemy_1092_mdgint"
+                        },
+                        {
+                            "key": "atk",
+                            "value": 1.6,
+                            "valueStr": null
+                        }]
+                    },
+                    {
+                        "key": "enemy_attribute_add",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "magic_resistance",
+                                "value": 30,
+                                "valueStr": null
+                            },
+                            {
+                                "key": "enemy",
+                                "value": 0,
+                                "valueStr": "enemy_1092_mdgint"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "enemy_dynamic_ability_new",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "enemy",
+                                "value": 0,
+                                "valueStr": "enemy_1092_mdgint"
+                            },
+                            {
+                                "key": "key",
+                                "value": 0,
+                                "valueStr": "stunimmue"
+                            }
+                        ]
+                    }]
+                },
+                "enemy_mdgint_bmod_3": {
+                    "id": "enemy_mdgint_bmod_3",
+                    "description": "All [Mudrock Colossus] Max HP +90%, ATK +90%, RES +45. Immune to Stun",
+                    "points": 3,
+                    "mutexGroupKey": "enemy_mdgint",
+                    "runes": [{
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [{
+                            "key": "max_hp",
+                            "value": 1.9,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "enemy",
+                            "value": 0,
+                            "valueStr": "enemy_1092_mdgint"
+                        },
+                        {
+                            "key": "atk",
+                            "value": 1.9,
+                            "valueStr": null
+                        }]
+                    },
+                    {
+                        "key": "enemy_attribute_add",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "magic_resistance",
+                                "value": 45,
+                                "valueStr": null
+                            },
+                            {
+                                "key": "enemy",
+                                "value": 0,
+                                "valueStr": "enemy_1092_mdgint"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "enemy_dynamic_ability_new",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "enemy",
+                                "value": 0,
+                                "valueStr": "enemy_1092_mdgint"
+                            },
+                            {
+                                "key": "key",
+                                "value": 0,
+                                "valueStr": "stunimmue"
+                            }
+                        ]
+                    }]
+                },
+                "enemy_atk_1": {
+                    "id": "enemy_atk_1",
+                    "description": "All enemies ATK +15%",
+                    "points": 1,
+                    "mutexGroupKey": "enemy_atk",
+                    "runes": [{
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 3,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "atk",
+                                "value": 1.15,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "enemy_atk_2": {
+                    "id": "enemy_atk_2",
+                    "description": "All enemies ATK +40%",
+                    "points": 2,
+                    "mutexGroupKey": "enemy_atk",
+                    "runes": [{
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 3,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "atk",
+                                "value": 1.4,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "enemy_atk_3": {
+                    "id": "enemy_atk_3",
+                    "description": "All enemies ATK +80%",
+                    "points": 3,
+                    "mutexGroupKey": "enemy_atk",
+                    "runes": [{
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 3,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "atk",
+                                "value": 1.8,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "enemy_hp_1": {
+                    "id": "enemy_hp_1",
+                    "description": "All enemies Max HP +30%",
+                    "points": 1,
+                    "mutexGroupKey": "enemy_hp",
+                    "runes": [{
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "max_hp",
+                                "value": 1.3,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "enemy_hp_2": {
+                    "id": "enemy_hp_2",
+                    "description": "All enemies Max HP +70%",
+                    "points": 2,
+                    "mutexGroupKey": "enemy_hp",
+                    "runes": [{
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "max_hp",
+                                "value": 1.7,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "enemy_hp_3": {
+                    "id": "enemy_hp_3",
+                    "description": "All enemies Max HP +120%",
+                    "points": 3,
+                    "mutexGroupKey": "enemy_hp",
+                    "runes": [{
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "max_hp",
+                                "value": 2.2,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "char_atk_1": {
+                    "id": "char_atk_1",
+                    "description": "Ally ATK -15%",
+                    "points": 1,
+                    "mutexGroupKey": "char_atk",
+                    "runes": [{
+                        "key": "char_attribute_mul",
+                        "selector": {
+                            "professionMask": 767,
+                            "buildableMask": 3,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "atk",
+                                "value": 0.85,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "char_atk_2": {
+                    "id": "char_atk_2",
+                    "description": "Ally ATK -30%",
+                    "points": 2,
+                    "mutexGroupKey": "char_atk",
+                    "runes": [{
+                        "key": "char_attribute_mul",
+                        "selector": {
+                            "professionMask": 767,
+                            "buildableMask": 3,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "atk",
+                                "value": 0.7,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "char_atk_3": {
+                    "id": "char_atk_3",
+                    "description": "Ally ATK -50%",
+                    "points": 3,
+                    "mutexGroupKey": "char_atk",
+                    "runes": [{
+                        "key": "char_attribute_mul",
+                        "selector": {
+                            "professionMask": 767,
+                            "buildableMask": 3,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "atk",
+                                "value": 0.5,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "char_hp_1": {
+                    "id": "char_hp_1",
+                    "description": "Ally Max HP -15%",
+                    "points": 1,
+                    "mutexGroupKey": "char_hp",
+                    "runes": [{
+                        "key": "char_attribute_mul",
+                        "selector": {
+                            "professionMask": 767,
+                            "buildableMask": 3,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "max_hp",
+                                "value": 0.85,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "char_hp_2": {
+                    "id": "char_hp_2",
+                    "description": "Ally Max HP -30%",
+                    "points": 2,
+                    "mutexGroupKey": "char_hp",
+                    "runes": [{
+                        "key": "char_attribute_mul",
+                        "selector": {
+                            "professionMask": 767,
+                            "buildableMask": 3,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "max_hp",
+                                "value": 0.7,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "char_hp_3": {
+                    "id": "char_hp_3",
+                    "description": "Ally Max HP -50%",
+                    "points": 3,
+                    "mutexGroupKey": "char_hp",
+                    "runes": [{
+                        "key": "char_attribute_mul",
+                        "selector": {
+                            "professionMask": 767,
+                            "buildableMask": 3,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "max_hp",
+                                "value": 0.5,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "global_costrecovery_1": {
+                    "id": "global_costrecovery_1",
+                    "description": "Natural DP Regeneration -30%",
+                    "points": 1,
+                    "mutexGroupKey": "costrecovery",
+                    "runes": [{
+                        "key": "global_cost_recovery_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "scale",
+                                "value": 1.666,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "global_costrecovery_2": {
+                    "id": "global_costrecovery_2",
+                    "description": "Natural DP Regeneration -60%",
+                    "points": 2,
+                    "mutexGroupKey": "costrecovery",
+                    "runes": [{
+                        "key": "global_cost_recovery_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "scale",
+                                "value": 2.5,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "char_respawntime_1": {
+                    "id": "char_respawntime_1",
+                    "description": "Operator Redeployment time +75%",
+                    "points": 1,
+                    "mutexGroupKey": null,
+                    "runes": [{
+                        "key": "char_respawntime_mul",
+                        "selector": {
+                            "professionMask": 767,
+                            "buildableMask": 3,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "scale",
+                                "value": 1.5,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "global_squadnum_1": {
+                    "id": "global_squadnum_1",
+                    "description": "Maximum 10 operators in squad",
+                    "points": 1,
+                    "mutexGroupKey": "squad_limit",
+                    "runes": [{
+                        "key": "global_squad_num_limit",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "value",
+                                "value": 10,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "global_squadnum_2": {
+                    "id": "global_squadnum_2",
+                    "description": "Maximum 7 operators in squad",
+                    "points": 2,
+                    "mutexGroupKey": "squad_limit",
+                    "runes": [{
+                        "key": "global_squad_num_limit",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "value",
+                                "value": 7,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "global_pcharnum_2": {
+                    "id": "global_pcharnum_2",
+                    "description": "Deploy Limit reduced to 5",
+                    "points": 2,
+                    "mutexGroupKey": "squad_limit",
+                    "runes": [{
+                        "key": "global_placable_char_num_add",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "value",
+                                "value": -4,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "global_forbidloc_1": {
+                    "id": "global_forbidloc_1",
+                    "description": "5 grids are forbidden for deployment",
+                    "points": 1,
+                    "mutexGroupKey": "forbid_loc",
+                    "runes": [{
+                        "key": "global_forbid_location",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "location",
+                                "value": 0,
+                                "valueStr": "(1,2)|(1,3)|(3,3)|(3,5)|(4,5)"
+                            }
+                        ]
+                    }]
+                },
+                "global_forbidloc_2": {
+                    "id": "global_forbidloc_2",
+                    "description": "9 grids are forbidden for deployment",
+                    "points": 2,
+                    "mutexGroupKey": "forbid_loc",
+                    "runes": [{
+                        "key": "global_forbid_location",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "location",
+                                "value": 0,
+                                "valueStr": "(1,2)|(1,3)|(3,3)|(3,5)|(4,5)|(2,5)|(5,3)|(6,8)|(5,10)"
+                            }
+                        ]
+                    }]
+                },
+                "char_cost_guardspecial_1": {
+                    "id": "char_cost_guardspecial_1",
+                    "description": "Guards and Specialists DP cost doubled",
+                    "points": 1,
+                    "mutexGroupKey": "char_exclude",
+                    "runes": [{
+                        "key": "char_cost_mul",
+                        "selector": {
+                            "professionMask": 65,
+                            "buildableMask": 3,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "scale",
+                                "value": 2,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "char_cost_guardspecial_2": {
+                    "id": "char_cost_guardspecial_2",
+                    "description": "Guards and Specialists DP cost tripled, Redeployment Time +50%.",
+                    "points": 2,
+                    "mutexGroupKey": "char_exclude",
+                    "runes": [{
+                        "key": "char_cost_mul",
+                        "selector": {
+                            "professionMask": 65,
+                            "buildableMask": 3,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "scale",
+                                "value": 3,
+                                "valueStr": null
+                            }
+                        ]
+                    },
+                    {
+                        "key": "char_respawntime_mul",
+                        "selector": {
+                            "professionMask": 65,
+                            "buildableMask": 3,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "scale",
+                                "value": 1.5,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "char_cost_castersupporter_1": {
+                    "id": "char_cost_castersupporter_1",
+                    "description": "Supporters and Casters DP cost doubled",
+                    "points": 1,
+                    "mutexGroupKey": "char_exclude",
+                    "runes": [{
+                        "key": "char_cost_mul",
+                        "selector": {
+                            "professionMask": 48,
+                            "buildableMask": 3,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "scale",
+                                "value": 2,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "char_cost_castersupporter_2": {
+                    "id": "char_cost_castersupporter_2",
+                    "description": "Supporters and Casters DP cost tripled, Redeployment Time +50%.",
+                    "points": 2,
+                    "mutexGroupKey": "char_exclude",
+                    "runes": [{
+                        "key": "char_cost_mul",
+                        "selector": {
+                            "professionMask": 48,
+                            "buildableMask": 3,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "scale",
+                                "value": 3,
+                                "valueStr": null
+                            }
+                        ]
+                    },
+                    {
+                        "key": "char_respawntime_mul",
+                        "selector": {
+                            "professionMask": 48,
+                            "buildableMask": 3,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "scale",
+                                "value": 1.5,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "global_lifepoint_1": {
+                    "id": "global_lifepoint_1",
+                    "description": "HP seal decreased to 1",
+                    "points": 1,
+                    "mutexGroupKey": null,
+                    "runes": [{
+                        "key": "global_lifepoint",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [{
+                            "key": "value",
+                            "value": 1,
+                            "valueStr": null
+                        }]
+                    }]
+                },
+                "enemy_magicresistance_1": {
+                    "id": "enemy_magicresistance_1",
+                    "description": "All enemies RES +25",
+                    "points": 1,
+                    "mutexGroupKey": null,
+                    "runes": [{
+                        "key": "enemy_attribute_add",
+                        "selector": {
+                            "professionMask": 1023,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "magic_resistance",
+                                "value": 25,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "trap_change_1": {
+                    "id": "trap_change_1",
+                    "description": "4 [Rock Grid] are broken at the start",
+                    "points": 1,
+                    "mutexGroupKey": null,
+                    "runes": [{
+                        "key": "level_predefines_enable",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [{
+                            "key": "trap_027_stone#1",
+                            "value": 0,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "trap_027_stone#2",
+                            "value": 0,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "trap_027_stone#3",
+                            "value": 0,
+                            "valueStr": null
+                        },
+                        {
+                            "key": "trap_027_stone#4",
+                            "value": 0,
+                            "valueStr": null
+                        }]
+                    }]
+                },
+                "char_attackspeed_1": {
+                    "id": "char_attackspeed_1",
+                    "description": "Ally ASPD -30",
+                    "points": 1,
+                    "mutexGroupKey": null,
+                    "runes": [{
+                        "key": "char_attribute_add",
+                        "selector": {
+                            "professionMask": 767,
+                            "buildableMask": 3,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "attack_speed",
+                                "value": -30,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                },
+                "enemy_movespeed_1": {
+                    "id": "enemy_movespeed_1",
+                    "description": "All enemies Movement Speed +50%",
+                    "points": 1,
+                    "mutexGroupKey": null,
+                    "runes": [{
+                        "key": "enemy_attribute_mul",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [
+                            {
+                                "key": "move_speed",
+                                "value": 1.5,
+                                "valueStr": null
+                            }
+                        ]
+                    }]
+                }
+            }
+        }
+    },
+    "playerDataDelta": {
+        "modified": {
+            "crisis": {
+                "current": "rune_season_4_1",
+                "lst": 1666023325,
+                "nst": 1666123325,
+                "map": {},
+                "shop": {},
+                "training": {
+                    "currentStage": [],
+                    "stage": {},
+                    "nst": 1666123325
+                },
+                "season": {
+                    "rune_season_4_1": {
+                        "coin": 14,
+                        "tCoin": 28,
+                        "permanent": {
+                            "nst": -1,
+                            "rune": {
+                                "global_lifepoint_1": 3,
+                                "enemy_magicresistance_1": 3,
+                                "trap_change_1": 3,
+                                "char_atk_1": 3,
+                                "char_hp_1": 3,
+                                "global_costrecovery_1": 3,
+                                "enemy_atk_1": 3,
+                                "enemy_hp_1": 3,
+                                "enemy_mdgint_1": 3,
+                                "global_forbidloc_1": 3,
+                                "global_squadnum_1": 3,
+                                "char_attackspeed_1": 3,
+                                "char_respawntime_1": 3,
+                                "char_atk_2": 3,
+                                "char_hp_2": 3,
+                                "global_costrecovery_2": 3,
+                                "enemy_atk_2": 3,
+                                "enemy_bigbomdrock_2": 3,
+                                "enemy_hp_2": 3,
+                                "enemy_mdgint_amod_2": 3,
+                                "enemy_mdgint_bmod_2": 3,
+                                "global_forbidloc_2": 3,
+                                "global_squadnum_2": 3,
+                                "global_pcharnum_2": 3,
+                                "char_hp_3": 3,
+                                "enemy_bigbomdrock_3": 3,
+                                "enemy_hp_3": 3,
+                                "enemy_mdgint_amod_3": 3,
+                                "enemy_mdgint_bmod_3": 3,
+                                "enemy_movespeed_1": 3,
+                                "char_cost_guardspecial_1": 3,
+                                "char_cost_castersupporter_1": 3,
+                                "enemy_bigbomdrock_1": 3,
+                                "char_cost_guardspecial_2": 3,
+                                "char_cost_castersupporter_2": 3,
+                                "enemy_atk_3": 3,
+                                "char_atk_3": 3
+                            },
+                            "point": 9999,
+                            "challenge": {
+                                "taskList": {},
+                                "topPoint": 0,
+                                "pointList": {}
+                            }
+                        },
+                        "temporary": {},
+                        "sInfo": {}
+                    }
+                },
+                "box": []
+            }
+        },
+        "deleted": {}
+    }
+}

@@ -1,19 +1,47 @@
 from virtualtime import time
 from flask import request
 from utils import read_json, write_json
-from constants import SYNC_DATA_TEMPLATE_PATH, USER_JSON_PATH
+from constants import SYNC_DATA_TEMPLATE_PATH, USER_JSON_PATH, BUILDING_TABLE_PATH
 import json
 
 def Sync():
 
+    user_data = read_json(USER_JSON_PATH, encoding="utf-8")
+    chars = {
+        i: {
+            "charId": user_data["user"]["troop"]["chars"][i]["charId"],
+            "lastApAddTime": 1695000000,
+            "ap": 8640000,
+            "roomSlotId": "",
+            "index": -1,
+            "changeScale": 0,
+            "bubble": {"normal": {"add": -1, "ts": 0}, "assist": {"add": -1, "ts": 0}},
+            "workTime": 0,
+        }
+        for i in user_data["user"]["troop"]["chars"]
+    }
+    user_data["user"]["building"]["chars"] = chars
+    for i in user_data["user"]["building"]["chars"]:
+        user_data["user"]["building"]["chars"][i]["roomSlotId"] = ""
+        user_data["user"]["building"]["chars"][i]["index"] = -1
+    for i in user_data["user"]["building"]["roomSlots"]:
+        for j, k in enumerate(user_data["user"]["building"]["roomSlots"][i]["charInstIds"]):
+            if k == -1:
+                continue
+            k = str(k)
+            user_data["user"]["building"]["chars"][k]["roomSlotId"] = i
+            user_data["user"]["building"]["chars"][k]["index"] = j
+    building_table = read_json(BUILDING_TABLE_PATH, encoding="utf-8")
+    furniture = {
+        i: {"count": 9999, "inUse": 0}
+        for i in building_table["customData"]["furnitures"]
+    }
+    user_data["user"]["building"]["furniture"] = furniture
+    write_json(user_data["user"]["building"], USER_JSON_PATH)
     result = {
-        "ts": round(time()),
         "playerDataDelta": {
             "modified": {
-                "building": {},
-                "event": {
-                    "building": round(time()) + 3000
-                }
+                "building": user_data["user"]["building"]
             },
             "deleted": {}
         }

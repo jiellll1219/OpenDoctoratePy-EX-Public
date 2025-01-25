@@ -1,0 +1,53 @@
+{
+    "recievedIDs": [
+        1,
+        2
+    ],
+    "deletedIDs": [],
+    "mailList": {
+        "1": {
+            "from": "char_002_amiya",
+            "subject": "Hi there!",
+            "content": "<color=red>Dear Doctor:</color>\\n\\n<color=green>Welcome to DoctoratePy!</color>\\n\\n                         <color=blue>[DoctoratePy]https://github.com/AKDoctorate/DoctoratePy</color>",
+            "items": [
+                {
+                    "id": "4003",
+                    "type": "DIAMOND_SHD",
+                    "count": 12000
+                }
+            ]
+        },
+        "2": {
+            "from": "char_472_pasngr",
+            "subject": "Test",
+            "content": "Part 1",
+            "items": [
+                {
+                    "id": "p_char_472_pasngr",
+                    "type": "MATERIAL",
+                    "count": 5
+                },
+                {
+                    "id": "4003",
+                    "type": "DIAMOND_SHD",
+                    "count": 12000
+                },
+                {
+                    "id": "2004",
+                    "type": "CARD_EXP",
+                    "count": 20
+                },
+                {
+                    "id": "7003",
+                    "type": "TKT_GACHA",
+                    "count": 10
+                },
+                {
+                    "id": "7004",
+                    "type": "TKT_GACHA_10",
+                    "count": 9
+                }
+            ]
+        }
+    }
+}

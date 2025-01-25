@@ -1,0 +1,295 @@
+{
+    "goodList": [
+        {
+            "goodId": "good_REP_1",
+            "goodType": "NORMAL",
+            "startTime": 1597132800,
+            "item": {
+                "id": "4003",
+                "count": 100,
+                "type": "DIAMOND_SHD"
+            },
+            "price": 20,
+            "sortId": 1,
+            "availCount": 520
+        },
+        {
+            "goodId": "good_REP_11",
+            "goodType": "NORMAL",
+            "startTime": 1597132800,
+            "item": {
+                "id": "30064",
+                "count": 1,
+                "type": "MATERIAL"
+            },
+            "price": 85,
+            "sortId": 11,
+            "availCount": 12
+        },
+        {
+            "goodId": "good_REP_12",
+            "goodType": "NORMAL",
+            "startTime": 1597132800,
+            "item": {
+                "id": "30014",
+                "count": 1,
+                "type": "MATERIAL"
+            },
+            "price": 50,
+            "sortId": 12,
+            "availCount": 16
+        },
+        {
+            "goodId": "good_REP_101",
+            "goodType": "NORMAL",
+            "startTime": 1597132800,
+            "item": {
+                "id": "4001",
+                "count": 2000,
+                "type": "GOLD"
+            },
+            "price": 15,
+            "sortId": 101,
+            "availCount": 390
+        },
+        {
+            "goodId": "good_REP_102",
+            "goodType": "NORMAL",
+            "startTime": 1597132800,
+            "item": {
+                "id": "2004",
+                "count": 1,
+                "type": "CARD_EXP"
+            },
+            "price": 15,
+            "sortId": 102,
+            "availCount": 520
+        },
+        {
+            "goodId": "good_REP_103",
+            "goodType": "NORMAL",
+            "startTime": 1597132800,
+            "item": {
+                "id": "3303",
+                "count": 1,
+                "type": "MATERIAL"
+            },
+            "price": 20,
+            "sortId": 103,
+            "availCount": 520
+        },
+        {
+            "goodId": "good_REP_13",
+            "goodType": "NORMAL",
+            "startTime": 1601539200,
+            "item": {
+                "id": "30054",
+                "count": 1,
+                "type": "MATERIAL"
+            },
+            "price": 65,
+            "sortId": 13,
+            "availCount": 12
+        },
+        {
+            "goodId": "good_REP_14",
+            "goodType": "NORMAL",
+            "startTime": 1601539200,
+            "item": {
+                "id": "30024",
+                "count": 1,
+                "type": "MATERIAL"
+            },
+            "price": 60,
+            "sortId": 14,
+            "availCount": 16
+        },
+        {
+            "goodId": "good_REP_15",
+            "goodType": "NORMAL",
+            "startTime": 1606809600,
+            "item": {
+                "id": "30044",
+                "count": 1,
+                "type": "MATERIAL"
+            },
+            "price": 70,
+            "sortId": 15,
+            "availCount": 16
+        },
+        {
+            "goodId": "good_REP_16",
+            "goodType": "NORMAL",
+            "startTime": 1606809600,
+            "item": {
+                "id": "30034",
+                "count": 1,
+                "type": "MATERIAL"
+            },
+            "price": 60,
+            "sortId": 16,
+            "availCount": 12
+        },
+        {
+            "goodId": "good_REP_17",
+            "goodType": "NORMAL",
+            "startTime": 1617091200,
+            "item": {
+                "id": "30094",
+                "count": 1,
+                "type": "MATERIAL"
+            },
+            "price": 60,
+            "sortId": 17,
+            "availCount": 12
+        },
+        {
+            "goodId": "good_REP_18",
+            "goodType": "NORMAL",
+            "startTime": 1617091200,
+            "item": {
+                "id": "30084",
+                "count": 1,
+                "type": "MATERIAL"
+            },
+            "price": 60,
+            "sortId": 18,
+            "availCount": 12
+        },
+        {
+            "goodId": "good_REP_19",
+            "goodType": "NORMAL",
+            "startTime": 1623916800,
+            "item": {
+                "id": "31024",
+                "count": 1,
+                "type": "MATERIAL"
+            },
+            "price": 60,
+            "sortId": 19,
+            "availCount": 12
+        },
+        {
+            "goodId": "good_REP_20",
+            "goodType": "NORMAL",
+            "startTime": 1623916800,
+            "item": {
+                "id": "31014",
+                "count": 1,
+                "type": "MATERIAL"
+            },
+            "price": 50,
+            "sortId": 20,
+            "availCount": 12
+        },
+        {
+            "goodId": "good_REP_21",
+            "goodType": "NORMAL",
+            "startTime": 1626768000,
+            "item": {
+                "id": "30104",
+                "count": 1,
+                "type": "MATERIAL"
+            },
+            "price": 65,
+            "sortId": 21,
+            "availCount": 12
+        },
+        {
+            "goodId": "good_REP_22",
+            "goodType": "NORMAL",
+            "startTime": 1626768000,
+            "item": {
+                "id": "31034",
+                "count": 1,
+                "type": "MATERIAL"
+            },
+            "price": 70,
+            "sortId": 22,
+            "availCount": 12
+        },
+        {
+            "goodId": "good_REP_23",
+            "goodType": "NORMAL",
+            "startTime": 1633075200,
+            "item": {
+                "id": "30074",
+                "count": 1,
+                "type": "MATERIAL"
+            },
+            "price": 50,
+            "sortId": 23,
+            "availCount": 12
+        },
+        {
+            "goodId": "good_REP_24",
+            "goodType": "NORMAL",
+            "startTime": 1638864000,
+            "item": {
+                "id": "31044",
+                "count": 1,
+                "type": "MATERIAL"
+            },
+            "price": 55,
+            "sortId": 24,
+            "availCount": 12
+        },
+        {
+            "goodId": "good_REP_25",
+            "goodType": "NORMAL",
+            "startTime": 1638864000,
+            "item": {
+                "id": "31054",
+                "count": 1,
+                "type": "MATERIAL"
+            },
+            "price": 55,
+            "sortId": 25,
+            "availCount": 12
+        },
+        {
+            "goodId": "good_REP_26",
+            "goodType": "NORMAL",
+            "startTime": 1676966400,
+            "item": {
+                "id": "31064",
+                "count": 1,
+                "type": "MATERIAL"
+            },
+            "price": 55,
+            "sortId": 26,
+            "availCount": 8
+        },
+        {
+            "goodId": "good_REP_27",
+            "goodType": "NORMAL",
+            "startTime": 1711008000,
+            "item": {
+                "id": "31074",
+                "count": 1,
+                "type": "MATERIAL"
+            },
+            "price": 60,
+            "sortId": 27,
+            "availCount": 4
+        },
+        {
+            "goodId": "good_REP_28",
+            "goodType": "NORMAL",
+            "startTime": 1711008000,
+            "item": {
+                "id": "31084",
+                "count": 1,
+                "type": "MATERIAL"
+            },
+            "price": 65,
+            "sortId": 28,
+            "availCount": 4
+        }
+    ],
+    "newFlag": [],
+    "playerDataDelta": {
+        "modified": {},
+        "deleted": {}
+    }
+}

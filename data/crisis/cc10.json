@@ -1,0 +1,2298 @@
+{
+    "ts": 1661414400,
+    "data": {
+        "seasonInfo": [
+            {
+                "seasonId": "rune_season_10_1",
+                "stages": {
+                    "level_rune_12-01": {
+                        "stageId": "level_rune_12-01",
+                        "levelId": "Obt/Rune/level_rune_12-01",
+                        "mapId": "rune_12-01",
+                        "code": "维多利亚",
+                        "name": "伦蒂尼姆边缘区块",
+                        "loadingPicId": "loading_VC_wall",
+                        "description": "失去家园的萨卡兹，俨然已是伦蒂尼姆的主人，而曾经建造这座城市的工人，反而成了被搜查的对象，请帮助他们。\\n<@lv.item><伦蒂尼姆城防副炮></>充能完成时，对场上阻挡数最高的我方单位周围造成不分敌我的真实伤害",
+                        "picId": "ccmap_victoria_edge",
+                        "logoPicId": "logo_victoria",
+                        "slotId": 0,
+                        "type": "PERMANENT"
+                    }
+                },
+                "permStageGroup": [
+                    {
+                        "stageId": "level_rune_12-01",
+                        "stagePointLevelInfo": {},
+                        "stageChallengeInfo": [],
+                        "_mapChallenge": {},
+                        "runeList": [
+                            {
+                                "runeId": "global_lifepoint_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "global_forbidloc_rt_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "global_forbidloc_lt_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_respawntime_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_atk_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_cost_sniperguard_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_cost_casterspecial_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_hp_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "global_costrecovery_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_atk_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_defmagicresis_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_dmech_hidden_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_dmech_hidden_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_dzom_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_manfri_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "global_squadnum_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_atk_2",
+                                "unlockPercent": 4
+                            },
+                            {
+                                "runeId": "char_hp_2",
+                                "unlockPercent": 4
+                            },
+                            {
+                                "runeId": "global_squadnum_2",
+                                "unlockPercent": 4
+                            },
+                            {
+                                "runeId": "enemy_atk_2",
+                                "unlockPercent": 4
+                            },
+                            {
+                                "runeId": "global_costrecovery_2",
+                                "unlockPercent": 6
+                            },
+                            {
+                                "runeId": "char_cost_sniperguard_2",
+                                "unlockPercent": 6
+                            },
+                            {
+                                "runeId": "char_cost_casterspecial_2",
+                                "unlockPercent": 6
+                            },
+                            {
+                                "runeId": "global_pcharnum_2",
+                                "unlockPercent": 8
+                            },
+                            {
+                                "runeId": "enemy_dzom_2",
+                                "unlockPercent": 8
+                            },
+                            {
+                                "runeId": "enemy_defmagicresis_2",
+                                "unlockPercent": 10
+                            },
+                            {
+                                "runeId": "enemy_dklord_2",
+                                "unlockPercent": 10
+                            },
+                            {
+                                "runeId": "enemy_manfri_amod_2",
+                                "unlockPercent": 12
+                            },
+                            {
+                                "runeId": "enemy_manfri_bmod_2",
+                                "unlockPercent": 12
+                            },
+                            {
+                                "runeId": "enemy_manfri_amod_3",
+                                "unlockPercent": 18
+                            },
+                            {
+                                "runeId": "enemy_manfri_bmod_3",
+                                "unlockPercent": 18
+                            },
+                            {
+                                "runeId": "char_atk_3",
+                                "unlockPercent": 18
+                            },
+                            {
+                                "runeId": "char_hp_3",
+                                "unlockPercent": 18
+                            },
+                            {
+                                "runeId": "enemy_atk_3",
+                                "unlockPercent": 18
+                            },
+                            {
+                                "runeId": "enemy_dklord_3",
+                                "unlockPercent": 18
+                            },
+                            {
+                                "runeId": "enemy_dzom_3",
+                                "unlockPercent": 18
+                            },
+                            {
+                                "runeId": "enemy_def_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "trap_gunctrl_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_defmagicresis_3",
+                                "unlockPercent": 18
+                            },
+                            {
+                                "runeId": "global_costrecovery_3",
+                                "unlockPercent": 18
+                            }
+                        ]
+                    }
+                ],
+                "tempStageGroup": [],
+                "trainStageGroup": []
+            }
+        ],
+        "trainingInfo": {
+            "stages": {},
+            "runeInfo": {}
+        },
+        "runeInfoList": {
+            "level_rune_12-01": [
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "enemy_dklord_2",
+                    "iconId": "enemy_dklord_2",
+                    "bgPicId": "crisis_enemy_4",
+                    "sortId": 6,
+                    "groupType": "enemy_dklord",
+                    "runeName": "目标：曼弗雷德的精锐I"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "enemy_dklord_3",
+                    "iconId": "enemy_dklord_3",
+                    "bgPicId": "crisis_enemy_4",
+                    "sortId": 7,
+                    "groupType": "enemy_dklord",
+                    "runeName": "目标：曼弗雷德的精锐II"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "enemy_dzom_1",
+                    "iconId": "enemy_dzom_1",
+                    "bgPicId": "crisis_enemy_3",
+                    "sortId": 8,
+                    "groupType": "enemy_dzom",
+                    "runeName": "目标：再度新生I"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "enemy_dzom_2",
+                    "iconId": "enemy_dzom_2",
+                    "bgPicId": "crisis_enemy_3",
+                    "sortId": 9,
+                    "groupType": "enemy_dzom",
+                    "runeName": "目标：再度新生II"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "enemy_dzom_3",
+                    "iconId": "enemy_dzom_3",
+                    "bgPicId": "crisis_enemy_3",
+                    "sortId": 10,
+                    "groupType": "enemy_dzom",
+                    "runeName": "目标：再度新生III"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "enemy_manfri_1",
+                    "iconId": "enemy_manfri_1",
+                    "bgPicId": "crisis_enemy_1",
+                    "sortId": 11,
+                    "groupType": "enemy_manfri",
+                    "runeName": "曼弗雷德：提卡兹新生I"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "enemy_manfri_amod_2",
+                    "iconId": "enemy_manfri_amod_2",
+                    "bgPicId": "crisis_enemy_1",
+                    "sortId": 12,
+                    "groupType": "enemy_manfri",
+                    "runeName": "曼弗雷德：提卡兹新生II"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "enemy_manfri_bmod_2",
+                    "iconId": "enemy_manfri_bmod_2",
+                    "bgPicId": "crisis_enemy_1",
+                    "sortId": 13,
+                    "groupType": "enemy_manfri",
+                    "runeName": "曼弗雷德：死亡诡计II"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "enemy_atk_1",
+                    "iconId": "enemy_atk_1",
+                    "bgPicId": "crisis_weather_4",
+                    "sortId": 16,
+                    "groupType": "enemy_atk",
+                    "runeName": "源石环境：刺激I"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "enemy_atk_2",
+                    "iconId": "enemy_atk_2",
+                    "bgPicId": "crisis_weather_4",
+                    "sortId": 17,
+                    "groupType": "enemy_atk",
+                    "runeName": "源石环境：刺激II"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "enemy_atk_3",
+                    "iconId": "enemy_atk_3",
+                    "bgPicId": "crisis_weather_4",
+                    "sortId": 18,
+                    "groupType": "enemy_atk",
+                    "runeName": "源石环境：刺激III"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "enemy_defmagicresis_1",
+                    "iconId": "enemy_defmagicresis_1",
+                    "bgPicId": "crisis_weather_6",
+                    "sortId": 19,
+                    "groupType": "enemy_defmagicresis",
+                    "runeName": "目标：装备精良I"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "enemy_defmagicresis_2",
+                    "iconId": "enemy_defmagicresis_2",
+                    "bgPicId": "crisis_weather_6",
+                    "sortId": 20,
+                    "groupType": "enemy_defmagicresis",
+                    "runeName": "目标：装备精良II"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "enemy_defmagicresis_3",
+                    "iconId": "enemy_defmagicresis_3",
+                    "bgPicId": "crisis_weather_6",
+                    "sortId": 21,
+                    "groupType": "enemy_defmagicresis",
+                    "runeName": "目标：装备精良III"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "char_atk_1",
+                    "iconId": "char_atk_1",
+                    "bgPicId": "crisis_field_1",
+                    "sortId": 22,
+                    "groupType": "char_atk",
+                    "runeName": "环境：高价值目标I"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "char_atk_2",
+                    "iconId": "char_atk_2",
+                    "bgPicId": "crisis_field_1",
+                    "sortId": 23,
+                    "groupType": "char_atk",
+                    "runeName": "环境：高价值目标II"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "char_atk_3",
+                    "iconId": "char_atk_3",
+                    "bgPicId": "crisis_field_1",
+                    "sortId": 24,
+                    "groupType": "char_atk",
+                    "runeName": "环境：高价值目标III"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "char_hp_1",
+                    "iconId": "char_hp_1",
+                    "bgPicId": "crisis_field_3",
+                    "sortId": 25,
+                    "groupType": "char_hp",
+                    "runeName": "源石环境：侵蚀I"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "char_hp_2",
+                    "iconId": "char_hp_2",
+                    "bgPicId": "crisis_field_3",
+                    "sortId": 26,
+                    "groupType": "char_hp",
+                    "runeName": "源石环境：侵蚀II"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "char_hp_3",
+                    "iconId": "char_hp_3",
+                    "bgPicId": "crisis_field_3",
+                    "sortId": 27,
+                    "groupType": "char_hp",
+                    "runeName": "源石环境：侵蚀III"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "char_cost_sniperguard_1",
+                    "iconId": "char_cost_sniperguard_1",
+                    "bgPicId": "crisis_op_1",
+                    "sortId": 28,
+                    "groupType": "char_exclude",
+                    "runeName": "目标：战略调度"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "char_cost_casterspecial_1",
+                    "iconId": "char_cost_casterspecial_1",
+                    "bgPicId": "crisis_op_1",
+                    "sortId": 29,
+                    "groupType": "char_exclude",
+                    "runeName": "目标：应急合约"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "char_cost_sniperguard_2",
+                    "iconId": "char_cost_sniperguard_2",
+                    "bgPicId": "crisis_op_1",
+                    "sortId": 30,
+                    "groupType": "char_exclude",
+                    "runeName": "目标：纵深合约"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "char_cost_casterspecial_2",
+                    "iconId": "char_cost_casterspecial_2",
+                    "bgPicId": "crisis_op_1",
+                    "sortId": 31,
+                    "groupType": "char_exclude",
+                    "runeName": "目标：火力合约"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "global_costrecovery_1",
+                    "iconId": "global_costrecovery_1",
+                    "bgPicId": "crisis_op_1",
+                    "sortId": 32,
+                    "groupType": "cost_recovery",
+                    "runeName": "目标：深度渗透I"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "global_costrecovery_2",
+                    "iconId": "global_costrecovery_2",
+                    "bgPicId": "crisis_op_1",
+                    "sortId": 33,
+                    "groupType": "cost_recovery",
+                    "runeName": "目标：深度渗透II"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "global_squadnum_1",
+                    "iconId": "global_squadnum_1",
+                    "bgPicId": "crisis_op_1",
+                    "sortId": 35,
+                    "groupType": "squad_limit",
+                    "runeName": "目标：隐秘行动I"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "global_pcharnum_2",
+                    "iconId": "global_pcharnum_2",
+                    "bgPicId": "crisis_field_4",
+                    "sortId": 37,
+                    "groupType": "squad_limit",
+                    "runeName": "环境：交战区II"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "enemy_dmech_hidden_1",
+                    "iconId": "enemy_dmech_hidden_1",
+                    "bgPicId": "crisis_enemy_2",
+                    "sortId": 38,
+                    "groupType": "enemy_dmech_hidden",
+                    "runeName": "环境：城防小队I"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "global_lifepoint_1",
+                    "iconId": "global_lifepoint_1",
+                    "bgPicId": "crisis_op_1",
+                    "sortId": 40,
+                    "groupType": null,
+                    "runeName": "目标：最后防线"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "global_forbidloc_rt_1",
+                    "iconId": "global_forbidloc_rt_1",
+                    "bgPicId": "crisis_field_2",
+                    "sortId": 42,
+                    "groupType": null,
+                    "runeName": "环境：战场遗迹"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "char_respawntime_1",
+                    "iconId": "char_respawntime_1",
+                    "bgPicId": "crisis_op_1",
+                    "sortId": 45,
+                    "groupType": null,
+                    "runeName": "目标：效率低下I"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "enemy_manfri_amod_3",
+                    "iconId": "enemy_manfri_amod_3",
+                    "bgPicId": "crisis_enemy_1",
+                    "sortId": 14,
+                    "groupType": "enemy_manfri",
+                    "runeName": "曼弗雷德：提卡兹新生III"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "enemy_manfri_bmod_3",
+                    "iconId": "enemy_manfri_bmod_3",
+                    "bgPicId": "crisis_enemy_1",
+                    "sortId": 15,
+                    "groupType": "enemy_manfri",
+                    "runeName": "曼弗雷德：死亡诡计III"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "global_costrecovery_3",
+                    "iconId": "global_costrecovery_3",
+                    "bgPicId": "crisis_op_1",
+                    "sortId": 34,
+                    "groupType": "cost_recovery",
+                    "runeName": "目标：深度渗透III"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "global_squadnum_2",
+                    "iconId": "global_squadnum_2",
+                    "bgPicId": "crisis_op_1",
+                    "sortId": 36,
+                    "groupType": "squad_limit",
+                    "runeName": "目标：隐秘行动II"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "enemy_dmech_hidden_2",
+                    "iconId": "enemy_dmech_hidden_2",
+                    "bgPicId": "crisis_enemy_2",
+                    "sortId": 39,
+                    "groupType": "enemy_dmech_hidden",
+                    "runeName": "环境：城防小队II"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "global_forbidloc_lt_1",
+                    "iconId": "global_forbidloc_lt_1",
+                    "bgPicId": "crisis_enemy_1",
+                    "sortId": 41,
+                    "groupType": null,
+                    "runeName": "环境：断墙残垣"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "enemy_def_1",
+                    "iconId": "enemy_def_1",
+                    "bgPicId": "crisis_enemy_1",
+                    "sortId": 43,
+                    "groupType": null,
+                    "runeName": "反装甲I"
+                },
+                {
+                    "stageId": "level_rune_12-01",
+                    "runeId": "trap_gunctrl_1",
+                    "iconId": "trap_gunctrl_1",
+                    "bgPicId": "crisis_enemy_1",
+                    "sortId": 44,
+                    "groupType": null,
+                    "runeName": "环境：全装药炮弹"
+                }
+            ]
+        },
+        "stageRune": {
+            "level_rune_12-01": {
+                "global_lifepoint_1": {
+                    "id": "global_lifepoint_1",
+                    "points": 1,
+                    "mutexGroupKey": null,
+                    "description": "我方防御点可承受的敌方数量变为1",
+                    "runes": [
+                        {
+                            "key": "global_lifepoint",
+                            "selector": {
+                                "professionMask": 1023,
+                                "buildableMask": 3,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "value",
+                                    "value": 1,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "global_forbidloc_rt_1": {
+                    "id": "global_forbidloc_rt_1",
+                    "points": 1,
+                    "mutexGroupKey": null,
+                    "description": "战场中右侧4个位置无法部署我方单位",
+                    "runes": [
+                        {
+                            "key": "global_forbid_location",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "location",
+                                    "value": 0,
+                                    "valueStr": "(7,7)|(7,8)|(2,7)|(2,8)"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "global_forbidloc_lt_1": {
+                    "id": "global_forbidloc_lt_1",
+                    "points": 1,
+                    "mutexGroupKey": null,
+                    "description": "战场中左侧3个位置无法部署我方单位",
+                    "runes": [
+                        {
+                            "key": "global_forbid_location",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "location",
+                                    "value": 0,
+                                    "valueStr": "(3,2)|(4,2)|(5,2)"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "enemy_def_1": {
+                    "id": "enemy_def_1",
+                    "points": 1,
+                    "mutexGroupKey": null,
+                    "description": "所有敌人的防御力提升200",
+                    "runes": [
+                        {
+                            "key": "enemy_attribute_add",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "def",
+                                    "value": 200,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "char_respawntime_1": {
+                    "id": "char_respawntime_1",
+                    "points": 1,
+                    "mutexGroupKey": null,
+                    "description": "我方所有单位再部署时间延长75%",
+                    "runes": [
+                        {
+                            "key": "char_respawntime_mul",
+                            "selector": {
+                                "professionMask": 767,
+                                "buildableMask": 3,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "scale",
+                                    "value": 1.75,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "char_atk_1": {
+                    "id": "char_atk_1",
+                    "points": 1,
+                    "mutexGroupKey": "char_atk",
+                    "description": "所有我方单位的攻击力降低15%",
+                    "runes": [
+                        {
+                            "key": "char_attribute_mul",
+                            "selector": {
+                                "professionMask": 767,
+                                "buildableMask": 3,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "atk",
+                                    "value": 0.85,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "char_cost_sniperguard_1": {
+                    "id": "char_cost_sniperguard_1",
+                    "points": 1,
+                    "mutexGroupKey": "char_exclude",
+                    "description": "狙击与近卫干员的部署费用提升至2倍",
+                    "runes": [
+                        {
+                            "key": "char_cost_mul",
+                            "selector": {
+                                "professionMask": 3,
+                                "buildableMask": 3,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "scale",
+                                    "value": 2,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "char_cost_casterspecial_1": {
+                    "id": "char_cost_casterspecial_1",
+                    "points": 1,
+                    "mutexGroupKey": "char_exclude",
+                    "description": "术师和特种干员的部署费用提升至2倍",
+                    "runes": [
+                        {
+                            "key": "char_cost_mul",
+                            "selector": {
+                                "professionMask": 96,
+                                "buildableMask": 3,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "scale",
+                                    "value": 2,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "char_hp_1": {
+                    "id": "char_hp_1",
+                    "points": 1,
+                    "mutexGroupKey": "char_hp",
+                    "description": "所有我方单位的生命值上限降低15%",
+                    "runes": [
+                        {
+                            "key": "char_attribute_mul",
+                            "selector": {
+                                "professionMask": 1023,
+                                "buildableMask": 3,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "max_hp",
+                                    "value": 0.85,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "global_costrecovery_1": {
+                    "id": "global_costrecovery_1",
+                    "points": 1,
+                    "mutexGroupKey": "cost_recovery",
+                    "description": "部署费用的自然回复速度降低25%",
+                    "runes": [
+                        {
+                            "key": "global_cost_recovery_mul",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "scale",
+                                    "value": 1.333,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "enemy_atk_1": {
+                    "id": "enemy_atk_1",
+                    "points": 1,
+                    "mutexGroupKey": "enemy_atk",
+                    "description": "所有敌人的攻击力提升15%",
+                    "runes": [
+                        {
+                            "key": "enemy_attribute_mul",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "atk",
+                                    "value": 1.15,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "enemy_defmagicresis_1": {
+                    "id": "enemy_defmagicresis_1",
+                    "points": 1,
+                    "mutexGroupKey": "enemy_defmagicresis",
+                    "description": "所有敌人的防御力提升20%，法术抗性提升5",
+                    "runes": [
+                        {
+                            "key": "enemy_attribute_add",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "magic_resistance",
+                                    "value": 5,
+                                    "valueStr": null
+                                }
+                            ]
+                        },
+                        {
+                            "key": "enemy_attribute_mul",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "def",
+                                    "value": 1.2,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "enemy_dmech_hidden_1": {
+                    "id": "enemy_dmech_hidden_1",
+                    "points": 1,
+                    "mutexGroupKey": "enemy_dmech_hidden",
+                    "description": "战场中出现额外的<大君之赐>和<萨卡兹子裔工匠>",
+                    "runes": [
+                        {
+                            "key": "level_hidden_group_enable",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "key",
+                                    "value": 0,
+                                    "valueStr": "hidden1"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "enemy_dmech_hidden_2": {
+                    "id": "enemy_dmech_hidden_2",
+                    "points": 2,
+                    "mutexGroupKey": "enemy_dmech_hidden",
+                    "description": "战场中出现额外的<大君之赐>、<萨卡兹子裔集恨者>和<萨卡兹子裔工匠>",
+                    "runes": [
+                        {
+                            "key": "level_hidden_group_enable",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "key",
+                                    "value": 0,
+                                    "valueStr": "hidden1"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "level_hidden_group_enable",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "key",
+                                    "value": 0,
+                                    "valueStr": "hidden2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "enemy_dzom_1": {
+                    "id": "enemy_dzom_1",
+                    "points": 1,
+                    "mutexGroupKey": "enemy_dzom",
+                    "description": "所有<重生造物>的生命值提升10%，攻击力提升20%",
+                    "runes": [
+                        {
+                            "key": "enemy_attribute_mul",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1220_dzoms|enemy_1221_dzomg"
+                                },
+                                {
+                                    "key": "atk",
+                                    "value": 1.2,
+                                    "valueStr": null
+                                },
+                                {
+                                    "key": "max_hp",
+                                    "value": 1.1,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "enemy_manfri_1": {
+                    "id": "enemy_manfri_1",
+                    "points": 1,
+                    "mutexGroupKey": "enemy_manfri",
+                    "description": "<曼弗雷德>生命值提升50%，攻击力提升50%",
+                    "runes": [
+                        {
+                            "key": "enemy_attribute_mul",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1528_manfri"
+                                },
+                                {
+                                    "key": "max_hp",
+                                    "value": 1.5,
+                                    "valueStr": null
+                                },
+                                {
+                                    "key": "atk",
+                                    "value": 1.5,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "global_squadnum_1": {
+                    "id": "global_squadnum_1",
+                    "points": 1,
+                    "mutexGroupKey": "squad_limit",
+                    "description": "最多可编入10名干员进入作战",
+                    "runes": [
+                        {
+                            "key": "global_squad_num_limit",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "value",
+                                    "value": 10,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "global_squadnum_2": {
+                    "id": "global_squadnum_2",
+                    "points": 2,
+                    "mutexGroupKey": "squad_limit",
+                    "description": "最多可编入7名干员进入作战",
+                    "runes": [
+                        {
+                            "key": "global_squad_num_limit",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "value",
+                                    "value": 7,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "char_atk_2": {
+                    "id": "char_atk_2",
+                    "points": 2,
+                    "mutexGroupKey": "char_atk",
+                    "description": "所有我方单位的攻击力降低30%",
+                    "runes": [
+                        {
+                            "key": "char_attribute_mul",
+                            "selector": {
+                                "professionMask": 767,
+                                "buildableMask": 3,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "atk",
+                                    "value": 0.7,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "char_hp_2": {
+                    "id": "char_hp_2",
+                    "points": 2,
+                    "mutexGroupKey": "char_hp",
+                    "description": "所有我方单位的生命值上限降低35%",
+                    "runes": [
+                        {
+                            "key": "char_attribute_mul",
+                            "selector": {
+                                "professionMask": 1023,
+                                "buildableMask": 3,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "max_hp",
+                                    "value": 0.65,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "enemy_atk_2": {
+                    "id": "enemy_atk_2",
+                    "points": 2,
+                    "mutexGroupKey": "enemy_atk",
+                    "description": "所有敌人的攻击力提升40%",
+                    "runes": [
+                        {
+                            "key": "enemy_attribute_mul",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "atk",
+                                    "value": 1.4,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "global_costrecovery_2": {
+                    "id": "global_costrecovery_2",
+                    "points": 2,
+                    "mutexGroupKey": "cost_recovery",
+                    "description": "部署费用的自然回复速度降低50%",
+                    "runes": [
+                        {
+                            "key": "global_cost_recovery_mul",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "scale",
+                                    "value": 2,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "global_costrecovery_3": {
+                    "id": "global_costrecovery_3",
+                    "points": 3,
+                    "mutexGroupKey": "cost_recovery",
+                    "description": "部署费用的自然回复速度降低75%",
+                    "runes": [
+                        {
+                            "key": "global_cost_recovery_mul",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "scale",
+                                    "value": 4,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "char_cost_sniperguard_2": {
+                    "id": "char_cost_sniperguard_2",
+                    "points": 2,
+                    "mutexGroupKey": "char_exclude",
+                    "description": "狙击与近卫干员的部署费用提升至3倍且再部署时间延长50%",
+                    "runes": [
+                        {
+                            "key": "char_cost_mul",
+                            "selector": {
+                                "professionMask": 3,
+                                "buildableMask": 3,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "scale",
+                                    "value": 3,
+                                    "valueStr": null
+                                }
+                            ]
+                        },
+                        {
+                            "key": "char_respawntime_mul",
+                            "selector": {
+                                "professionMask": 3,
+                                "buildableMask": 3,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "scale",
+                                    "value": 1.5,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "char_cost_casterspecial_2": {
+                    "id": "char_cost_casterspecial_2",
+                    "points": 2,
+                    "mutexGroupKey": "char_exclude",
+                    "description": "术师和特种干员的部署费用提升至3倍且再部署时间延长50%",
+                    "runes": [
+                        {
+                            "key": "char_cost_mul",
+                            "selector": {
+                                "professionMask": 96,
+                                "buildableMask": 3,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "scale",
+                                    "value": 3,
+                                    "valueStr": null
+                                }
+                            ]
+                        },
+                        {
+                            "key": "char_respawntime_mul",
+                            "selector": {
+                                "professionMask": 96,
+                                "buildableMask": 3,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "scale",
+                                    "value": 1.5,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "global_pcharnum_2": {
+                    "id": "global_pcharnum_2",
+                    "points": 2,
+                    "mutexGroupKey": "squad_limit",
+                    "description": "可同时部署的单位数量减少至5",
+                    "runes": [
+                        {
+                            "key": "global_placable_char_num_add",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "value",
+                                    "value": -4,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "enemy_dzom_2": {
+                    "id": "enemy_dzom_2",
+                    "points": 2,
+                    "mutexGroupKey": "enemy_dzom",
+                    "description": "所有<重生造物>的生命值提升20%，攻击力提升30%",
+                    "runes": [
+                        {
+                            "key": "enemy_attribute_mul",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1220_dzoms|enemy_1221_dzomg"
+                                },
+                                {
+                                    "key": "atk",
+                                    "value": 1.3,
+                                    "valueStr": null
+                                },
+                                {
+                                    "key": "max_hp",
+                                    "value": 1.2,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "enemy_defmagicresis_2": {
+                    "id": "enemy_defmagicresis_2",
+                    "points": 2,
+                    "mutexGroupKey": "enemy_defmagicresis",
+                    "description": "所有敌人的防御力提升30%，法术抗性提升10",
+                    "runes": [
+                        {
+                            "key": "enemy_attribute_add",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "magic_resistance",
+                                    "value": 10,
+                                    "valueStr": null
+                                }
+                            ]
+                        },
+                        {
+                            "key": "enemy_attribute_mul",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "def",
+                                    "value": 1.3,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "enemy_dklord_2": {
+                    "id": "enemy_dklord_2",
+                    "points": 2,
+                    "mutexGroupKey": "enemy_dklord",
+                    "description": "所有<萨卡兹子裔集恨者>和<萨卡兹子裔工匠>的攻击力提升50%，法术抗性提升10，并获得隐匿",
+                    "runes": [
+                        {
+                            "key": "enemy_attribute_mul",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1226_dklord|enemy_1223_dmech"
+                                },
+                                {
+                                    "key": "atk",
+                                    "value": 1.5,
+                                    "valueStr": null
+                                }
+                            ]
+                        },
+                        {
+                            "key": "enemy_attribute_add",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1226_dklord|enemy_1223_dmech"
+                                },
+                                {
+                                    "key": "magic_resistance",
+                                    "value": 10,
+                                    "valueStr": null
+                                }
+                            ]
+                        },
+                        {
+                            "key": "enemy_dynamic_ability_new",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1226_dklord|enemy_1223_dmech"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": 0,
+                                    "valueStr": "invisible"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "enemy_manfri_amod_2": {
+                    "id": "enemy_manfri_amod_2",
+                    "points": 2,
+                    "mutexGroupKey": "enemy_manfri",
+                    "description": "<曼弗雷德>生命值提升70%，攻击力提升50%，攻击范围扩大50%，【军事训练】效果恢复速度加快，不再受到晕眩的影响，且第二形态下浮游炮的攻击会额外攻击一个目标",
+                    "runes": [
+                        {
+                            "key": "enemy_attribute_mul",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1528_manfri"
+                                },
+                                {
+                                    "key": "max_hp",
+                                    "value": 1.7,
+                                    "valueStr": null
+                                },
+                                {
+                                    "key": "atk",
+                                    "value": 1.5,
+                                    "valueStr": null
+                                }
+                            ]
+                        },
+                        {
+                            "key": "enemy_dynamic_ability_new",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1528_manfri"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": 0,
+                                    "valueStr": "stunimmue"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "enemy_attackradius_mul",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1528_manfri"
+                                },
+                                {
+                                    "key": "scale",
+                                    "value": 1.5,
+                                    "valueStr": null
+                                }
+                            ]
+                        },
+                        {
+                            "key": "enemy_talent_blackb_add",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1528_manfri"
+                                },
+                                {
+                                    "key": "Funnel_s2.times",
+                                    "value": 1,
+                                    "valueStr": null
+                                },
+                                {
+                                    "key": "Funnel_s2_charge.sp",
+                                    "value": 6,
+                                    "valueStr": null
+                                },
+                                {
+                                    "key": "Shield.disable_duration",
+                                    "value": -18,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "enemy_manfri_amod_3": {
+                    "id": "enemy_manfri_amod_3",
+                    "points": 3,
+                    "mutexGroupKey": "enemy_manfri",
+                    "description": "<曼弗雷德>生命值提升100%，攻击力提升70%，攻击范围扩大50%，【军事训练】效果恢复速度大幅加快，不再受到晕眩的影响，第二形态下浮游炮的攻击会额外攻击一个目标",
+                    "runes": [
+                        {
+                            "key": "enemy_attribute_mul",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1528_manfri"
+                                },
+                                {
+                                    "key": "max_hp",
+                                    "value": 2.0,
+                                    "valueStr": null
+                                },
+                                {
+                                    "key": "atk",
+                                    "value": 1.7,
+                                    "valueStr": null
+                                }
+                            ]
+                        },
+                        {
+                            "key": "enemy_dynamic_ability_new",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1528_manfri"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": 0,
+                                    "valueStr": "stunimmue"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "enemy_attackradius_mul",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1528_manfri"
+                                },
+                                {
+                                    "key": "scale",
+                                    "value": 1.5,
+                                    "valueStr": null
+                                }
+                            ]
+                        },
+                        {
+                            "key": "enemy_talent_blackb_add",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1528_manfri"
+                                },
+                                {
+                                    "key": "Funnel_s2.times",
+                                    "value": 1,
+                                    "valueStr": null
+                                },
+                                {
+                                    "key": "Funnel_s2_charge.sp",
+                                    "value": 6,
+                                    "valueStr": null
+                                },
+                                {
+                                    "key": "Shield.disable_duration",
+                                    "value": -22,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "enemy_manfri_bmod_2": {
+                    "id": "enemy_manfri_bmod_2",
+                    "points": 2,
+                    "mutexGroupKey": "enemy_manfri",
+                    "description": "<曼弗雷德>生命值提升120%，攻击力提升20%，法术抗性提升20，【军事训练】效果恢复速度加快，提前进入战场，且在场时，所有会重生的敌人和重生造物会对周围持续造成法术伤害",
+                    "runes": [
+                        {
+                            "key": "enemy_attribute_mul",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1528_manfri_b"
+                                },
+                                {
+                                    "key": "max_hp",
+                                    "value": 2.2,
+                                    "valueStr": null
+                                },
+                                {
+                                    "key": "atk",
+                                    "value": 1.2,
+                                    "valueStr": null
+                                }
+                            ]
+                        },
+                        {
+                            "key": "enemy_attribute_add",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "magic_resistance",
+                                    "value": 20,
+                                    "valueStr": null
+                                },
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1528_manfri_b"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "level_hidden_group_disable",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "key",
+                                    "value": 0,
+                                    "valueStr": "manfri"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "level_hidden_group_enable",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "key",
+                                    "value": 0,
+                                    "valueStr": "manfri_b"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "enemy_talent_blackb_add",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1528_manfri_b"
+                                },
+                                {
+                                    "key": "Shield.disable_duration",
+                                    "value": -18,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "enemy_manfri_bmod_3": {
+                    "id": "enemy_manfri_bmod_3",
+                    "points": 3,
+                    "mutexGroupKey": "enemy_manfri",
+                    "description": "<曼弗雷德>生命值提升150%，攻击力提升40%，法术抗性提升20，【军事训练】效果恢复速度大幅加快，提前进入战场，且在场时，所有会重生的敌人和重生造物会对周围持续造成法术伤害",
+                    "runes": [
+                        {
+                            "key": "enemy_attribute_mul",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1528_manfri_b"
+                                },
+                                {
+                                    "key": "max_hp",
+                                    "value": 2.5,
+                                    "valueStr": null
+                                },
+                                {
+                                    "key": "atk",
+                                    "value": 1.4,
+                                    "valueStr": null
+                                }
+                            ]
+                        },
+                        {
+                            "key": "enemy_attribute_add",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "magic_resistance",
+                                    "value": 20,
+                                    "valueStr": null
+                                },
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1528_manfri_b"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "level_hidden_group_disable",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "key",
+                                    "value": 0,
+                                    "valueStr": "manfri"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "level_hidden_group_enable",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "key",
+                                    "value": 0,
+                                    "valueStr": "manfri_b"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "enemy_talent_blackb_add",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1528_manfri_b"
+                                },
+                                {
+                                    "key": "Shield.disable_duration",
+                                    "value": -22,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "char_atk_3": {
+                    "id": "char_atk_3",
+                    "points": 3,
+                    "mutexGroupKey": "char_atk",
+                    "description": "所有我方单位的攻击力降低50%",
+                    "runes": [
+                        {
+                            "key": "char_attribute_mul",
+                            "selector": {
+                                "professionMask": 767,
+                                "buildableMask": 3,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "atk",
+                                    "value": 0.5,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "char_hp_3": {
+                    "id": "char_hp_3",
+                    "points": 3,
+                    "mutexGroupKey": "char_hp",
+                    "description": "所有我方单位的生命值上限降低55%",
+                    "runes": [
+                        {
+                            "key": "char_attribute_mul",
+                            "selector": {
+                                "professionMask": 1023,
+                                "buildableMask": 3,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "max_hp",
+                                    "value": 0.45,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "enemy_atk_3": {
+                    "id": "enemy_atk_3",
+                    "points": 3,
+                    "mutexGroupKey": "enemy_atk",
+                    "description": "所有敌人的攻击力提升80%",
+                    "runes": [
+                        {
+                            "key": "enemy_attribute_mul",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "atk",
+                                    "value": 1.8,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "enemy_dklord_3": {
+                    "id": "enemy_dklord_3",
+                    "points": 3,
+                    "mutexGroupKey": "enemy_dklord",
+                    "description": "所有<萨卡兹子裔集恨者>和<萨卡兹子裔工匠>的攻击力提升70%，法术抗性提升20，并获得隐匿",
+                    "runes": [
+                        {
+                            "key": "enemy_attribute_mul",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1226_dklord|enemy_1223_dmech"
+                                },
+                                {
+                                    "key": "atk",
+                                    "value": 1.7,
+                                    "valueStr": null
+                                }
+                            ]
+                        },
+                        {
+                            "key": "enemy_attribute_add",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1226_dklord|enemy_1223_dmech"
+                                },
+                                {
+                                    "key": "magic_resistance",
+                                    "value": 20,
+                                    "valueStr": null
+                                }
+                            ]
+                        },
+                        {
+                            "key": "enemy_dynamic_ability_new",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1226_dklord|enemy_1223_dmech"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": 0,
+                                    "valueStr": "invisible"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "enemy_dzom_3": {
+                    "id": "enemy_dzom_3",
+                    "points": 3,
+                    "mutexGroupKey": "enemy_dzom",
+                    "description": "所有<重生造物>的生命值提升30%，攻击力提升40%",
+                    "runes": [
+                        {
+                            "key": "enemy_attribute_mul",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1220_dzoms|enemy_1221_dzomg"
+                                },
+                                {
+                                    "key": "atk",
+                                    "value": 1.4,
+                                    "valueStr": null
+                                },
+                                {
+                                    "key": "max_hp",
+                                    "value": 1.3,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "trap_gunctrl_1": {
+                    "id": "trap_gunctrl_1",
+                    "points": 1,
+                    "mutexGroupKey": null,
+                    "description": "<伦蒂尼姆城防副炮>攻击力提升1000",
+                    "runes": [
+                        {
+                            "key": "char_attribute_add",
+                            "selector": {
+                                "professionMask": 256,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "atk",
+                                    "value": 1000,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "enemy_defmagicresis_3": {
+                    "id": "enemy_defmagicresis_3",
+                    "points": 3,
+                    "mutexGroupKey": "enemy_defmagicresis",
+                    "description": "所有敌人的防御力提升50%，法术抗性提升20",
+                    "runes": [
+                        {
+                            "key": "enemy_attribute_add",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "magic_resistance",
+                                    "value": 20,
+                                    "valueStr": null
+                                }
+                            ]
+                        },
+                        {
+                            "key": "enemy_attribute_mul",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "def",
+                                    "value": 1.5,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "playerDataDelta": {
+        "modified": {
+            "crisis": {
+                "current": "rune_season_10_1",
+                "lst": 1661414400,
+                "nst": 1662580799,
+                "map": {},
+                "shop": {},
+                "training": {
+                    "currentStage": [],
+                    "stage": {},
+                    "nst": 1662580799
+                },
+                "season": {
+                    "rune_season_10_1": {
+                        "coin": 14,
+                        "tCoin": 28,
+                        "permanent": {
+                            "nst": -1,
+                            "rune": {
+                                "global_lifepoint_1": 3,
+                                "global_forbidloc_rt_1": 3,
+                                "char_respawntime_1": 3,
+                                "char_atk_1": 3,
+                                "char_cost_sniperguard_1": 3,
+                                "char_cost_casterspecial_1": 3,
+                                "char_hp_1": 3,
+                                "global_costrecovery_1": 3,
+                                "enemy_atk_1": 3,
+                                "enemy_defmagicresis_1": 3,
+                                "enemy_dmech_hidden_1": 3,
+                                "enemy_dzom_1": 3,
+                                "enemy_manfri_1": 3,
+                                "global_squadnum_1": 3,
+                                "char_atk_2": 3,
+                                "char_hp_2": 3,
+                                "enemy_atk_2": 3,
+                                "global_costrecovery_2": 3,
+                                "char_cost_sniperguard_2": 3,
+                                "char_cost_casterspecial_2": 3,
+                                "global_pcharnum_2": 3,
+                                "enemy_dzom_2": 3,
+                                "enemy_defmagicresis_2": 3,
+                                "enemy_dklord_2": 3,
+                                "enemy_manfri_amod_2": 3,
+                                "enemy_manfri_bmod_2": 3,
+                                "char_atk_3": 3,
+                                "char_hp_3": 3,
+                                "enemy_atk_3": 3,
+                                "enemy_dklord_3": 3,
+                                "enemy_dzom_3": 3,
+                                "enemy_defmagicresis_3": 3,
+                                "enemy_manfri_amod_3": 3,
+                                "enemy_manfri_bmod_3": 3,
+                                "global_costrecovery_3": 3,
+                                "global_squadnum_2": 3,
+                                "enemy_dmech_hidden_2": 3,
+                                "global_forbidloc_lt_1": 3,
+                                "enemy_def_1": 3,
+                                "trap_gunctrl_1": 3
+                            },
+                            "point": 9999,
+                            "challenge": {
+                                "taskList": {},
+                                "topPoint": 0,
+                                "pointList": {}
+                            }
+                        },
+                        "temporary": {},
+                        "sInfo": {}
+                    }
+                },
+                "box": []
+            }
+        },
+        "deleted": {}
+    }
+}

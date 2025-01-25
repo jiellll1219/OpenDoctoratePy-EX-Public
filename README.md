@@ -2,7 +2,7 @@
 
 [简中](https://github.com/jiellll1219/OpenDoctoratePy-EX-Public/tree/main/README.md) | [EN](https://github.com/jiellll1219/OpenDoctoratePy-EX-Public/blob/main/docs/README_EN.md)
 
-[更新日志](https://github.com/jiellll1219/OpenDoctoratePy-EX-Public/tree/main/docs/updata_log.md)
+[更新日志（CN Only）](https://github.com/jiellll1219/OpenDoctoratePy-EX-Public/tree/main/docs/updata_log.md)
 
 本项目旨在作为OpenDoctoratePy的分支，拓展与完善功能。短期目标为尽可能防止因404或未知错误被踹回登录界面，长期目标为实现类似SPT-AKI项目的单人游玩本地服务
 
@@ -35,17 +35,11 @@
 
 # **本仓库的充值系统在正式支付环境中完全不可用，请不要尝试将此部分的代码移植到你的私有仓库中使用，我不会把这部分实现代码上传到公开仓库中，我并不希望该仓库被DMCA TakeDown**
 
-## 使用教程样例
+## 使用教程
 
-1、从github中 克隆/下载 其它DoctoratePy仓库到本地  
-2、克隆/下载 此仓库到本地  
-3、把此仓库的全部文件覆盖到本地的其它DoctoratePy仓库  
-4、更新data/excel的数据至你使用的游戏版本  
-5、启动 `local_server` ，根据缺失的内容对json进行补全
+自行寻找GameData或dump游戏资源以获取`excel`文件夹以及内容，并把`excel`文件夹放到 `data` 目录下，然后启动游戏
 
-补充：由于其它DoctoratePy仓库的部分数据结构不同，会导致需要补全、修改的内容不同，请自行阅读本仓库的代码进行修改。如果对此仍有疑惑，请在本仓库的issue提出，并附上你启动local_server时的完整日志，我在空闲时会尝试帮助你
-
-如果您觉得这很麻烦，也可以连接到我的公共服务器上进行体验，服务器地址为`http://8.138.148.178:8443/`，我的功能开发进度也会实时同步到此服务器中。注意！此服务器的版本仍为单人游玩版本，不支持多用户游玩，此服务器位于中国境内
+如果您觉得这很麻烦，也可以连接到我的公共服务器上进行体验，服务器地址为`http://8.138.148.178:8443/`，我的功能开发进度也会实时同步到此服务器中。注意！此服务器的版本仍为单人游玩版本，不支持多用户游玩，此服务器位于中国境内，服务器所使用的代码结构与此仓库的代码不完全一致，但功能基本相同
 
 ## data数据结构说明
 
@@ -53,7 +47,7 @@
 
 详细的文件结构与相关文件请查看此仓库 [LocalArknight-res](https://github.com/jiellll1219/LocalArknight-res)
 
-Tips：如果你的user.json数据缺失，可参考 [LocalArknight](https://github.com/jiellll1219/LocalArknight) 项目的user数据，例如shop、skin等
+此仓库提供的 user.json 的游戏版本为CN2.4.41
 
 ## EX_Config参数说明
 
@@ -65,7 +59,7 @@ Tips：如果你的user.json数据缺失，可参考 [LocalArknight](https://git
 
 兼容更多时间类型，可直接输入时间戳，亦可输入如“2024/02/02 12:12:12”、“2024-02-02 12:12:12”的时间格式。请注意，在输入此类时间时请使用英文双引号""，在日期与时间之间需要一个空格，请确保填写的时间完整且合理
 
-## user.json与syncData.json的值
+## user.json的全部键
 
 在这两个文件中的user字典中，存在的项如下
 

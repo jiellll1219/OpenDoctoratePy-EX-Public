@@ -1,0 +1,188 @@
+{
+    "detailInfo": {
+        "availCharInfo": {
+            "perAvailList": [
+                {
+                    "rarityRank": 5,
+                    "tagIdList": [
+                        11
+                    ],
+                    "charIdList": [
+                        "char_103_angel",
+                        "char_340_shwaz",
+                        "char_172_svrash",
+                        "char_213_mostma",
+                        "char_179_cgbird",
+                        "char_136_hsguma",
+                        "char_010_chen",
+                        "char_225_haak",
+                        "char_017_huang",
+                        "char_248_mgllan",
+                        "char_188_helage",
+                        "char_263_skadi",
+                        "char_202_demkni",
+                        "char_147_shining",
+                        "char_134_ifrit",
+                        "char_112_siege"
+                    ],
+                    "totalPercent": 0.02
+                },
+                {
+                    "rarityRank": 4,
+                    "tagIdList": [
+                        12,
+                        13,
+                        14,
+                        27
+                    ],
+                    "charIdList": [
+                        "char_215_mantic",
+                        "char_241_panda",
+                        "char_129_bluep",
+                        "char_143_ghost",
+                        "char_102_texas",
+                        "char_243_waaifu",
+                        "char_108_silent",
+                        "char_144_red",
+                        "char_128_plosis",
+                        "char_226_hmau",
+                        "char_367_swllow",
+                        "char_356_broca",
+                        "char_261_sddrag",
+                        "char_279_excu",
+                        "char_274_astesi",
+                        "char_326_glacus",
+                        "char_308_swire",
+                        "char_164_nightm",
+                        "char_195_glassb",
+                        "char_174_slbell",
+                        "char_173_slchan",
+                        "char_158_milu",
+                        "char_145_prove",
+                        "char_163_hpsts",
+                        "char_201_moeshd",
+                        "char_107_liskam",
+                        "char_148_nearl",
+                        "char_171_bldsk",
+                        "char_242_otter",
+                        "char_219_meteo",
+                        "char_204_platnm",
+                        "char_155_tiger",
+                        "char_115_headbr"
+                    ],
+                    "totalPercent": 0.10
+                },
+                {
+                    "rarityRank": 3,
+                    "tagIdList": [
+                        7,
+                        16,
+                        24,
+                        25,
+                        26
+                    ],
+                    "charIdList": [
+                        "char_302_glaze",
+                        "char_133_mm",
+                        "char_190_clour",
+                        "char_151_myrtle",
+                        "char_298_susuro",
+                        "char_253_greyy",
+                        "char_137_brownb",
+                        "char_277_sqrrel",
+                        "char_183_skgoat",
+                        "char_196_sunbr",
+                        "char_150_snakek",
+                        "char_199_yak",
+                        "char_181_flower",
+                        "char_117_myrrh",
+                        "char_236_rope",
+                        "char_237_gravel",
+                        "char_185_frncat",
+                        "char_193_frostl",
+                        "char_289_gyuki",
+                        "char_130_doberm",
+                        "char_290_vigna",
+                        "char_149_scave",
+                        "char_118_yuki",
+                        "char_126_shotst",
+                        "char_235_jesica",
+                        "char_109_fmout",
+                        "char_141_nights",
+                        "char_127_estell",
+                        "char_385_finlpp"
+                    ],
+                    "totalPercent": 0.3
+                },
+                {
+                    "rarityRank": 2,
+                    "tagIdList": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        8,
+                        9,
+                        10,
+                        15,
+                        18,
+                        19,
+                        20,
+                        21,
+                        22,
+                        23,
+                        1012,
+                        1013
+                    ],
+                    "charIdList": [
+                        "char_123_fang",
+                        "char_121_lava",
+                        "char_283_midn",
+                        "char_240_wyvern",
+                        "char_210_stward",
+                        "char_122_beagle",
+                        "char_284_spot",
+                        "char_282_catap",
+                        "char_278_orchid",
+                        "char_120_hibisc",
+                        "char_211_adnach",
+                        "char_124_kroos",
+                        "char_208_melan",
+                        "char_192_falco",
+                        "char_281_popka",
+                        "char_212_ansel"
+                    ],
+                    "totalPercent": 0.5
+                },
+                {
+                    "rarityRank": 1,
+                    "tagIdList": [
+                        17
+                    ],
+                    "charIdList": [
+                        "char_501_durin",
+                        "char_009_12fce",
+                        "char_503_rang",
+                        "char_500_noirc",
+                        "char_502_nblade"
+                    ],
+                    "totalPercent": 0.05
+                },
+                {
+                    "rarityRank": 0,
+                    "tagIdList": [
+                        28
+                    ],
+                    "charIdList": [
+                        "char_286_cast3",
+                        "char_285_medic2",
+                        "char_376_therex"
+                    ],
+                    "totalPercent": 0.04
+                }
+            ]
+        }
+    }
+}

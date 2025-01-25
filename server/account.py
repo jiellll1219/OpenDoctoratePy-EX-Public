@@ -1,5 +1,4 @@
 import json
-import re
 from os.path import exists
 from virtualtime import time
 from copy import deepcopy
@@ -28,7 +27,6 @@ from constants import (
     SQUADS_PATH
 )
 from utils import read_json, write_json
-from core.function.update import updateData
 import uuid
 
 def accountLogin():
@@ -50,8 +48,6 @@ def accountLogin():
 
 def accountSyncData():
 
-    data = request.data
-
     if not exists(USER_JSON_PATH):
         write_json({}, USER_JSON_PATH)
 
@@ -61,14 +57,14 @@ def accountSyncData():
     config = read_json(CONFIG_PATH)
 
     # Load newest data
-    data_skin = updateData(SKIN_TABLE_PATH)
-    character_table = updateData(CHARACTER_TABLE_PATH)
-    equip_table = updateData(EQUIP_TABLE_PATH)
-    battle_equip_table = updateData(BATTLEEQUIP_TABLE_PATH)
-    display_meta_table = updateData(DM_TABLE_PATH)
-    retro_table = updateData(RETRO_TABLE_PATH)
-    charm_table = updateData(CHARM_TABLE_PATH)
-    activity_table = updateData(ACTIVITY_TABLE_PATH)
+    data_skin = read_json(SKIN_TABLE_PATH, encoding="utf-8")
+    character_table = read_json(CHARACTER_TABLE_PATH, encoding="utf-8")
+    equip_table = read_json(EQUIP_TABLE_PATH, encoding="utf-8")
+    battle_equip_table = read_json(BATTLEEQUIP_TABLE_PATH, encoding="utf-8")
+    display_meta_table = read_json(DM_TABLE_PATH, encoding="utf-8")
+    retro_table = read_json(RETRO_TABLE_PATH, encoding="utf-8")
+    charm_table = read_json(CHARM_TABLE_PATH, encoding="utf-8")
+    activity_table = read_json(ACTIVITY_TABLE_PATH, encoding="utf-8")
     charword_table = read_json(CHARWORD_TABLE_PATH, encoding="utf-8")
 
     ts = round(time())
@@ -379,7 +375,7 @@ def accountSyncData():
 
     # Tamper story
     myStoryList = {"init": 1}
-    story_table = updateData(STORY_TABLE_PATH)
+    story_table = read_json(STORY_TABLE_PATH, encoding="utf-8")
     for story in story_table:
         myStoryList.update({story:1})
 
@@ -387,7 +383,7 @@ def accountSyncData():
 
     # Tamper Stages
     myStageList = {}
-    stage_table = updateData(STAGE_TABLE_PATH)
+    stage_table = read_json(STAGE_TABLE_PATH, encoding="utf-8")
     for stage in stage_table["stages"]:
         myStageList.update({
             stage: {
@@ -405,7 +401,7 @@ def accountSyncData():
 
     # Tamper addon [paradox&records]
     addonList = {}
-    addon_table = updateData(HANDBOOK_INFO_TABLE_PATH)
+    addon_table = read_json(HANDBOOK_INFO_TABLE_PATH, encoding="utf-8")
     for charId in addon_table["handbookDict"]:
         addonList[charId] = {"story":{}}
         story = addon_table["handbookDict"][charId]["handbookAvgList"]

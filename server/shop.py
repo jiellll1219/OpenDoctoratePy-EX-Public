@@ -2,7 +2,7 @@ from flask import request
 from utils import read_json, write_json
 from datetime import datetime
 
-from constants import CASHGOODLIST_PATH, EPGSGOODLIST_PATH, EXTRAGOODLIST_PATH, FURNIGOODLIST_PATH, GPGOODLIST_PATH, HIGHGOODLIST_PATH, LMTGOODLIST_PATH, LOWGOODLIST_PATH, REPGOODLIST_PATH, SKINGOODLIST_PATH, SOCIALGOODLIST_PATH, CLASSICGOODLIST_PATH
+from constants import CASHGOODLIST_PATH, EPGSGOODLIST_PATH, EXTRAGOODLIST_PATH, FURNIGOODLIST_PATH, GPGOODLIST_PATH, HIGHGOODLIST_PATH, LMTGSGOODLIST_PATH, LOWGOODLIST_PATH, REPGOODLIST_PATH, SKINGOODLIST_PATH, SOCIALGOODLIST_PATH, CLASSICGOODLIST_PATH
 from constants import USER_JSON_PATH, SYNC_DATA_TEMPLATE_PATH
 
 def getGoodPurchaseState():
@@ -74,6 +74,11 @@ def getClassicGoodList():
     ClassicGoodListData = read_json(CLASSICGOODLIST_PATH, encoding="utf-8")
 
     return ClassicGoodListData
+
+def getLMTGSGoodList():
+    LMTGSGoodListData = read_json(LMTGSGOODLIST_PATH, encoding="utf-8")
+
+    return LMTGSGoodListData
 
 # 购买逻辑基本相同，注释只写一遍
 def buySkinGood():

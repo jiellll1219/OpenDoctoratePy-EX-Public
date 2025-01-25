@@ -1,0 +1,140 @@
+{
+    "assets": {
+        "autoUpdate": false,
+        "downloadLocally": false,
+        "enableMods": false,
+        "skipModCacheValidation": false
+    },
+    "battleReplayConfig": {
+        "anonymous": true
+    },
+    "charConfig": {
+        "customUnitInfo": {},
+        "duplicateUnits": [],
+        "evolvePhase": -1,
+        "favorPoint": 25570,
+        "level": -1,
+        "mainSkillLvl": 7,
+        "potentialRank": 5,
+        "skillsSpecializeLevel": 3
+    },
+    "crisisConfig": {
+        "selectedCrisis": "cc12"
+    },
+    "crisisV2Config": {
+        "selectedCrisis": "cc2"
+    },
+    "gacha": {
+        "2rarity": 0,
+        "3rarity": 0,
+        "4rarity": 0,
+        "5rarity": 1.0
+    },
+    "networkConfig": {
+        "cn": {
+            "content": {
+                "configVer": "5",
+                "configs": {
+                    "V058": {
+                        "network": {
+                            "an": "{server}/config/prod/announce_meta/{0}/announcement.meta.json",
+                            "as": "{server}",
+                            "gs": "{server}",
+                            "hu": "{server}/assetbundle/official",
+                            "hv": "{server}/config/prod/official/{0}/version",
+                            "of": "https://ak.hypergryph.com/index.html",
+                            "pkgAd": "https://ak.hypergryph.com/download",
+                            "pkgIOS": "https://apps.apple.com/cn/app/id1454663939",
+                            "prean": "{server}/config/prod/announce_meta/{0}/preannouncement.meta.json",
+                            "rc": "{server}/config/prod/official/remote_config",
+                            "secure": false,
+                            "sl": "https://ak.hypergryph.com/protocol/service",
+                            "u8": "{server}/u8"
+                        },
+                        "override": true
+                    }
+                },
+                "funcVer": "V058"
+            },
+            "sign": "Yu9qJf+JL6E8rwO/RiQu3Bq4en4tr4+wpfHfg9cPc1jtWlA2FDaf+Hh8H1wibz/K3yaHeN0r6NeWp5/wpX01OXssqCw0pAA34ypPcBq03GdsGbHPjOOdD27QTS7bE5ymXhfLJkHyXfB9ejK65xyHwFw6ceRFUOx+dEfJUdT8QhA="
+        },
+        "global": {
+            "content": {
+                "configVer": "1",
+                "configs": {
+                    "V044": {
+                        "network": {
+                            "an": "{server}/config/prod/announce_meta/{0}/announcement.meta.json",
+                            "as": "{server}",
+                            "gs": "{server}",
+                            "hu": "{server}/assetbundle/official",
+                            "hv": "{server}/config/prod/official/{0}/version",
+                            "of": "https://www.arknights.global",
+                            "pkgAd": null,
+                            "pkgIOS": null,
+                            "prean": "{server}/config/prod/announce_meta/{0}/preannouncement.meta.json",
+                            "rc": "{server}/config/prod/official/remote_config",
+                            "secure": false,
+                            "sl": "https://www.arknights.global/terms_of_service",
+                            "u8": "{server}/u8"
+                        },
+                        "override": true
+                    }
+                },
+                "funcVer": "V044"
+            },
+            "sign": "sign"
+        }
+    },
+    "remote": {
+        "HGDownload_1": 10000,
+        "HGDownload_2": 10000,
+        "enableGameBI": true,
+        "enableMarquee": false,
+        "enableNavtieLicense": false,
+        "fapv2": 1
+    },
+    "rlv2Config": {
+        "allChars": true
+    },
+    "server": {
+        "adaptive": true,
+        "enableServer": true,
+        "gadget": false,
+        "host": "0.0.0.0",
+        "maintenanceMsg": "Server is currently under maintenance!",
+        "mode": "cn",
+        "noProxy": false,
+        "port": 8443,
+        "useSu": false
+    },
+    "towerConfig": {
+        "season": "tower_season_5"
+    },
+    "userConfig": {
+        "activityMaxStartTs": 1715284799,
+        "activityMinStartTs": 1712203200,
+        "background": "bg_sui_1",
+        "fakeTime": -1,
+        "restorePreviousStates": {
+            "is2": false,
+            "squadsAndFavs": false,
+            "ui": false
+        },
+        "secretary": "char_171_bldsk",
+        "secretarySkinId": "char_171_bldsk@witch#1",
+        "theme": "tm_sui_1"
+    },
+    "version": {
+        "android": {
+            "clientVersion": "2.4.41",
+            "resVersion": "25-01-21-15-29-57-98ea04"
+        }
+    },
+    "versionGlobal": {
+        "android": {
+            "clientVersion": "22.1.21",
+            "resVersion": "24-04-12-10-37-11-be18f0"
+        }
+    }
+}

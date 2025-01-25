@@ -1,0 +1,67 @@
+{
+    "goodList": [{
+			"goodId": "LS_lggShdShopnumber19_1",
+			"groupId": "lggShdShopnumber19_Group_1",
+			"displayName": "寻访凭证",
+			"originPrice": 240,
+			"price": 240,
+			"discount": 0,
+			"slotId": 1,
+			"availCount": -1,
+			"item": {
+				"id": "7003",
+				"count": 1,
+				"type": "TKT_GACHA"
+			}
+		},
+		{
+			"goodId": "LS_lggShdShopnumber19_2",
+			"groupId": "lggShdShopnumber19_Group_1",
+			"displayName": "招聘许可",
+			"originPrice": 8,
+			"price": 8,
+			"discount": 0,
+			"slotId": 2,
+			"availCount": -1,
+			"item": {
+				"id": "7001",
+				"count": 1,
+				"type": "TKT_RECRUIT"
+			}
+		},
+		{
+			"goodId": "LS_lggShdShopnumber19_3",
+			"groupId": "lggShdShopnumber19_Group_1",
+			"displayName": "合成玉",
+			"originPrice": 40,
+			"price": 40,
+			"discount": 0,
+			"slotId": 3,
+			"availCount": -1,
+			"item": {
+				"id": "4003",
+				"count": 100,
+				"type": "DIAMOND_SHD"
+			}
+		},
+		{
+			"goodId": "LS_lggShdShopnumber19_4",
+			"groupId": "lggShdShopnumber19_Group_1",
+			"displayName": "中级作战记录",
+			"originPrice": 10,
+			"price": 10,
+			"discount": 0,
+			"slotId": 4,
+			"availCount": -1,
+			"item": {
+				"id": "2003",
+				"count": 4,
+				"type": "CARD_EXP"
+			}
+		}
+    ],
+    "playerDataDelta": {
+        "modified": {},
+        "deleted": {}
+    }
+}

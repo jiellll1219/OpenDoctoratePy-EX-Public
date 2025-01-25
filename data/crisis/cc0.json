@@ -1,0 +1,1487 @@
+{
+    "ts": 1666023325,
+    "data": {
+        "seasonInfo": [
+            {
+                "seasonId": "rune_season_0_1",
+                "stages": {
+                    "level_rune_02-02": {
+                        "stageId": "level_rune_02-02",
+                        "levelId": "Obt/Rune/level_rune_02-02",
+                        "mapId": "rune_02-02",
+                        "code": "Chernobog",
+                        "name": "Broken Path",
+                        "loadingPicId": "loading4",
+                        "description": "Streets torn apart by war, the pavement turned inside out, walls torn down like paper - and the culprits that caused all this destruction are still lurking nearby.",
+                        "picId": "ccmap_chbe_barrenavenue",
+                        "logoPicId": "logo_cher",
+                        "slotId": 0,
+                        "type": "PERMANENT"
+                    }
+                },
+                "permStageGroup": [
+                    {
+                        "stageId": "level_rune_02-02",
+                        "stagePointLevelInfo": {},
+                        "stageChallengeInfo": [],
+                        "_mapChallenge": {},
+                        "runeList": [
+                            {
+                                "runeId": "enemy_hirman_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_hirman_3",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_bslime_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_bslime_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_bslime_3",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_atk_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_atk_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_atk_3",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_hp_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_hp_3",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_atk_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_atk_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_atk_3",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_hp_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_hp_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "global_costrecovery_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "global_costrecovery_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "global_squadnum_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "global_squadnum_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "global_forbidloc_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "global_forbidloc_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "global_forbidloc_3",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_cost_guarddefender_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_cost_sniperhealer_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_exclude_sniperhealer_2",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "char_exclude_ranged_3",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "global_lifepoint_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_def_1",
+                                "unlockPercent": 0
+                            },
+                            {
+                                "runeId": "enemy_eagent_1",
+                                "unlockPercent": 0
+                            }
+                        ]
+                    }
+                ],
+                "tempStageGroup": [],
+                "trainStageGroup": []
+            }
+        ],
+        "trainingInfo": {
+            "stages": {},
+            "runeInfo": {}
+        },
+        "runeInfoList": {
+            "level_rune_02-02": [
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_hirman",
+                    "iconId": "enemy_hirman_2",
+                    "runeId": "enemy_hirman_2",
+                    "runeName": "None",
+                    "sortId": 1,
+                    "stageId": "level_rune_02-02"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_hirman",
+                    "iconId": "enemy_hirman_3",
+                    "runeId": "enemy_hirman_3",
+                    "runeName": "None",
+                    "sortId": 2,
+                    "stageId": "level_rune_02-02"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_bslime",
+                    "iconId": "enemy_bslime_1",
+                    "runeId": "enemy_bslime_1",
+                    "runeName": "None",
+                    "sortId": 3,
+                    "stageId": "level_rune_02-02"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_bslime",
+                    "iconId": "enemy_bslime_2",
+                    "runeId": "enemy_bslime_2",
+                    "runeName": "None",
+                    "sortId": 4,
+                    "stageId": "level_rune_02-02"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_bslime",
+                    "iconId": "enemy_bslime_3",
+                    "runeId": "enemy_bslime_3",
+                    "runeName": "None",
+                    "sortId": 5,
+                    "stageId": "level_rune_02-02"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_atk",
+                    "iconId": "enemy_atk_1",
+                    "runeId": "enemy_atk_1",
+                    "runeName": "None",
+                    "sortId": 6,
+                    "stageId": "level_rune_02-02"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_atk",
+                    "iconId": "enemy_atk_2",
+                    "runeId": "enemy_atk_2",
+                    "runeName": "None",
+                    "sortId": 7,
+                    "stageId": "level_rune_02-02"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_atk",
+                    "iconId": "enemy_atk_3",
+                    "runeId": "enemy_atk_3",
+                    "runeName": "None",
+                    "sortId": 8,
+                    "stageId": "level_rune_02-02"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_hp",
+                    "iconId": "enemy_hp_2",
+                    "runeId": "enemy_hp_2",
+                    "runeName": "None",
+                    "sortId": 9,
+                    "stageId": "level_rune_02-02"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "enemy_hp",
+                    "iconId": "enemy_hp_3",
+                    "runeId": "enemy_hp_3",
+                    "runeName": "None",
+                    "sortId": 10,
+                    "stageId": "level_rune_02-02"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "char_atk",
+                    "iconId": "char_atk_1",
+                    "runeId": "char_atk_1",
+                    "runeName": "None",
+                    "sortId": 11,
+                    "stageId": "level_rune_02-02"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "char_atk",
+                    "iconId": "char_atk_2",
+                    "runeId": "char_atk_2",
+                    "runeName": "None",
+                    "sortId": 12,
+                    "stageId": "level_rune_02-02"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "char_atk",
+                    "iconId": "char_atk_3",
+                    "runeId": "char_atk_3",
+                    "runeName": "None",
+                    "sortId": 13,
+                    "stageId": "level_rune_02-02"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "char_hp",
+                    "iconId": "char_hp_1",
+                    "runeId": "char_hp_1",
+                    "runeName": "None",
+                    "sortId": 14,
+                    "stageId": "level_rune_02-02"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "char_hp",
+                    "iconId": "char_hp_2",
+                    "runeId": "char_hp_2",
+                    "runeName": "None",
+                    "sortId": 15,
+                    "stageId": "level_rune_02-02"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "cost_recovery",
+                    "iconId": "global_costrecovery_1",
+                    "runeId": "global_costrecovery_1",
+                    "runeName": "None",
+                    "sortId": 16,
+                    "stageId": "level_rune_02-02"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "cost_recovery",
+                    "iconId": "global_costrecovery_2",
+                    "runeId": "global_costrecovery_2",
+                    "runeName": "None",
+                    "sortId": 17,
+                    "stageId": "level_rune_02-02"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "squad_limit",
+                    "iconId": "global_squadnum_1",
+                    "runeId": "global_squadnum_1",
+                    "runeName": "None",
+                    "sortId": 18,
+                    "stageId": "level_rune_02-02"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "squad_limit",
+                    "iconId": "global_squadnum_2",
+                    "runeId": "global_squadnum_2",
+                    "runeName": "None",
+                    "sortId": 19,
+                    "stageId": "level_rune_02-02"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "forbid_loc",
+                    "iconId": "global_forbidloc_1",
+                    "runeId": "global_forbidloc_1",
+                    "runeName": "None",
+                    "sortId": 20,
+                    "stageId": "level_rune_02-02"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "forbid_loc",
+                    "iconId": "global_forbidloc_2",
+                    "runeId": "global_forbidloc_2",
+                    "runeName": "None",
+                    "sortId": 21,
+                    "stageId": "level_rune_02-02"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "forbid_loc",
+                    "iconId": "global_forbidloc_3",
+                    "runeId": "global_forbidloc_3",
+                    "runeName": "None",
+                    "sortId": 22,
+                    "stageId": "level_rune_02-02"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "char_exclude",
+                    "iconId": "char_cost_guarddefender_1",
+                    "runeId": "char_cost_guarddefender_1",
+                    "runeName": "None",
+                    "sortId": 23,
+                    "stageId": "level_rune_02-02"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "char_exclude",
+                    "iconId": "char_cost_sniperhealer_1",
+                    "runeId": "char_cost_sniperhealer_1",
+                    "runeName": "None",
+                    "sortId": 24,
+                    "stageId": "level_rune_02-02"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "char_exclude",
+                    "iconId": "char_exclude_sniperhealer_2",
+                    "runeId": "char_exclude_sniperhealer_2",
+                    "runeName": "None",
+                    "sortId": 25,
+                    "stageId": "level_rune_02-02"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": "char_exclude",
+                    "iconId": "char_exclude_ranged_3",
+                    "runeId": "char_exclude_ranged_3",
+                    "runeName": "None",
+                    "sortId": 26,
+                    "stageId": "level_rune_02-02"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": null,
+                    "iconId": "global_lifepoint_1",
+                    "runeId": "global_lifepoint_1",
+                    "runeName": "None",
+                    "sortId": 27,
+                    "stageId": "level_rune_02-02"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": null,
+                    "iconId": "enemy_def_1",
+                    "runeId": "enemy_def_1",
+                    "runeName": "None",
+                    "sortId": 28,
+                    "stageId": "level_rune_02-02"
+                },
+                {
+                    "bgPicId": "crisis_enemy_2",
+                    "groupType": null,
+                    "iconId": "enemy_eagent_1",
+                    "runeId": "enemy_eagent_1",
+                    "runeName": "None",
+                    "sortId": 29,
+                    "stageId": "level_rune_02-02"
+                }
+            ]
+        },
+        "stageRune": {
+            "level_rune_02-02": {
+                "enemy_hirman_2": {
+                    "id": "enemy_hirman_2",
+                    "points": 2,
+                    "mutexGroupKey": "enemy_hirman",
+                    "description": "All [Rockbreaker] and [Rockbreaker Leader] gain +60% HP, +250 DEF and +40% ATK and Invisibility",
+                    "runes": [
+                        {
+                            "key": "enemy_attribute_mul",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1048_hirman|enemy_1048_hirman_2"
+                                },
+                                {
+                                    "key": "max_hp",
+                                    "value": 1.6,
+                                    "valueStr": null
+                                },
+                                {
+                                    "key": "atk",
+                                    "value": 1.4,
+                                    "valueStr": null
+                                }
+                            ]
+                        },
+                        {
+                            "key": "enemy_attribute_add",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1048_hirman|enemy_1048_hirman_2"
+                                },
+                                {
+                                    "key": "def",
+                                    "value": 250,
+                                    "valueStr": null
+                                }
+                            ]
+                        },
+                        {
+                            "key": "enemy_dynamic_ability_new",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1048_hirman|enemy_1048_hirman_2"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": 0,
+                                    "valueStr": "invisible"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "enemy_hirman_3": {
+                    "id": "enemy_hirman_3",
+                    "points": 3,
+                    "mutexGroupKey": "enemy_hirman",
+                    "description": "All [Rockbreaker] and [Rockbreaker Leader] gain +100% HP, +450 DEF and +70% ATK and Invisibility",
+                    "runes": [
+                        {
+                            "key": "enemy_attribute_mul",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1048_hirman|enemy_1048_hirman_2"
+                                },
+                                {
+                                    "key": "max_hp",
+                                    "value": 2,
+                                    "valueStr": null
+                                },
+                                {
+                                    "key": "atk",
+                                    "value": 1.7,
+                                    "valueStr": null
+                                }
+                            ]
+                        },
+                        {
+                            "key": "enemy_attribute_add",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1048_hirman|enemy_1048_hirman_2"
+                                },
+                                {
+                                    "key": "def",
+                                    "value": 450,
+                                    "valueStr": null
+                                }
+                            ]
+                        },
+                        {
+                            "key": "enemy_dynamic_ability_new",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1048_hirman|enemy_1048_hirman_2"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": 0,
+                                    "valueStr": "invisible"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "enemy_bslime_1": {
+                    "id": "enemy_bslime_1",
+                    "points": 1,
+                    "mutexGroupKey": "enemy_bslime",
+                    "description": "All [Infused Originium Slugs] gain +40% HP and Invisibility",
+                    "runes": [
+                        {
+                            "key": "enemy_attribute_mul",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1021_bslime"
+                                },
+                                {
+                                    "key": "max_hp",
+                                    "value": 1.4,
+                                    "valueStr": null
+                                }
+                            ]
+                        },
+                        {
+                            "key": "enemy_dynamic_ability_new",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1021_bslime"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": 0,
+                                    "valueStr": "invisible"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "enemy_bslime_2": {
+                    "id": "enemy_bslime_2",
+                    "points": 2,
+                    "mutexGroupKey": "enemy_bslime",
+                    "description": "All [Infused Originium Slugs] gain +80% HP, +35% ATK, Invisibility and cannot be Silenced",
+                    "runes": [
+                        {
+                            "key": "enemy_attribute_mul",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1021_bslime"
+                                },
+                                {
+                                    "key": "max_hp",
+                                    "value": 1.8,
+                                    "valueStr": null
+                                },
+                                {
+                                    "key": "atk",
+                                    "value": 1.35,
+                                    "valueStr": null
+                                }
+                            ]
+                        },
+                        {
+                            "key": "enemy_dynamic_ability_new",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1021_bslime"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": 0,
+                                    "valueStr": "invisible"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "enemy_dynamic_ability_new",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1021_bslime"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": 0,
+                                    "valueStr": "silenceimmue"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "enemy_bslime_3": {
+                    "id": "enemy_bslime_3",
+                    "points": 3,
+                    "mutexGroupKey": "enemy_bslime",
+                    "description": "All [Infused Originium Slugs] gain +150% HP, +80% ATK, Invisibility and cannot be Silenced",
+                    "runes": [
+                        {
+                            "key": "enemy_attribute_mul",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1021_bslime"
+                                },
+                                {
+                                    "key": "max_hp",
+                                    "value": 2.5,
+                                    "valueStr": null
+                                },
+                                {
+                                    "key": "atk",
+                                    "value": 1.8,
+                                    "valueStr": null
+                                }
+                            ]
+                        },
+                        {
+                            "key": "enemy_dynamic_ability_new",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1021_bslime"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": 0,
+                                    "valueStr": "invisible"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "enemy_dynamic_ability_new",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1021_bslime"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": 0,
+                                    "valueStr": "silenceimmue"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "enemy_atk_1": {
+                    "id": "enemy_atk_1",
+                    "points": 1,
+                    "mutexGroupKey": "enemy_atk",
+                    "description": "All enemies gain +15% ATK",
+                    "runes": [
+                        {
+                            "key": "enemy_attribute_mul",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "atk",
+                                    "value": 1.15,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "enemy_atk_2": {
+                    "id": "enemy_atk_2",
+                    "points": 2,
+                    "mutexGroupKey": "enemy_atk",
+                    "description": "All enemies gain +40% ATK",
+                    "runes": [
+                        {
+                            "key": "enemy_attribute_mul",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "atk",
+                                    "value": 1.4,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "enemy_atk_3": {
+                    "id": "enemy_atk_3",
+                    "points": 3,
+                    "mutexGroupKey": "enemy_atk",
+                    "description": "All enemies gain +80% ATK",
+                    "runes": [
+                        {
+                            "key": "enemy_attribute_mul",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "atk",
+                                    "value": 1.8,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "enemy_hp_2": {
+                    "id": "enemy_hp_2",
+                    "points": 2,
+                    "mutexGroupKey": "enemy_hp",
+                    "description": "All enemies gain +80% Max HP",
+                    "runes": [
+                        {
+                            "key": "enemy_attribute_mul",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "max_hp",
+                                    "value": 1.8,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "enemy_hp_3": {
+                    "id": "enemy_hp_3",
+                    "points": 3,
+                    "mutexGroupKey": "enemy_hp",
+                    "description": "All enemies gain +150% Max HP",
+                    "runes": [
+                        {
+                            "key": "enemy_attribute_mul",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "max_hp",
+                                    "value": 2.5,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "char_atk_1": {
+                    "id": "char_atk_1",
+                    "points": 1,
+                    "mutexGroupKey": "char_atk",
+                    "description": "All friendly units have -15% ATK",
+                    "runes": [
+                        {
+                            "key": "char_attribute_mul",
+                            "selector": {
+                                "professionMask": 767,
+                                "buildableMask": 3,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "atk",
+                                    "value": 0.85,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "char_atk_2": {
+                    "id": "char_atk_2",
+                    "points": 2,
+                    "mutexGroupKey": "char_atk",
+                    "description": "All friendly units have -30% ATK",
+                    "runes": [
+                        {
+                            "key": "char_attribute_mul",
+                            "selector": {
+                                "professionMask": 767,
+                                "buildableMask": 3,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "atk",
+                                    "value": 0.7,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "char_atk_3": {
+                    "id": "char_atk_3",
+                    "points": 3,
+                    "mutexGroupKey": "char_atk",
+                    "description": "All friendly units have -50% ATK",
+                    "runes": [
+                        {
+                            "key": "char_attribute_mul",
+                            "selector": {
+                                "professionMask": 767,
+                                "buildableMask": 3,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "atk",
+                                    "value": 0.5,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "char_hp_1": {
+                    "id": "char_hp_1",
+                    "description": "Ally Max HP -25%",
+                    "points": 1,
+                    "mutexGroupKey": "char_hp",
+                    "runes": [
+                        {
+                            "key": "char_attribute_mul",
+                            "selector": {
+                                "professionMask": 767,
+                                "buildableMask": 3,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "max_hp",
+                                    "value": 0.75,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "char_hp_2": {
+                    "id": "char_hp_2",
+                    "description": "Ally Max HP -50%",
+                    "points": 2,
+                    "mutexGroupKey": "char_hp",
+                    "runes": [
+                        {
+                            "key": "char_attribute_mul",
+                            "selector": {
+                                "professionMask": 767,
+                                "buildableMask": 3,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "max_hp",
+                                    "value": 0.5,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "global_costrecovery_1": {
+                    "id": "global_costrecovery_1",
+                    "points": 1,
+                    "mutexGroupKey": "cost_recovery",
+                    "description": "Natural DP regeneration rate is reduced by 25%",
+                    "runes": [
+                        {
+                            "key": "global_cost_recovery_mul",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "scale",
+                                    "value": 1.3333,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "global_costrecovery_2": {
+                    "id": "global_costrecovery_2",
+                    "points": 2,
+                    "mutexGroupKey": "cost_recovery",
+                    "description": "Natural DP regeneration rate is reduced by 50%",
+                    "runes": [
+                        {
+                            "key": "global_cost_recovery_mul",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "scale",
+                                    "value": 2,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "global_squadnum_1": {
+                    "id": "global_squadnum_1",
+                    "points": 1,
+                    "mutexGroupKey": "squad_limit",
+                    "description": "Max Squad size is reduced to 10 Operators",
+                    "runes": [
+                        {
+                            "key": "global_squad_num_limit",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "value",
+                                    "value": 10,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "global_squadnum_2": {
+                    "id": "global_squadnum_2",
+                    "points": 2,
+                    "mutexGroupKey": "squad_limit",
+                    "description": "Max Squad size is reduced to 7 Operators",
+                    "runes": [
+                        {
+                            "key": "global_squad_num_limit",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "value",
+                                    "value": 7,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "global_forbidloc_1": {
+                    "id": "global_forbidloc_1",
+                    "points": 1,
+                    "mutexGroupKey": "forbid_loc",
+                    "description": "4 tiles on the map will no longer allow units to be deployed upon them",
+                    "runes": [
+                        {
+                            "key": "global_forbid_location",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "location",
+                                    "value": 0,
+                                    "valueStr": "(1,3)|(1,5)|(2,4)|(3,3)"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "global_forbidloc_2": {
+                    "id": "global_forbidloc_2",
+                    "points": 2,
+                    "mutexGroupKey": "forbid_loc",
+                    "description": "8 tiles on the map will no longer allow units to be deployed upon them",
+                    "runes": [
+                        {
+                            "key": "global_forbid_location",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "location",
+                                    "value": 0,
+                                    "valueStr": "(1,1)|(1,3)|(1,5)|(1,6)|(2,4)|(2,5)|(3,3)|(4,8)"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "global_forbidloc_3": {
+                    "id": "global_forbidloc_3",
+                    "points": 3,
+                    "mutexGroupKey": "forbid_loc",
+                    "description": "12 tiles on the map will no longer allow units to be deployed upon them",
+                    "runes": [
+                        {
+                            "key": "global_forbid_location",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "location",
+                                    "value": 0,
+                                    "valueStr": "(1,1)|(1,3)|(1,4)|(1,5)|(1,6)|(2,3)|(2,4)|(2,5)|(3,3)|(4,8)|(5,7)|(6,3)"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "char_cost_guarddefender_1": {
+                    "id": "char_cost_guarddefender_1",
+                    "points": 1,
+                    "mutexGroupKey": "char_exclude",
+                    "description": "The DP Cost of Guard and Defender Operators is tripled",
+                    "runes": [
+                        {
+                            "key": "char_cost_mul",
+                            "selector": {
+                                "professionMask": 5,
+                                "buildableMask": 3,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "scale",
+                                    "value": 3,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "char_cost_sniperhealer_1": {
+                    "id": "char_cost_sniperhealer_1",
+                    "points": 1,
+                    "mutexGroupKey": "char_exclude",
+                    "description": "The DP Cost of Medic and Sniper Operators is tripled.",
+                    "runes": [
+                        {
+                            "key": "char_cost_mul",
+                            "selector": {
+                                "professionMask": 10,
+                                "buildableMask": 3,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "scale",
+                                    "value": 3,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "char_exclude_sniperhealer_2": {
+                    "id": "char_exclude_sniperhealer_2",
+                    "points": 2,
+                    "mutexGroupKey": "char_exclude",
+                    "description": "Medic and Sniper Operators cannot be deployed.",
+                    "runes": [
+                        {
+                            "key": "char_exclude",
+                            "selector": {
+                                "professionMask": 10,
+                                "buildableMask": 3,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": []
+                        }
+                    ]
+                },
+                "char_exclude_ranged_3": {
+                    "id": "char_exclude_ranged_3",
+                    "points": 3,
+                    "mutexGroupKey": "char_exclude",
+                    "description": "Long distance (Ranged) Operators cannot be deployed.",
+                    "runes": [
+                        {
+                            "key": "char_exclude",
+                            "selector": {
+                                "professionMask": 58,
+                                "buildableMask": 3,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": []
+                        }
+                    ]
+                },
+                "global_lifepoint_1": {
+                    "id": "global_lifepoint_1",
+                    "description": "Max HP Seals reduced to 1",
+                    "points": 1,
+                    "mutexGroupKey": null,
+                    "runes": [{
+                        "key": "global_lifepoint",
+                        "selector": {
+                            "professionMask": 0,
+                            "buildableMask": 0,
+                            "charIdFilter": null,
+                            "enemyIdFilter": null,
+                            "skillIdFilter": null,
+                            "tileKeyFilter": null
+                        },
+                        "blackboard": [{
+                            "key": "value",
+                            "value": 1,
+                            "valueStr": null
+                        }]
+                    }]
+                },
+                "enemy_def_1": {
+                    "id": "enemy_def_1",
+                    "points": 1,
+                    "mutexGroupKey": null,
+                    "description": "All enemies gain +50% DEF",
+                    "runes": [
+                        {
+                            "key": "enemy_attribute_add",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "def",
+                                    "value": 150,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "enemy_eagent_1": {
+                    "id": "enemy_eagent_1",
+                    "points": 1,
+                    "mutexGroupKey": null,
+                    "description": "All [Agents] gain Invisibility",
+                    "runes": [
+                        {
+                            "key": "enemy_dynamic_ability_new",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "enemy",
+                                    "value": 0,
+                                    "valueStr": "enemy_1049_eagent"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": 0,
+                                    "valueStr": "invisible"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "playerDataDelta": {
+        "modified": {
+            "crisis": {
+                "current": "rune_season_0_1",
+                "lst": 1666023325,
+                "nst": 1666123325,
+                "map": {},
+                "shop": {},
+                "training": {
+                    "currentStage": [],
+                    "stage": {},
+                    "nst": 1666123325
+                },
+                "season": {
+                    "rune_season_0_1": {
+                        "coin": 14,
+                        "tCoin": 28,
+                        "permanent": {
+                            "nst": -1,
+                            "rune": {
+                                "enemy_atk_1": 3,
+                                "char_atk_1": 3,
+                                "char_hp_1": 3,
+                                "global_costrecovery_1": 3,
+                                "global_squadnum_1": 3,
+                                "global_forbidloc_1": 3,
+                                "char_cost_guarddefender_1": 3,
+                                "global_lifepoint_1": 3,
+                                "enemy_def_1": 3,
+                                "enemy_eagent_1": 3,
+                                "enemy_hirman_2": 3,
+                                "enemy_atk_2": 3,
+                                "enemy_hp_2": 3,
+                                "char_atk_2": 3,
+                                "char_hp_2": 3,
+                                "global_costrecovery_2": 3,
+                                "global_squadnum_2": 3,
+                                "enemy_hirman_3": 3,
+                                "enemy_atk_3": 3,
+                                "enemy_hp_3": 3,
+                                "char_atk_3": 3,
+                                "char_exclude_ranged_3": 3,
+                                "enemy_bslime_1": 3,
+                                "char_cost_sniperhealer_1": 3,
+                                "enemy_bslime_2": 3,
+                                "global_forbidloc_2": 3,
+                                "char_exclude_sniperhealer_2": 3,
+                                "enemy_bslime_3": 3,
+                                "global_forbidloc_3": 3
+                            },
+                            "point": 9999,
+                            "challenge": {
+                                "taskList": {},
+                                "topPoint": 0,
+                                "pointList": {}
+                            }
+                        },
+                        "temporary": {},
+                        "sInfo": {}
+                    }
+                },
+                "box": []
+            }
+        },
+        "deleted": {}
+    }
+}

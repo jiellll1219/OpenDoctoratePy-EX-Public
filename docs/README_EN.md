@@ -2,7 +2,7 @@
 
 [中文](https://github.com/jiellll1219/OpenDoctoratePy-EX-Public/tree/main/README.md) | [EN](https://github.com/jiellll1219/OpenDoctoratePy-EX-Public/tree/main/docs/README_EN.md) |
 
-[Update Log](https://github.com/jiellll1219/OpenDoctoratePy-EX-Public/tree/main/docs/updata_log.md)
+[Update Log (CN Only)](https://github.com/jiellll1219/OpenDoctoratePy-EX-Public/tree/main/docs/updata_log.md)
 
 This project serves as a branch of OpenDoctoratePy, aiming to expand and improve its functionality. The short-term goal is to prevent being kicked back to the login interface due to 404 or unknown errors as much as possible, while the long-term goal is to achieve a single-player local service similar to the SPT-AKI project.
 
@@ -37,15 +37,9 @@ If you want to contribute code but lack data, you can refer to this [il2cpp file
 
 ## Usage Guide Example
 
-1. Clone/Download another DoctoratePy repository from GitHub to your local machine.  
-2. Clone/Download this repository to your local machine.  
-3. Overwrite all files from this repository into the local DoctoratePy repository.  
-4. Update the data/excel files to match your game version.  
-5. Launch `local_server` and complete the missing JSON content.
+Find GameData or dump game resources to get the `excel` folder and content, put the `excel` folder in the `data` directory, and then start the game
 
-Supplementary: Due to differences in data structures between DoctoratePy repositories, the contents to be completed or modified will vary. Please review the code in this repository for necessary adjustments. If you still have doubts, raise an issue here and attach the full log when you launch `local_server`. I will try to help during my free time.
-
-If you find this troublesome, you can also connect to my public server to experience it. The server address is http://8.138.148.178:8443/. My function development progress will also be synchronized to this server in real time. Note! This server version is still a single-player version and does not support multi-user play. This server is located in China.
+If you think this is troublesome, you can also connect to my public server to experience it. The server address is `http://8.138.148.178:8443/`. My function development progress will also be synchronized to this server in real time. Note! The version of this server is still a single-player version and does not support multi-user play. This server is located in China. The code structure used by the server is not completely consistent with the code of this warehouse, but the functions are basically the same
 
 ## Data Structure Explanation
 
@@ -53,7 +47,7 @@ The storage structure for some data in this project is based on [LocalArknight](
 
 For detailed file structures and related files, please refer to this repository: [LocalArknight-res](https://github.com/jiellll1219/LocalArknight-res).
 
-Tips: If your `user.json` data is missing, you can refer to the user data (e.g., shop, skin) in the [LocalArknight](https://github.com/jiellll1219/LocalArknight) project.
+The game version of user.json provided by this repository is CN 2.4.41
 
 ## EX_Config Parameter Explanation
 
@@ -65,7 +59,7 @@ It may cause issues with infrastructure. Avoid reducing the value unnecessarily 
 
 Compatible with more time formats. You can directly input timestamps or formats like `"2024/02/02 12:12:12"` or `"2024-02-02 12:12:12"`. Ensure to use English double quotes `""`, include a space between date and time, and ensure the entered time is complete and reasonable.
 
-## Values in user.json and syncData.json
+## Keys in user.json
 
 In the `user` dictionary of these two files, the following entries exist:
 

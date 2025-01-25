@@ -1,0 +1,263 @@
+{
+	"weeklyGroup": {
+		"groupId": "gW_149",
+		"startDateTime": 1640548800,
+		"endDateTime": -1,
+		"packages": {
+			"GP_gW_149_W_1": {
+				"goodId": "GP_gW_149_W_1",
+				"groupId": "gW_149",
+				"giftPackageId": "W_2",
+				"displayName": "每周养成组合包",
+				"priority": 50,
+				"availCount": 1,
+				"currencyUnit": "CASH",
+				"price": 68,
+				"originPrice": 68,
+				"discount": 0,
+				"items": [
+					{
+						"id": "4001",
+						"count": 80000,
+						"type": "GOLD"
+					},
+					{
+						"id": "2004",
+						"count": 10,
+						"type": "CARD_EXP"
+					},
+					{
+						"id": "2003",
+						"count": 25,
+						"type": "CARD_EXP"
+					},
+					{
+						"id": "2002",
+						"count": 50,
+						"type": "CARD_EXP"
+					},
+					{
+						"id": "3302",
+						"count": 20,
+						"type": "MATERIAL"
+					},
+					{
+						"id": "3301",
+						"count": 40,
+						"type": "MATERIAL"
+					},
+					{
+						"id": "3112",
+						"count": 10,
+						"type": "MATERIAL"
+					},
+					{
+						"id": "3401",
+						"count": 360,
+						"type": "MATERIAL"
+					}
+				]
+			}
+		}
+	},
+	"monthlyGroup": {
+		"groupId": "gM_37",
+		"startDateTime": 1638302400,
+		"endDateTime": -1,
+		"packages": {
+			"GP_gM_37_M_1": {
+				"goodId": "GP_gM_37_M_1",
+				"groupId": "gM_37",
+				"giftPackageId": "M_1",
+				"displayName": "每月寻访组合包",
+				"priority": 60,
+				"availCount": 1,
+				"currencyUnit": "CASH",
+				"price": 168,
+				"originPrice": 168,
+				"discount": 0,
+				"items": [
+					{
+						"id": "4002",
+						"count": 42,
+						"type": "DIAMOND"
+					},
+					{
+						"id": "7004",
+						"count": 1,
+						"type": "TKT_GACHA_10"
+					}
+				]
+			}
+		}
+	},
+	"monthlySub": [],
+	"levelGP": [],
+	"oneTimeGP": [
+		{
+			"goodId": "GP_Once_1",
+			"giftPackageId": "Once_1",
+			"priority": 100,
+			"displayName": "新人组合包",
+			"currencyUnit": "CASH",
+			"price": 6,
+			"originPrice": 6,
+			"discount": 0,
+			"availCount": 1,
+			"startDateTime": -1,
+			"endDateTime": -1,
+			"items": [
+				{
+					"id": "char_196_sunbr",
+					"count": 1,
+					"type": "CHAR"
+				},
+				{
+					"id": "7003",
+					"count": 1,
+					"type": "TKT_GACHA"
+				},
+				{
+					"id": "4001",
+					"count": 10000,
+					"type": "GOLD"
+				},
+				{
+					"id": "2001",
+					"count": 20,
+					"type": "CARD_EXP"
+				}
+			]
+		},
+		{
+			"goodId": "GP_Once_2",
+			"giftPackageId": "Once_2",
+			"priority": 90,
+			"displayName": "新人寻访组合包",
+			"currencyUnit": "CASH",
+			"price": 128,
+			"originPrice": 128,
+			"discount": 0,
+			"availCount": 1,
+			"startDateTime": -1,
+			"endDateTime": -1,
+			"items": [
+				{
+					"id": "7004",
+					"count": 2,
+					"type": "TKT_GACHA_10"
+				}
+			]
+		},
+		{
+			"goodId": "GP_Once_3",
+			"giftPackageId": "Once_3",
+			"priority": 80,
+			"displayName": "新人养成组合包",
+			"currencyUnit": "CASH",
+			"price": 68,
+			"originPrice": 68,
+			"discount": 0,
+			"availCount": 1,
+			"startDateTime": -1,
+			"endDateTime": -1,
+			"items": [
+				{
+					"id": "4002",
+					"count": 13,
+					"type": "DIAMOND"
+				},
+				{
+					"id": "4001",
+					"count": 40000,
+					"type": "GOLD"
+				},
+				{
+					"id": "2003",
+					"count": 20,
+					"type": "CARD_EXP"
+				},
+				{
+					"id": "2002",
+					"count": 30,
+					"type": "CARD_EXP"
+				},
+				{
+					"id": "2001",
+					"count": 40,
+					"type": "CARD_EXP"
+				},
+				{
+					"id": "3302",
+					"count": 10,
+					"type": "MATERIAL"
+				},
+				{
+					"id": "3301",
+					"count": 30,
+					"type": "MATERIAL"
+				},
+				{
+					"id": "30062",
+					"count": 4,
+					"type": "MATERIAL"
+				},
+				{
+					"id": "30052",
+					"count": 5,
+					"type": "MATERIAL"
+				},
+				{
+					"id": "30042",
+					"count": 5,
+					"type": "MATERIAL"
+				},
+				{
+					"id": "30032",
+					"count": 7,
+					"type": "MATERIAL"
+				},
+				{
+					"id": "30022",
+					"count": 7,
+					"type": "MATERIAL"
+				},
+				{
+					"id": "30012",
+					"count": 10,
+					"type": "MATERIAL"
+				}
+			]
+		},
+		{
+			"goodId": "GP_Once_4",
+			"giftPackageId": "Once_4",
+			"priority": 70,
+			"displayName": "新人家具组合包",
+			"currencyUnit": "CASH",
+			"price": 68,
+			"originPrice": 68,
+			"discount": 0,
+			"availCount": 1,
+			"startDateTime": -1,
+			"endDateTime": -1,
+			"items": [
+				{
+					"id": "4002",
+					"count": 6,
+					"type": "DIAMOND"
+				},
+				{
+					"id": "3401",
+					"count": 2400,
+					"type": "MATERIAL"
+				}
+			]
+		}
+	],
+	"chooseGroup": [],
+	"playerDataDelta": {
+		"modified": {},
+		"deleted": {}
+	}
+}

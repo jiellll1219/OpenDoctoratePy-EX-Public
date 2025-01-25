@@ -12,7 +12,7 @@ from constants import (
     GACHA_HISTORY_PATH,
     GACHA_TABLE_PATH,
     CHARACTER_TABLE_PATH,
-    EX_GACHA_DATA
+    EX_GACHA_DATA_PATH
 )
 from utils import read_json, write_json
 
@@ -39,9 +39,7 @@ def syncNormalGacha():
         }
     }
 
-    return {
-        "playerDataDelta": playerDataDelta
-    }
+    return playerDataDelta
     
 
 def gachanormalGacha():
@@ -287,7 +285,7 @@ def Gacha(ticket_type, use_diamond_shard, json_body):
     # 获取卡池路径
     pool_path = os.path.join(os.getcwd(), 'data', 'gacha', f'{pool_id}.json')
     #读取卡池信息
-    ex_gacha_data = read_json(EX_GACHA_DATA, encoding="utf-8")
+    ex_gacha_data = read_json(EX_GACHA_DATA_PATH, encoding="utf-8")
     # 获取当前时间戳
     ts = time()
 
@@ -310,7 +308,7 @@ def Gacha(ticket_type, use_diamond_shard, json_body):
     pool_json = read_json(pool_path, encoding='utf-8')
 
     # 获取目标卡池的保底数，如果不存在则设置为 0
-    gacha_count = ex_gacha_data[gacha_type].setdefault(gacha_type, 0)
+    gacha_count = ex_gacha_data.setdefault(gacha_type, 0)
 
     # 初始化需要的变量
     gacha_results = []
@@ -427,6 +425,10 @@ def Gacha(ticket_type, use_diamond_shard, json_body):
         if random_rank['rarityRank'] == 5:
             gacha_count = 0
 
+        # 处理保底次数
+        ex_gacha_data[gacha_type] = gacha_count
+        write_json(ex_gacha_data, EX_GACHA_DATA_PATH)
+
         # 获取随机角色ID列表
         random_char_array = avail_char_info[random_rank['index']]['charIdList']
 
@@ -455,7 +457,7 @@ def Gacha(ticket_type, use_diamond_shard, json_body):
         item_get = []
         if repeat_char_id == 0:
             char_data = {
-                "instId": len(user_json_data["user"]['troop']['chars']) + 1,
+                "instId": int(random_char_id.split("_")[1]),
                 "charId": random_char_id,
                 "favorPoint": 0,
                 "potentialRank": 0,

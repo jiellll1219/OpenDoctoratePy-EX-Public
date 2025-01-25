@@ -1,0 +1,6384 @@
+{
+    "goods": [
+        {
+            "goodId": "s1_01_1",
+            "furniId": "furni_s1_bed_01",
+            "shopDisplay": 0,
+            "displayName": "瓷色大床",
+            "priceCoin": 250,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 250,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s1_01_2",
+            "furniId": "furni_s1_nightstand_01",
+            "shopDisplay": 0,
+            "displayName": "瓷色床头柜",
+            "priceCoin": 95,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 95,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s1_01_3",
+            "furniId": "furni_s1_comdesk_01",
+            "shopDisplay": 0,
+            "displayName": "黑色简拼办公桌",
+            "priceCoin": 165,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 165,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s1_01_4",
+            "furniId": "furni_s1_comchair_01",
+            "shopDisplay": 0,
+            "displayName": "黑色滚轮靠背椅",
+            "priceCoin": 110,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 110,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s1_01_5",
+            "furniId": "furni_s1_comcabinet_01",
+            "shopDisplay": 0,
+            "displayName": "黑色简拼桌柜",
+            "priceCoin": 95,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 95,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s1_01_6",
+            "furniId": "furni_s1_bookcase_01",
+            "shopDisplay": 0,
+            "displayName": "纯色棋盘式书柜",
+            "priceCoin": 200,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 200,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s1_01_7",
+            "furniId": "furni_s1_tv_01",
+            "shopDisplay": 0,
+            "displayName": "清晰™黑色电视",
+            "priceCoin": 150,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 150,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s1_01_8",
+            "furniId": "furni_s1_sofa_01",
+            "shopDisplay": 0,
+            "displayName": "纯色矮沙发",
+            "priceCoin": 165,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 165,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s1_01_9",
+            "furniId": "furni_s1_coffeetable_01",
+            "shopDisplay": 0,
+            "displayName": "纯色直角茶几",
+            "priceCoin": 140,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 140,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s1_01_10",
+            "furniId": "furni_s1_floor_01",
+            "shopDisplay": 0,
+            "displayName": "磨砂黑地砖",
+            "priceCoin": 145,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 145,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s1_01_11",
+            "furniId": "furni_s1_carpet_01",
+            "shopDisplay": 0,
+            "displayName": "灰色纤维地毯",
+            "priceCoin": 80,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 80,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s1_01_12",
+            "furniId": "furni_s1_bulletinboard_01",
+            "shopDisplay": 0,
+            "displayName": "小型公告板",
+            "priceCoin": 85,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 85,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s1_01_13",
+            "furniId": "furni_s1_clock_01",
+            "shopDisplay": 0,
+            "displayName": "黑色简约时钟",
+            "priceCoin": 40,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 40,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s1_01_14",
+            "furniId": "furni_s1_walllamp_01",
+            "shopDisplay": 0,
+            "displayName": "瓷色壁灯",
+            "priceCoin": 40,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 40,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s1_01_15",
+            "furniId": "furni_s1_wallpaper_01",
+            "shopDisplay": 0,
+            "displayName": "瓷色壁纸",
+            "priceCoin": 145,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 145,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s1_02_1",
+            "furniId": "furni_s1_bed_02",
+            "shopDisplay": 0,
+            "displayName": "橘色大床",
+            "priceCoin": 250,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 250,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s1_02_2",
+            "furniId": "furni_s1_nightstand_02",
+            "shopDisplay": 0,
+            "displayName": "橘色床头柜",
+            "priceCoin": 95,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 95,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s1_02_3",
+            "furniId": "furni_s1_comdesk_02",
+            "shopDisplay": 0,
+            "displayName": "橘色简拼办公桌",
+            "priceCoin": 165,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 165,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s1_02_4",
+            "furniId": "furni_s1_comchair_02",
+            "shopDisplay": 0,
+            "displayName": "橘色滚轮靠背椅",
+            "priceCoin": 110,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 110,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s1_02_5",
+            "furniId": "furni_s1_comcabinet_02",
+            "shopDisplay": 0,
+            "displayName": "橘色简拼桌柜",
+            "priceCoin": 95,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 95,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s1_02_6",
+            "furniId": "furni_s1_bookcase_02",
+            "shopDisplay": 0,
+            "displayName": "橘色棋盘式书柜",
+            "priceCoin": 200,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 200,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s1_02_7",
+            "furniId": "furni_s1_tv_02",
+            "shopDisplay": 0,
+            "displayName": "清晰™橘色电视",
+            "priceCoin": 150,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 150,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s1_02_8",
+            "furniId": "furni_s1_sofa_02",
+            "shopDisplay": 0,
+            "displayName": "橘色矮沙发",
+            "priceCoin": 165,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 165,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s1_02_9",
+            "furniId": "furni_s1_coffeetable_02",
+            "shopDisplay": 0,
+            "displayName": "橘色直角茶几",
+            "priceCoin": 140,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 140,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s1_02_10",
+            "furniId": "furni_s1_floor_02",
+            "shopDisplay": 0,
+            "displayName": "雅士白地砖",
+            "priceCoin": 145,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 145,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s1_02_11",
+            "furniId": "furni_s1_carpet_02",
+            "shopDisplay": 0,
+            "displayName": "白色纤维地毯",
+            "priceCoin": 80,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 80,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s1_02_12",
+            "furniId": "furni_s1_bulletinboard_02",
+            "shopDisplay": 0,
+            "displayName": "小型贴示板",
+            "priceCoin": 85,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 85,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s1_02_13",
+            "furniId": "furni_s1_clock_02",
+            "shopDisplay": 0,
+            "displayName": "橘色简约时钟",
+            "priceCoin": 40,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 40,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s1_02_14",
+            "furniId": "furni_s1_walllamp_02",
+            "shopDisplay": 0,
+            "displayName": "橘色壁灯",
+            "priceCoin": 40,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 40,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s1_02_15",
+            "furniId": "furni_s1_wallpaper_02",
+            "shopDisplay": 0,
+            "displayName": "橘色壁纸",
+            "priceCoin": 145,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 145,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "specimen_01_1",
+            "furniId": "furni_specimen_wallpaper_01",
+            "shopDisplay": 0,
+            "displayName": "金属墙纸",
+            "priceCoin": 160,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 160,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "specimen_01_2",
+            "furniId": "furni_specimen_floor_01",
+            "shopDisplay": 0,
+            "displayName": "铜色地板",
+            "priceCoin": 160,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 160,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "specimen_01_3",
+            "furniId": "furni_specimen_coffeetable_01",
+            "shopDisplay": 0,
+            "displayName": "筐形矮茶几",
+            "priceCoin": 195,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 195,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "specimen_01_4",
+            "furniId": "furni_specimen_bed_01",
+            "shopDisplay": 0,
+            "displayName": "金属大床",
+            "priceCoin": 270,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 270,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "specimen_01_5",
+            "furniId": "furni_specimen_nightstand_01",
+            "shopDisplay": 0,
+            "displayName": "方形床头矮柜",
+            "priceCoin": 125,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 125,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "specimen_01_6",
+            "furniId": "furni_specimen_lazysofa_L_01",
+            "shopDisplay": 0,
+            "displayName": "褐色懒人沙发（左）",
+            "priceCoin": 175,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 175,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "specimen_01_7",
+            "furniId": "furni_specimen_lazysofa_R_01",
+            "shopDisplay": 0,
+            "displayName": "褐色懒人沙发（右）",
+            "priceCoin": 175,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 175,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "specimen_01_8",
+            "furniId": "furni_specimen_pottedplant_02",
+            "shopDisplay": 0,
+            "displayName": "针叶盆栽",
+            "priceCoin": 220,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 220,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "specimen_01_9",
+            "furniId": "furni_specimen_pottedplant_01",
+            "shopDisplay": 0,
+            "displayName": "阔叶盆栽",
+            "priceCoin": 225,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 225,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "specimen_01_10",
+            "furniId": "furni_specimen_seedling_01",
+            "shopDisplay": 0,
+            "displayName": "厚叶盆栽",
+            "priceCoin": 220,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 220,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "specimen_01_11",
+            "furniId": "furni_specimen_showcase_01",
+            "shopDisplay": 0,
+            "displayName": "生态展览柜",
+            "priceCoin": 265,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 265,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "specimen_01_12",
+            "furniId": "furni_specimen_carpet_01",
+            "shopDisplay": 0,
+            "displayName": "灰色宽地毯",
+            "priceCoin": 190,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 190,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "specimen_01_13",
+            "furniId": "furni_specimen_specimenframed_01",
+            "shopDisplay": 0,
+            "displayName": "未确认生物骨骼",
+            "priceCoin": 175,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 175,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "specimen_01_14",
+            "furniId": "furni_specimen_specimenframedkit_01",
+            "shopDisplay": 0,
+            "displayName": "未知生物标本集",
+            "priceCoin": 150,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 150,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "specimen_01_15",
+            "furniId": "furni_specimen_bulletinboard_01",
+            "shopDisplay": 0,
+            "displayName": "展出标本资料板",
+            "priceCoin": 190,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 190,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "specimen_01_16",
+            "furniId": "furni_specimen_downlight_01",
+            "shopDisplay": 0,
+            "displayName": "内嵌宽顶灯",
+            "priceCoin": 195,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 195,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "specimen_01_17",
+            "furniId": "furni_specimen_downlight_02",
+            "shopDisplay": 0,
+            "displayName": "内嵌方顶灯",
+            "priceCoin": 115,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 115,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "cabin_01_1",
+            "furniId": "furni_cabin_desk_01",
+            "shopDisplay": 0,
+            "displayName": "组合工作台",
+            "priceCoin": 315,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 315,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "cabin_01_2",
+            "furniId": "furni_cabin_chair_01",
+            "shopDisplay": 0,
+            "displayName": "组合滚轮靠背椅",
+            "priceCoin": 135,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 135,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "cabin_01_3",
+            "furniId": "furni_cabin_trash_01",
+            "shopDisplay": 0,
+            "displayName": "防爆垃圾桶",
+            "priceCoin": 115,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 115,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "cabin_01_4",
+            "furniId": "furni_cabin_bed_01",
+            "shopDisplay": 0,
+            "displayName": "舱室组合双层床",
+            "priceCoin": 690,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 690,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "cabin_01_5",
+            "furniId": "furni_cabin_control_01",
+            "shopDisplay": 0,
+            "displayName": "生命循环舱总控台",
+            "priceCoin": 160,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 160,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "cabin_01_6",
+            "furniId": "furni_cabin_display_01",
+            "shopDisplay": 0,
+            "displayName": "控制显示器",
+            "priceCoin": 110,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 110,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "cabin_01_7",
+            "furniId": "furni_cabin_note_01",
+            "shopDisplay": 0,
+            "displayName": "舱用记事板",
+            "priceCoin": 95,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 95,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "cabin_01_8",
+            "furniId": "furni_cabin_cabinet_01",
+            "shopDisplay": 0,
+            "displayName": "嵌壁资料柜",
+            "priceCoin": 155,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 155,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "cabin_01_9",
+            "furniId": "furni_cabin_fireExtinguisher_01",
+            "shopDisplay": 0,
+            "displayName": "舱室灭火套组",
+            "priceCoin": 75,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 75,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "cabin_01_10",
+            "furniId": "furni_cabin_constructionMember_01",
+            "shopDisplay": 0,
+            "displayName": "舱室嵌顶构件",
+            "priceCoin": 585,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 585,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "cabin_01_11",
+            "furniId": "furni_cabin_carpet_01",
+            "shopDisplay": 0,
+            "displayName": "黑色纤维地毯",
+            "priceCoin": 100,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 100,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "cabin_01_12",
+            "furniId": "furni_cabin_wallpaper_01",
+            "shopDisplay": 0,
+            "displayName": "淡绿壁纸",
+            "priceCoin": 145,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 145,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "cabin_01_13",
+            "furniId": "furni_cabin_floor_01",
+            "shopDisplay": 0,
+            "displayName": "舱室用地砖",
+            "priceCoin": 145,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 145,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "cafe_01_1",
+            "furniId": "furni_cafe_bar_01",
+            "shopDisplay": 0,
+            "displayName": "红砖咖啡馆吧台",
+            "priceCoin": 570,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 570,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "cafe_01_2",
+            "furniId": "furni_cafe_barstool_01",
+            "shopDisplay": 0,
+            "displayName": "曲底高脚咖啡椅",
+            "priceCoin": 155,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 155,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "cafe_01_3",
+            "furniId": "furni_cafe_shelf_01",
+            "shopDisplay": 0,
+            "displayName": "褐色跃格书架",
+            "priceCoin": 410,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 410,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "cafe_01_4",
+            "furniId": "furni_cafe_cupboard_01",
+            "shopDisplay": 0,
+            "displayName": "红砖色储物柜",
+            "priceCoin": 250,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 250,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "cafe_01_5",
+            "furniId": "furni_cafe_pottedplant_01",
+            "shopDisplay": 0,
+            "displayName": "长叶盆栽",
+            "priceCoin": 230,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 230,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "cafe_01_6",
+            "furniId": "furni_cafe_chair_L_01",
+            "shopDisplay": 0,
+            "displayName": "成对咖啡椅（左）",
+            "priceCoin": 155,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 155,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "cafe_01_7",
+            "furniId": "furni_cafe_chair_R_01",
+            "shopDisplay": 0,
+            "displayName": "成对咖啡椅（右）",
+            "priceCoin": 155,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 155,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "cafe_01_8",
+            "furniId": "furni_cafe_coffeetable_01",
+            "shopDisplay": 0,
+            "displayName": "独脚咖啡桌",
+            "priceCoin": 270,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 270,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "cafe_01_9",
+            "furniId": "furni_cafe_floatingshelf_01",
+            "shopDisplay": 0,
+            "displayName": "饮料陈列架",
+            "priceCoin": 170,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 170,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "cafe_01_10",
+            "furniId": "furni_cafe_blackboard_01",
+            "shopDisplay": 0,
+            "displayName": "饮料价目表",
+            "priceCoin": 200,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 200,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "cafe_01_11",
+            "furniId": "furni_cafe_framedwallart_01",
+            "shopDisplay": 0,
+            "displayName": "玻利瓦尔咖啡豆",
+            "priceCoin": 200,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 200,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "cafe_01_12",
+            "furniId": "furni_cafe_framedwallartset_01",
+            "shopDisplay": 0,
+            "displayName": "哥伦比亚街景照",
+            "priceCoin": 200,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 200,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "cafe_01_13",
+            "furniId": "furni_cafe_barlamp_01",
+            "shopDisplay": 0,
+            "displayName": "吧台吊顶",
+            "priceCoin": 280,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 280,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "cafe_01_14",
+            "furniId": "furni_cafe_ceilinglamp_01",
+            "shopDisplay": 0,
+            "displayName": "垂吊式顶灯",
+            "priceCoin": 100,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 100,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "cafe_01_15",
+            "furniId": "furni_cafe_downlight_01",
+            "shopDisplay": 0,
+            "displayName": "柔和顶灯",
+            "priceCoin": 50,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 50,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "cafe_01_16",
+            "furniId": "furni_cafe_wallpaper_01",
+            "shopDisplay": 0,
+            "displayName": "砖墙壁纸",
+            "priceCoin": 335,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 335,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "cafe_01_17",
+            "furniId": "furni_cafe_floor_01",
+            "shopDisplay": 0,
+            "displayName": "大理石地砖",
+            "priceCoin": 335,
+            "priceDia": 0,
+            "discount": 0,
+            "originPriceCoin": 335,
+            "originPriceDia": 0,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s2_01_1",
+            "furniId": "furni_s2_bed_01",
+            "shopDisplay": 0,
+            "displayName": "檀木大床",
+            "priceCoin": 600,
+            "priceDia": 3,
+            "discount": 0,
+            "originPriceCoin": 600,
+            "originPriceDia": 3,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s2_01_2",
+            "furniId": "furni_s2_nightstand_01",
+            "shopDisplay": 0,
+            "displayName": "檀木床头矮柜",
+            "priceCoin": 275,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 275,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s2_01_3",
+            "furniId": "furni_s2_table_01",
+            "shopDisplay": 0,
+            "displayName": "黑色独脚桌",
+            "priceCoin": 370,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 370,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s2_01_4",
+            "furniId": "furni_s2_chair_L_01",
+            "shopDisplay": 0,
+            "displayName": "黑色复古椅（左）",
+            "priceCoin": 210,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 210,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s2_01_5",
+            "furniId": "furni_s2_chair_R_01",
+            "shopDisplay": 0,
+            "displayName": "黑色复古椅（右）",
+            "priceCoin": 210,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 210,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s2_01_6",
+            "furniId": "furni_s2_chair2_01",
+            "shopDisplay": 0,
+            "displayName": "黑色复古凳",
+            "priceCoin": 275,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 275,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s2_01_7",
+            "furniId": "furni_s2_lowtable_01",
+            "shopDisplay": 0,
+            "displayName": "檀木低脚会议桌",
+            "priceCoin": 695,
+            "priceDia": 3,
+            "discount": 0,
+            "originPriceCoin": 695,
+            "originPriceDia": 3,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s2_01_8",
+            "furniId": "furni_s2_lowchair_L_01",
+            "shopDisplay": 0,
+            "displayName": "黑色简装矮沙发（左）",
+            "priceCoin": 285,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 285,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s2_01_9",
+            "furniId": "furni_s2_lowchair_R_01",
+            "shopDisplay": 0,
+            "displayName": "黑色简装矮沙发（右）",
+            "priceCoin": 285,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 285,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s2_01_10",
+            "furniId": "furni_s2_bulletinboard_01",
+            "shopDisplay": 0,
+            "displayName": "檀木会议板",
+            "priceCoin": 940,
+            "priceDia": 5,
+            "discount": 0,
+            "originPriceCoin": 940,
+            "originPriceDia": 5,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s2_01_11",
+            "furniId": "furni_s2_carpet_01",
+            "shopDisplay": 0,
+            "displayName": "灰色绒毛地毯",
+            "priceCoin": 265,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 265,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s2_01_12",
+            "furniId": "furni_s2_floor_01",
+            "shopDisplay": 0,
+            "displayName": "黑色地砖",
+            "priceCoin": 400,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 400,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s2_01_13",
+            "furniId": "furni_s2_poster_01",
+            "shopDisplay": 0,
+            "displayName": "檀木相框挂画",
+            "priceCoin": 225,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 225,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s2_01_14",
+            "furniId": "furni_s2_walllamp_01",
+            "shopDisplay": 0,
+            "displayName": "明亮挂灯",
+            "priceCoin": 120,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 120,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s2_01_15",
+            "furniId": "furni_s2_wallpaper_01",
+            "shopDisplay": 0,
+            "displayName": "复式木制墙栏",
+            "priceCoin": 400,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 400,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s2_02_1",
+            "furniId": "furni_s2_bed_02",
+            "shopDisplay": 0,
+            "displayName": "柚木大床",
+            "priceCoin": 600,
+            "priceDia": 3,
+            "discount": 0,
+            "originPriceCoin": 600,
+            "originPriceDia": 3,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s2_02_2",
+            "furniId": "furni_s2_nightstand_02",
+            "shopDisplay": 0,
+            "displayName": "柚木床头矮柜",
+            "priceCoin": 275,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 275,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s2_02_3",
+            "furniId": "furni_s2_table_02",
+            "shopDisplay": 0,
+            "displayName": "白色独脚桌",
+            "priceCoin": 370,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 370,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s2_02_4",
+            "furniId": "furni_s2_chair_L_02",
+            "shopDisplay": 0,
+            "displayName": "钢琴黑复古椅（左）",
+            "priceCoin": 210,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 210,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s2_02_5",
+            "furniId": "furni_s2_chair_R_02",
+            "shopDisplay": 0,
+            "displayName": "钢琴黑复古椅（右）",
+            "priceCoin": 210,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 210,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s2_02_6",
+            "furniId": "furni_s2_chair2_02",
+            "shopDisplay": 0,
+            "displayName": "钢琴黑复古凳",
+            "priceCoin": 275,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 275,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s2_02_7",
+            "furniId": "furni_s2_lowtable_02",
+            "shopDisplay": 0,
+            "displayName": "柚木低脚会议桌",
+            "priceCoin": 695,
+            "priceDia": 3,
+            "discount": 0,
+            "originPriceCoin": 695,
+            "originPriceDia": 3,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s2_02_8",
+            "furniId": "furni_s2_lowchair_L_02",
+            "shopDisplay": 0,
+            "displayName": "灰色简装矮沙发（左）",
+            "priceCoin": 285,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 285,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s2_02_9",
+            "furniId": "furni_s2_lowchair_R_02",
+            "shopDisplay": 0,
+            "displayName": "灰色简装矮沙发（右）",
+            "priceCoin": 285,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 285,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s2_02_10",
+            "furniId": "furni_s2_bulletinboard_02",
+            "shopDisplay": 0,
+            "displayName": "柚木轮班考勤板",
+            "priceCoin": 940,
+            "priceDia": 5,
+            "discount": 0,
+            "originPriceCoin": 940,
+            "originPriceDia": 5,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s2_02_11",
+            "furniId": "furni_s2_carpet_02",
+            "shopDisplay": 0,
+            "displayName": "黑色绒毛地毯",
+            "priceCoin": 265,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 265,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s2_02_12",
+            "furniId": "furni_s2_floor_02",
+            "shopDisplay": 0,
+            "displayName": "棕色地砖",
+            "priceCoin": 400,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 400,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s2_02_13",
+            "furniId": "furni_s2_poster_02",
+            "shopDisplay": 0,
+            "displayName": "柚木相框挂画",
+            "priceCoin": 225,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 225,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s2_02_14",
+            "furniId": "furni_s2_walllamp_02",
+            "shopDisplay": 0,
+            "displayName": "柔和挂灯",
+            "priceCoin": 120,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 120,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "s2_02_15",
+            "furniId": "furni_s2_wallpaper_02",
+            "shopDisplay": 0,
+            "displayName": "复式铜制墙栏",
+            "priceCoin": 400,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 400,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "event1_1",
+            "furniId": "furni_pizza_cashierDesk_01",
+            "shopDisplay": 0,
+            "displayName": "披萨店用黑色收银台",
+            "priceCoin": 460,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 460,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": 1,
+            "sequence": 0
+        },
+        {
+            "goodId": "event1_2",
+            "furniId": "furni_pizza_brazier_01",
+            "shopDisplay": 0,
+            "displayName": "披萨烤炉",
+            "priceCoin": 615,
+            "priceDia": 3,
+            "discount": 0,
+            "originPriceCoin": 615,
+            "originPriceDia": 3,
+            "end": -1,
+            "count": 1,
+            "sequence": 0
+        },
+        {
+            "goodId": "event1_3",
+            "furniId": "furni_pizza_noticeWall_01",
+            "shopDisplay": 0,
+            "displayName": "黑色隔断墙",
+            "priceCoin": 555,
+            "priceDia": 3,
+            "discount": 0,
+            "originPriceCoin": 555,
+            "originPriceDia": 3,
+            "end": -1,
+            "count": 1,
+            "sequence": 0
+        },
+        {
+            "goodId": "event1_4",
+            "furniId": "furni_pizza_banner_01",
+            "shopDisplay": 0,
+            "displayName": "披萨店用落地海报架",
+            "priceCoin": 490,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 490,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": 1,
+            "sequence": 0
+        },
+        {
+            "goodId": "beach_01_1",
+            "furniId": "furni_beach_cabinet_01",
+            "shopDisplay": 0,
+            "displayName": "夏日小船柜",
+            "priceCoin": 400,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 400,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "beach_01_2",
+            "furniId": "furni_beach_tableChairSets_01",
+            "shopDisplay": 0,
+            "displayName": "夏日收藏柜",
+            "priceCoin": 625,
+            "priceDia": 3,
+            "discount": 0,
+            "originPriceCoin": 625,
+            "originPriceDia": 3,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "beach_01_3",
+            "furniId": "furni_beach_calendar_01",
+            "shopDisplay": 0,
+            "displayName": "罗德岛夏日挂历",
+            "priceCoin": 145,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 145,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "beach_01_4",
+            "furniId": "furni_beach_floorLamp_01",
+            "shopDisplay": 0,
+            "displayName": "沙滩小屋落地灯",
+            "priceCoin": 285,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 285,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "beach_01_5",
+            "furniId": "furni_beach_anchor_01",
+            "shopDisplay": 0,
+            "displayName": "汐斯塔市徽纪念品",
+            "priceCoin": 275,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 275,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "beach_01_6",
+            "furniId": "furni_beach_sail_01",
+            "shopDisplay": 0,
+            "displayName": "航海印象儿童画",
+            "priceCoin": 175,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 175,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "beach_01_7",
+            "furniId": "furni_beach_chair_01",
+            "shopDisplay": 0,
+            "displayName": "懒懒™双人休息椅",
+            "priceCoin": 225,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 225,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "beach_01_8",
+            "furniId": "furni_beach_coffeeTable_01",
+            "shopDisplay": 0,
+            "displayName": "懒懒™茶几",
+            "priceCoin": 250,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 250,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "beach_01_9",
+            "furniId": "furni_beach_drinkTable_01",
+            "shopDisplay": 0,
+            "displayName": "懒懒™高脚茶几",
+            "priceCoin": 135,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 135,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "beach_01_10",
+            "furniId": "furni_beach_surfboard_01",
+            "shopDisplay": 0,
+            "displayName": "冲浪达人的板架",
+            "priceCoin": 295,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 295,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "beach_01_11",
+            "furniId": "furni_beach_deckChair_01",
+            "shopDisplay": 0,
+            "displayName": "懒懒™躺椅",
+            "priceCoin": 265,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 265,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "beach_01_12",
+            "furniId": "furni_beach_curtain_L_01",
+            "shopDisplay": 0,
+            "displayName": "蓝白帆布窗帘（左）",
+            "priceCoin": 250,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 250,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "beach_01_13",
+            "furniId": "furni_beach_curtain_R_01",
+            "shopDisplay": 0,
+            "displayName": "蓝白帆布窗帘（右）",
+            "priceCoin": 250,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 250,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "beach_01_14",
+            "furniId": "furni_beach_carpet_01",
+            "shopDisplay": 0,
+            "displayName": "汐斯塔船舵地毯",
+            "priceCoin": 250,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 250,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "beach_01_15",
+            "furniId": "furni_beach_doorMat_01",
+            "shopDisplay": 0,
+            "displayName": "汐斯塔特制门垫",
+            "priceCoin": 70,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 70,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "beach_01_16",
+            "furniId": "furni_beach_slopedCeiling_01",
+            "shopDisplay": 0,
+            "displayName": "木制顶梁",
+            "priceCoin": 1075,
+            "priceDia": 5,
+            "discount": 0,
+            "originPriceCoin": 1075,
+            "originPriceDia": 5,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "beach_01_17",
+            "furniId": "furni_beach_wallpaper_01",
+            "shopDisplay": 0,
+            "displayName": "全景显示屏（汐斯塔）",
+            "priceCoin": 305,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 305,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "beach_01_18",
+            "furniId": "furni_beach_floor_01",
+            "shopDisplay": 0,
+            "displayName": "夏日实木地板",
+            "priceCoin": 305,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 305,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "event2_1",
+            "furniId": "furni_guitar_wallpaper_01",
+            "shopDisplay": 0,
+            "displayName": "排练室吸音壁纸",
+            "priceCoin": 370,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 370,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": 1,
+            "sequence": 0
+        },
+        {
+            "goodId": "event2_2",
+            "furniId": "furni_guitar_floor_01",
+            "shopDisplay": 0,
+            "displayName": "排练室吸音地砖",
+            "priceCoin": 370,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 370,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": 1,
+            "sequence": 0
+        },
+        {
+            "goodId": "event2_3",
+            "furniId": "furni_guitar_ceiling_01",
+            "shopDisplay": 0,
+            "displayName": "聚光灯吊顶",
+            "priceCoin": 795,
+            "priceDia": 4,
+            "discount": 0,
+            "originPriceCoin": 795,
+            "originPriceDia": 4,
+            "end": -1,
+            "count": 1,
+            "sequence": 0
+        },
+        {
+            "goodId": "event2_4",
+            "furniId": "furni_guitar_partitionWall_01",
+            "shopDisplay": 0,
+            "displayName": "排练室隔断墙",
+            "priceCoin": 515,
+            "priceDia": 3,
+            "discount": 0,
+            "originPriceCoin": 515,
+            "originPriceDia": 3,
+            "end": -1,
+            "count": 1,
+            "sequence": 0
+        },
+        {
+            "goodId": "event2_5",
+            "furniId": "furni_guitar_spotlight_01",
+            "shopDisplay": 0,
+            "displayName": "排练室聚光灯",
+            "priceCoin": 195,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 195,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": 1,
+            "sequence": 0
+        },
+        {
+            "goodId": "event2_6",
+            "furniId": "furni_guitar_curtain_01",
+            "shopDisplay": 0,
+            "displayName": "排练室遮灰帘",
+            "priceCoin": 275,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 275,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": 1,
+            "sequence": 0
+        },
+        {
+            "goodId": "safetyZone_1",
+            "furniId": "furni_safetyZone_gate_01",
+            "shopDisplay": 0,
+            "displayName": "安全舱消毒间",
+            "priceCoin": 420,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 420,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "safetyZone_2",
+            "furniId": "furni_safetyZone_UVLamp_01",
+            "shopDisplay": 0,
+            "displayName": "安全舱消毒灯",
+            "priceCoin": 185,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 185,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "safetyZone_3",
+            "furniId": "furni_safetyZone_oxygenTank_01",
+            "shopDisplay": 0,
+            "displayName": "补给资源罐",
+            "priceCoin": 335,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 335,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "safetyZone_4",
+            "furniId": "furni_safetyZone_stretcher_01",
+            "shopDisplay": 0,
+            "displayName": "急诊推床",
+            "priceCoin": 490,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 490,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "safetyZone_5",
+            "furniId": "furni_safetyZone_hazmatSuit_01",
+            "shopDisplay": 0,
+            "displayName": "防化防毒套装",
+            "priceCoin": 145,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 145,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "safetyZone_6",
+            "furniId": "furni_safetyZone_hazmatCoat_01",
+            "shopDisplay": 0,
+            "displayName": "防化防毒服",
+            "priceCoin": 145,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 145,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "safetyZone_7",
+            "furniId": "furni_safetyZone_shovel_01",
+            "shopDisplay": 0,
+            "displayName": "多功能工程锹",
+            "priceCoin": 75,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 75,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "safetyZone_8",
+            "furniId": "furni_safetyZone_box_01",
+            "shopDisplay": 0,
+            "displayName": "安全舱物资箱",
+            "priceCoin": 265,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 265,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "safetyZone_9",
+            "furniId": "furni_safetyZone_partitionWall_01",
+            "shopDisplay": 0,
+            "displayName": "安全舱隔墙",
+            "priceCoin": 370,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 370,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "safetyZone_10",
+            "furniId": "furni_safetyZone_roboticArmVehicle_01",
+            "shopDisplay": 0,
+            "displayName": "安全舱工程车",
+            "priceCoin": 385,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 385,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "safetyZone_11",
+            "furniId": "furni_safetyZone_virusFilter_01",
+            "shopDisplay": 0,
+            "displayName": "多功能消毒器",
+            "priceCoin": 455,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 455,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "safetyZone_12",
+            "furniId": "furni_safetyZone_pipeline1_01",
+            "shopDisplay": 0,
+            "displayName": "安全舱导气管",
+            "priceCoin": 415,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 415,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "safetyZone_13",
+            "furniId": "furni_safetyZone_pipeline2_01",
+            "shopDisplay": 0,
+            "displayName": "安全舱控气管",
+            "priceCoin": 205,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 205,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "safetyZone_14",
+            "furniId": "furni_safetyZone_PipelineValve_01",
+            "shopDisplay": 0,
+            "displayName": "舱室管道阀门",
+            "priceCoin": 225,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 225,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "safetyZone_15",
+            "furniId": "furni_safetyZone_ceilingLight_01",
+            "shopDisplay": 0,
+            "displayName": "安全舱日光灯",
+            "priceCoin": 175,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 175,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "safetyZone_16",
+            "furniId": "furni_safetyZone_ceiling_01",
+            "shopDisplay": 0,
+            "displayName": "舱顶隔离布",
+            "priceCoin": 430,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 430,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "safetyZone_17",
+            "furniId": "furni_safetyZone_downlight_01",
+            "shopDisplay": 0,
+            "displayName": "安全舱吸顶灯",
+            "priceCoin": 95,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 95,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "safetyZone_18",
+            "furniId": "furni_safetyZone_carpet_01",
+            "shopDisplay": 0,
+            "displayName": "粉液吸附毯",
+            "priceCoin": 195,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 195,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "safetyZone_19",
+            "furniId": "furni_safetyZone_wallpaper_01",
+            "shopDisplay": 0,
+            "displayName": "防毒防化隔离壁",
+            "priceCoin": 360,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 360,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "safetyZone_20",
+            "furniId": "furni_safetyZone_floor_01",
+            "shopDisplay": 0,
+            "displayName": "防化装甲板",
+            "priceCoin": 360,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 360,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "wooden_1",
+            "furniId": "furni_wooden_loftBed_01",
+            "shopDisplay": 0,
+            "displayName": "原木沙发高架床",
+            "priceCoin": 635,
+            "priceDia": 3,
+            "discount": 0,
+            "originPriceCoin": 635,
+            "originPriceDia": 3,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "wooden_2",
+            "furniId": "furni_wooden_fireplace_01",
+            "shopDisplay": 0,
+            "displayName": "砖砌燃木壁炉",
+            "priceCoin": 555,
+            "priceDia": 3,
+            "discount": 0,
+            "originPriceCoin": 555,
+            "originPriceDia": 3,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "wooden_3",
+            "furniId": "furni_wooden_woodBasket_01",
+            "shopDisplay": 0,
+            "displayName": "手编木柴篓",
+            "priceCoin": 190,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 190,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "wooden_4",
+            "furniId": "furni_wooden_rockingChair_01",
+            "shopDisplay": 0,
+            "displayName": "靠垫摇椅",
+            "priceCoin": 370,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 370,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "wooden_5",
+            "furniId": "furni_wooden_carpet_01",
+            "shopDisplay": 0,
+            "displayName": "毛绒地毯",
+            "priceCoin": 160,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 160,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "wooden_6",
+            "furniId": "furni_wooden_violin_01",
+            "shopDisplay": 0,
+            "displayName": "云杉小提琴",
+            "priceCoin": 190,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 190,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "wooden_7",
+            "furniId": "furni_wooden_deerHeads_01",
+            "shopDisplay": 0,
+            "displayName": "“生灵的躯骸”",
+            "priceCoin": 210,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 210,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "wooden_8",
+            "furniId": "furni_wooden_cabinet_01",
+            "shopDisplay": 0,
+            "displayName": "原木置物柜",
+            "priceCoin": 335,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 335,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "wooden_9",
+            "furniId": "furni_wooden_diningTable_01",
+            "shopDisplay": 0,
+            "displayName": "原木餐桌",
+            "priceCoin": 345,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 345,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "wooden_10",
+            "furniId": "furni_wooden_chair_L_01",
+            "shopDisplay": 0,
+            "displayName": "原木靠背椅（左）",
+            "priceCoin": 190,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 190,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "wooden_11",
+            "furniId": "furni_wooden_chair_R_01",
+            "shopDisplay": 0,
+            "displayName": "原木靠背椅（右）",
+            "priceCoin": 190,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 190,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "wooden_12",
+            "furniId": "furni_wooden_ceilingFan_01",
+            "shopDisplay": 0,
+            "displayName": "复古吊扇",
+            "priceCoin": 200,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 200,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "wooden_13",
+            "furniId": "furni_wooden_ceilingLight_01",
+            "shopDisplay": 0,
+            "displayName": "复古吊灯",
+            "priceCoin": 65,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 65,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "wooden_14",
+            "furniId": "furni_wooden_slopedCeiling_01",
+            "shopDisplay": 0,
+            "displayName": "原木房梁",
+            "priceCoin": 650,
+            "priceDia": 3,
+            "discount": 0,
+            "originPriceCoin": 650,
+            "originPriceDia": 3,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "wooden_15",
+            "furniId": "furni_wooden_wallpaper_01",
+            "shopDisplay": 0,
+            "displayName": "木浆壁纸",
+            "priceCoin": 220,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 220,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "wooden_16",
+            "furniId": "furni_wooden_floor_01",
+            "shopDisplay": 0,
+            "displayName": "原木地板",
+            "priceCoin": 220,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 220,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "artdeco_1",
+            "furniId": "furni_artdeco_barCeiling_01",
+            "shopDisplay": 0,
+            "displayName": "塔状吧台吊顶",
+            "priceCoin": 250,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 250,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "artdeco_2",
+            "furniId": "furni_artdeco_bar_01",
+            "shopDisplay": 0,
+            "displayName": "酒店万用吧台",
+            "priceCoin": 340,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 340,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "artdeco_3",
+            "furniId": "furni_artdeco_barstool_01",
+            "shopDisplay": 0,
+            "displayName": "酒水台高脚凳",
+            "priceCoin": 95,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 95,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "artdeco_4",
+            "furniId": "furni_artdeco_refrigerator_01",
+            "shopDisplay": 0,
+            "displayName": "黑金冰柜",
+            "priceCoin": 205,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 205,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "artdeco_5",
+            "furniId": "furni_artdeco_framedArt_01",
+            "shopDisplay": 0,
+            "displayName": "意识流挂画",
+            "priceCoin": 150,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 150,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "artdeco_6",
+            "furniId": "furni_artdeco_pianoKit_01",
+            "shopDisplay": 0,
+            "displayName": "威廉姆™钢琴组合",
+            "priceCoin": 785,
+            "priceDia": 4,
+            "discount": 0,
+            "originPriceCoin": 785,
+            "originPriceDia": 4,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "artdeco_7",
+            "furniId": "furni_artdeco_carpet_01",
+            "shopDisplay": 0,
+            "displayName": "摩登酒店地毯",
+            "priceCoin": 590,
+            "priceDia": 3,
+            "discount": 0,
+            "originPriceCoin": 590,
+            "originPriceDia": 3,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "artdeco_8",
+            "furniId": "furni_artdeco_JukeBox_01",
+            "shopDisplay": 0,
+            "displayName": "公告牌™点唱机",
+            "priceCoin": 160,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 160,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "artdeco_9",
+            "furniId": "furni_artdeco_wallLamp_01",
+            "shopDisplay": 0,
+            "displayName": "摩登酒店壁灯",
+            "priceCoin": 60,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 60,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "artdeco_10",
+            "furniId": "furni_artdeco_abstractArt_01",
+            "shopDisplay": 0,
+            "displayName": "摩登壁挂装饰",
+            "priceCoin": 190,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 190,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "artdeco_11",
+            "furniId": "furni_artdeco_ceilingLamp_01",
+            "shopDisplay": 0,
+            "displayName": "摩登酒店吊灯",
+            "priceCoin": 160,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 160,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "artdeco_12",
+            "furniId": "furni_artdeco_sofa_01",
+            "shopDisplay": 0,
+            "displayName": "摩登酒店沙发",
+            "priceCoin": 460,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 460,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "artdeco_13",
+            "furniId": "furni_artdeco_coffeeTable_01",
+            "shopDisplay": 0,
+            "displayName": "摩登酒店茶几",
+            "priceCoin": 270,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 270,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "artdeco_14",
+            "furniId": "furni_artdeco_framedArt2_01",
+            "shopDisplay": 0,
+            "displayName": "“光辉的时代”",
+            "priceCoin": 165,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 165,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "artdeco_15",
+            "furniId": "furni_artdeco_floorLamp_01",
+            "shopDisplay": 0,
+            "displayName": "摩登酒店落地灯",
+            "priceCoin": 200,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 200,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "artdeco_16",
+            "furniId": "furni_artdeco_ceiling_01",
+            "shopDisplay": 0,
+            "displayName": "摩登酒店吊顶",
+            "priceCoin": 280,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 280,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "artdeco_17",
+            "furniId": "furni_artdeco_wallpaper_01",
+            "shopDisplay": 0,
+            "displayName": "摩登酒店壁纸",
+            "priceCoin": 360,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 360,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "artdeco_18",
+            "furniId": "furni_artdeco_floor_01",
+            "shopDisplay": 0,
+            "displayName": "褐色大理石地砖",
+            "priceCoin": 360,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 360,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "rococo_1",
+            "furniId": "furni_rococo_cabinet_01",
+            "shopDisplay": 0,
+            "displayName": "上锁的立柜",
+            "priceCoin": 345,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 345,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "rococo_2",
+            "furniId": "furni_rococo_bustStatue_01",
+            "shopDisplay": 0,
+            "displayName": "兰城卫兵半身像",
+            "priceCoin": 220,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 220,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "rococo_3",
+            "furniId": "furni_rococo_table_01",
+            "shopDisplay": 0,
+            "displayName": "宴席长桌",
+            "priceCoin": 820,
+            "priceDia": 4,
+            "discount": 0,
+            "originPriceCoin": 820,
+            "originPriceDia": 4,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "rococo_4",
+            "furniId": "furni_rococo_mainSeat_01",
+            "shopDisplay": 0,
+            "displayName": "宴会厅主座",
+            "priceCoin": 240,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 240,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "rococo_5",
+            "furniId": "furni_rococo_secondarySeat_01",
+            "shopDisplay": 0,
+            "displayName": "宴会厅次席",
+            "priceCoin": 110,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 110,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "rococo_6",
+            "furniId": "furni_rococo_stool_01",
+            "shopDisplay": 0,
+            "displayName": "兰赛拉尔矮凳",
+            "priceCoin": 290,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 290,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "rococo_7",
+            "furniId": "furni_rococo_fireplace_01",
+            "shopDisplay": 0,
+            "displayName": "蜡烛展示炉",
+            "priceCoin": 240,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 240,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "rococo_8",
+            "furniId": "furni_rococo_carpet_01",
+            "shopDisplay": 0,
+            "displayName": "兰赛拉尔小方毯",
+            "priceCoin": 85,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 85,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "rococo_9",
+            "furniId": "furni_rococo_brazier_01",
+            "shopDisplay": 0,
+            "displayName": "兰赛拉尔火盆",
+            "priceCoin": 250,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 250,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "rococo_10",
+            "furniId": "furni_rococo_observationDeck_01",
+            "shopDisplay": 0,
+            "displayName": "全景显示屏（兰城.夜）",
+            "priceCoin": 415,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 415,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "rococo_11",
+            "furniId": "furni_rococo_pillar_01",
+            "shopDisplay": 0,
+            "displayName": "艾式立柱",
+            "priceCoin": 180,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 180,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "rococo_12",
+            "furniId": "furni_rococo_framedArt_01",
+            "shopDisplay": 0,
+            "displayName": "《兰赛拉尔风光》",
+            "priceCoin": 125,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 125,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "rococo_13",
+            "furniId": "furni_rococo_mirror_01",
+            "shopDisplay": 0,
+            "displayName": "兰赛拉尔魔镜",
+            "priceCoin": 175,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 175,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "rococo_14",
+            "furniId": "furni_rococo_ceilingLight1_01",
+            "shopDisplay": 0,
+            "displayName": "双层吸顶蜡烛吊灯",
+            "priceCoin": 235,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 235,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "rococo_15",
+            "furniId": "furni_rococo_ceilingLight2_01",
+            "shopDisplay": 0,
+            "displayName": "吸顶蜡烛吊灯",
+            "priceCoin": 120,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 120,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "rococo_16",
+            "furniId": "furni_rococo_doorMat_01",
+            "shopDisplay": 0,
+            "displayName": "礼宾门垫",
+            "priceCoin": 50,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 50,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "rococo_17",
+            "furniId": "furni_rococo_wallpaper_01",
+            "shopDisplay": 0,
+            "displayName": "兰城皇家墙纸",
+            "priceCoin": 360,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 360,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "rococo_18",
+            "furniId": "furni_rococo_floor_01",
+            "shopDisplay": 0,
+            "displayName": "兰赛拉尔原木地板",
+            "priceCoin": 360,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 360,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "lightFood_1",
+            "furniId": "furni_lightFood_priceList_01",
+            "shopDisplay": 0,
+            "displayName": "健康价目表",
+            "priceCoin": 355,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 355,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "lightFood_2",
+            "furniId": "furni_lightFood_sign_01",
+            "shopDisplay": 0,
+            "displayName": "健康装饰牌",
+            "priceCoin": 315,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 315,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "lightFood_3",
+            "furniId": "furni_lightFood_cashierDesk_01",
+            "shopDisplay": 0,
+            "displayName": "健康服务台",
+            "priceCoin": 515,
+            "priceDia": 3,
+            "discount": 0,
+            "originPriceCoin": 515,
+            "originPriceDia": 3,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "lightFood_4",
+            "furniId": "furni_lightFood_spotlight_01",
+            "shopDisplay": 0,
+            "displayName": "健康聚光灯",
+            "priceCoin": 200,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 200,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "lightFood_5",
+            "furniId": "furni_lightFood_foodCabinet_01",
+            "shopDisplay": 0,
+            "displayName": "冷鲜食品柜",
+            "priceCoin": 290,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 290,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "lightFood_6",
+            "furniId": "furni_lightFood_juicer_01",
+            "shopDisplay": 0,
+            "displayName": "冰爽果汁机",
+            "priceCoin": 300,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 300,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "lightFood_7",
+            "furniId": "furni_lightFood_orderingMachine_01",
+            "shopDisplay": 0,
+            "displayName": "自助点餐机",
+            "priceCoin": 245,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 245,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "lightFood_8",
+            "furniId": "furni_lightFood_vendingMachine_01",
+            "shopDisplay": 0,
+            "displayName": "自助售货机",
+            "priceCoin": 215,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 215,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "lightFood_9",
+            "furniId": "furni_lightFood_board_01",
+            "shopDisplay": 0,
+            "displayName": "每日推荐牌",
+            "priceCoin": 200,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 200,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "lightFood_10",
+            "furniId": "furni_lightFood_partitionGate_01",
+            "shopDisplay": 0,
+            "displayName": "用餐区隔门",
+            "priceCoin": 365,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 365,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "lightFood_11",
+            "furniId": "furni_lightFood_wallSticker_01",
+            "shopDisplay": 0,
+            "displayName": "“果蔬大冒险”",
+            "priceCoin": 325,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 325,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "lightFood_12",
+            "furniId": "furni_lightFood_table_01",
+            "shopDisplay": 0,
+            "displayName": "健康餐桌",
+            "priceCoin": 260,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 260,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "lightFood_13",
+            "furniId": "furni_lightFood_chair_01",
+            "shopDisplay": 0,
+            "displayName": "绿色双人沙发",
+            "priceCoin": 220,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 220,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "lightFood_14",
+            "furniId": "furni_lightFood_ceiling_01",
+            "shopDisplay": 0,
+            "displayName": "轻松花园吊顶",
+            "priceCoin": 425,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 425,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "lightFood_15",
+            "furniId": "furni_lightFood_carpet_01",
+            "shopDisplay": 0,
+            "displayName": "分隔线地毯",
+            "priceCoin": 290,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 290,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "lightFood_16",
+            "furniId": "furni_lightFood_downlight_01",
+            "shopDisplay": 0,
+            "displayName": "健康吸顶灯",
+            "priceCoin": 45,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 45,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "lightFood_17",
+            "furniId": "furni_lightFood_wallpaper_01",
+            "shopDisplay": 0,
+            "displayName": "健康壁纸",
+            "priceCoin": 335,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 335,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "lightFood_18",
+            "furniId": "furni_lightFood_floor_01",
+            "shopDisplay": 0,
+            "displayName": "健康地砖",
+            "priceCoin": 335,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 335,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "office_1",
+            "furniId": "furni_office_table_01",
+            "shopDisplay": 0,
+            "displayName": "标配办公桌",
+            "priceCoin": 690,
+            "priceDia": 3,
+            "discount": 0,
+            "originPriceCoin": 690,
+            "originPriceDia": 3,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "office_2",
+            "furniId": "furni_office_chair_01",
+            "shopDisplay": 0,
+            "displayName": "标配办公椅",
+            "priceCoin": 175,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 175,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "office_3",
+            "furniId": "furni_office_storageBox_01",
+            "shopDisplay": 0,
+            "displayName": "可动收纳柜",
+            "priceCoin": 275,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 275,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "office_4",
+            "furniId": "furni_office_carpet_01",
+            "shopDisplay": 0,
+            "displayName": "黑色办公地毯",
+            "priceCoin": 315,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 315,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "office_5",
+            "furniId": "furni_office_waterDispenser_01",
+            "shopDisplay": 0,
+            "displayName": "桶装饮水机",
+            "priceCoin": 275,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 275,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "office_6",
+            "furniId": "furni_office_column_01",
+            "shopDisplay": 0,
+            "displayName": "支撑柱",
+            "priceCoin": 390,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 390,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "office_7",
+            "furniId": "furni_office_directionSign_01",
+            "shopDisplay": 0,
+            "displayName": "工位指示板",
+            "priceCoin": 330,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 330,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "office_8",
+            "furniId": "furni_office_sign_01",
+            "shopDisplay": 0,
+            "displayName": "楼层指示牌",
+            "priceCoin": 190,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 190,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "office_9",
+            "furniId": "furni_office_spotlight_01",
+            "shopDisplay": 0,
+            "displayName": "人事办公室光源",
+            "priceCoin": 390,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 390,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "office_10",
+            "furniId": "furni_office_downlight_01",
+            "shopDisplay": 0,
+            "displayName": "工位光源",
+            "priceCoin": 65,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 65,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "office_11",
+            "furniId": "furni_office_screen_01",
+            "shopDisplay": 0,
+            "displayName": "隔断用透明屏风",
+            "priceCoin": 385,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 385,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "office_12",
+            "furniId": "furni_office_printer_01",
+            "shopDisplay": 0,
+            "displayName": "过载打印机",
+            "priceCoin": 295,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 295,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "office_13",
+            "furniId": "furni_office_sofaStool_01",
+            "shopDisplay": 0,
+            "displayName": "等位沙发凳",
+            "priceCoin": 200,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 200,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "office_14",
+            "furniId": "furni_office_houseplant_01",
+            "shopDisplay": 0,
+            "displayName": "尖锐的观赏植物",
+            "priceCoin": 250,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 250,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "office_15",
+            "furniId": "furni_office_wallpaper_01",
+            "shopDisplay": 0,
+            "displayName": "人事办公室壁纸",
+            "priceCoin": 360,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 360,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "office_16",
+            "furniId": "furni_office_floor_01",
+            "shopDisplay": 0,
+            "displayName": "人事办公室地板",
+            "priceCoin": 360,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 360,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "kitchen_1",
+            "furniId": "furni_kitchen_bed_01",
+            "shopDisplay": 0,
+            "displayName": "素简床榻",
+            "priceCoin": 475,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 475,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "kitchen_2",
+            "furniId": "furni_kitchen_framed_01",
+            "shopDisplay": 0,
+            "displayName": "无画相框",
+            "priceCoin": 160,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 160,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "kitchen_3",
+            "furniId": "furni_kitchen_airPurifier_01",
+            "shopDisplay": 0,
+            "displayName": "空气净化器",
+            "priceCoin": 230,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 230,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "kitchen_4",
+            "furniId": "furni_kitchen_partition_01",
+            "shopDisplay": 0,
+            "displayName": "区域分隔装饰",
+            "priceCoin": 285,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 285,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "kitchen_5",
+            "furniId": "furni_kitchen_ceilingLight_01",
+            "shopDisplay": 0,
+            "displayName": "圆环装饰光源",
+            "priceCoin": 75,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 75,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "kitchen_6",
+            "furniId": "furni_kitchen_wallSticker_01",
+            "shopDisplay": 0,
+            "displayName": "岩石墙贴",
+            "priceCoin": 85,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 85,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "kitchen_7",
+            "furniId": "furni_kitchen_carpet_01",
+            "shopDisplay": 0,
+            "displayName": "轻薄地毯",
+            "priceCoin": 255,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 255,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "kitchen_8",
+            "furniId": "furni_kitchen_downlight_01",
+            "shopDisplay": 0,
+            "displayName": "嵌顶光源",
+            "priceCoin": 210,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 210,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "kitchen_9",
+            "furniId": "furni_kitchen_ceiling_01",
+            "shopDisplay": 0,
+            "displayName": "光源吊顶",
+            "priceCoin": 295,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 295,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "kitchen_10",
+            "furniId": "furni_kitchen_lamp_01",
+            "shopDisplay": 0,
+            "displayName": "支架光源",
+            "priceCoin": 255,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 255,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "kitchen_11",
+            "furniId": "furni_kitchen_wallArt_01",
+            "shopDisplay": 0,
+            "displayName": "现代工艺品",
+            "priceCoin": 265,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 265,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "kitchen_12",
+            "furniId": "furni_kitchen_ceilingLamps_01",
+            "shopDisplay": 0,
+            "displayName": "悬挂光源组",
+            "priceCoin": 240,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 240,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "kitchen_13",
+            "furniId": "furni_kitchen_worktop_01",
+            "shopDisplay": 0,
+            "displayName": "嵌入式厨房单元",
+            "priceCoin": 240,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 240,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "kitchen_14",
+            "furniId": "furni_kitchen_islandWorktop_01",
+            "shopDisplay": 0,
+            "displayName": "多功能料理台",
+            "priceCoin": 545,
+            "priceDia": 3,
+            "discount": 0,
+            "originPriceCoin": 545,
+            "originPriceDia": 3,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "kitchen_15",
+            "furniId": "furni_kitchen_oven_01",
+            "shopDisplay": 0,
+            "displayName": "直立式厨房套组",
+            "priceCoin": 360,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 360,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "kitchen_16",
+            "furniId": "furni_kitchen_stool_01",
+            "shopDisplay": 0,
+            "displayName": "简约高脚椅",
+            "priceCoin": 135,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 135,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "kitchen_17",
+            "furniId": "furni_kitchen_pottedPlant_01",
+            "shopDisplay": 0,
+            "displayName": "高脚盆栽",
+            "priceCoin": 260,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 260,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "kitchen_18",
+            "furniId": "furni_kitchen_wallpaper_01",
+            "shopDisplay": 0,
+            "displayName": "轻加工墙纸",
+            "priceCoin": 360,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 360,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "kitchen_19",
+            "furniId": "furni_kitchen_floor_01",
+            "shopDisplay": 0,
+            "displayName": "轻加工地板",
+            "priceCoin": 360,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 360,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 0
+        },
+        {
+            "goodId": "kazimierz_5",
+            "furniId": "furni_kazimierz_screen_01",
+            "shopDisplay": 1,
+            "displayName": "双色渐变显示屏",
+            "priceCoin": 240,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 240,
+            "originPriceDia": 1,
+            "end": 1637524799,
+            "count": 1,
+            "sequence": 101
+        },
+        {
+            "goodId": "kazimierz_1",
+            "furniId": "furni_kazimierz_LED_C_01",
+            "shopDisplay": 1,
+            "displayName": "柱形直播显示屏",
+            "priceCoin": 350,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 350,
+            "originPriceDia": 2,
+            "end": 1637524799,
+            "count": 1,
+            "sequence": 102
+        },
+        {
+            "goodId": "kazimierz_2",
+            "furniId": "furni_kazimierz_camera_01",
+            "shopDisplay": 1,
+            "displayName": "滑轨直播摄像机",
+            "priceCoin": 295,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 295,
+            "originPriceDia": 1,
+            "end": 1637524799,
+            "count": 1,
+            "sequence": 103
+        },
+        {
+            "goodId": "kazimierz_3",
+            "furniId": "furni_kazimierz_desk_01",
+            "shopDisplay": 1,
+            "displayName": "菱形现代直播台",
+            "priceCoin": 570,
+            "priceDia": 3,
+            "discount": 0,
+            "originPriceCoin": 570,
+            "originPriceDia": 3,
+            "end": 1637524799,
+            "count": 1,
+            "sequence": 104
+        },
+        {
+            "goodId": "kazimierz_4",
+            "furniId": "furni_kazimierz_chair_W_01",
+            "shopDisplay": 1,
+            "displayName": "白色皮质直播椅",
+            "priceCoin": 245,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 245,
+            "originPriceDia": 1,
+            "end": 1637524799,
+            "count": 1,
+            "sequence": 105
+        },
+        {
+            "goodId": "bauhaus_14",
+            "furniId": "furni_bauhaus_wallpaper_01",
+            "shopDisplay": 1,
+            "displayName": "沃尔特风潮壁纸",
+            "priceCoin": 305,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 305,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 201
+        },
+        {
+            "goodId": "bauhaus_15",
+            "furniId": "furni_bauhaus_floor_01",
+            "shopDisplay": 1,
+            "displayName": "沃尔特风潮地砖",
+            "priceCoin": 305,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 305,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 202
+        },
+        {
+            "goodId": "bauhaus_1",
+            "furniId": "furni_bauhaus_sofa_01",
+            "shopDisplay": 1,
+            "displayName": "简约组合沙发",
+            "priceCoin": 635,
+            "priceDia": 3,
+            "discount": 0,
+            "originPriceCoin": 635,
+            "originPriceDia": 3,
+            "end": -1,
+            "count": -1,
+            "sequence": 203
+        },
+        {
+            "goodId": "bauhaus_2",
+            "furniId": "furni_bauhaus_coffeeTable_01",
+            "shopDisplay": 1,
+            "displayName": "长方拼接式茶几",
+            "priceCoin": 440,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 440,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 204
+        },
+        {
+            "goodId": "bauhaus_3",
+            "furniId": "furni_bauhaus_cabinet_01",
+            "shopDisplay": 1,
+            "displayName": "木制矮柜",
+            "priceCoin": 360,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 360,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 205
+        },
+        {
+            "goodId": "bauhaus_4",
+            "furniId": "furni_bauhaus_framedWallArt_01",
+            "shopDisplay": 1,
+            "displayName": "现代风相框",
+            "priceCoin": 150,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 150,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 206
+        },
+        {
+            "goodId": "bauhaus_5",
+            "furniId": "furni_bauhaus_floorLamp_01",
+            "shopDisplay": 1,
+            "displayName": "收束落地灯",
+            "priceCoin": 340,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 340,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 207
+        },
+        {
+            "goodId": "bauhaus_6",
+            "furniId": "furni_bauhaus_window_01",
+            "shopDisplay": 1,
+            "displayName": "闭帘窗户",
+            "priceCoin": 315,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 315,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 208
+        },
+        {
+            "goodId": "bauhaus_7",
+            "furniId": "furni_bauhaus_decoration_01",
+            "shopDisplay": 1,
+            "displayName": "月影装饰",
+            "priceCoin": 690,
+            "priceDia": 3,
+            "discount": 0,
+            "originPriceCoin": 690,
+            "originPriceDia": 3,
+            "end": -1,
+            "count": -1,
+            "sequence": 209
+        },
+        {
+            "goodId": "bauhaus_8",
+            "furniId": "furni_bauhaus_branchDecor_01",
+            "shopDisplay": 1,
+            "displayName": "陈列用灯树",
+            "priceCoin": 465,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 465,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 210
+        },
+        {
+            "goodId": "bauhaus_9",
+            "furniId": "furni_bauhaus_tableLamp_01",
+            "shopDisplay": 1,
+            "displayName": "红漆储物柜",
+            "priceCoin": 345,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 345,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 211
+        },
+        {
+            "goodId": "bauhaus_10",
+            "furniId": "furni_bauhaus_ceilingLight_01",
+            "shopDisplay": 1,
+            "displayName": "成对静滞吊灯",
+            "priceCoin": 190,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 190,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 212
+        },
+        {
+            "goodId": "bauhaus_11",
+            "furniId": "furni_bauhaus_geometryLight_01",
+            "shopDisplay": 1,
+            "displayName": "立方延展吊灯",
+            "priceCoin": 230,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 230,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 213
+        },
+        {
+            "goodId": "bauhaus_12",
+            "furniId": "furni_bauhaus_carpet_01",
+            "shopDisplay": 1,
+            "displayName": "机织化纤地毯",
+            "priceCoin": 280,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 280,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 214
+        },
+        {
+            "goodId": "bauhaus_13",
+            "furniId": "furni_bauhaus_downlight_01",
+            "shopDisplay": 1,
+            "displayName": "成对吸顶光源",
+            "priceCoin": 125,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 125,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 215
+        },
+        {
+            "goodId": "obsidian_1",
+            "furniId": "furni_obsidianFestival_DJBooth_01",
+            "shopDisplay": 1,
+            "displayName": "“极限”混音设备",
+            "priceCoin": 500,
+            "priceDia": 3,
+            "discount": 0,
+            "originPriceCoin": 500,
+            "originPriceDia": 3,
+            "end": -1,
+            "count": 1,
+            "sequence": 1001
+        },
+        {
+            "goodId": "obsidian_2",
+            "furniId": "furni_obsidianFestival_soundSystem_01",
+            "shopDisplay": 1,
+            "displayName": "“专业”舞台音响",
+            "priceCoin": 500,
+            "priceDia": 3,
+            "discount": 0,
+            "originPriceCoin": 500,
+            "originPriceDia": 3,
+            "end": -1,
+            "count": 1,
+            "sequence": 1002
+        },
+        {
+            "goodId": "obsidian_3",
+            "furniId": "furni_obsidianFestival_portableSpeaker_01",
+            "shopDisplay": 1,
+            "displayName": "“风格”手提音响",
+            "priceCoin": 500,
+            "priceDia": 3,
+            "discount": 0,
+            "originPriceCoin": 500,
+            "originPriceDia": 3,
+            "end": -1,
+            "count": 1,
+            "sequence": 1003
+        },
+        {
+            "goodId": "single_8",
+            "furniId": "furni_single001_layerStack_01",
+            "shopDisplay": 1,
+            "displayName": "叠叠高™",
+            "priceCoin": 295,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 295,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 1101
+        },
+        {
+            "goodId": "single_3",
+            "furniId": "furni_single001_mahjongTable_01",
+            "shopDisplay": 1,
+            "displayName": "黑色麻将桌",
+            "priceCoin": 235,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 235,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 1102
+        },
+        {
+            "goodId": "single_4",
+            "furniId": "furni_single001_mahjongChair_L_01",
+            "shopDisplay": 1,
+            "displayName": "棕皮麻将椅（左）",
+            "priceCoin": 125,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 125,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 1103
+        },
+        {
+            "goodId": "single_5",
+            "furniId": "furni_single001_mahjongChair_R_01",
+            "shopDisplay": 1,
+            "displayName": "棕皮麻将椅（右）",
+            "priceCoin": 125,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 125,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 1104
+        },
+        {
+            "goodId": "single_2",
+            "furniId": "furni_single001_shelf_01",
+            "shopDisplay": 1,
+            "displayName": "拼装跃格置物架",
+            "priceCoin": 420,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 420,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 1105
+        },
+        {
+            "goodId": "single_6",
+            "furniId": "furni_single001_boardGameTable_01",
+            "shopDisplay": 1,
+            "displayName": "白色桌游矮桌",
+            "priceCoin": 160,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 160,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 1106
+        },
+        {
+            "goodId": "single_9",
+            "furniId": "furni_single001_newspaperStool_01",
+            "shopDisplay": 1,
+            "displayName": "手工报纸凳",
+            "priceCoin": 110,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 110,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 1107
+        },
+        {
+            "goodId": "single_1",
+            "furniId": "furni_single001_conicalCeilingLight_01",
+            "shopDisplay": 1,
+            "displayName": "闭叶吊灯",
+            "priceCoin": 65,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 65,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 1108
+        },
+        {
+            "goodId": "single_11",
+            "furniId": "furni_single001_vendingMachine_01",
+            "shopDisplay": 1,
+            "displayName": "冷藏售货机",
+            "priceCoin": 205,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 205,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 1109
+        },
+        {
+            "goodId": "single_10",
+            "furniId": "furni_single001_printer_01",
+            "shopDisplay": 1,
+            "displayName": "简易打印机",
+            "priceCoin": 140,
+            "priceDia": 1,
+            "discount": 0,
+            "originPriceCoin": 140,
+            "originPriceDia": 1,
+            "end": -1,
+            "count": -1,
+            "sequence": 1110
+        },
+        {
+            "goodId": "single_7",
+            "furniId": "furni_single001_catClimbingFrame_01",
+            "shopDisplay": 1,
+            "displayName": "小型游乐架",
+            "priceCoin": 440,
+            "priceDia": 2,
+            "discount": 0,
+            "originPriceCoin": 440,
+            "originPriceDia": 2,
+            "end": -1,
+            "count": -1,
+            "sequence": 1111
+        }
+    ],
+    "groups": [
+        {
+            "packageId": "pizza_2020",
+            "icon": "icon_furngroup_pizza_2020",
+            "name": "快捷连锁披萨店",
+            "description": "时兴的连锁披萨店。",
+            "sequence": 701,
+            "saleBegin": 1634284800,
+            "saleEnd": -1,
+            "decoration": 5000,
+            "goodList": [
+                {
+                    "goodId": "event1_1",
+                    "count": 1,
+                    "set": "商铺经营设施",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "event1_2",
+                    "count": 1,
+                    "set": "商铺经营设施",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "event1_3",
+                    "count": 1,
+                    "set": "商铺宣传设施",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "event1_4",
+                    "count": 1,
+                    "set": "商铺宣传设施",
+                    "sequence": 2
+                }
+            ],
+            "eventGoodList": [
+                {
+                    "name": "披萨价目表",
+                    "count": 1,
+                    "furniId": "furni_pizza_priceList_01",
+                    "set": "商铺经营设施",
+                    "sequence": 1
+                },
+                {
+                    "name": "披萨店用餐盘柜",
+                    "count": 1,
+                    "furniId": "furni_pizza_cupboard_01",
+                    "set": "商铺经营设施",
+                    "sequence": 1
+                },
+                {
+                    "name": "披萨店用餐盘架",
+                    "count": 1,
+                    "furniId": "furni_pizza_shelf_01",
+                    "set": "商铺经营设施",
+                    "sequence": 1
+                },
+                {
+                    "name": "披萨店用砌砖型墙纸",
+                    "count": 5,
+                    "furniId": "furni_pizza_brickWallSticker_01",
+                    "set": "现下流行的披萨店设计",
+                    "sequence": 5
+                },
+                {
+                    "name": "披萨店用柔光吊灯",
+                    "count": 4,
+                    "furniId": "furni_pizza_ceilingLights_01",
+                    "set": "现下流行的披萨店设计",
+                    "sequence": 5
+                },
+                {
+                    "name": "披萨店用海报柱",
+                    "count": 1,
+                    "furniId": "furni_pizza_column_01",
+                    "set": "商铺宣传设施",
+                    "sequence": 2
+                },
+                {
+                    "name": "披萨店用快餐吧台",
+                    "count": 1,
+                    "furniId": "furni_pizza_barTable_01",
+                    "set": "单人就餐设施",
+                    "sequence": 3
+                },
+                {
+                    "name": "披萨店用高脚凳",
+                    "count": 4,
+                    "furniId": "furni_pizza_barStool_01",
+                    "set": "单人就餐设施",
+                    "sequence": 3
+                },
+                {
+                    "name": "披萨店用出口指示灯",
+                    "count": 1,
+                    "furniId": "furni_pizza_exitIndicator_01",
+                    "set": "单人就餐设施",
+                    "sequence": 3
+                },
+                {
+                    "name": "披萨店用装饰画",
+                    "count": 1,
+                    "furniId": "furni_pizza_abstractArt_01",
+                    "set": "现下流行的披萨店设计",
+                    "sequence": 5
+                },
+                {
+                    "name": "披萨店用活动餐桌",
+                    "count": 1,
+                    "furniId": "furni_pizza_diningTable_01",
+                    "set": "多人聚餐设施",
+                    "sequence": 4
+                },
+                {
+                    "name": "披萨店用靠背单椅（左）",
+                    "count": 1,
+                    "furniId": "furni_pizza_chair_L_01",
+                    "set": "多人聚餐设施",
+                    "sequence": 4
+                },
+                {
+                    "name": "披萨店用靠背单椅（右）",
+                    "count": 1,
+                    "furniId": "furni_pizza_chair_R_01",
+                    "set": "多人聚餐设施",
+                    "sequence": 4
+                },
+                {
+                    "name": "披萨店用靠背单椅",
+                    "count": 1,
+                    "furniId": "furni_pizza_chair_F_01",
+                    "set": "多人聚餐设施",
+                    "sequence": 4
+                },
+                {
+                    "name": "披萨店用黑色墙纸",
+                    "count": 1,
+                    "furniId": "furni_pizza_wallpaper_01",
+                    "set": "现下流行的披萨店设计",
+                    "sequence": 5
+                },
+                {
+                    "name": "披萨店用瓷砖地板",
+                    "count": 1,
+                    "furniId": "furni_pizza_floor_01",
+                    "set": "现下流行的披萨店设计",
+                    "sequence": 5
+                }
+            ],
+            "imageList": [
+                {
+                    "picId": "pizza_2020_1",
+                    "index": 0
+                },
+                {
+                    "picId": "pizza_2020_2",
+                    "index": 1
+                },
+                {
+                    "picId": "pizza_2020_3",
+                    "index": 2
+                },
+                {
+                    "picId": "pizza_2020_4",
+                    "index": 3
+                },
+                {
+                    "picId": "pizza_2020_5",
+                    "index": 4
+                },
+                {
+                    "picId": "pizza_2020_6",
+                    "index": 5
+                }
+            ]
+        },
+        {
+            "packageId": "guitar_2020",
+            "icon": "icon_furngroup_guitar_2020",
+            "name": "罗德岛现代音乐排练室",
+            "description": "罗德岛的现代音乐练习室之一，免费向热爱吉他的干员开放。",
+            "sequence": 702,
+            "saleBegin": 1629964800,
+            "saleEnd": -1,
+            "decoration": 5000,
+            "goodList": [
+                {
+                    "goodId": "event2_1",
+                    "count": 1,
+                    "set": "现场氛围套件",
+                    "sequence": 5
+                },
+                {
+                    "goodId": "event2_2",
+                    "count": 1,
+                    "set": "现场氛围套件",
+                    "sequence": 5
+                },
+                {
+                    "goodId": "event2_3",
+                    "count": 1,
+                    "set": "现场氛围套件",
+                    "sequence": 5
+                },
+                {
+                    "goodId": "event2_4",
+                    "count": 1,
+                    "set": "现场氛围套件",
+                    "sequence": 5
+                },
+                {
+                    "goodId": "event2_5",
+                    "count": 1,
+                    "set": "现场氛围套件",
+                    "sequence": 5
+                },
+                {
+                    "goodId": "event2_6",
+                    "count": 1,
+                    "set": "现场氛围套件",
+                    "sequence": 5
+                }
+            ],
+            "eventGoodList": [
+                {
+                    "name": "“浮木”",
+                    "count": 1,
+                    "furniId": "furni_guitar_guitar1_01",
+                    "set": "一号吉他收藏",
+                    "sequence": 1
+                },
+                {
+                    "name": "“舞台”",
+                    "count": 1,
+                    "furniId": "furni_guitar_guitar2_01",
+                    "set": "一号吉他收藏",
+                    "sequence": 1
+                },
+                {
+                    "name": "“麦香”",
+                    "count": 1,
+                    "furniId": "furni_guitar_guitar3_01",
+                    "set": "一号吉他收藏",
+                    "sequence": 1
+                },
+                {
+                    "name": "“浅海”",
+                    "count": 1,
+                    "furniId": "furni_guitar_guitar4_01",
+                    "set": "一号吉他收藏",
+                    "sequence": 1
+                },
+                {
+                    "name": "“磨砂”",
+                    "count": 1,
+                    "furniId": "furni_guitar_guitar5_01",
+                    "set": "一号吉他收藏",
+                    "sequence": 1
+                },
+                {
+                    "name": "“墨钢”",
+                    "count": 1,
+                    "furniId": "furni_guitar_guitar6_01",
+                    "set": "二号吉他收藏",
+                    "sequence": 2
+                },
+                {
+                    "name": "“琥珀”",
+                    "count": 1,
+                    "furniId": "furni_guitar_guitar7_01",
+                    "set": "二号吉他收藏",
+                    "sequence": 2
+                },
+                {
+                    "name": "“白桦”",
+                    "count": 1,
+                    "furniId": "furni_guitar_guitar8_01",
+                    "set": "二号吉他收藏",
+                    "sequence": 2
+                },
+                {
+                    "name": "“烈火”",
+                    "count": 1,
+                    "furniId": "furni_guitar_guitar9_01",
+                    "set": "二号吉他收藏",
+                    "sequence": 2
+                },
+                {
+                    "name": "“乌云”",
+                    "count": 1,
+                    "furniId": "furni_guitar_guitar10_01",
+                    "set": "二号吉他收藏",
+                    "sequence": 2
+                },
+                {
+                    "name": "巡演设备组合",
+                    "count": 1,
+                    "furniId": "furni_guitar_guitarCases_01",
+                    "set": "练习室套件",
+                    "sequence": 3
+                },
+                {
+                    "name": "雅尔玛汗™架子鼓",
+                    "count": 1,
+                    "furniId": "furni_guitar_drumKit_01",
+                    "set": "练习室套件",
+                    "sequence": 3
+                },
+                {
+                    "name": "排练室长凳",
+                    "count": 1,
+                    "furniId": "furni_guitar_longBench_01",
+                    "set": "练习室套件",
+                    "sequence": 3
+                },
+                {
+                    "name": "排练室接待台",
+                    "count": 1,
+                    "furniId": "furni_guitar_reception_01",
+                    "set": "前台接待套件",
+                    "sequence": 4
+                },
+                {
+                    "name": "排练室圆凳",
+                    "count": 2,
+                    "furniId": "furni_guitar_stool_01",
+                    "set": "前台接待套件",
+                    "sequence": 4
+                },
+                {
+                    "name": "悬挂式滚动显示屏",
+                    "count": 1,
+                    "furniId": "furni_guitar_display_01",
+                    "set": "前台接待套件",
+                    "sequence": 4
+                },
+                {
+                    "name": "排练室背带挂板",
+                    "count": 1,
+                    "furniId": "furni_guitar_pegboard_01",
+                    "set": "前台接待套件",
+                    "sequence": 4
+                },
+                {
+                    "name": "排练室配件挂板",
+                    "count": 1,
+                    "furniId": "furni_guitar_pegboard2_01",
+                    "set": "前台接待套件",
+                    "sequence": 4
+                },
+                {
+                    "name": "萨卡兹摇滚海报",
+                    "count": 1,
+                    "furniId": "furni_guitar_poster1_01",
+                    "set": "练习室套件",
+                    "sequence": 3
+                },
+                {
+                    "name": "乐队宣传海报",
+                    "count": 1,
+                    "furniId": "furni_guitar_poster2_01",
+                    "set": "练习室套件",
+                    "sequence": 3
+                },
+                {
+                    "name": "排练室专用地毯",
+                    "count": 1,
+                    "furniId": "furni_guitar_carpet_01",
+                    "set": "练习室套件",
+                    "sequence": 3
+                }
+            ],
+            "imageList": [
+                {
+                    "picId": "guitar_2020_1",
+                    "index": 0
+                },
+                {
+                    "picId": "guitar_2020_2",
+                    "index": 1
+                },
+                {
+                    "picId": "guitar_2020_3",
+                    "index": 2
+                },
+                {
+                    "picId": "guitar_2020_4",
+                    "index": 3
+                },
+                {
+                    "picId": "guitar_2020_5",
+                    "index": 4
+                },
+                {
+                    "picId": "guitar_2020_6",
+                    "index": 5
+                }
+            ]
+        },
+        {
+            "packageId": "wooden_2019",
+            "icon": "icon_furngroup_wooden_2019",
+            "name": "萨米乡野别墅",
+            "description": "模仿萨米传统木屋风格的概念房间，建设时使用了些久置仓库的装饰。",
+            "sequence": 801,
+            "saleBegin": 1572552000,
+            "saleEnd": -1,
+            "decoration": 3570,
+            "goodList": [
+                {
+                    "goodId": "wooden_1",
+                    "count": 1,
+                    "set": "原木家私套组",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "wooden_2",
+                    "count": 1,
+                    "set": "长夜漫谈套件",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "wooden_3",
+                    "count": 1,
+                    "set": "长夜漫谈套件",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "wooden_4",
+                    "count": 1,
+                    "set": "长夜漫谈套件",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "wooden_5",
+                    "count": 1,
+                    "set": "长夜漫谈套件",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "wooden_6",
+                    "count": 1,
+                    "set": "长夜漫谈套件",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "wooden_7",
+                    "count": 1,
+                    "set": "原野风韵套件",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "wooden_8",
+                    "count": 1,
+                    "set": "原木家私套组",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "wooden_9",
+                    "count": 1,
+                    "set": "原木家私套组",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "wooden_10",
+                    "count": 1,
+                    "set": "原木家私套组",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "wooden_11",
+                    "count": 1,
+                    "set": "原木家私套组",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "wooden_12",
+                    "count": 1,
+                    "set": "复古顶部装饰组",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "wooden_13",
+                    "count": 6,
+                    "set": "复古顶部装饰组",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "wooden_14",
+                    "count": 1,
+                    "set": "复古顶部装饰组",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "wooden_15",
+                    "count": 1,
+                    "set": "原野风韵套件",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "wooden_16",
+                    "count": 1,
+                    "set": "原野风韵套件",
+                    "sequence": 4
+                }
+            ],
+            "eventGoodList": [],
+            "imageList": [
+                {
+                    "picId": "wooden_2019_1",
+                    "index": 0
+                },
+                {
+                    "picId": "wooden_2019_2",
+                    "index": 1
+                },
+                {
+                    "picId": "wooden_2019_3",
+                    "index": 2
+                },
+                {
+                    "picId": "wooden_2019_4",
+                    "index": 3
+                },
+                {
+                    "picId": "wooden_2019_5",
+                    "index": 4
+                },
+                {
+                    "picId": "wooden_2019_6",
+                    "index": 5
+                }
+            ]
+        },
+        {
+            "packageId": "artdeco_2020",
+            "icon": "icon_furngroup_artdeco_2020",
+            "name": "哥伦比亚摩登酒店",
+            "description": "模仿了摩登时代酒店标准样式的概念房间，不禁令人回想起哥伦比亚步入现代前一闪即逝的别样繁华。",
+            "sequence": 802,
+            "saleBegin": 1584432000,
+            "saleEnd": -1,
+            "decoration": 4555,
+            "goodList": [
+                {
+                    "goodId": "artdeco_1",
+                    "count": 1,
+                    "set": "大都会吧台套件",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "artdeco_2",
+                    "count": 1,
+                    "set": "大都会吧台套件",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "artdeco_3",
+                    "count": 3,
+                    "set": "大都会吧台套件",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "artdeco_4",
+                    "count": 1,
+                    "set": "大都会吧台套件",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "artdeco_5",
+                    "count": 1,
+                    "set": "大都会吧台套件",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "artdeco_6",
+                    "count": 1,
+                    "set": "大都会音乐区套件",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "artdeco_7",
+                    "count": 1,
+                    "set": "大都会音乐区套件",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "artdeco_8",
+                    "count": 1,
+                    "set": "大都会音乐区套件",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "artdeco_9",
+                    "count": 2,
+                    "set": "摩登年代套件",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "artdeco_10",
+                    "count": 1,
+                    "set": "大都会音乐区套件",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "artdeco_11",
+                    "count": 1,
+                    "set": "大都会音乐区套件",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "artdeco_12",
+                    "count": 1,
+                    "set": "大都会休息区套件",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "artdeco_13",
+                    "count": 1,
+                    "set": "大都会休息区套件",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "artdeco_14",
+                    "count": 1,
+                    "set": "大都会休息区套件",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "artdeco_15",
+                    "count": 1,
+                    "set": "大都会休息区套件",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "artdeco_16",
+                    "count": 1,
+                    "set": "大都会休息区套件",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "artdeco_17",
+                    "count": 1,
+                    "set": "摩登年代套件",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "artdeco_18",
+                    "count": 1,
+                    "set": "摩登年代套件",
+                    "sequence": 4
+                }
+            ],
+            "eventGoodList": [],
+            "imageList": [
+                {
+                    "picId": "artdeco_2020_1",
+                    "index": 0
+                },
+                {
+                    "picId": "artdeco_2020_2",
+                    "index": 1
+                },
+                {
+                    "picId": "artdeco_2020_3",
+                    "index": 2
+                },
+                {
+                    "picId": "artdeco_2020_4",
+                    "index": 3
+                },
+                {
+                    "picId": "artdeco_2020_5",
+                    "index": 4
+                },
+                {
+                    "picId": "artdeco_2020_6",
+                    "index": 5
+                }
+            ]
+        },
+        {
+            "packageId": "rococo_2020",
+            "icon": "icon_furngroup_rococo_2020",
+            "name": "兰赛拉尔宴会厅",
+            "description": "再现了偏远小国兰赛拉尔王城宴会厅的概念房间。群山之间一点光。",
+            "sequence": 803,
+            "saleBegin": 1595923200,
+            "saleEnd": -1,
+            "decoration": 4500,
+            "goodList": [
+                {
+                    "goodId": "rococo_1",
+                    "count": 1,
+                    "set": "宴会厅储物角",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "rococo_2",
+                    "count": 1,
+                    "set": "宴会厅储物角",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "rococo_3",
+                    "count": 1,
+                    "set": "宴会厅长桌",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "rococo_4",
+                    "count": 1,
+                    "set": "宴会厅长桌",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "rococo_5",
+                    "count": 6,
+                    "set": "宴会厅长桌",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "rococo_6",
+                    "count": 1,
+                    "set": "宴会厅储物角",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "rococo_7",
+                    "count": 1,
+                    "set": "宴会厅装饰角",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "rococo_8",
+                    "count": 1,
+                    "set": "宴会厅装饰角",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "rococo_9",
+                    "count": 1,
+                    "set": "宴会厅装饰角",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "rococo_10",
+                    "count": 1,
+                    "set": "宴会厅长桌",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "rococo_11",
+                    "count": 2,
+                    "set": "宴会厅长桌",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "rococo_12",
+                    "count": 1,
+                    "set": "宴会厅储物角",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "rococo_13",
+                    "count": 1,
+                    "set": "宴会厅装饰角",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "rococo_14",
+                    "count": 1,
+                    "set": "兰赛拉尔之夜",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "rococo_15",
+                    "count": 2,
+                    "set": "兰赛拉尔之夜",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "rococo_16",
+                    "count": 2,
+                    "set": "兰赛拉尔之夜",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "rococo_17",
+                    "count": 1,
+                    "set": "兰赛拉尔之夜",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "rococo_18",
+                    "count": 1,
+                    "set": "兰赛拉尔之夜",
+                    "sequence": 4
+                }
+            ],
+            "eventGoodList": [],
+            "imageList": [
+                {
+                    "picId": "rococo_2020_1",
+                    "index": 0
+                },
+                {
+                    "picId": "rococo_2020_2",
+                    "index": 1
+                },
+                {
+                    "picId": "rococo_2020_3",
+                    "index": 2
+                },
+                {
+                    "picId": "rococo_2020_4",
+                    "index": 3
+                },
+                {
+                    "picId": "rococo_2020_5",
+                    "index": 4
+                },
+                {
+                    "picId": "rococo_2020_6",
+                    "index": 5
+                }
+            ]
+        },
+        {
+            "packageId": "lightFood_2020",
+            "icon": "icon_furngroup_lightFood_2020",
+            "name": "健康快餐店",
+            "description": "新概念快餐店，店员招募中。美味与健康总可兼得。",
+            "sequence": 804,
+            "saleBegin": 1604203200,
+            "saleEnd": -1,
+            "decoration": 4500,
+            "goodList": [
+                {
+                    "goodId": "lightFood_1",
+                    "count": 1,
+                    "set": "健康点餐区",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "lightFood_2",
+                    "count": 1,
+                    "set": "健康点餐区",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "lightFood_3",
+                    "count": 1,
+                    "set": "健康点餐区",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "lightFood_4",
+                    "count": 1,
+                    "set": "健康点餐区",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "lightFood_5",
+                    "count": 1,
+                    "set": "健康备餐区",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "lightFood_6",
+                    "count": 1,
+                    "set": "健康备餐区",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "lightFood_7",
+                    "count": 1,
+                    "set": "健康备餐区",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "lightFood_8",
+                    "count": 1,
+                    "set": "健康备餐区",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "lightFood_9",
+                    "count": 1,
+                    "set": "健康点餐区",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "lightFood_10",
+                    "count": 1,
+                    "set": "健康装潢",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "lightFood_11",
+                    "count": 1,
+                    "set": "健康用餐区",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "lightFood_12",
+                    "count": 1,
+                    "set": "健康用餐区",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "lightFood_13",
+                    "count": 1,
+                    "set": "健康用餐区",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "lightFood_14",
+                    "count": 1,
+                    "set": "健康用餐区",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "lightFood_15",
+                    "count": 1,
+                    "set": "健康用餐区",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "lightFood_16",
+                    "count": 5,
+                    "set": "健康装潢",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "lightFood_17",
+                    "count": 1,
+                    "set": "健康装潢",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "lightFood_18",
+                    "count": 1,
+                    "set": "健康装潢",
+                    "sequence": 4
+                }
+            ],
+            "eventGoodList": [],
+            "imageList": [
+                {
+                    "picId": "lightFood_2020_1",
+                    "index": 0
+                },
+                {
+                    "picId": "lightFood_2020_2",
+                    "index": 1
+                },
+                {
+                    "picId": "lightFood_2020_3",
+                    "index": 2
+                },
+                {
+                    "picId": "lightFood_2020_4",
+                    "index": 3
+                },
+                {
+                    "picId": "lightFood_2020_5",
+                    "index": 4
+                },
+                {
+                    "picId": "lightFood_2020_6",
+                    "index": 5
+                }
+            ]
+        },
+        {
+            "packageId": "office_2021",
+            "icon": "icon_furngroup_office_2021",
+            "name": "罗德岛人事办公室",
+            "description": "罗德岛人事部门使用的办公室之一，每日都在为罗德岛筛选合适干员。",
+            "sequence": 805,
+            "saleBegin": 1615262400,
+            "saleEnd": -1,
+            "decoration": 4500,
+            "goodList": [
+                {
+                    "goodId": "office_1",
+                    "count": 1,
+                    "set": "办公吗？",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "office_2",
+                    "count": 2,
+                    "set": "办公吗？",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "office_3",
+                    "count": 1,
+                    "set": "办公吗？",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "office_4",
+                    "count": 1,
+                    "set": "办公吗？",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "office_5",
+                    "count": 1,
+                    "set": "搭讪吗？",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "office_6",
+                    "count": 1,
+                    "set": "搭讪吗？",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "office_7",
+                    "count": 1,
+                    "set": "搭讪吗？",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "office_8",
+                    "count": 1,
+                    "set": "搭讪吗？",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "office_9",
+                    "count": 1,
+                    "set": "装修吗？",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "office_10",
+                    "count": 6,
+                    "set": "装修吗？",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "office_11",
+                    "count": 1,
+                    "set": "休息吗？",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "office_12",
+                    "count": 1,
+                    "set": "休息吗？",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "office_13",
+                    "count": 1,
+                    "set": "休息吗？",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "office_14",
+                    "count": 1,
+                    "set": "休息吗？",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "office_15",
+                    "count": 1,
+                    "set": "装修吗？",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "office_16",
+                    "count": 1,
+                    "set": "装修吗？",
+                    "sequence": 4
+                }
+            ],
+            "eventGoodList": [],
+            "imageList": [
+                {
+                    "picId": "office_2021_1",
+                    "index": 0
+                },
+                {
+                    "picId": "office_2021_2",
+                    "index": 1
+                },
+                {
+                    "picId": "office_2021_3",
+                    "index": 2
+                },
+                {
+                    "picId": "office_2021_4",
+                    "index": 3
+                },
+                {
+                    "picId": "office_2021_5",
+                    "index": 4
+                },
+                {
+                    "picId": "office_2021_6",
+                    "index": 5
+                }
+            ]
+        },
+        {
+            "packageId": "kitchen_2021",
+            "icon": "icon_furngroup_kitchen_2021",
+            "name": "白色旷野",
+            "description": "由某设计大奖作品复制而来的概念房间。获奖者没有感言，一切尽在不言中。",
+            "sequence": 806,
+            "saleBegin": 1625198400,
+            "saleEnd": -1,
+            "decoration": 4500,
+            "goodList": [
+                {
+                    "goodId": "kitchen_1",
+                    "count": 1,
+                    "set": "安眠空间",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "kitchen_2",
+                    "count": 1,
+                    "set": "安眠空间",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "kitchen_3",
+                    "count": 1,
+                    "set": "安眠空间",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "kitchen_4",
+                    "count": 1,
+                    "set": "安眠空间",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "kitchen_5",
+                    "count": 1,
+                    "set": "光源组合",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "kitchen_6",
+                    "count": 1,
+                    "set": "整体氛围",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "kitchen_7",
+                    "count": 1,
+                    "set": "安眠空间",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "kitchen_8",
+                    "count": 1,
+                    "set": "光源组合",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "kitchen_9",
+                    "count": 1,
+                    "set": "光源组合",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "kitchen_10",
+                    "count": 1,
+                    "set": "光源组合",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "kitchen_11",
+                    "count": 1,
+                    "set": "整体氛围",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "kitchen_12",
+                    "count": 1,
+                    "set": "光源组合",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "kitchen_13",
+                    "count": 1,
+                    "set": "料理空间",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "kitchen_14",
+                    "count": 1,
+                    "set": "料理空间",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "kitchen_15",
+                    "count": 1,
+                    "set": "料理空间",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "kitchen_16",
+                    "count": 3,
+                    "set": "料理空间",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "kitchen_17",
+                    "count": 1,
+                    "set": "整体氛围",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "kitchen_18",
+                    "count": 1,
+                    "set": "整体氛围",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "kitchen_19",
+                    "count": 1,
+                    "set": "整体氛围",
+                    "sequence": 4
+                }
+            ],
+            "eventGoodList": [],
+            "imageList": [
+                {
+                    "picId": "kitchen_2021_1",
+                    "index": 0
+                },
+                {
+                    "picId": "kitchen_2021_2",
+                    "index": 1
+                },
+                {
+                    "picId": "kitchen_2021_3",
+                    "index": 2
+                },
+                {
+                    "picId": "kitchen_2021_4",
+                    "index": 3
+                },
+                {
+                    "picId": "kitchen_2021_5",
+                    "index": 4
+                },
+                {
+                    "picId": "kitchen_2021_6",
+                    "index": 5
+                }
+            ]
+        },
+        {
+            "packageId": "bauhaus_2021",
+            "icon": "icon_furngroup_bauhaus_2021",
+            "name": "沃尔特风潮居室",
+            "description": "一种源自莱塔尼亚的前卫建筑风格样板房。风格鲜明，饱受好评。",
+            "sequence": 200,
+            "saleBegin": 1635739200,
+            "saleEnd": -1,
+            "decoration": 4500,
+            "goodList": [
+                {
+                    "goodId": "bauhaus_1",
+                    "count": 1,
+                    "set": "生活化套组",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "bauhaus_2",
+                    "count": 1,
+                    "set": "生活化套组",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "bauhaus_3",
+                    "count": 1,
+                    "set": "生活辅助套组",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "bauhaus_4",
+                    "count": 1,
+                    "set": "生活辅助套组",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "bauhaus_5",
+                    "count": 1,
+                    "set": "生活辅助套组",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "bauhaus_6",
+                    "count": 1,
+                    "set": "生活化套组",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "bauhaus_7",
+                    "count": 1,
+                    "set": "装饰套组",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "bauhaus_8",
+                    "count": 1,
+                    "set": "装饰套组",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "bauhaus_9",
+                    "count": 1,
+                    "set": "装饰套组",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "bauhaus_10",
+                    "count": 1,
+                    "set": "生活化套组",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "bauhaus_11",
+                    "count": 1,
+                    "set": "新风尚装潢",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "bauhaus_12",
+                    "count": 1,
+                    "set": "装饰套组",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "bauhaus_13",
+                    "count": 2,
+                    "set": "新风尚装潢",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "bauhaus_14",
+                    "count": 1,
+                    "set": "新风尚装潢",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "bauhaus_15",
+                    "count": 1,
+                    "set": "新风尚装潢",
+                    "sequence": 4
+                }
+            ],
+            "eventGoodList": [],
+            "imageList": [
+                {
+                    "picId": "bauhaus_2021_1",
+                    "index": 0
+                },
+                {
+                    "picId": "bauhaus_2021_2",
+                    "index": 1
+                },
+                {
+                    "picId": "bauhaus_2021_3",
+                    "index": 2
+                },
+                {
+                    "picId": "bauhaus_2021_4",
+                    "index": 3
+                },
+                {
+                    "picId": "bauhaus_2021_5",
+                    "index": 4
+                },
+                {
+                    "picId": "bauhaus_2021_6",
+                    "index": 5
+                }
+            ]
+        },
+        {
+            "packageId": "s2_01_2019",
+            "icon": "icon_furngroup_s2_01_2019",
+            "name": "近卫局休息室",
+            "description": "龙门近卫局休息室，现代而庄重。",
+            "sequence": 901,
+            "saleBegin": 1577174400,
+            "saleEnd": -1,
+            "decoration": 4390,
+            "goodList": [
+                {
+                    "goodId": "s2_01_1",
+                    "count": 1,
+                    "set": "深度休息套组（檀木）",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "s2_01_2",
+                    "count": 1,
+                    "set": "深度休息套组（檀木）",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "s2_01_3",
+                    "count": 1,
+                    "set": "会客用单色套组",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "s2_01_4",
+                    "count": 1,
+                    "set": "会客用单色套组",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "s2_01_5",
+                    "count": 1,
+                    "set": "会客用单色套组",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "s2_01_6",
+                    "count": 1,
+                    "set": "会客用单色套组",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "s2_01_7",
+                    "count": 1,
+                    "set": "近卫局简要会议设施",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "s2_01_8",
+                    "count": 1,
+                    "set": "近卫局简要会议设施",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "s2_01_9",
+                    "count": 1,
+                    "set": "近卫局简要会议设施",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "s2_01_10",
+                    "count": 1,
+                    "set": "近卫局简要会议设施",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "s2_01_11",
+                    "count": 1,
+                    "set": "深度休息套组（檀木）",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "s2_01_12",
+                    "count": 1,
+                    "set": "近卫局式装潢",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "s2_01_13",
+                    "count": 1,
+                    "set": "会客用单色套组",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "s2_01_14",
+                    "count": 2,
+                    "set": "近卫局式装潢",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "s2_01_15",
+                    "count": 1,
+                    "set": "近卫局式装潢",
+                    "sequence": 4
+                }
+            ],
+            "eventGoodList": [],
+            "imageList": [
+                {
+                    "picId": "s2_01_2019_1",
+                    "index": 0
+                },
+                {
+                    "picId": "s2_01_2019_2",
+                    "index": 1
+                },
+                {
+                    "picId": "s2_01_2019_3",
+                    "index": 2
+                },
+                {
+                    "picId": "s2_01_2019_4",
+                    "index": 3
+                },
+                {
+                    "picId": "s2_01_2019_5",
+                    "index": 4
+                },
+                {
+                    "picId": "s2_01_2019_6",
+                    "index": 5
+                }
+            ]
+        },
+        {
+            "packageId": "s2_02_2019",
+            "icon": "icon_furngroup_s2_02_2019",
+            "name": "仿龙门式休息室",
+            "description": "仿照龙门装修风格设计的休息室。",
+            "sequence": 902,
+            "saleBegin": 1577174400,
+            "saleEnd": -1,
+            "decoration": 4390,
+            "goodList": [
+                {
+                    "goodId": "s2_02_1",
+                    "count": 1,
+                    "set": "深度休息套件（柚木）",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "s2_02_2",
+                    "count": 1,
+                    "set": "深度休息套件（柚木）",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "s2_02_3",
+                    "count": 1,
+                    "set": "会客用双色套组",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "s2_02_4",
+                    "count": 1,
+                    "set": "会客用双色套组",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "s2_02_5",
+                    "count": 1,
+                    "set": "会客用双色套组",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "s2_02_6",
+                    "count": 1,
+                    "set": "会客用双色套组",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "s2_02_7",
+                    "count": 1,
+                    "set": "龙门简要会议设施",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "s2_02_8",
+                    "count": 1,
+                    "set": "龙门简要会议设施",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "s2_02_9",
+                    "count": 1,
+                    "set": "龙门简要会议设施",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "s2_02_10",
+                    "count": 1,
+                    "set": "龙门简要会议设施",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "s2_02_11",
+                    "count": 1,
+                    "set": "深度休息套件（柚木）",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "s2_02_12",
+                    "count": 1,
+                    "set": "仿龙门式装潢",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "s2_02_13",
+                    "count": 1,
+                    "set": "会客用双色套组",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "s2_02_14",
+                    "count": 2,
+                    "set": "仿龙门式装潢",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "s2_02_15",
+                    "count": 1,
+                    "set": "仿龙门式装潢",
+                    "sequence": 4
+                }
+            ],
+            "eventGoodList": [],
+            "imageList": [
+                {
+                    "picId": "s2_02_2019_1",
+                    "index": 0
+                },
+                {
+                    "picId": "s2_02_2019_2",
+                    "index": 1
+                },
+                {
+                    "picId": "s2_02_2019_3",
+                    "index": 2
+                },
+                {
+                    "picId": "s2_02_2019_4",
+                    "index": 3
+                },
+                {
+                    "picId": "s2_02_2019_5",
+                    "index": 4
+                },
+                {
+                    "picId": "s2_02_2019_6",
+                    "index": 5
+                }
+            ]
+        },
+        {
+            "packageId": "cafe_2020",
+            "icon": "icon_furngroup_cafe_2020",
+            "name": "哥伦比亚咖啡馆",
+            "description": "哥伦比亚风格的咖啡馆。",
+            "sequence": 903,
+            "saleBegin": 1584432000,
+            "saleEnd": -1,
+            "decoration": 4420,
+            "goodList": [
+                {
+                    "goodId": "cafe_01_1",
+                    "count": 1,
+                    "set": "咖啡馆吧台设施",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "cafe_01_2",
+                    "count": 1,
+                    "set": "咖啡馆吧台设施",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "cafe_01_3",
+                    "count": 2,
+                    "set": "经典哥伦比亚装饰",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "cafe_01_4",
+                    "count": 1,
+                    "set": "咖啡馆吧台设施",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "cafe_01_5",
+                    "count": 1,
+                    "set": "经典哥伦比亚装饰",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "cafe_01_6",
+                    "count": 1,
+                    "set": "咖啡桌椅组合",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "cafe_01_7",
+                    "count": 1,
+                    "set": "咖啡桌椅组合",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "cafe_01_8",
+                    "count": 1,
+                    "set": "咖啡桌椅组合",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "cafe_01_9",
+                    "count": 1,
+                    "set": "咖啡馆吧台设施",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "cafe_01_10",
+                    "count": 1,
+                    "set": "咖啡馆吧台设施",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "cafe_01_11",
+                    "count": 1,
+                    "set": "咖啡桌椅组合",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "cafe_01_12",
+                    "count": 1,
+                    "set": "经典哥伦比亚装饰",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "cafe_01_13",
+                    "count": 1,
+                    "set": "咖啡馆吧台设施",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "cafe_01_14",
+                    "count": 2,
+                    "set": "经典哥伦比亚装潢",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "cafe_01_15",
+                    "count": 5,
+                    "set": "经典哥伦比亚装潢",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "cafe_01_16",
+                    "count": 1,
+                    "set": "经典哥伦比亚装潢",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "cafe_01_17",
+                    "count": 1,
+                    "set": "经典哥伦比亚装潢",
+                    "sequence": 4
+                }
+            ],
+            "eventGoodList": [],
+            "imageList": [
+                {
+                    "picId": "cafe_2020_1",
+                    "index": 0
+                },
+                {
+                    "picId": "cafe_2020_2",
+                    "index": 1
+                },
+                {
+                    "picId": "cafe_2020_3",
+                    "index": 2
+                },
+                {
+                    "picId": "cafe_2020_4",
+                    "index": 3
+                },
+                {
+                    "picId": "cafe_2020_5",
+                    "index": 4
+                },
+                {
+                    "picId": "cafe_2020_6",
+                    "index": 5
+                }
+            ]
+        },
+        {
+            "packageId": "beach_2020",
+            "icon": "icon_furngroup_beach_2020",
+            "name": "汐斯塔沙滩小屋",
+            "description": "再现了内海城市汐斯塔假日风情的概念房间。派对还没开始吗？",
+            "sequence": 904,
+            "saleBegin": 1629964800,
+            "saleEnd": -1,
+            "decoration": 4800,
+            "goodList": [
+                {
+                    "goodId": "beach_01_1",
+                    "count": 1,
+                    "set": "盛夏回忆组合",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "beach_01_2",
+                    "count": 1,
+                    "set": "盛夏回忆组合",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "beach_01_3",
+                    "count": 1,
+                    "set": "盛夏回忆组合",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "beach_01_4",
+                    "count": 1,
+                    "set": "盛夏回忆组合",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "beach_01_5",
+                    "count": 1,
+                    "set": "沙滩壁饰集锦",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "beach_01_6",
+                    "count": 1,
+                    "set": "沙滩壁饰集锦",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "beach_01_7",
+                    "count": 1,
+                    "set": "清凉一夏套组",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "beach_01_8",
+                    "count": 1,
+                    "set": "清凉一夏套组",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "beach_01_9",
+                    "count": 1,
+                    "set": "清凉一夏套组",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "beach_01_10",
+                    "count": 1,
+                    "set": "清凉一夏套组",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "beach_01_11",
+                    "count": 1,
+                    "set": "清凉一夏套组",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "beach_01_12",
+                    "count": 1,
+                    "set": "沙滩壁饰集锦",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "beach_01_13",
+                    "count": 1,
+                    "set": "沙滩壁饰集锦",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "beach_01_14",
+                    "count": 1,
+                    "set": "汐斯塔自然风光",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "beach_01_15",
+                    "count": 2,
+                    "set": "汐斯塔自然风光",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "beach_01_16",
+                    "count": 1,
+                    "set": "汐斯塔自然风光",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "beach_01_17",
+                    "count": 1,
+                    "set": "汐斯塔自然风光",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "beach_01_18",
+                    "count": 1,
+                    "set": "汐斯塔自然风光",
+                    "sequence": 4
+                }
+            ],
+            "eventGoodList": [],
+            "imageList": [
+                {
+                    "picId": "beach_2020_1",
+                    "index": 0
+                },
+                {
+                    "picId": "beach_2020_2",
+                    "index": 1
+                },
+                {
+                    "picId": "beach_2020_3",
+                    "index": 2
+                },
+                {
+                    "picId": "beach_2020_4",
+                    "index": 3
+                },
+                {
+                    "picId": "beach_2020_5",
+                    "index": 4
+                },
+                {
+                    "picId": "beach_2020_6",
+                    "index": 5
+                }
+            ]
+        },
+        {
+            "packageId": "safetyZone_2019",
+            "icon": "icon_furngroup_safetyzone_2019_0",
+            "name": "气密防化安全舱",
+            "description": "配有防毒防化设施的消毒安全舱。仅适用于紧急时刻和极危任务。",
+            "sequence": 905,
+            "saleBegin": 1634284800,
+            "saleEnd": -1,
+            "decoration": 4800,
+            "goodList": [
+                {
+                    "goodId": "safetyZone_1",
+                    "count": 1,
+                    "set": "安全舱消毒过滤套件",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "safetyZone_2",
+                    "count": 1,
+                    "set": "安全舱消毒过滤套件",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "safetyZone_3",
+                    "count": 1,
+                    "set": "安全舱清洁套件",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "safetyZone_4",
+                    "count": 1,
+                    "set": "安全舱防护套件",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "safetyZone_5",
+                    "count": 1,
+                    "set": "安全舱防护套件",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "safetyZone_6",
+                    "count": 1,
+                    "set": "安全舱防护套件",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "safetyZone_7",
+                    "count": 1,
+                    "set": "安全舱防护套件",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "safetyZone_8",
+                    "count": 1,
+                    "set": "安全舱清洁套件",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "safetyZone_9",
+                    "count": 1,
+                    "set": "安全舱清洁套件",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "safetyZone_10",
+                    "count": 1,
+                    "set": "安全舱清洁套件",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "safetyZone_11",
+                    "count": 1,
+                    "set": "安全舱清洁套件",
+                    "sequence": 3
+                },
+                {
+                    "goodId": "safetyZone_12",
+                    "count": 1,
+                    "set": "安全舱消毒过滤套件",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "safetyZone_13",
+                    "count": 1,
+                    "set": "安全舱消毒过滤套件",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "safetyZone_14",
+                    "count": 1,
+                    "set": "安全舱消毒过滤套件",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "safetyZone_15",
+                    "count": 1,
+                    "set": "安全舱基础设施套件",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "safetyZone_16",
+                    "count": 1,
+                    "set": "安全舱基础设施套件",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "safetyZone_17",
+                    "count": 2,
+                    "set": "安全舱基础设施套件",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "safetyZone_18",
+                    "count": 1,
+                    "set": "安全舱防护套件",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "safetyZone_19",
+                    "count": 1,
+                    "set": "安全舱基础设施套件",
+                    "sequence": 4
+                },
+                {
+                    "goodId": "safetyZone_20",
+                    "count": 1,
+                    "set": "安全舱基础设施套件",
+                    "sequence": 4
+                }
+            ],
+            "eventGoodList": [],
+            "imageList": [
+                {
+                    "picId": "safetyZone_2019_1",
+                    "index": 0
+                },
+                {
+                    "picId": "safetyZone_2019_2",
+                    "index": 1
+                },
+                {
+                    "picId": "safetyZone_2019_3",
+                    "index": 2
+                },
+                {
+                    "picId": "safetyZone_2019_4",
+                    "index": 3
+                },
+                {
+                    "picId": "safetyZone_2019_5",
+                    "index": 4
+                },
+                {
+                    "picId": "safetyZone_2019_6",
+                    "index": 5
+                }
+            ]
+        },
+        {
+            "packageId": "kazimierz_2021",
+            "icon": "icon_furngroup_kazimierz_2021",
+            "name": "卡西米尔直播间",
+            "description": "骑士竞技的直播间，为您带来竞技比赛实况内容。",
+            "sequence": 100,
+            "saleBegin": 1635739200,
+            "saleEnd": 1637524799,
+            "decoration": 5000,
+            "goodList": [
+                {
+                    "goodId": "kazimierz_1",
+                    "count": 1,
+                    "set": "直播间广告位",
+                    "sequence": 2
+                },
+                {
+                    "goodId": "kazimierz_2",
+                    "count": 1,
+                    "set": "直播间设备",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "kazimierz_3",
+                    "count": 1,
+                    "set": "直播间设备",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "kazimierz_4",
+                    "count": 1,
+                    "set": "直播间设备",
+                    "sequence": 1
+                },
+                {
+                    "goodId": "kazimierz_5",
+                    "count": 1,
+                    "set": "直播间广告位",
+                    "sequence": 2
+                }
+            ],
+            "eventGoodList": [
+                {
+                    "name": "直播间特制顶灯",
+                    "count": 1,
+                    "furniId": "furni_kazimierz_downlight_01",
+                    "set": "直播间广告位",
+                    "sequence": 2
+                },
+                {
+                    "name": "白色皮质直播凳",
+                    "count": 1,
+                    "furniId": "furni_kazimierz_stool_01",
+                    "set": "直播间设备",
+                    "sequence": 1
+                },
+                {
+                    "name": "简约透光显示屏",
+                    "count": 1,
+                    "furniId": "furni_kazimierz_LIVE_01",
+                    "set": "直播间广告位",
+                    "sequence": 2
+                },
+                {
+                    "name": "“琢焰”",
+                    "count": 1,
+                    "furniId": "furni_kazimierz_decoration_01",
+                    "set": "直播间设备",
+                    "sequence": 1
+                },
+                {
+                    "name": "立式半透明隔板",
+                    "count": 1,
+                    "furniId": "furni_kazimierz_partition_01",
+                    "set": "直播间装潢",
+                    "sequence": 4
+                },
+                {
+                    "name": "梯形矮脚访谈桌",
+                    "count": 1,
+                    "furniId": "furni_kazimierz_table_01",
+                    "set": "访谈间",
+                    "sequence": 3
+                },
+                {
+                    "name": "红白访谈椅组",
+                    "count": 1,
+                    "furniId": "furni_kazimierz_chair_R_01",
+                    "set": "访谈间",
+                    "sequence": 3
+                },
+                {
+                    "name": "红白访谈椅（右）",
+                    "count": 1,
+                    "furniId": "furni_kazimierz_chair2_R_01",
+                    "set": "访谈间",
+                    "sequence": 3
+                },
+                {
+                    "name": "访谈室双色移动挡板",
+                    "count": 1,
+                    "furniId": "furni_kazimierz_partition2_01",
+                    "set": "访谈间",
+                    "sequence": 3
+                },
+                {
+                    "name": "旗帜形显示屏",
+                    "count": 1,
+                    "furniId": "furni_kazimierz_LED_F_01",
+                    "set": "访谈间",
+                    "sequence": 3
+                },
+                {
+                    "name": "环形显示屏吊灯",
+                    "count": 1,
+                    "furniId": "furni_kazimierz_ceilingLamp_01",
+                    "set": "直播间装潢",
+                    "sequence": 4
+                },
+                {
+                    "name": "直播间实况壁纸",
+                    "count": 1,
+                    "furniId": "furni_kazimierz_wallpaper_01",
+                    "set": "直播间装潢",
+                    "sequence": 4
+                },
+                {
+                    "name": "直播间磨砂地砖",
+                    "count": 1,
+                    "furniId": "furni_kazimierz_floor_01",
+                    "set": "直播间装潢",
+                    "sequence": 4
+                }
+            ],
+            "imageList": [
+                {
+                    "picId": "kazimierz_2021_1",
+                    "index": 0
+                },
+                {
+                    "picId": "kazimierz_2021_2",
+                    "index": 1
+                },
+                {
+                    "picId": "kazimierz_2021_3",
+                    "index": 2
+                },
+                {
+                    "picId": "kazimierz_2021_4",
+                    "index": 3
+                },
+                {
+                    "picId": "kazimierz_2021_5",
+                    "index": 4
+                },
+                {
+                    "picId": "kazimierz_2021_6",
+                    "index": 5
+                }
+            ]
+        }
+    ],
+    "playerDataDelta": {
+        "modified": {},
+        "deleted": {}
+    }
+}

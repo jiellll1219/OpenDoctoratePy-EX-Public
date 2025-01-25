@@ -425,3 +425,11 @@ def BuyAP():
             }
         }
     }
+
+def changeResume():
+    return {
+        "playerDataDelta": {
+            "modified": {"status": {"resume": request.get_json()["resume"]}},
+            "deleted": {},
+        }
+    }
