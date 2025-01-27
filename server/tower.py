@@ -2,11 +2,10 @@ from virtualtime import time
 from random import sample
 from flask import request
 
-from constants import TOWERDATA_PATH, TOWER_TABLE_PATH, USER_JSON_PATH
+from constants import TOWERDATA_PATH, USER_JSON_PATH, get_memory
 
 from utils import read_json, write_json, decrypt_battle_data, update_data, logging
 
-TOWER_TABLE = TOWER_TABLE_PATH
 
 def currentCoords(stageid: str):
     tower = read_json(TOWERDATA_PATH)
@@ -81,10 +80,10 @@ def towerCreateGame():
     request_data = request.get_json()
 
     if request_data["isHard"] == 1:
-        levels = TOWER_TABLE["towers"][request_data["tower"]]["hardLevels"]
+        levels = get_memory("tower_table")["towers"][request_data["tower"]]["hardLevels"]
         mode = True
     else:
-        levels = TOWER_TABLE["towers"][request_data["tower"]]["levels"]
+        levels = get_memory("tower_table")["towers"][request_data["tower"]]["levels"]
         mode = False
     layer = []
     for level in levels:

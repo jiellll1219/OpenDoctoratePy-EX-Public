@@ -5,26 +5,17 @@ from copy import deepcopy
 from base64 import b64encode
 from hashlib import md5
 from flask import request
+from datetime import datetime
 
 from constants import (
     USER_JSON_PATH,
     CONFIG_PATH,
     BATTLE_REPLAY_JSON_PATH,
-    SKIN_TABLE_PATH,
-    CHARACTER_TABLE_PATH,
-    EQUIP_TABLE_PATH,
-    STORY_TABLE_PATH,
-    STAGE_TABLE_PATH,
     SYNC_DATA_TEMPLATE_PATH,
-    BATTLEEQUIP_TABLE_PATH,
-    DM_TABLE_PATH,
-    RETRO_TABLE_PATH,
-    HANDBOOK_INFO_TABLE_PATH,
+    CRISIS_V2_JSON_BASE_PATH,
     MAILLIST_PATH,
-    CHARM_TABLE_PATH,
-    ACTIVITY_TABLE_PATH,
-    CHARWORD_TABLE_PATH,
-    SQUADS_PATH
+    SQUADS_PATH,
+    get_memory
 )
 from utils import read_json, write_json
 import uuid
@@ -47,7 +38,7 @@ def accountLogin():
 
 
 def accountSyncData():
-
+    print(datetime.now())
     if not exists(USER_JSON_PATH):
         write_json({}, USER_JSON_PATH)
 
@@ -57,15 +48,15 @@ def accountSyncData():
     config = read_json(CONFIG_PATH)
 
     # Load newest data
-    data_skin = read_json(SKIN_TABLE_PATH, encoding="utf-8")
-    character_table = read_json(CHARACTER_TABLE_PATH, encoding="utf-8")
-    equip_table = read_json(EQUIP_TABLE_PATH, encoding="utf-8")
-    battle_equip_table = read_json(BATTLEEQUIP_TABLE_PATH, encoding="utf-8")
-    display_meta_table = read_json(DM_TABLE_PATH, encoding="utf-8")
-    retro_table = read_json(RETRO_TABLE_PATH, encoding="utf-8")
-    charm_table = read_json(CHARM_TABLE_PATH, encoding="utf-8")
-    activity_table = read_json(ACTIVITY_TABLE_PATH, encoding="utf-8")
-    charword_table = read_json(CHARWORD_TABLE_PATH, encoding="utf-8")
+    data_skin = get_memory("skin_table")
+    character_table = get_memory("character_table")
+    equip_table = get_memory("uniequip_table")
+    battle_equip_table = get_memory("battle_equip_table")
+    display_meta_table = get_memory("display_meta_table")
+    retro_table = get_memory("retro_table")
+    charm_table = get_memory("charm_table")
+    activity_table = get_memory("activity_table")
+    charword_table = get_memory("charword_table")
 
     ts = round(time())
     cnt = 0
@@ -107,9 +98,8 @@ def accountSyncData():
     player_data["user"]["status"]["secretarySkinId"] = use_profile
     player_data["user"]["background"]["selected"] = player_data["user"]["charRotation"]["preset"][target_current]["background"]
 
-    write_json(player_data, SYNC_DATA_TEMPLATE_PATH, encoding="utf-8")
 
-    #Tamper Skins
+    # Tamper Skins
     skinKeys = list(data_skin["charSkins"].keys())
     player_data["user"]["skin"]["characterSkins"] = {}
     for i in data_skin["charSkins"].values():
@@ -117,13 +107,16 @@ def accountSyncData():
             # Not Special Skins
             cnt += 1
             continue
-        
+
         player_data["user"]["skin"]["characterSkins"][skinKeys[cnt]] = 1
-        if not i["charId"] in tempSkinTable.keys() \
-                or i["displaySkin"]["onYear"] > data_skin["charSkins"][tempSkinTable[i["charId"]]]["displaySkin"]["onYear"]:
+        if (
+            i["charId"] not in tempSkinTable.keys()
+            or i["displaySkin"]["onYear"]
+            > data_skin["charSkins"][tempSkinTable[i["charId"]]]["displaySkin"]["onYear"]
+            ):
             tempSkinTable[i["charId"]] = i["skinId"]
         cnt += 1
-        
+
     # Tamper Operators
     edit_json = config["charConfig"]
 
@@ -358,7 +351,6 @@ def accountSyncData():
 
     dupe_characters = edit_json["duplicateUnits"]
     for dupeChar in dupe_characters:
-
         tempChar = {}
         for char in myCharList:
             if dupeChar == myCharList[char]["charId"]:
@@ -375,7 +367,7 @@ def accountSyncData():
 
     # Tamper story
     myStoryList = {"init": 1}
-    story_table = read_json(STORY_TABLE_PATH, encoding="utf-8")
+    story_table = get_memory("story_table")
     for story in story_table:
         myStoryList.update({story:1})
 
@@ -383,7 +375,7 @@ def accountSyncData():
 
     # Tamper Stages
     myStageList = {}
-    stage_table = read_json(STAGE_TABLE_PATH, encoding="utf-8")
+    stage_table = get_memory("stage_table")
     for stage in stage_table["stages"]:
         myStageList.update({
             stage: {
@@ -401,7 +393,7 @@ def accountSyncData():
 
     # Tamper addon [paradox&records]
     addonList = {}
-    addon_table = read_json(HANDBOOK_INFO_TABLE_PATH, encoding="utf-8")
+    addon_table = get_memory("handbook_info_table")
     for charId in addon_table["handbookDict"]:
         addonList[charId] = {"story":{}}
         story = addon_table["handbookDict"][charId]["handbookAvgList"]
@@ -466,7 +458,6 @@ def accountSyncData():
             player_data["user"]["campaignsV2"]["open"]["permanent"].append(stage)
             player_data["user"]["campaignsV2"]["open"]["training"].append(stage)
 
-
     # Tamper Avatars and Backgrounds
     avatar_icon = {}
     for avatar in display_meta_table["playerAvatarData"]["avatarList"]:
@@ -486,6 +477,12 @@ def accountSyncData():
             }
         })
     player_data["user"]["background"]["bgs"] = bgs
+
+    if "themeList" in display_meta_table["homeBackgroundData"]:
+        themes = {}
+        for theme in display_meta_table["homeBackgroundData"]["themeList"]:
+            themes[theme["id"]] = {"unlock": 1691670000}
+        player_data["user"]["homeTheme"]["themes"] = themes
 
     # Update charms
     for charm in charm_table["charmList"]:
@@ -545,7 +542,10 @@ def accountSyncData():
 
     # Check if mail exists
     for mailId in mail_data["mailList"]:
-        if int(mailId) not in mail_data["recievedIDs"] and int(mailId) not in mail_data["deletedIDs"]:
+        if (
+            int(mailId) not in mail_data["recievedIDs"]
+            and int(mailId) not in mail_data["deletedIDs"]
+        ):
             player_data["user"]["pushFlags"]["hasGifts"] = 1
             break
 
@@ -556,21 +556,17 @@ def accountSyncData():
     player_data["user"]["status"]["lastOnlineTs"] = ts
     player_data["user"]["crisis"]["lst"] = ts
     player_data["user"]["crisis"]["nst"] = ts + 3600
-    # player_data["user"]["crisis"]["training"]["nst"] = ts + 3600
     player_data["ts"] = ts
 
     replay_data = read_json(BATTLE_REPLAY_JSON_PATH)
     replay_data["currentCharConfig"] = md5(b64encode(json.dumps(edit_json).encode())).hexdigest()
     write_json(replay_data, BATTLE_REPLAY_JSON_PATH)
 
-    # if config["userConfig"]["restorePreviousStates"]["is2"]:
-    #     is2_data = read_json(RLV2_JSON_PATH)
-    #     player_data["user"]["rlv2"] = is2_data
-
     # Enable battle replays
     if replay_data["currentCharConfig"] in list(replay_data["saved"].keys()):
         for replay in replay_data["saved"][replay_data["currentCharConfig"]]:
-            player_data["user"]["dungeon"]["stages"][replay]["hasBattleReplay"] = 1
+            if replay in player_data["user"]["dungeon"]["stages"]:
+                player_data["user"]["dungeon"]["stages"][replay]["hasBattleReplay"] = 1
 
     squads_data = read_json(SQUADS_PATH)
     charId2instId = {}
@@ -583,39 +579,126 @@ def accountSyncData():
                 break
             charId = slot["charId"]
             del slot["charId"]
-            instId = 1
             if charId in charId2instId:
                 instId = charId2instId[charId]
-            slot["charInstId"] = instId
+                slot["charInstId"] = instId
+                if (
+                    slot["currentEquip"]
+                    not in player_data["user"]["troop"]["chars"][instId]["equip"]
+                ):
+                    slot["currentEquip"] = None
+            else:
+                squads_data[i]["slots"][j] = None
             j += 1
         for k in range(j, 12):
             squads_data[i]["slots"].append(None)
+        squads_data[i]["slots"] = squads_data[i]["slots"][:12]
 
     player_data["user"]["troop"]["squads"] = squads_data
 
     # Copy over from previous launch if data exists
-    if "user" in list(saved_data.keys()) and config["userConfig"]["restorePreviousStates"]["squadsAndFavs"]:
+    if (
+        "user" in saved_data
+        and config["userConfig"]["restorePreviousStates"]["squadsAndFavs"]
+    ):
         player_data["user"]["troop"]["squads"] = saved_data["user"]["troop"]["squads"]
 
         for _, saved_character in saved_data["user"]["troop"]["chars"].items():
-            index = "0"
-            for character_index, character in player_data["user"]["troop"]["chars"].items():
+            index = None
+            for character_index, character in player_data["user"]["troop"][
+                "chars"
+            ].items():
                 if saved_character["charId"] == character["charId"]:
                     index = character_index
                     break
 
-            player_data["user"]["troop"]["chars"][index]["starMark"] = saved_character["starMark"]
-            player_data["user"]["troop"]["chars"][index]["voiceLan"] = saved_character["voiceLan"]
-            player_data["user"]["troop"]["chars"][index]["skin"] = saved_character["skin"]
-            player_data["user"]["troop"]["chars"][index]["defaultSkillIndex"] = saved_character["defaultSkillIndex"]
-            player_data["user"]["troop"]["chars"][index]["currentEquip"] = saved_character["currentEquip"]
+            if index is not None:
+                player_data["user"]["troop"]["chars"][index]["starMark"] = (saved_character["starMark"])
+                player_data["user"]["troop"]["chars"][index]["voiceLan"] = (saved_character["voiceLan"])
+                player_data["user"]["troop"]["chars"][index]["skin"] = saved_character["skin"]
+                player_data["user"]["troop"]["chars"][index]["defaultSkillIndex"] = (saved_character["defaultSkillIndex"])
+                if saved_character["currentEquip"]:
+                    player_data["user"]["troop"]["chars"][index]["currentEquip"] = (saved_character["currentEquip"])
+
+    secretary = config["userConfig"]["secretary"]
+    secretarySkinId = config["userConfig"]["secretarySkinId"]
+    background = config["userConfig"]["background"]
+    theme = config["userConfig"]["theme"]
+
+    if "user" in saved_data and config["userConfig"]["restorePreviousStates"]["ui"]:
+        secretary = saved_data["user"]["status"]["secretary"]
+        secretarySkinId = saved_data["user"]["status"]["secretarySkinId"]
+        background = saved_data["user"]["background"]["selected"]
+        theme = saved_data["user"]["homeTheme"]["selected"]
+
+    player_data["user"]["status"]["secretary"] = secretary
+    player_data["user"]["status"]["secretarySkinId"] = secretarySkinId
+    player_data["user"]["background"]["selected"] = background
+    player_data["user"]["homeTheme"]["selected"] = theme
 
     season = config["towerConfig"]["season"]
 
     player_data["user"]["tower"]["season"]["id"] = season
 
-    write_json(player_data, USER_JSON_PATH)
-    
+    story_review_table = get_memory("story_review_table")
+    story_review_meta_table = get_memory("story_review_meta_table")
+    story_review_groups = {}
+    for i in story_review_table:
+        story_review_groups[i] = {"rts": 1700000000, "stories": [], "trailRewards": []}
+        for j in story_review_table[i]["infoUnlockDatas"]:
+            story_review_groups[i]["stories"].append(
+                {"id": j["storyId"], "uts": 1695000000, "rc": 1}
+            )
+        if i in story_review_meta_table["miniActTrialData"]["miniActTrialDataMap"]:
+            for j in story_review_meta_table["miniActTrialData"]["miniActTrialDataMap"][
+                i
+            ]["rewardList"]:
+                story_review_groups[i]["trailRewards"].append(j["trialRewardId"])
+    player_data["user"]["storyreview"]["groups"] = story_review_groups
+
+    enemy_handbook_table = get_memory("enemy_handbook_table")
+    enemies = {}
+    if "enemyData" in enemy_handbook_table:
+        for i in enemy_handbook_table["enemyData"]:
+            enemies[i] = 1
+    else:
+        for i in enemy_handbook_table:
+            enemies[i] = 1
+    player_data["user"]["dexNav"]["enemy"]["enemies"] = enemies
+
+    for i in activity_table["activity"]:
+        if i not in player_data["user"]["activity"]:
+            player_data["user"]["activity"][i] = {}
+        for j in activity_table["activity"][i]:
+            if j not in player_data["user"]["activity"][i]:
+                player_data["user"]["activity"][i][j] = {}
+
+    player_data["user"]["medal"] = {"medals": {}}
+    medal_table = get_memory("medal_table")
+    for i in medal_table["medalList"]:
+        medalId = i["medalId"]
+        player_data["user"]["medal"]["medals"][medalId] = {
+            "id": medalId,
+            "val": [],
+            "fts": 1695000000,
+            "rts": 1695000000,
+        }
+
+    rlv2_table = get_memory("roguelike_topic_table")
+    for theme in player_data["user"]["rlv2"]["outer"]:
+        if theme in rlv2_table["details"]:
+            player_data["user"]["rlv2"]["outer"][theme]["record"]["stageCnt"] = {
+                i: 1 for i in rlv2_table["details"][theme]["stages"]
+            }
+
+    selected_crisis = config["crisisV2Config"]["selectedCrisis"]
+    if selected_crisis:
+        rune = read_json(
+            f"{CRISIS_V2_JSON_BASE_PATH}{selected_crisis}.json", encoding="utf-8"
+        )
+        season = rune["info"]["seasonId"]
+        player_data["user"]["crisisV2"]["current"] = season
+    print(datetime.now())
     return player_data
 
 

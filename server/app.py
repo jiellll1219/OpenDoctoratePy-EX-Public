@@ -5,17 +5,19 @@ from datetime import datetime
 from flask import Flask
 
 from utils import read_json
-from constants import CONFIG_PATH
+from constants import CONFIG_PATH, EX_CONFIG_PATH, preload_json_data
 
 import account, background, building, campaignV2, char, charBuild, charm, \
         crisis, deepsea, gacha, mail, online, tower, quest, pay, rlv2, shop, story, \
         user, asset.assetbundle, config.prod, social, templateShop, logs, sandbox, charrotation \
 
 server_config = read_json(CONFIG_PATH)
+ex_config = read_json(EX_CONFIG_PATH)
 
 app = Flask(__name__)
 host = server_config["server"]["host"]
 port = server_config["server"]["port"]
+useMemoryCache = ex_config["useMemoryCache"]
 
 logger = logging.getLogger('werkzeug')
 logger.setLevel(logging.INFO)
@@ -254,5 +256,9 @@ def writeLog(data):
     print(f'[{datetime.utcnow()}] {data}')
 
 if __name__ == "__main__":
+    if useMemoryCache:
+        writeLog('Loading all table data to memory')
+        preload_json_data()
+        writeLog('Sucessfully loaded all table data')
     writeLog('[SERVER] Server started at http://' + host + ":" + str(port))
     app.run(host=host, port=port, debug=True)

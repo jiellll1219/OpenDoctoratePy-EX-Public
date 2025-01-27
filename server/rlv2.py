@@ -8,9 +8,9 @@ from constants import (
     RLV2_JSON_PATH,
     RLV2_USER_SETTINGS_PATH,
     USER_JSON_PATH,
-    RL_TABLE_PATH,
     CONFIG_PATH,
     RLV2_SETTINGS_PATH,
+    get_memory
 )
 
 from utils import read_json, write_json, decrypt_battle_data, update_data
@@ -553,8 +553,7 @@ def rlv2CloseRecruitTicket():
 
 
 def getMap(theme):
-    with open (RL_TABLE_PATH, encoding='utf-8') as a:
-        rlv2_table = json.load(a)
+    rlv2_table = get_memory("roguelike_topic_table")
     stages = [i for i in rlv2_table["details"][theme]["stages"]]
     match theme:
         case "rogue_1":
@@ -666,7 +665,7 @@ def getZone(stage_id):
 
 
 def getBuffs(rlv2, stage_id):
-    rlv2_table = update_data(RL_TABLE_PATH)
+    rlv2_table = get_memory("roguelike_topic_table")
     theme = rlv2["game"]["theme"]
     buffs = []
 
@@ -1771,7 +1770,7 @@ def getGoods(theme):
         }
     ]
     i = 1
-    rlv2_table = update_data(RL_TABLE_PATH)
+    rlv2_table = get_memory("roguelike_topic_table")
     for j in rlv2_table["details"][theme]["archiveComp"]["relic"]["relic"]:
         goods.append(
             {

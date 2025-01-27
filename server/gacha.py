@@ -5,14 +5,10 @@ from constants import (
     NORMALGACHA_PATH, 
     SYNC_DATA_TEMPLATE_PATH, 
     USER_JSON_PATH, 
-    EQUIP_TABLE_PATH, 
-    CHARACTER_TABLE_PATH, 
-    CHARWORD_TABLE_PATH, 
     EX_CONFIG_PATH,
     GACHA_HISTORY_PATH,
-    GACHA_TABLE_PATH,
-    CHARACTER_TABLE_PATH,
-    EX_GACHA_DATA_PATH
+    EX_GACHA_DATA_PATH,
+    get_memory
 )
 from utils import read_json, write_json
 
@@ -106,7 +102,7 @@ def finishNormalGacha():
 
     if repeat_char_id == 0:  # 如果是新角色
         char_data = {}  # 角色数据
-        skils_array = read_json(CHARACTER_TABLE_PATH)[random_char_id]["skills"]  # 技能数组
+        skils_array = get_memory("character_table")[random_char_id]["skills"]  # 技能数组
         skils = []  # 技能列表
 
         for skill in skils_array:
@@ -133,13 +129,13 @@ def finishNormalGacha():
         char_data["gainTime"] = int(time)  # 获得时间
         char_data["skills"] = skils  # 技能
         char_data["equip"] = {}  # 装备
-        char_data["voiceLan"] = read_json(CHARWORD_TABLE_PATH)["charDefaultTypeDict"][random_char_id]  # 角色语音
+        char_data["voiceLan"] = get_memory("charword_table")["charDefaultTypeDict"][random_char_id]  # 角色语音
         char_data["defaultSkillIndex"] = -1 if not skils else 0  # 默认技能索引
 
         sub1 = random_char_id.split("_", 2)[2]  # 分割字符
         char_name = sub1.split("_", 1)[1]  # 分割角色名
 
-        if f"uniequip_001_{char_name}" in read_json(EQUIP_TABLE_PATH):
+        if f"uniequip_001_{char_name}" in get_memory("uniequip_table"):
             equip = {
                 f"uniequip_001_{char_name}": {"hide": 0, "locked": 0, "level": 1},  # 装备
                 f"uniequip_002_{char_name}": {"hide": 0, "locked": 0, "level": 1}  # 装备
@@ -279,7 +275,7 @@ def Gacha(ticket_type, use_diamond_shard, json_body):
     # 读取卡池历史记录数据
     gacha_history_data = read_json(GACHA_HISTORY_PATH, encoding="utf-8")
     # 读取角色信息数据
-    character_table_data = read_json(CHARACTER_TABLE_PATH, encoding="utf-8")
+    character_table_data = get_memory("character_table")
     # 获取卡池ID
     pool_id = json_body['poolId']
     # 获取卡池路径
@@ -468,13 +464,13 @@ def Gacha(ticket_type, use_diamond_shard, json_body):
                 "evolvePhase": 0,
                 "gainTime": time,
                 "skills": [],
-                "voiceLan": read_json(CHARWORD_TABLE_PATH, encoding="utf8")['charDefaultTypeDict'][random_char_id],
+                "voiceLan": get_memory("charword_table")['charDefaultTypeDict'][random_char_id],
                 "defaultSkillIndex": 0,
                 "currentEquip": None
             }
 
             # 获取角色的技能信息
-            skills = read_json(CHARACTER_TABLE_PATH, encoding="utf8")[random_char_id]['skills']
+            skills = get_memory("character_table")[random_char_id]['skills']
             for skill in skills:
                 char_data['skills'].append({
                     "skillId": skill['skillId'],
@@ -485,7 +481,7 @@ def Gacha(ticket_type, use_diamond_shard, json_body):
                 })
 
             # 判断是否为特殊角色
-            if f"uniequip_001_{random_char_id.split('_')[2]}" in EQUIP_TABLE_PATH:
+            if f"uniequip_001_{random_char_id.split('_')[2]}" in get_memory("uniequip_table"):
                 equip = {
                     f"uniequip_001_{random_char_id.split('_')[2]}": {"hide": 0, "locked": 0, "level": 1},
                     f"uniequip_002_{random_char_id.split('_')[2]}": {"hide": 0, "locked": 0, "level": 1}
@@ -716,7 +712,7 @@ def gacha():
 def cate():
 
     time_stamp = time()
-    gacha_table = read_json(GACHA_TABLE_PATH, encoding='utf-8')
+    gacha_table = get_memory("gacha_table")
     result_data = []
     max_count = 4
 
@@ -750,7 +746,7 @@ def cate():
 
 def history():
     gacha_history_data = read_json(GACHA_HISTORY_PATH, encoding='utf-8')
-    gacha_table = read_json(GACHA_TABLE_PATH, encoding='utf-8')
+    gacha_table = get_memory("gacha_table")
     category = request.args.get("category")  # 卡池id
     
     # 使用传递的 gachaTs 作为时间基准；若没有传递，则使用当前时间

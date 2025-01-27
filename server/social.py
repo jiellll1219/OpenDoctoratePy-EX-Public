@@ -1,6 +1,6 @@
 import json
 from flask import request
-from constants import *
+from constants import USER_JSON_PATH, CONFIG_PATH
 from utils import read_json, write_json
 
 

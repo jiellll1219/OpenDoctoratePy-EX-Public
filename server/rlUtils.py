@@ -1,13 +1,12 @@
 from virtualtime import time
 from random import choice, choices, random
 
-from constants import RL_TABLE_PATH, CHARACTER_TABLE_PATH, USER_JSON_PATH, \
-                    RLV2_TEMPBUFF_JSON_PATH, RLV2_NODESINFO, RLV2_CONFIG_PATH
+from constants import USER_JSON_PATH, RLV2_TEMPBUFF_JSON_PATH, RLV2_NODESINFO, RLV2_CONFIG_PATH, get_memory
 from utils import read_json
 from core.function.update import updateData
 
-RL_TABLE = updateData(RL_TABLE_PATH)
-CHARACTER_TABLE = updateData(CHARACTER_TABLE_PATH)
+RL_TABLE = get_memory("roguelike_topic_table")
+CHARACTER_TABLE = get_memory("character_table")
 
 POPULATION_RECRUIT_MAP = {
     "0": 0,

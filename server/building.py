@@ -1,7 +1,7 @@
 from virtualtime import time
 from flask import request
 from utils import read_json, write_json
-from constants import SYNC_DATA_TEMPLATE_PATH, USER_JSON_PATH, BUILDING_TABLE_PATH
+from constants import SYNC_DATA_TEMPLATE_PATH, USER_JSON_PATH, get_memory
 import json
 
 def Sync():
@@ -31,13 +31,13 @@ def Sync():
             k = str(k)
             user_data["user"]["building"]["chars"][k]["roomSlotId"] = i
             user_data["user"]["building"]["chars"][k]["index"] = j
-    building_table = read_json(BUILDING_TABLE_PATH, encoding="utf-8")
+    building_table = get_memory("building_table")
     furniture = {
         i: {"count": 9999, "inUse": 0}
         for i in building_table["customData"]["furnitures"]
     }
     user_data["user"]["building"]["furniture"] = furniture
-    write_json(user_data["user"]["building"], USER_JSON_PATH)
+    write_json(user_data, USER_JSON_PATH)
     result = {
         "playerDataDelta": {
             "modified": {
