@@ -79,7 +79,7 @@ def preload_json_data():
         "retro_table": RETRO_TABLE_PATH,
         "handbook_info_table": HANDBOOK_INFO_TABLE_PATH,
         "tower_table": TOWER_TABLE_PATH,
-        "building_table": BUILDING_TABLE_PATH,
+        "building_data": BUILDING_TABLE_PATH,
         "story_review_table": STORY_REVIEW_TABLE_PATH,
         "enemy_handbook_table": ENEMY_HANDBOOK_TABLE_PATH,
         "medal_table": MEDAL_TABLE_PATH,

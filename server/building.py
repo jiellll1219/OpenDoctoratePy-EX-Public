@@ -31,7 +31,7 @@ def Sync():
             k = str(k)
             user_data["user"]["building"]["chars"][k]["roomSlotId"] = i
             user_data["user"]["building"]["chars"][k]["index"] = j
-    building_table = get_memory("building_table")
+    building_table = get_memory("building_data")
     furniture = {
         i: {"count": 9999, "inUse": 0}
         for i in building_table["customData"]["furnitures"]
