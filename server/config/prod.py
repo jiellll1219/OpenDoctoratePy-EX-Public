@@ -3,6 +3,7 @@ import json
 
 from random import shuffle
 from constants import CONFIG_PATH
+from collections import OrderedDict
 from utils import read_json, write_json
 from core.function.update import updateData
 
@@ -92,3 +93,29 @@ def prodAnnouncement():
         data = updateData("https://ark-us-static-online.yo-star.com/announce/Android/announcement.meta.json")
 
     return data
+
+def prodGateMeta():
+    return {
+        "preAnnounceId": "478",
+        "actived": True,
+        "preAnnounceType": 2
+    }
+
+def get_latest_game_info():
+
+    result = OrderedDict([
+        ("version", ""),
+        ("action", 3),
+        ("update_type", 0),
+        ("update_info", OrderedDict([
+            ("package", None),
+            ("patch", None),
+            ("custom_info", ""),
+            ("source_package", None),
+        ])),
+        ("client_version", "")
+    ])
+    return result
+
+def ak_sdk_config():
+    return {"report_device_info": 10000}

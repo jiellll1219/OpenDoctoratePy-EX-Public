@@ -604,3 +604,85 @@ def usePresetQueue():
             "deleted": {}
         }
     }
+
+def editLockQueue():
+    json_body = request.get_json()
+    # {'lockPos': {'slot_28': [0, 0, 0, 0, 1], 'slot_20': [0, 0, 0, 0, 0], 'slot_9': [0, 0, 0, 0, 0], 'slot_3': [0, 0, 0, 0, 0]}}
+    building_data = get_memory("building_data")
+
+    # TODO: 待编写
+
+    return {
+        "playerDataDelta": {
+            "modified": {
+                "building": {
+                    
+                }
+            }
+        }
+    }
+
+def batchRestChar():
+    json_body = request.get_json()
+
+    user_data = read_json(USER_JSON_PATH, encoding="utf-8")
+    building_data = user_data["user"]["building"]
+
+    # TODO: 待编写
+
+    return {
+        "playerDataDelta": {
+            "modified": {
+                "building": {
+                    
+                }
+            }
+        }
+    }
+
+def buildRoom():
+    json_body = request.get_json()
+    print(json_body)
+    # {'roomSlotId': 'slot_47', 'roomId': 'PRIVATE'}
+    user_data = read_json(USER_JSON_PATH, encoding="utf-8")
+    building_data = user_data["user"]["building"]
+
+    # TODO: 待编写
+
+    return {
+        "playerDataDelta": {
+            "modified": {
+                "building": {
+
+                }
+            }
+        }
+    }
+
+def setPrivateDormOwner():
+    json_body = request.get_json()
+
+    user_data = read_json(USER_JSON_PATH, encoding="utf-8")
+    building_data = user_data["user"]["building"]
+    target_slot_id = json_body["slotId"]
+    owners_id = json_body["charInsId"]
+
+    building_data["rooms"]["PRIVATE"][target_slot_id]["owners"] = list(owners_id)
+
+    write_json(user_data, USER_JSON_PATH, encoding="utf-8")
+
+    return {
+        "playerDataDelta": {
+            "modified": {
+                "building": {
+                    "rooms": {
+                        "PRIVATE": {
+                            target_slot_id: {
+                                "owners": owners_id
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }

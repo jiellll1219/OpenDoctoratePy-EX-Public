@@ -26,6 +26,11 @@
         "mail_newyear_2024_3",
         "mail_newyear_2024_4",
         "mail_newyear_2024_5",
+        "mail_newyear_2025_5",
+        "mail_newyear_2025_4",
+        "mail_newyear_2025_3",
+        "mail_newyear_2025_2",
+        "mail_newyear_2025_1",
         "mail_500w_kazimierz_1",
         "mail_500w_kazimierz_2",
         "mail_500w_kazimierz_3",
@@ -521,6 +526,96 @@
                     "id": "ap_supply_lt_100_2024_5",
                     "count": 1,
                     "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2025_5",
+            "MailArchiveItemType type": "NORMAL",
+            "sortId": 65,
+            "displayReceiveTs": 1738080000,
+            "year": 0,
+            "dateDelta": 0,
+            "senderId": "char_003_kalts",
+            "title": "来自凯尔希的祝福",
+            "content": "博士，过去的一年对你而言想必意义非凡。\n你接触了一些往事，见证了一些历史，也告别了一些故友。你对这片大地和你自身都有了更深入的了解，你也应当更加确信自己选择的道路，你选择的“希望”。\n罗德岛依然面临着无数挑战。我们做再多的准备都算不上充分，但这并不意味着我们要放弃拥有闲暇时光的权利。\n我们很少有机会去享受单纯的欢乐，可是当我们身处困境之时，往往是那些美好的回忆让我们能够克服艰险。\n多去见见罗德岛的干员们吧，在今天这个节日里，有许多人期待与你见面。我想他们会替我提醒你，在你选择的这条困难的道路上，你永远不会孤独。\n我们已经拥有的当下也会提醒我们——付出努力的所有意义，在于未来。\n新年快乐，博士。",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100_2025_5",
+                    "count": 1,
+                    "ItemType type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2025_4",
+            "MailArchiveItemType type": "NORMAL",
+            "sortId": 64,
+            "displayReceiveTs": 1738076400,
+            "year": 0,
+            "dateDelta": 0,
+            "senderId": "char_2026_yu",
+            "title": "来自余的祝福",
+            "content": "博士，今晚的年夜饭吃得还算尽兴吧？ 原本做完年夜饭我就打算休息了，但我想起你白天问的那个问题——“年年有余”的意思是不是年年有我，每年都能吃到我做的菜？ 虽然夸赞我厨艺的人很多，但你的夸法实在是有趣，所以我又特地为你做了一道小吃。 对了，新年快乐。",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100_2025_4",
+                    "count": 1,
+                    "ItemType type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2025_3",
+            "MailArchiveItemType type": "NORMAL",
+            "sortId": 63,
+            "displayReceiveTs": 1738072800,
+            "year": 0,
+            "dateDelta": 0,
+            "senderId": "char_1038_whitw2",
+            "title": "来自荒芜拉普兰德的祝福",
+            "content": "辞旧迎新！哈，这不是我们新沃尔西尼富有进取心的时代开拓者最喜欢的字眼吗？\n博士，你一定也很好奇，新沃尔西尼究竟辞了什么旧，又迎了什么新吧？\n信纸背面有一个地址，去那里找卡彭和甘比诺，他们会把我的车借给你。\n开着它在新沃尔西尼转一圈吧，你会看到你想看到的东西。\n哦，酒驾在新沃尔西尼会被重罚，别怪我没提醒你，哈哈！",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100_2025_3",
+                    "count": 1,
+                    "ItemType type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2025_2",
+            "MailArchiveItemType type": "NORMAL",
+            "sortId": 62,
+            "displayReceiveTs": 1738069200,
+            "year": 0,
+            "dateDelta": 0,
+            "senderId": "char_4058_pepe",
+            "title": "来自佩佩的祝福",
+            "content": "博士，新年快乐！ 我还在发掘现场，没法赶回来和你一起过节，所以就让侍女做了一份莲花饼给你送来。 这是我从小就喜欢的点心，不知道会不会合你的口味。 你也可以不吃，光是摆在那里也很好看哦，放心，它可以摆很久的！ 我大概还要再过一个月才能回来，不过，好消息是这次说不定有大发现呢，你可以期待一下！",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100_2025_2",
+                    "count": 1,
+                    "ItemType type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2025_1",
+            "MailArchiveItemType type": "NORMAL",
+            "sortId": 61,
+            "displayReceiveTs": 1738065600,
+            "year": 0,
+            "dateDelta": 0,
+            "senderId": "char_1035_wisdel",
+            "title": "来自维什戴尔的祝福",
+            "content": "你现在应该还在工作，别问我怎么知道的，我说过的，我会盯着你们。\n小兔子想走殿下的路，我不知道她能不能行，我也管不着，但她做得还不错。所以，你最好是真心在帮小兔子的忙，不然我就让你知道，我对你的办公桌做了些什么。\n好了，我也不是专门来吓你的，我没这么无聊。\n准备了一点礼物，给小兔子的，她已经收到了，至于你，给你做了碗炒饭。\n倒掉也没关系，不过，这碗炒饭是专门用熔炉里那些老不死的怒火炒的，还加上了我秘制的调料，整个卡兹戴尔大概也就这么一碗，你看着办吧，哈哈！\n【信件上有不少错别字，还有一些涂抹痕迹，但大体上来说，她的写字水平已经有了明显的进步。】",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100_2025_1",
+                    "count": 1,
+                    "ItemType type": "AP_SUPPLY"
                 }
             ]
         },

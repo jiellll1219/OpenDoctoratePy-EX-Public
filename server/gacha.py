@@ -38,44 +38,56 @@ def syncNormalGacha():
     return playerDataDelta
     
 
-def gachanormalGacha():
-    json_body = json.loads(request.data)
+def normalGacha():
+    json_body = request.get_json()
 
     # 从请求体中获取slotId和tagList
     slot_id = json_body["slotId"]
     tag_list = json_body["tagList"]
+    duration = json_body["duration"]
 
     # 修改招募相关信息
     user_sync_data = read_json(USER_JSON_PATH, encoding="utf-8")
-    user_sync_data["user"]["recruit"]["normal"]["slots"][str(slot_id)]["state"] = 2
-    select_tags = [{"pick": 1, "tagId": tag} for tag in tag_list]
-    user_sync_data["user"]["recruit"]["normal"]["slots"][str(slot_id)]["selectTags"] = select_tags
+    target_data = user_sync_data["user"]["recruit"]["normal"]["slots"][str(slot_id)]
+    target_data["state"] = 2
+    target_data["selectTags"] = [{"pick": 1, "tagId": tag} for tag in tag_list]
+    target_data["startTs"] = time()
+    target_data["durationInSec"] = duration
+    target_data["maxFinishTs"] = time() + duration
+    target_data["realFinishTs"] = time() + duration
 
     # 减少招募许可数量
-    user_sync_data["user"]["status"]["recruitLicense"] -= 1
+    # user_sync_data["user"]["status"]["recruitLicense"] -= 1
 
     # 更新用户数据并将其写回JSON文件
-    write_json(USER_JSON_PATH, user_sync_data)
+    write_json(user_sync_data, USER_JSON_PATH)
 
     # 构造返回的结果JSON对象
-    return {
+    result = {
         "playerDataDelta": {
             "modified": {
-                "recruit": user_sync_data["user"]["recruit"],
-                "status": user_sync_data["user"]["status"]
+                "recruit": {
+                    "normal": {
+                        "slots": {
+                            str(slot_id): user_sync_data["user"]["recruit"]["normal"]["slots"][str(slot_id)]
+                        }
+                    }
+                }
             },
             "deleted": {}
         }
     }
 
+    return result
 
 def finishNormalGacha():
 
     json_body = json.loads(request.data)
     slot_id = json_body["slotId"]
 
-    chars = read_json(USER_JSON_PATH)["user"]["troop"]["chars"]  # 玩家角色数据
-    building_chars = read_json(SYNC_DATA_TEMPLATE_PATH)["user"]["building"]["chars"]  # 建筑角色数据
+    user_data = read_json(USER_JSON_PATH, encoding="utf8")
+    chars = user_data["user"]["troop"]["chars"]  # 玩家角色数据
+    building_chars = user_data["user"]["building"]["chars"]  # 建筑角色数据
     avail_char_info = read_json(NORMALGACHA_PATH)["detailInfo"]["availCharInfo"]["perAvailList"]  # 可用角色信息
     random_rank_array = []  # 随机等级数组
 
@@ -171,7 +183,7 @@ def finishNormalGacha():
         user_json_path = read_json(USER_JSON_PATH)
         user_json_path["status"]["hggShard"] += 1  # 更新玩家状态
         if EX_CONFIG_PATH["gacha"]["saveCharacter"] == True:
-            write_json(USER_JSON_PATH, user_json_path)
+            write_json(user_json_path, USER_JSON_PATH)
     else:
         repeat_char = chars[str(repeat_char_id)]  # 重复角色
         potential_rank = repeat_char["potentialRank"]  # 潜能等级
@@ -204,7 +216,7 @@ def finishNormalGacha():
         user_json_path["status"][item_name] += item_count  # 更新玩家状态
         user_json_path["inventory"][f"p_{random_char_id}"] += 1  # 更新玩家库存
         if EX_CONFIG_PATH["gacha"]["saveCharacter"] == True:
-            write_json(USER_JSON_PATH, user_json_path) # 保存玩家数据
+            write_json(user_json_path, USER_JSON_PATH) # 保存玩家数据
 
         chars[str(repeat_char_id)] = repeat_char  # 更新角色数据
 
@@ -238,8 +250,62 @@ def getPoolDetail():
     json_body = request.get_json()
     pool_Id = json_body["poolId"]
 
-    pool = read_json(f"data/gacha/{pool_Id}.json", encoding="utf-8")
+    try:
+        pool = read_json(f"data/gacha/{pool_Id}.json", encoding="utf-8")
+    except:
+        pool = read_json(f"data/gacha/DEFAULT.json", encoding="utf-8")
     return pool
+
+def boostNormalGacha():
+    json_body = request.get_json()
+    real_finish_ts = int(time())
+
+    user_data = read_json(USER_JSON_PATH, encoding="utf-8")
+    user_data["user"]["recruit"]["normal"]["slots"][str(json_body["slotId"])]["realFinishTs"] = real_finish_ts
+    user_data["user"]["recruit"]["normal"]["slots"][str(json_body["slotId"])]["state"] = 3
+
+    write_json(user_data, USER_JSON_PATH, encoding="utf-8")
+
+    result =  {
+        "playerDataDelta": {
+            "modified": {
+                "recruit": {
+                    "normal": {
+                        "slots": {
+                            str(json_body["slotId"]): {
+                                "state": 3,
+                                "realFinishTs": real_finish_ts,
+                            }
+                        }
+                    }
+                }
+            },
+            "deleted": {},
+        }
+    }
+
+    return result
+
+def choosePoolUp():
+    json_body = request.get_json()
+    # {
+    #     "poolId": "FESCLASSIC_52_0_2",
+    #     "chooseChar": {
+    #         "5": [
+    #             "char_010_chen",
+    #             "char_017_huang"
+    #         ],
+    #         "4": [
+    #             "char_108_silent",
+    #             "char_128_plosis",
+    #             "char_148_nearl"
+    #         ]
+    #     }
+    # }
+
+    # TODO:待编写
+    user_data = read_json(USER_JSON_PATH, encoding="utf-8")
+    return {}
 
 def advancedGacha():
 
@@ -279,7 +345,10 @@ def Gacha(ticket_type, use_diamond_shard, json_body):
     # 获取卡池ID
     pool_id = json_body['poolId']
     # 获取卡池路径
-    pool_path = os.path.join(os.getcwd(), 'data', 'gacha', f'{pool_id}.json')
+    try: 
+        pool_path = os.path.join(os.getcwd(), 'data', 'gacha', f'{pool_id}.json')
+    except:
+        pool_path = os.path.join(os.getcwd(), 'data', 'gacha', 'DEFAULT.json')
     #读取卡池信息
     ex_gacha_data = read_json(EX_GACHA_DATA_PATH, encoding="utf-8")
     # 获取当前时间戳
@@ -385,14 +454,18 @@ def Gacha(ticket_type, use_diamond_shard, json_body):
         avail_char_info = pool_json['detailInfo']['availCharInfo']['perAvailList']
         # 如果不是新手卡池，获取卡池UP角色信息
         if not pool_id.startswith('BOOT'):
-            up_char_info = pool_json['detailInfo']['upCharInfo']['perCharList']
+            try:
+                up_char_info = pool_json['detailInfo']['upCharInfo']['perCharList']
+            except Exception:
+                up_char_info = []
+
         # 初始化随机权重数组
         random_rank_array = []
 
         # 遍历卡池角色信息
         for i, char_info in enumerate(avail_char_info):
-            # 计算总权重
-            total_percent = int(char_info['totalPercent'] * 200)
+            # 权重转换为整数
+            total_percent = int(float(char_info['totalPercent']) * 200)
             # 获取稀有度等级
             rarity_rank = char_info['rarityRank']
             # 如果稀有度等级为5，增加权重
@@ -430,10 +503,13 @@ def Gacha(ticket_type, use_diamond_shard, json_body):
 
         # 如果不是新手卡池，添加UP角色权重
         if not pool_id.startswith('BOOT'):
-            for up_char in up_char_info:
-                if up_char['rarityRank'] == random_rank['rarityRank']:
-                    up_char_percent = int(up_char['percent'] * 100) - 15
-                    random_char_array.extend(up_char['charIdList'] * up_char_percent)
+            try:
+                for up_char in up_char_info:
+                    if up_char['rarityRank'] == random_rank['rarityRank']:
+                        up_char_percent = int(up_char['percent'] * 100) - 15
+                        random_char_array.extend(up_char['charIdList'] * up_char_percent)
+            except Exception:
+                pass
 
         # 打乱随机角色ID列表
         random.shuffle(random_char_array)
@@ -451,6 +527,7 @@ def Gacha(ticket_type, use_diamond_shard, json_body):
         
         # 清空item_get
         item_get = []
+        
         if repeat_char_id == 0:
             char_data = {
                 "instId": int(random_char_id.split("_")[1]),

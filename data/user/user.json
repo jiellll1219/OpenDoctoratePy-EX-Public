@@ -1845,7 +1845,9 @@
                         "comment": [],
                         "exRunes": {
                             "node_17": 2,
-                            "node_22": 2
+                            "node_22": 2,
+                            "node_52": 2,
+                            "node_43": 2
                         },
                         "reward": {},
                         "rune": {},
@@ -1861,6 +1863,12 @@
                     },
                     "temporary": {
                         "crisis_v2_03-03": {
+                            "challenge": {},
+                            "rune": {},
+                            "scoreTotal": [],
+                            "state": 0
+                        },
+                        "crisis_v2_01-07_b": {
                             "challenge": {},
                             "rune": {},
                             "scoreTotal": [],

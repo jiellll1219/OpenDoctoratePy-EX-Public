@@ -283,3 +283,69 @@ def typeAct20side_competitionFinish():
                 "deleted": {}
             }
         }
+
+def questBattleContinue():
+    return {
+        "result": 0,
+        "battleId": "abcdefgh-1234-5678-a1b2c3d4e5f6",
+        "apFailReturn": 0,
+        "playerDataDelta": {"modified": {}, "deleted": {}},
+    }
+
+def readStory():
+    return {
+        "readCount": 1,
+        "playerDataDelta": {
+            "modified": {},
+            "deleted": {}
+        }
+    }
+
+def setTrapSquad():
+    json_body = request.get_json()
+    trapDomainId = json_body["trapDomainId"]
+    trapSquad = json_body["trapSquad"]
+    data = {
+        "playerDataDelta": {
+            "modified": {
+                "templateTrap": {"domains": {trapDomainId: {"squad": trapSquad}}}
+            },
+            "deleted": {},
+        }
+    }
+    return data
+
+def relicSelect():
+    json_bdoy = request.get_json()
+    activityId = json_bdoy["activityId"]
+    relicId = json_bdoy["relicId"]
+    data = {
+        "playerDataDelta": {
+            "modified": {
+                "activity": {"BOSS_RUSH": {activityId: {"relic": {"select": relicId}}}}
+            },
+            "deleted": {},
+        }
+    }
+    return data
+
+def setTool():
+    json_body = request.get_json()
+    tool = {"tool_trap": 1, "tool_wirebug": 1, "tool_flashbomb": 1, "tool_bomb": 1}
+    for i in json_body["tools"]:
+        tool[i] = 2
+    data = {
+        "playerDataDelta": {
+            "modified": {
+                "activity": {
+                    "TYPE_ACT24SIDE": {
+                        "act24side": {
+                            "tool": tool
+                            }
+                        }
+                    }
+                },
+            "deleted": {},
+        }
+    }
+    return data

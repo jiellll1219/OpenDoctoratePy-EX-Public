@@ -38,7 +38,6 @@ def accountLogin():
 
 
 def accountSyncData():
-    print(datetime.now())
     if not exists(USER_JSON_PATH):
         write_json({}, USER_JSON_PATH)
 
@@ -698,7 +697,7 @@ def accountSyncData():
         )
         season = rune["info"]["seasonId"]
         player_data["user"]["crisisV2"]["current"] = season
-    print(datetime.now())
+
     return player_data
 
 

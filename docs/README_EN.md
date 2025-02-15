@@ -37,7 +37,11 @@ If you want to contribute code but lack data, you can refer to this [il2cpp file
 
 ## Usage Guide Example
 
-Find GameData or dump game resources to get the `excel` folder and content, put the `excel` folder in the `data` directory, and then start the game
+Please ensure that the version of Python you are using is greater than 3.11. If it is lower than 3.11, there may be missing functions in the datetime module of Python  
+1. Search for GameData or dump game resources on your own to obtain the 'Excel' folder and its  contents, and place the 'Excel' folder in the 'data' directory  
+2. Use the pip command to install the required modules ` pip install -r requirements.txt`  
+3. Start the server by running 'start_dacal_Server. abt'  
+4. Find a way to route the game to the server on your own, this repository does not provide a solution
 
 If you think this is troublesome, you can also connect to my public server to experience it. The server address is `http://8.138.148.178:8443/`. My function development progress will also be synchronized to this server in real time. Note! The version of this server is still a single-player version and does not support multi-user play. This server is located in China. The code structure used by the server is not completely consistent with the code of this warehouse, but the functions are basically the same
 
@@ -61,7 +65,7 @@ Compatible with more time formats. You can directly input timestamps or formats 
 
 ## Keys in user.json
 
-In the `user` dictionary of these two files, the following entries exist:
+In the user dictionary of this file, the following items exist:
 
 ```json
 "dungeon": {},

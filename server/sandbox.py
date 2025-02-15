@@ -79,3 +79,11 @@ def exploreMode():
     data = json_body
 
     return data
+
+def eventChoice():
+
+    json_body = request.get_json
+
+    data = json_body
+
+    return data

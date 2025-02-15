@@ -1,0 +1,86 @@
+{
+    "detailInfo": {
+        "gachaObjGroups": null,
+        "availCharInfo": {
+            "perAvailList": [
+                {
+                    "rarityRank": 5,
+                    "charIdList": [
+                        "char_103_angel"
+                    ],
+                    "totalPercent": 0.02
+                },
+                {
+                    "rarityRank": 4,
+                    "charIdList": [
+                        "char_128_plosis"
+                    ],
+                    "totalPercent": 0.08
+                },
+                {
+                    "rarityRank": 3,
+                    "charIdList": [
+                        "char_141_nights"
+                    ],
+                    "totalPercent": 0.5
+                },
+                {
+                    "rarityRank": 2,
+                    "charIdList": [
+                        "char_123_fang"
+                    ],
+                    "totalPercent": 0.4
+                }
+            ]
+        },
+        "upCharInfo": {
+            "perCharList": []
+        },
+        "limitedChar": null,
+        "weightUpCharInfoList": null,
+        "gachaObjList": [
+            {
+                "gachaObject": "TEXT",
+                "type": 0,
+                "imageType": 0,
+                "param": "卡池干员列表"
+            },
+            {
+                "gachaObject": "RATE_UP_6",
+                "type": 0,
+                "imageType": 0,
+                "param": "标准寻访"
+            },
+            {
+                "gachaObject": "TEXT",
+                "type": 1,
+                "imageType": 0,
+                "param": "全部可能出现的干员"
+            },
+            {
+                "gachaObject": "AVAIL_CHAR",
+                "type": 0,
+                "imageType": 0,
+                "param": null
+            },
+            {
+                "gachaObject": "TEXT",
+                "type": 0,
+                "imageType": 0,
+                "param": "该寻访为【标准寻访】"
+            },
+            {
+                "gachaObject": "TEXT",
+                "type": 5,
+                "imageType": 0,
+                "param": "如果你看到了这段文字，那么说明该卡池的文件缺失，请等待仓库更新或自行抓取官方服务器返回的卡池内容"
+            },
+            {
+                "gachaObject": "TEXT",
+                "type": 5,
+                "imageType": 0,
+                "param": "If you see this text, it means that the gacha pool file is missing. Please wait for the warehouse to update or grab the card pool content returned by the official server yourself."
+            }
+        ]
+    }
+}

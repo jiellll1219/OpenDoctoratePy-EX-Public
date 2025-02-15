@@ -150,18 +150,26 @@ def updatePreset():
         result["playerDataDelta"]["modified"]["homeTheme"]["selected"] = ""
         result["playerDataDelta"]["modified"]["homeTheme"]["selected"] = sync_data["user"]["homeTheme"]["selected"] = json_body["data"]["homeTheme"]
 
-    if json_body.get("data", {}).get("profile") is not None:
+    if json_body["data"].get("profile") is not None:
+        str_char = re.search(r'^[^@#]+', json_body["data"]["profile"])
         try:
-            str_char = re.search(r'([^@]+)@', json_body["data"]["profile"])
-            config["userConfig"]["secretary"] = str_char.group(1)
+            config["userConfig"]["secretary"] = str_char.group(0)
             config["userConfig"]["secretarySkinId"] = json_body["data"]["profile"]
         except:
             pass
+        sync_data["user"]["charRotation"]["preset"][inst_id]["profile"] = json_body["data"]["profile"]
         result["playerDataDelta"]["modified"]["status"] = {}
         result["playerDataDelta"]["modified"]["status"]["secretary"] = ""
-        result["playerDataDelta"]["modified"]["status"]["secretary"] = sync_data["user"]["status"]["secretary"] = str_char.group(1)
         result["playerDataDelta"]["modified"]["status"]["secretarySkinId"] = ""
-        result["playerDataDelta"]["modified"]["status"]["secretarySkinId"] = sync_data["user"]["profile"]["secretarySkinId"] = json_body["data"]["profile"]
+        result["playerDataDelta"]["modified"]["status"]["profileInst"] = ""
+        result["playerDataDelta"]["modified"]["charRotation"]["preset"][inst_id]["slots"] = []
+        result["playerDataDelta"]["modified"]["charRotation"]["profileInst"] = ""
+
+        result["playerDataDelta"]["modified"]["status"]["secretary"] = sync_data["user"]["status"]["secretary"] = str_char.group(0)
+        result["playerDataDelta"]["modified"]["status"]["secretarySkinId"] = sync_data["user"]["status"]["secretarySkinId"] = json_body["data"]["profile"]
+        result["playerDataDelta"]["modified"]["charRotation"]["preset"][inst_id]["slots"] = sync_data["user"]["charRotation"]["preset"][inst_id]["slots"] = json_body["data"]["slots"]
+        result["playerDataDelta"]["modified"]["charRotation"]["profileInst"] = sync_data["user"]["charRotation"]["profileInst"]  = sync_data["user"]["status"]["profileInst"] = json_body["data"]["profileInst"]
+
 
     user_json_data["user"]["charRotation"] = sync_data["user"]["charRotation"]
 

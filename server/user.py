@@ -2,6 +2,7 @@ import json
 
 import requests
 from flask import request
+from random import random
 
 from constants import USER_JSON_PATH, SYNC_DATA_TEMPLATE_PATH
 from utils import read_json, write_json
@@ -432,4 +433,146 @@ def changeResume():
             "modified": {"status": {"resume": request.get_json()["resume"]}},
             "deleted": {},
         }
+    }
+
+def getOtherPlayerNameCard():
+
+    json_body = request.get_json()
+    # {'uid': '88888888'}
+    user_data = read_json(USER_JSON_PATH, encoding="utf-8")
+
+    assist_list = ["char_1035_wisdel", "char_4133_logos"]
+    assist_char_id = assist_list[random.randint(0, len(assist_list) - 1)]
+    assist_char_num_id = int(assist_char_id.split("_")[1])
+
+    assist_char_obj = user_data["troop"]["chars"][str(assist_char_num_id)].copy()
+    nickNumber = int(random.randint(1, 9999))
+
+    result = {
+        "nameCard": {
+            "nickName": "ABCDEFG",
+            "nickNumber": f"{nickNumber:04d}",
+            "uid": json_body["uid"],
+            "registerTs": 1700000000,
+            "mainStageProgress": None,
+            "charCnt": 0,
+            "skinCnt": 0,
+            "secretary": "char_002_amiya",
+            "secretarySkinId": "char_002_amiya#1",
+            "resume": "",
+            "teamV2": {},
+            "level": 200,  
+            "avatarId": "0",
+            "avatar": {
+                "type": "ICON",
+                "id": "avatar_def_01"
+            },
+            "assistCharList": [
+                assist_char_obj,
+                None,
+                None
+            ],
+            "medalBoard": {
+                "type": "EMPTY",
+                "custom": None,
+                "template": None
+            },
+            "nameCardStyle": {
+                "componentOrder": [
+                    "module_sign",
+                    "module_assist",
+                    "module_medal"
+                ],
+                "skin": {
+                    "selected": "nc_rhodes_default",
+                    "state": {}
+                },
+                "misc": {
+                    "showDetail": True,
+                    "showBirthday": False
+                }
+            }
+        }
+    }
+    return result
+
+def businessCard_changeNameCardComponent():
+    json_body = request.get_json()
+    return {
+        "playerDataDelta": {
+            "modified": {
+                "nameCardStyle": {"componentOrder": json_body["component"]}
+            },
+            "deleted": {},
+        }
+    }
+
+
+def businessCard_changeNameCardSkin():
+    json_body = request.get_json()
+    return {
+        "playerDataDelta": {
+            "modified": {
+                "nameCardStyle": {"skin": {"selected": json_body["skinId"]}}
+            },
+            "deleted": {},
+        }
+    }
+
+def editNameCard():
+
+    json_body = request.get_json()
+
+    return {
+        "playerDataDelta": {
+            "modified": {
+                
+            },
+            "deleted": {},
+        }
+    }
+
+def bindBirthday():
+
+    json_body = request.get_json()
+
+    user_data = read_json(USER_JSON_PATH, encoding="utf-8")
+    user_data["user"]["status"]["birthday"] = {
+        "month": -1,
+        "day": -1
+    }
+    user_data["user"]["status"]["birthday"]["month"] = int(json_body["month"])
+    user_data["user"]["status"]["birthday"]["day"] = int(json_body["day"])
+
+    write_json(USER_JSON_PATH, user_data, encoding="utf-8")
+
+    return {
+        "playerDataDelta": {
+            "modified": {
+                "user": {
+                    "status": {
+                        "birthday": {
+                            "month": json_body["month"],
+                            "day": json_body["day"],
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+def agreement_version():
+    return {
+        "status": 0,
+        "msg": "OK",
+        "data": {
+            "agreementUrl": {
+                "privacy": "https://user.hypergryph.com/protocol/plain/ak/privacy",
+                "service": "https://user.hypergryph.com/protocol/plain/ak/service",
+                "updateOverview": "https://user.hypergryph.com/protocol/plain/ak/overview_of_changes",
+                "childrenPrivacy": "https://user.hypergryph.com/protocol/plain/ak/children_privacy",
+            },
+            "authorized": True,
+            "isLatestUserAgreement": True,
+        },
     }
