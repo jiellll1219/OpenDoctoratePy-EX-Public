@@ -1,15 +1,23 @@
 from flask import request
-from constants import TEMPLATEGOODLIST_PATH
-from utils import read_json, write_json
+
+from constants import TEMPLATE_SHOP_PATH
+from utils import read_json
+
 
 def getGoodList():
+    shop_id = str(request.get_json()["shopId"])
+    data = read_json(TEMPLATE_SHOP_PATH, encoding="utf-8")[shop_id]
+    return {
+        "data": data,
+        "nextSyncTime": -1,
+        "playerDataDelta": {
+            "modified": {},
+            "deleted": {}
+        }
+    }
 
-    request_data = read_json(TEMPLATEGOODLIST_PATH, encoding="utf-8")
-
-    return request_data
 
 def buyGood():
-    
     json_body = request.get_json
 
     return json_body

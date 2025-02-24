@@ -24,7 +24,6 @@ RLV2_USER_SETTINGS_PATH = "data/user/rlv2UserSettings.json"
 RLV2_SETTINGS_PATH = "data/user/rlv2Settings.json"
 CRISIS_JSON_BASE_PATH = "data/crisis/"
 CRISIS_V2_JSON_BASE_PATH = "data/crisisV2/"
-CRISISV2GOODLIST_PATH = "data/shop/CrisisV2GoodList.json"
 RUNE_JSON_PATH = "data/user/rune.json"
 
 # RLV2 Options
@@ -107,19 +106,8 @@ def get_memory(key: str):
         return read_json(f"data/excel/{key}.json", encoding='utf-8')
 
 # Shop Data
+SHOP_PATH = "data/shop/shop.json"   #可以考虑缓存在内存中
 ALLPRODUCTLIST_PATH = "data/shop/AllProductList.json"
-CASHGOODLIST_PATH = "data/shop/CashGoodList.json"
-EPGSGOODLIST_PATH = "data/shop/EPGSGoodList.json"
-EXTRAGOODLIST_PATH = "data/shop/ExtraGoodList.json"
-FURNIGOODLIST_PATH = "data/shop/FurniGoodList.json"
-GPGOODLIST_PATH = "data/shop/GPGoodList.json"
-HIGHGOODLIST_PATH = "data/shop/HighGoodList.json"
-LMTGSGOODLIST_PATH = "data/shop/LMTGSGoodList.json"
-LOWGOODLIST_PATH = "data/shop/LowGoodList.json"
-REPGOODLIST_PATH = "data/shop/RepGoodList.json"
-SKINGOODLIST_PATH = "data/shop/SkinGoodList.json"
-SOCIALGOODLIST_PATH = "data/shop/SocialGoodList.json"
-CLASSICGOODLIST_PATH = "data/shop/ClassicGoodList.json"
 
 # Activity Shop Data
-TEMPLATEGOODLIST_PATH = "data/shop/templateGoodList.json"
+TEMPLATE_SHOP_PATH = "data/shop/templateShop.json"
