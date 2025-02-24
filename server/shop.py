@@ -1,9 +1,11 @@
-from flask import request
-from utils import read_json, write_json
 from datetime import datetime
 
-from constants import CASHGOODLIST_PATH, EPGSGOODLIST_PATH, EXTRAGOODLIST_PATH, FURNIGOODLIST_PATH, GPGOODLIST_PATH, HIGHGOODLIST_PATH, LMTGSGOODLIST_PATH, LOWGOODLIST_PATH, REPGOODLIST_PATH, SKINGOODLIST_PATH, SOCIALGOODLIST_PATH, CLASSICGOODLIST_PATH
+from flask import request
+
+from constants import SHOP_PATH, EXTRAGOODLIST_PATH, FURNIGOODLIST_PATH, HIGHGOODLIST_PATH, LOWGOODLIST_PATH, SKINGOODLIST_PATH, CLASSICGOODLIST_PATH
 from constants import USER_JSON_PATH, SYNC_DATA_TEMPLATE_PATH
+from utils import read_json, write_json
+
 
 def getGoodPurchaseState():
 
@@ -19,66 +21,9 @@ def getGoodPurchaseState():
     return data
 
 # 获取json的内容并返回
-def getCashGoodList():
 
-    CashGoodListData = read_json(CASHGOODLIST_PATH, encoding="utf-8")
-
-    return CashGoodListData
-
-def getGPGoodList():
-    GPGoodListData = read_json(GPGOODLIST_PATH, encoding="utf-8")
-
-    return GPGoodListData
-
-def getSkinGoodList():
-    SkinGoodListData = read_json(SKINGOODLIST_PATH, encoding="utf-8")
-
-    return SkinGoodListData
-
-def getLowGoodList():
-    LowGoodListData = read_json(LOWGOODLIST_PATH, encoding="utf-8")
-
-    return LowGoodListData
-
-def getHighGoodList():
-    HighGoodListData = read_json(HIGHGOODLIST_PATH, encoding="utf-8")
-
-    return HighGoodListData
-
-def getExtraGoodList():
-    ExtraGoodListData = read_json(EXTRAGOODLIST_PATH, encoding="utf-8")
-
-    return ExtraGoodListData
-
-def getEPGSGoodList():
-    EPGSGoodListData = read_json(EPGSGOODLIST_PATH, encoding="utf-8")
-
-    return EPGSGoodListData
-
-def getRepGoodList():
-    RepGoodListData = read_json(REPGOODLIST_PATH, encoding="utf-8")
-
-    return RepGoodListData
-
-def getFurniGoodList():
-    FurniGoodListData = read_json(FURNIGOODLIST_PATH, encoding="utf-8")
-
-    return FurniGoodListData
-
-def getSocialGoodList():
-    SocialGoodListData = read_json(SOCIALGOODLIST_PATH, encoding="utf-8")
-
-    return SocialGoodListData
-
-def getClassicGoodList():
-    ClassicGoodListData = read_json(CLASSICGOODLIST_PATH, encoding="utf-8")
-
-    return ClassicGoodListData
-
-def getLMTGSGoodList():
-    LMTGSGoodListData = read_json(LMTGSGOODLIST_PATH, encoding="utf-8")
-
-    return LMTGSGoodListData
+def getShopGoodList(shop_type):
+    return read_json(SHOP_PATH, encoding='utf-8')[shop_type.lower()]
 
 # 购买逻辑基本相同，注释只写一遍
 def buySkinGood():

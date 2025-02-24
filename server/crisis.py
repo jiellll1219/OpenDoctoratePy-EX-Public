@@ -2,7 +2,7 @@ from virtualtime import time
 
 from flask import request
 
-from constants import CONFIG_PATH, CRISIS_JSON_BASE_PATH, CRISIS_V2_JSON_BASE_PATH, RUNE_JSON_PATH, CRISISV2GOODLIST_PATH
+from constants import CONFIG_PATH, CRISIS_JSON_BASE_PATH, CRISIS_V2_JSON_BASE_PATH, RUNE_JSON_PATH, SHOP_PATH
 from utils import read_json, write_json
 
 
@@ -240,6 +240,6 @@ def crisisV2_getSnapshot():
 def crisisV2_getGoodList():
 
     json_body = request.get_json()
-    result = read_json(CRISISV2GOODLIST_PATH)
+    result = read_json(SHOP_PATH)["crisisV2"]
 
     return result
