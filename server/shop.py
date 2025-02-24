@@ -2,8 +2,7 @@ from datetime import datetime
 
 from flask import request
 
-from constants import SHOP_PATH, EXTRAGOODLIST_PATH, FURNIGOODLIST_PATH, HIGHGOODLIST_PATH, LOWGOODLIST_PATH, SKINGOODLIST_PATH, CLASSICGOODLIST_PATH
-from constants import USER_JSON_PATH, SYNC_DATA_TEMPLATE_PATH
+from constants import SHOP_PATH,USER_JSON_PATH, SYNC_DATA_TEMPLATE_PATH
 from utils import read_json, write_json
 
 
@@ -31,7 +30,7 @@ def buySkinGood():
     json_body = request.get_json()
     good_id = json_body.get('goodId')
 
-    skin_good_list = read_json(SKINGOODLIST_PATH)
+    skin_good_list = read_json(SHOP_PATH)["skin"]
     user_json_data = read_json(USER_JSON_PATH, encoding="utf-8")
  
     # 遍历goodList列表
@@ -71,7 +70,7 @@ def buyLowGood():
     count = json_body.get('count')
 
     items = []
-    low_good_list = read_json(LOWGOODLIST_PATH, encoding="utf-8")
+    low_good_list = read_json(SHOP_PATH, encoding="utf-8")["low"]
     user_json_data = read_json(USER_JSON_PATH, encoding="utf-8")
 
     for low_good in low_good_list['goodList']:
@@ -113,7 +112,7 @@ def buyHighGood():
     count = json_body.get('count')
 
     items = []
-    high_good_list = read_json(HIGHGOODLIST_PATH, encoding="utf-8")
+    high_good_list = read_json(SHOP_PATH, encoding="utf-8")["high"]
     user_json_data = read_json(USER_JSON_PATH, encoding="utf-8")
 
     for high_good in high_good_list['goodList']:
@@ -155,7 +154,7 @@ def buyExtraGood():
     count = json_body.get('count')
 
     items = []
-    extra_good_list = read_json(EXTRAGOODLIST_PATH, encoding="utf-8")
+    extra_good_list = read_json(SHOP_PATH, encoding="utf-8")["extra"]
     user_json_data = read_json(USER_JSON_PATH, encoding="utf-8")
 
     for extra_good in extra_good_list['goodList']:
@@ -196,7 +195,7 @@ def buyClassicGood():
     count = json_body.get('count')
 
     items = []
-    classic_good_list = read_json(CLASSICGOODLIST_PATH, encoding="utf-8")
+    classic_good_list = read_json(SHOP_PATH, encoding="utf-8")["classic"]
     
     user_json_data = read_json(USER_JSON_PATH, encoding="utf-8")
 
@@ -235,7 +234,7 @@ def buyFurniGroup():
 
     # 把user_json_data和FurniGoodList转换为json数据（直接调用会导致TypeError: string indices must be integers, not 'str'，因为这是一个指向json文件的路径，需要读取后进行操作。）
     user_json_data = read_json(SYNC_DATA_TEMPLATE_PATH)
-    furni_good_list = read_json(FURNIGOODLIST_PATH)
+    furni_good_list = read_json(SHOP_PATH)["furni"]
 
     # 根据请求信息更新数据
     def buy_furni_group(request_info):
@@ -297,7 +296,7 @@ def buyFurniGroup():
 def buyFurniGood():
 
     user_json_data = read_json(SYNC_DATA_TEMPLATE_PATH)
-    furni_good_list = read_json(FURNIGOODLIST_PATH)
+    furni_good_list = read_json(SHOP_PATH)["furni"]
 
     def update_data(request_info):
         good_id = request_info["goodId"]
