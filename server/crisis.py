@@ -239,7 +239,16 @@ def crisisV2_getSnapshot():
 
 def crisisV2_getGoodList():
 
-    json_body = request.get_json()
-    result = read_json(SHOP_PATH)["crisisV2"]
+    result = read_json(SHOP_PATH, encoding="utf-8")["crisisV2"]
 
     return result
+
+def crisisV2_confirmMissions():
+    # 未完成
+    return {
+        "pushMessage": [],
+        "playerDataDelta": {
+            "modified": {},
+            "deleted": {}
+        }
+    }

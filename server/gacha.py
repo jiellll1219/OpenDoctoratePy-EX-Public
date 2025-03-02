@@ -742,8 +742,6 @@ def Gacha(ticket_type, use_diamond_shard, json_body):
         # 写入历史记录
         write_json(gacha_history_data, GACHA_HISTORY_PATH, encoding="utf-8")
 
-    # 保底次数写入
-    user_json_data["user"]["status"]["gachaCount"] = gacha_count
     # 写入用户数据
     write_json(user_json_data, USER_JSON_PATH)
 
@@ -751,16 +749,14 @@ def Gacha(ticket_type, use_diamond_shard, json_body):
 
         gacha_result = gacha_results[0]
 
-        char_get_data = {
-            "charInstId": gacha_result["charInstId"],
-            "charId": gacha_result["charId"],
-            "isNew": gacha_result["isNew"],
-            "itemGet": item_get,
-        }
-
         result = {
             "result": 0,
-            "charGet": char_get_data,
+            "charGet": {
+                "charInstId": gacha_result["charInstId"],
+                "charId": gacha_result["charId"],
+                "isNew": gacha_result["isNew"],
+                "itemGet": item_get,
+            },
             "playerDataDelta": {
                 "modified": {},
                 "deleted": {}

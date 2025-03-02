@@ -37,7 +37,7 @@
 
 ## 使用教程
 
-请确保你使用的python版本大于3.11，低于3.11可能会出现python自带的datetime模块缺失函数
+请确保你使用的python版本大于等于3.11.0，低于3.11.0可能会出现python自带的datetime模块缺失函数
 
 1、自行寻找GameData或dump游戏资源以获取`excel`文件夹以及内容，并把`excel`文件夹放到 `data` 目录下  
 2、使用pip命令安装需要的模块 `pip install -r requirements.txt`  

@@ -37,7 +37,7 @@ If you want to contribute code but lack data, you can refer to this [il2cpp file
 
 ## Usage Guide Example
 
-Please ensure that the version of Python you are using is greater than 3.11. If it is lower than 3.11, there may be missing functions in the datetime module of Python  
+Please make sure that you are using a version of Python 3.11.0 or later, and that the datetime module of Python may be missing if it is lower than 3.11.0  
 1. Search for GameData or dump game resources on your own to obtain the 'Excel' folder and its  contents, and place the 'Excel' folder in the 'data' directory  
 2. Use the pip command to install the required modules ` pip install -r requirements.txt`  
 3. Start the server by running 'start_dacal_Server. abt'  

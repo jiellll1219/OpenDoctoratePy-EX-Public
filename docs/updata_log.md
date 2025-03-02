@@ -1,6 +1,29 @@
 # 更新日志
 
-` 2025 年 2 月 15 日
+- 2025 年 3 月 2 日
+
+    添加：user.json补充mission的内容
+
+    修改：  
+    1、gacha模块与user.json删除gachaCountn相关内容  
+    2、尝试优化accountSyncData函数  
+    3、更新gacha文件和游戏版本信息  
+    4、更改README中模糊的描述  
+    5、修复 [79be343](https://github.com/jiellll1219/OpenDoctoratePy-EX-Public/commit/79be3430f3676ea23da3472f6c1d9949926c3893) 中遗漏的crisisV2商店返回逻辑
+
+- 2025 年 2 月 25 日
+
+    贡献者：[Ali-Ericpu](https://github.com/Ali-Ericpu)
+
+    修改：删除pay、shop、constants模块的冗余代码
+
+- 2025 年 2 月 24 日
+
+    贡献者：[Ali-Ericpu](https://github.com/Ali-Ericpu)
+
+    修改：优化商店访问逻辑，更新商店数据
+
+- 2025 年 2 月 15 日
 
     修复：updatePreset函数对部分情况的处理失败
 

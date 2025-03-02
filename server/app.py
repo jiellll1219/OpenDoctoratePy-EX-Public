@@ -21,7 +21,6 @@ useMemoryCache = ex_config["useMemoryCache"]
 
 logger = logging.getLogger('werkzeug')
 logger.setLevel(logging.INFO)
-logger.addFilter(lambda s: not re.match(".*404 -*", s.getMessage()))
 
 app.add_url_rule("/app/getSettings", methods = ["POST"], view_func = user.appGetSettings)
 app.add_url_rule("/app/getCode", methods = ["POST"], view_func = user.appGetCode)
@@ -97,6 +96,7 @@ app.add_url_rule("/crisis/getInfo", methods = ["POST"], view_func = crisis.crisi
 app.add_url_rule("/crisis/battleStart", methods = ["POST"], view_func = crisis.crisisBattleStart)
 app.add_url_rule("/crisis/battleFinish", methods = ["POST"], view_func = crisis.crisisBattleFinish)
 app.add_url_rule("/crisisV2/getInfo", methods = ["POST"], view_func = crisis.crisisV2_getInfo)
+app.add_url_rule("/crisisV2/confirmMissions", methods = ["POST"], view_func = crisis.crisisV2_confirmMissions)
 app.add_url_rule("/crisisV2/battleStart", methods = ["POST"], view_func = crisis.crisisV2_battleStart)
 app.add_url_rule("/crisisV2/battleFinish", methods = ["POST"], view_func = crisis.crisisV2_battleFinish)
 app.add_url_rule("/crisisV2/getSnapshot", methods = ["POST"], view_func = crisis.crisisV2_getSnapshot)
