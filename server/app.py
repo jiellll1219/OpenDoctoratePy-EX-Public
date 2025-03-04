@@ -21,6 +21,7 @@ useMemoryCache = ex_config["useMemoryCache"]
 
 logger = logging.getLogger('werkzeug')
 logger.setLevel(logging.INFO)
+logger.addFilter(lambda record: not re.match(r'.*(/syncPushMessage|/pb/async|/event|/batch_event).*', record.getMessage()))
 
 app.add_url_rule("/app/getSettings", methods = ["POST"], view_func = user.appGetSettings)
 app.add_url_rule("/app/getCode", methods = ["POST"], view_func = user.appGetCode)
@@ -62,6 +63,9 @@ app.add_url_rule("/building/usePresetQueue", methods=["POST"], view_func=buildin
 app.add_url_rule("/building/editLockQueue", methods=["POST"], view_func=building.editLockQueue)
 app.add_url_rule("/building/batchRestChar", methods=["POST"], view_func=building.batchRestChar)
 app.add_url_rule("/building/buildRoom", methods=["POST"], view_func=building.buildRoom)
+app.add_url_rule("/building/getClueBox", methods=["POST"], view_func=building.getClueBox)
+app.add_url_rule("/building/getClueFriendList", methods=["POST"], view_func=building.getClueFriendList)
+app.add_url_rule("/building/changeBGM", methods = ["POST"], view_func=building.changeBGM)
 app.add_url_rule("/building/setPrivateDormOwner", methods=["POST"], view_func=building.setPrivateDormOwner)
 
 app.add_url_rule("/campaignV2/battleStart", methods = ["POST"], view_func = campaignV2.campaignV2BattleStart)

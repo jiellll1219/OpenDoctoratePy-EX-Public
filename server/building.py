@@ -5,8 +5,25 @@ from constants import SYNC_DATA_TEMPLATE_PATH, USER_JSON_PATH, get_memory
 import json
 
 def Sync():
-
+    # 读取用户数据
     user_data = read_json(USER_JSON_PATH, encoding="utf-8")
+
+    # 更新基建数据中的角色实例ID列表
+    def update_building_char_InstId_List(building_data):
+        # 遍历基建数据中的房间插槽列表
+        for i in building_data["roomSlots"]:
+            # 遍历房间插槽中的角色实例ID列表
+            for j, k in enumerate(building_data["roomSlots"][i]["charInstIds"]):
+                # 如果角色实例ID为-1，则跳过
+                if k == -1:
+                    continue
+                # 将角色实例ID转换为字符串
+                k = str(k)
+                # 更新角色实例ID和索引
+                building_data["chars"][k]["roomSlotId"] = i
+                building_data["chars"][k]["index"] = j
+
+    # 创建角色字典
     chars = {
         i: {
             "charId": user_data["user"]["troop"]["chars"][i]["charId"],
@@ -20,24 +37,22 @@ def Sync():
         }
         for i in user_data["user"]["troop"]["chars"]
     }
+    # 将角色字典赋值给基建数据
     user_data["user"]["building"]["chars"] = chars
-    for i in user_data["user"]["building"]["chars"]:
-        user_data["user"]["building"]["chars"][i]["roomSlotId"] = ""
-        user_data["user"]["building"]["chars"][i]["index"] = -1
-    for i in user_data["user"]["building"]["roomSlots"]:
-        for j, k in enumerate(user_data["user"]["building"]["roomSlots"][i]["charInstIds"]):
-            if k == -1:
-                continue
-            k = str(k)
-            user_data["user"]["building"]["chars"][k]["roomSlotId"] = i
-            user_data["user"]["building"]["chars"][k]["index"] = j
+    # 更新基建数据中的角色实例ID列表
+    update_building_char_InstId_List(user_data["user"]["building"])
+    # 读取基建table数据
     building_table = get_memory("building_data")
+    # 创建家具字典
     furniture = {
         i: {"count": 9999, "inUse": 0}
         for i in building_table["customData"]["furnitures"]
     }
+    # 将家具字典赋值给基建数据
     user_data["user"]["building"]["furniture"] = furniture
-    write_json(user_data, USER_JSON_PATH)
+    # 将基建数据写入文件
+    write_json(user_data, USER_JSON_PATH, encoding="utf-8")
+
     result = {
         "playerDataDelta": {
             "modified": {
@@ -46,16 +61,21 @@ def Sync():
             "deleted": {}
         }
     }
+    
     return result
 
 def GetRecentVisitors():
 
-    result = {"num":0}
+    result = {
+        "visitors": []
+    }
     return result
 
 def GetInfoShareVisitorsNum():
 
-    result = {"num":0}
+    result = {
+        "num":0
+    }
     return result
 
 def AssignChar():
@@ -663,11 +683,10 @@ def setPrivateDormOwner():
     json_body = request.get_json()
 
     user_data = read_json(USER_JSON_PATH, encoding="utf-8")
-    building_data = user_data["user"]["building"]
     target_slot_id = json_body["slotId"]
     owners_id = json_body["charInsId"]
 
-    building_data["rooms"]["PRIVATE"][target_slot_id]["owners"] = list(owners_id)
+    user_data["user"]["building"]["rooms"]["PRIVATE"][target_slot_id]["owners"] = [owners_id]
 
     write_json(user_data, USER_JSON_PATH, encoding="utf-8")
 
@@ -678,11 +697,47 @@ def setPrivateDormOwner():
                     "rooms": {
                         "PRIVATE": {
                             target_slot_id: {
-                                "owners": owners_id
+                                "owners": [owners_id]
                             }
                         }
                     }
                 }
-            }
+            },
+            "deleted": {}
         }
+    }
+
+def changeBGM():
+    json_body = request.get_json()
+
+    user_data = read_json(USER_JSON_PATH, encoding="utf-8")
+
+    music_id = json_body["musicId"]
+
+    user_data["user"]["building"]["music"]["selected"] = music_id
+
+    result = {
+        "playerDataDelta": {
+            "modified": {
+                "building": {
+                    "music": {
+                        "selected": music_id
+                    }
+                }
+            },
+            "deleted": {}
+        }
+    }
+    return result
+
+def getClueBox():
+
+    return {
+        "box": []
+    }
+
+def getClueFriendList():
+
+    return {
+        "result": []
     }
