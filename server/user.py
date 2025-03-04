@@ -438,10 +438,10 @@ def changeResume():
 def getOtherPlayerNameCard():
 
     json_body = request.get_json()
-    # {'uid': '88888888'}
+
     user_data = read_json(USER_JSON_PATH, encoding="utf-8")
 
-    assist_list = ["char_1035_wisdel", "char_4133_logos"]
+    assist_list = [user_data["troop"]["chars"].keys()]
     assist_char_id = assist_list[random.randint(0, len(assist_list) - 1)]
     assist_char_num_id = int(assist_char_id.split("_")[1])
 
