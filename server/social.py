@@ -4,7 +4,7 @@ from constants import USER_JSON_PATH, CONFIG_PATH
 from utils import read_json, write_json
 
 
-def socialsetAssistCharList():
+def setAssistCharList():
     try:
         request_data = request.get_json()
         charInstId = request_data.get("assistCharList")[-1].get("charInstId")
@@ -23,50 +23,74 @@ def socialsetAssistCharList():
         print(f"Error: {e}")
         return None
     
-def socialgetSortListInfo():
+def getSortListInfo():
 
     data = {"playerDataDelta":{"deleted":{},"modified":{}},"result":[]}
 
     return data
 
-def socialgetFriendList():
+def getFriendList():
     
     data = request.data
 
-    return data
+    return {}
 
-def socialsearchPlayer():
+def searchPlayer():
 
     data = {"list": [], "request": []}
 
     return data
 
-def socialgetFriendRequestList():
+def getFriendRequestList():
 
     data = request.data
 
     return data
 
-def socialprocessFriendRequest():
+def processFriendRequest():
 
     data = request.data
 
     return data
 
-def socialsendFriendRequest():
+def sendFriendRequest():
 
     data = request.data
 
     return data
 
-def socialsetFriendAlias():
+def setFriendAlias():
 
     data = request.data
 
     return data
 
-def socialdeleteFriend():
+def deleteFriend():
     
     data = request.data
 
     return data
+
+def setCardShowMedal():
+    json_body = request.get_json()
+
+    user_data = read_json(USER_JSON_PATH, encoding="utf-8")
+    if "medalBoard" not in user_data["user"]["social"]:
+        user_data["user"]["social"]["medalBoard"] = {}
+    user_data["user"]["social"]["medalBoard"]["type"] = json_body["type"]
+    user_data["user"]["social"]["medalBoard"]["template"] = json_body["templateGroup"]
+    write_json(user_data, USER_JSON_PATH, encoding="utf-8")
+
+    return {
+        "playerDataDelta": {
+            "modified": {
+                "social": {
+                    "medalBoard": {
+                        "type": json_body["type"],
+                        "template": json_body["templateGroup"],
+                    }
+                }
+            },
+            "deleted": {},
+        }
+    }
