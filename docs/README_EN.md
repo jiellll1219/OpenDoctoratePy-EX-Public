@@ -20,16 +20,16 @@ If you want to contribute code but lack data, you can refer to this [il2cpp file
 
 ## Expansion Progress
 
-| Target Feature | Progress | Status | Notes |
+| Target Feature | Progress | Completion Status | Remarks |
 |:---:|:---:|:---:|:---:|
-| Public Recruitment | Coding Complete | Basic Completion | Needs Testing |
-| Directed Recruitment | Coding Complete | Complete | Basically Usable |
-| Infrastructure | Coding Complete | Basic Completion | Needs Testing |
-| Shop | Coding Complete | Basic Completion | Needs Testing |
-| Top-up System | Coding Complete | Basic Completion | Not Yet Tested |
-| Interface Scheme | Coding Complete | Basic Completion | Minor Bugs |
-| Integrated Simulation | Paused |  |  |
-| Friends | Halted |  | No Functionality |
+| Public Recruitment | Needs Fixing | Needs Fixing |  |
+| Targeted Search | Completed | Done | Tested |
+| Building | Needs Improvement | Needs Improvement |  |
+| Shop | Completed | Mostly Done |  |
+| Recharge | Completed | Done |  |
+| Interface Design | Completed | Done | Tested |
+| SandBox | Paused |  |  |
+| Friends | Paused |  | To Be Scheduled |
 
 ## Declaration for Top-up System Code
 

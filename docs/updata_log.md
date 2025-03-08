@@ -1,5 +1,19 @@
 # 更新日志
 
+- 2025 年 3 月 8 日
+
+    修改：  
+    1、基建数据更新会客室DIY内容，尝试优化基建sync函数  
+    2、修复getOtherPlayerNameCard函数错误  
+    3、恢复social被删除的路由，添加新功能  
+    4、更新config的游戏版本信息，更新README
+
+- 20255 年 3 月 7 日
+
+    贡献者：[Ali-Ericpu](https://github.com/Ali-Ericpu)
+
+    修改：更新商店数据
+
 - 2025 年 3 月 2 日
 
     添加：user.json补充mission的内容
