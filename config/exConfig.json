@@ -1,4 +1,5 @@
 {
     "virtualtime": -114514,
-    "useMemoryCache": false
+    "useMemoryCache": false,
+    "useExistingCharData": false
 }

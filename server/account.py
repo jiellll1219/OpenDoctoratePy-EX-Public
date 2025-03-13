@@ -10,6 +10,7 @@ from datetime import datetime
 from constants import (
     USER_JSON_PATH,
     CONFIG_PATH,
+    EX_CONFIG_PATH,
     BATTLE_REPLAY_JSON_PATH,
     SYNC_DATA_TEMPLATE_PATH,
     CRISIS_V2_JSON_BASE_PATH,
@@ -38,6 +39,7 @@ def accountLogin():
 
 
 def accountSyncData():
+    a = datetime.now()
     if not exists(USER_JSON_PATH):
         write_json({}, USER_JSON_PATH)
 
@@ -45,6 +47,7 @@ def accountSyncData():
     mail_data = read_json(MAILLIST_PATH, encoding="utf-8")
     player_data = read_json(SYNC_DATA_TEMPLATE_PATH, encoding="utf-8")
     config = read_json(CONFIG_PATH)
+    exconfig = read_json(EX_CONFIG_PATH)
 
     # Load newest data
     data_skin = get_memory("skin_table")
@@ -106,7 +109,6 @@ def accountSyncData():
 
     # Tamper Skins
     skinKeys = list(data_skin["charSkins"].keys())
-    player_data["user"]["skin"]["characterSkins"] = {}
     skin_items = data_skin["charSkins"].items()
     for skin_key in skin_items:
         if "@" not in skin_key:
@@ -160,165 +162,165 @@ def accountSyncData():
     }
 
     for operator_key, char_id in zip(operatorKeys, character_table):
+        inst_id = int(operator_key.split("_")[1])
         # 跳过非角色键
         if "char" not in operator_key:
             continue
         
-        # 存在已有角色数据的情况
-        if char_id in player_data_keys:
+        if exconfig["useExistingCharData"]:
+            # 存在已有角色数据的情况
+            if str(inst_id) in player_data_keys:
+                myCharList[inst_id] = player_data["user"]["troop"]["chars"][str(inst_id)]
+        else:
+            # ---------- 角色创建逻辑 ---------- 
+            # 语音语言处理
+            voice_lan = charword_table["charDefaultTypeDict"].get(operator_key, "JP")
+            
+            # 进化阶段计算
+            evolve_phase = edit_json["evolvePhase"]
+            max_phase = len(character_table[char_id]["phases"]) - 1
+            evolve_phase = min(evolve_phase, max_phase) if evolve_phase != -1 else max_phase
+            
+            # 等级计算
+            level = (
+                edit_json["level"] if edit_json["level"] != -1 
+                else character_table[char_id]["phases"][evolve_phase]["maxLevel"]
+            )
+            
+            # 基础角色结构
             inst_id = int(operator_key.split("_")[1])
-            myCharList[inst_id] = player_data["user"]["troop"]["chars"][char_id]
-            continue
-
-        # ---------- 角色创建逻辑 ---------- 
-        # 语音语言处理
-        voice_lan = charword_table["charDefaultTypeDict"].get(operator_key, "JP")
-        
-        # 进化阶段计算
-        evolve_phase = edit_json["evolvePhase"]
-        max_phase = len(character_table[char_id]["phases"]) - 1
-        evolve_phase = min(evolve_phase, max_phase) if evolve_phase != -1 else max_phase
-        
-        # 等级计算
-        level = (
-            edit_json["level"] if edit_json["level"] != -1 
-            else character_table[char_id]["phases"][evolve_phase]["maxLevel"]
-        )
-        
-        # 基础角色结构
-        inst_id = int(operator_key.split("_")[1])
-        operator = {
-            "instId": inst_id,
-            "charId": operator_key,
-            "favorPoint": edit_json["favorPoint"],
-            "potentialRank": edit_json["potentialRank"],
-            "mainSkillLvl": edit_json["mainSkillLvl"],
-            "skin": f"{operator_key}#1",
-            "level": level,
-            "exp": 0,
-            "evolvePhase": evolve_phase,
-            "defaultSkillIndex": len(character_table[char_id]["skills"]) - 1,
-            "gainTime": int(time()),
-            "skills": [],
-            "voiceLan": voice_lan,
-            "currentEquip": None,
-            "equip": {},
-            "starMark": 0,
-        }
-
-        # ---------- 技能处理 ----------
-        for skill in character_table[char_id]["skills"]:
-            operator["skills"].append({
-                "skillId": skill["skillId"],
-                "unlock": 1,
-                "state": 0,
-                "specializeLevel": (
-                    edit_json["skillsSpecializeLevel"] 
-                    if skill["levelUpCostCond"] 
-                    else 0
-                ),
-                "completeUpgradeTime": -1
-            })
-
-        # ---------- 模组处理 ----------
-        if operator_key in equip_table["charEquip"]:
-            equip_list = equip_table["charEquip"][operator_key]
-            operator["equip"] = {
-                equip: {
-                    "hide": 0,
-                    "locked": 0,
-                    "level": (
-                        len(battle_equip_table[equip]["phases"]) 
-                        if equip in battle_equip_table 
-                        else 1
-                    )
-                } for equip in equip_list
-            }
-            operator["currentEquip"] = equip_list[-1]
-
-        # ---------- 皮肤处理 ----------
-        # 精二皮肤
-        if (operator_key not in EXCLUDED_SKIN_OPERATORS and 
-            operator["evolvePhase"] == 2 and 
-            inst_id not in SPECIAL_INST_IDS):
-            operator["skin"] = f"{operator_key}#2"
-        
-        # 临时皮肤覆盖
-        if operator_key in tempSkinTable:
-            operator["skin"] = tempSkinTable[operator_key]
-
-        # ---------- 自定义数据覆盖 ----------
-        if custom_data := edit_json["customUnitInfo"].get(operator_key):
-            for key, value in custom_data.items():
-                if key == "skills":
-                    for idx, sl in enumerate(value):
-                        operator["skills"][idx]["specializeLevel"] = sl
-                else:
-                    operator[key] = value
-
-        # ---------- 特殊角色处理 ----------
-        # 阿米娅特殊形态
-        if operator_key == "char_002_amiya":
-            operator.update({
-                "defaultSkillIndex": -1,
+            operator = {
+                "instId": inst_id,
+                "charId": operator_key,
+                "favorPoint": edit_json["favorPoint"],
+                "potentialRank": edit_json["potentialRank"],
+                "mainSkillLvl": edit_json["mainSkillLvl"],
+                "skin": f"{operator_key}#1",
+                "level": level,
+                "exp": 0,
+                "evolvePhase": evolve_phase,
+                "defaultSkillIndex": len(character_table[char_id]["skills"]) - 1,
+                "gainTime": int(time()),
                 "skills": [],
-                "currentTmpl": "char_002_amiya",
-                "tmpl": {
-                    key: {
-                        "skinId": val["skin"],
-                        "defaultSkillIndex": val["default_index"],
-                        "skills": [{
-                            "skillId": skill,
-                            "unlock": 1,
-                            "state": 0,
-                            "specializeLevel": edit_json["skillsSpecializeLevel"],
-                            "completeUpgradeTime": -1
-                        } for skill in val["skills"]],
-                        "currentEquip": None,
-                        "equip": {}
-                    } for key, val in AMIYA_TEMPLATES.items()
+                "voiceLan": voice_lan,
+                "currentEquip": None,
+                "equip": {},
+                "starMark": 0,
+            }
+
+            # ---------- 技能处理 ----------
+            for skill in character_table[char_id]["skills"]:
+                operator["skills"].append({
+                    "skillId": skill["skillId"],
+                    "unlock": 1,
+                    "state": 0,
+                    "specializeLevel": (
+                        edit_json["skillsSpecializeLevel"] 
+                        if skill["levelUpCostCond"] 
+                        else 0
+                    ),
+                    "completeUpgradeTime": -1
+                })
+
+            # ---------- 模组处理 ----------
+            if operator_key in equip_table["charEquip"]:
+                equip_list = equip_table["charEquip"][operator_key]
+                operator["equip"] = {
+                    equip: {
+                        "hide": 0,
+                        "locked": 0,
+                        "level": (
+                            len(battle_equip_table[equip]["phases"]) 
+                            if equip in battle_equip_table 
+                            else 1
+                        )
+                    } for equip in equip_list
                 }
-            })
-            # 处理阿米娅模组
-            char_equip_cache = equip_table["charEquip"]
-            for tmpl in AMIYA_TEMPLATES.keys() & char_equip_cache.keys():
-                    equip_list = char_equip_cache[tmpl]
-                    operator["tmpl"][tmpl]["equip"] = {
-                        equip: {
-                            "hide": 0,
-                            "locked": 0,
-                            "level": (
-                                len(battle_equip_table[equip]["phases"]) 
-                                if equip in battle_equip_table 
-                                else 1
-                            )
-                        } for equip in equip_list
+                operator["currentEquip"] = equip_list[-1]
+
+            # ---------- 皮肤处理 ----------
+            # 精二皮肤
+            if (operator_key not in EXCLUDED_SKIN_OPERATORS and 
+                operator["evolvePhase"] == 2 and 
+                inst_id not in SPECIAL_INST_IDS):
+                operator["skin"] = f"{operator_key}#2"
+            
+            # 角色最新皮肤覆盖
+            if operator_key in tempSkinTable:
+                operator["skin"] = tempSkinTable[operator_key]
+
+            # ---------- 自定义数据覆盖 ----------
+            if custom_data := edit_json["customUnitInfo"].get(operator_key):
+                for key, value in custom_data.items():
+                    if key == "skills":
+                        for idx, sl in enumerate(value):
+                            operator["skills"][idx]["specializeLevel"] = sl
+                    else:
+                        operator[key] = value
+
+            # ---------- 特殊角色处理 ----------
+            # 阿米娅特殊形态
+            if operator_key == "char_002_amiya":
+                operator.update({
+                    "defaultSkillIndex": -1,
+                    "skills": [],
+                    "currentTmpl": "char_002_amiya",
+                    "tmpl": {
+                        key: {
+                            "skinId": val["skin"],
+                            "defaultSkillIndex": val["default_index"],
+                            "skills": [{
+                                "skillId": skill,
+                                "unlock": 1,
+                                "state": 0,
+                                "specializeLevel": edit_json["skillsSpecializeLevel"],
+                                "completeUpgradeTime": -1
+                            } for skill in val["skills"]],
+                            "currentEquip": None,
+                            "equip": {}
+                        } for key, val in AMIYA_TEMPLATES.items()
                     }
-                    operator["tmpl"][tmpl]["currentEquip"] = equip_list[-1]
-        elif operator_key == "char_512_aprot":
-            operator["skin"] = "char_512_aprot#1"
+                })
+                # 处理阿米娅模组
+                char_equip_cache = equip_table["charEquip"]
+                for tmpl in AMIYA_TEMPLATES.keys() & char_equip_cache.keys():
+                        equip_list = char_equip_cache[tmpl]
+                        operator["tmpl"][tmpl]["equip"] = {
+                            equip: {
+                                "hide": 0,
+                                "locked": 0,
+                                "level": (
+                                    len(battle_equip_table[equip]["phases"]) 
+                                    if equip in battle_equip_table 
+                                    else 1
+                                )
+                            } for equip in equip_list
+                        }
+                        operator["tmpl"][tmpl]["currentEquip"] = equip_list[-1]
+            elif operator_key == "char_512_aprot":
+                operator["skin"] = "char_512_aprot#1"
 
-        # ---------- 基建数据处理 ----------
-        buildingChars[inst_id] = {
-            "charId": operator_key,
-            "lastApAddTime": round(time()) - 3600,
-            "ap": 8640000,
-            "roomSlotId": "",
-            "index": -1,
-            "changeScale": 0,
-            "bubble": {
-                "normal": {"add": -1, "ts": 0},
-                "assist": {"add": -1, "ts": 0}
-            },
-            "workTime": 0
-        }
+            # ---------- 基建数据处理 ----------
+            buildingChars[inst_id] = {
+                "charId": operator_key,
+                "lastApAddTime": round(time()) - 3600,
+                "ap": 8640000,
+                "roomSlotId": "",
+                "index": -1,
+                "changeScale": 0,
+                "bubble": {
+                    "normal": {"add": -1, "ts": 0},
+                    "assist": {"add": -1, "ts": 0}
+                },
+                "workTime": 0
+            }
 
-        # ---------- 最终数据存储 ----------
-        myCharList[inst_id] = operator
-        player_data["user"]["dexNav"]["character"][operator_key] = {
-            "charInstId": inst_id,
-            "count": 6
-        }
+            # ---------- 最终数据存储 ----------
+            myCharList[inst_id] = operator
+            player_data["user"]["dexNav"]["character"][operator_key] = {
+                "charInstId": inst_id,
+                "count": 6
+            }
 
     cntInstId = 10000
 
@@ -570,39 +572,11 @@ def accountSyncData():
 
     player_data["user"]["troop"]["squads"] = squads_data
 
-    # Copy over from previous launch if data exists
-    if (
-        "user" in saved_data
-        and config["userConfig"]["restorePreviousStates"]["squadsAndFavs"]
-    ):
-        player_data["user"]["troop"]["squads"] = saved_data["user"]["troop"]["squads"]
-
-        for _, saved_character in saved_data["user"]["troop"]["chars"].items():
-            index = None
-            for character_index, character in player_data["user"]["troop"][
-                "chars"
-            ].items():
-                if saved_character["charId"] == character["charId"]:
-                    index = character_index
-                    break
-
-            if index is not None:
-                player_data["user"]["troop"]["chars"][index]["starMark"] = (saved_character["starMark"])
-                player_data["user"]["troop"]["chars"][index]["voiceLan"] = (saved_character["voiceLan"])
-                player_data["user"]["troop"]["chars"][index]["skin"] = saved_character["skin"]
-                player_data["user"]["troop"]["chars"][index]["defaultSkillIndex"] = (saved_character["defaultSkillIndex"])
-                if saved_character["currentEquip"]:
-                    player_data["user"]["troop"]["chars"][index]["currentEquip"] = (saved_character["currentEquip"])
-
-    secretary = config["userConfig"]["secretary"]
     secretarySkinId = config["userConfig"]["secretarySkinId"]
-    background = config["userConfig"]["background"]
     theme = config["userConfig"]["theme"]
 
     if "user" in saved_data and config["userConfig"]["restorePreviousStates"]["ui"]:
-        secretary = saved_data["user"]["status"]["secretary"]
         secretarySkinId = saved_data["user"]["status"]["secretarySkinId"]
-        background = saved_data["user"]["background"]["selected"]
         theme = saved_data["user"]["homeTheme"]["selected"]
 
     if (current_preset := player_data["user"]["charRotation"]["preset"].get(
@@ -672,7 +646,8 @@ def accountSyncData():
         )
         season = rune["info"]["seasonId"]
         player_data["user"]["crisisV2"]["current"] = season
-
+    b = datetime.now()
+    print(f"syncdata耗时: {b - a}")
     return player_data
 
 

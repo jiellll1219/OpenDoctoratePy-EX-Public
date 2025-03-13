@@ -35,7 +35,7 @@
             "content": {
                 "configVer": "5",
                 "configs": {
-                    "V058": {
+                    "V059": {
                         "network": {
                             "an": "{server}",
                             "as": "{server}",

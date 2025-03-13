@@ -4,6 +4,8 @@
 
 [Update Log (CN Only)](https://github.com/jiellll1219/OpenDoctoratePy-EX-Public/tree/main/docs/updata_log.md)
 
+⚠Machine translation warning: This README is supported by machine translation⚠
+
 This project serves as a branch of OpenDoctoratePy, aiming to expand and improve its functionality. The short-term goal is to prevent being kicked back to the login interface due to 404 or unknown errors as much as possible, while the long-term goal is to achieve a single-player local service similar to the SPT-AKI project.
 
 The code and data structure for some features of this repository are based on [LocalArknight](https://github.com/jiellll1219/LocalArknight).
@@ -62,6 +64,14 @@ Used for enabling old gacha pools. When the value is less than 0, real-time is r
 It may cause issues with infrastructure. Avoid reducing the value unnecessarily once set.
 
 Compatible with more time formats. You can directly input timestamps or formats like `"2024/02/02 12:12:12"` or `"2024-02-02 12:12:12"`. Ensure to use English double quotes `""`, include a space between date and time, and ensure the entered time is complete and reasonable.
+
+### useMemoryCache
+
+Control whether to use memory caching function, default to false (set to off). When enabled (set to true), this function will occupy at least 0.4GB of memory after starting the server, and will slightly reduce CPU usage, syncdata function time, and other functions that read table files. When this feature is not enabled, the memory usage after startup is around 80MB, and the maximum memory consumption is around 0.2GB. Please enable it as appropriate.
+
+### useExistingCharData
+
+When synchronizing data (SyncData), the default setting is false (set to off). Whether to use role data saved in user.exe for personalized role settings. When enabled (set to true) with role data, this feature can speed up function execution
 
 ## Keys in user.json
 
