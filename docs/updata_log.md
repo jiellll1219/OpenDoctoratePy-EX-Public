@@ -1,5 +1,13 @@
 # 更新日志
 
+- 2025 年 3 月 16 日
+
+    修复：  
+    charBuildSetDefaultSkill函数无法对新角色技能进行修改的问题
+
+    修改：  
+    尝试优化syncdata函数Tamper Skins部分，并添加注释
+
 - 2025 年 3 月 13 日
 
     修复：  

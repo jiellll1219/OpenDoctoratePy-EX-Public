@@ -108,20 +108,32 @@ def accountSyncData():
 
 
     # Tamper Skins
-    skinKeys = list(data_skin["charSkins"].keys())
-    skin_items = data_skin["charSkins"].items()
-    for skin_key in skin_items:
+    # 初始化玩家数据中的皮肤数据
+    player_data["user"]["skin"]["characterSkins"] = {}
+    # 初始化临时皮肤表
+    tempSkinTable = {}
+
+    # 遍历皮肤数据
+    for skin_key, character_skin in data_skin["charSkins"].items():
+        # 如果皮肤键中不包含@符号，则跳过
         if "@" not in skin_key:
             continue
 
-        player_data["user"]["skin"]["characterSkins"][skinKeys[cnt]] = 1
-        if (
-            i["charId"] not in tempSkinTable.keys()
-            or i["displaySkin"]["onYear"]
-            > data_skin["charSkins"][tempSkinTable[i["charId"]]]["displaySkin"]["onYear"]
-            ):
-            tempSkinTable[i["charId"]] = i["skinId"]
-        cnt += 1
+        # 将皮肤键添加到玩家数据中的皮肤数据中
+        player_data["user"]["skin"]["characterSkins"][skin_key] = 1
+        # 获取角色ID
+        char_id = character_skin["charId"]
+        # 获取当前皮肤显示的年份
+        current_year = character_skin["displaySkin"]["onYear"]
+
+        # 如果角色ID不在临时皮肤表中，则将皮肤键添加到临时皮肤表中
+        if char_id not in tempSkinTable:
+            tempSkinTable[char_id] = skin_key
+        # 如果角色ID已经在临时皮肤表中，则比较当前皮肤显示的年份和已有皮肤显示的年份，将年份较新的皮肤键添加到临时皮肤表中
+        else:
+            existing_year = data_skin["charSkins"][tempSkinTable[char_id]]["displaySkin"]["onYear"]
+            if current_year > existing_year:
+                tempSkinTable[char_id] = skin_key
 
     # Tamper Operators
     edit_json = config["charConfig"]
@@ -646,6 +658,9 @@ def accountSyncData():
         )
         season = rune["info"]["seasonId"]
         player_data["user"]["crisisV2"]["current"] = season
+
+    write_json(player_data, USER_JSON_PATH, encoding="utf-8")
+
     b = datetime.now()
     print(f"syncdata耗时: {b - a}")
     return player_data
