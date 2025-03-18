@@ -1,11 +1,12 @@
 import json
-from os.path import exists
-from virtualtime import time
-from copy import deepcopy
+import uuid
 from base64 import b64encode
-from hashlib import md5
-from flask import request
+from copy import deepcopy
 from datetime import datetime
+from hashlib import md5
+from os.path import exists
+
+from flask import request
 
 from constants import (
     USER_JSON_PATH,
@@ -19,7 +20,8 @@ from constants import (
     get_memory
 )
 from utils import read_json, write_json
-import uuid
+from virtualtime import time
+
 
 def accountLogin():
     try:
@@ -50,10 +52,9 @@ def accountSyncData():
     exconfig = read_json(EX_CONFIG_PATH)
 
     # Load newest data
-    data_skin = get_memory("skin_table")
+    skin_table = get_memory("skin_table")
     character_table = get_memory("character_table")
     equip_table = get_memory("uniequip_table")
-    battle_equip_table = get_memory("battle_equip_table")
     display_meta_table = get_memory("display_meta_table")
     retro_table = get_memory("retro_table")
     charm_table = get_memory("charm_table")
@@ -70,7 +71,6 @@ def accountSyncData():
     ts = round(time())
     cnt = 0
     cntInstId = 1
-    tempSkinTable = {}
     myCharList = {}
     charGroup = {}
     buildingChars = {}
@@ -100,61 +100,35 @@ def accountSyncData():
     use_profile = player_data["user"]["charRotation"]["preset"][target_current]["profile"]
     for slots in player_data["user"]["charRotation"]["preset"][target_current]["slots"]:
         if slots.get("skinId") == use_profile:
-            use_charid = slots.get("charId")
+            player_data["user"]["status"]["secretary"] = slots.get("charId")
             break
-    player_data["user"]["status"]["secretary"] = use_charid
     player_data["user"]["status"]["secretarySkinId"] = use_profile
-    player_data["user"]["background"]["selected"] = player_data["user"]["charRotation"]["preset"][target_current]["background"]
-
+    player_data["user"]["background"]["selected"] = player_data["user"]["charRotation"]["preset"][target_current][
+        "background"]
 
     # Tamper Skins
     # 初始化玩家数据中的皮肤数据
-    player_data["user"]["skin"]["characterSkins"] = {}
+    character_skins = {}
     # 初始化临时皮肤表
-    tempSkinTable = {}
+    temp_skin_table = {}
 
     # 遍历皮肤数据
-    for skin_key, character_skin in data_skin["charSkins"].items():
+    for skin_id, skin_data in skin_table["charSkins"].items():
         # 如果皮肤键中不包含@符号，则跳过
-        if "@" not in skin_key:
+        if "@" not in skin_id:
             continue
 
         # 将皮肤键添加到玩家数据中的皮肤数据中
-        player_data["user"]["skin"]["characterSkins"][skin_key] = 1
-        # 获取角色ID
-        char_id = character_skin["charId"]
-        # 获取当前皮肤显示的年份
-        current_year = character_skin["displaySkin"]["onYear"]
+        character_skins[skin_id] = 1
+        temp_skin_table[skin_data["charId"]] = skin_id
 
-        # 如果角色ID不在临时皮肤表中，则将皮肤键添加到临时皮肤表中
-        if char_id not in tempSkinTable:
-            tempSkinTable[char_id] = skin_key
-        # 如果角色ID已经在临时皮肤表中，则比较当前皮肤显示的年份和已有皮肤显示的年份，将年份较新的皮肤键添加到临时皮肤表中
-        else:
-            existing_year = data_skin["charSkins"][tempSkinTable[char_id]]["displaySkin"]["onYear"]
-            if current_year > existing_year:
-                tempSkinTable[char_id] = skin_key
+    player_data["user"]["skin"]["characterSkins"] = character_skins
 
     # Tamper Operators
     edit_json = config["charConfig"]
-
-    cnt = 0
-    operatorKeys = list(character_table.keys())
-    equip_keys = set(equip_table["charEquip"].keys())
     player_data_keys = set(player_data["user"]["troop"]["chars"].keys())
 
-    for operatorKey in operatorKeys:
-        if "char" not in operatorKey:
-            continue
-
-        charGroup.update({operatorKey: {"favorPoint": 25570}})
-
     # 预定义常量
-    EXCLUDED_SKIN_OPERATORS = {
-        "char_508_aguard", "char_509_acast", 
-        "char_510_amedic", "char_511_asnipe"
-    }
-    SPECIAL_INST_IDS = {609, 610, 611, 612, 613, 614, 615}
     AMIYA_TEMPLATES = {
         "char_002_amiya": {
             "skills": ["skcom_magic_rage[3]", "skchr_amiya_2", "skchr_amiya_3"],
@@ -173,12 +147,12 @@ def accountSyncData():
         }
     }
 
-    for operator_key, char_id in zip(operatorKeys, character_table):
-        inst_id = int(operator_key.split("_")[1])
+    for char_id, char_data in character_table.items():
         # 跳过非角色键
-        if "char" not in operator_key:
+        if "char" not in char_id:
             continue
-        
+        inst_id = int(char_id.split("_")[1])
+        charGroup.update({char_id: {"favorPoint": 25570}})
         if exconfig["useExistingCharData"]:
             # 存在已有角色数据的情况
             if str(inst_id) in player_data_keys:
@@ -186,33 +160,41 @@ def accountSyncData():
         else:
             # ---------- 角色创建逻辑 ---------- 
             # 语音语言处理
-            voice_lan = charword_table["charDefaultTypeDict"].get(operator_key, "JP")
-            
+            voice_lan = charword_table["charDefaultTypeDict"].get(char_id, "JP")
+
             # 进化阶段计算
             evolve_phase = edit_json["evolvePhase"]
-            max_phase = len(character_table[char_id]["phases"]) - 1
+            max_phase = len(char_data["phases"]) - 1
             evolve_phase = min(evolve_phase, max_phase) if evolve_phase != -1 else max_phase
-            
+
             # 等级计算
             level = (
-                edit_json["level"] if edit_json["level"] != -1 
-                else character_table[char_id]["phases"][evolve_phase]["maxLevel"]
+                edit_json["level"] if edit_json["level"] != -1
+                else char_data["phases"][evolve_phase]["maxLevel"]
             )
-            
+
+            # ---------- 皮肤处理 ----------
+            skin = temp_skin_table.get(char_id)
+            if skin is None:
+                # 精二皮肤
+                if evolve_phase >= 2 and char_data["displayNumber"] is not None:
+                    skin = f"{char_id}#2"
+                else:
+                    skin = f"{char_id}#1"
+
             # 基础角色结构
-            inst_id = int(operator_key.split("_")[1])
             operator = {
                 "instId": inst_id,
-                "charId": operator_key,
+                "charId": char_id,
                 "favorPoint": edit_json["favorPoint"],
                 "potentialRank": edit_json["potentialRank"],
                 "mainSkillLvl": edit_json["mainSkillLvl"],
-                "skin": f"{operator_key}#1",
+                "skin": skin,
                 "level": level,
                 "exp": 0,
                 "evolvePhase": evolve_phase,
-                "defaultSkillIndex": len(character_table[char_id]["skills"]) - 1,
-                "gainTime": int(time()),
+                "defaultSkillIndex": len(char_data["skills"]) - 1,
+                "gainTime": ts,
                 "skills": [],
                 "voiceLan": voice_lan,
                 "currentEquip": None,
@@ -221,48 +203,38 @@ def accountSyncData():
             }
 
             # ---------- 技能处理 ----------
-            for skill in character_table[char_id]["skills"]:
+            for skill in char_data["skills"]:
                 operator["skills"].append({
                     "skillId": skill["skillId"],
                     "unlock": 1,
                     "state": 0,
                     "specializeLevel": (
-                        edit_json["skillsSpecializeLevel"] 
-                        if skill["levelUpCostCond"] 
+                        edit_json["skillsSpecializeLevel"]
+                        if skill["levelUpCostCond"] and evolve_phase >= 2
                         else 0
                     ),
                     "completeUpgradeTime": -1
                 })
 
             # ---------- 模组处理 ----------
-            if operator_key in equip_table["charEquip"]:
-                equip_list = equip_table["charEquip"][operator_key]
+            equip_list = equip_table["charEquip"].get(char_id)
+            equip_dict = equip_table["equipDict"]
+            if equip_list is not None:
                 operator["equip"] = {
                     equip: {
                         "hide": 0,
                         "locked": 0,
                         "level": (
-                            len(battle_equip_table[equip]["phases"]) 
-                            if equip in battle_equip_table 
+                            len(equip_dict[equip]["itemCost"])
+                            if equip_dict[equip].get("itemCost") is not None
                             else 1
                         )
                     } for equip in equip_list
                 }
                 operator["currentEquip"] = equip_list[-1]
 
-            # ---------- 皮肤处理 ----------
-            # 精二皮肤
-            if (operator_key not in EXCLUDED_SKIN_OPERATORS and 
-                operator["evolvePhase"] == 2 and 
-                inst_id not in SPECIAL_INST_IDS):
-                operator["skin"] = f"{operator_key}#2"
-            
-            # 角色最新皮肤覆盖
-            if operator_key in tempSkinTable:
-                operator["skin"] = tempSkinTable[operator_key]
-
             # ---------- 自定义数据覆盖 ----------
-            if custom_data := edit_json["customUnitInfo"].get(operator_key):
+            if custom_data := edit_json["customUnitInfo"].get(char_id):
                 for key, value in custom_data.items():
                     if key == "skills":
                         for idx, sl in enumerate(value):
@@ -272,7 +244,7 @@ def accountSyncData():
 
             # ---------- 特殊角色处理 ----------
             # 阿米娅特殊形态
-            if operator_key == "char_002_amiya":
+            if char_id == "char_002_amiya":
                 operator.update({
                     "defaultSkillIndex": -1,
                     "skills": [],
@@ -294,28 +266,25 @@ def accountSyncData():
                     }
                 })
                 # 处理阿米娅模组
-                char_equip_cache = equip_table["charEquip"]
-                for tmpl in AMIYA_TEMPLATES.keys() & char_equip_cache.keys():
-                        equip_list = char_equip_cache[tmpl]
-                        operator["tmpl"][tmpl]["equip"] = {
-                            equip: {
-                                "hide": 0,
-                                "locked": 0,
-                                "level": (
-                                    len(battle_equip_table[equip]["phases"]) 
-                                    if equip in battle_equip_table 
-                                    else 1
-                                )
-                            } for equip in equip_list
-                        }
-                        operator["tmpl"][tmpl]["currentEquip"] = equip_list[-1]
-            elif operator_key == "char_512_aprot":
-                operator["skin"] = "char_512_aprot#1"
+                for tmpl in AMIYA_TEMPLATES.keys():
+                    equip_list = equip_table["charEquip"].get(tmpl)
+                    operator["tmpl"][tmpl]["equip"] = {
+                        equip: {
+                            "hide": 0,
+                            "locked": 0,
+                            "level": (
+                                len(equip_dict[equip]["itemCost"])
+                                if equip_dict[equip].get("itemCost") is not None
+                                else 1
+                            )
+                        } for equip in equip_list
+                    }
+                    operator["tmpl"][tmpl]["currentEquip"] = equip_list[-1]
 
             # ---------- 基建数据处理 ----------
             buildingChars[inst_id] = {
-                "charId": operator_key,
-                "lastApAddTime": round(time()) - 3600,
+                "charId": char_id,
+                "lastApAddTime": ts - 3600,
                 "ap": 8640000,
                 "roomSlotId": "",
                 "index": -1,
@@ -329,7 +298,7 @@ def accountSyncData():
 
             # ---------- 最终数据存储 ----------
             myCharList[inst_id] = operator
-            player_data["user"]["dexNav"]["character"][operator_key] = {
+            player_data["user"]["dexNav"]["character"][char_id] = {
                 "charInstId": inst_id,
                 "count": 6
             }
@@ -340,7 +309,7 @@ def accountSyncData():
     for dupeChar in dupe_characters:
         tempChar = {}
         char_id_index = {
-            char["charId"]: inst_id 
+            char["charId"]: inst_id
             for inst_id, char in myCharList.items()
         }
         for dupeChar in dupe_characters:
@@ -359,13 +328,13 @@ def accountSyncData():
     # Tamper story
     myStoryList = {"init": 1}
     for story in story_table:
-        myStoryList.update({story:1})
+        myStoryList.update({story: 1})
 
     player_data["user"]["status"]["flags"] = myStoryList
 
     # Tamper Stages
     myStageList = {}
-    
+
     for stage in stage_table["stages"]:
         myStageList.update({
             stage: {
@@ -378,15 +347,15 @@ def accountSyncData():
                 "state": 3
             }
         })
-    
+
     player_data["user"]["dungeon"]["stages"] = myStageList
 
     # Tamper addon [paradox&records]
     addonList = {}
     for charId in addon_table["handbookDict"]:
-        addonList[charId] = {"story":{}}
+        addonList[charId] = {"story": {}}
         story = addon_table["handbookDict"][charId]["handbookAvgList"]
-        for i,j in zip(story,range(len(story))):
+        for i, j in zip(story, range(len(story))):
             if "storySetId" in i:
                 addonList[charId]["story"].update({
                     addon_table["handbookDict"][charId]["handbookAvgList"][j]["storySetId"]: {
@@ -407,9 +376,9 @@ def accountSyncData():
                     "startTime": 2
                 }
             }
-        }) 
+        })
 
-    player_data["user"]["troop"]["addon"].update(addonList) # TODO: I might try MongoDB in the future.
+    player_data["user"]["troop"]["addon"].update(addonList)  # TODO: I might try MongoDB in the future.
 
     # Tamper Side Stories and Intermezzis
     block = {}
@@ -424,7 +393,7 @@ def accountSyncData():
 
     trail = {}
     for retro in retro_table["retroTrailList"]:
-        trail.update({retro:{}})
+        trail.update({retro: {}})
         for trailReward in retro_table["retroTrailList"][retro]["trailRewardList"]:
             trail.update({
                 retro: {
@@ -444,7 +413,7 @@ def accountSyncData():
             })
 
             player_data["user"]["campaignsV2"]["sweepMaxKills"].update({stage: 400})
-            player_data["user"]["campaignsV2"]["open"]["permanent"].append(stage)
+            player_data["user"]["campaignsV2"]["open"]["permanent"].append(stage)   #TODO 需要去重
             player_data["user"]["campaignsV2"]["open"]["training"].append(stage)
 
     # Tamper Avatars and Backgrounds
@@ -452,7 +421,7 @@ def accountSyncData():
     for avatar in display_meta_table["playerAvatarData"]["avatarList"]:
         avatar_icon.update({
             avatar["avatarId"]: {
-                "ts": round(time()),
+                "ts": ts,
                 "src": "initial" if avatar["avatarId"].startswith("avatar_def") else "other"
             }
         })
@@ -462,7 +431,7 @@ def accountSyncData():
     for bg in display_meta_table["homeBackgroundData"]["homeBgDataList"]:
         bgs.update({
             bg["bgId"]: {
-                "unlock": round(time())
+                "unlock": ts
             }
         })
     player_data["user"]["background"]["bgs"] = bgs
@@ -491,11 +460,11 @@ def accountSyncData():
     deep_sea = player_data["user"]["deepSea"]
     activity_data = activity_table["activity"]["TYPE_ACT17SIDE"]["act17side"]
     deep_sea.update({
-        "places": {place:2 for place in activity_data["placeDataMap"]},
-        "nodes": {node:2 for node in activity_data["nodeInfoDataMap"]},
+        "places": {place: 2 for place in activity_data["placeDataMap"]},
+        "nodes": {node: 2 for node in activity_data["nodeInfoDataMap"]},
         "choices": {
-            k: [2]*len(v["optionList"]) 
-            for k,v in activity_data["choiceNodeDataMap"].items()
+            k: [2] * len(v["optionList"])
+            for k, v in activity_data["choiceNodeDataMap"].items()
         }
     })
 
@@ -526,7 +495,7 @@ def accountSyncData():
         if chapter in player_data["user"]["deepSea"]["logs"].keys():
             player_data["user"]["deepSea"]["logs"][chapter].append(log)
         else:
-            player_data["user"]["deepSea"]["logs"].update({chapter:[log]})
+            player_data["user"]["deepSea"]["logs"].update({chapter: [log]})
 
     # Check if mail exists
     received_set = set(mail_data["recievedIDs"])
@@ -536,7 +505,7 @@ def accountSyncData():
         player_data["user"]["pushFlags"]["hasGifts"] = 1
 
     # Update timestamps
-    current_ts = int(time())
+    current_ts = int(ts)
     ts_fields = [
         "lastRefreshTs", "lastApAddTime", "registerTs", "lastOnlineTs"
     ]
@@ -571,8 +540,8 @@ def accountSyncData():
                 instId = charId2instId[charId]
                 slot["charInstId"] = instId
                 if (
-                    slot["currentEquip"]
-                    not in player_data["user"]["troop"]["chars"][instId]["equip"]
+                        slot["currentEquip"]
+                        not in player_data["user"]["troop"]["chars"][instId]["equip"]
                 ):
                     slot["currentEquip"] = None
             else:
@@ -592,7 +561,7 @@ def accountSyncData():
         theme = saved_data["user"]["homeTheme"]["selected"]
 
     if (current_preset := player_data["user"]["charRotation"]["preset"].get(
-        player_data["user"]["charRotation"]["current"]
+            player_data["user"]["charRotation"]["current"]
     )):
         player_data["user"]["status"]["secretary"] = current_preset["profileInst"]
         player_data["user"]["background"]["selected"] = current_preset["background"]
@@ -667,7 +636,6 @@ def accountSyncData():
 
 
 def accountSyncStatus():
-    
     data = request.data
     data = {
         "ts": round(time()),
@@ -682,7 +650,6 @@ def accountSyncStatus():
 
 
 def accountYostarAuthRequest():
-
     data = request.data
     data = {}
 
@@ -690,7 +657,6 @@ def accountYostarAuthRequest():
 
 
 def accountYostarAuthSubmit():
-
     data = request.data
     data = {
         "result": 0,
@@ -701,8 +667,8 @@ def accountYostarAuthSubmit():
 
     return data
 
-def syncPushMessage():
 
+def syncPushMessage():
     # 数据同步参数，不做处理
 
     return {
