@@ -1,7 +1,7 @@
-import time
-
+import re
 from flask import request
 
+from virtualtime import time
 from constants import USER_JSON_PATH
 from utils import read_json, write_json
 
@@ -24,7 +24,7 @@ def charBuildaddonStoryUnlock():
     data = request.data
     request_data = request.get_json()
 
-    ts = {"fts": int(time.time()), "rts": int(time.time())} # TODO
+    ts = {"fts": int(time()), "rts": int(time())} # TODO
 
     data = {
         "playerDataDelta": {
@@ -115,33 +115,36 @@ def charBuildSetDefaultSkill():
 
 
 def charBuildChangeCharSkin():
-    
-    data = request.data
     request_data = request.get_json()
     charInstId = request_data["charInstId"]
     skinId = request_data["skinId"]
-    data = {
-        "playerDataDelta":{
-            "modified":{
-                "troop":{
-                    "chars":{}
+    result = {
+        "playerDataDelta": {
+            "modified": {
+                "troop": {
+                    "chars": {}
                 }
             },
-            "deleted":{}
+            "deleted": {}
         }
     }
 
-    saved_data = read_json(USER_JSON_PATH)
-    data["playerDataDelta"]["modified"]["troop"]["chars"].update({
-        str(charInstId): {
-            "skin": skinId
-        }
-    })
+    saved_data = read_json(USER_JSON_PATH, encoding="utf-8")
 
-    saved_data["user"]["troop"]["chars"][str(charInstId)]["skin"] = skinId
-    write_json(saved_data, USER_JSON_PATH)
+    if saved_data["user"]["troop"]["chars"][str(charInstId)]["charId"] == "char_002_amiya":
+        tmpl_id = re.search(r"^(.*?)@", skinId).group(1)
+        saved_data["user"]["troop"]["chars"][str(charInstId)]["tmpl"][tmpl_id]["skinId"] = skinId
 
-    return data
+        result["playerDataDelta"]["modified"]["troop"]["chars"].update({str(charInstId): {"tmpl": {tmpl_id: {"skinId": skinId}}}})
+
+    else:
+        saved_data["user"]["troop"]["chars"][str(charInstId)]["skin"] = skinId
+
+        result["playerDataDelta"]["modified"]["troop"]["chars"].update({str(charInstId): {"skin": skinId}})
+
+    write_json(saved_data, USER_JSON_PATH, encoding="utf-8")
+
+    return result
 
 
 def charBuildSetEquipment():

@@ -37,7 +37,7 @@
                 "configs": {
                     "V059": {
                         "network": {
-                            "an": "{server}",
+                            "an": "{server}/config/prod/announce_meta/{0}/announcement.meta.json",
                             "as": "{server}",
                             "gs": "{server}",
                             "hu": "{server}/assetbundle/official",
@@ -45,7 +45,7 @@
                             "of": "https://ak.hypergryph.com/index.html",
                             "pkgAd": "https://ak.hypergryph.com/download",
                             "pkgIOS": "https://apps.apple.com/cn/app/id1454663939",
-                            "prean": "{server}/config/prod/announce_meta/{0}/preannouncement.meta.json",
+                            "prean": "{server}",
                             "rc": "{server}/config/prod/official/remote_config",
                             "secure": false,
                             "sl": "https://ak.hypergryph.com/protocol/service",
@@ -128,7 +128,7 @@
     "version": {
         "android": {
             "clientVersion": "2.4.61",
-            "resVersion": "25-03-06-16-27-08-c23c8c"
+            "resVersion": "25-03-18-13-18-46-22831e"
         }
     },
     "versionGlobal": {

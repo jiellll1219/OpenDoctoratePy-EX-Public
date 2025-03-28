@@ -1,5 +1,21 @@
 # 更新日志
 
+- 2025 年 3 月 28 日
+
+    修改：  
+    1、更改角色皮肤的函数（charBuildChangeCharSkin）兼容特殊角色阿米娅  
+    2、config部分路由修正
+
+    更新：  
+    config更新资源版本
+
+- 2025 年 3 月 17 日
+
+    贡献者：  
+    [Ali-Ericpu](https://github.com/Ali-Ericpu)
+
+    修改：优化accountSyncData性能（未进游戏测试）
+
 - 2025 年 3 月 16 日
 
     修复：  
