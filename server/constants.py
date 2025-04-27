@@ -1,5 +1,11 @@
+import json
 from msgspec.json import Decoder
-from utils import read_json
+
+def read_json(path: str, **args):
+    if 'b' not in args.get('mode', ''):
+        args.setdefault('encoding', 'utf-8')
+    with open(path, **args) as f:
+        return json.load(f)
 
 # Config Data
 CONFIG_PATH = "config/config.json"

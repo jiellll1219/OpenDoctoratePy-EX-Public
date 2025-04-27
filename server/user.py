@@ -208,6 +208,15 @@ def auth_v1_token_by_phone_password():
         }
     }
 
+def auth_v2_token_by_phone_code():
+    return {
+        "status": 0,
+        "msg": "OK",
+        "data": {
+            "token": "doctorate"
+        }
+    }
+
 
 def info_v1_basic():
     return {
@@ -259,11 +268,12 @@ def app_v1_config():
                 "recommend": False
             }
         ],
-        "customerServiceUrl": "https://chat.hypergryph.com/chat/h5/v2/index.html",
+        "customerServiceUrl": "https://chat.hypergryph.com/chat/h5/v2/index.html?sysnum=889ee281e3564ddf883942fe85764d44&channelid=2",
         "cancelDeactivateUrl": "https://user.hypergryph.com/cancellation",
         "agreementUrl": {
             "game": "https://user.hypergryph.com/protocol/plain/ak/index",
             "unbind": "https://user.hypergryph.com/protocol/plain/ak/cancellation",
+            "gameService": "https://user.hypergryph.com/protocol/plain/ak/service",
             "account": "https://user.hypergryph.com/protocol/plain/index",
             "privacy": "https://user.hypergryph.com/protocol/plain/privacy",
             "register": "https://user.hypergryph.com/protocol/plain/registration",
@@ -275,13 +285,24 @@ def app_v1_config():
             "enableAutoLogin": False,
             "enableAuthenticate": True,
             "enableAntiAddiction": True,
-            "wechatAppId": "",
-            "alipayAppId": "",
-            "oneLoginAppId": "",
+            "enableUnbindGrant": True,
+            "wechatAppId": "wx0ae7fb63d830f7c1",
+            "alipayAppId": "2018091261385264",
+            "oneLoginAppId": "7af226e84f13f17bd256eca8e1e61b5a",
             "enablePaidApp": False,
             "appName": "明日方舟",
-            "appAmount": 600
-        }
+            "appAmount": 600,
+            "needShowName": False,
+            "customerServiceUrl": "https://customer-service.hypergryph.com/ak?hg_token={hg_token}&source_from=sdk",
+            "needAntiAddictionAlert": True,
+            "enableScanLogin": False,
+            "deviceCheckMode": 2,
+            "enableGiftCode": True
+        },
+        "scanUrl": {
+            "login": "hypergryph://scan_login"
+        },
+        "userCenterUrl": "https://user.hypergryph.com/pcSdk/userInfo"
     }
 }
 
@@ -295,6 +316,13 @@ def general_v1_server_time():
             "serverTime": int(time.time()),
             "isHoliday": False
         }
+    }
+
+def userSend_phone_code():
+    return {
+        "msg": "OK",
+        "status": 0,
+        "type": "A"
     }
 
 def exchangeDiamondShard():

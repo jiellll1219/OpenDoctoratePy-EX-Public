@@ -156,3 +156,35 @@ def check():
     }
 
     return result
+
+def createappproduct():
+
+    result = {
+        "data": {
+            "orderId": "20250324091729000007049135040618",
+            "amount": 600,
+            "productName": "开采源石",
+            "payment": [
+                {
+                    "key": "alipay",
+                    "recommend": True,
+                    "discount": False
+                },
+                {
+                    "key": "wechat",
+                    "recommend": False,
+                    "discount": False
+                },
+                {
+                    "key": "pcredit",
+                    "recommend": False,
+                    "discount": False
+                }
+            ]
+        },
+        "msg": "OK",
+        "status": 0,
+        "type": "A"
+    }
+
+    return result

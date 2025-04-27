@@ -3,7 +3,7 @@ from virtualtime import time
 from flask import request
 
 from constants import BATTLE_REPLAY_JSON_PATH, USER_JSON_PATH, CONFIG_PATH, SYNC_DATA_TEMPLATE_PATH
-from utils import read_json, write_json
+from utils import read_json, write_json, decrypt_battle_data
 
 
 def questBattleStart():
@@ -349,3 +349,94 @@ def setTool():
         }
     }
     return data
+
+def act5fun_questBattleFinish():
+
+    json_body = request.get_json()
+
+    battle_data = decrypt_battle_data(json_body["data"])
+    score = 0
+    for i in battle_data["battleData"]["stats"]["extraBattleInfo"]:
+        if i.startswith("SIMPLE,money,"):
+            score = int(i.split(",")[-1])
+    return {
+        "result": 0,
+        "score": score,
+        "isHighScore": False,
+        "npcResult": {},
+        "playerResult": {"totalWin": 0, "streak": 0, "totalRound": 0},
+        "reward": [],
+        "playerDataDelta": {"modified": {}, "deleted": {}},
+    }
+
+def singleBattleStart():
+
+    #{'activityId': 'act1enemyduel', 'modeId': 'soloOperation'}
+
+    return{
+        "pushMessage": [],
+        "result": 0,
+        "battleId": "abcdefgh-1234-5678-a1b2c3d4e5f6",
+    }
+
+def singleBattleFinish():
+
+    json_body = request.get_json()
+
+    rankList = json_body["settle"]["rankList"]
+
+    result = {
+        "result": 0,
+        "apFailReturn": 0,
+        "itemReturn": [],
+        "rewards": [],
+        "unusualRewards": [],
+        "overrideRewards": [],
+        "additionalRewards": [],
+        "diamondMaterialRewards": [],
+        "furnitureRewards": [],
+        "goldScale": 0.0,
+        "expScale": 0.0,
+        "firstRewards": [],
+        "unlockStages": None,
+        "pryResult": [],
+        "alert": [],
+        "suggestFriend": False,
+        "extra": None,
+        "choiceCnt": {
+            "skip": 0,
+            "normal": 5,
+            "allIn": 1
+        },
+        "commentId": "Comment_Operation_7",
+        "isHighScore": False,
+        "rankList": rankList,
+        "dailyMission": {
+            "add": 0,
+            "reward": 0
+        },
+        "bp": 0
+    }
+
+    return result
+
+def getCheckInReward():
+
+    result = {
+        "content": {
+            "items": [
+                {
+                    "type": "AP_SUPPLY",
+                    "id": "ap_supply_lt_80",
+                    "count": 1
+                },
+                {
+                    "type": "DIAMOND_SHD",
+                    "id": "4003",
+                    "count": 200
+                }
+            ]
+        }
+    }
+
+    return result

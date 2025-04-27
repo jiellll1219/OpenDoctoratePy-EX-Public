@@ -2,15 +2,17 @@ import json
 import hashlib
 import requests
 
-from msgspec.json import Encoder, Decoder, format
+from msgspec.json import Encoder, Decoder
 from os import path as ospath, makedirs
-from hashlib import md5, sha3_512
+from hashlib import sha3_512
 from random import shuffle
 from datetime import datetime, UTC
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import unpad
 
 from threading import Lock
+
+from constants import USER_JSON_PATH
 
 json_encoder = Encoder(order="deterministic")
 json_decoder = Decoder(strict=False)
@@ -23,15 +25,19 @@ users = {}
 users_lock = Lock()
 
 def read_json(path: str, **args):
+    if 'b' not in args.get('mode', ''):
+        args.setdefault('encoding', 'utf-8')
     with open(path, **args) as f:
         return json.load(f)
 
 def write_json(data, path: str, **args):
+    if 'b' not in args.get('mode', ''):
+        args.setdefault('encoding', 'utf-8')
     with open(path, "w", **args) as f:
         json_data = json.dumps(data, ensure_ascii=False, indent=4)
         f.write(json_data)
 
-def decrypt_battle_data(data: str, login_time: int) -> dict:
+def decrypt_battle_data(data: str, login_time: int = read_json(USER_JSON_PATH)["user"]["pushFlags"]["status"]):
     
     LOG_TOKEN_KEY = "pM6Umv*^hVQuB6t&"
     
@@ -43,9 +49,8 @@ def decrypt_battle_data(data: str, login_time: int) -> dict:
     try:
         decrypt_data = unpad(aes_obj.decrypt(battle_data), AES.block_size)
         return json.loads(decrypt_data)
-    
-    except Exception as e:
-        return None
+    except Exception:
+        return {}
     
 def update_data(url):
     BASE_URL_LIST = [
