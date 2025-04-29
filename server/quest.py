@@ -421,9 +421,14 @@ def singleBattleFinish():
     return result
 
 def getCheckInReward():
+    json_body = request.get_json()
+    user_data = read_json(USER_JSON_PATH)
 
-    result = {
-        "content": {
+    access_id = json_body["activityId"]
+
+    if access_id == "act2access":
+        rewardsCnt = user_data["user"]["activity"]["CHECKIN_ACCESS"]["act2access"]["rewardsCount"]
+        content = {
             "items": [
                 {
                     "type": "AP_SUPPLY",
@@ -437,6 +442,25 @@ def getCheckInReward():
                 }
             ]
         }
+        
+        modified = {
+            "activity": {
+                "CHECKIN_ACCESS": {
+                    access_id: {
+                        "currentStatus": 0,
+                        "lastTs": time(),
+                        "rewardsCount": rewardsCnt + 1
+                    }
+                }
+            }
+        }
+
+    result = {
+        "playerDataDelta": {
+            "modified": modified,
+            "deleted": {}
+        },
+        "content": content
     }
 
     return result
