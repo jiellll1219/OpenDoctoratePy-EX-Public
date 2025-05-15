@@ -35,7 +35,7 @@
             "content": {
                 "configVer": "5",
                 "configs": {
-                    "V060": {
+                    "V061": {
                         "network": {
                             "an": "{server}/config/prod/announce_meta/{0}/announcement.meta.json",
                             "as": "{server}",
@@ -54,7 +54,7 @@
                         "override": true
                     }
                 },
-                "funcVer": "V060"
+                "funcVer": "V061"
             },
             "sign": "Yu9qJf+JL6E8rwO/RiQu3Bq4en4tr4+wpfHfg9cPc1jtWlA2FDaf+Hh8H1wibz/K3yaHeN0r6NeWp5/wpX01OXssqCw0pAA34ypPcBq03GdsGbHPjOOdD27QTS7bE5ymXhfLJkHyXfB9ejK65xyHwFw6ceRFUOx+dEfJUdT8QhA="
         },
@@ -127,8 +127,8 @@
     },
     "version": {
         "android": {
-            "clientVersion": "2.5.04",
-            "resVersion": "25-04-25-08-42-16_acb2f8"
+            "clientVersion": "2.5.60",
+            "resVersion": "25-05-07-08-13-14_2c35c4"
         }
     },
     "versionGlobal": {

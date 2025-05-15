@@ -5,23 +5,40 @@ from flask import request
 from random import random
 
 from constants import USER_JSON_PATH, SYNC_DATA_TEMPLATE_PATH
-from utils import read_json, write_json
+from utils import read_json, write_json, run_after_response
 
 import time
 
 
 def CheckIn():
-
-    data = request.data
-    data = {
+    sync_data = read_json(SYNC_DATA_TEMPLATE_PATH, encoding="utf-8")
+    user_data = read_json(USER_JSON_PATH, encoding="utf-8")
+    checkin_data = sync_data["user"]["checkIn"]
+    checkin_data["canCheckIn"] = 0
+    checkin_data["showCount"] += 1
+    checkin_data["checkInHistory"].append(0)
+    sync_data["user"]["checkIn"] = checkin_data
+    user_data["user"]["checkIn"] = checkin_data
+    result = {
         "result": 0,
         "playerDataDelta": {
-            "modified": {},
+            "modified": {
+                "checkIn": {
+                    "canCheckIn": 0,
+                    "showCount": checkin_data["showCount"],
+                    "checkInHistory": checkin_data["checkInHistory"],
+                }
+            },
             "deleted": {}
         }
     }
 
-    return data
+    def write_data(data, PATH):
+        write_json(data, PATH, encoding="utf-8")
+
+    run_after_response(write_data, sync_data, SYNC_DATA_TEMPLATE_PATH)
+    run_after_response(write_data, user_data, USER_JSON_PATH)
+    return result
 
 
 def ChangeSecretary():
@@ -548,17 +565,40 @@ def businessCard_changeNameCardSkin():
     }
 
 def editNameCard():
-
     json_body = request.get_json()
+    sync_data = read_json(SYNC_DATA_TEMPLATE_PATH, encoding="utf-8")
+    user_data = read_json(USER_JSON_PATH, encoding="utf-8")
+    nameCardStyle_data = sync_data["user"]["nameCardStyle"]
+    modified_data = json_body["content"]
 
-    return {
+    if modified_data["skinId"] is not None:
+        nameCardStyle_data["skin"]["selected"] = modified_data["skinId"]
+
+    if modified_data["component"] is not None:
+        nameCardStyle_data["componentOrder"] = modified_data["component"]
+
+    if modified_data["misc"] is not None:
+        nameCardStyle_data["misc"]["showDetail"] = bool(modified_data["misc"]["showDetail"])
+        nameCardStyle_data["misc"]["showBirthday"] = bool(modified_data["misc"]["showBirthday"])
+
+    user_data["user"]["nameCardStyle"] = nameCardStyle_data
+
+    result = {
         "playerDataDelta": {
             "modified": {
-                
+                "nameCardStyle": nameCardStyle_data
             },
             "deleted": {},
         }
     }
+
+    def write_data(data, PATH):
+        write_json(data, PATH, encoding="utf-8")
+
+    run_after_response(write_data, sync_data, USER_JSON_PATH)
+    run_after_response(write_data, user_data, SYNC_DATA_TEMPLATE_PATH)
+
+    return result
 
 def bindBirthday():
 

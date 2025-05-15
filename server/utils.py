@@ -1,14 +1,18 @@
 import json
 import hashlib
 import requests
+import traceback
+import sys
 
 from msgspec.json import Encoder, Decoder
 from os import path as ospath, makedirs
 from hashlib import sha3_512
 from random import shuffle
+from flask import after_this_request
 from datetime import datetime, UTC
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import unpad
+from concurrent.futures import ThreadPoolExecutor
 
 from threading import Lock
 
@@ -118,3 +122,29 @@ def logging(data):
     print(log_message)
     with open(f"logs/{name}.log", "w") as f:
         f.write(log_message)
+
+executor = ThreadPoolExecutor(max_workers=10)
+# 线程池最大数量，默认为10
+def run_after_response(func, *args, on_error=None, sequential=False):
+    """
+    在函数返回后异步执行函数（带线程池、异常捕获）。
+
+    :param func: 要执行的函数。支持带一个参数(data)，亦可以无参数。
+    :param *args: 可选，传给函数的参数/数据。
+    :param on_error: 可选，异常回调函数。例子: on_error(exception, traceback_str)
+    """
+    @after_this_request
+    def register(response):
+        def task():
+            try:
+                func(*args)
+            except Exception as e:
+                tb_str = traceback.format_exc()
+                if on_error:
+                    on_error(e, tb_str)
+                else:
+                    print(f"[处理异常] {e}", file=sys.stderr)
+                    print(tb_str, file=sys.stderr)
+        
+        executor.submit(task)
+        return response

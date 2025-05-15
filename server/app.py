@@ -9,7 +9,8 @@ from constants import CONFIG_PATH, EX_CONFIG_PATH, preload_json_data
 
 import account, background, building, campaignV2, char, charBuild, charm, \
         crisis, deepsea, gacha, mail, online, tower, quest, pay, rlv2, shop, story, \
-        user, asset.assetbundle, config.prod, social, templateShop, logs, sandbox, charrotation \
+        user, asset.assetbundle, config.prod, social, templateShop, other, sandbox, charrotation, \
+        activity
 
 server_config = read_json(CONFIG_PATH)
 ex_config = read_json(EX_CONFIG_PATH)
@@ -158,7 +159,9 @@ app.add_url_rule("/act25side/battleFinish", methods = ["POST"], view_func = ques
 app.add_url_rule("/retro/typeAct20side/competitionStart", methods = ["POST"], view_func = quest.typeAct20side_competitionStart)
 app.add_url_rule("/retro/typeAct20side/competitionFinish", methods = ["POST"], view_func = quest.typeAct20side_competitionFinish)
 
-app.add_url_rule("/activity/actCheckinAccess/getCheckInReward", methods = ["POST"], view_func = quest.getCheckInReward)
+app.add_url_rule("/activity/actCheckinAccess/getCheckInReward", methods = ["POST"], view_func = activity.CheckInReward().getCheckInReward)
+app.add_url_rule("/activity/getActivityCheckInReward", methods = ["POST"], view_func = activity.CheckInReward().getActivityCheckInReward)
+app.add_url_rule("/activity/prayOnly/getReward", methods = ["POST"], view_func = activity.CheckInReward().getReward)
 app.add_url_rule("/activity/enemyDuel/singleBattleStart", methods = ["POST"], view_func = quest.singleBattleStart)
 app.add_url_rule("/activity/enemyDuel/singleBattleFinish", methods = ["POST"], view_func = quest.singleBattleFinish)
 app.add_url_rule("/activity/act24side/battleStart", methods = ["POST"], view_func = quest.questBattleStart)
@@ -266,10 +269,10 @@ app.add_url_rule('/social/deleteFriend', methods=['POST'], view_func=social.dele
 app.add_url_rule('/social/searchPlayer', methods=['POST'], view_func=social.searchPlayer)
 app.add_url_rule("/social/setCardShowMedal", methods = ["POST"], view_func = social.setCardShowMedal)
 
-# app.add_url_rule("/iedsafe/Client/android/19791/config2.xml", methods = ["GET"], view_func = logs.anticheat)
-# app.add_url_rule("/event", methods = ["POST"], view_func = logs.event)
-# app.add_url_rule("/batch_event", methods = ["POST"], view_func = logs.batch_event)
-# app.add_url_rule("/beat", methods = ["POST"], view_func = logs.beat)
+# app.add_url_rule("/iedsafe/Client/android/19791/config2.xml", methods = ["GET"], view_func = other.anticheat)
+# app.add_url_rule("/event", methods = ["POST"], view_func = other.event)
+# app.add_url_rule("/batch_event", methods = ["POST"], view_func = other.batch_event)
+# app.add_url_rule("/beat", methods = ["POST"], view_func = other.beat)
 
 app.add_url_rule("/charRotation/setCurrent", methods = ["POST"], view_func = charrotation.setCurrent)
 app.add_url_rule("/charRotation/createPreset", methods = ["POST"], view_func = charrotation.createPreset)

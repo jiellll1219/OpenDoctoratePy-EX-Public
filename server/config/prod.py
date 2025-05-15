@@ -1,6 +1,7 @@
 import re
 import json
 
+from flask import request
 from random import shuffle
 from constants import CONFIG_PATH
 from collections import OrderedDict
@@ -41,7 +42,7 @@ def prodNetworkConfig():
     server_config = read_json(CONFIG_PATH)
 
     mode = server_config["server"]["mode"]
-    server = "http://" + server_config["server"]["host"] + ":" + str(server_config["server"]["port"])
+    server = request.host_url[:-1]
     network_config = server_config["networkConfig"][mode]
     funcVer = network_config["content"]["funcVer"]
 
@@ -103,18 +104,45 @@ def prodGateMeta():
 
 def get_latest_game_info():
 
-    result = OrderedDict([
-        ("version", ""),
-        ("action", 3),
-        ("update_type", 0),
-        ("update_info", OrderedDict([
-            ("package", None),
-            ("patch", None),
-            ("custom_info", ""),
-            ("source_package", None),
-        ])),
-        ("client_version", "")
-    ])
+    server_config = read_json(CONFIG_PATH)
+    mode = server_config["server"]["mode"]
+    match mode:
+        case "cn":
+            version = server_config["version"]["android"]
+        case "global":
+            version = server_config["versionGlobal"]["android"]
+        case _:
+            version = server_config["version"]["android"]
+    funcVer = server_config["networkConfig"][mode]["content"]["funcVer"]
+
+    main_version  = funcVer.lstrip("V").lstrip("0") or "0"[:2]
+    
+    # result = OrderedDict([
+    #     ("version", ""),
+    #     ("action", 3),
+    #     ("update_type", 0),
+    #     ("update_info", OrderedDict([
+    #         ("package", None),
+    #         ("patch", None),
+    #         ("custom_info", ""),
+    #         ("source_package", None),
+    #     ])),
+    #     ("client_version", "")
+    # ])
+
+    result = {
+        "version": f"{main_version}.0.0",
+        "action": 0,
+        "update_type": 0,
+        "update_info": {
+            "package": None,
+            "patch": None,
+            "custom_info": "",
+            "source_package": None
+        },
+        "client_version": version["clientVersion"]
+    }
+
     return result
 
 def ak_sdk_config():

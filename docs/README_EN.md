@@ -18,7 +18,7 @@ If you need to contact me, please raise an issue or send an email to jiege0019@g
 
 This project has no community groups and prohibits any profit-driven redistribution or secondary development.
 
-If you want to contribute code but lack data, you can refer to this [il2cpp file](https://drive.google.com/file/d/1q7I_cAFzMtyZ2EYqd1IlZLez1uRElgTv/view?usp=sharing).
+If you want to contribute code but lack data, you can at [Here](https://tptpmmpc.ap-southeast-1.clawcloudrun.com/) to get the il2cpp file, I will upload the il2cpp files for each version irregularly.
 
 ## Expansion Progress
 
@@ -30,6 +30,8 @@ If you want to contribute code but lack data, you can refer to this [il2cpp file
 | Shop | Completed | Mostly Done |  |
 | Recharge | Completed | Done |  |
 | Interface Design | Completed | Done | Tested |
+| CheckIn | Completed | Done | Tested |
+| Activity CheckIn | Continuous updates | Mostly Done |  |
 | SandBox | Paused |  |  |
 | Friends | Paused |  | To Be Scheduled |
 
@@ -45,7 +47,7 @@ Please make sure that you are using a version of Python 3.11.0 or later, and tha
 3. Start the server by running 'start_dacal_Server. abt'  
 4. Find a way to route the game to the server on your own, this repository does not provide a solution
 
-If you think this is troublesome, you can also connect to my public server to experience it. The server address is `http://8.138.148.178:8443/`. My function development progress will also be synchronized to this server in real time. Note! The version of this server is still a single-player version and does not support multi-user play. This server is located in China. The code structure used by the server is not completely consistent with the code of this warehouse, but the functions are basically the same
+If you think this is troublesome, you can also connect to my public server to experience it. The server address is `http://8.138.148.178:8443/`. My function development progress will also be synchronized to this server in ~~real time~~ sometime. Note! The version of this server is still a single-player version and does not support multi-user play. This server is located in China. The code structure used by the server is not completely consistent with the code of this warehouse, but the functions are basically the same
 
 ## Data Structure Explanation
 

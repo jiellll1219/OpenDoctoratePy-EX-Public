@@ -136,29 +136,50 @@ def AssignChar():
 
 def ChangeDiySolution():
 
-    json_body = json.loads(request.data)
+    json_body = request.get_json()
 
     roomSlotId = json_body["roomSlotId"]
     solution = json_body["solution"]
 
-    user_sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
+    user_json_data = read_json(USER_JSON_PATH, encoding="utf-8")
 
-    dormitory = user_sync_data["user"]["building"]["rooms"]["DORMITORY"]
-    dormitory[roomSlotId]["diySolution"] = solution
+    if roomSlotId == "slot_36":
+        user_json_data["user"]["building"]["rooms"]["MEETING"]["slot_36"]["diySolution"] = solution
+        building_modified = {
+            "rooms": {
+                "MEETING": {
+                    "slot_36": {
+                        "diySolution": solution
+                    }
+                }
+            }
+        }
+    else:
+        for roomId in user_json_data["user"]["building"]["roomSlots"].keys():
+            if roomId == roomSlotId:
+                rooms_type = user_json_data["user"]["building"]["roomSlots"][roomId]["roomId"]
+                user_json_data["user"]["building"]["rooms"][rooms_type][roomSlotId]["diySolution"] = solution
+                building_modified = {
+                    "rooms": {
+                        rooms_type: {
+                            roomSlotId: {
+                                "diySolution": solution 
+                            }
+                        }
+                    }
+                }
+                break
 
-    write_json(user_sync_data, SYNC_DATA_TEMPLATE_PATH)
-    write_json(user_sync_data, USER_JSON_PATH)
-
-    player_data_delta = {
-        "modified": {
-            "building": user_sync_data["building"],
-            "event": user_sync_data["event"]
-        },
-        "deleted": {}
-    }
+    write_json(user_json_data, USER_JSON_PATH, encoding="utf-8")
 
     result = {
-        "playerDataDelta": player_data_delta
+        "playerDataDelta": {
+            "modified": {
+                "building": building_modified,
+                "event": user_json_data["user"]["event"]
+            },
+            "deleted": {}
+        }
     }
 
     return result
