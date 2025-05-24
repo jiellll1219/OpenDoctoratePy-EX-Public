@@ -5,14 +5,14 @@ import typing as t
 if t.TYPE_CHECKING:  # pragma: no cover
     from _typeshed.wsgi import WSGIApplication  # noqa: F401
     from werkzeug.datastructures import Headers  # noqa: F401
-    from werkzeug.wrappers import Response  # noqa: F401
+    from werkzeug.sansio.response import Response  # noqa: F401
 
 # The possible types that are directly convertible or are a Response object.
 ResponseValue = t.Union[
     "Response",
     str,
     bytes,
-    t.List[t.Any],
+    list[t.Any],
     # Only dict is actually accepted, but Mapping allows for TypedDict.
     t.Mapping[str, t.Any],
     t.Iterator[str],
@@ -21,21 +21,21 @@ ResponseValue = t.Union[
 
 # the possible types for an individual HTTP header
 # This should be a Union, but mypy doesn't pass unless it's a TypeVar.
-HeaderValue = t.Union[str, t.List[str], t.Tuple[str, ...]]
+HeaderValue = t.Union[str, list[str], tuple[str, ...]]
 
 # the possible types for HTTP headers
 HeadersValue = t.Union[
     "Headers",
     t.Mapping[str, HeaderValue],
-    t.Sequence[t.Tuple[str, HeaderValue]],
+    t.Sequence[tuple[str, HeaderValue]],
 ]
 
 # The possible types returned by a route function.
 ResponseReturnValue = t.Union[
     ResponseValue,
-    t.Tuple[ResponseValue, HeadersValue],
-    t.Tuple[ResponseValue, int],
-    t.Tuple[ResponseValue, int, HeadersValue],
+    tuple[ResponseValue, HeadersValue],
+    tuple[ResponseValue, int],
+    tuple[ResponseValue, int, HeadersValue],
     "WSGIApplication",
 ]
 
@@ -56,17 +56,22 @@ BeforeRequestCallable = t.Union[
     t.Callable[[], t.Optional[ResponseReturnValue]],
     t.Callable[[], t.Awaitable[t.Optional[ResponseReturnValue]]],
 ]
-ShellContextProcessorCallable = t.Callable[[], t.Dict[str, t.Any]]
+ShellContextProcessorCallable = t.Callable[[], dict[str, t.Any]]
 TeardownCallable = t.Union[
     t.Callable[[t.Optional[BaseException]], None],
     t.Callable[[t.Optional[BaseException]], t.Awaitable[None]],
 ]
-TemplateContextProcessorCallable = t.Callable[[], t.Dict[str, t.Any]]
+TemplateContextProcessorCallable = t.Union[
+    t.Callable[[], dict[str, t.Any]],
+    t.Callable[[], t.Awaitable[dict[str, t.Any]]],
+]
 TemplateFilterCallable = t.Callable[..., t.Any]
 TemplateGlobalCallable = t.Callable[..., t.Any]
 TemplateTestCallable = t.Callable[..., bool]
-URLDefaultCallable = t.Callable[[str, dict], None]
-URLValuePreprocessorCallable = t.Callable[[t.Optional[str], t.Optional[dict]], None]
+URLDefaultCallable = t.Callable[[str, dict[str, t.Any]], None]
+URLValuePreprocessorCallable = t.Callable[
+    [t.Optional[str], t.Optional[dict[str, t.Any]]], None
+]
 
 # This should take Exception, but that either breaks typing the argument
 # with a specific exception, or decorating multiple times with different
@@ -74,7 +79,10 @@ URLValuePreprocessorCallable = t.Callable[[t.Optional[str], t.Optional[dict]], N
 # https://github.com/pallets/flask/issues/4095
 # https://github.com/pallets/flask/issues/4295
 # https://github.com/pallets/flask/issues/4297
-ErrorHandlerCallable = t.Callable[[t.Any], ResponseReturnValue]
+ErrorHandlerCallable = t.Union[
+    t.Callable[[t.Any], ResponseReturnValue],
+    t.Callable[[t.Any], t.Awaitable[ResponseReturnValue]],
+]
 
 RouteCallable = t.Union[
     t.Callable[..., ResponseReturnValue],

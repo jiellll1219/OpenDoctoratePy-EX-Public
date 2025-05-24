@@ -47,20 +47,21 @@ class TupleHash(object):
         self._cshake = cshake._new(b'', custom, b'TupleHash')
         self._digest = None
 
-    def update(self, data):
-        """Authenticate the next byte string in the tuple.
+    def update(self, *data):
+        """Authenticate the next tuple of byte strings.
+        TupleHash guarantees the logical separation between each byte string.
 
         Args:
-            data (bytes/bytearray/memoryview): The next byte string.
+            data (bytes/bytearray/memoryview): One or more items to hash.
         """
 
         if self._digest is not None:
             raise TypeError("You cannot call 'update' after 'digest' or 'hexdigest'")
 
-        if not is_bytes(data):
-            raise TypeError("You can only call 'update' on bytes")
-
-        self._cshake.update(_encode_str(tobytes(data)))
+        for item in data:
+            if not is_bytes(item):
+                raise TypeError("You can only call 'update' on bytes" )
+            self._cshake.update(_encode_str(item))
 
         return self
 
@@ -131,8 +132,5 @@ def new(**kwargs):
         digest_bytes = digest_bits // 8
 
     custom = kwargs.pop("custom", b'')
-
-    if kwargs:
-        raise TypeError("Unknown parameters: " + str(kwargs))
 
     return TupleHash(custom, cSHAKE128, digest_bytes)

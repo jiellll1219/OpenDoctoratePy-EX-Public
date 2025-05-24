@@ -10,7 +10,7 @@ from constants import CONFIG_PATH, EX_CONFIG_PATH, preload_json_data
 import account, background, building, campaignV2, char, charBuild, charm, \
         crisis, deepsea, gacha, mail, online, tower, quest, pay, rlv2, shop, story, \
         user, asset.assetbundle, config.prod, social, templateShop, other, sandbox, charrotation, \
-        activity
+        activity, vecbreak
 
 server_config = read_json(CONFIG_PATH)
 ex_config = read_json(EX_CONFIG_PATH)
@@ -278,6 +278,16 @@ app.add_url_rule("/charRotation/setCurrent", methods = ["POST"], view_func = cha
 app.add_url_rule("/charRotation/createPreset", methods = ["POST"], view_func = charrotation.createPreset)
 app.add_url_rule("/charRotation/deletePreset", methods = ["POST"], view_func = charrotation.deletePreset)
 app.add_url_rule("/charRotation/updatePreset", methods = ["POST"], view_func = charrotation.updatePreset)
+
+app.add_url_rule("/vecBreakV2/getSeasonRecord", methods = ["POST"], view_func = vecbreak.getSeasonRecord)
+app.add_url_rule("/activity/rewardAllMilestone", methods = ["POST"], view_func = vecbreak.rewardAllMilestone)
+app.add_url_rule("/activity/rewardMilestone", methods = ["POST"], view_func = vecbreak.rewardMilestone)
+app.add_url_rule("/activity/vecBreakV2/changeBuffList", methods = ["POST"], view_func = vecbreak.vecV2changeBuffList)
+app.add_url_rule("/activity/vecBreakV2/defendBattleStart", methods = ["POST"], view_func = vecbreak.defendBattleStart)
+app.add_url_rule("/activity/vecBreakV2/defendBattleFinish", methods = ["POST"], view_func = vecbreak.defendBattleFinish)
+app.add_url_rule("/activity/vecBreakV2/setDefend", methods = ["POST"], view_func = vecbreak.setDefend)
+app.add_url_rule("/activity/vecBreakV2/battleStart", methods = ["POST"], view_func = vecbreak.vecV2BattleStart)
+app.add_url_rule("/activity/vecBreakV2/battleFinish", methods = ["POST"], view_func = vecbreak.vecV2battleFinish)
 
 def writeLog(data):
     print(f'[{datetime.now()}] {data}')

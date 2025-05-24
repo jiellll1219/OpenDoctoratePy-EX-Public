@@ -11,8 +11,9 @@ from datetime import date
 from werkzeug.http import http_date
 
 if t.TYPE_CHECKING:  # pragma: no cover
-    from ..app import Flask
-    from ..wrappers import Response
+    from werkzeug.sansio.response import Response
+
+    from ..sansio.app import App
 
 
 class JSONProvider:
@@ -34,8 +35,8 @@ class JSONProvider:
     .. versionadded:: 2.2
     """
 
-    def __init__(self, app: Flask) -> None:
-        self._app = weakref.proxy(app)
+    def __init__(self, app: App) -> None:
+        self._app: App = weakref.proxy(app)
 
     def dumps(self, obj: t.Any, **kwargs: t.Any) -> str:
         """Serialize data as JSON.
@@ -112,7 +113,7 @@ def _default(o: t.Any) -> t.Any:
         return str(o)
 
     if dataclasses and dataclasses.is_dataclass(o):
-        return dataclasses.asdict(o)
+        return dataclasses.asdict(o)  # type: ignore[arg-type]
 
     if hasattr(o, "__html__"):
         return str(o.__html__())
@@ -134,9 +135,7 @@ class DefaultJSONProvider(JSONProvider):
         method) will call the ``__html__`` method to get a string.
     """
 
-    default: t.Callable[[t.Any], t.Any] = staticmethod(
-        _default
-    )  # type: ignore[assignment]
+    default: t.Callable[[t.Any], t.Any] = staticmethod(_default)  # type: ignore[assignment]
     """Apply this function to any object that :meth:`json.dumps` does
     not know how to serialize. It should return a valid JSON type or
     raise a ``TypeError``.

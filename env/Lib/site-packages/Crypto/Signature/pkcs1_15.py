@@ -77,10 +77,11 @@ class PKCS115_SigScheme:
         em = _EMSA_PKCS1_V1_5_ENCODE(msg_hash, k)
         # Step 2a (OS2IP)
         em_int = bytes_to_long(em)
-        # Step 2b (RSASP1)
-        m_int = self._key._decrypt(em_int)
-        # Step 2c (I2OSP)
-        signature = long_to_bytes(m_int, k)
+        # Step 2b (RSASP1) and Step 2c (I2OSP)
+        signature = self._key._decrypt_to_bytes(em_int)
+        # Verify no faults occurred
+        if em_int != pow(bytes_to_long(signature), self._key.e, self._key.n):
+            raise ValueError("Fault detected in RSA private key operation")
         return signature
 
     def verify(self, msg_hash, signature):
@@ -202,7 +203,7 @@ def _EMSA_PKCS1_V1_5_ENCODE(msg_hash, emLen, with_hash_parameters=True):
     # We need at least 11 bytes for the remaining data: 3 fixed bytes and
     # at least 8 bytes of padding).
     if emLen<len(digestInfo)+11:
-        raise TypeError("Selected hash algorithm has a too long digest (%d bytes)." % len(digest))
+        raise TypeError("DigestInfo is too long for this RSA key (%d bytes)." % len(digestInfo))
     PS = b'\xFF' * (emLen - len(digestInfo) - 3)
     return b'\x00\x01' + PS + b'\x00' + digestInfo
 

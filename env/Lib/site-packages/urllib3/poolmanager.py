@@ -7,7 +7,7 @@ import warnings
 from types import TracebackType
 from urllib.parse import urljoin
 
-from ._collections import RecentlyUsedContainer
+from ._collections import HTTPHeaderDict, RecentlyUsedContainer
 from ._request_methods import RequestMethods
 from .connection import ProxyConfig
 from .connectionpool import HTTPConnectionPool, HTTPSConnectionPool, port_by_scheme
@@ -27,7 +27,7 @@ from .util.url import Url, parse_url
 if typing.TYPE_CHECKING:
     import ssl
 
-    from typing_extensions import Literal
+    from typing_extensions import Self
 
 __all__ = ["PoolManager", "ProxyManager", "proxy_from_url"]
 
@@ -39,6 +39,7 @@ SSL_KEYWORDS = (
     "cert_file",
     "cert_reqs",
     "ca_certs",
+    "ca_cert_data",
     "ssl_version",
     "ssl_minimum_version",
     "ssl_maximum_version",
@@ -50,8 +51,6 @@ SSL_KEYWORDS = (
 # Default value for `blocksize` - a new parameter introduced to
 # http.client.HTTPConnection & http.client.HTTPSConnection in Python 3.7
 _DEFAULT_BLOCKSIZE = 16384
-
-_SelfT = typing.TypeVar("_SelfT")
 
 
 class PoolKey(typing.NamedTuple):
@@ -74,6 +73,7 @@ class PoolKey(typing.NamedTuple):
     key_cert_file: str | None
     key_cert_reqs: str | None
     key_ca_certs: str | None
+    key_ca_cert_data: str | bytes | None
     key_ssl_version: int | str | None
     key_ssl_minimum_version: ssl.TLSVersion | None
     key_ssl_maximum_version: ssl.TLSVersion | None
@@ -213,7 +213,7 @@ class PoolManager(RequestMethods):
         self.pool_classes_by_scheme = pool_classes_by_scheme
         self.key_fn_by_scheme = key_fn_by_scheme.copy()
 
-    def __enter__(self: _SelfT) -> _SelfT:
+    def __enter__(self) -> Self:
         return self
 
     def __exit__(
@@ -221,7 +221,7 @@ class PoolManager(RequestMethods):
         exc_type: type[BaseException] | None,
         exc_val: BaseException | None,
         exc_tb: TracebackType | None,
-    ) -> Literal[False]:
+    ) -> typing.Literal[False]:
         self.clear()
         # Return False to re-raise any potential exceptions
         return False
@@ -449,9 +449,12 @@ class PoolManager(RequestMethods):
         # Support relative URLs for redirecting.
         redirect_location = urljoin(url, redirect_location)
 
-        # RFC 7231, Section 6.4.4
         if response.status == 303:
+            # Change the method according to RFC 9110, Section 15.4.4.
             method = "GET"
+            # And lose the body not to transfer anything sensitive.
+            kw["body"] = None
+            kw["headers"] = HTTPHeaderDict(kw["headers"])._prepare_for_method_change()
 
         retries = kw.get("retries")
         if not isinstance(retries, Retry):
@@ -549,7 +552,7 @@ class ProxyManager(PoolManager):
         proxy_headers: typing.Mapping[str, str] | None = None,
         proxy_ssl_context: ssl.SSLContext | None = None,
         use_forwarding_for_https: bool = False,
-        proxy_assert_hostname: None | str | Literal[False] = None,
+        proxy_assert_hostname: None | str | typing.Literal[False] = None,
         proxy_assert_fingerprint: str | None = None,
         **connection_pool_kw: typing.Any,
     ) -> None:

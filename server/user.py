@@ -33,11 +33,8 @@ def CheckIn():
         }
     }
 
-    def write_data(data, PATH):
-        write_json(data, PATH, encoding="utf-8")
-
-    run_after_response(write_data, sync_data, SYNC_DATA_TEMPLATE_PATH)
-    run_after_response(write_data, user_data, USER_JSON_PATH)
+    run_after_response(write_json, sync_data, SYNC_DATA_TEMPLATE_PATH)
+    run_after_response(write_json, user_data, USER_JSON_PATH)
     return result
 
 
@@ -592,11 +589,8 @@ def editNameCard():
         }
     }
 
-    def write_data(data, PATH):
-        write_json(data, PATH, encoding="utf-8")
-
-    run_after_response(write_data, sync_data, USER_JSON_PATH)
-    run_after_response(write_data, user_data, SYNC_DATA_TEMPLATE_PATH)
+    run_after_response(write_json, sync_data, USER_JSON_PATH)
+    run_after_response(write_json, user_data, SYNC_DATA_TEMPLATE_PATH)
 
     return result
 

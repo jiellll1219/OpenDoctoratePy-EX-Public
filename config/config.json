@@ -121,14 +121,14 @@
             "squadsAndFavs": false,
             "ui": false
         },
-        "secretary": "char_171_bldsk",
-        "secretarySkinId": "char_171_bldsk@witch#1",
+        "secretary": "char_4172_xingzh",
+        "secretarySkinId": "char_4172_xingzh#1",
         "theme": "tm_sui_1"
     },
     "version": {
         "android": {
             "clientVersion": "2.5.60",
-            "resVersion": "25-05-07-08-13-14_2c35c4"
+            "resVersion": "25-05-20-12-36-22_4803e1"
         }
     },
     "versionGlobal": {

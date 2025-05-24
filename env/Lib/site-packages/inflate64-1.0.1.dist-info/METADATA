@@ -1,0 +1,108 @@
+Metadata-Version: 2.1
+Name: inflate64
+Version: 1.0.1
+Summary: deflate64 compression/decompression library
+Author-email: Hiroshi Miura <miurahr@linux.com>
+License: LGPL-2.1-or-later
+Keywords: deflate64,compression
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v2 or later (LGPLv2+)
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.9
+Description-Content-Type: text/x-rst
+License-File: COPYING
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
+Provides-Extra: docs
+Requires-Dist: sphinx>=5.0; extra == "docs"
+Requires-Dist: docutils; extra == "docs"
+Provides-Extra: check
+Requires-Dist: mypy>=1.10.0; extra == "check"
+Requires-Dist: mypy_extensions>=0.4.1; extra == "check"
+Requires-Dist: check-manifest; extra == "check"
+Requires-Dist: flake8; extra == "check"
+Requires-Dist: flake8-black; extra == "check"
+Requires-Dist: flake8-deprecated; extra == "check"
+Requires-Dist: flake8-isort; extra == "check"
+Requires-Dist: pygments; extra == "check"
+Requires-Dist: readme-renderer; extra == "check"
+Requires-Dist: twine; extra == "check"
+
+inflate64
+=========
+
+.. image:: https://badge.fury.io/py/inflate64.svg
+    :target: https://badge.fury.io/py/inflate64
+
+.. image:: https://ci.codeberg.org/api/badges/12505/status.svg
+    :target: https://ci.codeberg.org/repos/12505
+
+
+The ``inflate64`` is a python package to provide ``Deflater`` and ``Inflater`` class to compress and
+decompress with Enhanced Deflate compression algorithm.
+
+The project is in ``Production/Stable`` status.
+
+How to use
+----------
+
+You can install it with ``pip`` command as usual.
+
+.. code-block::
+
+  pip install inflate64
+
+
+You can extract compressed data by instantiating ``Inflater`` class and call ``inflate`` method.
+
+.. code-block:: python
+
+  import inflate64
+  decompressor = inflate64.Inflater()
+  extracted = decompressor.inflate(data)
+
+
+You can also compress data by instantiating ``Deflater`` class and call ``deflate`` method.
+
+.. code-block:: python
+
+  import inflate64
+  compressor = inflate64.Deflater()
+  compressed = compressor.deflate(data)
+  compressed += compressor.flush()
+
+
+License
+-------
+
+This library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with this library; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+
+.. note::
+   Please note that Enhanced Deflate algorithm is also known as `DEFLATE64` :sup:`TM`
+   that is a registered trademark of `PKWARE, Inc.`

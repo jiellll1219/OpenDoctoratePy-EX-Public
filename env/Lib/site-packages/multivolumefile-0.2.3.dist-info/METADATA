@@ -1,0 +1,270 @@
+Metadata-Version: 2.1
+Name: multivolumefile
+Version: 0.2.3
+Summary: multi volume file wrapper library
+Home-page: https://github.com/miurahr/multivolume
+Author: Hiroshi Miura
+Author-email: miurahr@linux.com
+License: LGPL-2.1+
+Keywords: multivolume,file
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v2 or later (LGPLv2+)
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.6
+Description-Content-Type: text/x-rst
+Provides-Extra: check
+Requires-Dist: check-manifest ; extra == 'check'
+Requires-Dist: flake8 ; extra == 'check'
+Requires-Dist: flake8-black ; extra == 'check'
+Requires-Dist: readme-renderer ; extra == 'check'
+Requires-Dist: pygments ; extra == 'check'
+Requires-Dist: isort (>=5.0.3) ; extra == 'check'
+Requires-Dist: twine ; extra == 'check'
+Provides-Extra: test
+Requires-Dist: pytest ; extra == 'test'
+Requires-Dist: pytest-cov ; extra == 'test'
+Requires-Dist: pyannotate ; extra == 'test'
+Requires-Dist: coverage[toml] (>=5.2) ; extra == 'test'
+Requires-Dist: coveralls (>=2.1.1) ; extra == 'test'
+Requires-Dist: hypothesis ; extra == 'test'
+Provides-Extra: type
+Requires-Dist: mypy ; extra == 'type'
+Requires-Dist: mypy-extensions ; extra == 'type'
+
+===============
+multivolumefile
+===============
+
+.. image:: https://coveralls.io/repos/github/miurahr/multivolume/badge.svg?branch=master
+  :target: https://coveralls.io/github/miurahr/multivolume?branch=master
+
+.. image:: https://github.com/miurahr/multivolume/workflows/Run%20Tox%20tests/badge.svg
+  :target: https://github.com/miurahr/multivolume/actions
+
+MultiVolumefile is a python library to provide a file-object wrapping multiple files
+as virtually like as a single file. It inherit io.RawIOBase class and support some of
+its standard methods.
+
+See API details at `python library reference`_
+
+.. _`python library reference`: https://docs.python.org/3/library/io.html
+
+Status
+======
+
+multivolumefile module is under active development and considered as ***Alpha*** state.
+It is not good idea to use it on production systems, but it may work well in a limited range
+of usage. Please check limitations and passed test cases.
+
+
+Install
+=======
+
+You can install it as usual public libraries, you can use pip command
+
+```
+pip install multivolumefile
+```
+
+You are also able to add it to your setup.py/cfg as dependency.
+
+Usages
+------
+
+- For reading multi-volume files, that has names `archive.7z.0001`, `archive.7z.0002` and so on,
+  you can call multivolumefile as follows;
+
+.. code-block::
+
+    with multivolumefile.open('archive.7z', 'rb') as vol:
+        data = vol.read(100)
+        vol.seek(500)
+
+- For writing multi-volue files, that has names `archive.7z.0001`, `archive.7z.0002` and so on,
+  you can call multivolumefile as follows;
+
+
+.. code-block::
+
+    data = b'abcdefg'
+    with multivolumefile.open('archive.7z', 'wb') as vol:
+        size = vol.write(data)
+        vol.seek(0)
+
+you will see file `archive.7z.001` are written.
+
+Limitations and known issues
+============================
+
+- fileno() is not supported and when call it, you will get RuntimeError exception.
+- There are several non-implemented functions such as truncate() and writeline() that will raise NotimplementedError
+- There are several non-implemented functions such as readlines(), readline() and readall().
+- Text mode is not implemented.
+- ***Caution***: When globbing existent volumes, it glob all files other than 4-digit extensions, it may break your data.
+
+
+Contribution
+============
+
+You are welcome to contribute the project, as usual on github projects, Pull-Requests are always welcome.
+
+License
+=======
+
+Multivolume is licensed under GNU Lesser General Public license version 2.1 or later.
+
+=========
+ChangeLog
+=========
+
+All notable changes to this project will be documented in this file.
+
+`Unreleased`_
+=============
+
+Added
+-----
+
+Changed
+-------
+
+Fixed
+-----
+
+Deprecated
+----------
+
+Removed
+-------
+
+Security
+--------
+
+`v0.2.3`_
+=========
+
+Added
+-----
+* implement readall()
+
+Chnaged
+-------
+* lint with black
+
+
+`v0.2.2`_
+=========
+
+Added
+-----
+
+* Add py.typed file for type hinting.
+
+
+`v0.2.1`_
+=========
+
+Added
+-----
+
+* Add `name` property that indicate basename of volumes
+* Add `stat()` that return `stat_result` which has as mostly same methods as `os.stat_result` class
+  except for platform dependent methods.
+
+
+`v0.2.0`_
+=========
+
+Added
+-----
+
+* Type hint information bundled.
+
+Fixed
+-----
+
+* Seek() returns current position.
+
+Changed
+-------
+
+* Explanation of unsupported methods an modes in README
+
+`v0.1.4`_
+=========
+
+Fixed
+-----
+
+* Fix append mode bug.
+
+`v0.1.3`_
+=========
+
+Fixed
+-----
+
+* Fix added volume size become wrong
+
+`v0.1.2`_
+=========
+
+Fixed
+-----
+
+* Fix append mode (#1)
+
+`v0.1.1`_
+=========
+
+Fixed
+-----
+
+* Fin NotImplementedError when writing boudning of target files
+
+`v0.1.0`_
+=========
+
+* ***API changed***
+
+Added
+-----
+
+* Add mode 'x', 'xb' and 'xt'
+* Add mode 'a', 'ab' and 'at'
+* Support flush()
+
+Changed
+-------
+
+* Change API: file argument of 'r' and 'rb' now single basename instead of list of files
+
+`v0.0.5`_
+=========
+
+* Support context manager
+* Support read functions.
+
+.. History links
+.. _Unreleased: https://github.com/miurahr/py7zr/compare/v0.2.2...HEAD
+.. _v0.2.2: https://github.com/miurahr/py7zr/compare/v0.2.1...v0.2.2
+.. _v0.2.1: https://github.com/miurahr/py7zr/compare/v0.2.0...v0.2.1
+.. _v0.2.0: https://github.com/miurahr/py7zr/compare/v0.1.4...v0.2.0
+.. _v0.1.4: https://github.com/miurahr/py7zr/compare/v0.1.3...v0.1.4
+.. _v0.1.3: https://github.com/miurahr/py7zr/compare/v0.1.2...v0.1.3
+.. _v0.1.2: https://github.com/miurahr/py7zr/compare/v0.1.1...v0.1.2
+.. _v0.1.1: https://github.com/miurahr/py7zr/compare/v0.1.0...v0.1.1
+.. _v0.1.0: https://github.com/miurahr/py7zr/compare/v0.0.5...v0.1.0
+.. _v0.0.5: https://github.com/miurahr/py7zr/compare/v0.0.1...v0.0.5
+
+

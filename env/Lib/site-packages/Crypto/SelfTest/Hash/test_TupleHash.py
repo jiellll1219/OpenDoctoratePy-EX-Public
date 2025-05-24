@@ -62,13 +62,22 @@ class TupleHashTest(unittest.TestCase):
         h.update(b'STRING1')
         h.update(b'STRING2')
         mac2 = h.digest()
-
         self.assertNotEqual(mac1, mac2)
+
+        h = self.new()
+        h.update(b'STRING1', b'STRING2')
+        self.assertEqual(mac2, h.digest())
+
+        h = self.new()
+        t = b'STRING1', b'STRING2'
+        h.update(*t)
+        self.assertEqual(mac2, h.digest())
 
     def test_update_negative(self):
         h = self.new()
         self.assertRaises(TypeError, h.update, u"string")
         self.assertRaises(TypeError, h.update, None)
+        self.assertRaises(TypeError, h.update, (b'STRING1', b'STRING2'))
 
     def test_digest(self):
         h = self.new()
@@ -264,11 +273,18 @@ class NISTExampleTestVectors(unittest.TestCase):
     def runTest(self):
 
         for data, custom, digest, text, module in self.test_data:
-            hd = module.new(custom=custom, digest_bytes=len(digest))
-            for string in data:
-                hd.update(string)
-            self.assertEqual(hd.digest(), digest, msg=text)
+            hd1 = module.new(custom=custom, digest_bytes=len(digest))
+            hd2 = module.new(custom=custom, digest_bytes=len(digest))
 
+            # Call update() for each element
+            for string in data:
+                hd1.update(string)
+
+            # One single update for all elements
+            hd2.update(*data)
+
+            self.assertEqual(hd1.digest(), digest, msg=text)
+            self.assertEqual(hd2.digest(), digest, msg=text)
 
 def get_tests(config={}):
     tests = []

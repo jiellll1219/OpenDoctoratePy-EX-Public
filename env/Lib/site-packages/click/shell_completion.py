@@ -167,25 +167,25 @@ fi
 """
 
 _SOURCE_FISH = """\
-function %(complete_func)s
+function %(complete_func)s;
     set -l response (env %(complete_var)s=fish_complete COMP_WORDS=(commandline -cp) \
-COMP_CWORD=(commandline -t) %(prog_name)s)
+COMP_CWORD=(commandline -t) %(prog_name)s);
 
-    for completion in $response
-        set -l metadata (string split "," $completion)
+    for completion in $response;
+        set -l metadata (string split "," $completion);
 
-        if test $metadata[1] = "dir"
-            __fish_complete_directories $metadata[2]
-        else if test $metadata[1] = "file"
-            __fish_complete_path $metadata[2]
-        else if test $metadata[1] = "plain"
-            echo $metadata[2]
-        end
-    end
-end
+        if test $metadata[1] = "dir";
+            __fish_complete_directories $metadata[2];
+        else if test $metadata[1] = "file";
+            __fish_complete_path $metadata[2];
+        else if test $metadata[1] = "plain";
+            echo $metadata[2];
+        end;
+    end;
+end;
 
 complete --no-files --command %(prog_name)s --arguments \
-"(%(complete_func)s)"
+"(%(complete_func)s)";
 """
 
 
@@ -230,7 +230,7 @@ class ShellComplete:
         """The name of the shell function defined by the completion
         script.
         """
-        safe_name = re.sub(r"\W*", "", self.prog_name.replace("-", "_"), re.ASCII)
+        safe_name = re.sub(r"\W*", "", self.prog_name.replace("-", "_"), flags=re.ASCII)
         return f"_{safe_name}_completion"
 
     def source_vars(self) -> t.Dict[str, t.Any]:
@@ -301,27 +301,37 @@ class BashComplete(ShellComplete):
     name = "bash"
     source_template = _SOURCE_BASH
 
-    def _check_version(self) -> None:
+    @staticmethod
+    def _check_version() -> None:
+        import shutil
         import subprocess
 
-        output = subprocess.run(
-            ["bash", "-c", 'echo "${BASH_VERSION}"'], stdout=subprocess.PIPE
-        )
-        match = re.search(r"^(\d+)\.(\d+)\.\d+", output.stdout.decode())
+        bash_exe = shutil.which("bash")
+
+        if bash_exe is None:
+            match = None
+        else:
+            output = subprocess.run(
+                [bash_exe, "--norc", "-c", 'echo "${BASH_VERSION}"'],
+                stdout=subprocess.PIPE,
+            )
+            match = re.search(r"^(\d+)\.(\d+)\.\d+", output.stdout.decode())
 
         if match is not None:
             major, minor = match.groups()
 
             if major < "4" or major == "4" and minor < "4":
-                raise RuntimeError(
+                echo(
                     _(
                         "Shell completion is not supported for Bash"
                         " versions older than 4.4."
-                    )
+                    ),
+                    err=True,
                 )
         else:
-            raise RuntimeError(
-                _("Couldn't detect Bash version, shell completion is not supported.")
+            echo(
+                _("Couldn't detect Bash version, shell completion is not supported."),
+                err=True,
             )
 
     def source(self) -> str:

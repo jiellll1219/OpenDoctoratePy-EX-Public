@@ -8,10 +8,10 @@ This needs the following packages installed:
 
 * `pyOpenSSL`_ (tested with 16.0.0)
 * `cryptography`_ (minimum 1.3.4, from pyopenssl)
-* `idna`_ (minimum 2.0, from cryptography)
+* `idna`_ (minimum 2.0)
 
-However, pyOpenSSL depends on cryptography, which depends on idna, so while we
-use all three directly here we end up having relatively few packages required.
+However, pyOpenSSL depends on cryptography, so while we use all three directly here we
+end up having relatively few packages required.
 
 You can install them with the following command:
 
@@ -40,7 +40,7 @@ like this:
 
 from __future__ import annotations
 
-import OpenSSL.SSL  # type: ignore[import]
+import OpenSSL.SSL  # type: ignore[import-untyped]
 from cryptography import x509
 
 try:
@@ -54,29 +54,20 @@ except ImportError:
 import logging
 import ssl
 import typing
-import warnings
 from io import BytesIO
 from socket import socket as socket_cls
 from socket import timeout
 
 from .. import util
 
-warnings.warn(
-    "'urllib3.contrib.pyopenssl' module is deprecated and will be removed "
-    "in urllib3 v2.1.0. Read more in this issue: "
-    "https://github.com/urllib3/urllib3/issues/2680",
-    category=DeprecationWarning,
-    stacklevel=2,
-)
-
 if typing.TYPE_CHECKING:
-    from OpenSSL.crypto import X509  # type: ignore[import]
+    from OpenSSL.crypto import X509  # type: ignore[import-untyped]
 
 
 __all__ = ["inject_into_urllib3", "extract_from_urllib3"]
 
 # Map from urllib3 to PyOpenSSL compatible parameter-values.
-_openssl_versions = {
+_openssl_versions: dict[int, int] = {
     util.ssl_.PROTOCOL_TLS: OpenSSL.SSL.SSLv23_METHOD,  # type: ignore[attr-defined]
     util.ssl_.PROTOCOL_TLS_CLIENT: OpenSSL.SSL.SSLv23_METHOD,  # type: ignore[attr-defined]
     ssl.PROTOCOL_TLSv1: OpenSSL.SSL.TLSv1_METHOD,
@@ -375,9 +366,11 @@ class WrappedSocket:
             )
             total_sent += sent
 
-    def shutdown(self) -> None:
-        # FIXME rethrow compatible exceptions should we ever use this
-        self.connection.shutdown()
+    def shutdown(self, how: int) -> None:
+        try:
+            self.connection.shutdown()
+        except OpenSSL.SSL.Error as e:
+            raise ssl.SSLError(f"shutdown error: {e!r}") from e
 
     def close(self) -> None:
         self._closed = True
@@ -409,6 +402,10 @@ class WrappedSocket:
     def version(self) -> str:
         return self.connection.get_protocol_version_name()  # type: ignore[no-any-return]
 
+    def selected_alpn_protocol(self) -> str | None:
+        alpn_proto = self.connection.get_alpn_proto_negotiated()
+        return alpn_proto.decode() if alpn_proto else None
+
 
 WrappedSocket.makefile = socket_cls.makefile  # type: ignore[attr-defined]
 
@@ -427,6 +424,7 @@ class PyOpenSSLContext:
         self.check_hostname = False
         self._minimum_version: int = ssl.TLSVersion.MINIMUM_SUPPORTED
         self._maximum_version: int = ssl.TLSVersion.MAXIMUM_SUPPORTED
+        self._verify_flags: int = ssl.VERIFY_X509_TRUSTED_FIRST
 
     @property
     def options(self) -> int:
@@ -436,6 +434,15 @@ class PyOpenSSLContext:
     def options(self, value: int) -> None:
         self._options = value
         self._set_ctx_options()
+
+    @property
+    def verify_flags(self) -> int:
+        return self._verify_flags
+
+    @verify_flags.setter
+    def verify_flags(self, value: int) -> None:
+        self._verify_flags = value
+        self._ctx.get_cert_store().set_flags(self._verify_flags)
 
     @property
     def verify_mode(self) -> int:
