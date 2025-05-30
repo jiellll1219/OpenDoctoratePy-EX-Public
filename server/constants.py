@@ -1,11 +1,3 @@
-import json
-from msgspec.json import Decoder
-
-def read_json(path: str, **args):
-    if 'b' not in args.get('mode', ''):
-        args.setdefault('encoding', 'utf-8')
-    with open(path, **args) as f:
-        return json.load(f)
 
 # Config Data
 CONFIG_PATH = "config/config.json"
@@ -19,7 +11,6 @@ SYNC_DATA_TEMPLATE_PATH = "data/user/user.json"
 # Gacha Data
 NORMALGACHA_PATH = "data/gacha/normalGacha.json"
 GACHA_HISTORY_PATH = "data/user/gachaHistory.json"
-EX_GACHA_DATA_PATH = "data/user/exGachaData.json"
 
 # User Data
 USER_JSON_PATH = "data/user/user.json"
@@ -63,57 +54,11 @@ CHARWORD_TABLE_PATH = "data/excel/charword_table.json"
 STORY_REVIEW_META_TABLE_PATH = "data/excel/story_review_meta_table.json"
 GACHA_TABLE_PATH = "data/excel/gacha_table.json"
 
-# Table In Memory
-
-#定义一个全局变量，用于存储从 JSON 文件中读取的数据
-memory_cache = {}
-useMemoryCache = read_json(EX_CONFIG_PATH)["useMemoryCache"]
-# 读取 JSON 文件并存入内存
-def preload_json_data():
-    global memory_cache
-    paths = {
-        "activity_table": ACTIVITY_TABLE_PATH,
-        "charm_table": CHARM_TABLE_PATH,
-        "skin_table": SKIN_TABLE_PATH,
-        "character_table": CHARACTER_TABLE_PATH,
-        "battle_equip_table": BATTLEEQUIP_TABLE_PATH,
-        "uniequip_table": EQUIP_TABLE_PATH,
-        "story_table": STORY_TABLE_PATH,
-        "stage_table": STAGE_TABLE_PATH,
-        "roguelike_topic_table": RL_TABLE_PATH,
-        "display_meta_table": DM_TABLE_PATH,
-        "retro_table": RETRO_TABLE_PATH,
-        "handbook_info_table": HANDBOOK_INFO_TABLE_PATH,
-        "tower_table": TOWER_TABLE_PATH,
-        "building_data": BUILDING_TABLE_PATH,
-        "story_review_table": STORY_REVIEW_TABLE_PATH,
-        "enemy_handbook_table": ENEMY_HANDBOOK_TABLE_PATH,
-        "medal_table": MEDAL_TABLE_PATH,
-        "sandbox_table": SANDBOX_TABLE_PATH,
-        "charword_table": CHARWORD_TABLE_PATH,
-        "story_review_meta_table": STORY_REVIEW_META_TABLE_PATH,
-        "gacha_table": GACHA_TABLE_PATH
-    }
-    
-    for key, path in paths.items():
-        with open(path, 'r', encoding='utf-8') as f:
-            # 使用 msgspec 解码器解码
-            memory_cache[key] = Decoder(strict=False).decode(f.read())
-
-# 直接从内存中获取数据
-def get_memory(key: str):
-    if useMemoryCache:
-        try:
-            return memory_cache.get(key)
-        except Exception:
-            print("Error: Failed to load {key} from memory")
-            return read_json(f"data/excel/{key}.json")
-    else:
-        return read_json(f"data/excel/{key}.json", encoding='utf-8')
-
 # Shop Data
 SHOP_PATH = "data/shop/shop.json"   #可以考虑缓存在内存中
 ALLPRODUCTLIST_PATH = "data/shop/AllProductList.json"
 
 # Activity Shop Data
 TEMPLATE_SHOP_PATH = "data/shop/templateShop.json"
+
+SERVER_DATA_PATH = "data/user/serverData.json"

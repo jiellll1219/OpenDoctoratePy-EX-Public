@@ -19,20 +19,18 @@ class CheckInReward():
 
         if access_id == "act2access":
             rewardsCnt = user_data["user"]["activity"]["CHECKIN_ACCESS"]["act2access"]["rewardsCount"]
-            content = {
-                "items": [
-                    {
-                        "type": "AP_SUPPLY",
-                        "id": "ap_supply_lt_80",
-                        "count": 1
-                    },
-                    {
-                        "type": "DIAMOND_SHD",
-                        "id": "4003",
-                        "count": 200
-                    }
-                ]
-            }
+            items = [
+                {
+                    "type": "AP_SUPPLY",
+                    "id": "ap_supply_lt_80",
+                    "count": 1
+                },
+                {
+                    "type": "DIAMOND_SHD",
+                    "id": "4003",
+                    "count": 200
+                }
+            ]
             
             modified = {
                 "activity": {
@@ -51,7 +49,7 @@ class CheckInReward():
                 "modified": modified,
                 "deleted": {}
             },
-            "content": content
+            "items": items
         }
 
         return result
@@ -125,6 +123,47 @@ class CheckInReward():
                 },
                 "deleted": {}
             }
+        }
+
+        return result
+
+    def sign(self):
+        json_body = request.get_json()
+        user_data = self.user_data
+        act_id = json_body["actId"]
+        act_data = user_data["user"]["activity"]["CHECKIN_VS"][act_id]
+
+        act_data["signedCnt"] += 1
+        act_data["canVote"] = 0
+        if json_body["tasteChoice"] == 1:
+            act_data["sweetVote"] += 1
+        else:
+            act_data["saltyVote"] += 1
+        act_data["voteRewardState"] = 0
+
+        result = {
+            "playerDataDelta": {
+                "modified": {
+                    "activity": {
+                        "CHECKIN_VS": {
+                            act_id: act_data
+                        }
+                    }
+                },
+                "deleted": {}
+            },
+            "items": [
+                {
+                "type": "AP_SUPPLY",
+                "id": "ap_supply_lt_120",
+                "count": 1
+                },
+                {
+                "type": "GOLD",
+                "id": "4001",
+                "count": 30000
+                }
+            ]
         }
 
         return result

@@ -16,10 +16,9 @@ from constants import (
     SYNC_DATA_TEMPLATE_PATH,
     CRISIS_V2_JSON_BASE_PATH,
     MAILLIST_PATH,
-    SQUADS_PATH,
-    get_memory
+    SQUADS_PATH
 )
-from utils import read_json, write_json
+from utils import read_json, write_json, get_memory, run_after_response, update_check_in_status
 from virtualtime import time
 
 
@@ -37,6 +36,7 @@ def accountLogin():
         "serviceLicenseVersion": 0
     }
 
+    run_after_response(update_check_in_status)
     return data
 
 
@@ -416,7 +416,22 @@ def accountSyncData():
             player_data["user"]["campaignsV2"]["open"]["permanent"].append(stage)   #TODO 需要去重
             player_data["user"]["campaignsV2"]["open"]["training"].append(stage)
 
-    # Tamper Avatars and Backgrounds
+    # ------------------------------ 
+    # 名片皮肤
+    name_card_skin = player_data["user"]["nameCardStyle"]["skin"]["state"]
+    skin_data = display_meta_table["nameCardV2Data"]["skinData"]
+    for key in skin_data.keys():
+        # 如果键不存在或者值为None，设置值为ture
+        if key not in name_card_skin or name_card_skin[key] is None:
+            name_card_skin[key] = {
+                "progress": None,
+                "unlock": True
+            }
+        else:
+            pass
+
+    # ------------------------------ 
+    # 名片头像和背景
     avatar_icon = {}
     for avatar in display_meta_table["playerAvatarData"]["avatarList"]:
         avatar_icon.update({
@@ -442,11 +457,13 @@ def accountSyncData():
             themes[theme["id"]] = {"unlock": 1691670000}
         player_data["user"]["homeTheme"]["themes"] = themes
 
-    # Update charms
+    # ------------------------------ 
+    # 更新charms
     for charm in charm_table["charmList"]:
         player_data["user"]["charm"]["charms"].update({charm["id"]: 1})
 
-    # Update battle bus
+    # ------------------------------ 
+    # 更新battle bus
     if "carData" in activity_table:
         for car_gear in activity_table["carData"]["carDict"]:
             player_data["user"]["car"]["accessories"].update({
@@ -646,6 +663,7 @@ def accountSyncStatus():
         }
     }
 
+    run_after_response(update_check_in_status)
     return data
 
 

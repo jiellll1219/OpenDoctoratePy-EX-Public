@@ -1,7 +1,7 @@
 from virtualtime import time
 from flask import request
-from utils import read_json, write_json
-from constants import SYNC_DATA_TEMPLATE_PATH, USER_JSON_PATH, get_memory
+from utils import read_json, write_json, get_memory
+from constants import SYNC_DATA_TEMPLATE_PATH, USER_JSON_PATH
 import json
 
 def Sync():

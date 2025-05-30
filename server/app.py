@@ -4,8 +4,8 @@ from datetime import datetime
 
 from flask import Flask
 
-from utils import read_json
-from constants import CONFIG_PATH, EX_CONFIG_PATH, preload_json_data
+from utils import read_json, preload_json_data
+from constants import CONFIG_PATH, EX_CONFIG_PATH
 
 import account, background, building, campaignV2, char, charBuild, charm, \
         crisis, deepsea, gacha, mail, online, tower, quest, pay, rlv2, shop, story, \
@@ -159,6 +159,7 @@ app.add_url_rule("/act25side/battleFinish", methods = ["POST"], view_func = ques
 app.add_url_rule("/retro/typeAct20side/competitionStart", methods = ["POST"], view_func = quest.typeAct20side_competitionStart)
 app.add_url_rule("/retro/typeAct20side/competitionFinish", methods = ["POST"], view_func = quest.typeAct20side_competitionFinish)
 
+app.add_url_rule("/actcheckinvs/sign", methods = ["POST"], view_func = activity.CheckInReward().sign)
 app.add_url_rule("/activity/actCheckinAccess/getCheckInReward", methods = ["POST"], view_func = activity.CheckInReward().getCheckInReward)
 app.add_url_rule("/activity/getActivityCheckInReward", methods = ["POST"], view_func = activity.CheckInReward().getActivityCheckInReward)
 app.add_url_rule("/activity/prayOnly/getReward", methods = ["POST"], view_func = activity.CheckInReward().getReward)

@@ -24,16 +24,17 @@ If you want to contribute code but lack data, you can at [Here](https://tptpmmpc
 
 | Target Feature | Progress | Completion Status | Remarks |
 |:---:|:---:|:---:|:---:|
-| Public Recruitment | Needs Fixing | Needs Fixing |  |
+| Public Recruitment | Paused | Phantom bug |  |
 | Targeted Search | Completed | Done | Tested |
 | Building | Needs Improvement | Needs Improvement |  |
-| Shop | Completed | Mostly Done |  |
+| Shop | Completed | Mostly Done | Can't Buy Anything |
 | Recharge | Completed | Done |  |
 | Interface Design | Completed | Done | Tested |
 | CheckIn | Completed | Done | Tested |
 | Activity CheckIn | Continuous updates | Mostly Done |  |
+| Limited-time event | Continuous updates |  |  |
 | SandBox | Paused |  |  |
-| Friends | Paused |  | To Be Scheduled |
+| Friends | Paused |  |  |
 
 ## Declaration for Top-up System Code
 

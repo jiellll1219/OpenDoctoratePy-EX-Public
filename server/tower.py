@@ -2,9 +2,9 @@ from virtualtime import time
 from random import sample
 from flask import request
 
-from constants import TOWERDATA_PATH, USER_JSON_PATH, get_memory
+from constants import TOWERDATA_PATH, USER_JSON_PATH
 
-from utils import read_json, write_json, decrypt_battle_data, update_data, logging
+from utils import read_json, write_json, decrypt_battle_data, update_data, logging, get_memory
 
 
 def currentCoords(stageid: str):

@@ -7,10 +7,9 @@ from constants import (
     USER_JSON_PATH, 
     EX_CONFIG_PATH,
     GACHA_HISTORY_PATH,
-    EX_GACHA_DATA_PATH,
-    get_memory
+    SERVER_DATA_PATH
 )
-from utils import read_json, write_json
+from utils import read_json, write_json, get_memory
 
 import json
 import random
@@ -350,7 +349,8 @@ def Gacha(ticket_type, use_diamond_shard, json_body):
     except:
         pool_path = os.path.join(os.getcwd(), 'data', 'gacha', 'DEFAULT.json')
     #读取卡池信息
-    ex_gacha_data = read_json(EX_GACHA_DATA_PATH, encoding="utf-8")
+    server_data = read_json(SERVER_DATA_PATH, encoding="utf-8")
+    ex_gacha_data = server_data["gacha"]["count"]
     # 获取当前时间戳
     ts = time()
 
@@ -496,7 +496,7 @@ def Gacha(ticket_type, use_diamond_shard, json_body):
 
         # 处理保底次数
         ex_gacha_data[gacha_type] = gacha_count
-        write_json(ex_gacha_data, EX_GACHA_DATA_PATH)
+        write_json(server_data, SERVER_DATA_PATH)
 
         # 获取随机角色ID列表
         random_char_array = avail_char_info[random_rank['index']]['charIdList']

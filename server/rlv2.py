@@ -9,11 +9,10 @@ from constants import (
     RLV2_USER_SETTINGS_PATH,
     USER_JSON_PATH,
     CONFIG_PATH,
-    RLV2_SETTINGS_PATH,
-    get_memory
+    RLV2_SETTINGS_PATH
 )
 
-from utils import read_json, write_json, decrypt_battle_data, update_data
+from utils import read_json, write_json, decrypt_battle_data, update_data, get_memory
 
 
 def rlv2GiveUpGame():

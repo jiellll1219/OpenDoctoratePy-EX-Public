@@ -1,0 +1,554 @@
+{
+    "checkInData": {
+        "lastCheckInTs": 0,
+        "lastResetDate": "2000-01-01"
+    },
+    "checkInItems": {
+        "act3signvs": [
+            [
+                {
+                    "count": 1,
+                    "id": "ap_supply_lt_120",
+                    "type": "AP_SUPPLY"
+                },
+                {
+                    "count": 30000,
+                    "id": "4001",
+                    "type": "GOLD"
+                }
+            ],
+            [
+                {
+                    "count": 200,
+                    "id": "4003",
+                    "type": "DIAMOND_SHD"
+                },
+                {
+                    "count": 5,
+                    "id": "7001",
+                    "type": "TKT_RECRUIT"
+                }
+            ],
+            [
+                {
+                    "count": 1,
+                    "id": "32001",
+                    "type": "MATERIAL"
+                },
+                {
+                    "count": 20,
+                    "id": "2003",
+                    "type": "CARD_EXP"
+                }
+            ],
+            [
+                {
+                    "count": 1,
+                    "id": "mod_update_token_1",
+                    "type": "MATERIAL"
+                },
+                {
+                    "count": 1,
+                    "id": "ap_supply_lt_120",
+                    "type": "AP_SUPPLY"
+                }
+            ],
+            [
+                {
+                    "count": 30,
+                    "id": "3301",
+                    "type": "MATERIAL"
+                },
+                {
+                    "count": 5,
+                    "id": "7002",
+                    "type": "TKT_INST_FIN"
+                }
+            ],
+            [
+                {
+                    "count": 300,
+                    "id": "3401",
+                    "type": "MATERIAL"
+                },
+                {
+                    "count": 20,
+                    "id": "3003",
+                    "type": "TKT_INST_FIN"
+                }
+            ],
+            [
+                {
+                    "count": 1,
+                    "id": "mod_unlock_token",
+                    "type": "MATERIAL"
+                },
+                {
+                    "count": 300,
+                    "id": "3302",
+                    "type": "MATERIAL"
+                }
+            ]
+        ],
+        "checkIn": [
+            [
+                {
+                    "count": 2000,
+                    "id": "4001",
+                    "type": "GOLD"
+                }
+            ],
+            [
+                {
+                    "count": 10,
+                    "id": "2001",
+                    "type": "CARD_EXP"
+                }
+            ],
+            [
+                {
+                    "count": 2,
+                    "id": "7001",
+                    "type": "TKT_RECRUIT"
+                }
+            ],
+            [
+                {
+                    "count": 8,
+                    "id": "4006",
+                    "type": "MATERIAL"
+                }
+            ],
+            [
+                {
+                    "count": 5,
+                    "id": "3112",
+                    "type": "MATERIAL"
+                }
+            ],
+            [
+                {
+                    "count": 5,
+                    "id": "3301",
+                    "type": "MATERIAL"
+                }
+            ],
+            [
+                {
+                    "count": 6,
+                    "id": "3003",
+                    "type": "MATERIAL"
+                }
+            ],
+            [
+                {
+                    "count": 4000,
+                    "id": "4001",
+                    "type": "GOLD"
+                }
+            ],
+            [
+                {
+                    "count": 10,
+                    "id": "7001",
+                    "type": "TKT_RECRUIT"
+                }
+            ],
+            [
+                {
+                    "count": 2,
+                    "id": "7002",
+                    "type": "TKT_INST_FIN"
+                }
+            ],
+            [
+                {
+                    "count": 10,
+                    "id": "4005",
+                    "type": "LGG_SHD"
+                }
+            ],
+            [
+                {
+                    "count": 40,
+                    "id": "3401",
+                    "type": "MATERIAL"
+                }
+            ],
+            [
+                {
+                    "count": 10,
+                    "id": "3301",
+                    "type": "MATERIAL"
+                }
+            ],
+            [
+                {
+                    "count": 10,
+                    "id": "3003",
+                    "type": "MATERIAL"
+                }
+            ],
+            [
+                {
+                    "count": 6000,
+                    "id": "4001",
+                    "type": "GOLD"
+                }
+            ],
+            [
+                {
+                    "count": 6,
+                    "id": "2003",
+                    "type": "CARD_EXP"
+                }
+            ],
+            [
+                {
+                    "count": 1,
+                    "id": "7003",
+                    "type": "TKT_GACHA"
+                }
+            ],
+            [
+                {
+                    "count": 25,
+                    "id": "4006",
+                    "type": "MATERIAL"
+                }
+            ],
+            [
+                {
+                    "count": 6,
+                    "id": "3113",
+                    "type": "MATERIAL"
+                }
+            ],
+            [
+                {
+                    "count": 5,
+                    "id": "3302",
+                    "type": "MATERIAL"
+                }
+            ],
+            [
+                {
+                    "count": 15,
+                    "id": "3003",
+                    "type": "MATERIAL"
+                }
+            ],
+            [
+                {
+                    "count": 8000,
+                    "id": "4001",
+                    "type": "GOLD"
+                }
+            ],
+            [
+                {
+                    "count": 4,
+                    "id": "2004",
+                    "type": "CARD_EXP"
+                }
+            ],
+            [
+                {
+                    "count": 3,
+                    "id": "7001",
+                    "type": "TKT_RECRUIT"
+                }
+            ],
+            [
+                {
+                    "count": 5,
+                    "id": "4004",
+                    "type": "HGG_SHD"
+                }
+            ],
+            [
+                {
+                    "count": 100,
+                    "id": "3401",
+                    "type": "MATERIAL"
+                }
+            ],
+            [
+                {
+                    "count": 6,
+                    "id": "3303",
+                    "type": "MATERIAL"
+                }
+            ],
+            [
+                {
+                    "count": 1,
+                    "id": "32001",
+                    "type": "MATERIAL"
+                }
+            ],
+            [
+                {
+                    "count": 10000,
+                    "id": "4001",
+                    "type": "GOLD"
+                }
+            ],
+            [
+                {
+                    "count": 5,
+                    "id": "2004",
+                    "type": "CARD_EXP"
+                }
+            ],
+            [
+                {
+                    "count": 3,
+                    "id": "7002",
+                    "type": "TKT_INST_FIN"
+                }
+            ]
+        ]
+    },
+    "gacha": {
+        "count": {
+            "BOOT": 0,
+            "CLASSIC": 0,
+            "DOUBLE_61_0_2": 4,
+            "LIMITED_61_0_1": 10,
+            "NORM": 0
+        }
+    },
+    "vecbreakV2": {
+        "assistChar": {
+            "charId": "char_2014_nian",
+            "currentTmpl": null,
+            "equip": {
+                "id": "uniequip_002_nian",
+                "level": 3
+            },
+            "evolvePhase": 2,
+            "level": 90,
+            "mainSkillLvl": 7,
+            "potentialRank": 3,
+            "skill": {
+                "skillIndex": 2,
+                "specializeLevel": 0
+            },
+            "skin": "char_2014_nian@cfa#1"
+        },
+        "maxLevel": 12,
+        "buff": [
+            "act1break_rune08",
+            "act1break_rune13",
+            "act1break_rune06",
+            "act1break_rune09"
+        ],
+        "squad": [
+            {
+                "charId": "char_4132_ascln",
+                "currentTmpl": null,
+                "equip": {
+                    "id": "uniequip_001_ascln",
+                    "level": 1
+                },
+                "evolvePhase": 2,
+                "level": 60,
+                "mainSkillLvl": 7,
+                "potentialRank": 0,
+                "skill": {
+                    "skillIndex": 1,
+                    "specializeLevel": 0
+                },
+                "skin": "char_4132_ascln#2"
+            },
+            {
+                "charId": "char_1016_agoat2",
+                "currentTmpl": null,
+                "equip": {
+                    "id": "uniequip_002_agoat2",
+                    "level": 2
+                },
+                "evolvePhase": 2,
+                "level": 83,
+                "mainSkillLvl": 7,
+                "potentialRank": 1,
+                "skill": {
+                    "skillIndex": 0,
+                    "specializeLevel": 3
+                },
+                "skin": "char_1016_agoat2#2"
+            },
+            {
+                "charId": "char_4087_ines",
+                "currentTmpl": null,
+                "equip": {
+                    "id": "uniequip_001_ines",
+                    "level": 1
+                },
+                "evolvePhase": 2,
+                "level": 60,
+                "mainSkillLvl": 7,
+                "potentialRank": 0,
+                "skill": {
+                    "skillIndex": 0,
+                    "specializeLevel": 0
+                },
+                "skin": "char_4087_ines#2"
+            },
+            {
+                "charId": "char_1028_texas2",
+                "currentTmpl": null,
+                "equip": {
+                    "id": "uniequip_002_texas2",
+                    "level": 2
+                },
+                "evolvePhase": 2,
+                "level": 90,
+                "mainSkillLvl": 7,
+                "potentialRank": 0,
+                "skill": {
+                    "skillIndex": 2,
+                    "specializeLevel": 3
+                },
+                "skin": "char_1028_texas2#2"
+            },
+            {
+                "charId": "char_358_lisa",
+                "currentTmpl": null,
+                "equip": {
+                    "id": "uniequip_001_lisa",
+                    "level": 1
+                },
+                "evolvePhase": 2,
+                "level": 60,
+                "mainSkillLvl": 7,
+                "potentialRank": 1,
+                "skill": {
+                    "skillIndex": 2,
+                    "specializeLevel": 0
+                },
+                "skin": "char_358_lisa#2"
+            },
+            {
+                "charId": "char_245_cello",
+                "currentTmpl": null,
+                "equip": {
+                    "id": "uniequip_001_cello",
+                    "level": 1
+                },
+                "evolvePhase": 2,
+                "level": 60,
+                "mainSkillLvl": 7,
+                "potentialRank": 1,
+                "skill": {
+                    "skillIndex": 1,
+                    "specializeLevel": 0
+                },
+                "skin": "char_245_cello#2"
+            },
+            {
+                "charId": "char_293_thorns",
+                "currentTmpl": null,
+                "equip": {
+                    "id": "uniequip_001_thorns",
+                    "level": 1
+                },
+                "evolvePhase": 2,
+                "level": 60,
+                "mainSkillLvl": 7,
+                "potentialRank": 0,
+                "skill": {
+                    "skillIndex": 2,
+                    "specializeLevel": 0
+                },
+                "skin": "char_293_thorns#2"
+            },
+            {
+                "charId": "char_1035_wisdel",
+                "currentTmpl": null,
+                "equip": {
+                    "id": "uniequip_002_wisdel",
+                    "level": 3
+                },
+                "evolvePhase": 2,
+                "level": 60,
+                "mainSkillLvl": 7,
+                "potentialRank": 1,
+                "skill": {
+                    "skillIndex": 2,
+                    "specializeLevel": 3
+                },
+                "skin": "char_1035_wisdel#2"
+            },
+            {
+                "charId": "char_2015_dusk",
+                "currentTmpl": null,
+                "equip": {
+                    "id": "uniequip_003_dusk",
+                    "level": 3
+                },
+                "evolvePhase": 2,
+                "level": 90,
+                "mainSkillLvl": 7,
+                "potentialRank": 0,
+                "skill": {
+                    "skillIndex": 0,
+                    "specializeLevel": 0
+                },
+                "skin": "char_2015_dusk#2"
+            },
+            {
+                "charId": "char_136_hsguma",
+                "currentTmpl": null,
+                "equip": {
+                    "id": "uniequip_003_hsguma",
+                    "level": 3
+                },
+                "evolvePhase": 2,
+                "level": 90,
+                "mainSkillLvl": 7,
+                "potentialRank": 2,
+                "skill": {
+                    "skillIndex": 1,
+                    "specializeLevel": 0
+                },
+                "skin": "char_136_hsguma#2"
+            },
+            {
+                "charId": "char_2025_shu",
+                "currentTmpl": null,
+                "equip": {
+                    "id": "uniequip_002_shu",
+                    "level": 1
+                },
+                "evolvePhase": 2,
+                "level": 60,
+                "mainSkillLvl": 7,
+                "potentialRank": 1,
+                "skill": {
+                    "skillIndex": 2,
+                    "specializeLevel": 3
+                },
+                "skin": "char_2025_shu#2"
+            },
+            {
+                "charId": "char_2023_ling",
+                "currentTmpl": null,
+                "equip": {
+                    "id": "uniequip_002_ling",
+                    "level": 3
+                },
+                "evolvePhase": 2,
+                "level": 90,
+                "mainSkillLvl": 7,
+                "potentialRank": 1,
+                "skill": {
+                    "skillIndex": 2,
+                    "specializeLevel": 1
+                },
+                "skin": "char_2023_ling@nian#9"
+            }
+        ]
+    }
+}

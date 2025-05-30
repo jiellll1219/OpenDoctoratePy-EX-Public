@@ -4,7 +4,7 @@ import requests
 from flask import request
 from random import random
 
-from constants import USER_JSON_PATH, SYNC_DATA_TEMPLATE_PATH
+from constants import USER_JSON_PATH, SYNC_DATA_TEMPLATE_PATH, SERVER_DATA_PATH
 from utils import read_json, write_json, run_after_response
 
 import time
@@ -12,29 +12,28 @@ import time
 
 def CheckIn():
     sync_data = read_json(SYNC_DATA_TEMPLATE_PATH, encoding="utf-8")
-    user_data = read_json(USER_JSON_PATH, encoding="utf-8")
+    server_data = read_json(SERVER_DATA_PATH, encoding="utf-8")
     checkin_data = sync_data["user"]["checkIn"]
     checkin_data["canCheckIn"] = 0
     checkin_data["showCount"] += 1
+    
     checkin_data["checkInHistory"].append(0)
+    offset = len(checkin_data["checkInHistory"]) - 1
+    items = server_data["checkInItems"]["checkIn"][offset]
+
     sync_data["user"]["checkIn"] = checkin_data
-    user_data["user"]["checkIn"] = checkin_data
     result = {
         "result": 0,
         "playerDataDelta": {
             "modified": {
-                "checkIn": {
-                    "canCheckIn": 0,
-                    "showCount": checkin_data["showCount"],
-                    "checkInHistory": checkin_data["checkInHistory"],
-                }
+                "checkIn": checkin_data
             },
             "deleted": {}
-        }
+        },
+        "items":items
     }
 
     run_after_response(write_json, sync_data, SYNC_DATA_TEMPLATE_PATH)
-    run_after_response(write_json, user_data, USER_JSON_PATH)
     return result
 
 
