@@ -16,9 +16,10 @@ def CheckIn():
     checkin_data = sync_data["user"]["checkIn"]
     checkin_data["canCheckIn"] = 0
     checkin_data["showCount"] += 1
-    
+    checkin_data["checkInRewardIndex"] += 1
+
     checkin_data["checkInHistory"].append(0)
-    offset = len(checkin_data["checkInHistory"]) - 1
+    offset = len(checkin_data["checkInHistory"])
     items = server_data["checkInItems"]["checkIn"][offset]
 
     sync_data["user"]["checkIn"] = checkin_data
@@ -30,7 +31,9 @@ def CheckIn():
             },
             "deleted": {}
         },
-        "items":items
+        "pushMessage": [],
+        "signInRewards": items,
+        "subscriptionRewards": []
     }
 
     run_after_response(write_json, sync_data, SYNC_DATA_TEMPLATE_PATH)

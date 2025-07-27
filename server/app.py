@@ -10,7 +10,7 @@ from constants import CONFIG_PATH, EX_CONFIG_PATH
 import account, background, building, campaignV2, char, charBuild, charm, \
         crisis, deepsea, gacha, mail, online, tower, quest, pay, rlv2, shop, story, \
         user, asset.assetbundle, config.prod, social, templateShop, other, sandbox, charrotation, \
-        activity, vecbreak
+        activity, vecbreak, mission
 
 server_config = read_json(CONFIG_PATH)
 ex_config = read_json(EX_CONFIG_PATH)
@@ -159,6 +159,9 @@ app.add_url_rule("/act25side/battleFinish", methods = ["POST"], view_func = ques
 app.add_url_rule("/retro/typeAct20side/competitionStart", methods = ["POST"], view_func = quest.typeAct20side_competitionStart)
 app.add_url_rule("/retro/typeAct20side/competitionFinish", methods = ["POST"], view_func = quest.typeAct20side_competitionFinish)
 
+app.add_url_rule("/mission/confirmMission", methods = ["POST"], view_func = mission.mission_manger().ConfirmMission)
+app.add_url_rule("/mission/autoConfirmMissions", methods = ["POST"], view_func = mission.mission_manger().AutoConfirmMissions)
+
 app.add_url_rule("/actcheckinvs/sign", methods = ["POST"], view_func = activity.CheckInReward().sign)
 app.add_url_rule("/activity/actCheckinAccess/getCheckInReward", methods = ["POST"], view_func = activity.CheckInReward().getCheckInReward)
 app.add_url_rule("/activity/getActivityCheckInReward", methods = ["POST"], view_func = activity.CheckInReward().getActivityCheckInReward)
@@ -192,6 +195,7 @@ app.add_url_rule("/rlv2/buyGoods", methods = ["POST"], view_func = rlv2.rlv2BuyG
 app.add_url_rule("/rlv2/leaveShop", methods = ["POST"], view_func = rlv2.rlv2LeaveShop)
 app.add_url_rule("/rlv2/chooseBattleReward", methods = ["POST"], view_func = rlv2.rlv2ChooseBattleReward)
 app.add_url_rule("/rlv2/shopAction", methods = ["POST"], view_func = rlv2.rlv2shopAction)
+app.add_url_rule("/rlv2/copper/redraw", methods = ["POST"], view_func = rlv2.rlv2CopperRedraw)
 
 app.add_url_rule("/shop/getGoodPurchaseState", methods=["POST"], view_func=shop.getGoodPurchaseState)
 app.add_url_rule("/shop/get<string:shop_type>GoodList", methods=["POST"], view_func=shop.getShopGoodList)

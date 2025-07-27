@@ -8,11 +8,12 @@ from constants import (
     RLV2_JSON_PATH,
     RLV2_USER_SETTINGS_PATH,
     USER_JSON_PATH,
+    RL_TABLE_PATH,
     CONFIG_PATH,
     RLV2_SETTINGS_PATH
 )
 
-from utils import read_json, write_json, decrypt_battle_data, update_data, get_memory
+from utils import read_json, write_json, decrypt_battle_data, get_memory
 
 
 def rlv2GiveUpGame():
@@ -39,7 +40,7 @@ def rlv2GiveUpGame():
 
 
 def getChars(use_user_defaults=False):
-    user_data = read_json(USER_JSON_PATH)
+    user_data = read_json(USER_JSON_PATH, encoding="utf-8")
     chars = [
         user_data["user"]["troop"]["chars"][i]
         for i in user_data["user"]["troop"]["chars"]
@@ -182,9 +183,41 @@ def rlv2CreateGame():
                 "rogue_4_band_10",
                 "rogue_4_band_11",
                 "rogue_4_band_12",
-                "rogue_4_band_13"
+                "rogue_4_band_14",
+                "rogue_4_band_15",
+                "rogue_4_band_16",
+                "rogue_4_band_17",
+                "rogue_4_band_18",
+                "rogue_4_band_19",
+                "rogue_4_band_20",
+                "rogue_4_band_21",
+                "rogue_4_band_22",
             ]
             ending = random.choice(["ro4_ending_1", "ro4_ending_2", "ro4_ending_3", "ro4_ending_4"])
+        case "rogue_5":
+            bands = [
+                "rogue_5_band_1",
+                "rogue_5_band_2",
+                "rogue_5_band_3",
+                "rogue_5_band_4",
+                "rogue_5_band_5",
+                "rogue_5_band_6",
+                "rogue_5_band_7",
+                "rogue_5_band_8",
+                "rogue_5_band_9",
+                "rogue_5_band_10",
+                "rogue_5_band_11",
+                "rogue_5_band_12",
+                "rogue_5_band_13",
+                "rogue_5_band_14",
+                "rogue_5_band_15",
+                "rogue_5_band_16",
+                "rogue_5_band_17",
+                "rogue_5_band_18",
+                "rogue_5_band_19",
+                "rogue_5_band_20",
+            ]
+            ending = random.choice(["ro5_ending_1", "ro5_ending_2", "ro5_ending_3"])
         case _:
             bands = []
             ending = ""
@@ -266,8 +299,8 @@ def rlv2CreateGame():
             "predefined": None,
             "theme": theme,
             "outer": {"support": False},
-            "start": 1695000000,
-            "modeGrade": mode_grade,
+            "start": time(),
+            "eGrade": mode_grade,
             "equivalentGrade": mode_grade,
         },
         "buff": {"tmpHP": 0, "capsule": None, "squadBuff": []},
@@ -286,6 +319,8 @@ def rlv2CreateGame():
                 ticket = "rogue_3_recruit_ticket_all"
             case "rogue_4":
                 ticket = "rogue_4_recruit_ticket_all"
+            case "rogue_5":
+                ticket = "rogue_5_recruit_ticket_all"
             case _:
                 ticket = ""
         chars = getChars(use_user_defaults=True)
@@ -313,7 +348,7 @@ def rlv2CreateGame():
                     "current": rlv2,
                 }
             },
-            "deleted": {}
+            "deleted": {},
         }
     }
 
@@ -331,7 +366,7 @@ def rlv2ChooseInitialRelic():
         "index": "r_0",
         "id": band,
         "count": 1,
-        "ts": 1695000000,
+        "ts": time(),
     }
     write_json(rlv2, RLV2_JSON_PATH)
 
@@ -342,7 +377,7 @@ def rlv2ChooseInitialRelic():
                     "current": rlv2,
                 }
             },
-            "deleted": {}
+            "deleted": {},
         }
     }
 
@@ -361,7 +396,7 @@ def rlv2SelectChoice():
                     "current": rlv2,
                 }
             },
-            "deleted": {}
+            "deleted": {},
         }
     }
 
@@ -379,6 +414,8 @@ def addTicket(rlv2, ticket_id):
             ticket = "rogue_3_recruit_ticket_all"
         case "rogue_4":
             ticket = "rogue_4_recruit_ticket_all"
+        case "rogue_5":
+            ticket = "rogue_5_recruit_ticket_all"
         case _:
             ticket = ""
     rlv2["inventory"]["recruit"][ticket_id] = {
@@ -387,7 +424,7 @@ def addTicket(rlv2, ticket_id):
         "state": 0,
         "list": [],
         "result": None,
-        "ts": 1695000000,
+        "ts": time(),
         "from": "initial",
         "mustExtra": 0,
         "needAssist": True,
@@ -430,7 +467,7 @@ def rlv2ChooseInitialRecruitSet():
                     "current": rlv2,
                 }
             },
-            "deleted": {}
+            "deleted": {},
         }
     }
 
@@ -477,7 +514,7 @@ def rlv2ActiveRecruitTicket():
                     "current": rlv2,
                 }
             },
-            "deleted": {}
+            "deleted": {},
         }
     }
 
@@ -519,7 +556,7 @@ def rlv2RecruitChar():
                     "current": rlv2,
                 }
             },
-            "deleted": {}
+            "deleted": {},
         },
     }
 
@@ -544,7 +581,7 @@ def rlv2CloseRecruitTicket():
                     "current": rlv2,
                 }
             },
-            "deleted": {}
+            "deleted": {},
         }
     }
 
@@ -552,7 +589,8 @@ def rlv2CloseRecruitTicket():
 
 
 def getMap(theme):
-    rlv2_table = get_memory("roguelike_topic_table")
+    with open (RL_TABLE_PATH, encoding='utf-8') as a:
+        rlv2_table = json.load(a)
     stages = [i for i in rlv2_table["details"][theme]["stages"]]
     match theme:
         case "rogue_1":
@@ -562,6 +600,8 @@ def getMap(theme):
         case "rogue_3":
             shop = 4096
         case "rogue_4":
+            shop = 4096
+        case "rogue_5":
             shop = 4096
         case _:
             shop = 0
@@ -644,7 +684,7 @@ def rlv2FinishEvent():
                     "current": rlv2,
                 }
             },
-            "deleted": {}
+            "deleted": {},
         }
     }
 
@@ -681,7 +721,7 @@ def getBuffs(rlv2, stage_id):
         if i in rlv2_table["details"][theme]["squadBuffData"]:
             buffs += rlv2_table["details"][theme]["squadBuffData"][i]["buffs"]
 
-    mode_grade = rlv2["game"]["modeGrade"]
+    mode_grade = rlv2["game"]["eGrade"]
     match theme:
         case "rogue_1":
             theme_buffs = []
@@ -1574,6 +1614,12 @@ def rlv2MoveAndBattleStart():
                 random.choice(
                     ["trap_757_skzbox", "trap_758_skzmbx", "trap_759_skzwyx"]
                 ): 100
+            },
+        case "rogue_5":
+            box_info = {
+                random.choice(
+                    ["rogue_5_stash_recruit", "pool_recruit_1"]
+                ): 100
             }
         case _:
             box_info = {}
@@ -1639,7 +1685,7 @@ def rlv2MoveAndBattleStart():
                     "current": rlv2,
                 }
             },
-            "deleted": {}
+            "deleted": {},
         }
     }
 
@@ -1709,7 +1755,7 @@ def rlv2BattleFinish():
                     "current": rlv2,
                 }
             },
-            "deleted": {}
+            "deleted": {},
         }
     }
 
@@ -1732,7 +1778,7 @@ def rlv2FinishBattleReward():
                     "current": rlv2,
                 }
             },
-            "deleted": {}
+            "deleted": {},
         }
     }
 
@@ -1753,6 +1799,9 @@ def getGoods(theme):
         case "rogue_4":
             ticket = "rogue_4_recruit_ticket_all"
             price_id = "rogue_4_gold"
+        case "rogue_5":
+            ticket = "rogue_5_recruit_ticket_all"
+            price_id = "rogue_5_gold"
         case _:
             ticket = ""
             price_id = ""
@@ -1769,7 +1818,7 @@ def getGoods(theme):
         }
     ]
     i = 1
-    rlv2_table = get_memory("roguelike_topic_table")
+    rlv2_table = read_json(RL_TABLE_PATH)
     for j in rlv2_table["details"][theme]["archiveComp"]["relic"]["relic"]:
         goods.append(
             {
@@ -1811,7 +1860,7 @@ def getGoods(theme):
                 "priceCount": 0,
                 "origCost": 0,
                 "displayPriceChg": False,
-                "_retainDiscount": 1
+                "_retainDiscount": 1,
             }
         )
         i += 1
@@ -1860,7 +1909,7 @@ def rlv2MoveTo():
                     "current": rlv2,
                 }
             },
-            "deleted": {}
+            "deleted": {},
         }
     }
 
@@ -1965,35 +2014,12 @@ def rlv2BuyGoods():
 def rlv2shopAction():
 
     json_body = request.get_json()
+
     try:
         select = int (json_body["buy"][0])
+        return rlv2BuyGoods(select)
     except (KeyError, IndexError):
-        return rlv2LeaveShop
-
-    rlv2 = read_json(RLV2_JSON_PATH)
-    rlv2["player"]["state"] = "WAIT_MOVE"
-    rlv2["player"]["pending"] = []
-    if rlv2["player"]["cursor"]["position"]["x"] > 1:
-        rlv2["player"]["cursor"]["zone"] += 1
-        rlv2["player"]["cursor"]["position"] = None
-    elif rlv2["player"]["cursor"]["position"]["x"] == 1:
-        rlv2["player"]["cursor"]["position"]["x"] = 0
-        rlv2["player"]["cursor"]["position"]["y"] = 0
-        rlv2["player"]["trace"].pop()
-    write_json(rlv2, RLV2_JSON_PATH)
-
-    data = {
-        "playerDataDelta": {
-            "modified": {
-                "rlv2": {
-                    "current": rlv2,
-                }
-            },
-            "deleted": {}
-        }
-    }
-
-    return data
+        return rlv2LeaveShop()
 
 
 def rlv2ChooseBattleReward():
@@ -2012,6 +2038,45 @@ def rlv2ChooseBattleReward():
             "modified": {
                 "rlv2": {
                     "current": rlv2,
+                }
+            },
+            "deleted": {},
+        }
+    }
+
+    return data
+
+def rlv2CopperRedraw():
+
+    rlv2_data = read_json(RLV2_JSON_PATH)
+
+    bag = rlv2_data["module"]["copper"]["bag"]
+    for key, value in bag.items():
+        value["isDrawn"] = False
+
+    # a1 = random.sample(0, len(bag.keys()))
+    copper = []
+    L1 = random.sample(range(0, len(bag.keys())), 3)
+    for key in L1:
+        key = "c_" + str(key)
+        copper.append(key)
+        bag[key]["isDrawn"] = True
+
+    write_json(rlv2_data, RLV2_JSON_PATH)
+
+    data = {
+        "copper": copper,
+        "divineEventId": "rogue_5_levelEVE_2",
+        "playerDataDelta": {
+            "modified": {
+                "rlv2": {
+                    "current": {
+                        "module": {
+                            "copper": {
+                                "bag": bag,
+                            }
+                        }
+                    }
                 }
             },
             "deleted": {},
