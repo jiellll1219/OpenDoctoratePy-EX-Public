@@ -7,7 +7,7 @@ MAILCOLLECTION_PATH = "config/mailCollection.json"
 RLV2_CONFIG_PATH = "config/rlv2Config.json"
 SQUADS_PATH = "config/squads.json"
 SYNC_DATA_TEMPLATE_PATH = "data/user/user.json"
-
+ASSIST_PATH = "config/assist.json"
 # Gacha Data
 NORMALGACHA_PATH = "data/gacha/normalGacha.json"
 GACHA_HISTORY_PATH = "data/user/gachaHistory.json"

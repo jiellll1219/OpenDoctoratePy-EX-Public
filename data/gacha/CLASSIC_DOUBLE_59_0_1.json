@@ -264,5 +264,11 @@
                 "param": null
             }
         ]
+    },
+    "gachaObjGroupType": 0,
+    "hasRateUp": false,
+    "playerDataDelta": {
+        "modified": {},
+        "deleted": {}
     }
 }

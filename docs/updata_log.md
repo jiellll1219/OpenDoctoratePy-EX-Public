@@ -2,6 +2,15 @@
 
 - 2025 年 8 月 27 日
 
+    更新：  
+    1、更新config版本
+    2、更新商店数据
+    3、更新cc4数据
+    4、完善助战功能，并提供小脚本以进行自定义
+    5、更新邮件数据
+
+- 2025 年 8 月 27 日
+
     修改：  
     1、清理utils.py中多余的代码  
     2、run_after_response函数修改为使用asyncio进行管理，添加名为global_loop的初始化函数start_global_event_loop

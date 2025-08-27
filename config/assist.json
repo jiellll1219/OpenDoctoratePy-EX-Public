@@ -1,0 +1,668 @@
+{
+    "MEDIC": [
+        {
+            "charId": "char_147_shining",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_shining"
+        },
+        {
+            "charId": "char_613_acmedc",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_acmedc"
+        },
+        {
+            "charId": "char_179_cgbird",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_cgbird"
+        },
+        {
+            "charId": "char_003_kalts",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_004_kalts"
+        },
+        {
+            "charId": "char_4042_lumen",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_lumen"
+        },
+        {
+            "charId": "char_1016_agoat2",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_agoat2"
+        },
+        {
+            "charId": "char_1020_reed2",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_reed2"
+        },
+        {
+            "charId": "char_4179_monstr",
+            "skillIndex": 2,
+            "currentEquip": null
+        },
+        {
+            "charId": "char_128_plosis",
+            "skillIndex": 1,
+            "currentEquip": "uniequip_002_plosis"
+        },
+        {
+            "charId": "char_275_breeze",
+            "skillIndex": 1,
+            "currentEquip": "uniequip_002_breeze"
+        },
+        {
+            "charId": "char_4163_rosesa",
+            "skillIndex": 1,
+            "currentEquip": "uniequip_002_rosesa"
+        },
+        {
+            "charId": "char_108_silent",
+            "skillIndex": 1,
+            "currentEquip": "uniequip_002_silent"
+        },
+        {
+            "charId": "char_171_bldsk",
+            "skillIndex": 1,
+            "currentEquip": "uniequip_002_bldsk"
+        },
+        {
+            "charId": "char_345_folnic",
+            "skillIndex": 1,
+            "currentEquip": "uniequip_002_folnic"
+        },
+        {
+            "charId": "char_510_amedic",
+            "skillIndex": 0,
+            "currentEquip": null
+        }
+    ],
+    "PIONEER": [
+        {
+            "charId": "char_112_siege",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_siege"
+        },
+        {
+            "charId": "char_222_bpipe",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_bpipe"
+        },
+        {
+            "charId": "char_362_saga",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_saga"
+        },
+        {
+            "charId": "char_4026_vulpis",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_vulpis"
+        },
+        {
+            "charId": "char_479_sleach",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_sleach"
+        },
+        {
+            "charId": "char_420_flamtl",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_flamtl"
+        },
+        {
+            "charId": "char_608_acpion",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_acpion"
+        },
+        {
+            "charId": "char_427_vigil",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_vigil"
+        },
+        {
+            "charId": "char_249_mlyss",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_mlyss"
+        },
+        {
+            "charId": "char_4087_ines",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_ines"
+        },
+        {
+            "charId": "char_115_headbr",
+            "skillIndex": 1,
+            "currentEquip": "uniequip_002_headbr"
+        },
+        {
+            "charId": "char_102_texas",
+            "skillIndex": 1,
+            "currentEquip": "uniequip_002_texas"
+        },
+        {
+            "charId": "char_349_chiave",
+            "skillIndex": 1,
+            "currentEquip": "uniequip_002_chiave"
+        },
+        {
+            "charId": "char_488_buildr",
+            "skillIndex": 1,
+            "currentEquip": "uniequip_002_buildr"
+        },
+        {
+            "charId": "char_513_apionr",
+            "skillIndex": 0,
+            "currentEquip": null
+        }
+    ],
+    "WARRIOR": [
+        {
+            "charId": "char_264_f12yin",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_f12yin"
+        },
+        {
+            "charId": "char_2024_chyue",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_chyue"
+        },
+        {
+            "charId": "char_172_svrash",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_svrash"
+        },
+        {
+            "charId": "char_293_thorns",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_thorns"
+        },
+        {
+            "charId": "char_4082_qiubai",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_qiubai"
+        },
+        {
+            "charId": "char_4088_hodrer",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_hodrer"
+        },
+        {
+            "charId": "char_4145_ulpia",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_ulpia"
+        },
+        {
+            "charId": "char_4058_pepe",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_pepe"
+        },
+        {
+            "charId": "char_010_chen",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_chen"
+        },
+        {
+            "charId": "char_4009_irene",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_irene"
+        },
+        {
+            "charId": "char_4116_blkkgt",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_blkkgt"
+        },
+        {
+            "charId": "char_017_huang",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_huang"
+        },
+        {
+            "charId": "char_1026_gvial2",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_gvial2"
+        },
+        {
+            "charId": "char_350_surtr",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_surtr"
+        },
+        {
+            "charId": "char_4098_vvana",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_vvana"
+        }
+    ],
+    "SNIPER": [
+        {
+            "charId": "char_103_angel",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_angel"
+        },
+        {
+            "charId": "char_332_archet",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_004_archet"
+        },
+        {
+            "charId": "char_456_ash",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_ash"
+        },
+        {
+            "charId": "char_611_acnipe",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_acnipe"
+        },
+        {
+            "charId": "char_340_shwaz",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_shwaz"
+        },
+        {
+            "charId": "char_4055_bgsnow",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_bgsnow"
+        },
+        {
+            "charId": "char_430_fartth",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_fartth"
+        },
+        {
+            "charId": "char_4193_lemuen",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_lemuen"
+        },
+        {
+            "charId": "char_113_cqbw",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_cqbw"
+        },
+        {
+            "charId": "char_300_phenxi",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_phenxi"
+        },
+        {
+            "charId": "char_197_poca",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_poca"
+        },
+        {
+            "charId": "char_2012_typhon",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_typhon"
+        },
+        {
+            "charId": "char_391_rosmon",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_rosmon"
+        },
+        {
+            "charId": "char_1035_wisdel",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_wisdel"
+        },
+        {
+            "charId": "char_1013_chen2",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_chen2"
+        }
+    ],
+    "CASTER": [
+        {
+            "charId": "char_134_ifrit",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_ifrit"
+        },
+        {
+            "charId": "char_213_mostma",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_mostma"
+        },
+        {
+            "charId": "char_180_amgoat",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_amgoat"
+        },
+        {
+            "charId": "char_2013_cerber",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_cerber"
+        },
+        {
+            "charId": "char_4027_heyak",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_heyak"
+        },
+        {
+            "charId": "char_4133_logos",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_logos"
+        },
+        {
+            "charId": "char_2015_dusk",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_004_dusk"
+        },
+        {
+            "charId": "char_4141_marcil",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_marcil"
+        },
+        {
+            "charId": "char_612_accast",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_accast"
+        },
+        {
+            "charId": "char_472_pasngr",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_pasngr"
+        },
+        {
+            "charId": "char_426_billro",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_billro"
+        },
+        {
+            "charId": "char_4080_lin",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_lin"
+        },
+        {
+            "charId": "char_377_gdglow",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_gdglow"
+        },
+        {
+            "charId": "char_1038_whitw2",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_whitw2"
+        },
+        {
+            "charId": "char_4046_ebnhlz",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_004_ebnhlz"
+        },
+        {
+            "charId": "char_4146_nymph",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_nymph"
+        },
+        {
+            "charId": "char_1040_blaze2",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_blaze2"
+        },
+        {
+            "charId": "char_450_necras",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_necras"
+        },
+        {
+            "charId": "char_002_amiya",
+            "skillIndex": 0,
+            "currentEquip": "uniequip_001_amiya3"
+        },
+        {
+            "charId": "char_405_absin",
+            "skillIndex": 1,
+            "currentEquip": "uniequip_002_absin"
+        },
+        {
+            "charId": "char_411_tomimi",
+            "skillIndex": 1,
+            "currentEquip": "uniequip_002_tomimi"
+        },
+        {
+            "charId": "char_466_qanik",
+            "skillIndex": 1,
+            "currentEquip": "uniequip_002_qanik"
+        },
+        {
+            "charId": "char_166_skfire",
+            "skillIndex": 1,
+            "currentEquip": "uniequip_002_skfire"
+        },
+        {
+            "charId": "char_509_acast",
+            "skillIndex": 0,
+            "currentEquip": null
+        },
+        {
+            "charId": "char_306_leizi",
+            "skillIndex": 1,
+            "currentEquip": "uniequip_002_leizi"
+        }
+    ],
+    "SUPPORT": [
+        {
+            "charId": "char_206_gnosis",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_gnosis"
+        },
+        {
+            "charId": "char_291_aglina",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_004_aglina"
+        },
+        {
+            "charId": "char_358_lisa",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_lisa"
+        },
+        {
+            "charId": "char_614_acsupo",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_acsupo"
+        },
+        {
+            "charId": "char_248_mgllan",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_mgllan"
+        },
+        {
+            "charId": "char_4195_radian",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_radian"
+        },
+        {
+            "charId": "char_1012_skadi2",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_skadi2"
+        },
+        {
+            "charId": "char_4134_cetsyr",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_cetsyr"
+        },
+        {
+            "charId": "char_1031_slent2",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_slent2"
+        },
+        {
+            "charId": "char_4202_haruka",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_haruka"
+        },
+        {
+            "charId": "char_2023_ling",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_ling"
+        },
+        {
+            "charId": "char_4072_ironmn",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_ironmn"
+        },
+        {
+            "charId": "char_245_cello",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_cello"
+        },
+        {
+            "charId": "char_1042_phatm2",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_phatm2"
+        },
+        {
+            "charId": "char_242_otter",
+            "skillIndex": 1,
+            "currentEquip": "uniequip_002_otter"
+        }
+    ],
+    "TANK": [
+        {
+            "charId": "char_136_hsguma",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_hsguma"
+        },
+        {
+            "charId": "char_610_acfend",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_acfend"
+        },
+        {
+            "charId": "char_202_demkni",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_demkni"
+        },
+        {
+            "charId": "char_423_blemsh",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_blemsh"
+        },
+        {
+            "charId": "char_2025_shu",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_shu"
+        },
+        {
+            "charId": "char_2014_nian",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_nian"
+        },
+        {
+            "charId": "char_311_mudrok",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_mudrok"
+        },
+        {
+            "charId": "char_4065_judge",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_judge"
+        },
+        {
+            "charId": "char_416_zumama",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_004_zumama"
+        },
+        {
+            "charId": "char_4039_horn",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_horn"
+        },
+        {
+            "charId": "char_1034_jesca2",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_jesca2"
+        },
+        {
+            "charId": "char_4194_rmixer",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_rmixer"
+        },
+        {
+            "charId": "char_2026_yu",
+            "skillIndex": 2,
+            "currentEquip": null
+        },
+        {
+            "charId": "char_1044_hsgma2",
+            "skillIndex": 2,
+            "currentEquip": null
+        },
+        {
+            "charId": "char_148_nearl",
+            "skillIndex": 1,
+            "currentEquip": "uniequip_002_nearl"
+        }
+    ],
+    "SPECIAL": [
+        {
+            "charId": "char_250_phatom",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_004_phatom"
+        },
+        {
+            "charId": "char_1028_texas2",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_texas2"
+        },
+        {
+            "charId": "char_1029_yato2",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_yato2"
+        },
+        {
+            "charId": "char_1502_crosly",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_crosly"
+        },
+        {
+            "charId": "char_615_acspec",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_acspec"
+        },
+        {
+            "charId": "char_322_lmlee",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_lmlee"
+        },
+        {
+            "charId": "char_1033_swire2",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_004_swire2"
+        },
+        {
+            "charId": "char_400_weedy",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_weedy"
+        },
+        {
+            "charId": "char_225_haak",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_haak"
+        },
+        {
+            "charId": "char_1041_angel2",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_002_angel2"
+        },
+        {
+            "charId": "char_474_glady",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_glady"
+        },
+        {
+            "charId": "char_437_mizuki",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_004_mizuki"
+        },
+        {
+            "charId": "char_4132_ascln",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_ascln"
+        },
+        {
+            "charId": "char_1023_ghost2",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_ghost2"
+        },
+        {
+            "charId": "char_4048_doroth",
+            "skillIndex": 2,
+            "currentEquip": "uniequip_003_doroth"
+        }
+    ]
+}
