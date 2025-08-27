@@ -42,14 +42,15 @@
 
 ## 使用教程
 
-请确保你使用的python版本大于等于3.11.0，低于3.11.0可能会出现python自带的datetime模块缺失函数
+使用前阅读：  
+请确保你使用的python版本大于等于3.11.0，低于3.11.0可能会出现python自带的datetime模块缺失函数。  
+下列步骤中如果使用 `steup_poetry.cmd` 配置环境，那么启动也需要使用 `start_server_pip.cmd` 进行启动。pip方式的保留仅作为一个备用手段，并不推荐使用pip进行环境配置
 
 1、自行寻找GameData或dump游戏资源以获取`excel`文件夹以及内容，并把`excel`文件夹放到 `data` 目录下  
-2、（可选）使用pip命令安装需要的模块 `pip install -r requirements.txt`  
-3、运行 `start_local_server.bat` 启动服务端  
+2、运行 `steup_poetry.cmd` 或 `steup_pip.cmd` 配置环境  
+3、运行 `start_server_pip.cmd` 或 `start_server_pip.cmd` 启动服务端  
 4、自行寻找办法使游戏路由指向服务端，本仓库不提供解决办法
 
-~~如果您觉得这很麻烦，也可以连接到我的公共服务器上进行体验，服务器地址为`http://8.138.148.178:8443/`，我的功能开发进度也会~~实时~~间歇性同步到此服务器中。注意！此服务器的版本仍为单人游玩版本，不支持多用户游玩，此服务器位于中国境内，服务器所使用的代码结构与此仓库的代码不完全一致，但功能基本相同~~
 
 ## data数据结构说明
 
