@@ -1,12 +1,11 @@
 import re
 import json
+import requests
 
 from flask import request
 from random import shuffle
 from constants import CONFIG_PATH
-from collections import OrderedDict
 from utils import read_json, write_json
-from core.function.update import updateData
 
 
 def randomHash():
@@ -48,9 +47,9 @@ def prodNetworkConfig():
 
     if server_config["assets"]["autoUpdate"]:
         if mode == "cn":
-            version = updateData("https://ak-conf.hypergryph.com/config/prod/official/Android/version")
+            version = requests.get("https://ak-conf.hypergryph.com/config/prod/official/Android/version")
         elif mode == "global":
-            version = updateData("https://ark-us-static-online.yo-star.com/assetbundle/official/Android/version")
+            version = requests.get("https://ark-us-static-online.yo-star.com/assetbundle/official/Android/version")
         server_config["version"]["android"] = version
 
         write_json(server_config, CONFIG_PATH)
@@ -76,10 +75,13 @@ def prodPreAnnouncement():
 
     server_config = read_json(CONFIG_PATH)
     mode = server_config["server"]["mode"]
-    if mode == "cn":
-        data = updateData("https://ak-conf.hypergryph.com/config/prod/announce_meta/Android/preannouncement.meta.json")
-    elif mode == "global":
-        data = updateData("https://ark-us-static-online.yo-star.com/announce/Android/preannouncement.meta.json")
+    match mode:
+        case "cn":
+            data = requests.get("https://ak-conf.hypergryph.com/config/prod/announce_meta/Android/preannouncement.meta.json")
+        case "global":
+            data = requests.get("https://ark-us-static-online.yo-star.com/announce/Android/preannouncement.meta.json")
+        case _:
+            data = requests.get("https://ak-conf.hypergryph.com/config/prod/announce_meta/Android/preannouncement.meta.json")
 
     return data
 
@@ -88,10 +90,13 @@ def prodAnnouncement():
 
     server_config = read_json(CONFIG_PATH)
     mode = server_config["server"]["mode"]
-    if mode == "cn":
-        data = updateData("https://ak-conf.hypergryph.com/config/prod/announce_meta/Android/announcement.meta.json")    
-    elif mode == "global":
-        data = updateData("https://ark-us-static-online.yo-star.com/announce/Android/announcement.meta.json")
+    match mode:
+        case "cn":
+            data = requests.get("https://ak-conf.hypergryph.com/config/prod/announce_meta/Android/preannouncement.meta.json")
+        case "global":
+            data = requests.get("https://ark-us-static-online.yo-star.com/announce/Android/preannouncement.meta.json")
+        case _:
+            data = requests.get("https://ak-conf.hypergryph.com/config/prod/announce_meta/Android/preannouncement.meta.json")
 
     return data
 

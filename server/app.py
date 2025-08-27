@@ -4,7 +4,7 @@ from datetime import datetime
 
 from flask import Flask
 
-from utils import read_json, preload_json_data
+from utils import read_json, preload_json_data, start_global_event_loop
 from constants import CONFIG_PATH, EX_CONFIG_PATH
 
 import account, background, building, campaignV2, char, charBuild, charm, \
@@ -301,6 +301,7 @@ if __name__ == "__main__":
     if useMemoryCache:
         writeLog('Loading all table data to memory')
         preload_json_data()
+        start_global_event_loop()
         writeLog('Sucessfully loaded all table data')
     writeLog('[SERVER] Server started at http://' + host + ":" + str(port))
     app.run(host=host, port=port, debug=True)

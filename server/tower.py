@@ -4,7 +4,7 @@ from flask import request
 
 from constants import TOWERDATA_PATH, USER_JSON_PATH
 
-from utils import read_json, write_json, decrypt_battle_data, update_data, logging, get_memory
+from utils import read_json, write_json, decrypt_battle_data, logging, get_memory
 
 
 def currentCoords(stageid: str):

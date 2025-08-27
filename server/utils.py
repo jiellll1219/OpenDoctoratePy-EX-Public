@@ -1,48 +1,38 @@
 import json
 import hashlib
-import requests
+import asyncio
+import threading
 import traceback
 import sys
 import os
 
-from msgspec.json import Encoder, Decoder
+from msgspec.json import Encoder, Decoder, format
+from typing import Optional
 from typing import Dict, Any
-from datetime import datetime, timezone
-from os import path as ospath, makedirs
+from datetime import datetime
 from hashlib import sha3_512
 from random import shuffle
 from flask import after_this_request
 from datetime import datetime, UTC
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import unpad
-from concurrent.futures import ThreadPoolExecutor
 
-from threading import Lock
-
-from constants import USER_JSON_PATH, EX_CONFIG_PATH, SERVER_DATA_PATH, SYNC_DATA_TEMPLATE_PATH
+from constants import USER_JSON_PATH, SERVER_DATA_PATH, SYNC_DATA_TEMPLATE_PATH
 
 json_encoder = Encoder(order="deterministic")
 json_decoder = Decoder(strict=False)
 
-with open("config/multiUserConfig.json") as f:
-    multiUserConfig = json.load(f)
-multiUserEnabled = multiUserConfig["enabled"]
+def read_json(path: str, **args) -> Dict[str, Any]:
+    if "b" not in args.get("mode", ""): 
+        args.setdefault("encoding", "utf-8")
+    with open(path, "r", **args) as f:
+        return json_decoder.decode(f.read())
 
-users = {}
-users_lock = Lock()
-
-def read_json(path: str, **args):
-    if 'b' not in args.get('mode', ''):
-        args.setdefault('encoding', 'utf-8')
-    with open(path, **args) as f:
-        return json.load(f)
-
-def write_json(data, path: str, **args):
-    if 'b' not in args.get('mode', ''):
-        args.setdefault('encoding', 'utf-8')
-    with open(path, "w", **args) as f:
-        json_data = json.dumps(data, ensure_ascii=False, indent=4)
-        f.write(json_data)
+def write_json(data, path: str, **args): 
+    if "b" not in args.get("mode", ""): 
+        args.setdefault("encoding", "utf-8")
+    with open(path, "w", **args) as f: 
+        f.write(format(json_encoder.encode(data), indent=4).decode("utf-8"))
 
 def decrypt_battle_data(data: str, login_time: int = read_json(USER_JSON_PATH)["user"]["pushFlags"]["status"]):
     
@@ -58,77 +48,23 @@ def decrypt_battle_data(data: str, login_time: int = read_json(USER_JSON_PATH)["
         return json.loads(decrypt_data)
     except Exception:
         return {}
-    
-def update_data(url):
-    BASE_URL_LIST = [
-        (
-            "https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata",
-            "./data",
-        ),
-        (
-            "https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/en_US/gamedata",
-            "./data-global",
-        ),
-        (
-            "https://ak-conf.hypergryph.com/config/prod/announce_meta/Android",
-            "./data/announce",
-        ),
-        (
-            "https://ark-us-static-online.yo-star.com/announce/Android",
-            "./data/announce",
-        ),
-    ]
-
-    localPath = ""
-
-    for index in BASE_URL_LIST:
-        if index[0] in url:
-            if not ospath.isdir(index[1]):
-                makedirs(index[1])
-            localPath = url.replace(index[0], index[1])
-            break
-
-    if not ospath.isdir("./data/excel/"):
-        makedirs("./data/excel/")
-
-    if "Android/version" in url:
-        data = requests.get(url).json()
-        return data
-    current_is_mod = False
-
-    if not current_is_mod:
-        try:
-            raise Exception
-            data = requests.get(url).json()
-            write_json(data, localPath)
-
-        except Exception as e:
-            logging(e)
-            data = read_json(localPath, encoding="utf-8")
-    else:
-        data = read_json(localPath, encoding="utf-8")
-
-    return data
-
-def rand_name(len: int = 16) -> str:
-    dt = datetime.now()
-    time = (dt.year, dt.month, dt.day)
-    seed = ""
-    for t in time:
-        seed += str(t)
-    seed = str(shuffle(list(seed)))
-    return sha3_512(seed.encode()).hexdigest()[:len]
 
 def logging(data):
+    def rand_name(len: int = 16) -> str:
+        dt = datetime.now()
+        time = (dt.year, dt.month, dt.day)
+        seed = ""
+        for t in time:
+            seed += str(t)
+        seed = str(shuffle(list(seed)))
+        return sha3_512(seed.encode()).hexdigest()[:len]
     name = rand_name(8)
     log_message = f"[{datetime.now(UTC).isoformat()}] {data}"
     print(log_message)
     with open(f"logs/{name}.log", "w") as f:
         f.write(log_message)
 
-executor = ThreadPoolExecutor(max_workers=10)
-# 线程池最大数量，默认为10
-def run_after_response(func, *args, on_error=None, sequential=False):
+def run_after_response(func, *args, on_error=None):
     """
     在函数返回后异步执行函数（带线程池、异常捕获）。
 
@@ -138,9 +74,9 @@ def run_after_response(func, *args, on_error=None, sequential=False):
     """
     @after_this_request
     def register(response):
-        def task():
+        async def task():
             try:
-                func(*args)
+                await asyncio.to_thread(func, *args)
             except Exception as e:
                 tb_str = traceback.format_exc()
                 if on_error:
@@ -148,8 +84,8 @@ def run_after_response(func, *args, on_error=None, sequential=False):
                 else:
                     print(f"[处理异常] {e}", file=sys.stderr)
                     print(tb_str, file=sys.stderr)
-        
-        executor.submit(task)
+
+        asyncio.run_coroutine_threadsafe(task(), global_loop)
         return response
     
 #定义一个全局变量，用于存储从 JSON 文件中读取的数据
@@ -172,21 +108,49 @@ def preload_json_data():
             file_path = os.path.join(excel_dir, filename)
             
             try:
-                with open(file_path, "r", encoding="utf-8") as f:
-                    memory_cache[key] = Decoder(strict=False).decode(f.read())
+                memory_cache[key] = read_json(file_path)
             except Exception as e:
-                print(f"加载 {filename} 失败: {str(e)}")
+                print(f"加载 {filename} 时出错: {str(e)}")
 
-def get_memory(key: str):
-    useMemoryCache = read_json(EX_CONFIG_PATH)["useMemoryCache"]
-    if useMemoryCache:
+global_loop: Optional[asyncio.AbstractEventLoop] = None
+def start_global_event_loop() -> asyncio.AbstractEventLoop:
+    global global_loop
+    if global_loop is not None:
+        return global_loop
+
+    loop = asyncio.new_event_loop()
+
+    def _run_loop():
+        asyncio.set_event_loop(loop)
+        loop.run_forever()
+
+    t = threading.Thread(target=_run_loop, daemon=True)
+    t.start()
+
+    global_loop = loop
+    return loop
+
+def get_memory(key: str) -> dict:
+    '''
+    从内存缓存中获取数据
+
+    :param key: 要获取的数据的名，如"activity_table"，返回"data/excel/activity_table.json"中的数据
+    '''
+    # 从内存缓存中获取数据，如果不存在则尝试读取文件
+    try:
+        return memory_cache[key]
+    except KeyError:
+        print(f"警告: {key} 未在缓存中找到，正在尝试从文件中加载")
+        file_path = f"data/excel/{key}.json"
         try:
-            return memory_cache.get(key)
-        except Exception:
-            print("Error: Failed to load {key} from memory")
-            return read_json(f"data/excel/{key}.json")
-    else:
-        return read_json(f"data/excel/{key}.json", encoding='utf-8')
+            # 将加载的数据存入缓存以备后续使用
+            data = read_json(file_path)
+            memory_cache[key] = data
+            return data
+        except FileNotFoundError:
+            raise KeyError(f"未找到文件: {file_path}")
+        except Exception as e:
+            raise ValueError(f"加载 {file_path} 时出错: {str(e)}")
 
 def update_check_in_status():
     default_data = {

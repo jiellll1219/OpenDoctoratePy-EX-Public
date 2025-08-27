@@ -1,5 +1,19 @@
 # 更新日志
 
+- 2025 年 8 月 27 日
+
+    修改：  
+    1、清理utils.py中多余的代码  
+    2、run_after_response函数修改为使用asyncio进行管理，添加名为global_loop的初始化函数start_global_event_loop
+
+    更新：  
+    1、卡池文件
+
+- 2025 年 8 月 20 日
+
+    修改：  
+    移除自带的env环境，添加使用poetry与pip配置环境两种方式的命令
+
 - 2025 年 7 月 27 日
 
     修复：  
