@@ -1,0 +1,20 @@
+{
+    "rarity": {
+        "TIER_6": true,
+        "TIER_5": true,
+        "TIER_4": false,
+        "TIER_3": false,
+        "TIER_2": false,
+        "TIER_1": false
+    },
+    "profession_limit": {
+        "WARRIOR": 15,
+        "SNIPER": 15,
+        "TANK": 15,
+        "MEDIC": 15,
+        "SUPPORT": 15,
+        "CASTER": 25,
+        "SPECIAL": 15,
+        "PIONEER": 15
+    }
+}

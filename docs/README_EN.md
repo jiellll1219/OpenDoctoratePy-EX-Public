@@ -34,7 +34,7 @@ If you want to contribute code but lack data, you can at [Here](https://tptpmmpc
 | Activity CheckIn | Continuous updates | Mostly Done |  |
 | Limited-time event | Continuous updates |  |  |
 | SandBox | Paused |  |  |
-| Friends | Paused |  |  |
+| Friends | Completed | Done | Tested |
 
 ## Declaration for Top-up System Code
 

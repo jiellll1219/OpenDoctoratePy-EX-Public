@@ -1,46 +1,5 @@
 {
     "collections": [
-        "mail_amiyaBirth_2025_1",
-        "mail_newyear_2020_1",
-        "mail_newyear_2020_2",
-        "mail_newyear_2020_3",
-        "mail_newyear_2020_4",
-        "mail_newyear_2020_5",
-        "mail_newyear_2021_1",
-        "mail_newyear_2021_2",
-        "mail_newyear_2021_3",
-        "mail_newyear_2021_4",
-        "mail_newyear_2021_5",
-        "mail_newyear_2022_1",
-        "mail_newyear_2022_2",
-        "mail_newyear_2022_3",
-        "mail_newyear_2022_4",
-        "mail_newyear_2022_5",
-        "mail_newyear_2023_1",
-        "mail_newyear_2023_2",
-        "mail_newyear_2023_3",
-        "mail_newyear_2023_4",
-        "mail_newyear_2023_5",
-        "mail_newyear_2024_1",
-        "mail_newyear_2024_2",
-        "mail_newyear_2024_3",
-        "mail_newyear_2024_4",
-        "mail_newyear_2024_5",
-        "mail_newyear_2025_5",
-        "mail_newyear_2025_4",
-        "mail_newyear_2025_3",
-        "mail_newyear_2025_2",
-        "mail_newyear_2025_1",
-        "mail_500w_kazimierz_1",
-        "mail_500w_kazimierz_2",
-        "mail_500w_kazimierz_3",
-        "mail_500w_kazimierz_4",
-        "mail_500w_kazimierz_5",
-        "mail_500w_kazimierz_6",
-        "mail_500w_kazimierz_7",
-        "mail_500w_shotst_1",
-        "mail_500w_nearl_1",
-        "mail_500w_nearl_2",
         "mail_ap_2019_amiya",
         "mail_ap_2019_closure",
         "mail_ap_2019_texas",
@@ -56,749 +15,72 @@
         "mail_500w_closure_6",
         "mail_500w_closure_7",
         "mail_5002_amiya_1",
+        "mail_500w_kazimierz_1",
         "mail_5002_amiya_2",
+        "mail_500w_kazimierz_2",
         "mail_500w_meteo_1",
-        "mail_500w_meteo_2"
+        "mail_500w_kazimierz_3",
+        "mail_500w_shotst_1",
+        "mail_500w_kazimierz_4",
+        "mail_500w_meteo_2",
+        "mail_500w_kazimierz_5",
+        "mail_500w_nearl_1",
+        "mail_500w_kazimierz_6",
+        "mail_500w_nearl_2",
+        "mail_500w_kazimierz_7",
+        "mail_newyear_2020_1",
+        "mail_newyear_2020_2",
+        "mail_newyear_2020_3",
+        "mail_newyear_2020_4",
+        "mail_newyear_2020_5",
+        "mail_newyear_2021_1",
+        "mail_newyear_2021_2",
+        "mail_newyear_2021_3",
+        "mail_newyear_2021_4",
+        "mail_newyear_2021_5",
+        "mail_callback_2021_NCB",
+        "mail_callback_2021_CB",
+        "mail_cdk_art_1",
+        "mail_newyear_2022_1",
+        "mail_newyear_2022_2",
+        "mail_newyear_2022_3",
+        "mail_newyear_2022_4",
+        "mail_newyear_2022_5",
+        "mail_cdk_thxfes_2022_1",
+        "mail_cdk_newyear_2023_1",
+        "mail_newyear_2023_1",
+        "mail_newyear_2023_2",
+        "mail_newyear_2023_3",
+        "mail_newyear_2023_4",
+        "mail_newyear_2023_5",
+        "mail_cdk_anniver_2023_1",
+        "mail_cdk_summer_2023_1",
+        "mail_cdk_thxfes_2023_1",
+        "mail_cdk_art_2",
+        "mail_cdk_newyear_2024_1",
+        "mail_cdk_story_1",
+        "mail_newyear_2024_1",
+        "mail_newyear_2024_2",
+        "mail_newyear_2024_3",
+        "mail_newyear_2024_4",
+        "mail_newyear_2024_5",
+        "mail_cdk_anniver_2024_1",
+        "mail_birth_2025_1",
+        "mail_amiyaBirth_2025_1",
+        "mail_cdk_cross_24_1",
+        "mail_cdk_art_3",
+        "mail_cdk_cross_25_1",
+        "mail_newyear_2025_1",
+        "mail_newyear_2025_2",
+        "mail_newyear_2025_3",
+        "mail_newyear_2025_4",
+        "mail_newyear_2025_5",
+        "mail_anniversary_2025_1",
+        "mail_anniversary_2025_2",
+        "mail_special_2025_1",
+        "mail_summer_2025_1"
     ],
     "extra": [
-        {
-            "id": "mail_amiyaBirth_2025_1",
-            "type": "NORMAL",
-            "sortId": 58,
-            "displayReceiveTs": 1734958800,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "amiya_2024",
-            "title": "来自阿米娅的感谢",
-            "content": "谢谢您，博士，今天能收到这么多祝福和礼物，真的很开心。\n刚刚在切蛋糕的时候您已经离开了，想必是还有些事务要处理。所以，我把切好的蛋糕送来了，一定要记得吃哦。\n下次博士的生日蛋糕，就由我来准备吧，不要拒绝我哦。\n嘿嘿，晚安，博士~",
-            "rewardList": [
-                {
-                    "id": "ap_supply_lt_120_2024_6",
-                    "count": 1,
-                    "type": "AP_SUPPLY"
-                }
-            ]
-        },
-        {
-            "id": "mail_newyear_2020_1",
-            "type": "NORMAL",
-            "sortId": 29,
-            "displayReceiveTs": 1579867200,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "char_235_jesica",
-            "title": "来自杰西卡的祝福",
-            "content": "马上就是新年了，这是我送给博士的新年礼物，谨以此祝福博士新年也一帆风顺！\n这些拙礼只是聊表心意，希望博士不要嫌弃。\n希望新一年里大家也能平平安安！",
-            "rewardList": [
-                {
-                    "id": "ap_supply_lt_100",
-                    "count": 1,
-                    "type": "AP_SUPPLY"
-                }
-            ]
-        },
-        {
-            "id": "mail_newyear_2020_2",
-            "type": "NORMAL",
-            "sortId": 30,
-            "displayReceiveTs": 1579870800,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "char_010_chen",
-            "title": "来自陈的祝福",
-            "content": "现在龙门人人都翘首以盼着新年的到来。罗德岛的博士，你也一样吗？\n收下这些礼物吧，这些都是近卫局的大家准备的。\n不要在意礼物内容，心意才重要！",
-            "rewardList": [
-                {
-                    "id": "ap_supply_lt_100",
-                    "count": 1,
-                    "type": "AP_SUPPLY"
-                }
-            ]
-        },
-        {
-            "id": "mail_newyear_2020_3",
-            "type": "NORMAL",
-            "sortId": 31,
-            "displayReceiveTs": 1579874400,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "char_107_liskam",
-            "title": "来自雷蛇的祝福",
-            "content": "马上就是新年了，收下这些礼物吧。\n希望博士来年也能一切顺利，黑钢国际也会一直作为盟友支持着罗德岛。\n……当然这也不是我说了算的。",
-            "rewardList": [
-                {
-                    "id": "ap_supply_lt_100",
-                    "count": 1,
-                    "type": "AP_SUPPLY"
-                }
-            ]
-        },
-        {
-            "id": "mail_newyear_2020_4",
-            "type": "NORMAL",
-            "sortId": 32,
-            "displayReceiveTs": 1579878000,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "char_308_swire",
-            "title": "来自诗怀雅的祝福",
-            "content": "博士新年快乐！来来来，这些是新年的礼物！\n近卫局的大家的心意也都在这里面了！\n啊？陈那个家伙说她的那份也是近卫局大家准备的？\n她就不能老老实实说是她自己准备的吗？！",
-            "rewardList": [
-                {
-                    "id": "ap_supply_lt_100",
-                    "count": 1,
-                    "type": "AP_SUPPLY"
-                }
-            ]
-        },
-        {
-            "id": "mail_newyear_2020_5",
-            "type": "NORMAL",
-            "sortId": 33,
-            "displayReceiveTs": 1579881600,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "char_002_amiya",
-            "title": "来自阿米娅的祝福",
-            "content": "博士，新年快乐！一直以来的工作辛苦了！\n今天是辞旧迎新的日子，博士也放下手边的事务，来跟大家一起度过这个特别的时刻吧。\n这些礼物是我的心意，希望它能将我的祝福带给您，希望博士在新的一年中也心想事成！",
-            "rewardList": [
-                {
-                    "id": "ap_supply_lt_100",
-                    "count": 1,
-                    "type": "AP_SUPPLY"
-                }
-            ]
-        },
-        {
-            "id": "mail_newyear_2021_1",
-            "type": "NORMAL",
-            "sortId": 34,
-            "displayReceiveTs": 1613044800,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "char_121_lava",
-            "title": "来自炎熔的祝福",
-            "content": "新年快乐博士，年托我给你带点礼物过来。\n我只是正巧路过，顺带搭把手而已。\n你还是赶紧准备过节吧，别工作了。\n祝你新的一年里不用去芙蓉那儿吃健康餐。",
-            "rewardList": [
-                {
-                    "id": "ap_supply_lt_100",
-                    "count": 1,
-                    "type": "AP_SUPPLY"
-                }
-            ]
-        },
-        {
-            "id": "mail_newyear_2021_2",
-            "type": "NORMAL",
-            "sortId": 35,
-            "displayReceiveTs": 1613048400,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "char_130_doberm",
-            "title": "来自杜宾的祝福",
-            "content": "这是教官团的一点心意，博士，祝你节日快乐。\n今天没有训练，所以我也难得能喘口气。\n很高兴您能一直支持我们的工作。\n希望我们都能完好的渡过下一年，继续在这样的节日中重聚。",
-            "rewardList": [
-                {
-                    "id": "ap_supply_lt_100",
-                    "count": 1,
-                    "type": "AP_SUPPLY"
-                }
-            ]
-        },
-        {
-            "id": "mail_newyear_2021_3",
-            "type": "NORMAL",
-            "sortId": 36,
-            "displayReceiveTs": 1613052000,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "char_325_bison",
-            "title": "来自拜松的祝福",
-            "content": "你好博士，这里有您的快递，请签收一下。\n还有这一份，这是我给您个人的礼品，您收下就好。\n哈哈，平常忙碌惯了，过节也有些停不下来。\n您可别和我学，该休息的时候就休息吧。",
-            "rewardList": [
-                {
-                    "id": "ap_supply_lt_100",
-                    "count": 1,
-                    "type": "AP_SUPPLY"
-                }
-            ]
-        },
-        {
-            "id": "mail_newyear_2021_4",
-            "type": "NORMAL",
-            "sortId": 37,
-            "displayReceiveTs": 1613055600,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "char_2014_nian",
-            "title": "来自年的祝福",
-            "content": "哟，新年了，送你些小玩意。\n你说还差点时间？哎呀早点晚点又不碍事，你就收着呗。\n我可不会像小炎熔那样，非得托别人的名来给你送好东西。\n再会啦。",
-            "rewardList": [
-                {
-                    "id": "ap_supply_lt_100",
-                    "count": 1,
-                    "type": "AP_SUPPLY"
-                }
-            ]
-        },
-        {
-            "id": "mail_newyear_2021_5",
-            "type": "NORMAL",
-            "sortId": 38,
-            "displayReceiveTs": 1613059200,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "char_002_amiya",
-            "title": "来自阿米娅的祝福",
-            "content": "博士，新年快乐！工作进行得还顺利吗？\n之前托拜松给您送了些东西，但炎国的干员说，新年要自己送礼才有诚意。\n所以，我，我选了这些送到您的办公室。不知道还合您心意吗？\n我好像——感受到了！您喜欢就好！",
-            "rewardList": [
-                {
-                    "id": "ap_supply_lt_100",
-                    "count": 1,
-                    "type": "AP_SUPPLY"
-                }
-            ]
-        },
-        {
-            "id": "mail_newyear_2022_1",
-            "type": "NORMAL",
-            "sortId": 40,
-            "displayReceiveTs": 1643630400,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "char_124_kroos",
-            "title": "来自克洛丝的祝福",
-            "content": "博士~四处找不到你，我就把礼物放到你的办公室啦！\n我可是为了这些东西费了不少心思呢~\n连我最喜欢吃的罐头都放进去了，我想你一定会喜欢的。\n收了我的心意，就不能再说我偷懒了哦~\n新~年~快~乐~",
-            "rewardList": [
-                {
-                    "id": "ap_supply_lt_100_2022_1",
-                    "count": 1,
-                    "type": "AP_SUPPLY"
-                }
-            ]
-        },
-        {
-            "id": "mail_newyear_2022_2",
-            "type": "NORMAL",
-            "sortId": 41,
-            "displayReceiveTs": 1643634000,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "char_243_waaifu",
-            "title": "来自槐琥的祝福",
-            "content": "博士，新年好！\n这是我准备的礼物，一份龙门宫保羽兽丁和其他散碎的礼品。\n吃羽兽丁的时候记得配米饭或者面条，不然空口吃会很咸。\n非常感谢这一年博士对我的照顾，在罗德岛的实习中我也学到了很多。\n我相信在新的一年里，罗德岛在大家的努力下会变得更好，我也会担起我的一份责任。\n祝博士新年快乐，佳节如意，身体健康！\n",
-            "rewardList": [
-                {
-                    "id": "ap_supply_lt_100_2022_2",
-                    "count": 1,
-                    "type": "AP_SUPPLY"
-                }
-            ]
-        },
-        {
-            "id": "mail_newyear_2022_3",
-            "type": "NORMAL",
-            "sortId": 42,
-            "displayReceiveTs": 1643637600,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "char_172_svrash",
-            "title": "来自银灰的祝福",
-            "content": "我们没有必要把任何事都归于商业交流，盟友。\n既然节日将近，请允许我以喀兰贸易和希瓦艾什家的名义——\n赠予你这份礼品。\n这种品质的兽肉曾经只会当做耶拉冈德的祭品，现如今，它将出现在你的餐盘上。\n想必你能够感受到我的诚意。\n祝节日快乐。\n",
-            "rewardList": [
-                {
-                    "id": "ap_supply_lt_100_2022_3",
-                    "count": 1,
-                    "type": "AP_SUPPLY"
-                }
-            ]
-        },
-        {
-            "id": "mail_newyear_2022_4",
-            "type": "NORMAL",
-            "sortId": 43,
-            "displayReceiveTs": 1643641200,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "char_003_kalts",
-            "title": "来自凯尔希的祝福",
-            "content": "这个庆典能极大消减干员们的精神压力。可对于你我，博士，这样的一天，看着他们沉浸在欢乐中，你是否能感受到自身职责的沉重？\n但我还是建议你加入他们，这是你辛苦工作一年的奖赏，你应当接受它。\n一些补给物资已经划归给你了，希望你可以在这一天中体会到珍贵的情谊和乐趣。\n顺带一提，那个立方体是供你食用的，储存期长，不存在食品安全问题，感到饥饿的时候，放入口中即可。\n",
-            "rewardList": [
-                {
-                    "id": "ap_supply_lt_100_2022_4",
-                    "count": 1,
-                    "type": "AP_SUPPLY"
-                }
-            ]
-        },
-        {
-            "id": "mail_newyear_2022_5",
-            "type": "NORMAL",
-            "sortId": 44,
-            "displayReceiveTs": 1643644800,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "char_002_amiya",
-            "title": "来自阿米娅的祝福",
-            "content": "又到新年了，博士，今天的工作还好吗？\n一年以来我们真的一起经历了很多事情，所以今天我们一定要好好地庆祝一下！\n这是我准备的一些礼物，我希望，您在新年里的每一天，都能像今天收到礼物的时候一样开开心心。\n接下来的路，也请博士与我一起走下去吧！\n吃完蛋糕以后一定要记得告诉我好不好吃呀！\n",
-            "rewardList": [
-                {
-                    "id": "ap_supply_lt_100_2022_5",
-                    "count": 1,
-                    "type": "AP_SUPPLY"
-                }
-            ]
-        },
-        {
-            "id": "mail_newyear_2023_1",
-            "type": "NORMAL",
-            "sortId": 45,
-            "displayReceiveTs": 1674302400,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "char_2015_dusk",
-            "title": "来自夕的祝福",
-            "content": "再有人问起，就指着这柿子告诉他们，别来打扰我的清静，我不出门。谁规定节日是人人都必须上心的东西？\n都怪外头的人吵吵闹闹，害得我画下这一处败笔，不过，真从这处败笔出发，随性泼成一幅画卷，竟然也不错。\n我兴致不在节日，只是提笔画这节日里人们的愿望，平安、如意、喜乐，不见穷尽处，一枝果叶自然画成了林荫。你真走不出，倒也是好事。\n这柿子能不能吃？你要是爱吃，就自己试试看。",
-            "rewardList": [
-                {
-                    "id": "ap_supply_lt_100_2023_1",
-                    "count": 1,
-                    "type": "AP_SUPPLY"
-                }
-            ]
-        },
-        {
-            "id": "mail_newyear_2023_2",
-            "type": "NORMAL",
-            "sortId": 46,
-            "displayReceiveTs": 1674306000,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "char_322_lmlee",
-            "title": "来自老鲤的祝福",
-            "content": "新春大吉，博士，今天应该玩得很尽兴吧？\n这种日子，就该跟大家一块吃饱喝足，热热闹闹的。\n我做了些炎国的点心，放在桌上就能保存很久，哪天得空尝尝吧。作为茶点也不错，能缓解茶的清苦。\n忙忙碌碌一年，还是得给自己找点时间休息啊。",
-            "rewardList": [
-                {
-                    "id": "ap_supply_lt_100_2023_2",
-                    "count": 1,
-                    "type": "AP_SUPPLY"
-                }
-            ]
-        },
-        {
-            "id": "mail_newyear_2023_3",
-            "type": "NORMAL",
-            "sortId": 47,
-            "displayReceiveTs": 1674309600,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "char_2014_nian",
-            "title": "来自年的祝福",
-            "content": "怎么样，博士，难得放个假，咱们一起打个火锅呗？可别说我平时也闲着这种话，扫兴。\n食材我都给你准备好了，炉子也准备好了，是我随手打的小玩意，我保证，冰天雪地里也不会凉。\n也别说这些不是你的口味。你不喜欢，就和我去重新买。新年了，还把自己关在小屋子里，不无聊吗？",
-            "rewardList": [
-                {
-                    "id": "ap_supply_lt_100_2023_3",
-                    "count": 1,
-                    "type": "AP_SUPPLY"
-                }
-            ]
-        },
-        {
-            "id": "mail_newyear_2023_4",
-            "type": "NORMAL",
-            "sortId": 48,
-            "displayReceiveTs": 1674313200,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "char_455_nothin",
-            "title": "来自乌有的祝福",
-            "content": "博士，新的一年，祝您万事如意，笑口常开——欸，之前在庆典上当面祝过一回了，但吉祥话总是不嫌多的嘛。\n来到罗德岛这一趟，见了太多奇人异事，真是大长见识。我寻思着也该给您准备些奇珍异宝作礼物，不巧我只是一介闲人，变不出什么稀奇东西。\n所以呢，就只有这份糖年糕了，我保证好吃，就是有点甜，还有点粘牙。普通是特别普通，但挺应景，勾吴城那一带，大家年年都吃。\n博士，您试试看这礼物您中不中意？呃，毕竟是新春佳节，您要是愿意送我两句夸奖，就再好不过啦，下次我就能拿您的话做宣传，在休息室卖这个了。",
-            "rewardList": [
-                {
-                    "id": "ap_supply_lt_100_2023_4",
-                    "count": 1,
-                    "type": "AP_SUPPLY"
-                }
-            ]
-        },
-        {
-            "id": "mail_newyear_2023_5",
-            "type": "NORMAL",
-            "sortId": 49,
-            "displayReceiveTs": 1674316800,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "char_002_amiya",
-            "title": "来自阿米娅的祝福",
-            "content": "新年快乐，博士，希望您的工作一切顺利！\n过去一年罗德岛驶过了许多风雨，还好有您在，大家才能在今天放松一下，像这样开开心心地庆祝节日。\n还有......也多谢您一直在我身边，陪着我去面对那些最艰难的境况！我想，这个节日应该向亲近的人传递温暖，所以我准备了这份礼物。\n这是我第一次尝试改良配方，用和菜谱不太一样的方法做馅饼，不知道成果合不合博士的口味，博士吃过之后请一定要告诉我感想哦。",
-            "rewardList": [
-                {
-                    "id": "ap_supply_lt_100_2023_5",
-                    "count": 1,
-                    "type": "AP_SUPPLY"
-                }
-            ]
-        },
-        {
-            "id": "mail_newyear_2024_1",
-            "type": "NORMAL",
-            "sortId": 52,
-            "displayReceiveTs": 1707480000,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "char_249_mlyss",
-            "title": "来自缪尔赛思的祝福",
-            "content": "怎么没有人告诉我今天有节日啊，害得我都没时间给你准备合适的礼物......\n我找了好久，只来得及凑齐这些小东西送给你。\n期待你的回礼哦~\n啊对了，是不是还要说句祝福语来着？\n那就麻烦你稍微等一下啦，博士。\n我现在就让流形去你身边。",
-            "rewardList": [
-                {
-                    "id": "ap_supply_lt_100_2024_1",
-                    "count": 1,
-                    "type": "AP_SUPPLY"
-                }
-            ]
-        },
-        {
-            "id": "mail_newyear_2024_2",
-            "type": "NORMAL",
-            "sortId": 53,
-            "displayReceiveTs": 1707483600,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "char_1016_agoat2",
-            "title": "来自纯烬艾雅法拉的祝福",
-            "content": "前辈，新年好。\n时间过得真快呢，一转眼在罗德岛已经度过这么长时间了。在这里认识了您，还有其他许多朋友，实在是很幸运的事。\n真希望明年这个时候，还能和您一起看新年夜的烟花呀。\n有人说，一切过去的事都不会真的过去，它们总会换一种方式陪在我们身边。在这样的节日里，就怀着轻松的心情和过去告别吧。\n对啦，我在蓝毒小姐的帮助下，试着做了自己平时很喜欢的甜点，希望您会喜欢，也希望您能度过一个甜蜜的节日。",
-            "rewardList": [
-                {
-                    "id": "ap_supply_lt_100_2024_2",
-                    "count": 1,
-                    "type": "AP_SUPPLY"
-                }
-            ]
-        },
-        {
-            "id": "mail_newyear_2024_3",
-            "type": "NORMAL",
-            "sortId": 54,
-            "displayReceiveTs": 1707487200,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "char_4098_vvana",
-            "title": "来自薇薇安娜的祝福",
-            "content": "您好，博士，新年快乐。\n今晚的活动十分热闹，非常感谢您与罗德岛的招待，我很开心。\n作为对您的答谢，我以个人的身份为您准备了一些礼品，还望您能笑纳。\n愿我们的前路总是缀满群星，也愿您，亲爱的博士，身体健康，万事如意。",
-            "rewardList": [
-                {
-                    "id": "ap_supply_lt_100_2024_3",
-                    "count": 1,
-                    "type": "AP_SUPPLY"
-                }
-            ]
-        },
-        {
-            "id": "mail_newyear_2024_4",
-            "type": "NORMAL",
-            "sortId": 55,
-            "displayReceiveTs": 1707490800,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "char_4121_zuole",
-            "title": "来自左乐的祝福",
-            "content": "岁序更迭，华章日新。谨祝您在新的一年里喜乐安康，岑静无妄。\n今天对每一个炎国人来说都意义非凡。在神话里，它象征着我们人类战胜庞大的敌人，从而获得主宰自己命运的机会。\n人定胜天，事在人为。\n是不是......有些太严肃了？\n这里还有一些我从玉门带来的甜点，是我小时候最喜欢的食物。许多年过去了，它的味道还是一点都没变。希望您也能喜欢。",
-            "rewardList": [
-                {
-                    "id": "ap_supply_lt_100_2024_4",
-                    "count": 1,
-                    "type": "AP_SUPPLY"
-                }
-            ]
-        },
-        {
-            "id": "mail_newyear_2024_5",
-            "type": "NORMAL",
-            "sortId": 56,
-            "displayReceiveTs": 1707494400,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "char_002_amiya",
-            "title": "来自阿米娅的祝福",
-            "content": "新年快乐，博士！\n礼物已经给您送来了，不知道您收没收到。这次做了点方便携带的小饼干，希望您能喜欢。\n要是饿了，请千万别想着熬过去，吃一块饼干垫垫饥，身体和心情都会好起来的。\n因为时间不够，暂时只做了奶油夹心的，如果您想吃其他口味的，我想，我们可以，一起在甜点课上做做看？\n毕竟，甜味总是比苦涩要更容易回想。\n时间也不早了，不要睡太晚喔。\n明天，呃......早上见，博士~",
-            "rewardList": [
-                {
-                    "id": "ap_supply_lt_100_2024_5",
-                    "count": 1,
-                    "type": "AP_SUPPLY"
-                }
-            ]
-        },
-        {
-            "id": "mail_newyear_2025_5",
-            "MailArchiveItemType type": "NORMAL",
-            "sortId": 65,
-            "displayReceiveTs": 1738080000,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "char_003_kalts",
-            "title": "来自凯尔希的祝福",
-            "content": "博士，过去的一年对你而言想必意义非凡。\n你接触了一些往事，见证了一些历史，也告别了一些故友。你对这片大地和你自身都有了更深入的了解，你也应当更加确信自己选择的道路，你选择的“希望”。\n罗德岛依然面临着无数挑战。我们做再多的准备都算不上充分，但这并不意味着我们要放弃拥有闲暇时光的权利。\n我们很少有机会去享受单纯的欢乐，可是当我们身处困境之时，往往是那些美好的回忆让我们能够克服艰险。\n多去见见罗德岛的干员们吧，在今天这个节日里，有许多人期待与你见面。我想他们会替我提醒你，在你选择的这条困难的道路上，你永远不会孤独。\n我们已经拥有的当下也会提醒我们——付出努力的所有意义，在于未来。\n新年快乐，博士。",
-            "rewardList": [
-                {
-                    "id": "ap_supply_lt_100_2025_5",
-                    "count": 1,
-                    "ItemType type": "AP_SUPPLY"
-                }
-            ]
-        },
-        {
-            "id": "mail_newyear_2025_4",
-            "MailArchiveItemType type": "NORMAL",
-            "sortId": 64,
-            "displayReceiveTs": 1738076400,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "char_2026_yu",
-            "title": "来自余的祝福",
-            "content": "博士，今晚的年夜饭吃得还算尽兴吧？ 原本做完年夜饭我就打算休息了，但我想起你白天问的那个问题——“年年有余”的意思是不是年年有我，每年都能吃到我做的菜？ 虽然夸赞我厨艺的人很多，但你的夸法实在是有趣，所以我又特地为你做了一道小吃。 对了，新年快乐。",
-            "rewardList": [
-                {
-                    "id": "ap_supply_lt_100_2025_4",
-                    "count": 1,
-                    "ItemType type": "AP_SUPPLY"
-                }
-            ]
-        },
-        {
-            "id": "mail_newyear_2025_3",
-            "MailArchiveItemType type": "NORMAL",
-            "sortId": 63,
-            "displayReceiveTs": 1738072800,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "char_1038_whitw2",
-            "title": "来自荒芜拉普兰德的祝福",
-            "content": "辞旧迎新！哈，这不是我们新沃尔西尼富有进取心的时代开拓者最喜欢的字眼吗？\n博士，你一定也很好奇，新沃尔西尼究竟辞了什么旧，又迎了什么新吧？\n信纸背面有一个地址，去那里找卡彭和甘比诺，他们会把我的车借给你。\n开着它在新沃尔西尼转一圈吧，你会看到你想看到的东西。\n哦，酒驾在新沃尔西尼会被重罚，别怪我没提醒你，哈哈！",
-            "rewardList": [
-                {
-                    "id": "ap_supply_lt_100_2025_3",
-                    "count": 1,
-                    "ItemType type": "AP_SUPPLY"
-                }
-            ]
-        },
-        {
-            "id": "mail_newyear_2025_2",
-            "MailArchiveItemType type": "NORMAL",
-            "sortId": 62,
-            "displayReceiveTs": 1738069200,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "char_4058_pepe",
-            "title": "来自佩佩的祝福",
-            "content": "博士，新年快乐！ 我还在发掘现场，没法赶回来和你一起过节，所以就让侍女做了一份莲花饼给你送来。 这是我从小就喜欢的点心，不知道会不会合你的口味。 你也可以不吃，光是摆在那里也很好看哦，放心，它可以摆很久的！ 我大概还要再过一个月才能回来，不过，好消息是这次说不定有大发现呢，你可以期待一下！",
-            "rewardList": [
-                {
-                    "id": "ap_supply_lt_100_2025_2",
-                    "count": 1,
-                    "ItemType type": "AP_SUPPLY"
-                }
-            ]
-        },
-        {
-            "id": "mail_newyear_2025_1",
-            "MailArchiveItemType type": "NORMAL",
-            "sortId": 61,
-            "displayReceiveTs": 1738065600,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "char_1035_wisdel",
-            "title": "来自维什戴尔的祝福",
-            "content": "你现在应该还在工作，别问我怎么知道的，我说过的，我会盯着你们。\n小兔子想走殿下的路，我不知道她能不能行，我也管不着，但她做得还不错。所以，你最好是真心在帮小兔子的忙，不然我就让你知道，我对你的办公桌做了些什么。\n好了，我也不是专门来吓你的，我没这么无聊。\n准备了一点礼物，给小兔子的，她已经收到了，至于你，给你做了碗炒饭。\n倒掉也没关系，不过，这碗炒饭是专门用熔炉里那些老不死的怒火炒的，还加上了我秘制的调料，整个卡兹戴尔大概也就这么一碗，你看着办吧，哈哈！\n【信件上有不少错别字，还有一些涂抹痕迹，但大体上来说，她的写字水平已经有了明显的进步。】",
-            "rewardList": [
-                {
-                    "id": "ap_supply_lt_100_2025_1",
-                    "count": 1,
-                    "ItemType type": "AP_SUPPLY"
-                }
-            ]
-        },
-        {
-            "id": "mail_500w_kazimierz_1",
-            "type": "NORMAL",
-            "sortId": 16,
-            "displayReceiveTs": 1559246400,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "penguin_logistics",
-            "title": "来自卡西米尔的联络信①",
-            "content": "博士：\n来自卡西米尔郊区的联络回来了。干员格拉尼平安到达了滴水村，但是通讯变得缓慢而不规律。奇怪的是，村子虽然偏远但也应该有着正常通讯设备才对。\n希望一切平安。\n\n罗德岛联络员",
-            "rewardList": [
-                {
-                    "id": "ap_item_CaH_200",
-                    "count": 1,
-                    "type": "AP_ITEM"
-                }
-            ]
-        },
-        {
-            "id": "mail_500w_kazimierz_2",
-            "type": "NORMAL",
-            "sortId": 18,
-            "displayReceiveTs": 1559419200,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "penguin_logistics",
-            "title": "来自卡西米尔的联络信②",
-            "content": "博士：\n干员格拉尼成功的进入了村子，遇到了这次的委托人。\n村子遭到了一定程度的破坏，但是卡西米尔当局却没有对村子进行任何的援助。\n真是为滴水村的村民捏了一把汗。\n\n罗德岛联络员",
-            "rewardList": [
-                {
-                    "id": "ap_item_CaH_200",
-                    "count": 1,
-                    "type": "AP_ITEM"
-                }
-            ]
-        },
-        {
-            "id": "mail_500w_kazimierz_3",
-            "type": "NORMAL",
-            "sortId": 20,
-            "displayReceiveTs": 1559592000,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "penguin_logistics",
-            "title": "来自卡西米尔的联络信③",
-            "content": "博士：\n干员格拉尼已经确认了这次委托的内容，开始进入卡西米尔的未开发森林。\n但是现在的报告看来，森林中已经潜伏有大量的未知人员。\n他们貌似也做好了准备，期待他们的下一次联络。\n\n罗德岛联络员",
-            "rewardList": [
-                {
-                    "id": "ap_item_CaH_200",
-                    "count": 1,
-                    "type": "AP_ITEM"
-                }
-            ]
-        },
-        {
-            "id": "mail_500w_kazimierz_4",
-            "type": "NORMAL",
-            "sortId": 22,
-            "displayReceiveTs": 1559764800,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "penguin_logistics",
-            "title": "来自卡西米尔的联络信④",
-            "content": "博士：\n不仅仅是滴水村，现在的卡西米尔的郊区基本都处于自治状态。\n由于地理位置的关系，附近的每个村子平时多多少少都会遭到路过的游民的骚扰。\n卡西米尔当局似乎很早以前就放弃了他们。\n\n罗德岛联络员",
-            "rewardList": [
-                {
-                    "id": "ap_item_CaH_200",
-                    "count": 1,
-                    "type": "AP_ITEM"
-                }
-            ]
-        },
-        {
-            "id": "mail_500w_kazimierz_5",
-            "type": "NORMAL",
-            "sortId": 24,
-            "displayReceiveTs": 1559937600,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "penguin_logistics",
-            "title": "来自卡西米尔的联络信⑤",
-            "content": "博士：\n经过我们的调查，卡西米尔骑士确实拥有着留下遗产给人民的习俗。即使是失去了生命，他们也希望可以通过这样的形式给后人留下一些遗产。不过一般他们也会设置一些考验。因为这些困难的考验，导致人们在很长时间中也慢慢的放弃了对这些遗产的追寻。\n\n罗德岛联络员",
-            "rewardList": [
-                {
-                    "id": "ap_item_CaH_200",
-                    "count": 1,
-                    "type": "AP_ITEM"
-                }
-            ]
-        },
-        {
-            "id": "mail_500w_kazimierz_6",
-            "type": "NORMAL",
-            "sortId": 26,
-            "displayReceiveTs": 1560110400,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "penguin_logistics",
-            "title": "来自卡西米尔的联络信⑥",
-            "content": "博士 ：\n干员格拉尼的回复收到了，看来滴水村的任务已经接近完成。\n他们成功发现了宝藏，帮助了村子的修缮，还击败了赏金猎人，救助了需要救助的敌人。\n罗德岛的骑警，看来一点都不是徒有虚名。\n\n罗德岛联络员",
-            "rewardList": [
-                {
-                    "id": "ap_item_CaH_200",
-                    "count": 1,
-                    "type": "AP_ITEM"
-                }
-            ]
-        },
-        {
-            "id": "mail_500w_kazimierz_7",
-            "type": "NORMAL",
-            "sortId": 28,
-            "displayReceiveTs": 1560283200,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "penguin_logistics",
-            "title": "来自卡西米尔的联络信⑦",
-            "content": "博士 ：\n根据干员格拉尼的报告，这次的事件中依然出现了整合运动部队的活动踪迹。该部队完完全全是整合运动的编外队伍，完全没有接受过任何的命令和指导，所以他们并没有真正成为巨大的威胁......整合运动的影响范围到底已经延伸到了哪里？\n\n罗德岛联络员",
-            "rewardList": [
-                {
-                    "id": "ap_item_CaH_200",
-                    "count": 1,
-                    "type": "AP_ITEM"
-                }
-            ]
-        },
-        {
-            "id": "mail_500w_shotst_1",
-            "type": "NORMAL",
-            "sortId": 21,
-            "displayReceiveTs": 1559678400,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "penguin_logistics",
-            "title": "来自流星的问候信",
-            "content": "亲爱的博士：\n听阿米娅说，博士对卡西米尔也有些兴趣？大多数时间，我都生活在卡西米尔的森林里。\n卡西米尔的森林十分广阔，对珍贵树木和野生动物垂涎三尺的恶徒也不在少数。守护森林的责任落在了我们热爱森林的人身上。\n有机会的话也去看看吧。卡西米尔的森林一定会欢迎你的。\n\n流星",
-            "rewardList": [
-                {
-                    "id": "ap_item_CaH_200",
-                    "count": 1,
-                    "type": "AP_ITEM"
-                }
-            ]
-        },
-        {
-            "id": "mail_500w_nearl_1",
-            "type": "NORMAL",
-            "sortId": 25,
-            "displayReceiveTs": 1560024000,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "penguin_logistics",
-            "title": "来自临光的问候信",
-            "content": "尊敬的博士：\n似乎有不少干员都多多少少向您透露了些卡西米尔的近况。我无意指责或掩饰些什么，卡西米尔作为我的祖国，既有它的美丽和伟大之处，也有它的病兆和腐烂之城。我并不反对骑士竞赛，但当骑士竞赛背后混入了灰色力量和交易之后，原本可以重获新生的古代骑士们的信条，反而变成了宣传的工具和粉饰太平的表象。\n\n临光",
-            "rewardList": [
-                {
-                    "id": "ap_item_CaH_200",
-                    "count": 1,
-                    "type": "AP_ITEM"
-                }
-            ]
-        },
-        {
-            "id": "mail_500w_nearl_2",
-            "type": "NORMAL",
-            "sortId": 27,
-            "displayReceiveTs": 1560196800,
-            "year": 0,
-            "dateDelta": 0,
-            "senderId": "penguin_logistics",
-            "title": "来自临光的联络信",
-            "content": "尊敬的博士：\n你知道最近有一位干员在卡西米尔执行任务吧？她的父辈是加入维多利亚的卡西米尔移民之一。虽然每次都将乌萨斯赶出了国境线，但卡西米尔也有不少居民厌倦了连年征战，更无法忍受骑士们的傲慢和目中无人。所以，他们去了维多利亚寻找自己新的生活。卡西米尔的强盛是有着巨大弱点的。\n\n临光",
-            "rewardList": [
-                {
-                    "id": "ap_item_CaH_200",
-                    "count": 1,
-                    "type": "AP_ITEM"
-                }
-            ]
-        },
         {
             "id": "mail_ap_2019_amiya",
             "type": "OPEN_SERVER",
@@ -807,8 +89,8 @@
             "year": 0,
             "dateDelta": 0,
             "senderId": "penguin_logistics",
-            "title": "【理智赠送】来自阿米娅的讯息",
-            "content": "博士：\n欢迎回到罗德岛，欢迎回家。\n不管博士能不能回忆起过去，至少在接下来的日子里，大家都会在这里重新成为一家人，一起面对未来。那么再次，再次请博士多多关照。这是我专门买来的饼干，凯尔希医生和我们大家都很喜欢，希望博士能收下。\n\n阿米娅",
+            "title": "\u3010\u7406\u667a\u8d60\u9001\u3011\u6765\u81ea\u963f\u7c73\u5a05\u7684\u8baf\u606f",
+            "content": "\u535a\u58eb\uff1a\n\u6b22\u8fce\u56de\u5230\u7f57\u5fb7\u5c9b\uff0c\u6b22\u8fce\u56de\u5bb6\u3002\n\u4e0d\u7ba1\u535a\u58eb\u80fd\u4e0d\u80fd\u56de\u5fc6\u8d77\u8fc7\u53bb\uff0c\u81f3\u5c11\u5728\u63a5\u4e0b\u6765\u7684\u65e5\u5b50\u91cc\uff0c\u5927\u5bb6\u90fd\u4f1a\u5728\u8fd9\u91cc\u91cd\u65b0\u6210\u4e3a\u4e00\u5bb6\u4eba\uff0c\u4e00\u8d77\u9762\u5bf9\u672a\u6765\u3002\u90a3\u4e48\u518d\u6b21\uff0c\u518d\u6b21\u8bf7\u535a\u58eb\u591a\u591a\u5173\u7167\u3002\u8fd9\u662f\u6211\u4e13\u95e8\u4e70\u6765\u7684\u997c\u5e72\uff0c\u51ef\u5c14\u5e0c\u533b\u751f\u548c\u6211\u4eec\u5927\u5bb6\u90fd\u5f88\u559c\u6b22\uff0c\u5e0c\u671b\u535a\u58eb\u80fd\u6536\u4e0b\u3002\n\n\u963f\u7c73\u5a05",
             "rewardList": [
                 {
                     "id": "ap_item_amiya",
@@ -823,10 +105,10 @@
             "sortId": 2,
             "displayReceiveTs": 0,
             "year": 0,
-            "dateDelta": 0,
+            "dateDelta": 1,
             "senderId": "penguin_logistics",
-            "title": "【理智赠送】来自可露希尔的讯息",
-            "content": "博士：\n来到罗德岛的第一天感觉如何？如果有什么想知道的事情，来采购部找我聊聊吧，当然也可以顺便看看各种商品！\n这是最近新发售的饼干，相信之后肯定会成为畅销品！作为试吃就送给博士一份好了！\n\n可露希尔",
+            "title": "\u3010\u7406\u667a\u8d60\u9001\u3011\u6765\u81ea\u53ef\u9732\u5e0c\u5c14\u7684\u8baf\u606f",
+            "content": "\u535a\u58eb\uff1a\n\u6765\u5230\u7f57\u5fb7\u5c9b\u7684\u7b2c\u4e00\u5929\u611f\u89c9\u5982\u4f55\uff1f\u5982\u679c\u6709\u4ec0\u4e48\u60f3\u77e5\u9053\u7684\u4e8b\u60c5\uff0c\u6765\u91c7\u8d2d\u90e8\u627e\u6211\u804a\u804a\u5427\uff0c\u5f53\u7136\u4e5f\u53ef\u4ee5\u987a\u4fbf\u770b\u770b\u5404\u79cd\u5546\u54c1\uff01\n\u8fd9\u662f\u6700\u8fd1\u65b0\u53d1\u552e\u7684\u997c\u5e72\uff0c\u76f8\u4fe1\u4e4b\u540e\u80af\u5b9a\u4f1a\u6210\u4e3a\u7545\u9500\u54c1\uff01\u4f5c\u4e3a\u8bd5\u5403\u5c31\u9001\u7ed9\u535a\u58eb\u4e00\u4efd\u597d\u4e86\uff01\n\n\u53ef\u9732\u5e0c\u5c14",
             "rewardList": [
                 {
                     "id": "ap_item_closure",
@@ -841,10 +123,10 @@
             "sortId": 3,
             "displayReceiveTs": 0,
             "year": 0,
-            "dateDelta": 0,
+            "dateDelta": 2,
             "senderId": "penguin_logistics",
-            "title": "【理智赠送】来自德克萨斯的讯息",
-            "content": "博士：\n这是给博士的快递，是企鹅物流全员送给博士的欢迎礼物。之后有什么需要的地方，联系我们就行，企鹅物流全年无休。\n这个饼干的味道我和能天使都还挺喜欢的，博士也试试。\n\n德克萨斯",
+            "title": "\u3010\u7406\u667a\u8d60\u9001\u3011\u6765\u81ea\u5fb7\u514b\u8428\u65af\u7684\u8baf\u606f",
+            "content": "\u535a\u58eb\uff1a\n\u8fd9\u662f\u7ed9\u535a\u58eb\u7684\u5feb\u9012\uff0c\u662f\u4f01\u9e45\u7269\u6d41\u5168\u5458\u9001\u7ed9\u535a\u58eb\u7684\u6b22\u8fce\u793c\u7269\u3002\u4e4b\u540e\u6709\u4ec0\u4e48\u9700\u8981\u7684\u5730\u65b9\uff0c\u8054\u7cfb\u6211\u4eec\u5c31\u884c\uff0c\u4f01\u9e45\u7269\u6d41\u5168\u5e74\u65e0\u4f11\u3002\n\u8fd9\u4e2a\u997c\u5e72\u7684\u5473\u9053\u6211\u548c\u80fd\u5929\u4f7f\u90fd\u8fd8\u633a\u559c\u6b22\u7684\uff0c\u535a\u58eb\u4e5f\u8bd5\u8bd5\u3002\n\n\u5fb7\u514b\u8428\u65af",
             "rewardList": [
                 {
                     "id": "ap_item_texas",
@@ -859,10 +141,10 @@
             "sortId": 4,
             "displayReceiveTs": 0,
             "year": 0,
-            "dateDelta": 0,
+            "dateDelta": 3,
             "senderId": "penguin_logistics",
-            "title": "【理智赠送】来自杜宾的讯息",
-            "content": "博士：\n这几天的训练辛苦了，虽然成绩比较落后，但是还是看得出博士你有在好好努力。作为鼓励，这些罗德岛采购所的人气饼干，博士留着慢慢吃吧。\n对了，明天早上5点的训练不要再忘记了。\n\n杜宾",
+            "title": "\u3010\u7406\u667a\u8d60\u9001\u3011\u6765\u81ea\u675c\u5bbe\u7684\u8baf\u606f",
+            "content": "\u535a\u58eb\uff1a\n\u8fd9\u51e0\u5929\u7684\u8bad\u7ec3\u8f9b\u82e6\u4e86\uff0c\u867d\u7136\u6210\u7ee9\u6bd4\u8f83\u843d\u540e\uff0c\u4f46\u662f\u8fd8\u662f\u770b\u5f97\u51fa\u535a\u58eb\u4f60\u6709\u5728\u597d\u597d\u52aa\u529b\u3002\u4f5c\u4e3a\u9f13\u52b1\uff0c\u8fd9\u4e9b\u7f57\u5fb7\u5c9b\u91c7\u8d2d\u6240\u7684\u4eba\u6c14\u997c\u5e72\uff0c\u535a\u58eb\u7559\u7740\u6162\u6162\u5403\u5427\u3002\n\u5bf9\u4e86\uff0c\u660e\u5929\u65e9\u4e0a5\u70b9\u7684\u8bad\u7ec3\u4e0d\u8981\u518d\u5fd8\u8bb0\u4e86\u3002\n\n\u675c\u5bbe",
             "rewardList": [
                 {
                     "id": "ap_item_doberm",
@@ -877,10 +159,10 @@
             "sortId": 5,
             "displayReceiveTs": 0,
             "year": 0,
-            "dateDelta": 0,
+            "dateDelta": 4,
             "senderId": "penguin_logistics",
-            "title": "【理智赠送】来自杰西卡的讯息",
-            "content": "博士：\n博士你好，这几天在罗德岛的生活怎么样？有博士一起，我终于再也不用一个人受杜宾教官的教训了。之后我也一定会和博士一起努力，好好加油成为大家可靠的一员！\n我最近特别喜欢采购部的这种饼干，于是我就把它们全都买下来了，也送给博士一份好了！\n\n杰西卡",
+            "title": "\u3010\u7406\u667a\u8d60\u9001\u3011\u6765\u81ea\u6770\u897f\u5361\u7684\u8baf\u606f",
+            "content": "\u535a\u58eb\uff1a\n\u535a\u58eb\u4f60\u597d\uff0c\u8fd9\u51e0\u5929\u5728\u7f57\u5fb7\u5c9b\u7684\u751f\u6d3b\u600e\u4e48\u6837\uff1f\u6709\u535a\u58eb\u4e00\u8d77\uff0c\u6211\u7ec8\u4e8e\u518d\u4e5f\u4e0d\u7528\u4e00\u4e2a\u4eba\u53d7\u675c\u5bbe\u6559\u5b98\u7684\u6559\u8bad\u4e86\u3002\u4e4b\u540e\u6211\u4e5f\u4e00\u5b9a\u4f1a\u548c\u535a\u58eb\u4e00\u8d77\u52aa\u529b\uff0c\u597d\u597d\u52a0\u6cb9\u6210\u4e3a\u5927\u5bb6\u53ef\u9760\u7684\u4e00\u5458\uff01\n\u6211\u6700\u8fd1\u7279\u522b\u559c\u6b22\u91c7\u8d2d\u90e8\u7684\u8fd9\u79cd\u997c\u5e72\uff0c\u4e8e\u662f\u6211\u5c31\u628a\u5b83\u4eec\u5168\u90fd\u4e70\u4e0b\u6765\u4e86\uff0c\u4e5f\u9001\u7ed9\u535a\u58eb\u4e00\u4efd\u597d\u4e86\uff01\n\n\u6770\u897f\u5361",
             "rewardList": [
                 {
                     "id": "ap_item_jesica",
@@ -895,10 +177,10 @@
             "sortId": 6,
             "displayReceiveTs": 0,
             "year": 0,
-            "dateDelta": 0,
+            "dateDelta": 5,
             "senderId": "penguin_logistics",
-            "title": "【理智赠送】来自讯使的讯息",
-            "content": "博士：\n博士看起来已经很熟悉罗德岛了，有好好的和大家打过招呼了吧？如果有什么需要我帮忙的事情，尽管开口吧。我会一直在采购部待机等你的。\n听说这种饼干最近人气很高？送给博士吧。\n\n讯使",
+            "title": "\u3010\u7406\u667a\u8d60\u9001\u3011\u6765\u81ea\u8baf\u4f7f\u7684\u8baf\u606f",
+            "content": "\u535a\u58eb\uff1a\n\u535a\u58eb\u770b\u8d77\u6765\u5df2\u7ecf\u5f88\u719f\u6089\u7f57\u5fb7\u5c9b\u4e86\uff0c\u6709\u597d\u597d\u7684\u548c\u5927\u5bb6\u6253\u8fc7\u62db\u547c\u4e86\u5427\uff1f\u5982\u679c\u6709\u4ec0\u4e48\u9700\u8981\u6211\u5e2e\u5fd9\u7684\u4e8b\u60c5\uff0c\u5c3d\u7ba1\u5f00\u53e3\u5427\u3002\u6211\u4f1a\u4e00\u76f4\u5728\u91c7\u8d2d\u90e8\u5f85\u673a\u7b49\u4f60\u7684\u3002\n\u542c\u8bf4\u8fd9\u79cd\u997c\u5e72\u6700\u8fd1\u4eba\u6c14\u5f88\u9ad8\uff1f\u9001\u7ed9\u535a\u58eb\u5427\u3002\n\n\u8baf\u4f7f",
             "rewardList": [
                 {
                     "id": "ap_item_blackd",
@@ -913,10 +195,10 @@
             "sortId": 7,
             "displayReceiveTs": 0,
             "year": 0,
-            "dateDelta": 0,
+            "dateDelta": 6,
             "senderId": "penguin_logistics",
-            "title": "【理智赠送】来自崖心的讯息",
-            "content": "博士：\n你好，这里是崖心！今天也正式成为了罗德岛的一员，就请博士多多照顾了！\n不知道是什么人把采购部的饼干全买走了？即使是在谢拉格也没有遇到过这样的事情，真是奇怪。我好不容易买到了这么一些，就送给博士吧。\n\n崖心",
+            "title": "\u3010\u7406\u667a\u8d60\u9001\u3011\u6765\u81ea\u5d16\u5fc3\u7684\u8baf\u606f",
+            "content": "\u535a\u58eb\uff1a\n\u4f60\u597d\uff0c\u8fd9\u91cc\u662f\u5d16\u5fc3\uff01\u4eca\u5929\u4e5f\u6b63\u5f0f\u6210\u4e3a\u4e86\u7f57\u5fb7\u5c9b\u7684\u4e00\u5458\uff0c\u5c31\u8bf7\u535a\u58eb\u591a\u591a\u7167\u987e\u4e86\uff01\n\u4e0d\u77e5\u9053\u662f\u4ec0\u4e48\u4eba\u628a\u91c7\u8d2d\u90e8\u7684\u997c\u5e72\u5168\u4e70\u8d70\u4e86\uff1f\u5373\u4f7f\u662f\u5728\u8c22\u62c9\u683c\u4e5f\u6ca1\u6709\u9047\u5230\u8fc7\u8fd9\u6837\u7684\u4e8b\u60c5\uff0c\u771f\u662f\u5947\u602a\u3002\u6211\u597d\u4e0d\u5bb9\u6613\u4e70\u5230\u4e86\u8fd9\u4e48\u4e00\u4e9b\uff0c\u5c31\u9001\u7ed9\u535a\u58eb\u5427\u3002\n\n\u5d16\u5fc3",
             "rewardList": [
                 {
                     "id": "ap_item_slchan",
@@ -931,10 +213,10 @@
             "sortId": 8,
             "displayReceiveTs": 1558555200,
             "year": 0,
-            "dateDelta": 0,
+            "dateDelta": -1,
             "senderId": "npc_007_closure",
-            "title": "来自可露希尔的慰问信",
-            "content": "博士：\n感谢您这些日子里的操劳，正是您的努力才造就了现在的罗德岛。\n希望这份咸蛋黄巧克力能成为博士辛勤工作的调剂品，或者希望它含有的卡路里能。\n\n可露希尔",
+            "title": "\u6765\u81ea\u53ef\u9732\u5e0c\u5c14\u7684\u6170\u95ee\u4fe1",
+            "content": "\u535a\u58eb\uff1a\n\u611f\u8c22\u60a8\u8fd9\u4e9b\u65e5\u5b50\u91cc\u7684\u64cd\u52b3\uff0c\u6b63\u662f\u60a8\u7684\u52aa\u529b\u624d\u9020\u5c31\u4e86\u73b0\u5728\u7684\u7f57\u5fb7\u5c9b\u3002\n\u5e0c\u671b\u8fd9\u4efd\u54b8\u86cb\u9ec4\u5de7\u514b\u529b\u80fd\u6210\u4e3a\u535a\u58eb\u8f9b\u52e4\u5de5\u4f5c\u7684\u8c03\u5242\u54c1\uff0c\u6216\u8005\u5e0c\u671b\u5b83\u542b\u6709\u7684\u5361\u8def\u91cc\u80fd\u3002\n\n\u53ef\u9732\u5e0c\u5c14",
             "rewardList": [
                 {
                     "id": "ap_item_SEC_60",
@@ -949,10 +231,10 @@
             "sortId": 9,
             "displayReceiveTs": 1558641600,
             "year": 0,
-            "dateDelta": 0,
+            "dateDelta": -1,
             "senderId": "npc_007_closure",
-            "title": "来自可露希尔的慰问信",
-            "content": "博士：\n医疗部的干员一直提醒我，高热量和高脂肪的零食是健康和身材管理的大敌……\n可是耐不住好吃啊！\n这是跟昨天一样的巧克力，再给博士一份吧。\n\n可露希尔",
+            "title": "\u6765\u81ea\u53ef\u9732\u5e0c\u5c14\u7684\u6170\u95ee\u4fe1",
+            "content": "\u535a\u58eb\uff1a\n\u533b\u7597\u90e8\u7684\u5e72\u5458\u4e00\u76f4\u63d0\u9192\u6211\uff0c\u9ad8\u70ed\u91cf\u548c\u9ad8\u8102\u80aa\u7684\u96f6\u98df\u662f\u5065\u5eb7\u548c\u8eab\u6750\u7ba1\u7406\u7684\u5927\u654c\u2026\u2026\n\u53ef\u662f\u8010\u4e0d\u4f4f\u597d\u5403\u554a\uff01\n\u8fd9\u662f\u8ddf\u6628\u5929\u4e00\u6837\u7684\u5de7\u514b\u529b\uff0c\u518d\u7ed9\u535a\u58eb\u4e00\u4efd\u5427\u3002\n\n\u53ef\u9732\u5e0c\u5c14",
             "rewardList": [
                 {
                     "id": "ap_item_SEC_60",
@@ -967,10 +249,10 @@
             "sortId": 10,
             "displayReceiveTs": 1558728000,
             "year": 0,
-            "dateDelta": 0,
+            "dateDelta": -1,
             "senderId": "npc_007_closure",
-            "title": "来自可露希尔的慰问信",
-            "content": "博士：\n我熬夜的时候也喜欢吃一些零食来集中思维，大概这是现代工作者的共通之处吧。\n不过对精神涣散的干员们来说好像也没什么用。\n来，这是今天份给博士的巧克力。\n\n可露希尔",
+            "title": "\u6765\u81ea\u53ef\u9732\u5e0c\u5c14\u7684\u6170\u95ee\u4fe1",
+            "content": "\u535a\u58eb\uff1a\n\u6211\u71ac\u591c\u7684\u65f6\u5019\u4e5f\u559c\u6b22\u5403\u4e00\u4e9b\u96f6\u98df\u6765\u96c6\u4e2d\u601d\u7ef4\uff0c\u5927\u6982\u8fd9\u662f\u73b0\u4ee3\u5de5\u4f5c\u8005\u7684\u5171\u901a\u4e4b\u5904\u5427\u3002\n\u4e0d\u8fc7\u5bf9\u7cbe\u795e\u6da3\u6563\u7684\u5e72\u5458\u4eec\u6765\u8bf4\u597d\u50cf\u4e5f\u6ca1\u4ec0\u4e48\u7528\u3002\n\u6765\uff0c\u8fd9\u662f\u4eca\u5929\u4efd\u7ed9\u535a\u58eb\u7684\u5de7\u514b\u529b\u3002\n\n\u53ef\u9732\u5e0c\u5c14",
             "rewardList": [
                 {
                     "id": "ap_item_SEC_60",
@@ -985,10 +267,10 @@
             "sortId": 11,
             "displayReceiveTs": 1558814400,
             "year": 0,
-            "dateDelta": 0,
+            "dateDelta": -1,
             "senderId": "npc_007_closure",
-            "title": "来自可露希尔的慰问信",
-            "content": "博士：\n你知道吗，其实我们的采购部的零食大部分也是罗德岛本舰在药物开发的时候偶然研制出来的。无心诞生的绝品，真是充满了浪漫感啊。\n不过这个巧克力并不是，是一个朋友给我的。\n\n可露希尔",
+            "title": "\u6765\u81ea\u53ef\u9732\u5e0c\u5c14\u7684\u6170\u95ee\u4fe1",
+            "content": "\u535a\u58eb\uff1a\n\u4f60\u77e5\u9053\u5417\uff0c\u5176\u5b9e\u6211\u4eec\u7684\u91c7\u8d2d\u90e8\u7684\u96f6\u98df\u5927\u90e8\u5206\u4e5f\u662f\u7f57\u5fb7\u5c9b\u672c\u8230\u5728\u836f\u7269\u5f00\u53d1\u7684\u65f6\u5019\u5076\u7136\u7814\u5236\u51fa\u6765\u7684\u3002\u65e0\u5fc3\u8bde\u751f\u7684\u7edd\u54c1\uff0c\u771f\u662f\u5145\u6ee1\u4e86\u6d6a\u6f2b\u611f\u554a\u3002\n\u4e0d\u8fc7\u8fd9\u4e2a\u5de7\u514b\u529b\u5e76\u4e0d\u662f\uff0c\u662f\u4e00\u4e2a\u670b\u53cb\u7ed9\u6211\u7684\u3002\n\n\u53ef\u9732\u5e0c\u5c14",
             "rewardList": [
                 {
                     "id": "ap_item_SEC_60",
@@ -1003,10 +285,10 @@
             "sortId": 12,
             "displayReceiveTs": 1558900800,
             "year": 0,
-            "dateDelta": 0,
+            "dateDelta": -1,
             "senderId": "npc_007_closure",
-            "title": "来自可露希尔的慰问信",
-            "content": "博士：\n早上好博士！今天我得到了好消息，这次的巧克力慢慢的受到了干员们的好评！看来它成为新的畅销零食的那一天指日可待！\n今天也送给博士一份吧！下次就得花龙门币买了！\n\n可露希尔",
+            "title": "\u6765\u81ea\u53ef\u9732\u5e0c\u5c14\u7684\u6170\u95ee\u4fe1",
+            "content": "\u535a\u58eb\uff1a\n\u65e9\u4e0a\u597d\u535a\u58eb\uff01\u4eca\u5929\u6211\u5f97\u5230\u4e86\u597d\u6d88\u606f\uff0c\u8fd9\u6b21\u7684\u5de7\u514b\u529b\u6162\u6162\u7684\u53d7\u5230\u4e86\u5e72\u5458\u4eec\u7684\u597d\u8bc4\uff01\u770b\u6765\u5b83\u6210\u4e3a\u65b0\u7684\u7545\u9500\u96f6\u98df\u7684\u90a3\u4e00\u5929\u6307\u65e5\u53ef\u5f85\uff01\n\u4eca\u5929\u4e5f\u9001\u7ed9\u535a\u58eb\u4e00\u4efd\u5427\uff01\u4e0b\u6b21\u5c31\u5f97\u82b1\u9f99\u95e8\u5e01\u4e70\u4e86\uff01\n\n\u53ef\u9732\u5e0c\u5c14",
             "rewardList": [
                 {
                     "id": "ap_item_SEC_60",
@@ -1021,10 +303,10 @@
             "sortId": 13,
             "displayReceiveTs": 1558987200,
             "year": 0,
-            "dateDelta": 0,
+            "dateDelta": -1,
             "senderId": "npc_007_closure",
-            "title": "来自可露希尔的慰问信",
-            "content": "博士：\n……咸蛋黄巧克力的正式上架被驳回了。\n貌似是杜宾教官和卡缇等干员提出了强烈的异议，不知为何她们坚决反对这种零食的普及。\n既然如此，看来还是只能送给博士你了。\n\n可露希尔",
+            "title": "\u6765\u81ea\u53ef\u9732\u5e0c\u5c14\u7684\u6170\u95ee\u4fe1",
+            "content": "\u535a\u58eb\uff1a\n\u2026\u2026\u54b8\u86cb\u9ec4\u5de7\u514b\u529b\u7684\u6b63\u5f0f\u4e0a\u67b6\u88ab\u9a73\u56de\u4e86\u3002\n\u8c8c\u4f3c\u662f\u675c\u5bbe\u6559\u5b98\u548c\u5361\u7f07\u7b49\u5e72\u5458\u63d0\u51fa\u4e86\u5f3a\u70c8\u7684\u5f02\u8bae\uff0c\u4e0d\u77e5\u4e3a\u4f55\u5979\u4eec\u575a\u51b3\u53cd\u5bf9\u8fd9\u79cd\u96f6\u98df\u7684\u666e\u53ca\u3002\n\u65e2\u7136\u5982\u6b64\uff0c\u770b\u6765\u8fd8\u662f\u53ea\u80fd\u9001\u7ed9\u535a\u58eb\u4f60\u4e86\u3002\n\n\u53ef\u9732\u5e0c\u5c14",
             "rewardList": [
                 {
                     "id": "ap_item_SEC_60",
@@ -1039,10 +321,10 @@
             "sortId": 14,
             "displayReceiveTs": 1559073600,
             "year": 0,
-            "dateDelta": 0,
+            "dateDelta": -1,
             "senderId": "npc_007_closure",
-            "title": "来自可露希尔的慰问信",
-            "content": "博士：\n虽然巧克力的计划失败了，但是对于科研人员来说根本就不是什么事！\n新一代思维食品的开发也在进行中了！敬请期待！\n这些就是剩下的最后的巧克力了，博士也帮我解决了吧。\n\n可露希尔",
+            "title": "\u6765\u81ea\u53ef\u9732\u5e0c\u5c14\u7684\u6170\u95ee\u4fe1",
+            "content": "\u535a\u58eb\uff1a\n\u867d\u7136\u5de7\u514b\u529b\u7684\u8ba1\u5212\u5931\u8d25\u4e86\uff0c\u4f46\u662f\u5bf9\u4e8e\u79d1\u7814\u4eba\u5458\u6765\u8bf4\u6839\u672c\u5c31\u4e0d\u662f\u4ec0\u4e48\u4e8b\uff01\n\u65b0\u4e00\u4ee3\u601d\u7ef4\u98df\u54c1\u7684\u5f00\u53d1\u4e5f\u5728\u8fdb\u884c\u4e2d\u4e86\uff01\u656c\u8bf7\u671f\u5f85\uff01\n\u8fd9\u4e9b\u5c31\u662f\u5269\u4e0b\u7684\u6700\u540e\u7684\u5de7\u514b\u529b\u4e86\uff0c\u535a\u58eb\u4e5f\u5e2e\u6211\u89e3\u51b3\u4e86\u5427\u3002\n\n\u53ef\u9732\u5e0c\u5c14",
             "rewardList": [
                 {
                     "id": "ap_item_SEC_60",
@@ -1057,10 +339,28 @@
             "sortId": 15,
             "displayReceiveTs": 1559160000,
             "year": 0,
-            "dateDelta": 0,
+            "dateDelta": -1,
             "senderId": "penguin_logistics",
-            "title": "来自阿米娅的信件",
-            "content": "亲爱的博士：\n上次我们说到卡西米尔的时候，凯尔希医生就把我支开了。\n听说那是个树木繁茂，常有许多山地的国家，有着许许多多的传说故事和古迹。好想和博士一起去看看啊。\n这里是今天给博士你买的午餐，偶尔吃一点也没问题的。我很喜欢饮料的味道！\n\n阿米娅",
+            "title": "\u6765\u81ea\u963f\u7c73\u5a05\u7684\u4fe1\u4ef6",
+            "content": "\u4eb2\u7231\u7684\u535a\u58eb\uff1a\n\u4e0a\u6b21\u6211\u4eec\u8bf4\u5230\u5361\u897f\u7c73\u5c14\u7684\u65f6\u5019\uff0c\u51ef\u5c14\u5e0c\u533b\u751f\u5c31\u628a\u6211\u652f\u5f00\u4e86\u3002\n\u542c\u8bf4\u90a3\u662f\u4e2a\u6811\u6728\u7e41\u8302\uff0c\u5e38\u6709\u8bb8\u591a\u5c71\u5730\u7684\u56fd\u5bb6\uff0c\u6709\u7740\u8bb8\u8bb8\u591a\u591a\u7684\u4f20\u8bf4\u6545\u4e8b\u548c\u53e4\u8ff9\u3002\u597d\u60f3\u548c\u535a\u58eb\u4e00\u8d77\u53bb\u770b\u770b\u554a\u3002\n\u8fd9\u91cc\u662f\u4eca\u5929\u7ed9\u535a\u58eb\u4f60\u4e70\u7684\u5348\u9910\uff0c\u5076\u5c14\u5403\u4e00\u70b9\u4e5f\u6ca1\u95ee\u9898\u7684\u3002\u6211\u5f88\u559c\u6b22\u996e\u6599\u7684\u5473\u9053\uff01\n\n\u963f\u7c73\u5a05",
+            "rewardList": [
+                {
+                    "id": "ap_item_CaH_200",
+                    "count": 1,
+                    "type": "AP_ITEM"
+                }
+            ]
+        },
+        {
+            "id": "mail_500w_kazimierz_1",
+            "type": "NORMAL",
+            "sortId": 16,
+            "displayReceiveTs": 1559246400,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "penguin_logistics",
+            "title": "\u6765\u81ea\u5361\u897f\u7c73\u5c14\u7684\u8054\u7edc\u4fe1\u2460",
+            "content": "\u535a\u58eb\uff1a\n\u6765\u81ea\u5361\u897f\u7c73\u5c14\u90ca\u533a\u7684\u8054\u7edc\u56de\u6765\u4e86\u3002\u5e72\u5458\u683c\u62c9\u5c3c\u5e73\u5b89\u5230\u8fbe\u4e86\u6ef4\u6c34\u6751\uff0c\u4f46\u662f\u901a\u8baf\u53d8\u5f97\u7f13\u6162\u800c\u4e0d\u89c4\u5f8b\u3002\u5947\u602a\u7684\u662f\uff0c\u6751\u5b50\u867d\u7136\u504f\u8fdc\u4f46\u4e5f\u5e94\u8be5\u6709\u7740\u6b63\u5e38\u901a\u8baf\u8bbe\u5907\u624d\u5bf9\u3002\n\u5e0c\u671b\u4e00\u5207\u5e73\u5b89\u3002\n\n\u7f57\u5fb7\u5c9b\u8054\u7edc\u5458",
             "rewardList": [
                 {
                     "id": "ap_item_CaH_200",
@@ -1075,10 +375,28 @@
             "sortId": 17,
             "displayReceiveTs": 1559332800,
             "year": 0,
-            "dateDelta": 0,
+            "dateDelta": -1,
             "senderId": "penguin_logistics",
-            "title": "来自阿米娅的信件",
-            "content": "亲爱的博士：\n博士也对卡西米尔很感兴趣吗？那太好了，我可喜欢听流星姐姐和陨星小姐讲卡西米尔的故事呢！不过，虽然临光小姐也是卡西米尔人，但她说自己和流星姐姐了解的卡西米尔也许不怎么一样，我很想知道原因......\n\n阿米娅",
+            "title": "\u6765\u81ea\u963f\u7c73\u5a05\u7684\u4fe1\u4ef6",
+            "content": "\u4eb2\u7231\u7684\u535a\u58eb\uff1a\n\u535a\u58eb\u4e5f\u5bf9\u5361\u897f\u7c73\u5c14\u5f88\u611f\u5174\u8da3\u5417\uff1f\u90a3\u592a\u597d\u4e86\uff0c\u6211\u53ef\u559c\u6b22\u542c\u6d41\u661f\u59d0\u59d0\u548c\u9668\u661f\u5c0f\u59d0\u8bb2\u5361\u897f\u7c73\u5c14\u7684\u6545\u4e8b\u5462\uff01\u4e0d\u8fc7\uff0c\u867d\u7136\u4e34\u5149\u5c0f\u59d0\u4e5f\u662f\u5361\u897f\u7c73\u5c14\u4eba\uff0c\u4f46\u5979\u8bf4\u81ea\u5df1\u548c\u6d41\u661f\u59d0\u59d0\u4e86\u89e3\u7684\u5361\u897f\u7c73\u5c14\u4e5f\u8bb8\u4e0d\u600e\u4e48\u4e00\u6837\uff0c\u6211\u5f88\u60f3\u77e5\u9053\u539f\u56e0......\n\n\u963f\u7c73\u5a05",
+            "rewardList": [
+                {
+                    "id": "ap_item_CaH_200",
+                    "count": 1,
+                    "type": "AP_ITEM"
+                }
+            ]
+        },
+        {
+            "id": "mail_500w_kazimierz_2",
+            "type": "NORMAL",
+            "sortId": 18,
+            "displayReceiveTs": 1559419200,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "penguin_logistics",
+            "title": "\u6765\u81ea\u5361\u897f\u7c73\u5c14\u7684\u8054\u7edc\u4fe1\u2461",
+            "content": "\u535a\u58eb\uff1a\n\u5e72\u5458\u683c\u62c9\u5c3c\u6210\u529f\u7684\u8fdb\u5165\u4e86\u6751\u5b50\uff0c\u9047\u5230\u4e86\u8fd9\u6b21\u7684\u59d4\u6258\u4eba\u3002\n\u6751\u5b50\u906d\u5230\u4e86\u4e00\u5b9a\u7a0b\u5ea6\u7684\u7834\u574f\uff0c\u4f46\u662f\u5361\u897f\u7c73\u5c14\u5f53\u5c40\u5374\u6ca1\u6709\u5bf9\u6751\u5b50\u8fdb\u884c\u4efb\u4f55\u7684\u63f4\u52a9\u3002\n\u771f\u662f\u4e3a\u6ef4\u6c34\u6751\u7684\u6751\u6c11\u634f\u4e86\u4e00\u628a\u6c57\u3002\n\n\u7f57\u5fb7\u5c9b\u8054\u7edc\u5458",
             "rewardList": [
                 {
                     "id": "ap_item_CaH_200",
@@ -1093,10 +411,64 @@
             "sortId": 19,
             "displayReceiveTs": 1559505600,
             "year": 0,
-            "dateDelta": 0,
+            "dateDelta": -1,
             "senderId": "penguin_logistics",
-            "title": "来自陨星的问候信",
-            "content": "敬爱的博士：\n博士想知道卡西米尔的情况吗？卡西米尔骑士锦标赛吸引了许许多多的游客，古代的骑士现在也成为了参赛的选手和国家的象征。我也很喜欢骑士竞赛！我收藏了很多骑士海报，连临光小姐过去的海报都有哦！别和临光小姐说这件事，谢谢博士你了。\n\n陨星",
+            "title": "\u6765\u81ea\u9668\u661f\u7684\u95ee\u5019\u4fe1",
+            "content": "\u656c\u7231\u7684\u535a\u58eb\uff1a\n\u535a\u58eb\u60f3\u77e5\u9053\u5361\u897f\u7c73\u5c14\u7684\u60c5\u51b5\u5417\uff1f\u5361\u897f\u7c73\u5c14\u9a91\u58eb\u9526\u6807\u8d5b\u5438\u5f15\u4e86\u8bb8\u8bb8\u591a\u591a\u7684\u6e38\u5ba2\uff0c\u53e4\u4ee3\u7684\u9a91\u58eb\u73b0\u5728\u4e5f\u6210\u4e3a\u4e86\u53c2\u8d5b\u7684\u9009\u624b\u548c\u56fd\u5bb6\u7684\u8c61\u5f81\u3002\u6211\u4e5f\u5f88\u559c\u6b22\u9a91\u58eb\u7ade\u8d5b\uff01\u6211\u6536\u85cf\u4e86\u5f88\u591a\u9a91\u58eb\u6d77\u62a5\uff0c\u8fde\u4e34\u5149\u5c0f\u59d0\u8fc7\u53bb\u7684\u6d77\u62a5\u90fd\u6709\u54e6\uff01\u522b\u548c\u4e34\u5149\u5c0f\u59d0\u8bf4\u8fd9\u4ef6\u4e8b\uff0c\u8c22\u8c22\u535a\u58eb\u4f60\u4e86\u3002\n\n\u9668\u661f",
+            "rewardList": [
+                {
+                    "id": "ap_item_CaH_200",
+                    "count": 1,
+                    "type": "AP_ITEM"
+                }
+            ]
+        },
+        {
+            "id": "mail_500w_kazimierz_3",
+            "type": "NORMAL",
+            "sortId": 20,
+            "displayReceiveTs": 1559592000,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "penguin_logistics",
+            "title": "\u6765\u81ea\u5361\u897f\u7c73\u5c14\u7684\u8054\u7edc\u4fe1\u2462",
+            "content": "\u535a\u58eb\uff1a\n\u5e72\u5458\u683c\u62c9\u5c3c\u5df2\u7ecf\u786e\u8ba4\u4e86\u8fd9\u6b21\u59d4\u6258\u7684\u5185\u5bb9\uff0c\u5f00\u59cb\u8fdb\u5165\u5361\u897f\u7c73\u5c14\u7684\u672a\u5f00\u53d1\u68ee\u6797\u3002\n\u4f46\u662f\u73b0\u5728\u7684\u62a5\u544a\u770b\u6765\uff0c\u68ee\u6797\u4e2d\u5df2\u7ecf\u6f5c\u4f0f\u6709\u5927\u91cf\u7684\u672a\u77e5\u4eba\u5458\u3002\n\u4ed6\u4eec\u8c8c\u4f3c\u4e5f\u505a\u597d\u4e86\u51c6\u5907\uff0c\u671f\u5f85\u4ed6\u4eec\u7684\u4e0b\u4e00\u6b21\u8054\u7edc\u3002\n\n\u7f57\u5fb7\u5c9b\u8054\u7edc\u5458",
+            "rewardList": [
+                {
+                    "id": "ap_item_CaH_200",
+                    "count": 1,
+                    "type": "AP_ITEM"
+                }
+            ]
+        },
+        {
+            "id": "mail_500w_shotst_1",
+            "type": "NORMAL",
+            "sortId": 21,
+            "displayReceiveTs": 1559678400,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "penguin_logistics",
+            "title": "\u6765\u81ea\u6d41\u661f\u7684\u95ee\u5019\u4fe1",
+            "content": "\u4eb2\u7231\u7684\u535a\u58eb\uff1a\n\u542c\u963f\u7c73\u5a05\u8bf4\uff0c\u535a\u58eb\u5bf9\u5361\u897f\u7c73\u5c14\u4e5f\u6709\u4e9b\u5174\u8da3\uff1f\u5927\u591a\u6570\u65f6\u95f4\uff0c\u6211\u90fd\u751f\u6d3b\u5728\u5361\u897f\u7c73\u5c14\u7684\u68ee\u6797\u91cc\u3002\n\u5361\u897f\u7c73\u5c14\u7684\u68ee\u6797\u5341\u5206\u5e7f\u9614\uff0c\u5bf9\u73cd\u8d35\u6811\u6728\u548c\u91ce\u751f\u52a8\u7269\u5782\u6d8e\u4e09\u5c3a\u7684\u6076\u5f92\u4e5f\u4e0d\u5728\u5c11\u6570\u3002\u5b88\u62a4\u68ee\u6797\u7684\u8d23\u4efb\u843d\u5728\u4e86\u6211\u4eec\u70ed\u7231\u68ee\u6797\u7684\u4eba\u8eab\u4e0a\u3002\n\u6709\u673a\u4f1a\u7684\u8bdd\u4e5f\u53bb\u770b\u770b\u5427\u3002\u5361\u897f\u7c73\u5c14\u7684\u68ee\u6797\u4e00\u5b9a\u4f1a\u6b22\u8fce\u4f60\u7684\u3002\n\n\u6d41\u661f",
+            "rewardList": [
+                {
+                    "id": "ap_item_CaH_200",
+                    "count": 1,
+                    "type": "AP_ITEM"
+                }
+            ]
+        },
+        {
+            "id": "mail_500w_kazimierz_4",
+            "type": "NORMAL",
+            "sortId": 22,
+            "displayReceiveTs": 1559764800,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "penguin_logistics",
+            "title": "\u6765\u81ea\u5361\u897f\u7c73\u5c14\u7684\u8054\u7edc\u4fe1\u2463",
+            "content": "\u535a\u58eb\uff1a\n\u4e0d\u4ec5\u4ec5\u662f\u6ef4\u6c34\u6751\uff0c\u73b0\u5728\u7684\u5361\u897f\u7c73\u5c14\u7684\u90ca\u533a\u57fa\u672c\u90fd\u5904\u4e8e\u81ea\u6cbb\u72b6\u6001\u3002\n\u7531\u4e8e\u5730\u7406\u4f4d\u7f6e\u7684\u5173\u7cfb\uff0c\u9644\u8fd1\u7684\u6bcf\u4e2a\u6751\u5b50\u5e73\u65f6\u591a\u591a\u5c11\u5c11\u90fd\u4f1a\u906d\u5230\u8def\u8fc7\u7684\u6e38\u6c11\u7684\u9a9a\u6270\u3002\n\u5361\u897f\u7c73\u5c14\u5f53\u5c40\u4f3c\u4e4e\u5f88\u65e9\u4ee5\u524d\u5c31\u653e\u5f03\u4e86\u4ed6\u4eec\u3002\n\n\u7f57\u5fb7\u5c9b\u8054\u7edc\u5458",
             "rewardList": [
                 {
                     "id": "ap_item_CaH_200",
@@ -1111,15 +483,1038 @@
             "sortId": 23,
             "displayReceiveTs": 1559851200,
             "year": 0,
-            "dateDelta": 0,
+            "dateDelta": -1,
             "senderId": "penguin_logistics",
-            "title": "来自陨星的问候信",
-            "content": "敬爱的博士：\n不过，博士，别向守林人询问卡西米尔的事情，那个孩子对卡西米尔的感情十分复杂。\n和卡西米尔无数的强大城市不同，不少村庄偏远又贫穷。守林人的村子也是位置偏远的村庄之一，无疑，她是喜爱自己的家乡的。但她对从未向她的村子伸出援手的卡西米尔确实抱着恨意。\n\n陨星",
+            "title": "\u6765\u81ea\u9668\u661f\u7684\u95ee\u5019\u4fe1",
+            "content": "\u656c\u7231\u7684\u535a\u58eb\uff1a\n\u4e0d\u8fc7\uff0c\u535a\u58eb\uff0c\u522b\u5411\u5b88\u6797\u4eba\u8be2\u95ee\u5361\u897f\u7c73\u5c14\u7684\u4e8b\u60c5\uff0c\u90a3\u4e2a\u5b69\u5b50\u5bf9\u5361\u897f\u7c73\u5c14\u7684\u611f\u60c5\u5341\u5206\u590d\u6742\u3002\n\u548c\u5361\u897f\u7c73\u5c14\u65e0\u6570\u7684\u5f3a\u5927\u57ce\u5e02\u4e0d\u540c\uff0c\u4e0d\u5c11\u6751\u5e84\u504f\u8fdc\u53c8\u8d2b\u7a77\u3002\u5b88\u6797\u4eba\u7684\u6751\u5b50\u4e5f\u662f\u4f4d\u7f6e\u504f\u8fdc\u7684\u6751\u5e84\u4e4b\u4e00\uff0c\u65e0\u7591\uff0c\u5979\u662f\u559c\u7231\u81ea\u5df1\u7684\u5bb6\u4e61\u7684\u3002\u4f46\u5979\u5bf9\u4ece\u672a\u5411\u5979\u7684\u6751\u5b50\u4f38\u51fa\u63f4\u624b\u7684\u5361\u897f\u7c73\u5c14\u786e\u5b9e\u62b1\u7740\u6068\u610f\u3002\n\n\u9668\u661f",
             "rewardList": [
                 {
                     "id": "ap_item_CaH_200",
                     "count": 1,
                     "type": "AP_ITEM"
+                }
+            ]
+        },
+        {
+            "id": "mail_500w_kazimierz_5",
+            "type": "NORMAL",
+            "sortId": 24,
+            "displayReceiveTs": 1559937600,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "penguin_logistics",
+            "title": "\u6765\u81ea\u5361\u897f\u7c73\u5c14\u7684\u8054\u7edc\u4fe1\u2464",
+            "content": "\u535a\u58eb\uff1a\n\u7ecf\u8fc7\u6211\u4eec\u7684\u8c03\u67e5\uff0c\u5361\u897f\u7c73\u5c14\u9a91\u58eb\u786e\u5b9e\u62e5\u6709\u7740\u7559\u4e0b\u9057\u4ea7\u7ed9\u4eba\u6c11\u7684\u4e60\u4fd7\u3002\u5373\u4f7f\u662f\u5931\u53bb\u4e86\u751f\u547d\uff0c\u4ed6\u4eec\u4e5f\u5e0c\u671b\u53ef\u4ee5\u901a\u8fc7\u8fd9\u6837\u7684\u5f62\u5f0f\u7ed9\u540e\u4eba\u7559\u4e0b\u4e00\u4e9b\u9057\u4ea7\u3002\u4e0d\u8fc7\u4e00\u822c\u4ed6\u4eec\u4e5f\u4f1a\u8bbe\u7f6e\u4e00\u4e9b\u8003\u9a8c\u3002\u56e0\u4e3a\u8fd9\u4e9b\u56f0\u96be\u7684\u8003\u9a8c\uff0c\u5bfc\u81f4\u4eba\u4eec\u5728\u5f88\u957f\u65f6\u95f4\u4e2d\u4e5f\u6162\u6162\u7684\u653e\u5f03\u4e86\u5bf9\u8fd9\u4e9b\u9057\u4ea7\u7684\u8ffd\u5bfb\u3002\n\n\u7f57\u5fb7\u5c9b\u8054\u7edc\u5458",
+            "rewardList": [
+                {
+                    "id": "ap_item_CaH_200",
+                    "count": 1,
+                    "type": "AP_ITEM"
+                }
+            ]
+        },
+        {
+            "id": "mail_500w_nearl_1",
+            "type": "NORMAL",
+            "sortId": 25,
+            "displayReceiveTs": 1560024000,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "penguin_logistics",
+            "title": "\u6765\u81ea\u4e34\u5149\u7684\u95ee\u5019\u4fe1",
+            "content": "\u5c0a\u656c\u7684\u535a\u58eb\uff1a\n\u4f3c\u4e4e\u6709\u4e0d\u5c11\u5e72\u5458\u90fd\u591a\u591a\u5c11\u5c11\u5411\u60a8\u900f\u9732\u4e86\u4e9b\u5361\u897f\u7c73\u5c14\u7684\u8fd1\u51b5\u3002\u6211\u65e0\u610f\u6307\u8d23\u6216\u63a9\u9970\u4e9b\u4ec0\u4e48\uff0c\u5361\u897f\u7c73\u5c14\u4f5c\u4e3a\u6211\u7684\u7956\u56fd\uff0c\u65e2\u6709\u5b83\u7684\u7f8e\u4e3d\u548c\u4f1f\u5927\u4e4b\u5904\uff0c\u4e5f\u6709\u5b83\u7684\u75c5\u5146\u548c\u8150\u70c2\u4e4b\u57ce\u3002\u6211\u5e76\u4e0d\u53cd\u5bf9\u9a91\u58eb\u7ade\u8d5b\uff0c\u4f46\u5f53\u9a91\u58eb\u7ade\u8d5b\u80cc\u540e\u6df7\u5165\u4e86\u7070\u8272\u529b\u91cf\u548c\u4ea4\u6613\u4e4b\u540e\uff0c\u539f\u672c\u53ef\u4ee5\u91cd\u83b7\u65b0\u751f\u7684\u53e4\u4ee3\u9a91\u58eb\u4eec\u7684\u4fe1\u6761\uff0c\u53cd\u800c\u53d8\u6210\u4e86\u5ba3\u4f20\u7684\u5de5\u5177\u548c\u7c89\u9970\u592a\u5e73\u7684\u8868\u8c61\u3002\n\n\u4e34\u5149",
+            "rewardList": [
+                {
+                    "id": "ap_item_CaH_200",
+                    "count": 1,
+                    "type": "AP_ITEM"
+                }
+            ]
+        },
+        {
+            "id": "mail_500w_kazimierz_6",
+            "type": "NORMAL",
+            "sortId": 26,
+            "displayReceiveTs": 1560110400,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "penguin_logistics",
+            "title": "\u6765\u81ea\u5361\u897f\u7c73\u5c14\u7684\u8054\u7edc\u4fe1\u2465",
+            "content": "\u535a\u58eb \uff1a\n\u5e72\u5458\u683c\u62c9\u5c3c\u7684\u56de\u590d\u6536\u5230\u4e86\uff0c\u770b\u6765\u6ef4\u6c34\u6751\u7684\u4efb\u52a1\u5df2\u7ecf\u63a5\u8fd1\u5b8c\u6210\u3002\n\u4ed6\u4eec\u6210\u529f\u53d1\u73b0\u4e86\u5b9d\u85cf\uff0c\u5e2e\u52a9\u4e86\u6751\u5b50\u7684\u4fee\u7f2e\uff0c\u8fd8\u51fb\u8d25\u4e86\u8d4f\u91d1\u730e\u4eba\uff0c\u6551\u52a9\u4e86\u9700\u8981\u6551\u52a9\u7684\u654c\u4eba\u3002\n\u7f57\u5fb7\u5c9b\u7684\u9a91\u8b66\uff0c\u770b\u6765\u4e00\u70b9\u90fd\u4e0d\u662f\u5f92\u6709\u865a\u540d\u3002\n\n\u7f57\u5fb7\u5c9b\u8054\u7edc\u5458",
+            "rewardList": [
+                {
+                    "id": "ap_item_CaH_200",
+                    "count": 1,
+                    "type": "AP_ITEM"
+                }
+            ]
+        },
+        {
+            "id": "mail_500w_nearl_2",
+            "type": "NORMAL",
+            "sortId": 27,
+            "displayReceiveTs": 1560196800,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "penguin_logistics",
+            "title": "\u6765\u81ea\u4e34\u5149\u7684\u8054\u7edc\u4fe1",
+            "content": "\u5c0a\u656c\u7684\u535a\u58eb\uff1a\n\u4f60\u77e5\u9053\u6700\u8fd1\u6709\u4e00\u4f4d\u5e72\u5458\u5728\u5361\u897f\u7c73\u5c14\u6267\u884c\u4efb\u52a1\u5427\uff1f\u5979\u7684\u7236\u8f88\u662f\u52a0\u5165\u7ef4\u591a\u5229\u4e9a\u7684\u5361\u897f\u7c73\u5c14\u79fb\u6c11\u4e4b\u4e00\u3002\u867d\u7136\u6bcf\u6b21\u90fd\u5c06\u4e4c\u8428\u65af\u8d76\u51fa\u4e86\u56fd\u5883\u7ebf\uff0c\u4f46\u5361\u897f\u7c73\u5c14\u4e5f\u6709\u4e0d\u5c11\u5c45\u6c11\u538c\u5026\u4e86\u8fde\u5e74\u5f81\u6218\uff0c\u66f4\u65e0\u6cd5\u5fcd\u53d7\u9a91\u58eb\u4eec\u7684\u50b2\u6162\u548c\u76ee\u4e2d\u65e0\u4eba\u3002\u6240\u4ee5\uff0c\u4ed6\u4eec\u53bb\u4e86\u7ef4\u591a\u5229\u4e9a\u5bfb\u627e\u81ea\u5df1\u65b0\u7684\u751f\u6d3b\u3002\u5361\u897f\u7c73\u5c14\u7684\u5f3a\u76db\u662f\u6709\u7740\u5de8\u5927\u5f31\u70b9\u7684\u3002\n\n\u4e34\u5149",
+            "rewardList": [
+                {
+                    "id": "ap_item_CaH_200",
+                    "count": 1,
+                    "type": "AP_ITEM"
+                }
+            ]
+        },
+        {
+            "id": "mail_500w_kazimierz_7",
+            "type": "NORMAL",
+            "sortId": 28,
+            "displayReceiveTs": 1560283200,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "penguin_logistics",
+            "title": "\u6765\u81ea\u5361\u897f\u7c73\u5c14\u7684\u8054\u7edc\u4fe1\u2466",
+            "content": "\u535a\u58eb \uff1a\n\u6839\u636e\u5e72\u5458\u683c\u62c9\u5c3c\u7684\u62a5\u544a\uff0c\u8fd9\u6b21\u7684\u4e8b\u4ef6\u4e2d\u4f9d\u7136\u51fa\u73b0\u4e86\u6574\u5408\u8fd0\u52a8\u90e8\u961f\u7684\u6d3b\u52a8\u8e2a\u8ff9\u3002\u8be5\u90e8\u961f\u5b8c\u5b8c\u5168\u5168\u662f\u6574\u5408\u8fd0\u52a8\u7684\u7f16\u5916\u961f\u4f0d\uff0c\u5b8c\u5168\u6ca1\u6709\u63a5\u53d7\u8fc7\u4efb\u4f55\u7684\u547d\u4ee4\u548c\u6307\u5bfc\uff0c\u6240\u4ee5\u4ed6\u4eec\u5e76\u6ca1\u6709\u771f\u6b63\u6210\u4e3a\u5de8\u5927\u7684\u5a01\u80c1......\u6574\u5408\u8fd0\u52a8\u7684\u5f71\u54cd\u8303\u56f4\u5230\u5e95\u5df2\u7ecf\u5ef6\u4f38\u5230\u4e86\u54ea\u91cc\uff1f\n\n\u7f57\u5fb7\u5c9b\u8054\u7edc\u5458",
+            "rewardList": [
+                {
+                    "id": "ap_item_CaH_200",
+                    "count": 1,
+                    "type": "AP_ITEM"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2020_1",
+            "type": "NORMAL",
+            "sortId": 29,
+            "displayReceiveTs": 1579867200,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_235_jesica",
+            "title": "\u6765\u81ea\u6770\u897f\u5361\u7684\u795d\u798f",
+            "content": "\u9a6c\u4e0a\u5c31\u662f\u65b0\u5e74\u4e86\uff0c\u8fd9\u662f\u6211\u9001\u7ed9\u535a\u58eb\u7684\u65b0\u5e74\u793c\u7269\uff0c\u8c28\u4ee5\u6b64\u795d\u798f\u535a\u58eb\u65b0\u5e74\u4e5f\u4e00\u5e06\u98ce\u987a\uff01\n\u8fd9\u4e9b\u62d9\u793c\u53ea\u662f\u804a\u8868\u5fc3\u610f\uff0c\u5e0c\u671b\u535a\u58eb\u4e0d\u8981\u5acc\u5f03\u3002\n\u5e0c\u671b\u65b0\u4e00\u5e74\u91cc\u5927\u5bb6\u4e5f\u80fd\u5e73\u5e73\u5b89\u5b89\uff01",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2020_2",
+            "type": "NORMAL",
+            "sortId": 30,
+            "displayReceiveTs": 1579870800,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_010_chen",
+            "title": "\u6765\u81ea\u9648\u7684\u795d\u798f",
+            "content": "\u73b0\u5728\u9f99\u95e8\u4eba\u4eba\u90fd\u7fd8\u9996\u4ee5\u76fc\u7740\u65b0\u5e74\u7684\u5230\u6765\u3002\u7f57\u5fb7\u5c9b\u7684\u535a\u58eb\uff0c\u4f60\u4e5f\u4e00\u6837\u5417\uff1f\n\u6536\u4e0b\u8fd9\u4e9b\u793c\u7269\u5427\uff0c\u8fd9\u4e9b\u90fd\u662f\u8fd1\u536b\u5c40\u7684\u5927\u5bb6\u51c6\u5907\u7684\u3002\n\u4e0d\u8981\u5728\u610f\u793c\u7269\u5185\u5bb9\uff0c\u5fc3\u610f\u624d\u91cd\u8981\uff01",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2020_3",
+            "type": "NORMAL",
+            "sortId": 31,
+            "displayReceiveTs": 1579874400,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_107_liskam",
+            "title": "\u6765\u81ea\u96f7\u86c7\u7684\u795d\u798f",
+            "content": "\u9a6c\u4e0a\u5c31\u662f\u65b0\u5e74\u4e86\uff0c\u6536\u4e0b\u8fd9\u4e9b\u793c\u7269\u5427\u3002\n\u5e0c\u671b\u535a\u58eb\u6765\u5e74\u4e5f\u80fd\u4e00\u5207\u987a\u5229\uff0c\u9ed1\u94a2\u56fd\u9645\u4e5f\u4f1a\u4e00\u76f4\u4f5c\u4e3a\u76df\u53cb\u652f\u6301\u7740\u7f57\u5fb7\u5c9b\u3002\n\u2026\u2026\u5f53\u7136\u8fd9\u4e5f\u4e0d\u662f\u6211\u8bf4\u4e86\u7b97\u7684\u3002",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2020_4",
+            "type": "NORMAL",
+            "sortId": 32,
+            "displayReceiveTs": 1579878000,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_308_swire",
+            "title": "\u6765\u81ea\u8bd7\u6000\u96c5\u7684\u795d\u798f",
+            "content": "\u535a\u58eb\u65b0\u5e74\u5feb\u4e50\uff01\u6765\u6765\u6765\uff0c\u8fd9\u4e9b\u662f\u65b0\u5e74\u7684\u793c\u7269\uff01\n\u8fd1\u536b\u5c40\u7684\u5927\u5bb6\u7684\u5fc3\u610f\u4e5f\u90fd\u5728\u8fd9\u91cc\u9762\u4e86\uff01\n\u554a\uff1f\u9648\u90a3\u4e2a\u5bb6\u4f19\u8bf4\u5979\u7684\u90a3\u4efd\u4e5f\u662f\u8fd1\u536b\u5c40\u5927\u5bb6\u51c6\u5907\u7684\uff1f\n\u5979\u5c31\u4e0d\u80fd\u8001\u8001\u5b9e\u5b9e\u8bf4\u662f\u5979\u81ea\u5df1\u51c6\u5907\u7684\u5417\uff1f\uff01",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2020_5",
+            "type": "NORMAL",
+            "sortId": 33,
+            "displayReceiveTs": 1579881600,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_002_amiya",
+            "title": "\u6765\u81ea\u963f\u7c73\u5a05\u7684\u795d\u798f",
+            "content": "\u535a\u58eb\uff0c\u65b0\u5e74\u5feb\u4e50\uff01\u4e00\u76f4\u4ee5\u6765\u7684\u5de5\u4f5c\u8f9b\u82e6\u4e86\uff01\n\u4eca\u5929\u662f\u8f9e\u65e7\u8fce\u65b0\u7684\u65e5\u5b50\uff0c\u535a\u58eb\u4e5f\u653e\u4e0b\u624b\u8fb9\u7684\u4e8b\u52a1\uff0c\u6765\u8ddf\u5927\u5bb6\u4e00\u8d77\u5ea6\u8fc7\u8fd9\u4e2a\u7279\u522b\u7684\u65f6\u523b\u5427\u3002\n\u8fd9\u4e9b\u793c\u7269\u662f\u6211\u7684\u5fc3\u610f\uff0c\u5e0c\u671b\u5b83\u80fd\u5c06\u6211\u7684\u795d\u798f\u5e26\u7ed9\u60a8\uff0c\u5e0c\u671b\u535a\u58eb\u5728\u65b0\u7684\u4e00\u5e74\u4e2d\u4e5f\u5fc3\u60f3\u4e8b\u6210\uff01",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2021_1",
+            "type": "NORMAL",
+            "sortId": 34,
+            "displayReceiveTs": 1613044800,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_121_lava",
+            "title": "\u6765\u81ea\u708e\u7194\u7684\u795d\u798f",
+            "content": "\u65b0\u5e74\u5feb\u4e50\u535a\u58eb\uff0c\u5e74\u6258\u6211\u7ed9\u4f60\u5e26\u70b9\u793c\u7269\u8fc7\u6765\u3002\n\u6211\u53ea\u662f\u6b63\u5de7\u8def\u8fc7\uff0c\u987a\u5e26\u642d\u628a\u624b\u800c\u5df2\u3002\n\u4f60\u8fd8\u662f\u8d76\u7d27\u51c6\u5907\u8fc7\u8282\u5427\uff0c\u522b\u5de5\u4f5c\u4e86\u3002\n\u795d\u4f60\u65b0\u7684\u4e00\u5e74\u91cc\u4e0d\u7528\u53bb\u8299\u84c9\u90a3\u513f\u5403\u5065\u5eb7\u9910\u3002",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2021_2",
+            "type": "NORMAL",
+            "sortId": 35,
+            "displayReceiveTs": 1613048400,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_130_doberm",
+            "title": "\u6765\u81ea\u675c\u5bbe\u7684\u795d\u798f",
+            "content": "\u8fd9\u662f\u6559\u5b98\u56e2\u7684\u4e00\u70b9\u5fc3\u610f\uff0c\u535a\u58eb\uff0c\u795d\u4f60\u8282\u65e5\u5feb\u4e50\u3002\n\u4eca\u5929\u6ca1\u6709\u8bad\u7ec3\uff0c\u6240\u4ee5\u6211\u4e5f\u96be\u5f97\u80fd\u5598\u53e3\u6c14\u3002\n\u5f88\u9ad8\u5174\u60a8\u80fd\u4e00\u76f4\u652f\u6301\u6211\u4eec\u7684\u5de5\u4f5c\u3002\n\u5e0c\u671b\u6211\u4eec\u90fd\u80fd\u5b8c\u597d\u7684\u6e21\u8fc7\u4e0b\u4e00\u5e74\uff0c\u7ee7\u7eed\u5728\u8fd9\u6837\u7684\u8282\u65e5\u4e2d\u91cd\u805a\u3002",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2021_3",
+            "type": "NORMAL",
+            "sortId": 36,
+            "displayReceiveTs": 1613052000,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_325_bison",
+            "title": "\u6765\u81ea\u62dc\u677e\u7684\u795d\u798f",
+            "content": "\u4f60\u597d\u535a\u58eb\uff0c\u8fd9\u91cc\u6709\u60a8\u7684\u5feb\u9012\uff0c\u8bf7\u7b7e\u6536\u4e00\u4e0b\u3002\n\u8fd8\u6709\u8fd9\u4e00\u4efd\uff0c\u8fd9\u662f\u6211\u7ed9\u60a8\u4e2a\u4eba\u7684\u793c\u54c1\uff0c\u60a8\u6536\u4e0b\u5c31\u597d\u3002\n\u54c8\u54c8\uff0c\u5e73\u5e38\u5fd9\u788c\u60ef\u4e86\uff0c\u8fc7\u8282\u4e5f\u6709\u4e9b\u505c\u4e0d\u4e0b\u6765\u3002\n\u60a8\u53ef\u522b\u548c\u6211\u5b66\uff0c\u8be5\u4f11\u606f\u7684\u65f6\u5019\u5c31\u4f11\u606f\u5427\u3002",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2021_4",
+            "type": "NORMAL",
+            "sortId": 37,
+            "displayReceiveTs": 1613055600,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_2014_nian",
+            "title": "\u6765\u81ea\u5e74\u7684\u795d\u798f",
+            "content": "\u54df\uff0c\u65b0\u5e74\u4e86\uff0c\u9001\u4f60\u4e9b\u5c0f\u73a9\u610f\u3002\n\u4f60\u8bf4\u8fd8\u5dee\u70b9\u65f6\u95f4\uff1f\u54ce\u5440\u65e9\u70b9\u665a\u70b9\u53c8\u4e0d\u788d\u4e8b\uff0c\u4f60\u5c31\u6536\u7740\u5457\u3002\n\u6211\u53ef\u4e0d\u4f1a\u50cf\u5c0f\u708e\u7194\u90a3\u6837\uff0c\u975e\u5f97\u6258\u522b\u4eba\u7684\u540d\u6765\u7ed9\u4f60\u9001\u597d\u4e1c\u897f\u3002\n\u518d\u4f1a\u5566\u3002",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2021_5",
+            "type": "NORMAL",
+            "sortId": 38,
+            "displayReceiveTs": 1613059200,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_002_amiya",
+            "title": "\u6765\u81ea\u963f\u7c73\u5a05\u7684\u795d\u798f",
+            "content": "\u535a\u58eb\uff0c\u65b0\u5e74\u5feb\u4e50\uff01\u5de5\u4f5c\u8fdb\u884c\u5f97\u8fd8\u987a\u5229\u5417\uff1f\n\u4e4b\u524d\u6258\u62dc\u677e\u7ed9\u60a8\u9001\u4e86\u4e9b\u4e1c\u897f\uff0c\u4f46\u708e\u56fd\u7684\u5e72\u5458\u8bf4\uff0c\u65b0\u5e74\u8981\u81ea\u5df1\u9001\u793c\u624d\u6709\u8bda\u610f\u3002\n\u6240\u4ee5\uff0c\u6211\uff0c\u6211\u9009\u4e86\u8fd9\u4e9b\u9001\u5230\u60a8\u7684\u529e\u516c\u5ba4\u3002\u4e0d\u77e5\u9053\u8fd8\u5408\u60a8\u5fc3\u610f\u5417\uff1f\n\u6211\u597d\u50cf\u2014\u2014\u611f\u53d7\u5230\u4e86\uff01\u60a8\u559c\u6b22\u5c31\u597d\uff01",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_callback_2021_NCB",
+            "type": "NORMAL",
+            "sortId": 39,
+            "displayReceiveTs": 1619272800,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_002_amiya",
+            "title": "\u6765\u81ea\u963f\u7c73\u5a05\u7684\u8baf\u606f",
+            "content": "\u535a\u58eb\u4f60\u597d\uff0c\u5de5\u4f5c\u8f9b\u82e6\u4e86\u3002\n\u8ddd\u79bb\u60a8\u82cf\u9192\u5df2\u7ecf\u63a5\u8fd1\u4e24\u5468\u5e74\u4e86\uff0c\u8fd8\u662f\u548c\u53bb\u5e74\u4e00\u6837\uff0c\u5927\u5bb6\u60f3\u4e3a\u60a8\u529e\u4e2a\u76db\u5927\u7684\u6d3b\u52a8\u5e86\u795d\u4e00\u4e0b\uff01\n\u542c\u8bf4\u8fd9\u6b21\u7684\u6d3b\u52a8\u9700\u8981\u505a\u4e00\u4e2a\u975e\u2014\u2014\u5e38\u5927\u7684\u86cb\u7cd5\uff0c\u86cb\u7cd5\u80da\u5c31\u5728\u98df\u5802\uff0c\u60a8\u4e5f\u5e94\u8be5\u770b\u5230\u4e86\u3002\u56e0\u4e3a\u5236\u4f5c\u6210\u54c1\u5f88\u8d39\u65f6\u95f4\uff0c\u9700\u8981\u5927\u5bb6\u4e00\u8d77\u53c2\u4e0e\u8fdb\u6765\u3002\u535a\u58eb\u4e5f\u53ef\u4ee5\u5e26\u7740\u670b\u53cb\u6765\u5e2e\u5fd9\u554a\uff0c\u8fd9\u6837\u7684\u6d3b\u52a8\uff0c\u603b\u662f\u5e0c\u671b\u5404\u4f4d\u90fd\u6765\u53c2\u52a0\u7684\u3002\u6bcf\u591a\u4e00\u4e2a\u4eba\uff0c\u5c31\u591a\u4e00\u4efd\u529b\u91cf\u561b\u3002\n\u771f\u7684\u5f88\u611f\u8c22\u60a8\u4e00\u76f4\u4ee5\u6765\u7684\u652f\u6301\uff01\u6211\u968f\u90ae\u4ef6\u9644\u9001\u4e86\u4e9b\u5c0f\u793c\u7269\u8fc7\u6765\uff0c\u5e0c\u671b\u60a8\u80fd\u559c\u6b22\u3002",
+            "rewardList": [
+                {
+                    "id": "4003",
+                    "count": 200,
+                    "type": "DIAMOND_SHD"
+                },
+                {
+                    "id": "4001",
+                    "count": 30000,
+                    "type": "GOLD"
+                }
+            ]
+        },
+        {
+            "id": "mail_callback_2021_CB",
+            "type": "NORMAL",
+            "sortId": 40,
+            "displayReceiveTs": 1619272800,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_002_amiya",
+            "title": "\u6765\u81ea\u963f\u7c73\u5a05\u7684\u8baf\u606f",
+            "content": "\u597d\u4e45\u4e0d\u89c1\uff0c\u535a\u58eb\uff01\n\u60a8\u5df2\u7ecf\u5f88\u4e45\u6ca1\u6709\u8fde\u63a5\u4e0aPRTS\u4e86\uff0c\u6700\u8fd1\u8fc7\u5f97\u8fd8\u597d\u5417\uff1f\u5927\u5bb6\u90fd\u5f88\u60f3\u5ff5\u60a8!\n\u2026\u2026\n\u62b1\u6b49\uff0c\u6211\u597d\u50cf\u8fc7\u4e8e\u6fc0\u52a8\u4e86......\u54b3\u55ef\uff0c\u5728\u60a8\u79bb\u5f00\u7684\u65e5\u5b50\u91cc\uff0c\u7f57\u5fb7\u5c9b\u8fd8\u662f\u5982\u5f80\u5e38\u4e00\u6837\u5728\u8fd0\u8f6c\uff0c\u6574\u4f53\u7684\u72b6\u51b5\uff0c\u548c\u60a8\u79bb\u5f00\u4e4b\u524d\u5e94\u5f53\u6ca1\u6709\u592a\u5927\u533a\u522b\uff0c\u5168\u4f53\u5e72\u5458\u4eec\u90fd\u5728\u52aa\u529b\u7ef4\u62a4\u60a8\u4e4b\u524d\u7684\u90e8\u7f72\uff0c\u73b0\u5728\uff0c\u8be5\u628a\u76f8\u5e94\u7684\u6743\u9650\u91cd\u65b0\u4ea4\u8fd8\u7ed9\u60a8\u4e86\u3002\n\u5c31\u8ba9\u5927\u5bb6\u529e\u4e2a\u6d3b\u52a8\u4e3a\u60a8\u5e86\u795d\u4e00\u4e0b\u5427,\u535a\u58eb\u4e5f\u53ef\u4ee5\u5e26\u7740\u670b\u53cb\u4e00\u8d77\u5e2e\u5fd9\u54e6\uff0c\u6bd5\u7adf\u8fd9\u6837\u7684\u6d3b\u52a8\uff0c\u4eba\u591a\u624d\u6709\u610f\u601d\u561b\u3002\n\u6b22\u8fce\u56de\u5bb6\uff0c\u535a\u58eb~\u80fd\u518d\u6b21\u548c\u60a8\u5e76\u80a9\u4f5c\u6218\uff0c\u771f\u7684\u5f88\u9ad8\u5174\uff01",
+            "rewardList": [
+                {
+                    "id": "4003",
+                    "count": 200,
+                    "type": "DIAMOND_SHD"
+                },
+                {
+                    "id": "4001",
+                    "count": 30000,
+                    "type": "GOLD"
+                }
+            ]
+        },
+        {
+            "id": "mail_cdk_art_1",
+            "type": "NORMAL",
+            "sortId": 41,
+            "displayReceiveTs": 1624550400,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "penguin_logistics",
+            "title": "\u6765\u81ea\u963f\u7c73\u5a05\u7684\u5c0f\u5c0f\u5fc3\u613f",
+            "content": "\u535a\u58eb\uff0c\u96be\u5f97\u5929\u6c14\u8fd9\u4e48\u597d\uff0c\u5076\u5c14\u4e5f\u8be5\u4f11\u606f\u4e00\u4e0b\u54e6\uff01\u6211\u51c6\u5907\u4e86\u4e00\u4e9b\u82b1\u79cd\uff0c\u53ef\u4ee5\u62dc\u6258\u4f60\u548c\u6211\u4e00\u8d77\u53bb\u79cd\u4e0b\u5b83\u4eec\u5417\uff1f",
+            "rewardList": [
+                {
+                    "id": "char_002_amiya@test#1",
+                    "count": 1,
+                    "type": "CHAR_SKIN"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2022_1",
+            "type": "NORMAL",
+            "sortId": 42,
+            "displayReceiveTs": 1643630400,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_124_kroos",
+            "title": "\u6765\u81ea\u514b\u6d1b\u4e1d\u7684\u795d\u798f",
+            "content": "\u535a\u58eb~\u56db\u5904\u627e\u4e0d\u5230\u4f60\uff0c\u6211\u5c31\u628a\u793c\u7269\u653e\u5230\u4f60\u7684\u529e\u516c\u5ba4\u5566\uff01\n\u6211\u53ef\u662f\u4e3a\u4e86\u8fd9\u4e9b\u4e1c\u897f\u8d39\u4e86\u4e0d\u5c11\u5fc3\u601d\u5462~\n\u8fde\u6211\u6700\u559c\u6b22\u5403\u7684\u7f50\u5934\u90fd\u653e\u8fdb\u53bb\u4e86\uff0c\u6211\u60f3\u4f60\u4e00\u5b9a\u4f1a\u559c\u6b22\u7684\u3002\n\u6536\u4e86\u6211\u7684\u5fc3\u610f\uff0c\u5c31\u4e0d\u80fd\u518d\u8bf4\u6211\u5077\u61d2\u4e86\u54e6~\n\u65b0~\u5e74~\u5feb~\u4e50~",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100_2022_1",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2022_2",
+            "type": "NORMAL",
+            "sortId": 43,
+            "displayReceiveTs": 1643634000,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_243_waaifu",
+            "title": "\u6765\u81ea\u69d0\u7425\u7684\u795d\u798f",
+            "content": "\u535a\u58eb\uff0c\u65b0\u5e74\u597d\uff01\n\u8fd9\u662f\u6211\u51c6\u5907\u7684\u793c\u7269\uff0c\u4e00\u4efd\u9f99\u95e8\u5bab\u4fdd\u7fbd\u517d\u4e01\u548c\u5176\u4ed6\u6563\u788e\u7684\u793c\u54c1\u3002\n\u5403\u7fbd\u517d\u4e01\u7684\u65f6\u5019\u8bb0\u5f97\u914d\u7c73\u996d\u6216\u8005\u9762\u6761\uff0c\u4e0d\u7136\u7a7a\u53e3\u5403\u4f1a\u5f88\u54b8\u3002\n\u975e\u5e38\u611f\u8c22\u8fd9\u4e00\u5e74\u535a\u58eb\u5bf9\u6211\u7684\u7167\u987e\uff0c\u5728\u7f57\u5fb7\u5c9b\u7684\u5b9e\u4e60\u4e2d\u6211\u4e5f\u5b66\u5230\u4e86\u5f88\u591a\u3002\n\u6211\u76f8\u4fe1\u5728\u65b0\u7684\u4e00\u5e74\u91cc\uff0c\u7f57\u5fb7\u5c9b\u5728\u5927\u5bb6\u7684\u52aa\u529b\u4e0b\u4f1a\u53d8\u5f97\u66f4\u597d\uff0c\u6211\u4e5f\u4f1a\u62c5\u8d77\u6211\u7684\u4e00\u4efd\u8d23\u4efb\u3002\n\u795d\u535a\u58eb\u65b0\u5e74\u5feb\u4e50\uff0c\u4f73\u8282\u5982\u610f\uff0c\u8eab\u4f53\u5065\u5eb7\uff01\n",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100_2022_2",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2022_3",
+            "type": "NORMAL",
+            "sortId": 44,
+            "displayReceiveTs": 1643637600,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_172_svrash",
+            "title": "\u6765\u81ea\u94f6\u7070\u7684\u795d\u798f",
+            "content": "\u6211\u4eec\u6ca1\u6709\u5fc5\u8981\u628a\u4efb\u4f55\u4e8b\u90fd\u5f52\u4e8e\u5546\u4e1a\u4ea4\u6d41\uff0c\u76df\u53cb\u3002\n\u65e2\u7136\u8282\u65e5\u5c06\u8fd1\uff0c\u8bf7\u5141\u8bb8\u6211\u4ee5\u5580\u5170\u8d38\u6613\u548c\u5e0c\u74e6\u827e\u4ec0\u5bb6\u7684\u540d\u4e49\u2014\u2014\n\u8d60\u4e88\u4f60\u8fd9\u4efd\u793c\u54c1\u3002\n\u8fd9\u79cd\u54c1\u8d28\u7684\u517d\u8089\u66fe\u7ecf\u53ea\u4f1a\u5f53\u505a\u8036\u62c9\u5188\u5fb7\u7684\u796d\u54c1\uff0c\u73b0\u5982\u4eca\uff0c\u5b83\u5c06\u51fa\u73b0\u5728\u4f60\u7684\u9910\u76d8\u4e0a\u3002\n\u60f3\u5fc5\u4f60\u80fd\u591f\u611f\u53d7\u5230\u6211\u7684\u8bda\u610f\u3002\n\u795d\u8282\u65e5\u5feb\u4e50\u3002\n",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100_2022_3",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2022_4",
+            "type": "NORMAL",
+            "sortId": 45,
+            "displayReceiveTs": 1643641200,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_003_kalts",
+            "title": "\u6765\u81ea\u51ef\u5c14\u5e0c\u7684\u795d\u798f",
+            "content": "\u8fd9\u4e2a\u5e86\u5178\u80fd\u6781\u5927\u6d88\u51cf\u5e72\u5458\u4eec\u7684\u7cbe\u795e\u538b\u529b\u3002\u53ef\u5bf9\u4e8e\u4f60\u6211\uff0c\u535a\u58eb\uff0c\u8fd9\u6837\u7684\u4e00\u5929\uff0c\u770b\u7740\u4ed6\u4eec\u6c89\u6d78\u5728\u6b22\u4e50\u4e2d\uff0c\u4f60\u662f\u5426\u80fd\u611f\u53d7\u5230\u81ea\u8eab\u804c\u8d23\u7684\u6c89\u91cd\uff1f\n\u4f46\u6211\u8fd8\u662f\u5efa\u8bae\u4f60\u52a0\u5165\u4ed6\u4eec\uff0c\u8fd9\u662f\u4f60\u8f9b\u82e6\u5de5\u4f5c\u4e00\u5e74\u7684\u5956\u8d4f\uff0c\u4f60\u5e94\u5f53\u63a5\u53d7\u5b83\u3002\n\u4e00\u4e9b\u8865\u7ed9\u7269\u8d44\u5df2\u7ecf\u5212\u5f52\u7ed9\u4f60\u4e86\uff0c\u5e0c\u671b\u4f60\u53ef\u4ee5\u5728\u8fd9\u4e00\u5929\u4e2d\u4f53\u4f1a\u5230\u73cd\u8d35\u7684\u60c5\u8c0a\u548c\u4e50\u8da3\u3002\n\u987a\u5e26\u4e00\u63d0\uff0c\u90a3\u4e2a\u7acb\u65b9\u4f53\u662f\u4f9b\u4f60\u98df\u7528\u7684\uff0c\u50a8\u5b58\u671f\u957f\uff0c\u4e0d\u5b58\u5728\u98df\u54c1\u5b89\u5168\u95ee\u9898\uff0c\u611f\u5230\u9965\u997f\u7684\u65f6\u5019\uff0c\u653e\u5165\u53e3\u4e2d\u5373\u53ef\u3002\n",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100_2022_4",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2022_5",
+            "type": "NORMAL",
+            "sortId": 46,
+            "displayReceiveTs": 1643644800,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_002_amiya",
+            "title": "\u6765\u81ea\u963f\u7c73\u5a05\u7684\u795d\u798f",
+            "content": "\u53c8\u5230\u65b0\u5e74\u4e86\uff0c\u535a\u58eb\uff0c\u4eca\u5929\u7684\u5de5\u4f5c\u8fd8\u597d\u5417\uff1f\n\u4e00\u5e74\u4ee5\u6765\u6211\u4eec\u771f\u7684\u4e00\u8d77\u7ecf\u5386\u4e86\u5f88\u591a\u4e8b\u60c5\uff0c\u6240\u4ee5\u4eca\u5929\u6211\u4eec\u4e00\u5b9a\u8981\u597d\u597d\u5730\u5e86\u795d\u4e00\u4e0b\uff01\n\u8fd9\u662f\u6211\u51c6\u5907\u7684\u4e00\u4e9b\u793c\u7269\uff0c\u6211\u5e0c\u671b\uff0c\u60a8\u5728\u65b0\u5e74\u91cc\u7684\u6bcf\u4e00\u5929\uff0c\u90fd\u80fd\u50cf\u4eca\u5929\u6536\u5230\u793c\u7269\u7684\u65f6\u5019\u4e00\u6837\u5f00\u5f00\u5fc3\u5fc3\u3002\n\u63a5\u4e0b\u6765\u7684\u8def\uff0c\u4e5f\u8bf7\u535a\u58eb\u4e0e\u6211\u4e00\u8d77\u8d70\u4e0b\u53bb\u5427\uff01\n\u5403\u5b8c\u86cb\u7cd5\u4ee5\u540e\u4e00\u5b9a\u8981\u8bb0\u5f97\u544a\u8bc9\u6211\u597d\u4e0d\u597d\u5403\u5440\uff01\n",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100_2022_5",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_cdk_thxfes_2022_1",
+            "type": "NORMAL",
+            "sortId": 47,
+            "displayReceiveTs": 1666454400,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_236_rope",
+            "title": "\u6765\u81ea\u6697\u7d22\u7684\u4fe1\u606f",
+            "content": "\u535a\u58eb\uff0c\u4f60\u53c8\u843d\u4e0b\u996d\u5361\u4e86\uff01\n\u4e3a\u4f60\u4fdd\u7ba1\u4e86\u597d\u591a\u5929\u7adf\u7136\u90fd\u6ca1\u53d1\u73b0\uff0c\u770b\u5728\u5de5\u94b1\u7684\u4efd\u4e0a\u8fd9\u6b21\u5c31\u4e0d\u6536\u914d\u9001\u8d39\u5566~",
+            "rewardList": [
+                {
+                    "id": "4001",
+                    "count": 20000,
+                    "type": "GOLD"
+                }
+            ]
+        },
+        {
+            "id": "mail_cdk_newyear_2023_1",
+            "type": "NORMAL",
+            "sortId": 48,
+            "displayReceiveTs": 1673884800,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_222_bpipe",
+            "title": "\u6765\u81ea\u98ce\u7b1b\u7684\u4fe1\u606f",
+            "content": "\u535a\u58eb\uff0c\u4eca\u5e74\u7684\u6625\u5929\u4e00\u8d77\u6765\u79cd\u70b9\u4ec0\u4e48\u5427\uff1f\n\u91c7\u8d2d\u80a5\u6599\u548c\u88c5\u5907\u7684\u8d44\u91d1\u90fd\u51c6\u5907\u597d\u4e86\uff0c\u5c31\u5148\u62dc\u6258\u535a\u58eb\u5566\uff01",
+            "rewardList": [
+                {
+                    "id": "4001",
+                    "count": 20000,
+                    "type": "GOLD"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2023_1",
+            "type": "NORMAL",
+            "sortId": 49,
+            "displayReceiveTs": 1674302400,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_2015_dusk",
+            "title": "\u6765\u81ea\u5915\u7684\u795d\u798f",
+            "content": "\u518d\u6709\u4eba\u95ee\u8d77\uff0c\u5c31\u6307\u7740\u8fd9\u67ff\u5b50\u544a\u8bc9\u4ed6\u4eec\uff0c\u522b\u6765\u6253\u6270\u6211\u7684\u6e05\u9759\uff0c\u6211\u4e0d\u51fa\u95e8\u3002\u8c01\u89c4\u5b9a\u8282\u65e5\u662f\u4eba\u4eba\u90fd\u5fc5\u987b\u4e0a\u5fc3\u7684\u4e1c\u897f\uff1f\n\u90fd\u602a\u5916\u5934\u7684\u4eba\u5435\u5435\u95f9\u95f9\uff0c\u5bb3\u5f97\u6211\u753b\u4e0b\u8fd9\u4e00\u5904\u8d25\u7b14\uff0c\u4e0d\u8fc7\uff0c\u771f\u4ece\u8fd9\u5904\u8d25\u7b14\u51fa\u53d1\uff0c\u968f\u6027\u6cfc\u6210\u4e00\u5e45\u753b\u5377\uff0c\u7adf\u7136\u4e5f\u4e0d\u9519\u3002\n\u6211\u5174\u81f4\u4e0d\u5728\u8282\u65e5\uff0c\u53ea\u662f\u63d0\u7b14\u753b\u8fd9\u8282\u65e5\u91cc\u4eba\u4eec\u7684\u613f\u671b\uff0c\u5e73\u5b89\u3001\u5982\u610f\u3001\u559c\u4e50\uff0c\u4e0d\u89c1\u7a77\u5c3d\u5904\uff0c\u4e00\u679d\u679c\u53f6\u81ea\u7136\u753b\u6210\u4e86\u6797\u836b\u3002\u4f60\u771f\u8d70\u4e0d\u51fa\uff0c\u5012\u4e5f\u662f\u597d\u4e8b\u3002\n\u8fd9\u67ff\u5b50\u80fd\u4e0d\u80fd\u5403\uff1f\u4f60\u8981\u662f\u7231\u5403\uff0c\u5c31\u81ea\u5df1\u8bd5\u8bd5\u770b\u3002",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100_2023_1",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2023_2",
+            "type": "NORMAL",
+            "sortId": 50,
+            "displayReceiveTs": 1674306000,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_322_lmlee",
+            "title": "\u6765\u81ea\u8001\u9ca4\u7684\u795d\u798f",
+            "content": "\u65b0\u6625\u5927\u5409\uff0c\u535a\u58eb\uff0c\u4eca\u5929\u5e94\u8be5\u73a9\u5f97\u5f88\u5c3d\u5174\u5427\uff1f\n\u8fd9\u79cd\u65e5\u5b50\uff0c\u5c31\u8be5\u8ddf\u5927\u5bb6\u4e00\u5757\u5403\u9971\u559d\u8db3\uff0c\u70ed\u70ed\u95f9\u95f9\u7684\u3002\n\u6211\u505a\u4e86\u4e9b\u708e\u56fd\u7684\u70b9\u5fc3\uff0c\u653e\u5728\u684c\u4e0a\u5c31\u80fd\u4fdd\u5b58\u5f88\u4e45\uff0c\u54ea\u5929\u5f97\u7a7a\u5c1d\u5c1d\u5427\u3002\u4f5c\u4e3a\u8336\u70b9\u4e5f\u4e0d\u9519\uff0c\u80fd\u7f13\u89e3\u8336\u7684\u6e05\u82e6\u3002\n\u5fd9\u5fd9\u788c\u788c\u4e00\u5e74\uff0c\u8fd8\u662f\u5f97\u7ed9\u81ea\u5df1\u627e\u70b9\u65f6\u95f4\u4f11\u606f\u554a\u3002",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100_2023_2",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2023_3",
+            "type": "NORMAL",
+            "sortId": 51,
+            "displayReceiveTs": 1674309600,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_2014_nian",
+            "title": "\u6765\u81ea\u5e74\u7684\u795d\u798f",
+            "content": "\u600e\u4e48\u6837\uff0c\u535a\u58eb\uff0c\u96be\u5f97\u653e\u4e2a\u5047\uff0c\u54b1\u4eec\u4e00\u8d77\u6253\u4e2a\u706b\u9505\u5457\uff1f\u53ef\u522b\u8bf4\u6211\u5e73\u65f6\u4e5f\u95f2\u7740\u8fd9\u79cd\u8bdd\uff0c\u626b\u5174\u3002\n\u98df\u6750\u6211\u90fd\u7ed9\u4f60\u51c6\u5907\u597d\u4e86\uff0c\u7089\u5b50\u4e5f\u51c6\u5907\u597d\u4e86\uff0c\u662f\u6211\u968f\u624b\u6253\u7684\u5c0f\u73a9\u610f\uff0c\u6211\u4fdd\u8bc1\uff0c\u51b0\u5929\u96ea\u5730\u91cc\u4e5f\u4e0d\u4f1a\u51c9\u3002\n\u4e5f\u522b\u8bf4\u8fd9\u4e9b\u4e0d\u662f\u4f60\u7684\u53e3\u5473\u3002\u4f60\u4e0d\u559c\u6b22\uff0c\u5c31\u548c\u6211\u53bb\u91cd\u65b0\u4e70\u3002\u65b0\u5e74\u4e86\uff0c\u8fd8\u628a\u81ea\u5df1\u5173\u5728\u5c0f\u5c4b\u5b50\u91cc\uff0c\u4e0d\u65e0\u804a\u5417\uff1f",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100_2023_3",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2023_4",
+            "type": "NORMAL",
+            "sortId": 52,
+            "displayReceiveTs": 1674313200,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_455_nothin",
+            "title": "\u6765\u81ea\u4e4c\u6709\u7684\u795d\u798f",
+            "content": "\u535a\u58eb\uff0c\u65b0\u7684\u4e00\u5e74\uff0c\u795d\u60a8\u4e07\u4e8b\u5982\u610f\uff0c\u7b11\u53e3\u5e38\u5f00\u2014\u2014\u6b38\uff0c\u4e4b\u524d\u5728\u5e86\u5178\u4e0a\u5f53\u9762\u795d\u8fc7\u4e00\u56de\u4e86\uff0c\u4f46\u5409\u7965\u8bdd\u603b\u662f\u4e0d\u5acc\u591a\u7684\u561b\u3002\n\u6765\u5230\u7f57\u5fb7\u5c9b\u8fd9\u4e00\u8d9f\uff0c\u89c1\u4e86\u592a\u591a\u5947\u4eba\u5f02\u4e8b\uff0c\u771f\u662f\u5927\u957f\u89c1\u8bc6\u3002\u6211\u5bfb\u601d\u7740\u4e5f\u8be5\u7ed9\u60a8\u51c6\u5907\u4e9b\u5947\u73cd\u5f02\u5b9d\u4f5c\u793c\u7269\uff0c\u4e0d\u5de7\u6211\u53ea\u662f\u4e00\u4ecb\u95f2\u4eba\uff0c\u53d8\u4e0d\u51fa\u4ec0\u4e48\u7a00\u5947\u4e1c\u897f\u3002\n\u6240\u4ee5\u5462\uff0c\u5c31\u53ea\u6709\u8fd9\u4efd\u7cd6\u5e74\u7cd5\u4e86\uff0c\u6211\u4fdd\u8bc1\u597d\u5403\uff0c\u5c31\u662f\u6709\u70b9\u751c\uff0c\u8fd8\u6709\u70b9\u7c98\u7259\u3002\u666e\u901a\u662f\u7279\u522b\u666e\u901a\uff0c\u4f46\u633a\u5e94\u666f\uff0c\u52fe\u5434\u57ce\u90a3\u4e00\u5e26\uff0c\u5927\u5bb6\u5e74\u5e74\u90fd\u5403\u3002\n\u535a\u58eb\uff0c\u60a8\u8bd5\u8bd5\u770b\u8fd9\u793c\u7269\u60a8\u4e2d\u4e0d\u4e2d\u610f\uff1f\u5443\uff0c\u6bd5\u7adf\u662f\u65b0\u6625\u4f73\u8282\uff0c\u60a8\u8981\u662f\u613f\u610f\u9001\u6211\u4e24\u53e5\u5938\u5956\uff0c\u5c31\u518d\u597d\u4e0d\u8fc7\u5566\uff0c\u4e0b\u6b21\u6211\u5c31\u80fd\u62ff\u60a8\u7684\u8bdd\u505a\u5ba3\u4f20\uff0c\u5728\u4f11\u606f\u5ba4\u5356\u8fd9\u4e2a\u4e86\u3002",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100_2023_4",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2023_5",
+            "type": "NORMAL",
+            "sortId": 53,
+            "displayReceiveTs": 1674316800,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_002_amiya",
+            "title": "\u6765\u81ea\u963f\u7c73\u5a05\u7684\u795d\u798f",
+            "content": "\u65b0\u5e74\u5feb\u4e50\uff0c\u535a\u58eb\uff0c\u5e0c\u671b\u60a8\u7684\u5de5\u4f5c\u4e00\u5207\u987a\u5229\uff01\n\u8fc7\u53bb\u4e00\u5e74\u7f57\u5fb7\u5c9b\u9a76\u8fc7\u4e86\u8bb8\u591a\u98ce\u96e8\uff0c\u8fd8\u597d\u6709\u60a8\u5728\uff0c\u5927\u5bb6\u624d\u80fd\u5728\u4eca\u5929\u653e\u677e\u4e00\u4e0b\uff0c\u50cf\u8fd9\u6837\u5f00\u5f00\u5fc3\u5fc3\u5730\u5e86\u795d\u8282\u65e5\u3002\n\u8fd8\u6709......\u4e5f\u591a\u8c22\u60a8\u4e00\u76f4\u5728\u6211\u8eab\u8fb9\uff0c\u966a\u7740\u6211\u53bb\u9762\u5bf9\u90a3\u4e9b\u6700\u8270\u96be\u7684\u5883\u51b5\uff01\u6211\u60f3\uff0c\u8fd9\u4e2a\u8282\u65e5\u5e94\u8be5\u5411\u4eb2\u8fd1\u7684\u4eba\u4f20\u9012\u6e29\u6696\uff0c\u6240\u4ee5\u6211\u51c6\u5907\u4e86\u8fd9\u4efd\u793c\u7269\u3002\n\u8fd9\u662f\u6211\u7b2c\u4e00\u6b21\u5c1d\u8bd5\u6539\u826f\u914d\u65b9\uff0c\u7528\u548c\u83dc\u8c31\u4e0d\u592a\u4e00\u6837\u7684\u65b9\u6cd5\u505a\u9985\u997c\uff0c\u4e0d\u77e5\u9053\u6210\u679c\u5408\u4e0d\u5408\u535a\u58eb\u7684\u53e3\u5473\uff0c\u535a\u58eb\u5403\u8fc7\u4e4b\u540e\u8bf7\u4e00\u5b9a\u8981\u544a\u8bc9\u6211\u611f\u60f3\u54e6\u3002",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100_2023_5",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_cdk_anniver_2023_1",
+            "type": "NORMAL",
+            "sortId": 54,
+            "displayReceiveTs": 1682092800,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_134_ifrit",
+            "title": "\u6765\u81ea\u4f0a\u8299\u5229\u7279\u7684\u4fe1\u606f",
+            "content": "\u80fd\u4e0d\u80fd\u5e2e\u6211\u4e2a\u5fd9\uff01\u4e70\u5496\u5561\u5473\u548c\u8349\u8393\u5473\u7684\u7cd6\u679c\u3002\u6211\u76f4\u63a5\u53bb\u80af\u5b9a\u4f1a\u88ab\u8d6b\u9ed8\u77e5\u9053\uff0c\u60f3\u7ed9\u5979\u4eec\u4e00\u4e2a\u8282\u65e5\u60ca\u559c\u3002\n\u4e00\u5b9a\u8981\u4e70\u5bf9\u554a\uff01",
+            "rewardList": [
+                {
+                    "id": "4001",
+                    "count": 20000,
+                    "type": "GOLD"
+                }
+            ]
+        },
+        {
+            "id": "mail_cdk_summer_2023_1",
+            "type": "NORMAL",
+            "sortId": 55,
+            "displayReceiveTs": 1690041600,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_151_myrtle",
+            "title": "\u6765\u81ea\u6843\u91d1\u5a18\u7684\u4fe1\u606f",
+            "content": "\u4e00\u9897\uff0c\u4e24\u9897\uff0c\u4e09\u9897\u2026\u2026\u8fd9\u4e9b\u8e66\u6765\u8e66\u53bb\u7684\u7c89\u8272\u68c9\u82b1\u7cd6\u600e\u4e48\u6570\u4e5f\u6570\u4e0d\u6e05\uff0c\u90fd\u5f00\u59cb\u72af\u56f0\u4e86\u3002\u5e94\u8be5\u6765\u676f\u63d0\u63d0\u795e\uff01\n\u535a\u58eb\u4e00\u8d77\u5417\uff1f\u6211\u8bf7\u5ba2\uff01",
+            "rewardList": [
+                {
+                    "id": "4001",
+                    "count": 20000,
+                    "type": "GOLD"
+                }
+            ]
+        },
+        {
+            "id": "mail_cdk_thxfes_2023_1",
+            "type": "NORMAL",
+            "sortId": 56,
+            "displayReceiveTs": 1697904000,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_4046_ebnhlz",
+            "title": "\u6765\u81ea\u9ed1\u952e\u7684\u4fe1\u606f",
+            "content": "\u8fd9\u662f\u4e3a\u4e4b\u524d\u4e0d\u8f9e\u800c\u522b\u8fdc\u884c\u6240\u81f4\u7684\u6b49\u610f\u3002\n\u4e0d\u8fc7\u90a3\u7247\u665a\u971e\u4e4b\u4e0b\u7684\u76db\u666f\u786e\u662f\u72ec\u4e00\u65e0\u4e8c\u3002\u60a8\u95f2\u6687\u7684\u65f6\u5019\uff0c\u8bf7\u4e00\u5b9a\u6765\u8bbf\u3002\u5c4a\u65f6\u6211\u5c06\u4e3a\u60a8\u6f14\u594f\uff0c\u6211\u6240\u89c1\u7684\u5d14\u6797\u7279\u5c14\u6885\u4e4b\u79cb\u3002",
+            "rewardList": [
+                {
+                    "id": "4001",
+                    "count": 20000,
+                    "type": "GOLD"
+                }
+            ]
+        },
+        {
+            "id": "mail_cdk_art_2",
+            "type": "NORMAL",
+            "sortId": 57,
+            "displayReceiveTs": 1706112000,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "penguin_logistics",
+            "title": "\u6765\u81ea\u708e\u7194\u7684\u63d0\u9192",
+            "content": "\u535a\u58eb\uff0c\u4f60\u4e00\u5b9a\u53c8\u8db4\u5728\u4e66\u684c\u4e0a\u7761\u7740\u4e86......\u522b\u7ba1\u6211\u662f\u600e\u4e48\u77e5\u9053\u7684\uff0c\u5feb\u8d77\u6765\u3002\n\u7597\u517b\u5ead\u9662\u91cc\u90a3\u4e9b\u5411\u5f80\u592a\u9633\u7684\u82b1\u90fd\u5f00\u4e86\uff0c\u9633\u5149\u628a\u5b83\u4eec\u7167\u5f97\u91d1\u707f\u707f\u7684\u3002\u8981\u6211\u8bf4\uff0c\u6709\u7a7a\u5c31\u591a\u53bb\u90a3\u8fb9\u8d70\u8d70\u5427\uff0c\u6574\u5929\u7a9d\u5728\u529e\u516c\u5ba4\u91cc\u591a\u4e0d\u50cf\u6837\u3002",
+            "rewardList": [
+                {
+                    "id": "char_121_lava@sale#9",
+                    "count": 1,
+                    "type": "CHAR_SKIN"
+                }
+            ]
+        },
+        {
+            "id": "mail_cdk_newyear_2024_1",
+            "type": "NORMAL",
+            "sortId": 58,
+            "displayReceiveTs": 1706284800,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_4080_lin",
+            "title": "\u6765\u81ea\u6797\u7684\u4fe1\u606f",
+            "content": "\u6211\u4e3a\u7f57\u5fb7\u5c9b\u7f6e\u529e\u4e86\u4e9b\u5e74\u5bb5\u82b1\uff0c\u5728\u8fd9\u7279\u6b8a\u7684\u8282\u65e5\u88c5\u70b9\u4e00\u756a\u8fd8\u662f\u975e\u5e38\u6709\u5fc5\u8981\u7684\u3002\n\u94f6\u67f3\u3001\u6c34\u4ed9\u3001\u814a\u6885\u2026\u2026\u662f\u4e9b\u9f99\u95e8\u5e38\u89c1\u7684\u5e74\u5bb5\u82b1\u6750\u3002\u5982\u679c\u535a\u58eb\u6709\u5176\u4ed6\u504f\u597d\uff0c\u53ef\u4ee5\u4e70\u6765\u6211\u88c5\u70b9\u4e0a\u3002",
+            "rewardList": [
+                {
+                    "id": "4001",
+                    "count": 20000,
+                    "type": "GOLD"
+                }
+            ]
+        },
+        {
+            "id": "mail_cdk_story_1",
+            "type": "NORMAL",
+            "sortId": 59,
+            "displayReceiveTs": 1706774400,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_003_kalts",
+            "title": "\u6765\u81ea\u51ef\u5c14\u5e0c\u7684\u7559\u8a00",
+            "content": "\u6211\u60f3\u5c06\u8fc7\u53bb\u6536\u96c6\u6574\u7406\u7684\u4e00\u5207\u4ea4\u4ed8\u4e0e\u4f60\uff0c\u535a\u58eb\u3002\u6216\u8bb8\uff0c\u8fd9\u610f\u5473\u7740\u6211\u5b58\u5728\u7684\u610f\u4e49\u7ec8\u4e8e\u5f97\u4ee5\u63ed\u793a\u3002\u4f46\u4e0d\u5fc5\u591a\u8651\uff0c\u4e8e\u4f60\u800c\u8a00\uff0c\u8fd9\u7406\u5e94\u53ea\u662f\u4e00\u6b21\u6b63\u5e38\u7684\u4ea4\u63a5\u3002\n\u5b83\u5e94\u5f53\u80fd\u591f\u72ec\u7acb\u4e8e\u6211\u7559\u5b58\u4e0b\u6765\uff0c\u800c\u4f60\u5e94\u5f53\u77e5\u9053\u8be5\u5982\u4f55\u5f00\u542f\u5b83\u3002",
+            "rewardList": [
+                {
+                    "id": "bg_kalts_1",
+                    "count": 1,
+                    "type": "HOME_BACKGROUND"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2024_1",
+            "type": "NORMAL",
+            "sortId": 60,
+            "displayReceiveTs": 1707480000,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_249_mlyss",
+            "title": "\u6765\u81ea\u7f2a\u5c14\u8d5b\u601d\u7684\u795d\u798f",
+            "content": "\u600e\u4e48\u6ca1\u6709\u4eba\u544a\u8bc9\u6211\u4eca\u5929\u6709\u8282\u65e5\u554a\uff0c\u5bb3\u5f97\u6211\u90fd\u6ca1\u65f6\u95f4\u7ed9\u4f60\u51c6\u5907\u5408\u9002\u7684\u793c\u7269......\n\u6211\u627e\u4e86\u597d\u4e45\uff0c\u53ea\u6765\u5f97\u53ca\u51d1\u9f50\u8fd9\u4e9b\u5c0f\u4e1c\u897f\u9001\u7ed9\u4f60\u3002\n\u671f\u5f85\u4f60\u7684\u56de\u793c\u54e6~\n\u554a\u5bf9\u4e86\uff0c\u662f\u4e0d\u662f\u8fd8\u8981\u8bf4\u53e5\u795d\u798f\u8bed\u6765\u7740\uff1f\n\u90a3\u5c31\u9ebb\u70e6\u4f60\u7a0d\u5fae\u7b49\u4e00\u4e0b\u5566\uff0c\u535a\u58eb\u3002\n\u6211\u73b0\u5728\u5c31\u8ba9\u6d41\u5f62\u53bb\u4f60\u8eab\u8fb9\u3002",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100_2024_1",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2024_2",
+            "type": "NORMAL",
+            "sortId": 61,
+            "displayReceiveTs": 1707483600,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_1016_agoat2",
+            "title": "\u6765\u81ea\u7eaf\u70ec\u827e\u96c5\u6cd5\u62c9\u7684\u795d\u798f",
+            "content": "\u524d\u8f88\uff0c\u65b0\u5e74\u597d\u3002\n\u65f6\u95f4\u8fc7\u5f97\u771f\u5feb\u5462\uff0c\u4e00\u8f6c\u773c\u5728\u7f57\u5fb7\u5c9b\u5df2\u7ecf\u5ea6\u8fc7\u8fd9\u4e48\u957f\u65f6\u95f4\u4e86\u3002\u5728\u8fd9\u91cc\u8ba4\u8bc6\u4e86\u60a8\uff0c\u8fd8\u6709\u5176\u4ed6\u8bb8\u591a\u670b\u53cb\uff0c\u5b9e\u5728\u662f\u5f88\u5e78\u8fd0\u7684\u4e8b\u3002\n\u771f\u5e0c\u671b\u660e\u5e74\u8fd9\u4e2a\u65f6\u5019\uff0c\u8fd8\u80fd\u548c\u60a8\u4e00\u8d77\u770b\u65b0\u5e74\u591c\u7684\u70df\u82b1\u5440\u3002\n\u6709\u4eba\u8bf4\uff0c\u4e00\u5207\u8fc7\u53bb\u7684\u4e8b\u90fd\u4e0d\u4f1a\u771f\u7684\u8fc7\u53bb\uff0c\u5b83\u4eec\u603b\u4f1a\u6362\u4e00\u79cd\u65b9\u5f0f\u966a\u5728\u6211\u4eec\u8eab\u8fb9\u3002\u5728\u8fd9\u6837\u7684\u8282\u65e5\u91cc\uff0c\u5c31\u6000\u7740\u8f7b\u677e\u7684\u5fc3\u60c5\u548c\u8fc7\u53bb\u544a\u522b\u5427\u3002\n\u5bf9\u5566\uff0c\u6211\u5728\u84dd\u6bd2\u5c0f\u59d0\u7684\u5e2e\u52a9\u4e0b\uff0c\u8bd5\u7740\u505a\u4e86\u81ea\u5df1\u5e73\u65f6\u5f88\u559c\u6b22\u7684\u751c\u70b9\uff0c\u5e0c\u671b\u60a8\u4f1a\u559c\u6b22\uff0c\u4e5f\u5e0c\u671b\u60a8\u80fd\u5ea6\u8fc7\u4e00\u4e2a\u751c\u871c\u7684\u8282\u65e5\u3002",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100_2024_2",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2024_3",
+            "type": "NORMAL",
+            "sortId": 62,
+            "displayReceiveTs": 1707487200,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_4098_vvana",
+            "title": "\u6765\u81ea\u8587\u8587\u5b89\u5a1c\u7684\u795d\u798f",
+            "content": "\u60a8\u597d\uff0c\u535a\u58eb\uff0c\u65b0\u5e74\u5feb\u4e50\u3002\n\u4eca\u665a\u7684\u6d3b\u52a8\u5341\u5206\u70ed\u95f9\uff0c\u975e\u5e38\u611f\u8c22\u60a8\u4e0e\u7f57\u5fb7\u5c9b\u7684\u62db\u5f85\uff0c\u6211\u5f88\u5f00\u5fc3\u3002\n\u4f5c\u4e3a\u5bf9\u60a8\u7684\u7b54\u8c22\uff0c\u6211\u4ee5\u4e2a\u4eba\u7684\u8eab\u4efd\u4e3a\u60a8\u51c6\u5907\u4e86\u4e00\u4e9b\u793c\u54c1\uff0c\u8fd8\u671b\u60a8\u80fd\u7b11\u7eb3\u3002\n\u613f\u6211\u4eec\u7684\u524d\u8def\u603b\u662f\u7f00\u6ee1\u7fa4\u661f\uff0c\u4e5f\u613f\u60a8\uff0c\u4eb2\u7231\u7684\u535a\u58eb\uff0c\u8eab\u4f53\u5065\u5eb7\uff0c\u4e07\u4e8b\u5982\u610f\u3002",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100_2024_3",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2024_4",
+            "type": "NORMAL",
+            "sortId": 63,
+            "displayReceiveTs": 1707490800,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_4121_zuole",
+            "title": "\u6765\u81ea\u5de6\u4e50\u7684\u795d\u798f",
+            "content": "\u5c81\u5e8f\u66f4\u8fed\uff0c\u534e\u7ae0\u65e5\u65b0\u3002\u8c28\u795d\u60a8\u5728\u65b0\u7684\u4e00\u5e74\u91cc\u559c\u4e50\u5b89\u5eb7\uff0c\u5c91\u9759\u65e0\u5984\u3002\n\u4eca\u5929\u5bf9\u6bcf\u4e00\u4e2a\u708e\u56fd\u4eba\u6765\u8bf4\u90fd\u610f\u4e49\u975e\u51e1\u3002\u5728\u795e\u8bdd\u91cc\uff0c\u5b83\u8c61\u5f81\u7740\u6211\u4eec\u4eba\u7c7b\u6218\u80dc\u5e9e\u5927\u7684\u654c\u4eba\uff0c\u4ece\u800c\u83b7\u5f97\u4e3b\u5bb0\u81ea\u5df1\u547d\u8fd0\u7684\u673a\u4f1a\u3002\n\u4eba\u5b9a\u80dc\u5929\uff0c\u4e8b\u5728\u4eba\u4e3a\u3002\n\u662f\u4e0d\u662f......\u6709\u4e9b\u592a\u4e25\u8083\u4e86\uff1f\n\u8fd9\u91cc\u8fd8\u6709\u4e00\u4e9b\u6211\u4ece\u7389\u95e8\u5e26\u6765\u7684\u751c\u70b9\uff0c\u662f\u6211\u5c0f\u65f6\u5019\u6700\u559c\u6b22\u7684\u98df\u7269\u3002\u8bb8\u591a\u5e74\u8fc7\u53bb\u4e86\uff0c\u5b83\u7684\u5473\u9053\u8fd8\u662f\u4e00\u70b9\u90fd\u6ca1\u53d8\u3002\u5e0c\u671b\u60a8\u4e5f\u80fd\u559c\u6b22\u3002",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100_2024_4",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2024_5",
+            "type": "NORMAL",
+            "sortId": 64,
+            "displayReceiveTs": 1707494400,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_002_amiya",
+            "title": "\u6765\u81ea\u963f\u7c73\u5a05\u7684\u795d\u798f",
+            "content": "\u65b0\u5e74\u5feb\u4e50\uff0c\u535a\u58eb\uff01\n\u793c\u7269\u5df2\u7ecf\u7ed9\u60a8\u9001\u6765\u4e86\uff0c\u4e0d\u77e5\u9053\u60a8\u6536\u6ca1\u6536\u5230\u3002\u8fd9\u6b21\u505a\u4e86\u70b9\u65b9\u4fbf\u643a\u5e26\u7684\u5c0f\u997c\u5e72\uff0c\u5e0c\u671b\u60a8\u80fd\u559c\u6b22\u3002\n\u8981\u662f\u997f\u4e86\uff0c\u8bf7\u5343\u4e07\u522b\u60f3\u7740\u71ac\u8fc7\u53bb\uff0c\u5403\u4e00\u5757\u997c\u5e72\u57ab\u57ab\u9965\uff0c\u8eab\u4f53\u548c\u5fc3\u60c5\u90fd\u4f1a\u597d\u8d77\u6765\u7684\u3002\n\u56e0\u4e3a\u65f6\u95f4\u4e0d\u591f\uff0c\u6682\u65f6\u53ea\u505a\u4e86\u5976\u6cb9\u5939\u5fc3\u7684\uff0c\u5982\u679c\u60a8\u60f3\u5403\u5176\u4ed6\u53e3\u5473\u7684\uff0c\u6211\u60f3\uff0c\u6211\u4eec\u53ef\u4ee5\uff0c\u4e00\u8d77\u5728\u751c\u70b9\u8bfe\u4e0a\u505a\u505a\u770b\uff1f\n\u6bd5\u7adf\uff0c\u751c\u5473\u603b\u662f\u6bd4\u82e6\u6da9\u8981\u66f4\u5bb9\u6613\u56de\u60f3\u3002\n\u65f6\u95f4\u4e5f\u4e0d\u65e9\u4e86\uff0c\u4e0d\u8981\u7761\u592a\u665a\u5594\u3002\n\u660e\u5929\uff0c\u5443......\u65e9\u4e0a\u89c1\uff0c\u535a\u58eb~",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100_2024_5",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_cdk_anniver_2024_1",
+            "type": "NORMAL",
+            "sortId": 65,
+            "displayReceiveTs": 1714320000,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_002_amiya",
+            "title": "\u6765\u81ea\u963f\u7c73\u5a05\u7684\u4fe1\u606f",
+            "content": "\u535a\u58eb\u3002\u53c8\u662f\u4e00\u5e74\u8fc7\u53bb\u4e86\uff0c\u771f\u5feb\u5440\uff0c\u80fd\u4e0e\u60a8\u4e00\u540c\u524d\u8fdb\uff0c\u6211\u611f\u5230\u975e\u5e38\u5e78\u798f\u2026\u2026\n\u4eca\u5929\u8def\u8fc7\u7597\u517b\u5ead\u9662\u65f6\uff0c\u770b\u5230\u8bb8\u591a\u82b1\u5f00\u5f97\u5f88\u597d\uff0c\u6211\u60f3\u53bb\u4e70\u4e00\u4e9b\uff0c\u8fd9\u6837\u5c31\u53ef\u4ee5\u7ed9\u535a\u58eb\u7f16\u4e00\u9876\u82b1\u51a0\u4e86\u3002\u535a\u58eb\uff0c\u8981\u4e00\u8d77\u53bb\u5417\uff1f",
+            "rewardList": [
+                {
+                    "id": "4001",
+                    "count": 20000,
+                    "type": "GOLD"
+                }
+            ]
+        },
+        {
+            "id": "mail_birth_2025_1",
+            "type": "BIRTHDAY",
+            "sortId": 66,
+            "displayReceiveTs": 0,
+            "year": 2025,
+            "dateDelta": -1,
+            "senderId": "char_003_kalts",
+            "title": "\u751f\u65e5\u8d3a\u51fd",
+            "content": "\u9996\u5148\uff0c\u656c\u795d\u4f60\u751f\u65e5\u5feb\u4e50\uff0c\u535a\u58eb\u3002\u7f57\u5fb7\u5c9b\u80fd\u591f\u5728\u5f53\u4eca\u5c40\u52bf\u4e0b\u5e73\u7a33\u8fd0\u884c\uff0c\u79bb\u4e0d\u5f00\u4f60\u7684\u51b3\u7b56\u4e0e\u63d0\u8bae\u3002\u4eca\u65e5\u6211\u4e0d\u4f1a\uff0c\u4e5f\u4e0d\u5fc5\u518d\u6b21\u5411\u4f60\u5f3a\u8c03\u8d23\u4efb\u7684\u91cd\u8981\u6027\uff0c\u53ea\u662f\u5e0c\u671b\u5728\u63a5\u4e0b\u6765\u7684\u5bb4\u4f1a\u4e2d\uff0c\u4f60\u80fd\u591f\u6ce8\u610f\u81ea\u5df1\u7684\u996e\u98df\u60c5\u51b5\u3002\u5982\u679c\u533b\u7597\u90e8\u7d27\u6025\u901a\u77e5\u6211\u6765\u95ee\u8bca\uff0c\u4e8e\u6211\u4eec\u53cc\u65b9\u800c\u8a00\uff0c\u90fd\u4e0d\u4f1a\u662f\u4e00\u4ef6\u6109\u5feb\u7684\u4e8b\u3002\n\u5173\u5207\u81ea\u8eab\uff0c\u73cd\u60dc\u8eab\u8fb9\u7684\u540c\u4f34\uff0c\u613f\u6211\u4eec\u518d\u8de8\u8fc7\u4e00\u4e2a\u5e74\u5c81\u540e\uff0c\u4ecd\u80fd\u6709\u5e78\u5728\u6b64\u65f6\u76f8\u805a\u3002\n\u6ce8\uff1a\u968f\u4fe1\u7684\u7cd5\u70b9\u5e76\u975e\u98df\u7597\u836f\u54c1\uff0c\u53e3\u5473\u4e5f\u4e0e\u6b63\u5e38\u7cd5\u70b9\u6ca1\u6709\u533a\u522b\uff0c\u4f60\u53ef\u4ee5\u6ca1\u6709\u5fc3\u7406\u8d1f\u62c5\u5730\u98df\u7528\u3002",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_120_2025_1",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                },
+                {
+                    "id": "furni_act57d6_docCake_01",
+                    "count": 1,
+                    "type": "FURN"
+                }
+            ]
+        },
+        {
+            "id": "mail_amiyaBirth_2025_1",
+            "type": "NORMAL",
+            "sortId": 67,
+            "displayReceiveTs": 1734958800,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "amiya_2024",
+            "title": "\u6765\u81ea\u963f\u7c73\u5a05\u7684\u611f\u8c22",
+            "content": "\u8c22\u8c22\u60a8\uff0c\u535a\u58eb\uff0c\u4eca\u5929\u80fd\u6536\u5230\u8fd9\u4e48\u591a\u795d\u798f\u548c\u793c\u7269\uff0c\u771f\u7684\u5f88\u5f00\u5fc3\u3002\n\u521a\u521a\u5728\u5207\u86cb\u7cd5\u7684\u65f6\u5019\u60a8\u5df2\u7ecf\u79bb\u5f00\u4e86\uff0c\u60f3\u5fc5\u662f\u8fd8\u6709\u4e9b\u4e8b\u52a1\u8981\u5904\u7406\u3002\u6240\u4ee5\uff0c\u6211\u628a\u5207\u597d\u7684\u86cb\u7cd5\u9001\u6765\u4e86\uff0c\u4e00\u5b9a\u8981\u8bb0\u5f97\u5403\u54e6\u3002\n\u4e0b\u6b21\u535a\u58eb\u7684\u751f\u65e5\u86cb\u7cd5\uff0c\u5c31\u7531\u6211\u6765\u51c6\u5907\u5427\uff0c\u4e0d\u8981\u62d2\u7edd\u6211\u54e6\u3002\n\u563f\u563f\uff0c\u665a\u5b89\uff0c\u535a\u58eb~",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_120_2024_6",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_cdk_cross_24_1",
+            "type": "NORMAL",
+            "sortId": 68,
+            "displayReceiveTs": 1735488000,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "penguin_logistics",
+            "title": "\u300a\u660e\u65e5\u65b9\u821f\u300b \u7f57\u68ee\u7406\u667a\u98df\u54c1",
+            "content": "\u5c0a\u656c\u7684\u535a\u58eb\uff1a\n\u611f\u8c22\u60a8\u5bf9 \u660e\u65e5\u65b9\u821f\u00d7\u7f57\u68ee \u7684\u652f\u6301\uff0c\u8bf7\u5728\u90ae\u4ef6\u9644\u4ef6\u4e2d\u9886\u53d6\u7406\u667a\u98df\u54c1\u3002",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100_2024_6",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_cdk_art_3",
+            "type": "NORMAL",
+            "sortId": 69,
+            "displayReceiveTs": 1736179200,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_263_skadi",
+            "title": "\u6765\u81ea\u65af\u5361\u8482\u7684\u9080\u8bf7",
+            "content": "\u535a\u58eb\uff0c\u6211\u6700\u8fd1\u5076\u5c14\u4f1a\u770b\u5230\u4f60\u5728\u7532\u677f\u4e0a\u6563\u6b65\uff0c\u671b\u7740\u5929\u7a7a\u51fa\u795e\u3002\n\u8fd8\u5728\u6d77\u5e95\u7684\u65f6\u5019\uff0c\u6211\u5f88\u559c\u6b22\u770b\u7740\u57ce\u5e02\u7684\u706f\u5149\u5728\u6211\u624b\u4e0b\u4f9d\u6b21\u7184\u706d\u3002\u6f06\u9ed1\u7684\u6d77\u6c34\u541e\u6ca1\u6d77\u5e8a\uff0c\u773c\u524d\u53ea\u6709\u4eea\u5668\u7684\u6307\u793a\u706f\u5728\u7a79\u9876\u4e0a\u6620\u51fa\u6211\u7684\u5012\u5f71\uff0c\u6574\u4e2a\u6d77\u5e95\u5c31\u53ea\u6709\u6211\u4e00\u4e2a\u4eba\u3002\u4f46\u5f88\u5feb\uff0c\u53ea\u8981\u50cf\u4f60\u770b\u5929\u90a3\u6837\u7a0d\u7a0d\u62ac\u5934\uff0c\u5c31\u80fd\u770b\u5230\u5927\u7247\u53d1\u5149\u7684\u9cde\u7fa4\u6e38\u8fc7\u57ce\u5e02\u7684\u7a79\u9876\u2014\u2014\u8981\u600e\u4e48\u5f62\u5bb9\u5462\uff1f\u5c31\u50cf\u4f60\u4eec\u9646\u5730\u4e0a\u6708\u591c\u7684\u96ea\uff0c\u6216\u8005\u662f\u8424\u706b\u866b\uff0c\u5b83\u4eec\u4f1a\u7f13\u6162\u4f46\u53c8\u8f7b\u76c8\u5730\u7167\u4eae\u6574\u7247\u6d77\u5e8a\u3002\n\u90a3\u65f6\uff0c\u6211\u603b\u662f\u4e00\u4e2a\u4eba\u5750\u5728\u6d77\u5e95\uff0c\u7ed9\u6e38\u8fc7\u7684\u9cde\u7fa4\u5f39\u7434\uff0c\u6216\u8005\u662f\u6b4c\u5531\u3002\n\u52b3\u4f26\u7f07\u5a1c\u5e2e\u4e86\u6211\u4e00\u4e2a\u5fd9\uff0c\u628a\u90a3\u6837\u7684\u666f\u8272\u523b\u5370\u5728\u4e86\u8fd9\u5f20\u5c0f\u5c0f\u7684\u5361\u7247\u91cc\u3002\u867d\u7136\u73b0\u5728\u6211\u4eec\u53bb\u4e0d\u4e86\u6d77\u5e95\uff0c\u4f46\u6b4c\u58f0\u603b\u662f\u4e0d\u4f1a\u53d8\u7684\u3002\u5982\u679c\u4f60\u60f3\u542c\u7684\u8bdd\uff0c\u53ef\u4ee5\u6765\u627e\u6211\u3002",
+            "rewardList": [
+                {
+                    "id": "nc_undertides_1",
+                    "count": 1,
+                    "type": "NAME_CARD_SKIN"
+                }
+            ]
+        },
+        {
+            "id": "mail_cdk_cross_25_1",
+            "type": "NORMAL",
+            "sortId": 70,
+            "displayReceiveTs": 1737561600,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "penguin_logistics",
+            "title": "\u300a\u660e\u65e5\u65b9\u821f\u300b\u652f\u4ed8\u5b9d\u8054\u52a8\u7406\u667a\u9053\u5177",
+            "content": "\u5c0a\u656c\u7684\u535a\u58eb\uff1a\n\u611f\u8c22\u60a8\u5bf9 \u660e\u65e5\u65b9\u821f\u00d7\u652f\u4ed8\u5b9d \u7684\u652f\u6301\uff0c\u5151\u6362\u7801\u5185\u5bb9\u8bf7\u5728\u90ae\u4ef6\u9644\u4ef6\u4e2d\u9886\u53d6\u3002",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_80_2025_1",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2025_1",
+            "type": "NORMAL",
+            "sortId": 71,
+            "displayReceiveTs": 1738065600,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_1035_wisdel",
+            "title": "\u6765\u81ea\u7ef4\u4ec0\u6234\u5c14\u7684\u795d\u798f",
+            "content": "\u4f60\u73b0\u5728\u5e94\u8be5\u8fd8\u5728\u5de5\u4f5c\uff0c\u522b\u95ee\u6211\u600e\u4e48\u77e5\u9053\u7684\uff0c\u6211\u8bf4\u8fc7\u7684\uff0c\u6211\u4f1a\u76ef\u7740\u4f60\u4eec\u3002\n\u5c0f\u5154\u5b50\u60f3\u8d70\u6bbf\u4e0b\u7684\u8def\uff0c\u6211\u4e0d\u77e5\u9053\u5979\u80fd\u4e0d\u80fd\u884c\uff0c\u6211\u4e5f\u7ba1\u4e0d\u7740\uff0c\u4f46\u5979\u505a\u5f97\u8fd8\u4e0d\u9519\u3002\u6240\u4ee5\uff0c\u4f60\u6700\u597d\u662f\u771f\u5fc3\u5728\u5e2e\u5c0f\u5154\u5b50\u7684\u5fd9\uff0c\u4e0d\u7136\u6211\u5c31\u8ba9\u4f60\u77e5\u9053\uff0c\u6211\u5bf9\u4f60\u7684\u529e\u516c\u684c\u505a\u4e86\u4e9b\u4ec0\u4e48\u3002\n\u597d\u4e86\uff0c\u6211\u4e5f\u4e0d\u662f\u4e13\u95e8\u6765\u5413\u4f60\u7684\uff0c\u6211\u6ca1\u8fd9\u4e48\u65e0\u804a\u3002\n\u51c6\u5907\u4e86\u4e00\u70b9\u793c\u7269\uff0c\u7ed9\u5c0f\u5154\u5b50\u7684\uff0c\u5979\u5df2\u7ecf\u6536\u5230\u4e86\uff0c\u81f3\u4e8e\u4f60\uff0c\u7ed9\u4f60\u505a\u4e86\u7897\u7092\u996d\u3002\n\u5012\u6389\u4e5f\u6ca1\u5173\u7cfb\uff0c\u4e0d\u8fc7\uff0c\u8fd9\u7897\u7092\u996d\u662f\u4e13\u95e8\u7528\u7194\u7089\u91cc\u90a3\u4e9b\u8001\u4e0d\u6b7b\u7684\u6012\u706b\u7092\u7684\uff0c\u8fd8\u52a0\u4e0a\u4e86\u6211\u79d8\u5236\u7684\u8c03\u6599\uff0c\u6574\u4e2a\u5361\u5179\u6234\u5c14\u5927\u6982\u4e5f\u5c31\u8fd9\u4e48\u4e00\u7897\uff0c\u4f60\u770b\u7740\u529e\u5427\uff0c\u54c8\u54c8\uff01\n\u3010\u4fe1\u4ef6\u4e0a\u6709\u4e0d\u5c11\u9519\u522b\u5b57\uff0c\u8fd8\u6709\u4e00\u4e9b\u6d82\u62b9\u75d5\u8ff9\uff0c\u4f46\u5927\u4f53\u4e0a\u6765\u8bf4\uff0c\u5979\u7684\u5199\u5b57\u6c34\u5e73\u5df2\u7ecf\u6709\u4e86\u660e\u663e\u7684\u8fdb\u6b65\u3002\u3011",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100_2025_1",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2025_2",
+            "type": "NORMAL",
+            "sortId": 72,
+            "displayReceiveTs": 1738069200,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_4058_pepe",
+            "title": "\u6765\u81ea\u4f69\u4f69\u7684\u795d\u798f",
+            "content": "\u535a\u58eb\uff0c\u65b0\u5e74\u5feb\u4e50\uff01 \u6211\u8fd8\u5728\u53d1\u6398\u73b0\u573a\uff0c\u6ca1\u6cd5\u8d76\u56de\u6765\u548c\u4f60\u4e00\u8d77\u8fc7\u8282\uff0c\u6240\u4ee5\u5c31\u8ba9\u4f8d\u5973\u505a\u4e86\u4e00\u4efd\u83b2\u82b1\u997c\u7ed9\u4f60\u9001\u6765\u3002 \u8fd9\u662f\u6211\u4ece\u5c0f\u5c31\u559c\u6b22\u7684\u70b9\u5fc3\uff0c\u4e0d\u77e5\u9053\u4f1a\u4e0d\u4f1a\u5408\u4f60\u7684\u53e3\u5473\u3002 \u4f60\u4e5f\u53ef\u4ee5\u4e0d\u5403\uff0c\u5149\u662f\u6446\u5728\u90a3\u91cc\u4e5f\u5f88\u597d\u770b\u54e6\uff0c\u653e\u5fc3\uff0c\u5b83\u53ef\u4ee5\u6446\u5f88\u4e45\u7684\uff01 \u6211\u5927\u6982\u8fd8\u8981\u518d\u8fc7\u4e00\u4e2a\u6708\u624d\u80fd\u56de\u6765\uff0c\u4e0d\u8fc7\uff0c\u597d\u6d88\u606f\u662f\u8fd9\u6b21\u8bf4\u4e0d\u5b9a\u6709\u5927\u53d1\u73b0\u5462\uff0c\u4f60\u53ef\u4ee5\u671f\u5f85\u4e00\u4e0b\uff01",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100_2025_2",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2025_3",
+            "type": "NORMAL",
+            "sortId": 73,
+            "displayReceiveTs": 1738072800,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_1038_whitw2",
+            "title": "\u6765\u81ea\u8352\u829c\u62c9\u666e\u5170\u5fb7\u7684\u795d\u798f",
+            "content": "\u8f9e\u65e7\u8fce\u65b0\uff01\u54c8\uff0c\u8fd9\u4e0d\u662f\u6211\u4eec\u65b0\u6c83\u5c14\u897f\u5c3c\u5bcc\u6709\u8fdb\u53d6\u5fc3\u7684\u65f6\u4ee3\u5f00\u62d3\u8005\u6700\u559c\u6b22\u7684\u5b57\u773c\u5417\uff1f\n\u535a\u58eb\uff0c\u4f60\u4e00\u5b9a\u4e5f\u5f88\u597d\u5947\uff0c\u65b0\u6c83\u5c14\u897f\u5c3c\u7a76\u7adf\u8f9e\u4e86\u4ec0\u4e48\u65e7\uff0c\u53c8\u8fce\u4e86\u4ec0\u4e48\u65b0\u5427\uff1f\n\u4fe1\u7eb8\u80cc\u9762\u6709\u4e00\u4e2a\u5730\u5740\uff0c\u53bb\u90a3\u91cc\u627e\u5361\u5f6d\u548c\u7518\u6bd4\u8bfa\uff0c\u4ed6\u4eec\u4f1a\u628a\u6211\u7684\u8f66\u501f\u7ed9\u4f60\u3002\n\u5f00\u7740\u5b83\u5728\u65b0\u6c83\u5c14\u897f\u5c3c\u8f6c\u4e00\u5708\u5427\uff0c\u4f60\u4f1a\u770b\u5230\u4f60\u60f3\u770b\u5230\u7684\u4e1c\u897f\u3002\n\u54e6\uff0c\u9152\u9a7e\u5728\u65b0\u6c83\u5c14\u897f\u5c3c\u4f1a\u88ab\u91cd\u7f5a\uff0c\u522b\u602a\u6211\u6ca1\u63d0\u9192\u4f60\uff0c\u54c8\u54c8\uff01",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100_2025_3",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2025_4",
+            "type": "NORMAL",
+            "sortId": 74,
+            "displayReceiveTs": 1738076400,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_2026_yu",
+            "title": "\u6765\u81ea\u4f59\u7684\u795d\u798f",
+            "content": "\u535a\u58eb\uff0c\u4eca\u665a\u7684\u5e74\u591c\u996d\u5403\u5f97\u8fd8\u7b97\u5c3d\u5174\u5427\uff1f \u539f\u672c\u505a\u5b8c\u5e74\u591c\u996d\u6211\u5c31\u6253\u7b97\u4f11\u606f\u4e86\uff0c\u4f46\u6211\u60f3\u8d77\u4f60\u767d\u5929\u95ee\u7684\u90a3\u4e2a\u95ee\u9898\u2014\u2014\u201c\u5e74\u5e74\u6709\u4f59\u201d\u7684\u610f\u601d\u662f\u4e0d\u662f\u5e74\u5e74\u6709\u6211\uff0c\u6bcf\u5e74\u90fd\u80fd\u5403\u5230\u6211\u505a\u7684\u83dc\uff1f \u867d\u7136\u5938\u8d5e\u6211\u53a8\u827a\u7684\u4eba\u5f88\u591a\uff0c\u4f46\u4f60\u7684\u5938\u6cd5\u5b9e\u5728\u662f\u6709\u8da3\uff0c\u6240\u4ee5\u6211\u53c8\u7279\u5730\u4e3a\u4f60\u505a\u4e86\u4e00\u9053\u5c0f\u5403\u3002 \u5bf9\u4e86\uff0c\u65b0\u5e74\u5feb\u4e50\u3002",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100_2025_4",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_newyear_2025_5",
+            "type": "NORMAL",
+            "sortId": 75,
+            "displayReceiveTs": 1738080000,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_003_kalts",
+            "title": "\u6765\u81ea\u51ef\u5c14\u5e0c\u7684\u795d\u798f",
+            "content": "\u535a\u58eb\uff0c\u8fc7\u53bb\u7684\u4e00\u5e74\u5bf9\u4f60\u800c\u8a00\u60f3\u5fc5\u610f\u4e49\u975e\u51e1\u3002\n\u4f60\u63a5\u89e6\u4e86\u4e00\u4e9b\u5f80\u4e8b\uff0c\u89c1\u8bc1\u4e86\u4e00\u4e9b\u5386\u53f2\uff0c\u4e5f\u544a\u522b\u4e86\u4e00\u4e9b\u6545\u53cb\u3002\u4f60\u5bf9\u8fd9\u7247\u5927\u5730\u548c\u4f60\u81ea\u8eab\u90fd\u6709\u4e86\u66f4\u6df1\u5165\u7684\u4e86\u89e3\uff0c\u4f60\u4e5f\u5e94\u5f53\u66f4\u52a0\u786e\u4fe1\u81ea\u5df1\u9009\u62e9\u7684\u9053\u8def\uff0c\u4f60\u9009\u62e9\u7684\u201c\u5e0c\u671b\u201d\u3002\n\u7f57\u5fb7\u5c9b\u4f9d\u7136\u9762\u4e34\u7740\u65e0\u6570\u6311\u6218\u3002\u6211\u4eec\u505a\u518d\u591a\u7684\u51c6\u5907\u90fd\u7b97\u4e0d\u4e0a\u5145\u5206\uff0c\u4f46\u8fd9\u5e76\u4e0d\u610f\u5473\u7740\u6211\u4eec\u8981\u653e\u5f03\u62e5\u6709\u95f2\u6687\u65f6\u5149\u7684\u6743\u5229\u3002\n\u6211\u4eec\u5f88\u5c11\u6709\u673a\u4f1a\u53bb\u4eab\u53d7\u5355\u7eaf\u7684\u6b22\u4e50\uff0c\u53ef\u662f\u5f53\u6211\u4eec\u8eab\u5904\u56f0\u5883\u4e4b\u65f6\uff0c\u5f80\u5f80\u662f\u90a3\u4e9b\u7f8e\u597d\u7684\u56de\u5fc6\u8ba9\u6211\u4eec\u80fd\u591f\u514b\u670d\u8270\u9669\u3002\n\u591a\u53bb\u89c1\u89c1\u7f57\u5fb7\u5c9b\u7684\u5e72\u5458\u4eec\u5427\uff0c\u5728\u4eca\u5929\u8fd9\u4e2a\u8282\u65e5\u91cc\uff0c\u6709\u8bb8\u591a\u4eba\u671f\u5f85\u4e0e\u4f60\u89c1\u9762\u3002\u6211\u60f3\u4ed6\u4eec\u4f1a\u66ff\u6211\u63d0\u9192\u4f60\uff0c\u5728\u4f60\u9009\u62e9\u7684\u8fd9\u6761\u56f0\u96be\u7684\u9053\u8def\u4e0a\uff0c\u4f60\u6c38\u8fdc\u4e0d\u4f1a\u5b64\u72ec\u3002\n\u6211\u4eec\u5df2\u7ecf\u62e5\u6709\u7684\u5f53\u4e0b\u4e5f\u4f1a\u63d0\u9192\u6211\u4eec\u2014\u2014\u4ed8\u51fa\u52aa\u529b\u7684\u6240\u6709\u610f\u4e49\uff0c\u5728\u4e8e\u672a\u6765\u3002\n\u65b0\u5e74\u5feb\u4e50\uff0c\u535a\u58eb\u3002",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_100_2025_5",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_anniversary_2025_1",
+            "type": "NORMAL",
+            "sortId": 76,
+            "displayReceiveTs": 1745674200,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_103_angel",
+            "title": "\u6765\u81ea\u80fd\u5929\u4f7f\u7684\u6c47\u62a5",
+            "content": "\u55e8\u55e8\uff0c\u8001\u677f\uff01\u4eba\u4e8b\u90e8\u7684\u5916\u52e4\u4f8b\u884c\u7a0b\u5e8f\u592a\u9ebb\u70e6\u4e86\uff0c\u6211\u76f4\u63a5\u8ddf\u4f60\u6c47\u62a5\u4e0b\u8fd1\u51b5\u5566\uff01\n\u672c\u4eba\u4e0a\u6708\u8fbe\u6210\u53f2\u8bd7\u7ea7\u6210\u5c31\uff1a\u5de6\u624b\u73a9\u300a\u8d85\u7ea7\u5531\u7247\u5927\u4ea8\u300b\uff0c\u53f3\u624b\u73a9\u5149\u94f3\u5c04\u9152\u74f6\u6e38\u620f\uff0c\u540c\u65f6\u8d62\u4e86\u5927\u5e1d\u8001\u677f\u548c\u5fb7\u514b\u8428\u65af\uff0c\u7279\u6b64\u5206\u4eab\uff01\n\u53e6\u5916\uff0c\u6211\u521a\u628a\u5728\u4f01\u9e45\u7269\u6d41\u6512\u7684\u5047\u5168\u4f11\u4e86\uff0c\u6253\u7b97\u56de\u5bb6\u4e00\u8d9f......\u6b38\uff0c\u6ca1\u8bb0\u9519\u7684\u8bdd\uff0c\u4f60\u4e4b\u524d\u8bf4\u5f88\u60f3\u53bb\u62c9\u7279\u5170\u5c1d\u5c1d\u201c\u6b63\u5e38\u751c\u201d\u7684\u51b0\u6dc7\u6dcb\u6765\u7740\uff1f",
+            "rewardList": [
+                {
+                    "id": "itempack_gold_1",
+                    "count": 1,
+                    "type": "ITEM_PACK"
+                }
+            ]
+        },
+        {
+            "id": "mail_anniversary_2025_2",
+            "type": "NORMAL",
+            "sortId": 77,
+            "displayReceiveTs": 1745674200,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "penguin_logistics",
+            "title": "\u516d\u5468\u5e74\u76f4\u64ad\u5956\u52b1",
+            "content": "\u5c0a\u656c\u7684\u535a\u58eb\uff1a\n\u611f\u8c22\u60a8\u4e00\u76f4\u4ee5\u6765\u5bf9\u660e\u65e5\u65b9\u821f\u7684\u7406\u89e3\u4e0e\u652f\u6301!\u4e8e04\u670826\u65e5\u8fdb\u884c\u7684\u516d\u5468\u5e74\u76f4\u64ad\u5956\u52b1\u5df2\u53d1\u653e\uff0c\u8bf7\u5728\u9644\u4ef6\u4e2d\u67e5\u6536\u3002",
+            "rewardList": [
+                {
+                    "id": "ap_supply_lt_120_2025_2",
+                    "count": 1,
+                    "type": "AP_SUPPLY"
+                }
+            ]
+        },
+        {
+            "id": "mail_special_2025_1",
+            "type": "NORMAL",
+            "sortId": 78,
+            "displayReceiveTs": 1750320000,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_4198_christ",
+            "title": "\u6765\u81eaMiss.Christine\u7684\u4fe1\u4ef6",
+            "content": "\u535a\u58eb\uff0c\u5927\u796d\u53f8\u7adf\u8bf4\u6211\u6765\u7f57\u5fb7\u5c9b\u540e\u80d6\u4e86\u4e00\u4e9b\u3002\u7f57\u5fb7\u5c9b\u4e0a\u201c\u6109\u60a6\u201d\u7684\u60c5\u7eea\u5b9e\u5728\u592a\u591a\uff0c\u4e0d\u77e5\u4e0d\u89c9\u95f4\u6211\u5c31\u54c1\u5c1d\u4e86\u4e0d\u5c11\uff0c\u6b63\u597d\uff0c\u6211\u4e5f\u53ef\u4ee5\u6362\u6362\u6211\u7684\u53e3\u5473\u3002\u5362\u897f\u6069\u8bf4\u5f97\u6ca1\u9519\uff0c\u7f57\u5fb7\u5c9b\u8fd9\u5730\u65b9\u8fd8\u7b97\u4e0d\u9519\uff0c\u4f60\u4e5f\u662f\u4e2a\u8fd8\u4e0d\u9519\u7684\u6bdb\u7ebf\u7403\u3002\n\u6240\u4ee5\uff0c\u6211\u51c6\u8bb8\u4f60\u62e5\u6709\u8fd9\u4e2a\u7279\u522b\u7684\u6478\u6478\u5238\u3002\n\n\u3010\u6765\u9001\u4fe1\u7684\u4eba\u4e8b\u5e72\u5458\u6709\u4e9b\u7591\u60d1\u5730\u6320\u4e86\u6320\u5934\uff0c\u535a\u58eb\u4e00\u526f\u5f88\u9ad8\u5174\u7684\u6837\u5b50\uff0c\u4f46\u90a3\u4fe1\u7eb8\u4e0a\u660e\u660e\u4e00\u7247\u7a7a\u767d\uff0c\u4ed6\u53ea\u5728\u535a\u58eb\u6253\u5f00\u4fe1\u5c01\u65f6\u542c\u5230\u4e86\u4e00\u58f0\u201c\u55b5\u545c\u201d\u3011",
+            "rewardList": [
+                {
+                    "id": "avatar_special_MissC",
+                    "count": 1,
+                    "type": "PLAYER_AVATAR"
+                }
+            ]
+        },
+        {
+            "id": "mail_summer_2025_1",
+            "type": "NORMAL",
+            "sortId": 79,
+            "displayReceiveTs": 1754121600,
+            "year": 0,
+            "dateDelta": -1,
+            "senderId": "char_1044_hsgma2",
+            "title": "\u6765\u81ea\u65a9\u4e1a\u661f\u718a\u7684\u9080\u7ea6",
+            "content": "\u535a\u58eb\uff0c\u8fd1\u6765\u53ef\u597d\uff1f\n\u6700\u8fd1\u5929\u6c14\u708e\u70ed\uff0c\u5de5\u4f5c\u4e5f\u4e0d\u591a\uff0c\u8fd1\u536b\u5c40\u7684\u5404\u4f4d\u90fd\u6709\u70b9\u63d0\u4e0d\u8d77\u52b2\u3002\u4e0d\u5de7Missy\u4e0d\u5728\uff0c\u53ea\u80fd\u7531\u6211\u60f3\u529e\u6cd5\uff0c\u800c\u6211\u80fd\u60f3\u5230\u7684\u5c31\u53ea\u6709\u7ed9\u5927\u5bb6\u653e\u5047\u4e86\u2014\u2014\u4e07\u5e78\u6548\u679c\u4e0d\u9519\uff0c\u5927\u5bb6\u4f11\u5047\u56de\u6765\uff0c\u90fd\u591a\u51fa\u4e0d\u5c11\u5e72\u52b2\u3002\n\u6211\u6700\u8fd1\u4e5f\u4f1a\u56de\u4e1c\u56fd\u4e00\u8d9f\u3002\u8981\u662f\u627e\u5230\u4ec0\u4e48\u597d\u9152\uff0c\u7b49\u6211\u56de\u6765\uff0c\u4e0d\u77e5\u535a\u58eb\u80fd\u5426\u62bd\u7a7a\u548c\u6211\u4e00\u805a\uff0c\u5c0f\u914c\u51e0\u676f\uff1f",
+            "rewardList": [
+                {
+                    "id": "itempack_gold_2",
+                    "count": 1,
+                    "type": "ITEM_PACK"
                 }
             ]
         }
