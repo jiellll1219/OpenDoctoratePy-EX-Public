@@ -1,7 +1,8 @@
 {
     "checkInData": {
         "lastCheckInTs": 0,
-        "lastResetDate": "2000-01-01"
+        "lastResetDate": "2025-08-27",
+        "canCheckIn": true
     },
     "checkInItems": {
         "act3signvs": [
@@ -312,7 +313,7 @@
     },
     "gacha": {
         "count": {
-            "BOOT": 0,
+            "BOOT": 10,
             "CLASSIC": 0,
             "DOUBLE_61_0_2": 4,
             "LIMITED_61_0_1": 10,

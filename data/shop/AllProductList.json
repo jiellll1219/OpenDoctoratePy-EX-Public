@@ -1,44 +1,10 @@
 {
   "productList": [
     {
-      "store_id": 26,
+      "store_id": 52,
       "app_id": 1,
-      "channel_id": 2,
-      "world_id": 2,
-      "product_id": "GP_gW_1_W_1",
-      "desc": "每周养成组合包",
-      "name": "每周养成组合包",
-      "price": 6800,
-      "extra_data": null,
-      "type": 0,
-      "status": 1,
-      "appstore_id": null,
-      "platform": 1,
-      "channel_product_code": null,
-      "channel_product_id": null
-    },
-    {
-      "store_id": 27,
-      "app_id": 1,
-      "channel_id": 2,
-      "world_id": 2,
-      "product_id": "GP_gM_1_M_1",
-      "desc": "每月寻访组合包",
-      "name": "每月寻访组合包",
-      "price": 16800,
-      "extra_data": null,
-      "type": 0,
-      "status": 1,
-      "appstore_id": null,
-      "platform": 1,
-      "channel_product_code": null,
-      "channel_product_id": null
-    },
-    {
-      "store_id": 28,
-      "app_id": 1,
-      "channel_id": 2,
-      "world_id": 2,
+      "channel_id": 1,
+      "world_id": 1,
       "product_id": "GP_mCard_1",
       "desc": "月卡",
       "name": "月卡",
@@ -52,10 +18,10 @@
       "channel_product_id": null
     },
     {
-      "store_id": 29,
+      "store_id": 53,
       "app_id": 1,
-      "channel_id": 2,
-      "world_id": 2,
+      "channel_id": 1,
+      "world_id": 1,
       "product_id": "GP_Once_1",
       "desc": "新人组合包",
       "name": "新人组合包",
@@ -69,78 +35,10 @@
       "channel_product_id": null
     },
     {
-      "store_id": 36,
+      "store_id": 59,
       "app_id": 1,
-      "channel_id": 2,
-      "world_id": 2,
-      "product_id": "GP_gW_2_W_1",
-      "desc": "每周养成组合包",
-      "name": "每周养成组合包",
-      "price": 6800,
-      "extra_data": null,
-      "type": 0,
-      "status": 1,
-      "appstore_id": null,
-      "platform": 1,
-      "channel_product_code": null,
-      "channel_product_id": null
-    },
-    {
-      "store_id": 37,
-      "app_id": 1,
-      "channel_id": 2,
-      "world_id": 2,
-      "product_id": "GP_gM_2_M_1",
-      "desc": "每月寻访组合包",
-      "name": "每月寻访组合包",
-      "price": 16800,
-      "extra_data": null,
-      "type": 0,
-      "status": 1,
-      "appstore_id": null,
-      "platform": 1,
-      "channel_product_code": null,
-      "channel_product_id": null
-    },
-    {
-      "store_id": 38,
-      "app_id": 1,
-      "channel_id": 2,
-      "world_id": 2,
-      "product_id": "GP_gM_3_M_1",
-      "desc": "每月寻访组合包",
-      "name": "每月寻访组合包",
-      "price": 16800,
-      "extra_data": null,
-      "type": 0,
-      "status": 1,
-      "appstore_id": null,
-      "platform": 1,
-      "channel_product_code": null,
-      "channel_product_id": null
-    },
-    {
-      "store_id": 39,
-      "app_id": 1,
-      "channel_id": 2,
-      "world_id": 2,
-      "product_id": "GP_gM_4_M_1",
-      "desc": "每月寻访组合包",
-      "name": "每月寻访组合包",
-      "price": 16800,
-      "extra_data": null,
-      "type": 0,
-      "status": 1,
-      "appstore_id": null,
-      "platform": 1,
-      "channel_product_code": null,
-      "channel_product_id": null
-    },
-    {
-      "store_id": 40,
-      "app_id": 1,
-      "channel_id": 2,
-      "world_id": 2,
+      "channel_id": 1,
+      "world_id": 1,
       "product_id": "GP_Once_2",
       "desc": "新人寻访组合包",
       "name": "新人寻访组合包",
@@ -154,10 +52,10 @@
       "channel_product_id": null
     },
     {
-      "store_id": 41,
+      "store_id": 60,
       "app_id": 1,
-      "channel_id": 2,
-      "world_id": 2,
+      "channel_id": 1,
+      "world_id": 1,
       "product_id": "GP_Once_3",
       "desc": "新人养成组合包",
       "name": "新人养成组合包",
@@ -171,10 +69,10 @@
       "channel_product_id": null
     },
     {
-      "store_id": 42,
+      "store_id": 61,
       "app_id": 1,
-      "channel_id": 2,
-      "world_id": 2,
+      "channel_id": 1,
+      "world_id": 1,
       "product_id": "GP_Once_4",
       "desc": "新人家具组合包",
       "name": "新人家具组合包",
@@ -188,111 +86,9 @@
       "channel_product_id": null
     },
     {
-      "store_id": 43,
+      "store_id": 703,
       "app_id": 1,
-      "channel_id": 2,
-      "world_id": 2,
-      "product_id": "GP_gW_3_W_1",
-      "desc": "每周养成组合包",
-      "name": "每周养成组合包",
-      "price": 6800,
-      "extra_data": null,
-      "type": 0,
-      "status": 1,
-      "appstore_id": null,
-      "platform": 1,
-      "channel_product_code": null,
-      "channel_product_id": null
-    },
-    {
-      "store_id": 44,
-      "app_id": 1,
-      "channel_id": 2,
-      "world_id": 2,
-      "product_id": "GP_gW_4_W_1",
-      "desc": "每周养成组合包",
-      "name": "每周养成组合包",
-      "price": 6800,
-      "extra_data": null,
-      "type": 0,
-      "status": 1,
-      "appstore_id": null,
-      "platform": 1,
-      "channel_product_code": null,
-      "channel_product_id": null
-    },
-    {
-      "store_id": 45,
-      "app_id": 1,
-      "channel_id": 2,
-      "world_id": 2,
-      "product_id": "GP_gW_5_W_1",
-      "desc": "每周养成组合包",
-      "name": "每周养成组合包",
-      "price": 6800,
-      "extra_data": null,
-      "type": 0,
-      "status": 1,
-      "appstore_id": null,
-      "platform": 1,
-      "channel_product_code": null,
-      "channel_product_id": null
-    },
-    {
-      "store_id": 46,
-      "app_id": 1,
-      "channel_id": 2,
-      "world_id": 2,
-      "product_id": "GP_gW_6_W_1",
-      "desc": "每周养成组合包",
-      "name": "每周养成组合包",
-      "price": 6800,
-      "extra_data": null,
-      "type": 0,
-      "status": 1,
-      "appstore_id": null,
-      "platform": 1,
-      "channel_product_code": null,
-      "channel_product_id": null
-    },
-    {
-      "store_id": 47,
-      "app_id": 1,
-      "channel_id": 2,
-      "world_id": 2,
-      "product_id": "GP_gW_7_W_1",
-      "desc": "每周养成组合包",
-      "name": "每周养成组合包",
-      "price": 6800,
-      "extra_data": null,
-      "type": 0,
-      "status": 1,
-      "appstore_id": null,
-      "platform": 1,
-      "channel_product_code": null,
-      "channel_product_id": null
-    },
-    {
-      "store_id": 48,
-      "app_id": 1,
-      "channel_id": 2,
-      "world_id": 2,
-      "product_id": "GP_gM_5_M_1",
-      "desc": "每月寻访组合包",
-      "name": "每月寻访组合包",
-      "price": 16800,
-      "extra_data": null,
-      "type": 0,
-      "status": 1,
-      "appstore_id": null,
-      "platform": 1,
-      "channel_product_code": null,
-      "channel_product_id": null
-    },
-    {
-      "store_id": 713,
-      "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_32",
       "desc": "ID信息更新礼包",
@@ -307,9 +103,9 @@
       "channel_product_id": "GP_Once_32"
     },
     {
-      "store_id": 944,
+      "store_id": 918,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "CS_1_r3",
       "desc": "开采源石",
@@ -324,9 +120,9 @@
       "channel_product_id": "CS_1_r3"
     },
     {
-      "store_id": 945,
+      "store_id": 919,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "CS_2_r3",
       "desc": "开采一组源石",
@@ -341,9 +137,9 @@
       "channel_product_id": "CS_2_r3"
     },
     {
-      "store_id": 946,
+      "store_id": 920,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "CS_3_r3",
       "desc": "开采一堆源石",
@@ -358,9 +154,9 @@
       "channel_product_id": "CS_3_r3"
     },
     {
-      "store_id": 947,
+      "store_id": 921,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "CS_4_r3",
       "desc": "开采一袋源石",
@@ -375,9 +171,9 @@
       "channel_product_id": "CS_4_r3"
     },
     {
-      "store_id": 948,
+      "store_id": 922,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "CS_5_r3",
       "desc": "开采一盒源石",
@@ -392,9 +188,9 @@
       "channel_product_id": "CS_5_r3"
     },
     {
-      "store_id": 949,
+      "store_id": 923,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "CS_6_r3",
       "desc": "开采一箱源石",
@@ -409,9 +205,9 @@
       "channel_product_id": "CS_6_r3"
     },
     {
-      "store_id": 1024,
+      "store_id": 1004,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_67",
       "desc": "ID信息更新礼包",
@@ -426,9 +222,9 @@
       "channel_product_id": "GP_Once_67"
     },
     {
-      "store_id": 1185,
+      "store_id": 1183,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_83",
       "desc": "黎明前奏组合包",
@@ -443,9 +239,9 @@
       "channel_product_id": "GP_Once_83"
     },
     {
-      "store_id": 1239,
+      "store_id": 1217,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_101",
       "desc": "",
@@ -460,9 +256,9 @@
       "channel_product_id": "GP_Once_101"
     },
     {
-      "store_id": 1252,
+      "store_id": 1240,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "CS_1_r4",
       "desc": "开采源石",
@@ -477,9 +273,9 @@
       "channel_product_id": "CS_1_r4"
     },
     {
-      "store_id": 1253,
+      "store_id": 1241,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "CS_2_r4",
       "desc": "开采一组源石",
@@ -494,9 +290,9 @@
       "channel_product_id": "CS_2_r4"
     },
     {
-      "store_id": 1254,
+      "store_id": 1242,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "CS_3_r4",
       "desc": "开采一堆源石",
@@ -511,9 +307,9 @@
       "channel_product_id": "CS_3_r4"
     },
     {
-      "store_id": 1255,
+      "store_id": 1243,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "CS_4_r4",
       "desc": "开采一袋源石",
@@ -528,9 +324,9 @@
       "channel_product_id": "CS_4_r4"
     },
     {
-      "store_id": 1256,
+      "store_id": 1244,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "CS_5_r4",
       "desc": "开采一盒源石",
@@ -545,9 +341,9 @@
       "channel_product_id": "CS_5_r4"
     },
     {
-      "store_id": 1257,
+      "store_id": 1245,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "CS_6_r4",
       "desc": "开采一箱源石",
@@ -562,9 +358,9 @@
       "channel_product_id": "CS_6_r4"
     },
     {
-      "store_id": 1278,
+      "store_id": 1276,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_103",
       "desc": "执裁者芯片礼包",
@@ -579,9 +375,9 @@
       "channel_product_id": "GP_Once_103"
     },
     {
-      "store_id": 1314,
+      "store_id": 1312,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_104",
       "desc": "",
@@ -596,9 +392,9 @@
       "channel_product_id": "GP_Once_104"
     },
     {
-      "store_id": 1364,
+      "store_id": 1348,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Condition_1",
       "desc": "",
@@ -613,9 +409,9 @@
       "channel_product_id": "GP_Condition_1"
     },
     {
-      "store_id": 1365,
+      "store_id": 1349,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Condition_2",
       "desc": "",
@@ -630,9 +426,9 @@
       "channel_product_id": "GP_Condition_2"
     },
     {
-      "store_id": 1366,
+      "store_id": 1350,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Condition_3",
       "desc": "",
@@ -647,9 +443,9 @@
       "channel_product_id": "GP_Condition_3"
     },
     {
-      "store_id": 1367,
+      "store_id": 1351,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_105",
       "desc": "新人进阶组合包",
@@ -664,9 +460,9 @@
       "channel_product_id": "GP_Once_105"
     },
     {
-      "store_id": 1368,
+      "store_id": 1352,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_106",
       "desc": "新人组合包",
@@ -681,9 +477,9 @@
       "channel_product_id": "GP_Once_106"
     },
     {
-      "store_id": 1369,
+      "store_id": 1353,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_107",
       "desc": "",
@@ -698,9 +494,9 @@
       "channel_product_id": "GP_Once_107"
     },
     {
-      "store_id": 1370,
+      "store_id": 1354,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_108",
       "desc": "",
@@ -715,9 +511,9 @@
       "channel_product_id": "GP_Once_108"
     },
     {
-      "store_id": 1371,
+      "store_id": 1355,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_109",
       "desc": "",
@@ -732,9 +528,9 @@
       "channel_product_id": "GP_Once_109"
     },
     {
-      "store_id": 2098,
+      "store_id": 2080,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_110",
       "desc": "",
@@ -749,9 +545,9 @@
       "channel_product_id": "GP_Once_110"
     },
     {
-      "store_id": 2099,
+      "store_id": 2081,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_111",
       "desc": "",
@@ -766,9 +562,9 @@
       "channel_product_id": "GP_Once_111"
     },
     {
-      "store_id": 2100,
+      "store_id": 2082,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_112",
       "desc": "",
@@ -783,9 +579,9 @@
       "channel_product_id": "GP_Once_112"
     },
     {
-      "store_id": 2101,
+      "store_id": 2083,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_113",
       "desc": "",
@@ -800,9 +596,9 @@
       "channel_product_id": "GP_Once_113"
     },
     {
-      "store_id": 2102,
+      "store_id": 2084,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_114",
       "desc": "2023夏日嘉年华高级特训意向礼包",
@@ -817,9 +613,9 @@
       "channel_product_id": "GP_Once_114"
     },
     {
-      "store_id": 2103,
+      "store_id": 2085,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_115",
       "desc": "2023夏日嘉年华特训意向礼包",
@@ -834,9 +630,9 @@
       "channel_product_id": "GP_Once_115"
     },
     {
-      "store_id": 2104,
+      "store_id": 2086,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_116",
       "desc": "",
@@ -851,9 +647,9 @@
       "channel_product_id": "GP_Once_116"
     },
     {
-      "store_id": 2105,
+      "store_id": 2087,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_117",
       "desc": "",
@@ -868,9 +664,9 @@
       "channel_product_id": "GP_Once_117"
     },
     {
-      "store_id": 2106,
+      "store_id": 2088,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_118",
       "desc": "",
@@ -885,9 +681,9 @@
       "channel_product_id": "GP_Once_118"
     },
     {
-      "store_id": 2117,
+      "store_id": 2107,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_57_M_3",
       "desc": "每月材料自选组合包",
@@ -902,9 +698,9 @@
       "channel_product_id": "GP_gM_57_M_3"
     },
     {
-      "store_id": 2118,
+      "store_id": 2108,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_58_M_3",
       "desc": "每月材料自选组合包",
@@ -919,9 +715,9 @@
       "channel_product_id": "GP_gM_58_M_3"
     },
     {
-      "store_id": 2119,
+      "store_id": 2109,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_59_M_3",
       "desc": "每月材料自选组合包",
@@ -936,9 +732,9 @@
       "channel_product_id": "GP_gM_59_M_3"
     },
     {
-      "store_id": 2120,
+      "store_id": 2110,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_60_M_3",
       "desc": "每月材料自选组合包",
@@ -953,9 +749,9 @@
       "channel_product_id": "GP_gM_60_M_3"
     },
     {
-      "store_id": 2121,
+      "store_id": 2111,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_61_M_3",
       "desc": "每月材料自选组合包",
@@ -970,9 +766,9 @@
       "channel_product_id": "GP_gM_61_M_3"
     },
     {
-      "store_id": 2152,
+      "store_id": 2122,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_119",
       "desc": "",
@@ -987,9 +783,9 @@
       "channel_product_id": "GP_Once_119"
     },
     {
-      "store_id": 2153,
+      "store_id": 2123,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_120",
       "desc": "",
@@ -1004,9 +800,9 @@
       "channel_product_id": "GP_Once_120"
     },
     {
-      "store_id": 2195,
+      "store_id": 2193,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_121",
       "desc": "",
@@ -1021,9 +817,9 @@
       "channel_product_id": "GP_Once_121"
     },
     {
-      "store_id": 2220,
+      "store_id": 2196,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_122",
       "desc": "",
@@ -1038,9 +834,9 @@
       "channel_product_id": "GP_Once_122"
     },
     {
-      "store_id": 2221,
+      "store_id": 2197,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_123",
       "desc": "",
@@ -1055,9 +851,9 @@
       "channel_product_id": "GP_Once_123"
     },
     {
-      "store_id": 2222,
+      "store_id": 2198,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_124",
       "desc": "",
@@ -1072,9 +868,9 @@
       "channel_product_id": "GP_Once_124"
     },
     {
-      "store_id": 2223,
+      "store_id": 2199,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_125",
       "desc": "",
@@ -1089,9 +885,9 @@
       "channel_product_id": "GP_Once_125"
     },
     {
-      "store_id": 2224,
+      "store_id": 2200,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_126",
       "desc": "",
@@ -1106,9 +902,9 @@
       "channel_product_id": "GP_Once_126"
     },
     {
-      "store_id": 2225,
+      "store_id": 2201,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_127",
       "desc": "",
@@ -1123,9 +919,9 @@
       "channel_product_id": "GP_Once_127"
     },
     {
-      "store_id": 2226,
+      "store_id": 2202,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_128",
       "desc": "",
@@ -1140,9 +936,9 @@
       "channel_product_id": "GP_Once_128"
     },
     {
-      "store_id": 2227,
+      "store_id": 2203,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_129",
       "desc": "",
@@ -1157,9 +953,9 @@
       "channel_product_id": "GP_Once_129"
     },
     {
-      "store_id": 2228,
+      "store_id": 2204,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_130",
       "desc": "",
@@ -1174,9 +970,9 @@
       "channel_product_id": "GP_Once_130"
     },
     {
-      "store_id": 2229,
+      "store_id": 2205,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_131",
       "desc": "",
@@ -1191,9 +987,9 @@
       "channel_product_id": "GP_Once_131"
     },
     {
-      "store_id": 2230,
+      "store_id": 2206,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_132",
       "desc": "",
@@ -1208,9 +1004,9 @@
       "channel_product_id": "GP_Once_132"
     },
     {
-      "store_id": 2231,
+      "store_id": 2207,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_134",
       "desc": "",
@@ -1225,9 +1021,9 @@
       "channel_product_id": "GP_Once_134"
     },
     {
-      "store_id": 2381,
+      "store_id": 2379,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_135",
       "desc": "",
@@ -1242,9 +1038,9 @@
       "channel_product_id": "GP_Once_135"
     },
     {
-      "store_id": 2394,
+      "store_id": 2382,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_62_M_3",
       "desc": "每月材料自选组合包",
@@ -1259,9 +1055,9 @@
       "channel_product_id": "GP_gM_62_M_3"
     },
     {
-      "store_id": 2395,
+      "store_id": 2383,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_63_M_3",
       "desc": "每月材料自选组合包",
@@ -1276,9 +1072,9 @@
       "channel_product_id": "GP_gM_63_M_3"
     },
     {
-      "store_id": 2396,
+      "store_id": 2384,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_64_M_3",
       "desc": "每月材料自选组合包",
@@ -1293,9 +1089,9 @@
       "channel_product_id": "GP_gM_64_M_3"
     },
     {
-      "store_id": 2397,
+      "store_id": 2385,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_65_M_3",
       "desc": "每月材料自选组合包",
@@ -1310,9 +1106,9 @@
       "channel_product_id": "GP_gM_65_M_3"
     },
     {
-      "store_id": 2398,
+      "store_id": 2386,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_66_M_3",
       "desc": "每月材料自选组合包",
@@ -1327,9 +1123,9 @@
       "channel_product_id": "GP_gM_66_M_3"
     },
     {
-      "store_id": 2399,
+      "store_id": 2387,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_67_M_3",
       "desc": "每月材料自选组合包",
@@ -1344,9 +1140,9 @@
       "channel_product_id": "GP_gM_67_M_3"
     },
     {
-      "store_id": 2412,
+      "store_id": 2400,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_62_M_2",
       "desc": "每月芯片自选组合包",
@@ -1361,9 +1157,9 @@
       "channel_product_id": "GP_gM_62_M_2"
     },
     {
-      "store_id": 2413,
+      "store_id": 2401,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_63_M_2",
       "desc": "每月芯片自选组合包",
@@ -1378,9 +1174,9 @@
       "channel_product_id": "GP_gM_63_M_2"
     },
     {
-      "store_id": 2414,
+      "store_id": 2402,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_64_M_2",
       "desc": "每月芯片自选组合包",
@@ -1395,9 +1191,9 @@
       "channel_product_id": "GP_gM_64_M_2"
     },
     {
-      "store_id": 2415,
+      "store_id": 2403,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_65_M_2",
       "desc": "每月芯片自选组合包",
@@ -1412,9 +1208,9 @@
       "channel_product_id": "GP_gM_65_M_2"
     },
     {
-      "store_id": 2416,
+      "store_id": 2404,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_66_M_2",
       "desc": "每月芯片自选组合包",
@@ -1429,9 +1225,9 @@
       "channel_product_id": "GP_gM_66_M_2"
     },
     {
-      "store_id": 2417,
+      "store_id": 2405,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_67_M_2",
       "desc": "每月芯片自选组合包",
@@ -1446,9 +1242,9 @@
       "channel_product_id": "GP_gM_67_M_2"
     },
     {
-      "store_id": 2430,
+      "store_id": 2418,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_62_M_1",
       "desc": "每月寻访组合包",
@@ -1463,9 +1259,9 @@
       "channel_product_id": "GP_gM_62_M_1"
     },
     {
-      "store_id": 2431,
+      "store_id": 2419,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_63_M_1",
       "desc": "每月寻访组合包",
@@ -1480,9 +1276,9 @@
       "channel_product_id": "GP_gM_63_M_1"
     },
     {
-      "store_id": 2432,
+      "store_id": 2420,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_64_M_1",
       "desc": "每月寻访组合包",
@@ -1497,9 +1293,9 @@
       "channel_product_id": "GP_gM_64_M_1"
     },
     {
-      "store_id": 2433,
+      "store_id": 2421,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_65_M_1",
       "desc": "每月寻访组合包",
@@ -1514,9 +1310,9 @@
       "channel_product_id": "GP_gM_65_M_1"
     },
     {
-      "store_id": 2434,
+      "store_id": 2422,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_66_M_1",
       "desc": "每月寻访组合包",
@@ -1531,9 +1327,9 @@
       "channel_product_id": "GP_gM_66_M_1"
     },
     {
-      "store_id": 2435,
+      "store_id": 2423,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_67_M_1",
       "desc": "每月寻访组合包",
@@ -1548,9 +1344,9 @@
       "channel_product_id": "GP_gM_67_M_1"
     },
     {
-      "store_id": 2488,
+      "store_id": 2436,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_254_W_1",
       "desc": "每周养成组合包",
@@ -1565,9 +1361,9 @@
       "channel_product_id": "GP_gW_254_W_1"
     },
     {
-      "store_id": 2489,
+      "store_id": 2437,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_255_W_1",
       "desc": "每周养成组合包",
@@ -1582,9 +1378,9 @@
       "channel_product_id": "GP_gW_255_W_1"
     },
     {
-      "store_id": 2490,
+      "store_id": 2438,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_256_W_1",
       "desc": "每周养成组合包",
@@ -1599,9 +1395,9 @@
       "channel_product_id": "GP_gW_256_W_1"
     },
     {
-      "store_id": 2491,
+      "store_id": 2439,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_257_W_1",
       "desc": "每周养成组合包",
@@ -1616,9 +1412,9 @@
       "channel_product_id": "GP_gW_257_W_1"
     },
     {
-      "store_id": 2492,
+      "store_id": 2440,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_258_W_1",
       "desc": "每周养成组合包",
@@ -1633,9 +1429,9 @@
       "channel_product_id": "GP_gW_258_W_1"
     },
     {
-      "store_id": 2493,
+      "store_id": 2441,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_259_W_1",
       "desc": "每周养成组合包",
@@ -1650,9 +1446,9 @@
       "channel_product_id": "GP_gW_259_W_1"
     },
     {
-      "store_id": 2494,
+      "store_id": 2442,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_260_W_1",
       "desc": "每周养成组合包",
@@ -1667,9 +1463,9 @@
       "channel_product_id": "GP_gW_260_W_1"
     },
     {
-      "store_id": 2495,
+      "store_id": 2443,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_261_W_1",
       "desc": "每周养成组合包",
@@ -1684,9 +1480,9 @@
       "channel_product_id": "GP_gW_261_W_1"
     },
     {
-      "store_id": 2496,
+      "store_id": 2444,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_262_W_1",
       "desc": "每周养成组合包",
@@ -1701,9 +1497,9 @@
       "channel_product_id": "GP_gW_262_W_1"
     },
     {
-      "store_id": 2497,
+      "store_id": 2445,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_263_W_1",
       "desc": "每周养成组合包",
@@ -1718,9 +1514,9 @@
       "channel_product_id": "GP_gW_263_W_1"
     },
     {
-      "store_id": 2498,
+      "store_id": 2446,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_264_W_1",
       "desc": "每周养成组合包",
@@ -1735,9 +1531,9 @@
       "channel_product_id": "GP_gW_264_W_1"
     },
     {
-      "store_id": 2499,
+      "store_id": 2447,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_265_W_1",
       "desc": "每周养成组合包",
@@ -1752,9 +1548,9 @@
       "channel_product_id": "GP_gW_265_W_1"
     },
     {
-      "store_id": 2500,
+      "store_id": 2448,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_266_W_1",
       "desc": "每周养成组合包",
@@ -1769,9 +1565,9 @@
       "channel_product_id": "GP_gW_266_W_1"
     },
     {
-      "store_id": 2501,
+      "store_id": 2449,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_267_W_1",
       "desc": "每周养成组合包",
@@ -1786,9 +1582,9 @@
       "channel_product_id": "GP_gW_267_W_1"
     },
     {
-      "store_id": 2502,
+      "store_id": 2450,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_268_W_1",
       "desc": "每周养成组合包",
@@ -1803,9 +1599,9 @@
       "channel_product_id": "GP_gW_268_W_1"
     },
     {
-      "store_id": 2503,
+      "store_id": 2451,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_269_W_1",
       "desc": "每周养成组合包",
@@ -1820,9 +1616,9 @@
       "channel_product_id": "GP_gW_269_W_1"
     },
     {
-      "store_id": 2504,
+      "store_id": 2452,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_270_W_1",
       "desc": "每周养成组合包",
@@ -1837,9 +1633,9 @@
       "channel_product_id": "GP_gW_270_W_1"
     },
     {
-      "store_id": 2505,
+      "store_id": 2453,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_271_W_1",
       "desc": "每周养成组合包",
@@ -1854,9 +1650,9 @@
       "channel_product_id": "GP_gW_271_W_1"
     },
     {
-      "store_id": 2506,
+      "store_id": 2454,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_272_W_1",
       "desc": "每周养成组合包",
@@ -1871,9 +1667,9 @@
       "channel_product_id": "GP_gW_272_W_1"
     },
     {
-      "store_id": 2507,
+      "store_id": 2455,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_273_W_1",
       "desc": "每周养成组合包",
@@ -1888,9 +1684,9 @@
       "channel_product_id": "GP_gW_273_W_1"
     },
     {
-      "store_id": 2508,
+      "store_id": 2456,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_274_W_1",
       "desc": "每周养成组合包",
@@ -1905,9 +1701,9 @@
       "channel_product_id": "GP_gW_274_W_1"
     },
     {
-      "store_id": 2509,
+      "store_id": 2457,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_275_W_1",
       "desc": "每周养成组合包",
@@ -1922,9 +1718,9 @@
       "channel_product_id": "GP_gW_275_W_1"
     },
     {
-      "store_id": 2510,
+      "store_id": 2458,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_276_W_1",
       "desc": "每周养成组合包",
@@ -1939,9 +1735,9 @@
       "channel_product_id": "GP_gW_276_W_1"
     },
     {
-      "store_id": 2511,
+      "store_id": 2459,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_277_W_1",
       "desc": "每周养成组合包",
@@ -1956,9 +1752,9 @@
       "channel_product_id": "GP_gW_277_W_1"
     },
     {
-      "store_id": 2512,
+      "store_id": 2460,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_278_W_1",
       "desc": "每周养成组合包",
@@ -1973,9 +1769,9 @@
       "channel_product_id": "GP_gW_278_W_1"
     },
     {
-      "store_id": 2513,
+      "store_id": 2461,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_279_W_1",
       "desc": "每周养成组合包",
@@ -1990,9 +1786,9 @@
       "channel_product_id": "GP_gW_279_W_1"
     },
     {
-      "store_id": 2526,
+      "store_id": 2514,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_136",
       "desc": "新年寻访组合包·中坚",
@@ -2007,9 +1803,9 @@
       "channel_product_id": "GP_Once_136"
     },
     {
-      "store_id": 2527,
+      "store_id": 2515,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_137",
       "desc": "2024罗德岛新年组合包",
@@ -2024,9 +1820,9 @@
       "channel_product_id": "GP_Once_137"
     },
     {
-      "store_id": 2528,
+      "store_id": 2516,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_NpOne_5_NpOne_5_v1",
       "desc": "2024新年寻访组合包",
@@ -2041,9 +1837,9 @@
       "channel_product_id": "GP_NpOne_5_NpOne_5_v1"
     },
     {
-      "store_id": 2529,
+      "store_id": 2517,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_NpOne_5_NpOne_5_v2",
       "desc": "2024新年寻访组合包",
@@ -2058,9 +1854,9 @@
       "channel_product_id": "GP_NpOne_5_NpOne_5_v2"
     },
     {
-      "store_id": 2530,
+      "store_id": 2518,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_NpOne_5_NpOne_5_v3",
       "desc": "2024新年寻访组合包",
@@ -2075,9 +1871,9 @@
       "channel_product_id": "GP_NpOne_5_NpOne_5_v3"
     },
     {
-      "store_id": 2531,
+      "store_id": 2519,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_138",
       "desc": "",
@@ -2092,9 +1888,9 @@
       "channel_product_id": "GP_Once_138"
     },
     {
-      "store_id": 2553,
+      "store_id": 2542,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_139",
       "desc": "重装芯片礼包",
@@ -2109,9 +1905,9 @@
       "channel_product_id": "GP_Once_139"
     },
     {
-      "store_id": 2554,
+      "store_id": 2543,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_140",
       "desc": "近卫芯片礼包",
@@ -2126,9 +1922,9 @@
       "channel_product_id": "GP_Once_140"
     },
     {
-      "store_id": 2555,
+      "store_id": 2544,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_141",
       "desc": "城楼建设组合包",
@@ -2143,9 +1939,9 @@
       "channel_product_id": "GP_Once_141"
     },
     {
-      "store_id": 2556,
+      "store_id": 2545,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_142",
       "desc": "新春养成组合包",
@@ -2160,9 +1956,9 @@
       "channel_product_id": "GP_Once_142"
     },
     {
-      "store_id": 2557,
+      "store_id": 2546,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_143",
       "desc": "黍的零钱包",
@@ -2177,9 +1973,9 @@
       "channel_product_id": "GP_Once_143"
     },
     {
-      "store_id": 2558,
+      "store_id": 2547,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_144",
       "desc": "特训意向礼包",
@@ -2194,9 +1990,9 @@
       "channel_product_id": "GP_Once_144"
     },
     {
-      "store_id": 2559,
+      "store_id": 2548,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_145",
       "desc": "高级特训意向礼包",
@@ -2211,9 +2007,9 @@
       "channel_product_id": "GP_Once_145"
     },
     {
-      "store_id": 2560,
+      "store_id": 2549,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_146",
       "desc": "大荒城风物组合包",
@@ -2228,9 +2024,9 @@
       "channel_product_id": "GP_Once_146"
     },
     {
-      "store_id": 2561,
+      "store_id": 2550,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_147",
       "desc": "罗德岛迎春组合包",
@@ -2245,9 +2041,9 @@
       "channel_product_id": "GP_Once_147"
     },
     {
-      "store_id": 2562,
+      "store_id": 2551,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_148",
       "desc": "生息演算组合包",
@@ -2262,9 +2058,9 @@
       "channel_product_id": "GP_Once_148"
     },
     {
-      "store_id": 2563,
+      "store_id": 2552,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_149",
       "desc": "冬隐归路组合包",
@@ -2279,9 +2075,9 @@
       "channel_product_id": null
     },
     {
-      "store_id": 2587,
+      "store_id": 2575,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_150",
       "desc": "黑夜之盾支援礼包",
@@ -2296,9 +2092,9 @@
       "channel_product_id": "GP_Once_150"
     },
     {
-      "store_id": 2588,
+      "store_id": 2576,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_151",
       "desc": "特种芯片礼包",
@@ -2313,9 +2109,9 @@
       "channel_product_id": "GP_Once_151"
     },
     {
-      "store_id": 2589,
+      "store_id": 2577,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_152",
       "desc": "资深干员特训礼包",
@@ -2330,9 +2126,9 @@
       "channel_product_id": "GP_Once_152"
     },
     {
-      "store_id": 2590,
+      "store_id": 2578,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_153",
       "desc": "高级资深干员特训礼包",
@@ -2347,9 +2143,9 @@
       "channel_product_id": "GP_Once_153"
     },
     {
-      "store_id": 2591,
+      "store_id": 2579,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_154",
       "desc": "安全演习纪念礼包",
@@ -2364,9 +2160,9 @@
       "channel_product_id": "GP_Once_154"
     },
     {
-      "store_id": 2592,
+      "store_id": 2580,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_155",
       "desc": "战术单位战备包",
@@ -2381,9 +2177,9 @@
       "channel_product_id": "GP_Once_155"
     },
     {
-      "store_id": 2597,
+      "store_id": 2593,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_156",
       "desc": "流浪之矛支援礼包",
@@ -2398,9 +2194,9 @@
       "channel_product_id": "GP_Once_156"
     },
     {
-      "store_id": 2598,
+      "store_id": 2594,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_157",
       "desc": "狙击芯片礼包",
@@ -2415,9 +2211,9 @@
       "channel_product_id": "GP_Once_157"
     },
     {
-      "store_id": 2605,
+      "store_id": 2599,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_158",
       "desc": "危机支援数据包",
@@ -2432,9 +2228,9 @@
       "channel_product_id": "GP_Once_158"
     },
     {
-      "store_id": 2606,
+      "store_id": 2600,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_159",
       "desc": "危机支援资金箱",
@@ -2449,9 +2245,9 @@
       "channel_product_id": "GP_Once_159"
     },
     {
-      "store_id": 2607,
+      "store_id": 2601,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_160",
       "desc": "危机支援数据整合箱",
@@ -2466,9 +2262,9 @@
       "channel_product_id": "GP_Once_160"
     },
     {
-      "store_id": 2616,
+      "store_id": 2608,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_161",
       "desc": "特种芯片礼包",
@@ -2483,9 +2279,9 @@
       "channel_product_id": "GP_Once_161"
     },
     {
-      "store_id": 2617,
+      "store_id": 2609,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_163",
       "desc": "如死亦终寻访包",
@@ -2500,9 +2296,9 @@
       "channel_product_id": "GP_Once_163"
     },
     {
-      "store_id": 2618,
+      "store_id": 2610,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_164",
       "desc": "如死亦终寻访组合包",
@@ -2517,9 +2313,9 @@
       "channel_product_id": "GP_Once_164"
     },
     {
-      "store_id": 2619,
+      "store_id": 2611,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_162",
       "desc": "2024音律联觉纪念礼包",
@@ -2534,9 +2330,9 @@
       "channel_product_id": "GP_Once_162"
     },
     {
-      "store_id": 4076,
+      "store_id": 4036,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "CS_1_r5",
       "desc": "开采源石",
@@ -2551,9 +2347,9 @@
       "channel_product_id": "CS_1_r5"
     },
     {
-      "store_id": 4077,
+      "store_id": 4037,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "CS_2_r5",
       "desc": "开采一组源石",
@@ -2568,9 +2364,9 @@
       "channel_product_id": "CS_2_r5"
     },
     {
-      "store_id": 4078,
+      "store_id": 4038,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "CS_3_r5",
       "desc": "开采一堆源石",
@@ -2585,9 +2381,9 @@
       "channel_product_id": "CS_3_r5"
     },
     {
-      "store_id": 4079,
+      "store_id": 4039,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "CS_4_r5",
       "desc": "开采一袋源石",
@@ -2602,9 +2398,9 @@
       "channel_product_id": "CS_4_r5"
     },
     {
-      "store_id": 4080,
+      "store_id": 4040,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "CS_5_r5",
       "desc": "开采一盒源石",
@@ -2619,9 +2415,9 @@
       "channel_product_id": "CS_5_r5"
     },
     {
-      "store_id": 4081,
+      "store_id": 4041,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "CS_6_r5",
       "desc": "开采一箱源石",
@@ -2636,9 +2432,9 @@
       "channel_product_id": "CS_6_r5"
     },
     {
-      "store_id": 4082,
+      "store_id": 4042,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_178",
       "desc": "狙击芯片礼包",
@@ -2653,9 +2449,9 @@
       "channel_product_id": "GP_Once_178"
     },
     {
-      "store_id": 4083,
+      "store_id": 4043,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_179",
       "desc": "术师芯片礼包",
@@ -2670,9 +2466,9 @@
       "channel_product_id": "GP_Once_179"
     },
     {
-      "store_id": 4084,
+      "store_id": 4044,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_165",
       "desc": "鸭爵的零钱包",
@@ -2687,9 +2483,9 @@
       "channel_product_id": "GP_Once_165"
     },
     {
-      "store_id": 4085,
+      "store_id": 4045,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_166",
       "desc": "维什戴尔的手提箱",
@@ -2704,9 +2500,9 @@
       "channel_product_id": "GP_Once_166"
     },
     {
-      "store_id": 4086,
+      "store_id": 4046,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_167",
       "desc": "特训意向礼包",
@@ -2721,9 +2517,9 @@
       "channel_product_id": "GP_Once_167"
     },
     {
-      "store_id": 4087,
+      "store_id": 4047,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_168",
       "desc": "资深干员特训礼包",
@@ -2738,9 +2534,9 @@
       "channel_product_id": "GP_Once_168"
     },
     {
-      "store_id": 4088,
+      "store_id": 4048,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_169",
       "desc": "高级特训意向礼包",
@@ -2755,9 +2551,9 @@
       "channel_product_id": "GP_Once_169"
     },
     {
-      "store_id": 4089,
+      "store_id": 4049,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_170",
       "desc": "高级资深干员特训礼包",
@@ -2772,9 +2568,9 @@
       "channel_product_id": "GP_Once_170"
     },
     {
-      "store_id": 4090,
+      "store_id": 4050,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_171",
       "desc": "调用凭证组合包",
@@ -2789,9 +2585,9 @@
       "channel_product_id": "GP_Once_171"
     },
     {
-      "store_id": 4091,
+      "store_id": 4051,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_172",
       "desc": "罗德岛周年组合包",
@@ -2806,9 +2602,9 @@
       "channel_product_id": "GP_Once_172"
     },
     {
-      "store_id": 4092,
+      "store_id": 4052,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_173",
       "desc": "ID信息更新礼包",
@@ -2823,9 +2619,9 @@
       "channel_product_id": "GP_Once_173"
     },
     {
-      "store_id": 4093,
+      "store_id": 4053,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_175",
       "desc": "促融共竞数据包",
@@ -2840,9 +2636,9 @@
       "channel_product_id": "GP_Once_175"
     },
     {
-      "store_id": 4094,
+      "store_id": 4054,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_176",
       "desc": "促融共竞资金箱",
@@ -2857,9 +2653,9 @@
       "channel_product_id": "GP_Once_176"
     },
     {
-      "store_id": 4095,
+      "store_id": 4055,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_177",
       "desc": "促融共竞数据套组",
@@ -2874,9 +2670,9 @@
       "channel_product_id": "GP_Once_177"
     },
     {
-      "store_id": 4100,
+      "store_id": 4096,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_183",
       "desc": "",
@@ -2891,9 +2687,9 @@
       "channel_product_id": "GP_Once_183"
     },
     {
-      "store_id": 4101,
+      "store_id": 4097,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_184",
       "desc": "",
@@ -2908,9 +2704,9 @@
       "channel_product_id": "GP_Once_184"
     },
     {
-      "store_id": 4108,
+      "store_id": 4102,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_180",
       "desc": "",
@@ -2925,9 +2721,9 @@
       "channel_product_id": "GP_Once_180"
     },
     {
-      "store_id": 4109,
+      "store_id": 4103,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_181",
       "desc": "",
@@ -2942,9 +2738,9 @@
       "channel_product_id": "GP_Once_181"
     },
     {
-      "store_id": 4110,
+      "store_id": 4104,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_182",
       "desc": "",
@@ -2959,9 +2755,9 @@
       "channel_product_id": "GP_Once_182"
     },
     {
-      "store_id": 4125,
+      "store_id": 4111,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_68_M_1",
       "desc": "每月寻访组合包",
@@ -2976,9 +2772,9 @@
       "channel_product_id": "GP_gM_68_M_1"
     },
     {
-      "store_id": 4126,
+      "store_id": 4112,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_68_M_2",
       "desc": "每月芯片自选组合包",
@@ -2993,9 +2789,9 @@
       "channel_product_id": "GP_gM_68_M_2"
     },
     {
-      "store_id": 4127,
+      "store_id": 4113,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_68_M_3",
       "desc": "每月材料自选组合包",
@@ -3010,9 +2806,9 @@
       "channel_product_id": "GP_gM_68_M_3"
     },
     {
-      "store_id": 4128,
+      "store_id": 4114,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_280_W_1",
       "desc": "每周养成组合包",
@@ -3027,9 +2823,9 @@
       "channel_product_id": "GP_gW_280_W_1"
     },
     {
-      "store_id": 4129,
+      "store_id": 4115,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_281_W_1",
       "desc": "每周养成组合包",
@@ -3044,9 +2840,9 @@
       "channel_product_id": "GP_gW_281_W_1"
     },
     {
-      "store_id": 4130,
+      "store_id": 4116,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_282_W_1",
       "desc": "每周养成组合包",
@@ -3061,9 +2857,9 @@
       "channel_product_id": "GP_gW_282_W_1"
     },
     {
-      "store_id": 4131,
+      "store_id": 4117,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_283_W_1",
       "desc": "每周养成组合包",
@@ -3078,9 +2874,9 @@
       "channel_product_id": "GP_gW_283_W_1"
     },
     {
-      "store_id": 4142,
+      "store_id": 4132,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_185",
       "desc": "",
@@ -3095,9 +2891,9 @@
       "channel_product_id": "GP_Once_185"
     },
     {
-      "store_id": 4143,
+      "store_id": 4133,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_186",
       "desc": "",
@@ -3112,9 +2908,9 @@
       "channel_product_id": "GP_Once_186"
     },
     {
-      "store_id": 4144,
+      "store_id": 4134,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_187",
       "desc": "",
@@ -3129,9 +2925,9 @@
       "channel_product_id": "GP_Once_187"
     },
     {
-      "store_id": 4145,
+      "store_id": 4135,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_188",
       "desc": "",
@@ -3146,9 +2942,9 @@
       "channel_product_id": "GP_Once_188"
     },
     {
-      "store_id": 4146,
+      "store_id": 4136,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_189",
       "desc": "",
@@ -3163,9 +2959,9 @@
       "channel_product_id": "GP_Once_189"
     },
     {
-      "store_id": 4161,
+      "store_id": 4151,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_191",
       "desc": "",
@@ -3180,9 +2976,9 @@
       "channel_product_id": "GP_Once_191"
     },
     {
-      "store_id": 4162,
+      "store_id": 4152,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_192",
       "desc": "",
@@ -3197,9 +2993,9 @@
       "channel_product_id": "GP_Once_192"
     },
     {
-      "store_id": 4163,
+      "store_id": 4153,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_193",
       "desc": "",
@@ -3214,9 +3010,9 @@
       "channel_product_id": "GP_Once_193"
     },
     {
-      "store_id": 4164,
+      "store_id": 4154,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_194",
       "desc": "",
@@ -3231,9 +3027,9 @@
       "channel_product_id": "GP_Once_194"
     },
     {
-      "store_id": 4165,
+      "store_id": 4155,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_190",
       "desc": "",
@@ -3248,9 +3044,9 @@
       "channel_product_id": "GP_Once_190"
     },
     {
-      "store_id": 4168,
+      "store_id": 4166,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_284_W_1",
       "desc": "",
@@ -3265,9 +3061,9 @@
       "channel_product_id": "GP_gW_284_W_1"
     },
     {
-      "store_id": 4193,
+      "store_id": 4169,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_196",
       "desc": "",
@@ -3282,9 +3078,9 @@
       "channel_product_id": "GP_Once_196"
     },
     {
-      "store_id": 4194,
+      "store_id": 4170,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_197",
       "desc": "",
@@ -3299,9 +3095,9 @@
       "channel_product_id": "GP_Once_197"
     },
     {
-      "store_id": 4195,
+      "store_id": 4171,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_198",
       "desc": "",
@@ -3316,9 +3112,9 @@
       "channel_product_id": "GP_Once_198"
     },
     {
-      "store_id": 4196,
+      "store_id": 4172,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_199",
       "desc": "",
@@ -3333,9 +3129,9 @@
       "channel_product_id": "GP_Once_199"
     },
     {
-      "store_id": 4197,
+      "store_id": 4173,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_200",
       "desc": "",
@@ -3350,9 +3146,9 @@
       "channel_product_id": "GP_Once_200"
     },
     {
-      "store_id": 4198,
+      "store_id": 4174,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_201",
       "desc": "",
@@ -3367,9 +3163,9 @@
       "channel_product_id": "GP_Once_201"
     },
     {
-      "store_id": 4199,
+      "store_id": 4175,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_202",
       "desc": "",
@@ -3384,9 +3180,9 @@
       "channel_product_id": "GP_Once_202"
     },
     {
-      "store_id": 4200,
+      "store_id": 4176,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_203",
       "desc": "",
@@ -3401,9 +3197,9 @@
       "channel_product_id": "GP_Once_203"
     },
     {
-      "store_id": 4201,
+      "store_id": 4177,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_204",
       "desc": "",
@@ -3418,9 +3214,9 @@
       "channel_product_id": "GP_Once_204"
     },
     {
-      "store_id": 4202,
+      "store_id": 4178,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_205",
       "desc": "",
@@ -3435,9 +3231,9 @@
       "channel_product_id": "GP_Once_205"
     },
     {
-      "store_id": 4203,
+      "store_id": 4179,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_206",
       "desc": "",
@@ -3452,9 +3248,9 @@
       "channel_product_id": "GP_Once_206"
     },
     {
-      "store_id": 4204,
+      "store_id": 4180,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_207",
       "desc": "",
@@ -3469,9 +3265,9 @@
       "channel_product_id": "GP_Once_207"
     },
     {
-      "store_id": 4241,
+      "store_id": 4205,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_285_W_1",
       "desc": "每周养成组合包",
@@ -3486,9 +3282,9 @@
       "channel_product_id": "GP_gW_285_W_1"
     },
     {
-      "store_id": 4242,
+      "store_id": 4206,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_286_W_1",
       "desc": "每周养成组合包",
@@ -3503,9 +3299,9 @@
       "channel_product_id": "GP_gW_286_W_1"
     },
     {
-      "store_id": 4243,
+      "store_id": 4207,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_287_W_1",
       "desc": "每周养成组合包",
@@ -3520,9 +3316,9 @@
       "channel_product_id": "GP_gW_287_W_1"
     },
     {
-      "store_id": 4244,
+      "store_id": 4208,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_288_W_1",
       "desc": "每周养成组合包",
@@ -3537,9 +3333,9 @@
       "channel_product_id": "GP_gW_288_W_1"
     },
     {
-      "store_id": 4245,
+      "store_id": 4209,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_289_W_1",
       "desc": "每周养成组合包",
@@ -3554,9 +3350,9 @@
       "channel_product_id": "GP_gW_289_W_1"
     },
     {
-      "store_id": 4246,
+      "store_id": 4210,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_290_W_1",
       "desc": "每周养成组合包",
@@ -3571,9 +3367,9 @@
       "channel_product_id": "GP_gW_290_W_1"
     },
     {
-      "store_id": 4247,
+      "store_id": 4211,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_291_W_1",
       "desc": "每周养成组合包",
@@ -3588,9 +3384,9 @@
       "channel_product_id": "GP_gW_291_W_1"
     },
     {
-      "store_id": 4248,
+      "store_id": 4212,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_292_W_1",
       "desc": "每周养成组合包",
@@ -3605,9 +3401,9 @@
       "channel_product_id": "GP_gW_292_W_1"
     },
     {
-      "store_id": 4249,
+      "store_id": 4213,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_69_M_1",
       "desc": "每月寻访组合包",
@@ -3622,9 +3418,9 @@
       "channel_product_id": "GP_gM_69_M_1"
     },
     {
-      "store_id": 4250,
+      "store_id": 4214,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_70_M_1",
       "desc": "每月寻访组合包",
@@ -3639,9 +3435,9 @@
       "channel_product_id": "GP_gM_70_M_1"
     },
     {
-      "store_id": 4251,
+      "store_id": 4215,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_69_M_2",
       "desc": "每月芯片自选组合包",
@@ -3656,9 +3452,9 @@
       "channel_product_id": "GP_gM_69_M_2"
     },
     {
-      "store_id": 4252,
+      "store_id": 4216,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_70_M_2",
       "desc": "每月芯片自选组合包",
@@ -3673,9 +3469,9 @@
       "channel_product_id": "GP_gM_70_M_2"
     },
     {
-      "store_id": 4253,
+      "store_id": 4217,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_69_M_4",
       "desc": "每月材料自选组合包",
@@ -3690,9 +3486,9 @@
       "channel_product_id": "GP_gM_69_M_4"
     },
     {
-      "store_id": 4254,
+      "store_id": 4218,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_70_M_4",
       "desc": "每月材料自选组合包",
@@ -3707,9 +3503,9 @@
       "channel_product_id": "GP_gM_70_M_4"
     },
     {
-      "store_id": 4255,
+      "store_id": 4219,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_69_M_6",
       "desc": "每月作战记录组合包",
@@ -3724,9 +3520,9 @@
       "channel_product_id": "GP_gM_69_M_6"
     },
     {
-      "store_id": 4256,
+      "store_id": 4220,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_70_M_6",
       "desc": "每月作战记录组合包",
@@ -3741,9 +3537,9 @@
       "channel_product_id": "GP_gM_70_M_6"
     },
     {
-      "store_id": 4257,
+      "store_id": 4221,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_69_M_5",
       "desc": "每月资金组合包",
@@ -3758,9 +3554,9 @@
       "channel_product_id": "GP_gM_69_M_5"
     },
     {
-      "store_id": 4258,
+      "store_id": 4222,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_70_M_5",
       "desc": "每月资金组合包",
@@ -3775,9 +3571,9 @@
       "channel_product_id": "GP_gM_70_M_5"
     },
     {
-      "store_id": 4277,
+      "store_id": 4259,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_208",
       "desc": "",
@@ -3792,9 +3588,9 @@
       "channel_product_id": "GP_Once_208"
     },
     {
-      "store_id": 4278,
+      "store_id": 4260,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_214",
       "desc": "",
@@ -3809,9 +3605,9 @@
       "channel_product_id": "GP_Once_214"
     },
     {
-      "store_id": 4279,
+      "store_id": 4261,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_220",
       "desc": "",
@@ -3826,9 +3622,9 @@
       "channel_product_id": "GP_Once_220"
     },
     {
-      "store_id": 4280,
+      "store_id": 4262,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_218",
       "desc": "",
@@ -3843,9 +3639,9 @@
       "channel_product_id": "GP_Once_218"
     },
     {
-      "store_id": 4281,
+      "store_id": 4263,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_219",
       "desc": "",
@@ -3860,9 +3656,9 @@
       "channel_product_id": "GP_Once_219"
     },
     {
-      "store_id": 4282,
+      "store_id": 4264,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_217",
       "desc": "",
@@ -3877,9 +3673,9 @@
       "channel_product_id": "GP_Once_217"
     },
     {
-      "store_id": 4283,
+      "store_id": 4265,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_215",
       "desc": "",
@@ -3894,9 +3690,9 @@
       "channel_product_id": "GP_Once_215"
     },
     {
-      "store_id": 4284,
+      "store_id": 4266,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_216",
       "desc": "",
@@ -3911,9 +3707,9 @@
       "channel_product_id": "GP_Once_216"
     },
     {
-      "store_id": 4285,
+      "store_id": 4267,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_212",
       "desc": "",
@@ -3928,9 +3724,9 @@
       "channel_product_id": "GP_Once_212"
     },
     {
-      "store_id": 4314,
+      "store_id": 4286,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_213",
       "desc": "",
@@ -3945,9 +3741,9 @@
       "channel_product_id": "GP_Once_213"
     },
     {
-      "store_id": 4315,
+      "store_id": 4287,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_210",
       "desc": "",
@@ -3962,9 +3758,9 @@
       "channel_product_id": "GP_Once_210"
     },
     {
-      "store_id": 4316,
+      "store_id": 4288,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_211",
       "desc": "",
@@ -3979,9 +3775,9 @@
       "channel_product_id": "GP_Once_211"
     },
     {
-      "store_id": 4317,
+      "store_id": 4289,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_221",
       "desc": "",
@@ -3996,9 +3792,9 @@
       "channel_product_id": "GP_Once_221"
     },
     {
-      "store_id": 4318,
+      "store_id": 4290,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_71_M_1",
       "desc": "每月寻访组合包",
@@ -4013,9 +3809,9 @@
       "channel_product_id": "GP_gM_71_M_1"
     },
     {
-      "store_id": 4319,
+      "store_id": 4291,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_71_M_2",
       "desc": "每月芯片自选组合包",
@@ -4030,9 +3826,9 @@
       "channel_product_id": "GP_gM_71_M_2"
     },
     {
-      "store_id": 4320,
+      "store_id": 4292,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_71_M_4",
       "desc": "",
@@ -4047,9 +3843,9 @@
       "channel_product_id": "GP_gM_71_M_4"
     },
     {
-      "store_id": 4321,
+      "store_id": 4293,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_71_M_5",
       "desc": "",
@@ -4064,9 +3860,9 @@
       "channel_product_id": "GP_gM_71_M_5"
     },
     {
-      "store_id": 4322,
+      "store_id": 4294,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_71_M_6",
       "desc": "",
@@ -4081,9 +3877,9 @@
       "channel_product_id": "GP_gM_71_M_6"
     },
     {
-      "store_id": 4323,
+      "store_id": 4295,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_293_W_1",
       "desc": "每周养成组合包",
@@ -4098,9 +3894,9 @@
       "channel_product_id": "GP_gW_293_W_1"
     },
     {
-      "store_id": 4324,
+      "store_id": 4296,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_294_W_1",
       "desc": "每周养成组合包",
@@ -4115,9 +3911,9 @@
       "channel_product_id": "GP_gW_294_W_1"
     },
     {
-      "store_id": 4325,
+      "store_id": 4297,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_295_W_1",
       "desc": "每周养成组合包",
@@ -4132,9 +3928,9 @@
       "channel_product_id": "GP_gW_295_W_1"
     },
     {
-      "store_id": 4326,
+      "store_id": 4298,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_296_W_1",
       "desc": "每周养成组合包",
@@ -4149,9 +3945,9 @@
       "channel_product_id": "GP_gW_296_W_1"
     },
     {
-      "store_id": 4327,
+      "store_id": 4299,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_297_W_1",
       "desc": "每周养成组合包",
@@ -4166,9 +3962,9 @@
       "channel_product_id": "GP_gW_297_W_1"
     },
     {
-      "store_id": 4334,
+      "store_id": 4328,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_223",
       "desc": "",
@@ -4183,9 +3979,9 @@
       "channel_product_id": "GP_Once_223"
     },
     {
-      "store_id": 4335,
+      "store_id": 4329,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_224",
       "desc": "",
@@ -4200,9 +3996,9 @@
       "channel_product_id": "GP_Once_224"
     },
     {
-      "store_id": 4336,
+      "store_id": 4330,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_225",
       "desc": "",
@@ -4217,9 +4013,9 @@
       "channel_product_id": "GP_Once_225"
     },
     {
-      "store_id": 4410,
+      "store_id": 4338,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_226",
       "desc": "",
@@ -4234,9 +4030,9 @@
       "channel_product_id": "GP_Once_226"
     },
     {
-      "store_id": 4411,
+      "store_id": 4339,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_227",
       "desc": "",
@@ -4251,9 +4047,9 @@
       "channel_product_id": "GP_Once_227"
     },
     {
-      "store_id": 4412,
+      "store_id": 4340,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_228",
       "desc": "",
@@ -4268,9 +4064,9 @@
       "channel_product_id": "GP_Once_228"
     },
     {
-      "store_id": 4413,
+      "store_id": 4341,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_229",
       "desc": "",
@@ -4285,9 +4081,9 @@
       "channel_product_id": "GP_Once_229"
     },
     {
-      "store_id": 4414,
+      "store_id": 4342,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_230",
       "desc": "",
@@ -4302,9 +4098,9 @@
       "channel_product_id": "GP_Once_230"
     },
     {
-      "store_id": 4415,
+      "store_id": 4343,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_231",
       "desc": "",
@@ -4319,9 +4115,9 @@
       "channel_product_id": "GP_Once_231"
     },
     {
-      "store_id": 4416,
+      "store_id": 4344,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_232",
       "desc": "",
@@ -4336,9 +4132,9 @@
       "channel_product_id": "GP_Once_232"
     },
     {
-      "store_id": 4417,
+      "store_id": 4345,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_233",
       "desc": "",
@@ -4353,9 +4149,9 @@
       "channel_product_id": "GP_Once_233"
     },
     {
-      "store_id": 4418,
+      "store_id": 4346,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_234",
       "desc": "",
@@ -4370,9 +4166,9 @@
       "channel_product_id": "GP_Once_234"
     },
     {
-      "store_id": 4419,
+      "store_id": 4347,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_235",
       "desc": "",
@@ -4387,9 +4183,9 @@
       "channel_product_id": "GP_Once_235"
     },
     {
-      "store_id": 4420,
+      "store_id": 4348,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_236",
       "desc": "",
@@ -4404,9 +4200,9 @@
       "channel_product_id": "GP_Once_236"
     },
     {
-      "store_id": 4421,
+      "store_id": 4349,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_237",
       "desc": "",
@@ -4421,9 +4217,9 @@
       "channel_product_id": "GP_Once_237"
     },
     {
-      "store_id": 4422,
+      "store_id": 4350,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_238",
       "desc": "",
@@ -4438,9 +4234,9 @@
       "channel_product_id": "GP_Once_238"
     },
     {
-      "store_id": 4423,
+      "store_id": 4351,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_239",
       "desc": "",
@@ -4455,9 +4251,9 @@
       "channel_product_id": "GP_Once_239"
     },
     {
-      "store_id": 4424,
+      "store_id": 4352,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_240",
       "desc": "",
@@ -4472,9 +4268,9 @@
       "channel_product_id": "GP_Once_240"
     },
     {
-      "store_id": 4425,
+      "store_id": 4353,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_242",
       "desc": "",
@@ -4489,9 +4285,9 @@
       "channel_product_id": "GP_Once_242"
     },
     {
-      "store_id": 4426,
+      "store_id": 4354,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_243",
       "desc": "",
@@ -4506,9 +4302,9 @@
       "channel_product_id": "GP_Once_243"
     },
     {
-      "store_id": 4427,
+      "store_id": 4355,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Condition_4",
       "desc": "",
@@ -4523,9 +4319,9 @@
       "channel_product_id": "GP_Condition_4"
     },
     {
-      "store_id": 4428,
+      "store_id": 4356,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_72_M_1",
       "desc": "每月寻访组合包",
@@ -4540,9 +4336,9 @@
       "channel_product_id": "GP_gM_72_M_1"
     },
     {
-      "store_id": 4429,
+      "store_id": 4357,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_73_M_1",
       "desc": "每月寻访组合包",
@@ -4557,9 +4353,9 @@
       "channel_product_id": "GP_gM_73_M_1"
     },
     {
-      "store_id": 4430,
+      "store_id": 4358,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_72_M_2",
       "desc": "每月芯片自选组合包",
@@ -4574,9 +4370,9 @@
       "channel_product_id": "GP_gM_72_M_2"
     },
     {
-      "store_id": 4431,
+      "store_id": 4359,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_73_M_2",
       "desc": "每月芯片自选组合包",
@@ -4591,9 +4387,9 @@
       "channel_product_id": "GP_gM_73_M_2"
     },
     {
-      "store_id": 4432,
+      "store_id": 4360,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_72_M_4",
       "desc": "",
@@ -4608,9 +4404,9 @@
       "channel_product_id": "GP_gM_72_M_4"
     },
     {
-      "store_id": 4433,
+      "store_id": 4361,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_73_M_4",
       "desc": "",
@@ -4625,9 +4421,9 @@
       "channel_product_id": "GP_gM_73_M_4"
     },
     {
-      "store_id": 4434,
+      "store_id": 4362,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_72_M_5",
       "desc": "",
@@ -4642,9 +4438,9 @@
       "channel_product_id": "GP_gM_72_M_5"
     },
     {
-      "store_id": 4435,
+      "store_id": 4363,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_73_M_5",
       "desc": "",
@@ -4659,9 +4455,9 @@
       "channel_product_id": "GP_gM_73_M_5"
     },
     {
-      "store_id": 4436,
+      "store_id": 4364,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_72_M_6",
       "desc": "",
@@ -4676,9 +4472,9 @@
       "channel_product_id": "GP_gM_72_M_6"
     },
     {
-      "store_id": 4437,
+      "store_id": 4365,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_73_M_6",
       "desc": "",
@@ -4693,9 +4489,9 @@
       "channel_product_id": "GP_gM_73_M_6"
     },
     {
-      "store_id": 4438,
+      "store_id": 4366,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_298_W_1",
       "desc": "每周养成组合包",
@@ -4710,9 +4506,9 @@
       "channel_product_id": "GP_gW_298_W_1"
     },
     {
-      "store_id": 4439,
+      "store_id": 4367,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_299_W_1",
       "desc": "每周养成组合包",
@@ -4727,9 +4523,9 @@
       "channel_product_id": "GP_gW_299_W_1"
     },
     {
-      "store_id": 4440,
+      "store_id": 4368,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_300_W_1",
       "desc": "每周养成组合包",
@@ -4744,9 +4540,9 @@
       "channel_product_id": "GP_gW_300_W_1"
     },
     {
-      "store_id": 4441,
+      "store_id": 4369,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_301_W_1",
       "desc": "每周养成组合包",
@@ -4761,9 +4557,9 @@
       "channel_product_id": "GP_gW_301_W_1"
     },
     {
-      "store_id": 4442,
+      "store_id": 4370,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_302_W_1",
       "desc": "每周养成组合包",
@@ -4778,9 +4574,9 @@
       "channel_product_id": "GP_gW_302_W_1"
     },
     {
-      "store_id": 4443,
+      "store_id": 4371,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_303_W_1",
       "desc": "每周养成组合包",
@@ -4795,9 +4591,9 @@
       "channel_product_id": "GP_gW_303_W_1"
     },
     {
-      "store_id": 4444,
+      "store_id": 4372,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_304_W_1",
       "desc": "每周养成组合包",
@@ -4812,9 +4608,9 @@
       "channel_product_id": "GP_gW_304_W_1"
     },
     {
-      "store_id": 4445,
+      "store_id": 4373,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_305_W_1",
       "desc": "每周养成组合包",
@@ -4829,9 +4625,9 @@
       "channel_product_id": "GP_gW_305_W_1"
     },
     {
-      "store_id": 4472,
+      "store_id": 4446,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_244",
       "desc": "",
@@ -4846,9 +4642,9 @@
       "channel_product_id": "GP_Once_244"
     },
     {
-      "store_id": 4473,
+      "store_id": 4447,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_245",
       "desc": "",
@@ -4863,9 +4659,9 @@
       "channel_product_id": "GP_Once_245"
     },
     {
-      "store_id": 4474,
+      "store_id": 4448,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_246",
       "desc": "",
@@ -4880,9 +4676,9 @@
       "channel_product_id": "GP_Once_246"
     },
     {
-      "store_id": 4475,
+      "store_id": 4449,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_74_M_1",
       "desc": "每月寻访组合包",
@@ -4897,9 +4693,9 @@
       "channel_product_id": "GP_gM_74_M_1"
     },
     {
-      "store_id": 4476,
+      "store_id": 4450,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_74_M_2",
       "desc": "每月芯片自选组合包",
@@ -4914,9 +4710,9 @@
       "channel_product_id": "GP_gM_74_M_2"
     },
     {
-      "store_id": 4477,
+      "store_id": 4451,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_74_M_4",
       "desc": "每月材料自选组合包",
@@ -4931,9 +4727,9 @@
       "channel_product_id": "GP_gM_74_M_4"
     },
     {
-      "store_id": 4478,
+      "store_id": 4452,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_74_M_5",
       "desc": "每月资金组合包",
@@ -4948,9 +4744,9 @@
       "channel_product_id": "GP_gM_74_M_5"
     },
     {
-      "store_id": 4479,
+      "store_id": 4453,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_74_M_6",
       "desc": "每月作战记录组合包",
@@ -4965,9 +4761,9 @@
       "channel_product_id": "GP_gM_74_M_6"
     },
     {
-      "store_id": 4480,
+      "store_id": 4454,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_306_W_1",
       "desc": "每周养成组合包",
@@ -4982,9 +4778,9 @@
       "channel_product_id": "GP_gW_306_W_1"
     },
     {
-      "store_id": 4481,
+      "store_id": 4455,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_307_W_1",
       "desc": "每周养成组合包",
@@ -4999,9 +4795,9 @@
       "channel_product_id": "GP_gW_307_W_1"
     },
     {
-      "store_id": 4482,
+      "store_id": 4456,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_308_W_1",
       "desc": "每周养成组合包",
@@ -5016,9 +4812,9 @@
       "channel_product_id": "GP_gW_308_W_1"
     },
     {
-      "store_id": 4483,
+      "store_id": 4457,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_309_W_1",
       "desc": "每周养成组合包",
@@ -5033,9 +4829,9 @@
       "channel_product_id": "GP_gW_309_W_1"
     },
     {
-      "store_id": 4484,
+      "store_id": 4458,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_310_W_1",
       "desc": "每周养成组合包",
@@ -5050,9 +4846,9 @@
       "channel_product_id": "GP_gW_310_W_1"
     },
     {
-      "store_id": 4487,
+      "store_id": 4485,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_248",
       "desc": "",
@@ -5067,9 +4863,9 @@
       "channel_product_id": "GP_Once_248"
     },
     {
-      "store_id": 4490,
+      "store_id": 4488,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_249",
       "desc": "2025新年寻访组合包·中坚",
@@ -5084,9 +4880,9 @@
       "channel_product_id": "GP_Once_249"
     },
     {
-      "store_id": 4501,
+      "store_id": 4491,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_251",
       "desc": "2025新年组合包",
@@ -5101,9 +4897,9 @@
       "channel_product_id": "GP_Once_251"
     },
     {
-      "store_id": 4502,
+      "store_id": 4492,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_NpOne_6_NpOne_6_v1",
       "desc": "新年寻访组合包-α",
@@ -5118,9 +4914,9 @@
       "channel_product_id": "GP_NpOne_6_NpOne_6_v1"
     },
     {
-      "store_id": 4503,
+      "store_id": 4493,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_NpOne_6_NpOne_6_v2",
       "desc": "新年寻访组合包-β",
@@ -5135,9 +4931,9 @@
       "channel_product_id": "GP_NpOne_6_NpOne_6_v2"
     },
     {
-      "store_id": 4504,
+      "store_id": 4494,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_NpOne_6_NpOne_6_v3",
       "desc": "新年寻访组合包-γ",
@@ -5152,9 +4948,9 @@
       "channel_product_id": "GP_NpOne_6_NpOne_6_v3"
     },
     {
-      "store_id": 4505,
+      "store_id": 4495,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_252",
       "desc": "",
@@ -5169,9 +4965,9 @@
       "channel_product_id": "GP_Once_252"
     },
     {
-      "store_id": 4589,
+      "store_id": 4531,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_253",
       "desc": "",
@@ -5186,9 +4982,9 @@
       "channel_product_id": "GP_Once_253"
     },
     {
-      "store_id": 4590,
+      "store_id": 4532,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_254",
       "desc": "",
@@ -5203,9 +4999,9 @@
       "channel_product_id": "GP_Once_254"
     },
     {
-      "store_id": 4591,
+      "store_id": 4533,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_255",
       "desc": "",
@@ -5220,9 +5016,9 @@
       "channel_product_id": "GP_Once_255"
     },
     {
-      "store_id": 4592,
+      "store_id": 4534,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_256",
       "desc": "",
@@ -5237,9 +5033,9 @@
       "channel_product_id": "GP_Once_256"
     },
     {
-      "store_id": 4593,
+      "store_id": 4535,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_257",
       "desc": "",
@@ -5254,9 +5050,9 @@
       "channel_product_id": "GP_Once_257"
     },
     {
-      "store_id": 4594,
+      "store_id": 4536,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_258",
       "desc": "",
@@ -5271,9 +5067,9 @@
       "channel_product_id": "GP_Once_258"
     },
     {
-      "store_id": 4595,
+      "store_id": 4537,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_259",
       "desc": "",
@@ -5288,9 +5084,9 @@
       "channel_product_id": "GP_Once_259"
     },
     {
-      "store_id": 4596,
+      "store_id": 4538,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_260",
       "desc": "",
@@ -5305,9 +5101,9 @@
       "channel_product_id": "GP_Once_260"
     },
     {
-      "store_id": 4597,
+      "store_id": 4539,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_261",
       "desc": "",
@@ -5322,9 +5118,9 @@
       "channel_product_id": "GP_Once_261"
     },
     {
-      "store_id": 4598,
+      "store_id": 4540,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_262",
       "desc": "",
@@ -5339,9 +5135,9 @@
       "channel_product_id": "GP_Once_262"
     },
     {
-      "store_id": 4599,
+      "store_id": 4541,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_263",
       "desc": "",
@@ -5356,9 +5152,9 @@
       "channel_product_id": "GP_Once_263"
     },
     {
-      "store_id": 4600,
+      "store_id": 4542,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_75_M_1",
       "desc": "每月寻访组合包",
@@ -5373,9 +5169,9 @@
       "channel_product_id": "GP_gM_75_M_1"
     },
     {
-      "store_id": 4601,
+      "store_id": 4543,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_76_M_1",
       "desc": "每月寻访组合包",
@@ -5390,9 +5186,9 @@
       "channel_product_id": "GP_gM_76_M_1"
     },
     {
-      "store_id": 4602,
+      "store_id": 4544,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_75_M_2",
       "desc": "每月芯片自选组合包",
@@ -5407,9 +5203,9 @@
       "channel_product_id": "GP_gM_75_M_2"
     },
     {
-      "store_id": 4603,
+      "store_id": 4545,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_76_M_2",
       "desc": "每月芯片自选组合包",
@@ -5424,9 +5220,9 @@
       "channel_product_id": "GP_gM_76_M_2"
     },
     {
-      "store_id": 4604,
+      "store_id": 4546,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_75_M_4",
       "desc": "每月材料自选组合包",
@@ -5441,9 +5237,9 @@
       "channel_product_id": "GP_gM_75_M_4"
     },
     {
-      "store_id": 4605,
+      "store_id": 4547,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_76_M_4",
       "desc": "每月材料自选组合包",
@@ -5458,9 +5254,9 @@
       "channel_product_id": "GP_gM_76_M_4"
     },
     {
-      "store_id": 4606,
+      "store_id": 4548,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_75_M_5",
       "desc": "每月资金组合包",
@@ -5475,9 +5271,9 @@
       "channel_product_id": "GP_gM_75_M_5"
     },
     {
-      "store_id": 4607,
+      "store_id": 4549,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_76_M_5",
       "desc": "每月资金组合包",
@@ -5492,9 +5288,9 @@
       "channel_product_id": "GP_gM_76_M_5"
     },
     {
-      "store_id": 4608,
+      "store_id": 4550,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_75_M_6",
       "desc": "每月作战记录组合包",
@@ -5509,9 +5305,9 @@
       "channel_product_id": "GP_gM_75_M_6"
     },
     {
-      "store_id": 4609,
+      "store_id": 4551,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_76_M_6",
       "desc": "每月作战记录组合包",
@@ -5526,9 +5322,9 @@
       "channel_product_id": "GP_gM_76_M_6"
     },
     {
-      "store_id": 4610,
+      "store_id": 4552,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_311_W_1",
       "desc": "每周养成组合包",
@@ -5543,9 +5339,9 @@
       "channel_product_id": "GP_gW_311_W_1"
     },
     {
-      "store_id": 4611,
+      "store_id": 4553,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_312_W_1",
       "desc": "每周养成组合包",
@@ -5560,9 +5356,9 @@
       "channel_product_id": "GP_gW_312_W_1"
     },
     {
-      "store_id": 4612,
+      "store_id": 4554,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_313_W_1",
       "desc": "每周养成组合包",
@@ -5577,9 +5373,9 @@
       "channel_product_id": "GP_gW_313_W_1"
     },
     {
-      "store_id": 4613,
+      "store_id": 4555,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_314_W_1",
       "desc": "每周养成组合包",
@@ -5594,9 +5390,9 @@
       "channel_product_id": "GP_gW_314_W_1"
     },
     {
-      "store_id": 4614,
+      "store_id": 4556,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_315_W_1",
       "desc": "每周养成组合包",
@@ -5611,9 +5407,9 @@
       "channel_product_id": "GP_gW_315_W_1"
     },
     {
-      "store_id": 4615,
+      "store_id": 4557,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_316_W_1",
       "desc": "每周养成组合包",
@@ -5628,9 +5424,9 @@
       "channel_product_id": "GP_gW_316_W_1"
     },
     {
-      "store_id": 4616,
+      "store_id": 4558,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_317_W_1",
       "desc": "每周养成组合包",
@@ -5645,9 +5441,9 @@
       "channel_product_id": "GP_gW_317_W_1"
     },
     {
-      "store_id": 4617,
+      "store_id": 4559,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_318_W_1",
       "desc": "每周养成组合包",
@@ -5662,9 +5458,9 @@
       "channel_product_id": "GP_gW_318_W_1"
     },
     {
-      "store_id": 4620,
+      "store_id": 4618,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_264",
       "desc": "",
@@ -5679,9 +5475,9 @@
       "channel_product_id": "GP_Once_264"
     },
     {
-      "store_id": 4624,
+      "store_id": 4622,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_266",
       "desc": "",
@@ -5696,9 +5492,9 @@
       "channel_product_id": "GP_Once_266"
     },
     {
-      "store_id": 4657,
+      "store_id": 4633,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_267",
       "desc": "",
@@ -5713,9 +5509,9 @@
       "channel_product_id": "GP_Once_267"
     },
     {
-      "store_id": 4658,
+      "store_id": 4634,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_268",
       "desc": "",
@@ -5730,9 +5526,9 @@
       "channel_product_id": "GP_Once_268"
     },
     {
-      "store_id": 4659,
+      "store_id": 4635,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_77_M_1",
       "desc": "",
@@ -5747,9 +5543,9 @@
       "channel_product_id": "GP_gM_77_M_1"
     },
     {
-      "store_id": 4660,
+      "store_id": 4636,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_77_M_2",
       "desc": "",
@@ -5764,9 +5560,9 @@
       "channel_product_id": "GP_gM_77_M_2"
     },
     {
-      "store_id": 4661,
+      "store_id": 4637,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_77_M_4",
       "desc": "",
@@ -5781,9 +5577,9 @@
       "channel_product_id": "GP_gM_77_M_4"
     },
     {
-      "store_id": 4662,
+      "store_id": 4638,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_77_M_5",
       "desc": "",
@@ -5798,9 +5594,9 @@
       "channel_product_id": "GP_gM_77_M_5"
     },
     {
-      "store_id": 4663,
+      "store_id": 4639,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_77_M_6",
       "desc": "",
@@ -5815,9 +5611,9 @@
       "channel_product_id": "GP_gM_77_M_6"
     },
     {
-      "store_id": 4664,
+      "store_id": 4640,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_319_W_1",
       "desc": "",
@@ -5832,9 +5628,9 @@
       "channel_product_id": "GP_gW_319_W_1"
     },
     {
-      "store_id": 4665,
+      "store_id": 4641,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_320_W_1",
       "desc": "",
@@ -5849,9 +5645,9 @@
       "channel_product_id": "GP_gW_320_W_1"
     },
     {
-      "store_id": 4666,
+      "store_id": 4642,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_321_W_1",
       "desc": "",
@@ -5866,9 +5662,9 @@
       "channel_product_id": "GP_gW_321_W_1"
     },
     {
-      "store_id": 4667,
+      "store_id": 4643,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_322_W_1",
       "desc": "",
@@ -5883,9 +5679,9 @@
       "channel_product_id": "GP_gW_322_W_1"
     },
     {
-      "store_id": 4668,
+      "store_id": 4644,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gW_323_W_1",
       "desc": "",
@@ -5900,9 +5696,9 @@
       "channel_product_id": "GP_gW_323_W_1"
     },
     {
-      "store_id": 4677,
+      "store_id": 4669,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_269",
       "desc": "",
@@ -5917,9 +5713,9 @@
       "channel_product_id": "GP_Once_269"
     },
     {
-      "store_id": 4678,
+      "store_id": 4670,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_270",
       "desc": "",
@@ -5934,9 +5730,9 @@
       "channel_product_id": "GP_Once_270"
     },
     {
-      "store_id": 4679,
+      "store_id": 4671,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_271",
       "desc": "",
@@ -5951,9 +5747,9 @@
       "channel_product_id": "GP_Once_271"
     },
     {
-      "store_id": 4680,
+      "store_id": 4672,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_272",
       "desc": "",
@@ -5968,9 +5764,9 @@
       "channel_product_id": "GP_Once_272"
     },
     {
-      "store_id": 4697,
+      "store_id": 4681,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_273",
       "desc": "",
@@ -5985,9 +5781,9 @@
       "channel_product_id": "GP_Once_273"
     },
     {
-      "store_id": 4698,
+      "store_id": 4682,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_274",
       "desc": "",
@@ -6002,9 +5798,9 @@
       "channel_product_id": "GP_Once_274"
     },
     {
-      "store_id": 4699,
+      "store_id": 4683,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_275",
       "desc": "",
@@ -6019,9 +5815,9 @@
       "channel_product_id": "GP_Once_275"
     },
     {
-      "store_id": 4700,
+      "store_id": 4684,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_78_M_1",
       "desc": "",
@@ -6036,9 +5832,9 @@
       "channel_product_id": "GP_gM_78_M_1"
     },
     {
-      "store_id": 4701,
+      "store_id": 4685,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_78_M_2",
       "desc": "",
@@ -6053,9 +5849,9 @@
       "channel_product_id": "GP_gM_78_M_2"
     },
     {
-      "store_id": 4702,
+      "store_id": 4686,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_78_M_4",
       "desc": "",
@@ -6070,9 +5866,9 @@
       "channel_product_id": "GP_gM_78_M_4"
     },
     {
-      "store_id": 4703,
+      "store_id": 4687,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_78_M_5",
       "desc": "",
@@ -6087,9 +5883,9 @@
       "channel_product_id": "GP_gM_78_M_5"
     },
     {
-      "store_id": 4704,
+      "store_id": 4688,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_78_M_6",
       "desc": "",
@@ -6104,9 +5900,9 @@
       "channel_product_id": "GP_gM_78_M_6"
     },
     {
-      "store_id": 4717,
+      "store_id": 4705,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_276",
       "desc": "",
@@ -6121,9 +5917,9 @@
       "channel_product_id": "GP_Once_276"
     },
     {
-      "store_id": 4718,
+      "store_id": 4706,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_277",
       "desc": "",
@@ -6138,9 +5934,9 @@
       "channel_product_id": "GP_Once_277"
     },
     {
-      "store_id": 4719,
+      "store_id": 4707,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_278",
       "desc": "",
@@ -6155,9 +5951,9 @@
       "channel_product_id": "GP_Once_278"
     },
     {
-      "store_id": 4720,
+      "store_id": 4708,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_279",
       "desc": "",
@@ -6172,9 +5968,9 @@
       "channel_product_id": "GP_Once_279"
     },
     {
-      "store_id": 4721,
+      "store_id": 4709,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_280",
       "desc": "",
@@ -6189,9 +5985,9 @@
       "channel_product_id": "GP_Once_280"
     },
     {
-      "store_id": 4722,
+      "store_id": 4710,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_281",
       "desc": "",
@@ -6206,9 +6002,9 @@
       "channel_product_id": "GP_Once_281"
     },
     {
-      "store_id": 4785,
+      "store_id": 4723,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_282",
       "desc": "",
@@ -6223,9 +6019,9 @@
       "channel_product_id": "GP_Once_282"
     },
     {
-      "store_id": 4786,
+      "store_id": 4724,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_283",
       "desc": "",
@@ -6240,9 +6036,9 @@
       "channel_product_id": "GP_Once_283"
     },
     {
-      "store_id": 4787,
+      "store_id": 4725,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_284",
       "desc": "",
@@ -6257,9 +6053,9 @@
       "channel_product_id": "GP_Once_284"
     },
     {
-      "store_id": 4788,
+      "store_id": 4726,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_285",
       "desc": "",
@@ -6274,9 +6070,9 @@
       "channel_product_id": "GP_Once_285"
     },
     {
-      "store_id": 4789,
+      "store_id": 4727,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_286",
       "desc": "",
@@ -6291,9 +6087,9 @@
       "channel_product_id": "GP_Once_286"
     },
     {
-      "store_id": 4790,
+      "store_id": 4728,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_287",
       "desc": "",
@@ -6308,9 +6104,9 @@
       "channel_product_id": "GP_Once_287"
     },
     {
-      "store_id": 4791,
+      "store_id": 4729,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_288",
       "desc": "",
@@ -6325,9 +6121,9 @@
       "channel_product_id": "GP_Once_288"
     },
     {
-      "store_id": 4792,
+      "store_id": 4730,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_289",
       "desc": "",
@@ -6342,9 +6138,9 @@
       "channel_product_id": "GP_Once_289"
     },
     {
-      "store_id": 4793,
+      "store_id": 4731,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_290",
       "desc": "",
@@ -6359,9 +6155,9 @@
       "channel_product_id": "GP_Once_290"
     },
     {
-      "store_id": 4794,
+      "store_id": 4732,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_291",
       "desc": "",
@@ -6376,9 +6172,9 @@
       "channel_product_id": "GP_Once_291"
     },
     {
-      "store_id": 4795,
+      "store_id": 4733,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_292",
       "desc": "",
@@ -6393,9 +6189,9 @@
       "channel_product_id": "GP_Once_292"
     },
     {
-      "store_id": 4796,
+      "store_id": 4734,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_293",
       "desc": "",
@@ -6410,9 +6206,9 @@
       "channel_product_id": "GP_Once_293"
     },
     {
-      "store_id": 4797,
+      "store_id": 4735,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_294",
       "desc": "",
@@ -6427,9 +6223,9 @@
       "channel_product_id": "GP_Once_294"
     },
     {
-      "store_id": 4798,
+      "store_id": 4736,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_295",
       "desc": "",
@@ -6444,9 +6240,9 @@
       "channel_product_id": "GP_Once_295"
     },
     {
-      "store_id": 4799,
+      "store_id": 4737,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_297",
       "desc": "",
@@ -6461,9 +6257,9 @@
       "channel_product_id": "GP_Once_297"
     },
     {
-      "store_id": 4800,
+      "store_id": 4738,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_298",
       "desc": "",
@@ -6478,9 +6274,9 @@
       "channel_product_id": "GP_Once_298"
     },
     {
-      "store_id": 4801,
+      "store_id": 4739,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_299",
       "desc": "",
@@ -6495,9 +6291,9 @@
       "channel_product_id": "GP_Once_299"
     },
     {
-      "store_id": 4802,
+      "store_id": 4740,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_300",
       "desc": "",
@@ -6512,9 +6308,9 @@
       "channel_product_id": "GP_Once_300"
     },
     {
-      "store_id": 4803,
+      "store_id": 4741,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_301",
       "desc": "",
@@ -6529,9 +6325,9 @@
       "channel_product_id": "GP_Once_301"
     },
     {
-      "store_id": 4804,
+      "store_id": 4742,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_302",
       "desc": "",
@@ -6546,9 +6342,9 @@
       "channel_product_id": "GP_Once_302"
     },
     {
-      "store_id": 4805,
+      "store_id": 4743,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_79_M_1",
       "desc": "",
@@ -6563,9 +6359,9 @@
       "channel_product_id": "GP_gM_79_M_1"
     },
     {
-      "store_id": 4806,
+      "store_id": 4744,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_79_M_2",
       "desc": "",
@@ -6580,9 +6376,9 @@
       "channel_product_id": "GP_gM_79_M_2"
     },
     {
-      "store_id": 4807,
+      "store_id": 4745,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_79_M_4",
       "desc": "",
@@ -6597,9 +6393,9 @@
       "channel_product_id": "GP_gM_79_M_4"
     },
     {
-      "store_id": 4808,
+      "store_id": 4746,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_79_M_5",
       "desc": "",
@@ -6614,9 +6410,9 @@
       "channel_product_id": "GP_gM_79_M_5"
     },
     {
-      "store_id": 4809,
+      "store_id": 4747,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_79_M_6",
       "desc": "",
@@ -6631,9 +6427,9 @@
       "channel_product_id": "GP_gM_79_M_6"
     },
     {
-      "store_id": 4810,
+      "store_id": 4748,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "CS_1_r6",
       "desc": "开采源石",
@@ -6644,13 +6440,13 @@
       "status": 1,
       "appstore_id": "CS_1_r6",
       "platform": 1,
-      "channel_product_code": null,
+      "channel_product_code": "CS_1",
       "channel_product_id": "CS_1_r6"
     },
     {
-      "store_id": 4811,
+      "store_id": 4749,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "CS_2_r6",
       "desc": "开采一组源石",
@@ -6661,13 +6457,13 @@
       "status": 1,
       "appstore_id": "CS_2_r6",
       "platform": 1,
-      "channel_product_code": null,
+      "channel_product_code": "CS_2",
       "channel_product_id": "CS_2_r6"
     },
     {
-      "store_id": 4812,
+      "store_id": 4750,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "CS_3_r6",
       "desc": "开采一堆源石",
@@ -6678,13 +6474,13 @@
       "status": 1,
       "appstore_id": "CS_3_r6",
       "platform": 1,
-      "channel_product_code": null,
+      "channel_product_code": "CS_3",
       "channel_product_id": "CS_3_r6"
     },
     {
-      "store_id": 4813,
+      "store_id": 4751,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "CS_4_r6",
       "desc": "开采一袋源石",
@@ -6695,13 +6491,13 @@
       "status": 1,
       "appstore_id": "CS_4_r6",
       "platform": 1,
-      "channel_product_code": null,
+      "channel_product_code": "CS_4",
       "channel_product_id": "CS_4_r6"
     },
     {
-      "store_id": 4814,
+      "store_id": 4752,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "CS_5_r6",
       "desc": "开采一盒源石",
@@ -6712,13 +6508,13 @@
       "status": 1,
       "appstore_id": "CS_5_r6",
       "platform": 1,
-      "channel_product_code": null,
+      "channel_product_code": "CS_5",
       "channel_product_id": "CS_5_r6"
     },
     {
-      "store_id": 4815,
+      "store_id": 4753,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "CS_6_r6",
       "desc": "开采一箱源石",
@@ -6729,13 +6525,13 @@
       "status": 1,
       "appstore_id": "CS_6_r6",
       "platform": 1,
-      "channel_product_code": null,
+      "channel_product_code": "CS_6",
       "channel_product_id": "CS_6_r6"
     },
     {
-      "store_id": 4831,
+      "store_id": 4817,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_304",
       "desc": "",
@@ -6750,9 +6546,9 @@
       "channel_product_id": "GP_Once_304"
     },
     {
-      "store_id": 4832,
+      "store_id": 4818,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_305",
       "desc": "",
@@ -6767,9 +6563,9 @@
       "channel_product_id": "GP_Once_305"
     },
     {
-      "store_id": 4833,
+      "store_id": 4819,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_80_M_1",
       "desc": "",
@@ -6784,9 +6580,9 @@
       "channel_product_id": "GP_gM_80_M_1"
     },
     {
-      "store_id": 4834,
+      "store_id": 4820,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_80_M_2",
       "desc": "",
@@ -6801,9 +6597,9 @@
       "channel_product_id": "GP_gM_80_M_2"
     },
     {
-      "store_id": 4835,
+      "store_id": 4821,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_80_M_4",
       "desc": "",
@@ -6818,9 +6614,9 @@
       "channel_product_id": "GP_gM_80_M_4"
     },
     {
-      "store_id": 4836,
+      "store_id": 4822,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_80_M_5",
       "desc": "",
@@ -6835,9 +6631,9 @@
       "channel_product_id": "GP_gM_80_M_5"
     },
     {
-      "store_id": 4837,
+      "store_id": 4823,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_80_M_6",
       "desc": "",
@@ -6852,9 +6648,9 @@
       "channel_product_id": "GP_gM_80_M_6"
     },
     {
-      "store_id": 4844,
+      "store_id": 4838,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_306",
       "desc": "",
@@ -6869,9 +6665,9 @@
       "channel_product_id": "GP_Once_306"
     },
     {
-      "store_id": 4845,
+      "store_id": 4839,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_307",
       "desc": "",
@@ -6886,9 +6682,9 @@
       "channel_product_id": "GP_Once_307"
     },
     {
-      "store_id": 4846,
+      "store_id": 4840,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_308",
       "desc": "",
@@ -6903,9 +6699,9 @@
       "channel_product_id": "GP_Once_308"
     },
     {
-      "store_id": 4898,
+      "store_id": 4878,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_309",
       "desc": "",
@@ -6920,9 +6716,9 @@
       "channel_product_id": "GP_Once_309"
     },
     {
-      "store_id": 4899,
+      "store_id": 4879,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_310",
       "desc": "",
@@ -6937,9 +6733,9 @@
       "channel_product_id": "GP_Once_310"
     },
     {
-      "store_id": 4900,
+      "store_id": 4880,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_311",
       "desc": "",
@@ -6954,9 +6750,9 @@
       "channel_product_id": "GP_Once_311"
     },
     {
-      "store_id": 4901,
+      "store_id": 4881,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_312",
       "desc": "",
@@ -6971,9 +6767,9 @@
       "channel_product_id": "GP_Once_312"
     },
     {
-      "store_id": 4902,
+      "store_id": 4882,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_313",
       "desc": "",
@@ -6988,9 +6784,9 @@
       "channel_product_id": "GP_Once_313"
     },
     {
-      "store_id": 4903,
+      "store_id": 4883,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_81_M_1",
       "desc": "",
@@ -7005,9 +6801,9 @@
       "channel_product_id": "GP_gM_81_M_1"
     },
     {
-      "store_id": 4904,
+      "store_id": 4884,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_81_M_2",
       "desc": "",
@@ -7022,9 +6818,9 @@
       "channel_product_id": "GP_gM_81_M_2"
     },
     {
-      "store_id": 4905,
+      "store_id": 4885,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_81_M_4",
       "desc": "",
@@ -7039,9 +6835,9 @@
       "channel_product_id": "GP_gM_81_M_4"
     },
     {
-      "store_id": 4906,
+      "store_id": 4886,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_81_M_5",
       "desc": "",
@@ -7056,9 +6852,9 @@
       "channel_product_id": "GP_gM_81_M_5"
     },
     {
-      "store_id": 4907,
+      "store_id": 4887,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_81_M_6",
       "desc": "",
@@ -7073,9 +6869,9 @@
       "channel_product_id": "GP_gM_81_M_6"
     },
     {
-      "store_id": 4914,
+      "store_id": 4908,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_314",
       "desc": "",
@@ -7090,9 +6886,9 @@
       "channel_product_id": "GP_Once_314"
     },
     {
-      "store_id": 4915,
+      "store_id": 4909,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_315",
       "desc": "",
@@ -7107,9 +6903,9 @@
       "channel_product_id": "GP_Once_315"
     },
     {
-      "store_id": 4916,
+      "store_id": 4910,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_316",
       "desc": "",
@@ -7124,9 +6920,9 @@
       "channel_product_id": "GP_Once_316"
     },
     {
-      "store_id": 4966,
+      "store_id": 4920,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_317",
       "desc": "",
@@ -7141,9 +6937,9 @@
       "channel_product_id": "GP_Once_317"
     },
     {
-      "store_id": 4967,
+      "store_id": 4921,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_318",
       "desc": "",
@@ -7158,9 +6954,9 @@
       "channel_product_id": "GP_Once_318"
     },
     {
-      "store_id": 4968,
+      "store_id": 4922,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_319",
       "desc": "",
@@ -7175,9 +6971,9 @@
       "channel_product_id": "GP_Once_319"
     },
     {
-      "store_id": 4969,
+      "store_id": 4923,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_320",
       "desc": "",
@@ -7192,9 +6988,9 @@
       "channel_product_id": "GP_Once_320"
     },
     {
-      "store_id": 4970,
+      "store_id": 4924,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_321",
       "desc": "",
@@ -7209,9 +7005,9 @@
       "channel_product_id": "GP_Once_321"
     },
     {
-      "store_id": 4971,
+      "store_id": 4925,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_322",
       "desc": "",
@@ -7226,9 +7022,9 @@
       "channel_product_id": "GP_Once_322"
     },
     {
-      "store_id": 4972,
+      "store_id": 4926,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_323",
       "desc": "",
@@ -7243,9 +7039,9 @@
       "channel_product_id": "GP_Once_323"
     },
     {
-      "store_id": 4973,
+      "store_id": 4927,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_324",
       "desc": "",
@@ -7260,9 +7056,9 @@
       "channel_product_id": "GP_Once_324"
     },
     {
-      "store_id": 4974,
+      "store_id": 4928,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_325",
       "desc": "",
@@ -7277,9 +7073,9 @@
       "channel_product_id": "GP_Once_325"
     },
     {
-      "store_id": 4975,
+      "store_id": 4929,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_326",
       "desc": "",
@@ -7294,9 +7090,9 @@
       "channel_product_id": "GP_Once_326"
     },
     {
-      "store_id": 4976,
+      "store_id": 4930,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_327",
       "desc": "",
@@ -7311,9 +7107,9 @@
       "channel_product_id": "GP_Once_327"
     },
     {
-      "store_id": 4977,
+      "store_id": 4931,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_328",
       "desc": "",
@@ -7328,9 +7124,9 @@
       "channel_product_id": "GP_Once_328"
     },
     {
-      "store_id": 4978,
+      "store_id": 4932,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_Once_329",
       "desc": "",
@@ -7345,9 +7141,9 @@
       "channel_product_id": "GP_Once_329"
     },
     {
-      "store_id": 4979,
+      "store_id": 4933,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_82_M_1",
       "desc": "",
@@ -7362,9 +7158,9 @@
       "channel_product_id": "GP_gM_82_M_1"
     },
     {
-      "store_id": 4980,
+      "store_id": 4934,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_83_M_1",
       "desc": "",
@@ -7379,9 +7175,9 @@
       "channel_product_id": "GP_gM_83_M_1"
     },
     {
-      "store_id": 4981,
+      "store_id": 4935,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_82_M_2",
       "desc": "",
@@ -7396,9 +7192,9 @@
       "channel_product_id": "GP_gM_82_M_2"
     },
     {
-      "store_id": 4982,
+      "store_id": 4936,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_83_M_2",
       "desc": "",
@@ -7413,9 +7209,9 @@
       "channel_product_id": "GP_gM_83_M_2"
     },
     {
-      "store_id": 4983,
+      "store_id": 4937,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_82_M_4",
       "desc": "",
@@ -7430,9 +7226,9 @@
       "channel_product_id": "GP_gM_82_M_4"
     },
     {
-      "store_id": 4984,
+      "store_id": 4938,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_83_M_4",
       "desc": "",
@@ -7447,9 +7243,9 @@
       "channel_product_id": "GP_gM_83_M_4"
     },
     {
-      "store_id": 4985,
+      "store_id": 4939,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_82_M_5",
       "desc": "",
@@ -7464,9 +7260,9 @@
       "channel_product_id": "GP_gM_82_M_5"
     },
     {
-      "store_id": 4986,
+      "store_id": 4940,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_83_M_5",
       "desc": "",
@@ -7481,9 +7277,9 @@
       "channel_product_id": "GP_gM_83_M_5"
     },
     {
-      "store_id": 4987,
+      "store_id": 4941,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_82_M_6",
       "desc": "",
@@ -7498,9 +7294,9 @@
       "channel_product_id": "GP_gM_82_M_6"
     },
     {
-      "store_id": 4988,
+      "store_id": 4942,
       "app_id": 1,
-      "channel_id": 2,
+      "channel_id": 1,
       "world_id": 0,
       "product_id": "GP_gM_83_M_6",
       "desc": "",

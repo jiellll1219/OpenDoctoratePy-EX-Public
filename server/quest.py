@@ -1,8 +1,10 @@
+import json
+
 from virtualtime import time
 
 from flask import request
 
-from constants import BATTLE_REPLAY_JSON_PATH, USER_JSON_PATH, CONFIG_PATH, SYNC_DATA_TEMPLATE_PATH
+from constants import BATTLE_REPLAY_JSON_PATH, USER_JSON_PATH, CONFIG_PATH, SYNC_DATA_TEMPLATE_PATH,ASSIST_PATH,CHARACTER_TABLE_PATH
 from utils import read_json, write_json, decrypt_battle_data
 
 
@@ -173,62 +175,102 @@ def questSquadFormation():
 
         return data
 
+def load_assist_units(filter_profession=None):
+    assist_unit_configs = read_json(ASSIST_PATH)
+    saved_data = read_json(USER_JSON_PATH)["user"]["troop"]["chars"]
+    char_table = read_json(CHARACTER_TABLE_PATH)
+
+    # 创建全局UID映射
+    global_assist_units = []
+    uid_counter = 100000000
+
+    for profession, units in assist_unit_configs.items():
+        for unit_config in units:
+            if not isinstance(unit_config, dict) or "charId" not in unit_config:
+                continue
+            char_id = unit_config["charId"]
+
+            # 从角色表中获取角色名称
+            char_info = char_table.get(char_id, {})
+            profession = char_info.get("profession", "UNKNOWN")
+            char_name = char_info.get("name", "未知干员")  # 默认值
+            char_resume = char_info.get("itemUsage", "")
+            if char_resume is None:
+                char_resume = ""
+            # 查找玩家角色数据
+            for _, char in saved_data.items():
+                if char["charId"] == char_id:
+                    global_assist_units.append({
+                        "charId": char["charId"],
+                        "charName": char_name,  # 存储角色名称
+                        "charResume": char_resume,  # 存储角色描述
+                        "skinId": char["skin"],
+                        "skills": char["skills"],
+                        "mainSkillLvl": char["mainSkillLvl"],
+                        "skillIndex": unit_config.get("skillIndex", 0),
+                        "evolvePhase": char["evolvePhase"],
+                        "favorPoint": char["favorPoint"],
+                        "potentialRank": char["potentialRank"],
+                        "level": char["level"],
+                        "crisisRecord": {},
+                        "currentEquip": (
+                            unit_config["currentEquip"]
+                            if unit_config.get("currentEquip") in char["equip"] else None
+                        ),
+                        "equip": char["equip"],
+                        "profession": profession,
+                        "instId": char["instId"],
+                        "fixedUid": uid_counter,  # 分配固定UID
+                        # 添加头像信息
+                        "avatar": {
+                            "type": "ASSISTANT",
+                            "id": char["skin"]  # 使用角色皮肤作为头像
+                        }
+                    })
+                    uid_counter += 1
+                    break
+
+    # 按职业过滤
+    if filter_profession:
+        return [unit for unit in global_assist_units if unit["profession"] == filter_profession]
+    return global_assist_units
 
 def questGetAssistList():
+    req = json.loads(request.data)
+    filter_profession = req.get("profession")
 
-    data = request.data
-    assist_unit_config = read_json(CONFIG_PATH)["charConfig"]["assistUnit"]
-    saved_data = read_json(USER_JSON_PATH)["user"]["troop"]["chars"]
-    assist_unit = {}
+    # 获取助战单位（可能按职业过滤）
+    assist_units = load_assist_units(filter_profession)
 
-    for _, char in saved_data.items():
-        if char["charId"] == assist_unit_config["charId"]:
-            assist_unit.update({
-                "charId": char["charId"],
-                "skinId": assist_unit_config["skinId"],
-                "skills": char["skills"],
-                "mainSkillLvl": char["mainSkillLvl"],
-                "skillIndex": assist_unit_config["skillIndex"],
-                "evolvePhase": char["evolvePhase"],
-                "favorPoint": char["favorPoint"],
-                "potentialRank": char["potentialRank"],
-                "level": char["level"],
-                "crisisRecord": {},
-                "currentEquip": char["currentEquip"],
-                "equip": char["equip"]
-            })
-            break
+    assist_list = []
+    for assist_unit in assist_units:
+        # 使用固定的UID
+        uid = assist_unit["fixedUid"]
+        assist_unit_with_uid = dict(assist_unit)
+        assist_unit_with_uid["uid"] = uid
+
+        assist_list.append({
+            "uid": str(uid),
+            "aliasName": "",
+            "nickName": assist_unit["charName"],
+            "nickNumber": assist_unit["instId"],
+            "level": 120,
+            "avatarId": "0",
+            # 使用助战角色的头像
+            "avatar": assist_unit["avatar"],
+            "lastOnlineTime": int(time()),
+            "assistCharList": [assist_unit_with_uid, None, None],
+            "powerScore": 500,
+            "isFriend": True,
+            "canRequestFriend": False,
+            "assistSlotIndex": 0
+        })
 
     data = {
         "allowAskTs": int(time()),
-        "assistList": [
-            {
-                "uid": "88888888",
-                "aliasName": "",
-                "nickName": "ABCDEF",
-                "nickNumber": "8888",
-                "level": 200,
-                "avatarId": "0",
-                "avatar": {
-                    "type": "ASSISTANT",
-                    "id": "char_421_crow#1"
-                },
-                "lastOnlineTime": int(time()),
-                "assistCharList": [
-                    assist_unit
-                ],
-                "powerScore": 500,
-                "isFriend": True,
-                "canRequestFriend": False,
-                "assistSlotIndex": 0
-            }
-        ],
-        "playerDataDelta": {
-            "modified": {},
-            "deleted": {}
-        }
+        "assistList": assist_list,
+        "playerDataDelta": {"modified": {}, "deleted": {}}
     }
-
     return data
 
 

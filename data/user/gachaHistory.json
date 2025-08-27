@@ -8,5 +8,87 @@
             "gachaTs": 1737788454,
             "pos": 0
         }
+    ],
+    "BOOT_0_1_2": [
+        {
+            "charId": "char_210_stward",
+            "charName": "史都华德",
+            "rarity": 2,
+            "isNew": false,
+            "gachaTs": 1756290949,
+            "pos": 9
+        },
+        {
+            "charId": "char_199_yak",
+            "charName": "角峰",
+            "rarity": 3,
+            "isNew": false,
+            "gachaTs": 1756290949,
+            "pos": 8
+        },
+        {
+            "charId": "char_199_yak",
+            "charName": "角峰",
+            "rarity": 3,
+            "isNew": false,
+            "gachaTs": 1756290949,
+            "pos": 7
+        },
+        {
+            "charId": "char_150_snakek",
+            "charName": "蛇屠箱",
+            "rarity": 3,
+            "isNew": false,
+            "gachaTs": 1756290949,
+            "pos": 6
+        },
+        {
+            "charId": "char_122_beagle",
+            "charName": "米格鲁",
+            "rarity": 2,
+            "isNew": false,
+            "gachaTs": 1756290949,
+            "pos": 5
+        },
+        {
+            "charId": "char_290_vigna",
+            "charName": "红豆",
+            "rarity": 3,
+            "isNew": false,
+            "gachaTs": 1756290949,
+            "pos": 4
+        },
+        {
+            "charId": "char_149_scave",
+            "charName": "清道夫",
+            "rarity": 3,
+            "isNew": false,
+            "gachaTs": 1756290949,
+            "pos": 3
+        },
+        {
+            "charId": "char_118_yuki",
+            "charName": "白雪",
+            "rarity": 3,
+            "isNew": false,
+            "gachaTs": 1756290949,
+            "pos": 2
+        },
+        {
+            "charId": "char_192_falco",
+            "charName": "翎羽",
+            "rarity": 2,
+            "isNew": false,
+            "gachaTs": 1756290949,
+            "pos": 1
+        },
+        {
+            "charId": "char_289_gyuki",
+            "charName": "缠丸",
+            "rarity": 3,
+            "isNew": false,
+            "gachaTs": 1756290949,
+            "pos": 0
+        }
     ]
 }

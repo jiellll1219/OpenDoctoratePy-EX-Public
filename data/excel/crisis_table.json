@@ -1,0 +1,206 @@
+{
+  "seasonInfo": [
+    {
+      "seasonId": "rune_season_0_1",
+      "startTs": 1584417600,
+      "endTs": 1585598399,
+      "name": "荒芜行动",
+      "crisisRuneCoinUnlockItem": {
+        "id": "randomMaterialRune_0",
+        "count": 1,
+        "type": "VOUCHER_MGACHA"
+      },
+      "permBgm": "rune_season_0_1_main",
+      "medalGroupId": null,
+      "bgmHardPoint": -1,
+      "permBgmHard": null
+    },
+    {
+      "seasonId": "rune_season_1_1",
+      "startTs": 1591070400,
+      "endTs": 1592251199,
+      "name": "黄铁行动",
+      "crisisRuneCoinUnlockItem": {
+        "id": "randomMaterialRune_1",
+        "count": 1,
+        "type": "VOUCHER_MGACHA"
+      },
+      "permBgm": "rune_season_1_1_main",
+      "medalGroupId": "medalGroupActivityRune01",
+      "bgmHardPoint": 16,
+      "permBgmHard": "rune_season_1_1_main_challenge"
+    },
+    {
+      "seasonId": "rune_season_2_1",
+      "startTs": 1595923200,
+      "endTs": 1597089599,
+      "name": "利刃行动",
+      "crisisRuneCoinUnlockItem": {
+        "id": "randomMaterialRune_2",
+        "count": 1,
+        "type": "VOUCHER_MGACHA"
+      },
+      "permBgm": "rune_season_2_1_main",
+      "medalGroupId": "medalGroupActivityRune02",
+      "bgmHardPoint": 16,
+      "permBgmHard": "rune_season_2_1_main_challenge"
+    },
+    {
+      "seasonId": "rune_season_3_1",
+      "startTs": 1605427200,
+      "endTs": 1606593599,
+      "name": "燃灰行动",
+      "crisisRuneCoinUnlockItem": {
+        "id": "randomMaterialRune_3",
+        "count": 1,
+        "type": "VOUCHER_MGACHA"
+      },
+      "permBgm": "rune_season_3_1_main",
+      "medalGroupId": "medalGroupActivityRune03",
+      "bgmHardPoint": 16,
+      "permBgmHard": "rune_season_3_1_main_challenge"
+    },
+    {
+      "seasonId": "rune_season_4_1",
+      "startTs": 1611028800,
+      "endTs": 1612209599,
+      "name": "铅封行动",
+      "crisisRuneCoinUnlockItem": {
+        "id": "randomMaterialRune_4",
+        "count": 1,
+        "type": "VOUCHER_MGACHA"
+      },
+      "permBgm": "rune_season_4_1_main",
+      "medalGroupId": "medalGroupActivityRune04",
+      "bgmHardPoint": 16,
+      "permBgmHard": "rune_season_4_1_main_challenge"
+    },
+    {
+      "seasonId": "rune_season_5_1",
+      "startTs": 1621065600,
+      "endTs": 1622231999,
+      "name": "光谱行动",
+      "crisisRuneCoinUnlockItem": {
+        "id": "randomMaterialRune_5",
+        "count": 1,
+        "type": "VOUCHER_MGACHA"
+      },
+      "permBgm": "rune_season_5_1_main",
+      "medalGroupId": "medalGroupActivityRune05",
+      "bgmHardPoint": 16,
+      "permBgmHard": "rune_season_5_1_main_challenge"
+    },
+    {
+      "seasonId": "rune_season_6_1",
+      "startTs": 1629964800,
+      "endTs": 1631131199,
+      "name": "蛮鳞行动",
+      "crisisRuneCoinUnlockItem": {
+        "id": "randomMaterialRune_6",
+        "count": 1,
+        "type": "VOUCHER_MGACHA"
+      },
+      "permBgm": "rune_season_6_1_main",
+      "medalGroupId": "medalGroupActivityRune06",
+      "bgmHardPoint": 16,
+      "permBgmHard": "rune_season_6_1_main_challenge"
+    },
+    {
+      "seasonId": "rune_season_7_1",
+      "startTs": 1637568000,
+      "endTs": 1638734399,
+      "name": "松烟行动",
+      "crisisRuneCoinUnlockItem": {
+        "id": "randomMaterialRune_7",
+        "count": 1,
+        "type": "VOUCHER_MGACHA"
+      },
+      "permBgm": "rune_season_7_1_main",
+      "medalGroupId": "medalGroupActivityRune07",
+      "bgmHardPoint": 16,
+      "permBgmHard": "rune_season_7_1_main_challenge"
+    },
+    {
+      "seasonId": "rune_season_8_1",
+      "startTs": 1645689600,
+      "endTs": 1646855999,
+      "name": "寻昼行动",
+      "crisisRuneCoinUnlockItem": {
+        "id": "randomMaterialRune_8",
+        "count": 1,
+        "type": "VOUCHER_MGACHA"
+      },
+      "permBgm": "rune_season_8_1_main",
+      "medalGroupId": "medalGroupActivityRune08",
+      "bgmHardPoint": 16,
+      "permBgmHard": "rune_season_8_1_main_challenge"
+    },
+    {
+      "seasonId": "rune_season_9_1",
+      "startTs": 1652947200,
+      "endTs": 1654113599,
+      "name": "渊默行动",
+      "crisisRuneCoinUnlockItem": {
+        "id": "randomMaterialRune_9",
+        "count": 1,
+        "type": "VOUCHER_MGACHA"
+      },
+      "permBgm": "rune_season_9_1_main",
+      "medalGroupId": "medalGroupActivityRune09",
+      "bgmHardPoint": 16,
+      "permBgmHard": "rune_season_9_1_main_challenge"
+    },
+    {
+      "seasonId": "rune_season_10_1",
+      "startTs": 1661414400,
+      "endTs": 1662580799,
+      "name": "尘环行动",
+      "crisisRuneCoinUnlockItem": {
+        "id": "randomMaterialRune_10",
+        "count": 1,
+        "type": "VOUCHER_MGACHA"
+      },
+      "permBgm": "rune_season_10_1_main",
+      "medalGroupId": "medalGroupActivityRune10",
+      "bgmHardPoint": 16,
+      "permBgmHard": "rune_season_10_1_main_challenge"
+    },
+    {
+      "seasonId": "rune_season_11_1",
+      "startTs": 1668499200,
+      "endTs": 1669665599,
+      "name": "赝波行动",
+      "crisisRuneCoinUnlockItem": {
+        "id": "randomMaterialRune_11",
+        "count": 1,
+        "type": "VOUCHER_MGACHA"
+      },
+      "permBgm": "rune_season_11_1_main",
+      "medalGroupId": "medalGroupActivityRune11",
+      "bgmHardPoint": 16,
+      "permBgmHard": "rune_season_11_1_main_challenge"
+    },
+    {
+      "seasonId": "rune_season_12_1",
+      "startTs": 1679385600,
+      "endTs": 1680551999,
+      "name": "起源行动",
+      "crisisRuneCoinUnlockItem": {
+        "id": "randomMaterialRune_12",
+        "count": 1,
+        "type": "VOUCHER_MGACHA"
+      },
+      "permBgm": "rune_season_12_1_main",
+      "medalGroupId": "medalGroupActivityRune12",
+      "bgmHardPoint": 16,
+      "permBgmHard": "rune_season_12_1_main_challenge"
+    }
+  ],
+  "meta": "",
+  "unlockCoinLv3": 2,
+  "hardPointPerm": 8,
+  "hardPointTemp": 4,
+  "voiceGrade": 18,
+  "crisisRuneCoinUnlockItemTitle": "兑换说明",
+  "crisisRuneCoinUnlockItemDesc": "不管是否被使用，赛季结束后所有获得过的行动协议均可兑换为等量的物资。\n需重新登录危机合约系统方可领取。"
+}
