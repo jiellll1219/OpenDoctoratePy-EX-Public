@@ -1,16 +1,13 @@
-import json
-
 from virtualtime import time
 
 from flask import request
 
-from constants import BATTLE_REPLAY_JSON_PATH, USER_JSON_PATH, CONFIG_PATH, SYNC_DATA_TEMPLATE_PATH,ASSIST_PATH,CHARACTER_TABLE_PATH
-from utils import read_json, write_json, decrypt_battle_data
+from constants import BATTLE_REPLAY_JSON_PATH, USER_JSON_PATH, SYNC_DATA_TEMPLATE_PATH,ASSIST_PATH
+from utils import read_json, write_json, decrypt_battle_data, get_memory
 
 
 def questBattleStart():
 
-    data = request.data
     request_data = request.get_json()
     data = {
         "apFailReturn": 0,
@@ -34,7 +31,6 @@ def questBattleStart():
 
 def questBattleFinish():
 
-    data = request.data
     data = {
         "result":0,
         "apFailReturn": 0,
@@ -60,7 +56,6 @@ def questBattleFinish():
 
 def questSaveBattleReplay():
 
-    data = request.data
     request_data = request.get_json()
 
     replay_data = read_json(BATTLE_REPLAY_JSON_PATH)
@@ -101,7 +96,6 @@ def questSaveBattleReplay():
 
 def questGetBattleReplay():
 
-    data = request.data
     stageId = request.get_json()["stageId"]
 
     replay_data = read_json(BATTLE_REPLAY_JSON_PATH)
@@ -118,7 +112,6 @@ def questGetBattleReplay():
 
 def questChangeSquadName():
 
-    data = request.data
     request_data = request.get_json()
     data = {
         "playerDataDelta":{
@@ -148,7 +141,6 @@ def questChangeSquadName():
 
 def questSquadFormation():
 
-    data = request.data
     request_data = request.get_json()
     data = {
         "playerDataDelta":{
@@ -178,7 +170,7 @@ def questSquadFormation():
 def load_assist_units(filter_profession=None):
     assist_unit_configs = read_json(ASSIST_PATH)
     saved_data = read_json(USER_JSON_PATH)["user"]["troop"]["chars"]
-    char_table = read_json(CHARACTER_TABLE_PATH)
+    char_table = get_memory("character_table")
 
     # 创建全局UID映射
     global_assist_units = []
@@ -236,7 +228,7 @@ def load_assist_units(filter_profession=None):
     return global_assist_units
 
 def questGetAssistList():
-    req = json.loads(request.data)
+    req = request.get_json()
     filter_profession = req.get("profession")
 
     # 获取助战单位（可能按职业过滤）

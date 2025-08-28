@@ -5,9 +5,6 @@
         "enableMods": false,
         "skipModCacheValidation": false
     },
-    "battleReplayConfig": {
-        "anonymous": true
-    },
     "charConfig": {
         "customUnitInfo": {},
         "duplicateUnits": [],
@@ -98,15 +95,9 @@
         "allChars": true
     },
     "server": {
-        "adaptive": true,
-        "enableServer": true,
-        "gadget": false,
         "host": "0.0.0.0",
-        "maintenanceMsg": "Server is currently under maintenance!",
         "mode": "cn",
-        "noProxy": false,
-        "port": 8443,
-        "useSu": false
+        "port": 8443
     },
     "towerConfig": {
         "season": "tower_season_5"
