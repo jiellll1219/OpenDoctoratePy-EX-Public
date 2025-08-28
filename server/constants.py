@@ -53,7 +53,7 @@ SANDBOX_TABLE_PATH = "data/excel/sandbox_perm_table.json"
 CHARWORD_TABLE_PATH = "data/excel/charword_table.json"
 STORY_REVIEW_META_TABLE_PATH = "data/excel/story_review_meta_table.json"
 GACHA_TABLE_PATH = "data/excel/gacha_table.json"
-
+CRISIS_V2_TABLE_PATH = "data/excel/crisis_v2_table.json"
 # Shop Data
 SHOP_PATH = "data/shop/shop.json"   #可以考虑缓存在内存中
 ALLPRODUCTLIST_PATH = "data/shop/AllProductList.json"
