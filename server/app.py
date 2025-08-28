@@ -296,6 +296,10 @@ app.add_url_rule("/activity/vecBreakV2/battleFinish", methods = ["POST"], view_f
 app.add_url_rule("/recalRune/battleStart", methods = ["POST"], view_func = quest.questBattleStart)
 app.add_url_rule("/recalRune/battleFinish", methods = ["POST"], view_func = quest.questBattleFinish)
 
+app.add_url_rule('/recalRune/battleStart', methods=['POST'], view_func=crisis.recalRune_battleStart)
+app.add_url_rule('/recalRune/battleFinish', methods=['POST'], view_func=crisis.recalRune_battleFinish)
+
+
 def writeLog(data):
     print(f'[{datetime.now()}] {data}')
 
