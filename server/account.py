@@ -45,9 +45,9 @@ def accountSyncData():
     if not exists(USER_JSON_PATH):
         write_json({}, USER_JSON_PATH)
 
-    saved_data = read_json(USER_JSON_PATH, encoding="utf-8")
-    mail_data = read_json(MAILLIST_PATH, encoding="utf-8")
-    player_data = read_json(SYNC_DATA_TEMPLATE_PATH, encoding="utf-8")
+    saved_data = read_json(USER_JSON_PATH)
+    mail_data = read_json(MAILLIST_PATH)
+    player_data = read_json(SYNC_DATA_TEMPLATE_PATH)
     config = read_json(CONFIG_PATH)
     exconfig = read_json(EX_CONFIG_PATH)
 
@@ -153,10 +153,9 @@ def accountSyncData():
             continue
         inst_id = int(char_id.split("_")[1])
         charGroup.update({char_id: {"favorPoint": 25570}})
-        if exconfig["useExistingCharData"]:
-            # 存在已有角色数据的情况
-            if str(inst_id) in player_data_keys:
-                myCharList[inst_id] = player_data["user"]["troop"]["chars"][str(inst_id)]
+        # 存在已有角色数据的情况
+        if str(inst_id) in player_data_keys:
+            myCharList[inst_id] = player_data["user"]["troop"]["chars"][str(inst_id)]
         else:
             # ---------- 角色创建逻辑 ---------- 
             # 语音语言处理
@@ -645,7 +644,8 @@ def accountSyncData():
         season = rune["info"]["seasonId"]
         player_data["user"]["crisisV2"]["current"] = season
 
-    write_json(player_data, USER_JSON_PATH, encoding="utf-8")
+    with open(USER_JSON_PATH, 'w', encoding='utf-8') as file:
+        json.dump(player_data, file, ensure_ascii=False, indent=4)
 
     b = datetime.now()
     print(f"syncdata耗时: {b - a}")

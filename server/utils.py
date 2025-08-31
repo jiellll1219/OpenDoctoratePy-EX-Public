@@ -17,7 +17,7 @@ from datetime import datetime, UTC
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import unpad
 
-from constants import USER_JSON_PATH, SERVER_DATA_PATH, SYNC_DATA_TEMPLATE_PATH
+from constants import USER_JSON_PATH, SERVER_DATA_PATH, SYNC_DATA_TEMPLATE_PATH, EX_CONFIG_PATH
 
 json_encoder = Encoder(order="deterministic")
 json_decoder = Decoder(strict=False)
@@ -136,17 +136,29 @@ def get_memory(key: str) -> dict:
 
     :param key: 要获取的数据的名，如"activity_table"，返回"data/excel/activity_table.json"中的数据
     '''
-    # 从内存缓存中获取数据，如果不存在则尝试读取文件
-    try:
-        return memory_cache[key]
-    except KeyError:
-        print(f"警告: {key} 未在缓存中找到，正在尝试从文件中加载")
+    ex_config = read_json(EX_CONFIG_PATH)
+    useMemoryCache = ex_config["useMemoryCache"]
+    if useMemoryCache:
+        # 从内存缓存中获取数据，如果不存在则尝试读取文件
+        try:
+            return memory_cache[key]
+        except KeyError:
+            print(f"警告: {key} 未在缓存中找到，正在尝试从文件中加载")
+            file_path = f"data/excel/{key}.json"
+            try:
+                # 将加载的数据存入缓存以备后续使用
+                data = read_json(file_path)
+                memory_cache[key] = data
+                return data
+            except FileNotFoundError:
+                raise KeyError(f"未找到文件: {file_path}")
+            except Exception as e:
+                raise ValueError(f"加载 {file_path} 时出错: {str(e)}")
+    # 如果不使用内存缓存，则直接从文件中读取数据
+    else:
         file_path = f"data/excel/{key}.json"
         try:
-            # 将加载的数据存入缓存以备后续使用
-            data = read_json(file_path)
-            memory_cache[key] = data
-            return data
+            return read_json(file_path)
         except FileNotFoundError:
             raise KeyError(f"未找到文件: {file_path}")
         except Exception as e:

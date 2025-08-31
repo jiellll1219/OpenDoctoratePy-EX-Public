@@ -311,10 +311,10 @@ def writeLog(data):
     print(f'[{datetime.now()}] {data}')
 
 if __name__ == "__main__":
+    start_global_event_loop()
     if useMemoryCache:
         writeLog('Loading all table data to memory')
         preload_json_data()
-        start_global_event_loop()
         writeLog('Sucessfully loaded all table data')
     writeLog('[SERVER] Server started at http://' + host + ":" + str(port))
     app.run(host=host, port=port, debug=True)

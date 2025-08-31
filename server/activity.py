@@ -1478,28 +1478,30 @@ class act35side():
         good = []
         if carving_data["shop"]["freeCardCnt"] > 0:
             for card_id in good_list:
-                good.append({
-                    "id": card_id,
-                    "price": 0
-                })
+                if card_id is None:
+                    good.append(None)
+                else:
+                    good.append({
+                        "id": card_id,
+                        "price": 0
+                    })
             if len(good) < 3:
                 good += [None] * (3 - len(good))
         else:
             for card_id in good_list:
-                good.append({
-                    "id": card_id,
-                    "price": 2
-                })
+                if card_id is None:
+                    good.append(None)
+                else:
+                    good.append({
+                        "id": card_id,
+                        "price": 2
+                    })
             if len(good) < 3:
                 good += [None] * (3 - len(good))
 
         carving_data["shop"]["good"] = good
         carving_data["shop"]["coin"] = 0
 
-        result = {
-            
-        }
-        carving_data["shop"]["good"] = good
 
         # 操作台槽位
         if carving_data["slotCnt"] < 8:
@@ -1699,7 +1701,7 @@ class act35side():
         card_info = carving_data["card"]
         materials = carving_data["material"]
         slot_cnt = carving_data["slotCnt"]
-        empty_slots = slot_cnt - len(card_info)
+        empty_slots = slot_cnt - len(cards)
 
         card_data_map = self.prepared_card_data
         material_data_map = self.material_price
@@ -1762,8 +1764,6 @@ class act35side():
                         break
                 step_score += base_val * num
 
-            # 固定加分
-            step_score += flat_score
             # 空槽位加分
             step_score += empty_slots * flat_score
 
@@ -1805,7 +1805,7 @@ class act35side():
             },
             "frames": frames
         }
-
+        print(frames)
         run_after_response(write_json, user_data, SYNC_DATA_TEMPLATE_PATH)
         return result
     
