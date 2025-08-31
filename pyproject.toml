@@ -4,7 +4,8 @@ version = "2.6.21"
 description = ""
 authors = [
     {name = "MVXTP",email = "61046104+jiellll1219@users.noreply.github.com"},
-    {name = "Cryin",email = "1510935847@qq.com"}
+    {name = "Cryin",email = "1510935847@qq.com"},
+    {name = "Autumn174",email = "3410952585@qq.com"}
 ]
 license = {text = "GPL-3.0"}
 readme = "README.md"
