@@ -13,7 +13,7 @@ def crisisGetCrisisInfo():
     selected_crisis = read_json(CONFIG_PATH)["crisisConfig"]["selectedCrisis"]
 
     if selected_crisis:
-        rune = read_json(f"{CRISIS_JSON_BASE_PATH}{selected_crisis}.json", encoding="utf-8")
+        rune = read_json(f"{CRISIS_JSON_BASE_PATH}{selected_crisis}.json")
         current_time = time()
         next_day = time() + 86400
 
@@ -115,7 +115,7 @@ def crisisV2_getInfo():
     selected_crisis = read_json(CONFIG_PATH)["crisisV2Config"]["selectedCrisis"]
     if selected_crisis:
         rune = read_json(
-            f"{CRISIS_V2_JSON_BASE_PATH}{selected_crisis}.json", encoding="utf-8"
+            f"{CRISIS_V2_JSON_BASE_PATH}{selected_crisis}.json"
         )
     else:
         rune = {
@@ -147,7 +147,7 @@ def crisisV2_battleFinish():
     scoreCurrent = [0, 0, 0, 0, 0, 0]
     selected_crisis = read_json(CONFIG_PATH)["crisisV2Config"]["selectedCrisis"]
     rune = read_json(
-        f"{CRISIS_V2_JSON_BASE_PATH}{selected_crisis}.json", encoding="utf-8"
+        f"{CRISIS_V2_JSON_BASE_PATH}{selected_crisis}.json"
     )
 
     nodes = {}
@@ -240,7 +240,7 @@ def crisisV2_getSnapshot():
 
 def crisisV2_getGoodList():
 
-    result = read_json(SHOP_PATH, encoding="utf-8")["crisisV2"]
+    result = read_json(SHOP_PATH)["crisisV2"]
 
     return result
 

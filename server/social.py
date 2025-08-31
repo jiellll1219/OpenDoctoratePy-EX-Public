@@ -8,14 +8,14 @@ def setAssistCharList():
     try:
         request_data = request.get_json()
         charInstId = request_data.get("assistCharList")[-1].get("charInstId")
-        user_data = read_json(USER_JSON_PATH, encoding="utf-8")
-        config = read_json(CONFIG_PATH, encoding="utf-8")
+        user_data = read_json(USER_JSON_PATH)
+        config = read_json(CONFIG_PATH)
         config["charConfig"]["assistUnit"] = {
             "charId": user_data["user"]["troop"]["chars"].get(str(charInstId), {}).get("charId"),
             "skinId": user_data["user"]["troop"]["chars"].get(str(charInstId), {}).get("skin"),
             "skillIndex": request_data.get("assistCharList")[-1].get("skillIndex"),
         }
-        with open(CONFIG_PATH, "w", encoding="utf-8") as f:
+        with open(CONFIG_PATH, "w") as f:
             json.dump(config, f, ensure_ascii=False, indent=4)
         data = {"playerDataDelta":{"modified":{"social":{"assistCharList":request_data.get("assistCharList")}},"deleted":{}}}
         return data
@@ -74,12 +74,12 @@ def deleteFriend():
 def setCardShowMedal():
     json_body = request.get_json()
 
-    user_data = read_json(USER_JSON_PATH, encoding="utf-8")
+    user_data = read_json(USER_JSON_PATH)
     if "medalBoard" not in user_data["user"]["social"]:
         user_data["user"]["social"]["medalBoard"] = {}
     user_data["user"]["social"]["medalBoard"]["type"] = json_body["type"]
     user_data["user"]["social"]["medalBoard"]["template"] = json_body["templateGroup"]
-    write_json(user_data, USER_JSON_PATH, encoding="utf-8")
+    write_json(user_data, USER_JSON_PATH)
 
     return {
         "playerDataDelta": {

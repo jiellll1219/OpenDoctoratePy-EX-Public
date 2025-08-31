@@ -15,7 +15,7 @@ def mailGetMetaInfoList():
     # 初始化结果列表
     result = []
     # 读取邮件列表数据
-    mail_data = read_json(MAILLIST_PATH, encoding="utf-8")
+    mail_data = read_json(MAILLIST_PATH)
     
     # 遍历邮件列表
     for mailId in mail_data["mailList"]:
@@ -59,7 +59,7 @@ def mailListMailBox():
     # 初始化是否有礼物
     hasGift = 0
     # 读取邮件列表数据
-    mail_data = read_json(MAILLIST_PATH, encoding="utf-8")
+    mail_data = read_json(MAILLIST_PATH)
 
     # 遍历邮件列表
     for mailId in mail_data["mailList"]:
@@ -112,7 +112,7 @@ def getItems(request_data, key):
     # 初始化是否有礼物
     hasGift = 1
     # 读取邮件列表数据
-    mail_data = read_json(MAILLIST_PATH, encoding="utf-8")
+    mail_data = read_json(MAILLIST_PATH)
 
     # 获取邮件ID列表
     getIDList = request_data[key]
@@ -210,7 +210,7 @@ def mailRemoveAllReceivedMail():
     # 获取请求的JSON数据
     request_data = request.get_json()
     # 读取邮件列表数据
-    mail_data = read_json(MAILLIST_PATH, encoding="utf-8")
+    mail_data = read_json(MAILLIST_PATH)
 
     # 遍历已接收的邮件ID列表
     for mailId in request_data["sysMailIdList"]:
@@ -235,6 +235,6 @@ def mailRemoveAllReceivedMail():
 
 def mailCollectionGetList():
 
-    mailcollect_data = read_json(MAILCOLLECTION_PATH, encoding="utf-8")
+    mailcollect_data = read_json(MAILCOLLECTION_PATH)
 
     return mailcollect_data

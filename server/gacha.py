@@ -4,8 +4,7 @@ from virtualtime import time
 from constants import (
     NORMALGACHA_PATH, 
     SYNC_DATA_TEMPLATE_PATH, 
-    USER_JSON_PATH, 
-    EX_CONFIG_PATH,
+    USER_JSON_PATH,
     GACHA_HISTORY_PATH,
     SERVER_DATA_PATH
 )
@@ -18,7 +17,7 @@ import os
 def syncNormalGacha():
 
     #使用utf-8读取normalGacha.json的数据
-    NormalGachaData = read_json(NORMALGACHA_PATH, encoding="utf-8")
+    NormalGachaData = read_json(NORMALGACHA_PATH)
     
     #定义要返回的json内容
     playerDataDelta = {
@@ -46,7 +45,7 @@ def normalGacha():
     duration = json_body["duration"]
 
     # 修改招募相关信息
-    user_sync_data = read_json(USER_JSON_PATH, encoding="utf-8")
+    user_sync_data = read_json(USER_JSON_PATH)
     target_data = user_sync_data["user"]["recruit"]["normal"]["slots"][str(slot_id)]
     target_data["state"] = 2
     target_data["selectTags"] = [{"pick": 1, "tagId": tag} for tag in tag_list]
@@ -159,8 +158,8 @@ def finishNormalGacha():
         char_group = {"favorPoint": 0}  # 角色分组
         sync_data_template = read_json(SYNC_DATA_TEMPLATE_PATH)
         sync_data_template["troop"]["charGroup"][random_char_id] = char_group  # 更新玩家角色组
-        if EX_CONFIG_PATH["gacha"]["saveCharacter"] == True:
-            write_json(sync_data_template, SYNC_DATA_TEMPLATE_PATH) # 更新同步数据
+        # if EX_CONFIG_PATH["gacha"]["saveCharacter"] == True:
+        #     write_json(sync_data_template, SYNC_DATA_TEMPLATE_PATH) # 更新同步数据
 
         building_char = {
             "charId": random_char_id,
@@ -181,8 +180,8 @@ def finishNormalGacha():
         is_new = 1  # 是新角色
         user_json_path = read_json(USER_JSON_PATH)
         user_json_path["status"]["hggShard"] += 1  # 更新玩家状态
-        if EX_CONFIG_PATH["gacha"]["saveCharacter"] == True:
-            write_json(user_json_path, USER_JSON_PATH)
+        # if EX_CONFIG_PATH["gacha"]["saveCharacter"] == True:
+        #     write_json(user_json_path, USER_JSON_PATH)
     else:
         repeat_char = chars[str(repeat_char_id)]  # 重复角色
         potential_rank = repeat_char["potentialRank"]  # 潜能等级
@@ -214,8 +213,8 @@ def finishNormalGacha():
         user_json_path = read_json(USER_JSON_PATH)
         user_json_path["status"][item_name] += item_count  # 更新玩家状态
         user_json_path["inventory"][f"p_{random_char_id}"] += 1  # 更新玩家库存
-        if EX_CONFIG_PATH["gacha"]["saveCharacter"] == True:
-            write_json(user_json_path, USER_JSON_PATH) # 保存玩家数据
+        # if EX_CONFIG_PATH["gacha"]["saveCharacter"] == True:
+        #     write_json(user_json_path, USER_JSON_PATH) # 保存玩家数据
 
         chars[str(repeat_char_id)] = repeat_char  # 更新角色数据
 
@@ -250,20 +249,20 @@ def getPoolDetail():
     pool_Id = json_body["poolId"]
 
     try:
-        pool = read_json(f"data/gacha/{pool_Id}.json", encoding="utf-8")
+        pool = read_json(f"data/gacha/{pool_Id}.json")
     except:
-        pool = read_json(f"data/gacha/DEFAULT.json", encoding="utf-8")
+        pool = read_json(f"data/gacha/DEFAULT.json")
     return pool
 
 def boostNormalGacha():
     json_body = request.get_json()
     real_finish_ts = int(time())
 
-    user_data = read_json(USER_JSON_PATH, encoding="utf-8")
+    user_data = read_json(USER_JSON_PATH)
     user_data["user"]["recruit"]["normal"]["slots"][str(json_body["slotId"])]["realFinishTs"] = real_finish_ts
     user_data["user"]["recruit"]["normal"]["slots"][str(json_body["slotId"])]["state"] = 3
 
-    write_json(user_data, USER_JSON_PATH, encoding="utf-8")
+    write_json(user_data, USER_JSON_PATH)
 
     result =  {
         "playerDataDelta": {
@@ -303,7 +302,7 @@ def choosePoolUp():
     # }
 
     # TODO:待编写
-    user_data = read_json(USER_JSON_PATH, encoding="utf-8")
+    user_data = read_json(USER_JSON_PATH)
     return {}
 
 def advancedGacha():
@@ -336,9 +335,9 @@ def tenAdvancedGacha():
 
 def Gacha(ticket_type, use_diamond_shard, json_body):
     # 读取用户同步数据
-    user_json_data = read_json(USER_JSON_PATH, encoding="utf-8")
+    user_json_data = read_json(USER_JSON_PATH)
     # 读取卡池历史记录数据
-    gacha_history_data = read_json(GACHA_HISTORY_PATH, encoding="utf-8")
+    gacha_history_data = read_json(GACHA_HISTORY_PATH)
     # 读取角色信息数据
     character_table_data = get_memory("character_table")
     # 获取卡池ID
@@ -349,7 +348,7 @@ def Gacha(ticket_type, use_diamond_shard, json_body):
     except:
         pool_path = os.path.join(os.getcwd(), 'data', 'gacha', 'DEFAULT.json')
     #读取卡池信息
-    server_data = read_json(SERVER_DATA_PATH, encoding="utf-8")
+    server_data = read_json(SERVER_DATA_PATH)
     ex_gacha_data = server_data["gacha"]["count"]
     # 获取当前时间戳
     ts = time()
@@ -740,7 +739,7 @@ def Gacha(ticket_type, use_diamond_shard, json_body):
         # 更新回到 gacha_history_data
         gacha_history_data[pool_id] = existing_data
         # 写入历史记录
-        write_json(gacha_history_data, GACHA_HISTORY_PATH, encoding="utf-8")
+        write_json(gacha_history_data, GACHA_HISTORY_PATH)
 
     # 写入用户数据
     write_json(user_json_data, USER_JSON_PATH)

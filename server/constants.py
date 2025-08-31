@@ -1,7 +1,6 @@
 
 # Config Data
 CONFIG_PATH = "config/config.json"
-EX_CONFIG_PATH  = "config/exConfig.json"
 MAILLIST_PATH = "config/mails.json"
 MAILCOLLECTION_PATH = "config/mailCollection.json"
 RLV2_CONFIG_PATH = "config/rlv2Config.json"

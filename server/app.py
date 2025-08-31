@@ -5,7 +5,7 @@ from datetime import datetime
 from flask import Flask
 
 from utils import read_json, preload_json_data, start_global_event_loop
-from constants import CONFIG_PATH, EX_CONFIG_PATH
+from constants import CONFIG_PATH
 
 import account, background, building, campaignV2, char, charBuild, charm, \
         crisis, deepsea, gacha, mail, online, tower, quest, pay, rlv2, shop, story, \
@@ -13,12 +13,11 @@ import account, background, building, campaignV2, char, charBuild, charm, \
         activity, vecbreak, mission
 
 server_config = read_json(CONFIG_PATH)
-ex_config = read_json(EX_CONFIG_PATH)
 
 app = Flask(__name__)
 host = server_config["server"]["host"]
 port = server_config["server"]["port"]
-useMemoryCache = ex_config["useMemoryCache"]
+useMemoryCache = server_config["server"]["useMemoryCache"]
 
 logger = logging.getLogger('werkzeug')
 logger.setLevel(logging.INFO)

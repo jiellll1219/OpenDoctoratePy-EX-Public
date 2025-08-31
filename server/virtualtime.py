@@ -1,11 +1,11 @@
-from constants import EX_CONFIG_PATH
+from constants import CONFIG_PATH
 from utils import read_json
 from time import time as real_time
 from datetime import datetime
 
 def time():
-    config_data = read_json(EX_CONFIG_PATH)
-    virtual_time = config_data["virtualtime"]
+    config_data = read_json(CONFIG_PATH)
+    virtual_time = config_data["server"]["virtualtime"]
     
     if isinstance(virtual_time, str):
         # 兼容的时间格式列表

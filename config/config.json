@@ -97,7 +97,9 @@
     "server": {
         "host": "0.0.0.0",
         "mode": "cn",
-        "port": 8443
+        "port": 8443,
+        "virtualtime": -114514,
+        "useMemoryCache": false
     },
     "towerConfig": {
         "season": "tower_season_5"

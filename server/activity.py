@@ -10,7 +10,7 @@ class CheckInReward():
     # 这个类用于处理活动签到奖励
     def __init__(self):
         # 需要用到用户数据时，传参里添加self，使用 self.user_data 获取用户数据
-        self.user_data = read_json(SYNC_DATA_TEMPLATE_PATH, encoding="utf-8")
+        self.user_data = read_json(SYNC_DATA_TEMPLATE_PATH)
         
     def getCheckInReward(self):
         json_body = request.get_json()

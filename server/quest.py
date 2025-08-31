@@ -160,7 +160,7 @@ def questSquadFormation():
             }
         })
 
-        saved_data = read_json(USER_JSON_PATH, encoding="utf-8")
+        saved_data = read_json(USER_JSON_PATH)
         saved_data["user"]["troop"]["squads"][str(request_data["squadId"])]["slots"] = request_data["slots"]
         write_json(saved_data, USER_JSON_PATH)
         write_json(saved_data, SYNC_DATA_TEMPLATE_PATH)

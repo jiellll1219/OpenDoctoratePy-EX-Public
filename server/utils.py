@@ -17,22 +17,21 @@ from datetime import datetime, UTC
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import unpad
 
-from constants import USER_JSON_PATH, SERVER_DATA_PATH, SYNC_DATA_TEMPLATE_PATH, EX_CONFIG_PATH
+from constants import USER_JSON_PATH, SERVER_DATA_PATH, SYNC_DATA_TEMPLATE_PATH, CONFIG_PATH
 
 json_encoder = Encoder(order="deterministic")
 json_decoder = Decoder(strict=False)
 
-def read_json(path: str, **args) -> Dict[str, Any]:
-    if "b" not in args.get("mode", ""): 
-        args.setdefault("encoding", "utf-8")
-    with open(path, "r", **args) as f:
+def read_json(path: str) -> Dict[str, Any]:
+    with open(path, "rb") as f:
         return json_decoder.decode(f.read())
 
-def write_json(data, path: str, **args): 
-    if "b" not in args.get("mode", ""): 
-        args.setdefault("encoding", "utf-8")
-    with open(path, "w", **args) as f: 
-        f.write(format(json_encoder.encode(data), indent=4).decode("utf-8"))
+def write_json(data: Any, path: str, indent: int = 4):
+    with open(path, "wb") as f:
+        if indent:
+            f.write(format(json_encoder.encode(data), indent=indent))
+        else:
+            f.write(json_encoder.encode(data))
 
 def decrypt_battle_data(data: str, login_time: int = read_json(USER_JSON_PATH)["user"]["pushFlags"]["status"]):
     
@@ -136,8 +135,7 @@ def get_memory(key: str) -> dict:
 
     :param key: 要获取的数据的名，如"activity_table"，返回"data/excel/activity_table.json"中的数据
     '''
-    ex_config = read_json(EX_CONFIG_PATH)
-    useMemoryCache = ex_config["useMemoryCache"]
+    useMemoryCache = read_json(CONFIG_PATH)["server"]["useMemoryCache"]
     if useMemoryCache:
         # 从内存缓存中获取数据，如果不存在则尝试读取文件
         try:

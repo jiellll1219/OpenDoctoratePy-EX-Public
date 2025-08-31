@@ -7,7 +7,7 @@ def SetBackground():
 
     data = request.data
     request_data = request.get_json()
-    player_data = read_json(USER_JSON_PATH, encoding="utf-8")
+    player_data = read_json(USER_JSON_PATH)
     player_data["user"]["background"]["selected"] = request_data["bgID"]
     write_json(player_data, SYNC_DATA_TEMPLATE_PATH)
 

@@ -6,7 +6,7 @@ from utils import read_json
 
 def getGoodList():
     shop_id = str(request.get_json()["shopId"])
-    data = read_json(TEMPLATE_SHOP_PATH, encoding="utf-8")[shop_id]
+    data = read_json(TEMPLATE_SHOP_PATH)[shop_id]
     return {
         "data": data,
         "nextSyncTime": -1,

@@ -40,7 +40,7 @@ def rlv2GiveUpGame():
 
 
 def getChars(use_user_defaults=False):
-    user_data = read_json(USER_JSON_PATH, encoding="utf-8")
+    user_data = read_json(USER_JSON_PATH)
     chars = [
         user_data["user"]["troop"]["chars"][i]
         for i in user_data["user"]["troop"]["chars"]

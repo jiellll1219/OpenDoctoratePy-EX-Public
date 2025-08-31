@@ -129,7 +129,7 @@ def charBuildChangeCharSkin():
         }
     }
 
-    saved_data = read_json(USER_JSON_PATH, encoding="utf-8")
+    saved_data = read_json(USER_JSON_PATH)
 
     if saved_data["user"]["troop"]["chars"][str(charInstId)]["charId"] == "char_002_amiya":
         tmpl_id = re.search(r"^(.*?)@", skinId).group(1)
@@ -142,7 +142,7 @@ def charBuildChangeCharSkin():
 
         result["playerDataDelta"]["modified"]["troop"]["chars"].update({str(charInstId): {"skin": skinId}})
 
-    write_json(saved_data, USER_JSON_PATH, encoding="utf-8")
+    write_json(saved_data, USER_JSON_PATH)
 
     return result
 

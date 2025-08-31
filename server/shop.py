@@ -31,7 +31,7 @@ def buySkinGood():
     good_id = json_body.get('goodId')
 
     skin_good_list = read_json(SHOP_PATH)["skin"]
-    user_json_data = read_json(USER_JSON_PATH, encoding="utf-8")
+    user_json_data = read_json(USER_JSON_PATH)
  
     # 遍历goodList列表
     for good in skin_good_list['goodList']:
@@ -70,8 +70,8 @@ def buyLowGood():
     count = json_body.get('count')
 
     items = []
-    low_good_list = read_json(SHOP_PATH, encoding="utf-8")["low"]
-    user_json_data = read_json(USER_JSON_PATH, encoding="utf-8")
+    low_good_list = read_json(SHOP_PATH)["low"]
+    user_json_data = read_json(USER_JSON_PATH)
 
     for low_good in low_good_list['goodList']:
         if low_good['goodId'] == good_id:
@@ -112,8 +112,8 @@ def buyHighGood():
     count = json_body.get('count')
 
     items = []
-    high_good_list = read_json(SHOP_PATH, encoding="utf-8")["high"]
-    user_json_data = read_json(USER_JSON_PATH, encoding="utf-8")
+    high_good_list = read_json(SHOP_PATH)["high"]
+    user_json_data = read_json(USER_JSON_PATH)
 
     for high_good in high_good_list['goodList']:
         if high_good['goodId'] == good_id:
@@ -154,8 +154,8 @@ def buyExtraGood():
     count = json_body.get('count')
 
     items = []
-    extra_good_list = read_json(SHOP_PATH, encoding="utf-8")["extra"]
-    user_json_data = read_json(USER_JSON_PATH, encoding="utf-8")
+    extra_good_list = read_json(SHOP_PATH)["extra"]
+    user_json_data = read_json(USER_JSON_PATH)
 
     for extra_good in extra_good_list['goodList']:
         if extra_good['goodId'] == good_id:
@@ -195,9 +195,9 @@ def buyClassicGood():
     count = json_body.get('count')
 
     items = []
-    classic_good_list = read_json(SHOP_PATH, encoding="utf-8")["classic"]
+    classic_good_list = read_json(SHOP_PATH)["classic"]
     
-    user_json_data = read_json(USER_JSON_PATH, encoding="utf-8")
+    user_json_data = read_json(USER_JSON_PATH)
 
     for classic_good in classic_good_list['goodList']:
         if classic_good['goodId'] == good_id:

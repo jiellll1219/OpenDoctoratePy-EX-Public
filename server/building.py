@@ -6,7 +6,7 @@ import json
 
 def Sync():
     # 读取用户数据
-    user_data = read_json(USER_JSON_PATH, encoding="utf-8")
+    user_data = read_json(USER_JSON_PATH)
 
     # 更新基建数据中的角色实例ID列表
     def update_building_char_InstId_List(building_data):
@@ -51,7 +51,7 @@ def Sync():
     # 将家具字典赋值给基建数据
     user_data["user"]["building"]["furniture"] = furniture
     # 将基建数据写入文件
-    write_json(user_data, USER_JSON_PATH, encoding="utf-8")
+    write_json(user_data, USER_JSON_PATH)
 
     result = {
         "playerDataDelta": {
@@ -141,7 +141,7 @@ def ChangeDiySolution():
     roomSlotId = json_body["roomSlotId"]
     solution = json_body["solution"]
 
-    user_json_data = read_json(USER_JSON_PATH, encoding="utf-8")
+    user_json_data = read_json(USER_JSON_PATH)
 
     if roomSlotId == "slot_36":
         user_json_data["user"]["building"]["rooms"]["MEETING"]["slot_36"]["diySolution"] = solution
@@ -170,7 +170,7 @@ def ChangeDiySolution():
                 }
                 break
 
-    write_json(user_json_data, USER_JSON_PATH, encoding="utf-8")
+    write_json(user_json_data, USER_JSON_PATH)
 
     result = {
         "playerDataDelta": {
@@ -666,7 +666,7 @@ def editLockQueue():
 def batchRestChar():
     json_body = request.get_json()
 
-    user_data = read_json(USER_JSON_PATH, encoding="utf-8")
+    user_data = read_json(USER_JSON_PATH)
     building_data = user_data["user"]["building"]
 
     # TODO: 待编写
@@ -685,7 +685,7 @@ def buildRoom():
     json_body = request.get_json()
     print(json_body)
     # {'roomSlotId': 'slot_47', 'roomId': 'PRIVATE'}
-    user_data = read_json(USER_JSON_PATH, encoding="utf-8")
+    user_data = read_json(USER_JSON_PATH)
     building_data = user_data["user"]["building"]
 
     # TODO: 待编写
@@ -703,13 +703,13 @@ def buildRoom():
 def setPrivateDormOwner():
     json_body = request.get_json()
 
-    user_data = read_json(USER_JSON_PATH, encoding="utf-8")
+    user_data = read_json(USER_JSON_PATH)
     target_slot_id = json_body["slotId"]
     owners_id = json_body["charInsId"]
 
     user_data["user"]["building"]["rooms"]["PRIVATE"][target_slot_id]["owners"] = [owners_id]
 
-    write_json(user_data, USER_JSON_PATH, encoding="utf-8")
+    write_json(user_data, USER_JSON_PATH)
 
     return {
         "playerDataDelta": {
@@ -731,7 +731,7 @@ def setPrivateDormOwner():
 def changeBGM():
     json_body = request.get_json()
 
-    user_data = read_json(USER_JSON_PATH, encoding="utf-8")
+    user_data = read_json(USER_JSON_PATH)
 
     music_id = json_body["musicId"]
 

@@ -11,8 +11,8 @@ import time
 
 
 def CheckIn():
-    sync_data = read_json(SYNC_DATA_TEMPLATE_PATH, encoding="utf-8")
-    server_data = read_json(SERVER_DATA_PATH, encoding="utf-8")
+    sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
+    server_data = read_json(SERVER_DATA_PATH)
     checkin_data = sync_data["user"]["checkIn"]
     checkin_data["canCheckIn"] = 0
     checkin_data["showCount"] += 1
@@ -62,7 +62,7 @@ def ChangeSecretary():
             skinId.split("@")[0] if "@" in skinId else skinId.split("#")[0]
         )
         data["playerDataDelta"]["modified"]["status"]["secretarySkinId"] = skinId
-        saved_data = read_json(SYNC_DATA_TEMPLATE_PATH, encoding="utf-8")
+        saved_data = read_json(SYNC_DATA_TEMPLATE_PATH)
         saved_data["user"]["status"]["secretary"] = (
             skinId.split("@")[0] if "@" in skinId else skinId.split("#")[0]
         )
@@ -483,7 +483,7 @@ def getOtherPlayerNameCard():
 
     json_body = request.get_json()
 
-    user_data = read_json(USER_JSON_PATH, encoding="utf-8")
+    user_data = read_json(USER_JSON_PATH)
 
     assist_list = [user_data["troop"]["chars"].keys()]
     assist_char_id = assist_list[random.randint(0, len(assist_list) - 1)]
@@ -565,8 +565,8 @@ def businessCard_changeNameCardSkin():
 
 def editNameCard():
     json_body = request.get_json()
-    sync_data = read_json(SYNC_DATA_TEMPLATE_PATH, encoding="utf-8")
-    user_data = read_json(USER_JSON_PATH, encoding="utf-8")
+    sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
+    user_data = read_json(USER_JSON_PATH)
     nameCardStyle_data = sync_data["user"]["nameCardStyle"]
     modified_data = json_body["content"]
 
@@ -600,7 +600,7 @@ def bindBirthday():
 
     json_body = request.get_json()
 
-    user_data = read_json(USER_JSON_PATH, encoding="utf-8")
+    user_data = read_json(USER_JSON_PATH)
     user_data["user"]["status"]["birthday"] = {
         "month": -1,
         "day": -1
@@ -608,7 +608,7 @@ def bindBirthday():
     user_data["user"]["status"]["birthday"]["month"] = int(json_body["month"])
     user_data["user"]["status"]["birthday"]["day"] = int(json_body["day"])
 
-    write_json(USER_JSON_PATH, user_data, encoding="utf-8")
+    write_json(USER_JSON_PATH, user_data)
 
     return {
         "playerDataDelta": {

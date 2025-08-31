@@ -11,7 +11,6 @@ from flask import request
 from constants import (
     USER_JSON_PATH,
     CONFIG_PATH,
-    EX_CONFIG_PATH,
     BATTLE_REPLAY_JSON_PATH,
     SYNC_DATA_TEMPLATE_PATH,
     CRISIS_V2_JSON_BASE_PATH,
@@ -49,7 +48,6 @@ def accountSyncData():
     mail_data = read_json(MAILLIST_PATH)
     player_data = read_json(SYNC_DATA_TEMPLATE_PATH)
     config = read_json(CONFIG_PATH)
-    exconfig = read_json(EX_CONFIG_PATH)
 
     # Load newest data
     skin_table = get_memory("skin_table")
@@ -155,7 +153,7 @@ def accountSyncData():
         charGroup.update({char_id: {"favorPoint": 25570}})
         # 存在已有角色数据的情况
         if str(inst_id) in player_data_keys:
-            myCharList[inst_id] = player_data["user"]["troop"]["chars"][str(inst_id)]
+            myCharList[str(inst_id)] = player_data["user"]["troop"]["chars"][str(inst_id)]
         else:
             # ---------- 角色创建逻辑 ---------- 
             # 语音语言处理
@@ -638,14 +636,11 @@ def accountSyncData():
 
     selected_crisis = config["crisisV2Config"]["selectedCrisis"]
     if selected_crisis:
-        rune = read_json(
-            f"{CRISIS_V2_JSON_BASE_PATH}{selected_crisis}.json", encoding="utf-8"
-        )
+        rune = read_json(f"{CRISIS_V2_JSON_BASE_PATH}{selected_crisis}.json")
         season = rune["info"]["seasonId"]
         player_data["user"]["crisisV2"]["current"] = season
 
-    with open(USER_JSON_PATH, 'w', encoding='utf-8') as file:
-        json.dump(player_data, file, ensure_ascii=False, indent=4)
+    write_json(player_data, USER_JSON_PATH)
 
     b = datetime.now()
     print(f"syncdata耗时: {b - a}")
