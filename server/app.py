@@ -43,7 +43,8 @@ logger.addFilter(lambda record: not re.match(r'.*(/syncPushMessage|/pb/async|/ev
 app.add_url_rule("/app/getSettings", methods = ["POST"], view_func = user.appGetSettings)
 app.add_url_rule("/app/getCode", methods = ["POST"], view_func = user.appGetCode)
 
-# Account相关路由 - 适配双框架
+
+# Account相关路由 - 完全使用FastAPI
 if use_fastapi:
     # FastAPI路由注册（使用异步接口）
     api_router.add_api_route("/account/login", account.account_login, methods=["POST"])
@@ -79,6 +80,7 @@ else:
     app.add_url_rule("/account/yostar_auth_request", methods=["POST"], view_func=flask_wrap(account.account_yostar_auth_request))
     app.add_url_rule("/account/yostar_auth_submit", methods=["POST"], view_func=flask_wrap(account.account_yostar_auth_submit))
     app.add_url_rule("/account/syncPushMessage", methods=["POST"], view_func=flask_wrap(account.sync_push_message))
+
 
 
 app.add_url_rule("/assetbundle/official/Android/assets/<string:assetsHash>/<string:fileName>", methods = ["GET"], view_func = asset.assetbundle.getFile)
