@@ -1,12 +1,17 @@
 import re
 import logging
 from datetime import datetime
+import asyncio
 
+# 同时导入Flask和FastAPI
 from flask import Flask
+from fastapi import FastAPI, APIRouter
+from fastapi.responses import JSONResponse
 
 from utils import read_json, preload_json_data, start_global_event_loop
 from constants import CONFIG_PATH
 
+# 导入所有模块（保持不变）
 import account, background, building, campaignV2, char, charBuild, charm, \
         crisis, deepsea, gacha, mail, online, tower, quest, pay, rlv2, shop, story, \
         user, asset.assetbundle, config.prod, social, templateShop, other, sandbox, charrotation, \
@@ -14,24 +19,57 @@ import account, background, building, campaignV2, char, charBuild, charm, \
 
 server_config = read_json(CONFIG_PATH)
 
-app = Flask(__name__)
+# 框架配置
+use_fastapi = server_config["server"].get("useFastAPI", False)  # 新增配置项，控制使用哪个框架
+
+# 根据配置创建相应的应用实例
+if use_fastapi:
+    app = FastAPI()
+    api_router = APIRouter()
+else:
+    app = Flask(__name__)
+
 host = server_config["server"]["host"]
 port = server_config["server"]["port"]
 useMemoryCache = server_config["server"]["useMemoryCache"]
 
+# 日志配置（保持不变）
 logger = logging.getLogger('werkzeug')
 logger.setLevel(logging.INFO)
 logger.addFilter(lambda record: not re.match(r'.*(/syncPushMessage|/pb/async|/event|/batch_event).*', record.getMessage()))
 
+# 通用路由（保持不变）
 app.add_url_rule("/app/getSettings", methods = ["POST"], view_func = user.appGetSettings)
 app.add_url_rule("/app/getCode", methods = ["POST"], view_func = user.appGetCode)
 
-app.add_url_rule("/account/login", methods = ["POST"], view_func = account.accountLogin)
-app.add_url_rule("/account/syncData", methods = ["POST"], view_func = account.accountSyncData)
-app.add_url_rule("/account/syncStatus", methods = ["POST"], view_func = account.accountSyncStatus)
-app.add_url_rule("/account/yostar_auth_request", methods = ["POST"], view_func = account.accountYostarAuthRequest)
-app.add_url_rule("/account/yostar_auth_submit", methods = ["POST"], view_func = account.accountYostarAuthSubmit)
-app.add_url_rule("/account/syncPushMessage", methods = ["POST"], view_func = account.syncPushMessage)
+# Account相关路由 - 适配双框架
+if use_fastapi:
+    # FastAPI路由注册（使用异步接口）
+    api_router.add_api_route("/account/login", account.account_login, methods=["POST"])
+    api_router.add_api_route("/account/syncData", account.account_sync_data, methods=["POST"])
+    api_router.add_api_route("/account/syncStatus", account.account_sync_status, methods=["POST"])
+    api_router.add_api_route("/account/yostar_auth_request", account.account_yostar_auth_request, methods=["POST"])
+    api_router.add_api_route("/account/yostar_auth_submit", account.account_yostar_auth_submit, methods=["POST"])
+    api_router.add_api_route("/account/syncPushMessage", account.sync_push_message, methods=["POST"])
+    app.include_router(api_router)
+else:
+    # Flask路由注册（使用同步包装器）
+    def flask_wrap(async_func):
+        def wrapper():
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            result = loop.run_until_complete(async_func())
+            loop.close()
+            return result
+        return wrapper
+
+    app.add_url_rule("/account/login", methods=["POST"], view_func=flask_wrap(account.account_login))
+    app.add_url_rule("/account/syncData", methods=["POST"], view_func=flask_wrap(account.account_sync_data))
+    app.add_url_rule("/account/syncStatus", methods=["POST"], view_func=flask_wrap(account.account_sync_status))
+    app.add_url_rule("/account/yostar_auth_request", methods=["POST"], view_func=flask_wrap(account.account_yostar_auth_request))
+    app.add_url_rule("/account/yostar_auth_submit", methods=["POST"], view_func=flask_wrap(account.account_yostar_auth_submit))
+    app.add_url_rule("/account/syncPushMessage", methods=["POST"], view_func=flask_wrap(account.sync_push_message))
+
 
 app.add_url_rule("/assetbundle/official/Android/assets/<string:assetsHash>/<string:fileName>", methods = ["GET"], view_func = asset.assetbundle.getFile)
 
@@ -306,6 +344,7 @@ app.add_url_rule('/recalRune/battleStart', methods=['POST'], view_func=crisis.re
 app.add_url_rule('/recalRune/battleFinish', methods=['POST'], view_func=crisis.recalRune_battleFinish)
 
 
+# 启动逻辑适配
 def writeLog(data):
     print(f'[{datetime.now()}] {data}')
 
@@ -315,5 +354,12 @@ if __name__ == "__main__":
         writeLog('Loading all table data to memory')
         preload_json_data()
         writeLog('Sucessfully loaded all table data')
-    writeLog('[SERVER] Server started at http://' + host + ":" + str(port))
-    app.run(host=host, port=port, debug=True)
+    
+    writeLog(f'[SERVER] Server started at http://{host}:{port} using {"FastAPI" if use_fastapi else "Flask"}')
+    
+    if use_fastapi:
+        import uvicorn
+        uvicorn.run(app, host=host, port=port)
+    else:
+        app.run(host=host, port=port, debug=True)
+
