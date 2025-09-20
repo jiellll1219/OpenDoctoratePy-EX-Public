@@ -22,9 +22,11 @@ from constants import USER_JSON_PATH, SERVER_DATA_PATH, SYNC_DATA_TEMPLATE_PATH,
 json_encoder = Encoder(order="deterministic")
 json_decoder = Decoder(strict=False)
 
+
 def read_json(path: str) -> Dict[str, Any]:
     with open(path, "rb") as f:
         return json_decoder.decode(f.read())
+
 
 def write_json(data: Any, path: str, indent: int = 4):
     with open(path, "wb") as f:
@@ -33,10 +35,10 @@ def write_json(data: Any, path: str, indent: int = 4):
         else:
             f.write(json_encoder.encode(data))
 
+
 def decrypt_battle_data(data: str, login_time: int = read_json(USER_JSON_PATH)["user"]["pushFlags"]["status"]):
-    
     LOG_TOKEN_KEY = "pM6Umv*^hVQuB6t&"
-    
+
     battle_data = bytes.fromhex(data[:len(data) - 32])
     src = LOG_TOKEN_KEY + str(login_time)
     key = hashlib.md5(src.encode()).digest()
@@ -48,6 +50,7 @@ def decrypt_battle_data(data: str, login_time: int = read_json(USER_JSON_PATH)["
     except Exception:
         return {}
 
+
 def logging(data):
     def rand_name(len: int = 16) -> str:
         dt = datetime.now()
@@ -57,11 +60,13 @@ def logging(data):
             seed += str(t)
         seed = str(shuffle(list(seed)))
         return sha3_512(seed.encode()).hexdigest()[:len]
+
     name = rand_name(8)
     log_message = f"[{datetime.now(UTC).isoformat()}] {data}"
     print(log_message)
     with open(f"logs/{name}.log", "w") as f:
         f.write(log_message)
+
 
 def run_after_response(func, *args, on_error=None):
     """
@@ -71,6 +76,7 @@ def run_after_response(func, *args, on_error=None):
     :param *args: 可选，传给函数的参数/数据。
     :param on_error: 可选，异常回调函数。例子: on_error(exception, traceback_str)
     """
+
     @after_this_request
     def register(response):
         async def task():
@@ -86,32 +92,38 @@ def run_after_response(func, *args, on_error=None):
 
         asyncio.run_coroutine_threadsafe(task(), global_loop)
         return response
-    
-#定义一个全局变量，用于存储从 JSON 文件中读取的数据
+
+
+# 定义一个全局变量，用于存储从 JSON 文件中读取的数据
 memory_cache: Dict[str, Any] = {}
+
+
 # 读取 JSON 文件并存入内存
 def preload_json_data():
     # 加载 data/excel 目录下的所有 JSON 文件到内存中
     global memory_cache
     excel_dir = "data/excel"
-    
+
     # 确保目录存在
     if not os.path.exists(excel_dir):
         raise FileNotFoundError(f"未找到目录: {excel_dir}")
-    
+
     # 遍历目录下的所有 JSON 文件
     for filename in os.listdir(excel_dir):
         if filename.endswith(".json"):
             # 去除 .json 后缀作为 key
             key = filename[:-5]
             file_path = os.path.join(excel_dir, filename)
-            
+
             try:
                 memory_cache[key] = read_json(file_path)
             except Exception as e:
                 print(f"加载 {filename} 时出错: {str(e)}")
 
+
 global_loop: Optional[asyncio.AbstractEventLoop] = None
+
+
 def start_global_event_loop() -> asyncio.AbstractEventLoop:
     global global_loop
     if global_loop is not None:
@@ -128,6 +140,7 @@ def start_global_event_loop() -> asyncio.AbstractEventLoop:
 
     global_loop = loop
     return loop
+
 
 def get_memory(key: str) -> dict:
     '''
@@ -162,35 +175,36 @@ def get_memory(key: str) -> dict:
         except Exception as e:
             raise ValueError(f"加载 {file_path} 时出错: {str(e)}")
 
+
 def update_check_in_status():
     default_data = {
         "lastCheckInTs": 0,
         "lastResetDate": "2000-01-01"
     }
-    
+
     server_data = read_json(SERVER_DATA_PATH)
     sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
-    
+
     check_in_data = server_data.get("checkInData", None)
     if check_in_data is None:
         not_default = False
         check_in_data = default_data
     else:
         not_default = True
-    
+
     # 获取当前时间（设备本地时区）
     now_local = datetime.now().astimezone()
     today_date = now_local.date()
     current_month = now_local.month
     current_year = now_local.year
-    
+
     # 处理lastResetDate
     last_reset_date = datetime.strptime(
         check_in_data["lastResetDate"], "%Y-%m-%d"
-    ).date() 
-    last_reset_month = last_reset_date.month    # 最后一次签到的月份
-    last_reset_year = last_reset_date.year      # 最后一次签到的年份
-    
+    ).date()
+    last_reset_month = last_reset_date.month  # 最后一次签到的月份
+    last_reset_year = last_reset_date.year  # 最后一次签到的年份
+
     # 计算今天的4AM（本地时区）
     today_4am = datetime.combine(today_date, datetime.min.time()).replace(
         hour=4, minute=0, second=0, microsecond=0
@@ -198,16 +212,16 @@ def update_check_in_status():
 
     # 条件1: 当前时间已经过了今天4AM
     condition1 = now_local >= today_4am
-    
+
     # 条件2: 上次重置日期不是今天
     condition2 = last_reset_date != today_date
-    
+
     # 条件3: 最后一次重置的月份与当前月份不同
     condition3 = current_month != last_reset_month
 
-    #条件4：最后一次重置的年份与当前年份不同
+    # 条件4：最后一次重置的年份与当前年份不同
     condition4 = current_year != last_reset_year
-    
+
     # 只有当条件1、2都满足时才重置可签到状态
     if condition1 and condition2:
         check_in_data["lastResetDate"] = today_date.isoformat()

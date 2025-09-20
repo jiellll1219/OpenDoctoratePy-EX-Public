@@ -641,9 +641,12 @@ async def account_sync_data(request: Any = None) -> Dict[str, Any]:
             if charId in charId2instId:
                 instId = charId2instId[charId]
                 slot["charInstId"] = instId
-                if (
-                        slot["currentEquip"]
-                        not in player_data["user"]["troop"]["chars"][instId]["equip"]
+                # ensure we index chars with the same key type (strings)
+                char_key = str(instId)
+                char_entry = player_data["user"]["troop"]["chars"].get(char_key)
+                if not char_entry or (
+                        slot.get("currentEquip")
+                        not in char_entry.get("equip", {})
                 ):
                     slot["currentEquip"] = None
             else:
@@ -734,6 +737,16 @@ async def account_sync_data(request: Any = None) -> Dict[str, Any]:
         player_data["user"]["crisisV2"]["current"] = season
 
     # 保存玩家数据
+    # Ensure all dict keys are strings to satisfy msgspec Encoder(order="deterministic")
+    try:
+        if isinstance(player_data.get("user", {}).get("troop", {}).get("chars"), dict):
+            chars = player_data["user"]["troop"]["chars"]
+            # convert any non-string keys to strings
+            player_data["user"]["troop"]["chars"] = {str(k): v for k, v in chars.items()}
+    except Exception:
+        # fallback: leave as-is and let write_json raise if still problematic
+        pass
+
     if fastapi_available:
         await async_write_json(player_data, USER_JSON_PATH)
     else:

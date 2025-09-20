@@ -3,3 +3,5 @@ requests
 pycryptodome
 py7zr
 msgspec
+fastapi
+asyncio

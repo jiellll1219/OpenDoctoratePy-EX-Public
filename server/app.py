@@ -1,5 +1,6 @@
 import re
 import logging
+from builtins import print
 from datetime import datetime
 import asyncio
 
@@ -53,14 +54,23 @@ if use_fastapi:
     api_router.add_api_route("/account/syncPushMessage", account.sync_push_message, methods=["POST"])
     app.include_router(api_router)
 else:
-    # Flask路由注册（使用同步包装器）
+    
+    from functools import wraps
+
     def flask_wrap(async_func):
-        def wrapper():
+        @wraps(async_func)
+        def wrapper(*args, **kwargs):
             loop = asyncio.new_event_loop()
-            asyncio.set_event_loop(loop)
-            result = loop.run_until_complete(async_func())
-            loop.close()
-            return result
+            try:
+                asyncio.set_event_loop(loop)
+                # pass through args/kwargs to the async function
+                result = loop.run_until_complete(async_func(*args, **kwargs))
+                return result
+            finally:
+                try:
+                    loop.close()
+                except Exception:
+                    pass
         return wrapper
 
     app.add_url_rule("/account/login", methods=["POST"], view_func=flask_wrap(account.account_login))
