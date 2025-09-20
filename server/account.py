@@ -5,8 +5,22 @@ from copy import deepcopy
 from datetime import datetime
 from hashlib import md5
 from os.path import exists
+from typing import Dict, Any, Optional
 
-from flask import request
+# 框架适配层
+try:
+    from fastapi import Request, APIRouter
+    from fastapi.responses import JSONResponse
+    import asyncio
+    fastapi_available = True
+except ImportError:
+    fastapi_available = False
+
+try:
+    from flask import request as flask_request
+    flask_available = True
+except ImportError:
+    flask_available = False
 
 from constants import (
     USER_JSON_PATH,
@@ -21,13 +35,54 @@ from utils import read_json, write_json, get_memory, run_after_response, update_
 from virtualtime import time
 
 
-def accountLogin():
+# 框架适配工具函数
+def get_request_data(request: Any) -> Dict[str, Any]:
+    """获取请求数据，适配Flask和FastAPI"""
+    if fastapi_available and isinstance(request, Request):
+        return asyncio.run(request.json())  # FastAPI异步获取JSON
+    elif flask_available and request is flask_request:
+        return request.get_json() if request.is_json else {}  # Flask获取JSON
+    return {}
+
+
+def get_request_headers(request: Any) -> Dict[str, str]:
+    """获取请求头，适配Flask和FastAPI"""
+    if fastapi_available and isinstance(request, Request):
+        return dict(request.headers)
+    elif flask_available and request is flask_request:
+        return dict(request.headers)
+    return {}
+
+
+# 异步版本的工具函数包装
+async def async_read_json(path: str) -> Dict[str, Any]:
+    """异步读取JSON文件"""
+    loop = asyncio.get_event_loop()
+    return await loop.run_in_executor(None, read_json, path)
+
+
+async def async_write_json(data: Dict[str, Any], path: str) -> None:
+    """异步写入JSON文件"""
+    loop = asyncio.get_event_loop()
+    await loop.run_in_executor(None, write_json, data, path)
+
+
+async def async_get_memory(key: str) -> Dict[str, Any]:
+    """异步获取内存数据"""
+    loop = asyncio.get_event_loop()
+    return await loop.run_in_executor(None, get_memory, key)
+
+
+# API函数实现
+async def account_login(request: Any = None) -> Dict[str, Any]:
+    """账户登录接口，支持同步(Flask)和异步(FastAPI)调用"""
     try:
-        uid = uuid.UUID(request.headers.get("Uid"))
+        # 获取请求头，适配不同框架
+        headers = get_request_headers(request or (flask_request if flask_available else None))
+        uid = uuid.UUID(headers.get("Uid", ""))
     except Exception:
         uid = uuid.uuid4()
 
-    data = request.data
     data = {
         "result": 0,
         "uid": str(uid),
@@ -35,36 +90,71 @@ def accountLogin():
         "serviceLicenseVersion": 0
     }
 
-    run_after_response(update_check_in_status)
+    # 安排响应后执行的任务
+    if run_after_response:
+        run_after_response(update_check_in_status)
+        
     return data
 
 
-def accountSyncData():
+async def account_sync_data(request: Any = None) -> Dict[str, Any]:
+    """账户数据同步接口，支持同步(Flask)和异步(FastAPI)调用"""
     a = datetime.now()
+    
+    # 检查文件是否存在，如果不存在则创建
     if not exists(USER_JSON_PATH):
-        write_json({}, USER_JSON_PATH)
+        if fastapi_available:  # 异步环境
+            await async_write_json({}, USER_JSON_PATH)
+        else:  # 同步环境
+            write_json({}, USER_JSON_PATH)
 
-    saved_data = read_json(USER_JSON_PATH)
-    mail_data = read_json(MAILLIST_PATH)
-    player_data = read_json(SYNC_DATA_TEMPLATE_PATH)
-    config = read_json(CONFIG_PATH)
-
-    # Load newest data
-    skin_table = get_memory("skin_table")
-    character_table = get_memory("character_table")
-    equip_table = get_memory("uniequip_table")
-    display_meta_table = get_memory("display_meta_table")
-    retro_table = get_memory("retro_table")
-    charm_table = get_memory("charm_table")
-    activity_table = get_memory("activity_table")
-    charword_table = get_memory("charword_table")
-    stage_table = get_memory("stage_table")
-    story_table = get_memory("story_table")
-    addon_table = get_memory("handbook_info_table")
-    story_review_table = get_memory("story_review_table")
-    story_review_meta_table = get_memory("story_review_meta_table")
-    enemy_handbook_table = get_memory("enemy_handbook_table")
-    medal_table = get_memory("medal_table")
+    # 读取基础数据，根据环境选择同步或异步方法
+    if fastapi_available:  # 异步环境
+        saved_data = await async_read_json(USER_JSON_PATH)
+        mail_data = await async_read_json(MAILLIST_PATH)
+        player_data = await async_read_json(SYNC_DATA_TEMPLATE_PATH)
+        config = await async_read_json(CONFIG_PATH)
+        
+        # 加载内存数据
+        skin_table = await async_get_memory("skin_table")
+        character_table = await async_get_memory("character_table")
+        equip_table = await async_get_memory("uniequip_table")
+        display_meta_table = await async_get_memory("display_meta_table")
+        retro_table = await async_get_memory("retro_table")
+        charm_table = await async_get_memory("charm_table")
+        activity_table = await async_get_memory("activity_table")
+        charword_table = await async_get_memory("charword_table")
+        stage_table = await async_get_memory("stage_table")
+        story_table = await async_get_memory("story_table")
+        addon_table = await async_get_memory("handbook_info_table")
+        story_review_table = await async_get_memory("story_review_table")
+        story_review_meta_table = await async_get_memory("story_review_meta_table")
+        enemy_handbook_table = await async_get_memory("enemy_handbook_table")
+        medal_table = await async_get_memory("medal_table")
+        rlv2_table = await async_get_memory("roguelike_topic_table")
+    else:  # 同步环境
+        saved_data = read_json(USER_JSON_PATH)
+        mail_data = read_json(MAILLIST_PATH)
+        player_data = read_json(SYNC_DATA_TEMPLATE_PATH)
+        config = read_json(CONFIG_PATH)
+        
+        # 加载内存数据
+        skin_table = get_memory("skin_table")
+        character_table = get_memory("character_table")
+        equip_table = get_memory("uniequip_table")
+        display_meta_table = get_memory("display_meta_table")
+        retro_table = get_memory("retro_table")
+        charm_table = get_memory("charm_table")
+        activity_table = get_memory("activity_table")
+        charword_table = get_memory("charword_table")
+        stage_table = get_memory("stage_table")
+        story_table = get_memory("story_table")
+        addon_table = get_memory("handbook_info_table")
+        story_review_table = get_memory("story_review_table")
+        story_review_meta_table = get_memory("story_review_meta_table")
+        enemy_handbook_table = get_memory("enemy_handbook_table")
+        medal_table = get_memory("medal_table")
+        rlv2_table = get_memory("roguelike_topic_table")
 
     ts = round(time())
     cnt = 0
@@ -73,7 +163,7 @@ def accountSyncData():
     charGroup = {}
     buildingChars = {}
 
-    # charRotation
+    # 角色轮换设置
     default_char_rotation = {
         "current": "1",
         "preset": {
@@ -101,32 +191,25 @@ def accountSyncData():
             player_data["user"]["status"]["secretary"] = slots.get("charId")
             break
     player_data["user"]["status"]["secretarySkinId"] = use_profile
-    player_data["user"]["background"]["selected"] = player_data["user"]["charRotation"]["preset"][target_current][
-        "background"]
+    player_data["user"]["background"]["selected"] = player_data["user"]["charRotation"]["preset"][target_current]["background"]
 
-    # Tamper Skins
-    # 初始化玩家数据中的皮肤数据
+    # 处理皮肤数据
     character_skins = {}
-    # 初始化临时皮肤表
     temp_skin_table = {}
 
-    # 遍历皮肤数据
     for skin_id, skin_data in skin_table["charSkins"].items():
-        # 如果皮肤键中不包含@符号，则跳过
         if "@" not in skin_id:
             continue
-
-        # 将皮肤键添加到玩家数据中的皮肤数据中
         character_skins[skin_id] = 1
         temp_skin_table[skin_data["charId"]] = skin_id
 
     player_data["user"]["skin"]["characterSkins"] = character_skins
 
-    # Tamper Operators
+    # 处理角色数据
     edit_json = config["charConfig"]
     player_data_keys = set(player_data["user"]["troop"]["chars"].keys())
 
-    # 预定义常量
+    # 阿米娅模板配置
     AMIYA_TEMPLATES = {
         "char_002_amiya": {
             "skills": ["skcom_magic_rage[3]", "skchr_amiya_2", "skchr_amiya_3"],
@@ -146,16 +229,14 @@ def accountSyncData():
     }
 
     for char_id, char_data in character_table.items():
-        # 跳过非角色键
         if "char" not in char_id:
             continue
         inst_id = int(char_id.split("_")[1])
         charGroup.update({char_id: {"favorPoint": 25570}})
-        # 存在已有角色数据的情况
+        
         if str(inst_id) in player_data_keys:
             myCharList[str(inst_id)] = player_data["user"]["troop"]["chars"][str(inst_id)]
         else:
-            # ---------- 角色创建逻辑 ---------- 
             # 语音语言处理
             voice_lan = charword_table["charDefaultTypeDict"].get(char_id, "JP")
 
@@ -170,10 +251,9 @@ def accountSyncData():
                 else char_data["phases"][evolve_phase]["maxLevel"]
             )
 
-            # ---------- 皮肤处理 ----------
+            # 皮肤处理
             skin = temp_skin_table.get(char_id)
             if skin is None:
-                # 精二皮肤
                 if evolve_phase >= 2 and char_data["displayNumber"] is not None:
                     skin = f"{char_id}#2"
                 else:
@@ -199,7 +279,7 @@ def accountSyncData():
                 "starMark": 0,
             }
 
-            # ---------- 技能处理 ----------
+            # 技能处理
             for skill in char_data["skills"]:
                 operator["skills"].append({
                     "skillId": skill["skillId"],
@@ -213,7 +293,7 @@ def accountSyncData():
                     "completeUpgradeTime": -1
                 })
 
-            # ---------- 模组处理 ----------
+            # 模组处理
             equip_list = equip_table["charEquip"].get(char_id)
             equip_dict = equip_table["equipDict"]
             if equip_list is not None:
@@ -230,7 +310,7 @@ def accountSyncData():
                 }
                 operator["currentEquip"] = equip_list[-1]
 
-            # ---------- 自定义数据覆盖 ----------
+            # 自定义数据覆盖
             if custom_data := edit_json["customUnitInfo"].get(char_id):
                 for key, value in custom_data.items():
                     if key == "skills":
@@ -239,8 +319,7 @@ def accountSyncData():
                     else:
                         operator[key] = value
 
-            # ---------- 特殊角色处理 ----------
-            # 阿米娅特殊形态
+            # 阿米娅特殊形态处理
             if char_id == "char_002_amiya":
                 operator.update({
                     "defaultSkillIndex": -1,
@@ -278,7 +357,7 @@ def accountSyncData():
                     }
                     operator["tmpl"][tmpl]["currentEquip"] = equip_list[-1]
 
-            # ---------- 基建数据处理 ----------
+            # 基建数据处理
             buildingChars[inst_id] = {
                 "charId": char_id,
                 "lastApAddTime": ts - 3600,
@@ -293,7 +372,7 @@ def accountSyncData():
                 "workTime": 0
             }
 
-            # ---------- 最终数据存储 ----------
+            # 最终数据存储
             myCharList[inst_id] = operator
             player_data["user"]["dexNav"]["character"][char_id] = {
                 "charInstId": inst_id,
@@ -322,16 +401,15 @@ def accountSyncData():
     player_data["user"]["troop"]["charGroup"] = charGroup
     player_data["user"]["troop"]["curCharInstId"] = cntInstId
 
-    # Tamper story
+    # 剧情处理
     myStoryList = {"init": 1}
     for story in story_table:
         myStoryList.update({story: 1})
 
     player_data["user"]["status"]["flags"] = myStoryList
 
-    # Tamper Stages
+    # 关卡处理
     myStageList = {}
-
     for stage in stage_table["stages"]:
         myStageList.update({
             stage: {
@@ -347,7 +425,7 @@ def accountSyncData():
 
     player_data["user"]["dungeon"]["stages"] = myStageList
 
-    # Tamper addon [paradox&records]
+    # 附加内容处理 [悖论和记录]
     addonList = {}
     for charId in addon_table["handbookDict"]:
         addonList[charId] = {"story": {}}
@@ -375,9 +453,9 @@ def accountSyncData():
             }
         })
 
-    player_data["user"]["troop"]["addon"].update(addonList)  # TODO: I might try MongoDB in the future.
+    player_data["user"]["troop"]["addon"].update(addonList)
 
-    # Tamper Side Stories and Intermezzis
+    # 插曲和间章处理
     block = {}
     for retro in retro_table["retroActList"]:
         block.update({
@@ -399,7 +477,7 @@ def accountSyncData():
             })
     player_data["user"]["retro"]["trail"] = trail
 
-    # Tamper Anniliations
+    # 剿灭作战处理
     for stage in stage_table["stages"]:
         if stage.startswith("camp"):
             player_data["user"]["campaignsV2"]["instances"].update({
@@ -410,25 +488,23 @@ def accountSyncData():
             })
 
             player_data["user"]["campaignsV2"]["sweepMaxKills"].update({stage: 400})
-            player_data["user"]["campaignsV2"]["open"]["permanent"].append(stage)   #TODO 需要去重
-            player_data["user"]["campaignsV2"]["open"]["training"].append(stage)
+            # 去重处理
+            if stage not in player_data["user"]["campaignsV2"]["open"]["permanent"]:
+                player_data["user"]["campaignsV2"]["open"]["permanent"].append(stage)
+            if stage not in player_data["user"]["campaignsV2"]["open"]["training"]:
+                player_data["user"]["campaignsV2"]["open"]["training"].append(stage)
 
-    # ------------------------------ 
-    # 名片皮肤
+    # 名片皮肤处理
     name_card_skin = player_data["user"]["nameCardStyle"]["skin"]["state"]
     skin_data = display_meta_table["nameCardV2Data"]["skinData"]
     for key in skin_data.keys():
-        # 如果键不存在或者值为None，设置值为ture
         if key not in name_card_skin or name_card_skin[key] is None:
             name_card_skin[key] = {
                 "progress": None,
                 "unlock": True
             }
-        else:
-            pass
 
-    # ------------------------------ 
-    # 名片头像和背景
+    # 名片头像和背景处理
     avatar_icon = {}
     for avatar in display_meta_table["playerAvatarData"]["avatarList"]:
         avatar_icon.update({
@@ -454,13 +530,11 @@ def accountSyncData():
             themes[theme["id"]] = {"unlock": 1691670000}
         player_data["user"]["homeTheme"]["themes"] = themes
 
-    # ------------------------------ 
-    # 更新charms
+    # 更新信物
     for charm in charm_table["charmList"]:
         player_data["user"]["charm"]["charms"].update({charm["id"]: 1})
 
-    # ------------------------------ 
-    # 更新battle bus
+    # 更新 battle bus
     if "carData" in activity_table:
         for car_gear in activity_table["carData"]["carDict"]:
             player_data["user"]["car"]["accessories"].update({
@@ -470,7 +544,7 @@ def accountSyncData():
                 }
             })
 
-    # Update Stultifera Navis
+    # 更新深海猎人相关
     deep_sea = player_data["user"]["deepSea"]
     activity_data = activity_table["activity"]["TYPE_ACT17SIDE"]["act17side"]
     deep_sea.update({
@@ -511,14 +585,14 @@ def accountSyncData():
         else:
             player_data["user"]["deepSea"]["logs"].update({chapter: [log]})
 
-    # Check if mail exists
+    # 检查邮件
     received_set = set(mail_data["recievedIDs"])
     deleted_set = set(mail_data["deletedIDs"])
     all_mails = set(mail_data["mailList"].keys())
     if not all_mails - (received_set | deleted_set):
         player_data["user"]["pushFlags"]["hasGifts"] = 1
 
-    # Update timestamps
+    # 更新时间戳
     current_ts = int(ts)
     ts_fields = [
         "lastRefreshTs", "lastApAddTime", "registerTs", "lastOnlineTs"
@@ -529,17 +603,31 @@ def accountSyncData():
     player_data["user"]["crisis"]["nst"] = ts + 3600
     player_data["ts"] = ts
 
-    replay_data = read_json(BATTLE_REPLAY_JSON_PATH)
+    # 处理战斗回放
+    if fastapi_available:
+        replay_data = await async_read_json(BATTLE_REPLAY_JSON_PATH)
+    else:
+        replay_data = read_json(BATTLE_REPLAY_JSON_PATH)
+        
     replay_data["currentCharConfig"] = md5(b64encode(json.dumps(edit_json).encode())).hexdigest()
-    write_json(replay_data, BATTLE_REPLAY_JSON_PATH)
+    
+    if fastapi_available:
+        await async_write_json(replay_data, BATTLE_REPLAY_JSON_PATH)
+    else:
+        write_json(replay_data, BATTLE_REPLAY_JSON_PATH)
 
-    # Enable battle replays
+    # 启用战斗回放
     if replay_data["currentCharConfig"] in list(replay_data["saved"].keys()):
         for replay in replay_data["saved"][replay_data["currentCharConfig"]]:
             if replay in player_data["user"]["dungeon"]["stages"]:
                 player_data["user"]["dungeon"]["stages"][replay]["hasBattleReplay"] = 1
 
-    squads_data = read_json(SQUADS_PATH)
+    # 处理队伍数据
+    if fastapi_available:
+        squads_data = await async_read_json(SQUADS_PATH)
+    else:
+        squads_data = read_json(SQUADS_PATH)
+        
     charId2instId = {}
     for character_index, character in player_data["user"]["troop"]["chars"].items():
         charId2instId[character["charId"]] = character["instId"]
@@ -584,9 +672,9 @@ def accountSyncData():
     player_data["user"]["homeTheme"]["selected"] = theme
 
     season = config["towerConfig"]["season"]
-
     player_data["user"]["tower"]["season"]["id"] = season
 
+    # 剧情回顾处理
     story_review_groups = {}
     for i in story_review_table:
         story_review_groups[i] = {"rts": 1700000000, "stories": [], "trailRewards": []}
@@ -595,12 +683,11 @@ def accountSyncData():
                 {"id": j["storyId"], "uts": 1695000000, "rc": 1}
             )
         if i in story_review_meta_table["miniActTrialData"]["miniActTrialDataMap"]:
-            for j in story_review_meta_table["miniActTrialData"]["miniActTrialDataMap"][
-                i
-            ]["rewardList"]:
+            for j in story_review_meta_table["miniActTrialData"]["miniActTrialDataMap"][i]["rewardList"]:
                 story_review_groups[i]["trailRewards"].append(j["trialRewardId"])
     player_data["user"]["storyreview"]["groups"] = story_review_groups
 
+    # 敌人图鉴处理
     enemies = {}
     if "enemyData" in enemy_handbook_table:
         for i in enemy_handbook_table["enemyData"]:
@@ -610,6 +697,7 @@ def accountSyncData():
             enemies[i] = 1
     player_data["user"]["dexNav"]["enemy"]["enemies"] = enemies
 
+    # 活动数据处理
     for i in activity_table["activity"]:
         if i not in player_data["user"]["activity"]:
             player_data["user"]["activity"][i] = {}
@@ -617,6 +705,7 @@ def accountSyncData():
             if j not in player_data["user"]["activity"][i]:
                 player_data["user"]["activity"][i][j] = {}
 
+    # 勋章处理
     player_data["user"]["medal"] = {"medals": {}}
     for i in medal_table["medalList"]:
         medalId = i["medalId"]
@@ -627,28 +716,37 @@ def accountSyncData():
             "rts": 1695000000,
         }
 
-    rlv2_table = get_memory("roguelike_topic_table")
+    # 肉鸽主题处理
     for theme in player_data["user"]["rlv2"]["outer"]:
         if theme in rlv2_table["details"]:
             player_data["user"]["rlv2"]["outer"][theme]["record"]["stageCnt"] = {
                 i: 1 for i in rlv2_table["details"][theme]["stages"]
             }
 
+    # 危机合约处理
     selected_crisis = config["crisisV2Config"]["selectedCrisis"]
     if selected_crisis:
-        rune = read_json(f"{CRISIS_V2_JSON_BASE_PATH}{selected_crisis}.json")
+        if fastapi_available:
+            rune = await async_read_json(f"{CRISIS_V2_JSON_BASE_PATH}{selected_crisis}.json")
+        else:
+            rune = read_json(f"{CRISIS_V2_JSON_BASE_PATH}{selected_crisis}.json")
         season = rune["info"]["seasonId"]
         player_data["user"]["crisisV2"]["current"] = season
 
-    write_json(player_data, USER_JSON_PATH)
+    # 保存玩家数据
+    if fastapi_available:
+        await async_write_json(player_data, USER_JSON_PATH)
+    else:
+        write_json(player_data, USER_JSON_PATH)
 
     b = datetime.now()
     print(f"syncdata耗时: {b - a}")
     return player_data
 
 
-def accountSyncStatus():
-    data = request.data
+async def account_sync_status(request: Any = None) -> Dict[str, Any]:
+    """账户同步状态接口，支持同步(Flask)和异步(FastAPI)调用"""
+    data = get_request_data(request or (flask_request if flask_available else None))
     data = {
         "ts": round(time()),
         "result": {},
@@ -658,32 +756,30 @@ def accountSyncStatus():
         }
     }
 
-    run_after_response(update_check_in_status)
+    if run_after_response:
+        run_after_response(update_check_in_status)
     return data
 
 
-def accountYostarAuthRequest():
-    data = request.data
-    data = {}
+async def account_yostar_auth_request(request: Any = None) -> Dict[str, Any]:
+    """Yostar认证请求接口，支持同步(Flask)和异步(FastAPI)调用"""
+    data = get_request_data(request or (flask_request if flask_available else None))
+    return {}
 
-    return data
 
-
-def accountYostarAuthSubmit():
-    data = request.data
-    data = {
+async def account_yostar_auth_submit(request: Any = None) -> Dict[str, Any]:
+    """Yostar认证提交接口，支持同步(Flask)和异步(FastAPI)调用"""
+    data = get_request_data(request or (flask_request if flask_available else None))
+    return {
         "result": 0,
         "yostar_account": "1234567890@123.com",
         "yostar_token": "a",
         "yostar_uid": "10000023"
     }
 
-    return data
 
-
-def syncPushMessage():
-    # 数据同步参数，不做处理
-
+async def sync_push_message(request: Any = None) -> Dict[str, Any]:
+    """同步推送消息接口，支持同步(Flask)和异步(FastAPI)调用"""
     return {
         "code": 200,
         "msg": "OK",
