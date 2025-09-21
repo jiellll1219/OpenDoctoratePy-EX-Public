@@ -1,4 +1,5 @@
 import json
+import datetime
 
 import requests
 from flask import request
@@ -6,38 +7,139 @@ from random import random
 
 from constants import USER_JSON_PATH, SYNC_DATA_TEMPLATE_PATH, SERVER_DATA_PATH
 from utils import read_json, write_json, run_after_response
+from mission import mission_manger
 
 import time
 
 
-def CheckIn():
-    sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
-    server_data = read_json(SERVER_DATA_PATH)
-    checkin_data = sync_data["user"]["checkIn"]
-    checkin_data["canCheckIn"] = 0
-    checkin_data["showCount"] += 1
-    checkin_data["checkInRewardIndex"] += 1
+class checkin:
 
-    checkin_data["checkInHistory"].append(0)
-    offset = len(checkin_data["checkInHistory"])
-    items = server_data["checkInItems"]["checkIn"][offset]
+    def userCheckIn():
+        sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
+        server_data = read_json(SERVER_DATA_PATH)
+        checkin_data = sync_data["user"]["checkIn"]
+        checkin_data["canCheckIn"] = 0
+        checkin_data["showCount"] += 1
+        if checkin_data["checkInHistory"]:
+            checkin_data["checkInRewardIndex"] += 1
 
-    sync_data["user"]["checkIn"] = checkin_data
-    result = {
-        "result": 0,
-        "playerDataDelta": {
-            "modified": {
-                "checkIn": checkin_data
+        offset = len(checkin_data["checkInHistory"])
+        checkin_data["checkInHistory"].append(0)
+        items = server_data["checkInItems"]["checkIn"][offset]
+
+        sync_data["user"]["checkIn"] = checkin_data
+        result = {
+            "result": 0,
+            "playerDataDelta": {
+                "modified": {
+                    "checkIn": checkin_data
+                },
+                "deleted": {}
             },
-            "deleted": {}
-        },
-        "pushMessage": [],
-        "signInRewards": items,
-        "subscriptionRewards": []
-    }
+            "pushMessage": [],
+            "signInRewards": items,
+            "subscriptionRewards": []
+        }
 
-    run_after_response(write_json, sync_data, SYNC_DATA_TEMPLATE_PATH)
-    return result
+        run_after_response(write_json, sync_data, SYNC_DATA_TEMPLATE_PATH)
+        return result
+    
+    # 服务端函数
+    def update_check_in_status():
+        default_data = {
+            "lastCheckInTs": 0,
+            "lastResetDate": "2000-01-01"
+        }
+        
+        server_data = read_json(SERVER_DATA_PATH)
+        sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
+        
+        check_in_data = server_data.get("checkInData", None)
+        if check_in_data is None:
+            not_default = False
+            check_in_data = default_data
+        else:
+            not_default = True
+        
+        # 获取当前时间（设备本地时区）
+        now_local = datetime.now().astimezone()
+        today_date = now_local.date()
+        current_month = now_local.month
+        current_year = now_local.year
+        
+        # 处理lastResetDate
+        last_reset_date = datetime.strptime(
+            check_in_data["lastResetDate"], "%Y-%m-%d"
+        ).date() 
+        last_reset_month = last_reset_date.month    # 最后一次签到的月份
+        last_reset_year = last_reset_date.year      # 最后一次签到的年份
+        
+        # 计算今天的4AM（本地时区）
+        today_4am = datetime.combine(today_date, datetime.min.time()).replace(
+            hour=4, minute=0, second=0, microsecond=0
+        ).astimezone(now_local.tzinfo)
+        
+        # # 处理签到时间戳
+        # last_check_in_ts = check_in_data["lastCheckInTs"]
+        
+        # # 转换时间戳为datetime对象
+        # if isinstance(last_check_in_ts, int) and last_check_in_ts > 0:
+        #     last_check_in_dt = datetime.fromtimestamp(last_check_in_ts, tz=now_local.tzinfo)
+        # elif isinstance(last_check_in_ts, str):
+        #     last_check_in_dt = datetime.fromisoformat(last_check_in_ts)
+        # else:  # 包括lastCheckInTs=0的情况
+        #     last_check_in_dt = datetime.min.replace(tzinfo=timezone.utc).astimezone(now_local.tzinfo)
+        
+        # 条件1: 当前时间已经过了今天4AM
+        condition1 = now_local >= today_4am
+        
+        # 条件2: 上次重置日期不是今天
+        condition2 = last_reset_date != today_date
+        
+        # 条件3: 最后一次重置的月份与当前月份不同
+        condition3 = current_month != last_reset_month
+
+        #条件4：最后一次重置的年份与当前年份不同
+        condition4 = current_year != last_reset_year
+        
+        # 只有当条件1、2都满足时才重置可签到状态
+        if condition1 and condition2:
+            check_in_data["lastResetDate"] = today_date.isoformat()
+            check_in_data["canCheckIn"] = True
+            sync_data["user"]["checkIn"]["canCheckIn"] = 1
+            for vs in sync_data["user"]["activity"]["CHECKIN_VS"].values():
+                if isinstance(vs, dict) and "canVote" in vs:
+                    vs["canVote"] = 1
+
+            mission_manger().re_set_state("DAILY")
+
+        # 当条件3满足且非默认数据时，重置签到进度到当前月份
+        if condition3 and not_default:
+            check_in_data["lastResetDate"] = today_date.isoformat()
+            sync_data["user"]["checkIn"]["checkInHistory"] = []
+            sync_data["user"]["checkIn"]["checkInRewardIndex"] = 0
+            sync_data["user"]["checkIn"]["canCheckIn"] = 1
+
+            check_in_cnt = int(sync_data["user"]["checkIn"]["checkInGroupId"][-2:])
+
+            # 当条件4满足时，进行额外修正处理
+            if condition4:
+                year_cnt = current_year - last_reset_year
+                month_offset = (12 * year_cnt) - last_reset_month
+
+            # 当条件4不满足时，正常进行月份更迭处理
+            else:
+                month_offset = current_month - last_reset_month
+                check_in_cnt += month_offset
+
+            sync_data["user"]["checkIn"]["checkInGroupId"] = "signin" + str(check_in_cnt)
+
+        # 如果今天已经签到过，则跳过
+        else:
+            pass
+
+        write_json(server_data, SERVER_DATA_PATH)
+        write_json(sync_data, SYNC_DATA_TEMPLATE_PATH)
 
 
 def ChangeSecretary():

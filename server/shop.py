@@ -22,7 +22,7 @@ def getGoodPurchaseState():
 # 获取json的内容并返回
 
 def getShopGoodList(shop_type):
-    return read_json(SHOP_PATH, encoding='utf-8')[shop_type.lower()]
+    return read_json(SHOP_PATH)[shop_type.lower()]
 
 # 购买逻辑基本相同，注释只写一遍
 def buySkinGood():

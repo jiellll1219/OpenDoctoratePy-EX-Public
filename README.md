@@ -14,7 +14,7 @@
 
 如果需要联系我，请提出issue或向我的邮箱发送邮件：jiege0019@gmail.com
 
-此项目无任何交流群，且禁止任何以盈利为目的的分发、二次开发等行为
+此项目无任何交流群，且我（仓库所有者）不支持任何倒卖行为，这并不利于项目的发展，如果我（仓库所有者）发现并认为倒卖行为已经泛滥到不可阻止的情况，将会归档此仓库
 
 如果您希望为此仓库贡献代码，但苦于没有数据，可以在 [此处](https://tptpmmpc.ap-southeast-1.clawcloudrun.com/) 下载il2cpp文件，我会不定时上传每个版本的il2cpp文件
 
@@ -43,24 +43,17 @@
 ## 使用教程
 
 使用前阅读：  
-请确保你使用的python版本大于等于3.11.0，低于3.11.0可能会出现python自带的datetime模块缺失函数。  
-下列步骤中如果使用 `steup_poetry.cmd` 配置环境，那么启动也需要使用 `start_server_pip.cmd` 进行启动。pip方式的保留仅作为一个备用手段，并不推荐使用pip进行环境配置
+请确保你使用的python版本大于等于3.11.0，低于3.11.0可能会出现python自带的模块缺失函数。  
+下列步骤中如果使用 `steup_poetry.cmd` 配置环境，那么启动也需要使用 `start_server_poetry.cmd` 进行启动。pip配置方式的保留仅作为一个备用手段，并不推荐使用pip进行环境配置
 
 1、自行寻找GameData或dump游戏资源以获取`excel`文件夹以及内容，并把`excel`文件夹放到 `data` 目录下  
 2、运行 `steup_poetry.cmd` 或 `steup_pip.cmd` 配置环境  
-3、运行 `start_server_pip.cmd` 或 `start_server_pip.cmd` 启动服务端  
+3、运行 `start_server_poetry.cmd` 或 `start_local_server.cmd` 启动服务端  
 4、自行寻找办法使游戏路由指向服务端，本仓库不提供解决办法
 
+## Config参数说明
 
-## data数据结构说明
-
-本项目部分数据的存放结构参考了 [LocalArknight](https://github.com/jiellll1219/LocalArknight)
-
-详细的文件结构与相关文件请查看此仓库 [LocalArknight-res](https://github.com/jiellll1219/LocalArknight-res)
-
-此仓库提供的 user.json 的游戏版本为CN2.4.41
-
-## EX_Config参数说明
+以下参数位于config.json的server字典中
 
 ### virtualtime
 
@@ -72,66 +65,25 @@
 
 ### useMemoryCache
 
-控制是否使用内存缓存功能，默认为false（关闭），启用（设定为true）此功能时，启动服务端后会占用至少0.4GB内存，同时会略微降低 CPU使用率 和 syncdata函数的耗时 以及其它读取table类文件的函数的耗时。不启用此功能时，启动后内存占用为80MB左右，最大内存消耗在0.2GB左右，请酌情开启。
+控制是否使用内存缓存功能，默认为false（关闭），启用（设定为true）此功能时，启动服务端后会占用至少0.4GB内存，同时会略微降低 `CPU使用率` 和 `accountSyncData函数耗时` 以及其它读取table类文件的函数的耗时。不启用此功能时，启动后内存占用为100MB左右，最大内存消耗在0.2GB左右，请酌情开启。
 
-优化后的syncdata函数实测耗时已经控制在一个比较好的范围内，不启用内存缓存时，CPU频率3.1Ghz的syncData耗时1.667709秒，CPU频率1.5Ghz的syncData耗时3.695747秒（测试使用的版本为2.4.61）
+## GPLv3协议声明
 
-### useExistingCharData
+本项目基于GNU通用公共许可证第三版（GPLv3）授权
 
-控制在同步数据（SyncData）时，默认为false（关闭），是否使用user.json保存的角色数据，用于个性化角色设置。在有角色数据的情况下，启用（设定为true）时，该功能可以加快函数运行速度
+此协议仅针对 **“分发”** 行为，并不对 **内部使用** 等其它行为有任何约束
 
-## user.json的全部键
+根据GPLv3的规定，任何人在 **分发** 基于本仓库代码的程序（无论修改与否）时，**必须**提供完整的、对应的源代码。
 
-在这个文件中的user字典中，存在的项如下
+除了GPLv3的条款外，作为持有人，**我们要求**任何使用此仓库的 **分发** 版本（无论是源代码还是编译后、打包后的形式）都必须显著地：
 
-```json
-"dungeon": {},
-"activity": {},
-"status": {},
-"troop": {},
-"npcAudio": {},
-"pushFlags": {},
-"equipment": {},
-"skin": {},
-"shop": {},
-"mission": {},
-"social": {},
-"building": {},
-"dexNav": {},
-"crisis": {},
-"crisisV2": {},
-"nameCardStyle": {},
-"tshop": {},
-"gacha": {},
-"backflow": {},
-"mainline": {},
-"avatar": {},
-"background": {},
-"homeTheme": {},
-"rlv2": {},
-"deepSea": {},
-"tower": {},
-"siracusaMap": {},
-"sandboxPerm": {},
-"openServer": {},
-"trainingGround": {},
-"storyreview": {},
-"medal": {},
-"inventory": {},
-"limitedBuff": {},
-"carousel": {},
-"car": {},
-"collectionReward": {},
-"consumable": {},
-"ticket": {},
-"aprilFool": {},
-"retro": {},
-"campaignsV2": {},
-"recruit": {},
-"checkIn": {},
-"share": {},
-"charRotation": {},
-"charm": {},
-"firework": {},
-"event": {}
-```
+1.  **提供源仓库地址**：
+    `https://github.com/jiellll1219/OpenDoctoratePy-EX-Public`
+
+2.  **包含此版权声明和GPLv3许可证的完整文本**。
+
+根据GPLv3第8条的规定，如果您在**分发**本作品时未能遵守本许可证的条款，您基于本许可证获得的**权利**将自动终止。但是，如果您停止所有违规行为，并在意识到违规或收到通知后的**30天内**予以纠正，您的权利将被自动恢复。
+
+对于**故意侵犯**或**反复侵犯**许可证条款行为的实体，基于 GPLv3 获得的所有许可权利将被**永久终止**，且无自动恢复的可能。此决定由持有人自行裁定。
+
+本声明是对 GPLv3 条款的解释与强调，并不取代其内容。请务必在行事前阅读并完全理解 [GPLv3 许可证全文](https://www.gnu.org/licenses/gpl-3.0.html)。

@@ -599,11 +599,7 @@ class act35side():
                     "outputs": {
                         "material_fire_2": 1
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": False
+                    "multiplier": 1.0
                 },
                 "2": {
                     "inputs": {
@@ -612,11 +608,7 @@ class act35side():
                     "outputs": {
                         "material_fire_2": 1
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": True
+                    "multiplier": 1.0
                 },
                 "3": {
                     "inputs": {
@@ -625,11 +617,7 @@ class act35side():
                     "outputs": {
                         "material_fire_2": 1
                     },
-                    "multiplier": 2.0,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": True
+                    "multiplier": 2.0
                 }
             },
             "card_fire_2": {
@@ -640,11 +628,7 @@ class act35side():
                     "outputs": {
                         "material_fire_3": 1
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": False
+                    "multiplier": 1.0
                 },
                 "2": {
                     "inputs": {
@@ -653,11 +637,7 @@ class act35side():
                     "outputs": {
                         "material_fire_3": 1
                     },
-                    "multiplier": 2.0,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": False
+                    "multiplier": 2.0
                 },
                 "3": {
                     "inputs": {
@@ -666,11 +646,7 @@ class act35side():
                     "outputs": {
                         "material_fire_3": 1
                     },
-                    "multiplier": 2.0,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": True
+                    "multiplier": 2.0
                 }
             },
             "card_fire_3": {
@@ -681,11 +657,7 @@ class act35side():
                     "outputs": {
                         "material_fire_4": 1
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": False
+                    "multiplier": 1.0
                 },
                 "2": {
                     "inputs": {
@@ -694,11 +666,7 @@ class act35side():
                     "outputs": {
                         "material_fire_4": 1
                     },
-                    "multiplier": 2.4,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": False
+                    "multiplier": 2.4
                 },
                 "3": {
                     "inputs": {
@@ -707,11 +675,7 @@ class act35side():
                     "outputs": {
                         "material_fire_4": 1
                     },
-                    "multiplier": 2.4,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": True
+                    "multiplier": 2.4
                 }
             },
             "card_fire_4": {
@@ -722,11 +686,7 @@ class act35side():
                     "outputs": {
                         "material_fire_5": 1
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": False
+                    "multiplier": 1.0
                 },
                 "2": {
                     "inputs": {
@@ -735,11 +695,7 @@ class act35side():
                     "outputs": {
                         "material_fire_5": 1
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {},
-                    "flat_score": 1500,
-                    "series_bonus": {},
-                    "pre_exec": False
+                    "multiplier": 1.0
                 },
                 "3": {
                     "inputs": {
@@ -748,11 +704,7 @@ class act35side():
                     "outputs": {
                         "material_fire_5": 1
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {},
-                    "flat_score": 5000,
-                    "series_bonus": {},
-                    "pre_exec": False
+                    "multiplier": 1.0
                 }
             },
             "card_leaf_1": {
@@ -764,11 +716,7 @@ class act35side():
                         "material_leaf_2": 5,
                         "material_sand": 5
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": False
+                    "multiplier": 1.0
                 },
                 "2": {
                     "inputs": {
@@ -778,11 +726,7 @@ class act35side():
                         "material_leaf_2": 8,
                         "material_sand": 2
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": False
+                    "multiplier": 1.0
                 },
                 "3": {
                     "inputs": {
@@ -791,13 +735,7 @@ class act35side():
                     "outputs": {
                         "material_leaf_2": 1
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {
-                        "material_sand": 1
-                    },
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": False
+                    "multiplier": 1.0
                 }
             },
             "card_leaf_2": {
@@ -809,11 +747,7 @@ class act35side():
                         "material_leaf_3": 4,
                         "material_sand": 6
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": False
+                    "multiplier": 1.0
                 },
                 "2": {
                     "inputs": {
@@ -823,11 +757,7 @@ class act35side():
                         "material_leaf_3": 6,
                         "material_sand": 4
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": False
+                    "multiplier": 1.0
                 },
                 "3": {
                     "inputs": {
@@ -837,13 +767,7 @@ class act35side():
                         "material_leaf_3": 8,
                         "material_sand": 2
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {
-                        "material_sand": 1
-                    },
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": False
+                    "multiplier": 1.0
                 }
             },
             "card_leaf_3": {
@@ -855,11 +779,7 @@ class act35side():
                         "material_leaf_4": 3,
                         "material_sand": 7
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": False
+                    "multiplier": 1.0
                 },
                 "2": {
                     "inputs": {
@@ -869,11 +789,7 @@ class act35side():
                         "material_leaf_4": 5,
                         "material_sand": 5
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": False
+                    "multiplier": 1.0
                 },
                 "3": {
                     "inputs": {
@@ -883,13 +799,7 @@ class act35side():
                         "material_leaf_4": 7,
                         "material_sand": 3
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {
-                        "material_sand": 1
-                    },
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": False
+                    "multiplier": 1.0
                 }
             },
             "card_clst_1": {
@@ -901,11 +811,7 @@ class act35side():
                     "outputs": {
                         "material_clst_2": 1
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": False
+                    "multiplier": 1.0
                 },
                 "2": {
                     "inputs": {
@@ -915,11 +821,7 @@ class act35side():
                     "outputs": {
                         "material_clst_2": 1
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": False
+                    "multiplier": 1.0
                 },
                 "3": {
                     "inputs": {
@@ -929,13 +831,7 @@ class act35side():
                     "outputs": {
                         "material_clst_2": 1
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {
-                        "<color=#fce0ba>[<天空伊纳>": 5
-                    },
-                    "pre_exec": False
+                    "multiplier": 1.0
                 }
             },
             "card_clst_2": {
@@ -947,11 +843,7 @@ class act35side():
                     "outputs": {
                         "material_clst_3": 1
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": False
+                    "multiplier": 1.0
                 },
                 "2": {
                     "inputs": {
@@ -961,13 +853,7 @@ class act35side():
                     "outputs": {
                         "material_clst_3": 1
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {
-                        "<color=#fce0ba>[<天空伊纳>": 15
-                    },
-                    "pre_exec": False
+                    "multiplier": 1.0
                 },
                 "3": {
                     "inputs": {
@@ -977,13 +863,7 @@ class act35side():
                     "outputs": {
                         "material_clst_3": 1
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {
-                        "<color=#fce0ba>[<天空伊纳>": 15
-                    },
-                    "pre_exec": False
+                    "multiplier": 1.0
                 }
             },
             "card_clst_3": {
@@ -995,11 +875,7 @@ class act35side():
                     "outputs": {
                         "material_clst_4": 1
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": False
+                    "multiplier": 1.0
                 },
                 "2": {
                     "inputs": {
@@ -1009,11 +885,7 @@ class act35side():
                     "outputs": {
                         "material_clst_4": 1
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": False
+                    "multiplier": 1.0
                 },
                 "3": {
                     "inputs": {
@@ -1023,11 +895,7 @@ class act35side():
                     "outputs": {
                         "material_clst_4": 1
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": False
+                    "multiplier": 1.0
                 }
             },
             "card_sand_1": {
@@ -1038,11 +906,7 @@ class act35side():
                     "outputs": {
                         "material_sand": 2
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": False
+                    "multiplier": 1.0
                 },
                 "2": {
                     "inputs": {
@@ -1051,11 +915,7 @@ class act35side():
                     "outputs": {
                         "material_sand": 3
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": False
+                    "multiplier": 1.0
                 },
                 "3": {
                     "inputs": {
@@ -1064,11 +924,7 @@ class act35side():
                     "outputs": {
                         "material_sand": 5
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": False
+                    "multiplier": 1.0
                 }
             },
             "card_sand_2": {
@@ -1079,11 +935,7 @@ class act35side():
                     "outputs": {
                         "material_sand": 3
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": False
+                    "multiplier": 1.0
                 },
                 "2": {
                     "inputs": {
@@ -1092,11 +944,7 @@ class act35side():
                     "outputs": {
                         "material_sand": 5
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": False
+                    "multiplier": 1.0
                 },
                 "3": {
                     "inputs": {
@@ -1105,11 +953,7 @@ class act35side():
                     "outputs": {
                         "material_sand": 8
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": False
+                    "multiplier": 1.0
                 }
             },
             "card_sand_3": {
@@ -1120,11 +964,7 @@ class act35side():
                     "outputs": {
                         "material_sand": 5
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": False
+                    "multiplier": 1.0
                 },
                 "2": {
                     "inputs": {
@@ -1133,11 +973,7 @@ class act35side():
                     "outputs": {
                         "material_sand": 9
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": False
+                    "multiplier": 1.0
                 },
                 "3": {
                     "inputs": {
@@ -1146,11 +982,7 @@ class act35side():
                     "outputs": {
                         "material_sand": 9
                     },
-                    "multiplier": 1.0,
-                    "extra_outputs": {},
-                    "flat_score": 0,
-                    "series_bonus": {},
-                    "pre_exec": False
+                    "multiplier": 1.0
                 }
             }
         }
@@ -1693,82 +1525,163 @@ class act35side():
     def act35sideprocess(self):
         json_body = request.get_json()
         activity_id = json_body["activityId"]
-        cards = json_body["cards"]
+        cards:list[str] = json_body["cards"]
 
-        user_data = read_json(SYNC_DATA_TEMPLATE_PATH)
-        carving_data = user_data["user"]["activity"]["TYPE_ACT35SIDE"][activity_id]["carving"]
-
-        card_info = carving_data["card"]
-        materials = carving_data["material"]
-        slot_cnt = carving_data["slotCnt"]
-        empty_slots = slot_cnt - len(cards)
-
+        # 读取数据
         card_data_map = self.prepared_card_data
         material_data_map = self.material_price
+        user_data = read_json(SYNC_DATA_TEMPLATE_PATH)
+        carving_data = dict(user_data["user"]["activity"]["TYPE_ACT35SIDE"][activity_id]["carving"])
 
-        frames = []
+        card_info:dict[str, int] = carving_data["card"]
+        materials:dict[str, int] = carving_data["material"]
+        slot_cnt:int = carving_data["slotCnt"]
+        empty_slots = slot_cnt - len(cards)# 空槽位数量
 
-        # 上一回合总分
-        base_score = carving_data["score"]
+        frames = []# 帧记录列表
+        base_score = carving_data["score"]# 当前分数
         total_score = base_score
 
-        # 非工艺区生效卡处理
-        pre_exec_cards = []
-        for card, lv in card_info.items():
-            lv = str(lv)
-            if card in card_data_map and card_data_map[card][lv]["pre_exec"]:
-                if card not in cards:
-                    pre_exec_cards.append(card)
+        # 用于宝石合成的闭包函数
+        def score_calculation(card: str):
+            card_lv = str(card_info[card])  # 卡牌等级
+            card_cfg = card_data_map[card][card_lv]  # 卡牌信息
+            inputs: dict[str, int] = card_cfg["inputs"]  # 输入材料
+            outputs: dict[str, int] = card_cfg["outputs"]  # 输出材料
+            multiplier: float = card_cfg["multiplier"]  # 合成倍率
 
-        ordered_cards = pre_exec_cards + cards
+            syn_times: int = float('inf')  # 初始化为无穷大，找出所有输入能支持的最小合成次数
+            for mat, need in inputs.items():
+                count: int = materials.get(mat, 0)
+                if need <= 0:
+                    continue
+                syn_times = min(syn_times, count // need)
 
-        # 遍历卡列表
-        for card in ordered_cards:
-            lv = str(card_info[card])
-            card_cfg = card_data_map[card][lv]
-            if not card_cfg:
+            # syn_times转整数
+            if syn_times == float('inf'):
+                syn_times = 0
+            else:
+                syn_times = int(syn_times)
+
+            # 消耗材料
+            for mat, need in inputs.items():
+                count: int = materials.get(mat, 0)
+                materials[mat] = count - need * syn_times
+
+            product: dict[str, int] = {}
+
+            # 产出材料
+            for mat, out in outputs.items():
+                gain = int(out * multiplier * syn_times)
+                materials[mat] = materials.get(mat, 0) + gain
+                product[mat] = gain
+
+            result = {
+                "syn_times": syn_times,
+                "product": product
+            }
+
+            return result
+
+        # —— 淬雕I/II/III 合成
+        fire_card = {"card_fire_1", "card_fire_2", "card_fire_3"}
+        syn_card = {}
+        for card in fire_card:
+            # 卡牌等级检查
+            card_lv:int = card_info.get(card, 0)
+            if card_lv <= 1:
                 continue
-
-            inputs = card_cfg["inputs"]
-            outputs = card_cfg["outputs"]
-            multiplier = card_cfg["multiplier"]
-            extra_outputs = card_cfg["extra_outputs"]
-            flat_score = card_cfg["flat_score"]
-            series_bonus = card_cfg["series_bonus"]
-
-            product = {}
-            # 如果材料足够，则循环合成
-            while all(materials.get(mat, 0) >= need for mat, need in inputs.items()):
-                # 扣输入
-                for mat, need in inputs.items():
-                    materials[mat] -= need
-
-                # 正常产出
-                for mat, out in outputs.items():
-                    amount = int(out * multiplier)
-                    materials[mat] = materials.get(mat, 0) + amount
-                    product[mat] = product.get(mat, 0) + amount
-
-                # 额外产出
-                for mat, out in extra_outputs.items():
-                    materials[mat] = materials.get(mat, 0) + out
-                    product[mat] = product.get(mat, 0) + out
-
-            # 计算当前库存的估值
+            # 合成
+            product = score_calculation(card)
+            # 算分
             step_score = 0
             for mat, num in materials.items():
-                base_val = material_data_map.get(mat, 0)
-                for prefix, bonus in series_bonus.items():
-                    if mat.startswith(prefix):
-                        base_val += bonus
-                        break
+                base_val = material_data_map[mat]
                 step_score += base_val * num
+            total_score += step_score
 
-            # 空槽位加分
-            step_score += empty_slots * flat_score
+            frames.append({
+                "card": card,
+                "product": product,
+                "score": total_score,  
+                "type": 0
+            })
 
-            # 基础分 + 当前估值
-            total_score = base_score + step_score
+            syn_card.add(card)
+
+        cards = [item for item in cards if item not in syn_card]
+
+        # —— 常规合成
+        for card in cards:# 遍历cards列表，根据卡牌顺序进行合成
+            card_lv: int = card_info[card]
+
+            # 交糅I/II/III 均分材料
+            if card.startswith("card_clst"):
+                match card:
+                    case "card_clst_1":
+                        if card_lv > 1:
+                            sum_cnt = materials.get("material_sand", 0) + materials.get("material_clst_1", 0)
+                            count_half = int(sum_cnt / 2)
+                            materials["material_sand"] = count_half
+                            materials["material_clst_1"] = count_half
+                    case "card_clst_2":
+                        if card_lv == 3:
+                            sum_cnt = materials.get("material_leaf_2", 0) + materials.get("material_clst_2", 0)
+                            count_half = int(sum_cnt / 2)
+                            materials["material_leaf_2"] = count_half
+                            materials["material_clst_2"] = count_half
+                    case "card_clst_3":
+                        if card_lv > 1:
+                            sum_cnt = materials.get("material_fire_4", 0) + materials.get("material_clst_3", 0)
+                            count_half = int(sum_cnt / 2)
+                            materials["material_fire_4"] = count_half
+                            materials["material_clst_3"] = count_half
+
+            # 合成
+            syn_info = score_calculation(card)
+            syn_times:int = syn_info["syn_times"]
+            product:dict[str, int] = syn_info["product"]
+
+            # —— 算分
+            step_score:int = 0
+            extra_score:int = 0
+            # 卡牌等级效果处理
+            match card:
+                # —— 淬雕 IV 空槽位加分
+                case "card_fire_4":
+                    if card_lv > 1:
+                        step_score += empty_slots * (1500 if card_lv == 2 else 5000)
+
+                # —— 滤纯I/II/III 三级额外产出沙伊纳
+                case "card_leaf_1" | "card_leaf_2" | "card_leaf_3":
+                    if card_lv == 3:
+                        count:int = syn_times
+                        product["material_sand"] = count
+
+                # —— 交糅I/II/III 三级额外加分
+                case "card_clst_1" | "card_clst_2" | "card_clst_3":
+                    match card:
+                        case "card_clst_1":
+                            if card_lv == 3:
+                                extra_score += 5
+                        case "card_clst_2":
+                            if card_lv > 1:
+                                extra_score += 15
+                        case "card_clst_3":
+                            if card_lv == 3:
+                                step_score += syn_times * 100
+
+                case _:
+                    pass
+                
+            # 当前全部材料的总分
+            for mat, num in materials.items():
+                base_val = material_data_map.get(mat, 0)
+                # 天空伊纳系列宝石额外加分
+                if mat.startswith("card_clst"):
+                    base_val += extra_score
+                step_score += base_val * num
+            total_score += step_score
 
             frames.append({
                 "card": card,
@@ -1785,18 +1698,15 @@ class act35side():
         carving_data["shop"]["coin"] += coin
         carving_data["roundCoinAdd"] += coin
 
+        carving_data["state"] = 3
+
         result = {
             "playerDataDelta": {
                 "modified": {
                     "activity": {
                         "TYPE_ACT35SIDE": {
                             activity_id: {
-                                "carving": {
-                                    "score": frames[-1]["score"],
-                                    "shop": carving_data["shop"],
-                                    "roundCoinAdd": carving_data["roundCoinAdd"],
-                                    "state": 3
-                                }
+                                "carving": carving_data
                             }
                         }
                     }
@@ -1805,7 +1715,7 @@ class act35side():
             },
             "frames": frames
         }
-        print(frames)
+
         run_after_response(write_json, user_data, SYNC_DATA_TEMPLATE_PATH)
         return result
     

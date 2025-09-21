@@ -22,7 +22,7 @@ def GetUnconfirmedOrderIdList():
 def getAllProductList():
 
     data = request.data
-    data = read_json(ALLPRODUCTLIST_PATH,encoding='utf-8')
+    data = read_json(ALLPRODUCTLIST_PATH)
 
     return data
 

@@ -18,7 +18,7 @@ class mission_manger:
         json_body = request.get_json()  # {"missionId": "daily_6201"}
         mission_id = str(json_body["missionId"])
 
-        sync_data = read_json(SYNC_DATA_TEMPLATE_PATH, encoding='utf-8')
+        sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
         result = self.result
         mapping = self.mapping
         finish_list = []
@@ -68,7 +68,7 @@ class mission_manger:
         json_body = request.get_json()  # {'type': 'MAIN'}
         mission_type = json_body["type"]
 
-        sync_data = read_json(SYNC_DATA_TEMPLATE_PATH, encoding='utf-8')
+        sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
 
         mission_data = sync_data["user"]["mission"]["missions"][mission_type]
 
@@ -118,7 +118,7 @@ class mission_manger:
         '''
 
         # 预设常量，读取数据
-        sync_data = read_json(SYNC_DATA_TEMPLATE_PATH, encoding='utf-8')
+        sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
         mission_data = sync_data["user"]["mission"]["missions"][mission_type]
         mission_dict = {}
         

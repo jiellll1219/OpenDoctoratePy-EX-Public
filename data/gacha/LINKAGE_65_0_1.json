@@ -1,0 +1,254 @@
+{
+    "detailInfo": {
+        "gachaObjGroups": null,
+        "availCharInfo": {
+            "perAvailList": [
+                {
+                    "rarityRank": 5,
+                    "charIdList": [
+                        "char_322_lmlee",
+                        "char_377_gdglow",
+                        "char_300_phenxi",
+                        "char_4039_horn",
+                        "char_4009_irene",
+                        "char_4046_ebnhlz",
+                        "char_4048_doroth",
+                        "char_4055_bgsnow",
+                        "char_4064_mlynar",
+                        "char_4072_ironmn",
+                        "char_4065_judge",
+                        "char_1020_reed2",
+                        "char_4080_lin",
+                        "char_4082_qiubai",
+                        "char_4087_ines",
+                        "char_4027_heyak",
+                        "char_1032_excu2",
+                        "char_2012_typhon",
+                        "char_1033_swire2",
+                        "char_1034_jesca2",
+                        "char_4088_hodrer",
+                        "char_4098_vvana",
+                        "char_4116_blkkgt",
+                        "char_4117_ray",
+                        "char_4121_zuole",
+                        "char_4132_ascln",
+                        "char_4133_logos",
+                        "char_4145_ulpia",
+                        "char_4146_nymph",
+                        "char_4138_narant",
+                        "char_1019_siege2",
+                        "char_4026_vulpis",
+                        "char_1039_thorn2",
+                        "char_1040_blaze2",
+                        "char_4010_etlchi",
+                        "char_450_necras",
+                        "char_4179_monstr",
+                        "char_4193_lemuen",
+                        "char_1042_phatm2",
+                        "char_1043_leizi2",
+                        "char_4202_haruka",
+                        "char_4182_oblvns"
+                    ],
+                    "totalPercent": 0.02
+                },
+                {
+                    "rarityRank": 4,
+                    "charIdList": [
+                        "char_476_blkngt",
+                        "char_492_quercu",
+                        "char_4016_kazema",
+                        "char_4040_rockr",
+                        "char_433_windft",
+                        "char_1024_hbisc2",
+                        "char_1027_greyy2",
+                        "char_497_ctable",
+                        "char_4032_provs",
+                        "char_4071_peper",
+                        "char_4014_lunacu",
+                        "char_297_hamoni",
+                        "char_493_firwhl",
+                        "char_4083_chimes",
+                        "char_464_cement",
+                        "char_4006_melnte",
+                        "char_4015_spuria",
+                        "char_341_sntlla",
+                        "char_488_buildr",
+                        "char_4105_almond",
+                        "char_494_vendla",
+                        "char_4109_baslin",
+                        "char_194_leto",
+                        "char_4081_warmy",
+                        "char_4122_grabds",
+                        "char_446_aroma",
+                        "char_1036_fang2",
+                        "char_4079_haini",
+                        "char_4147_mitm",
+                        "char_4140_lasher",
+                        "char_487_bobb",
+                        "char_4155_talr",
+                        "char_4164_tecno",
+                        "char_4052_surfer",
+                        "char_4173_nowell",
+                        "char_4171_wulfen",
+                        "char_4178_alanna",
+                        "char_4187_graceb",
+                        "char_4191_tippi",
+                        "char_4196_reckpr",
+                        "char_4203_kichi",
+                        "char_4184_dolris",
+                        "char_4183_mortis"
+                    ],
+                    "totalPercent": 0.08
+                },
+                {
+                    "rarityRank": 3,
+                    "charIdList": [
+                        "char_141_nights",
+                        "char_109_fmout",
+                        "char_235_jesica",
+                        "char_126_shotst",
+                        "char_118_yuki",
+                        "char_149_scave",
+                        "char_290_vigna",
+                        "char_130_doberm",
+                        "char_289_gyuki",
+                        "char_193_frostl",
+                        "char_185_frncat",
+                        "char_237_gravel",
+                        "char_236_rope",
+                        "char_117_myrrh",
+                        "char_181_flower",
+                        "char_199_yak",
+                        "char_150_snakek",
+                        "char_196_sunbr",
+                        "char_110_deepcl",
+                        "char_183_skgoat",
+                        "char_277_sqrrel",
+                        "char_137_brownb",
+                        "char_253_greyy",
+                        "char_298_susuro",
+                        "char_151_myrtle",
+                        "char_190_clour",
+                        "char_133_mm",
+                        "char_302_glaze",
+                        "char_337_utage",
+                        "char_301_cutter",
+                        "char_258_podego",
+                        "char_328_cammou",
+                        "char_272_strong",
+                        "char_366_acdrop",
+                        "char_271_spikes",
+                        "char_381_bubble",
+                        "char_347_jaksel",
+                        "char_440_pinecn",
+                        "char_452_bstalk",
+                        "char_469_indigo",
+                        "char_484_robrta",
+                        "char_4041_chnut",
+                        "char_4062_totter",
+                        "char_491_humus",
+                        "char_4107_vrdant",
+                        "char_4130_luton",
+                        "char_445_wscoot"
+                    ],
+                    "totalPercent": 0.5
+                },
+                {
+                    "rarityRank": 2,
+                    "charIdList": [
+                        "char_123_fang",
+                        "char_240_wyvern",
+                        "char_192_falco",
+                        "char_208_melan",
+                        "char_209_ardign",
+                        "char_122_beagle",
+                        "char_124_kroos",
+                        "char_121_lava",
+                        "char_120_hibisc",
+                        "char_212_ansel",
+                        "char_210_stward",
+                        "char_278_orchid",
+                        "char_282_catap",
+                        "char_283_midn",
+                        "char_284_spot",
+                        "char_281_popka"
+                    ],
+                    "totalPercent": 0.4
+                }
+            ]
+        },
+        "upCharInfo": {
+            "perCharList": [
+                {
+                    "rarityRank": 5,
+                    "charIdList": [
+                        "char_4182_oblvns"
+                    ],
+                    "percent": 0.5,
+                    "count": 1
+                },
+                {
+                    "rarityRank": 4,
+                    "charIdList": [
+                        "char_4184_dolris",
+                        "char_4183_mortis"
+                    ],
+                    "percent": 0.25,
+                    "count": 2
+                }
+            ]
+        },
+        "limitedChar": null,
+        "weightUpCharInfoList": null,
+        "gachaObjList": [
+            {
+                "gachaObject": "TEXT",
+                "type": 0,
+                "imageType": 0,
+                "param": "卡池干员列表"
+            },
+            {
+                "gachaObject": "RATE_UP_6",
+                "type": 0,
+                "imageType": 0,
+                "param": "梦中舞会人偶寻访"
+            },
+            {
+                "gachaObject": "TEXT",
+                "type": 2,
+                "imageType": 0,
+                "param": "出现概率上升"
+            },
+            {
+                "gachaObject": "UP_CHAR",
+                "type": 0,
+                "imageType": 0,
+                "param": null
+            },
+            {
+                "gachaObject": "TEXT",
+                "type": 1,
+                "imageType": 0,
+                "param": "全部可能出现的干员"
+            },
+            {
+                "gachaObject": "AVAIL_CHAR",
+                "type": 0,
+                "imageType": 0,
+                "param": null
+            },
+            {
+                "gachaObject": "TEXT",
+                "type": 0,
+                "imageType": 0,
+                "param": "该寻访为【梦中舞会人偶寻访】"
+            },
+            {
+                "gachaObject": "TEXT",
+                "type": 5,
+                "imageType": 0,
+                "param": "在<@linkageGa.title>【梦中舞会人偶寻访】</>中前<@limtedGa.percent>120</>次寻访必定能够获得干员<@linkageGa.charName>【丰川祥子】</>，仅限一次。\n在<@linkageGa.title>【梦中舞会人偶寻访】</>中首次获得任意一名当期概率上升的5星干员后，下一次获得5星干员时必定是另一名当期概率上升的5星干员，仅限一次。\n在<@linkageGa.title>【梦中舞会人偶寻访】</>中，如果连续<@limtedGa.percent>50</>次没有获得6星干员，则下一次获得6星干员的概率将从原本的<@limtedGa.percent>2%</>提升至<@limtedGa.percent>4%</>，如果该次还没有寻访到6星干员，则下一次寻访获得6星的概率由<@limtedGa.percent>4%</>提升到<@limtedGa.percent>6%</>。依此类推，每次提高<@limtedGa.percent>2%</>获得6星干员的概率，直至达到<@limtedGa.percent>100%</>时必定获得6星干员。\n在<@linkageGa.title>【梦中舞会人偶寻访】</>中没有获得6星干员的累计次数不会累计到其他任意寻访，该次数会因为<@linkageGa.title>【梦中舞会人偶寻访】</>的结束而清零。因为累计次数而增加的获得概率，不会应用于接下来其他任意寻访。"
+            }
+        ]
+    }
+}

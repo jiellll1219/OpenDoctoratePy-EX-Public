@@ -17,7 +17,7 @@ from datetime import datetime, UTC
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import unpad
 
-from constants import USER_JSON_PATH, SERVER_DATA_PATH, SYNC_DATA_TEMPLATE_PATH, CONFIG_PATH
+from constants import USER_JSON_PATH, CONFIG_PATH
 
 json_encoder = Encoder(order="deterministic")
 json_decoder = Decoder(strict=False)
@@ -161,84 +161,3 @@ def get_memory(key: str) -> dict:
             raise KeyError(f"未找到文件: {file_path}")
         except Exception as e:
             raise ValueError(f"加载 {file_path} 时出错: {str(e)}")
-
-def update_check_in_status():
-    default_data = {
-        "lastCheckInTs": 0,
-        "lastResetDate": "2000-01-01"
-    }
-    
-    server_data = read_json(SERVER_DATA_PATH)
-    sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
-    
-    check_in_data = server_data.get("checkInData", None)
-    if check_in_data is None:
-        not_default = False
-        check_in_data = default_data
-    else:
-        not_default = True
-    
-    # 获取当前时间（设备本地时区）
-    now_local = datetime.now().astimezone()
-    today_date = now_local.date()
-    current_month = now_local.month
-    current_year = now_local.year
-    
-    # 处理lastResetDate
-    last_reset_date = datetime.strptime(
-        check_in_data["lastResetDate"], "%Y-%m-%d"
-    ).date() 
-    last_reset_month = last_reset_date.month    # 最后一次签到的月份
-    last_reset_year = last_reset_date.year      # 最后一次签到的年份
-    
-    # 计算今天的4AM（本地时区）
-    today_4am = datetime.combine(today_date, datetime.min.time()).replace(
-        hour=4, minute=0, second=0, microsecond=0
-    ).astimezone(now_local.tzinfo)
-
-    # 条件1: 当前时间已经过了今天4AM
-    condition1 = now_local >= today_4am
-    
-    # 条件2: 上次重置日期不是今天
-    condition2 = last_reset_date != today_date
-    
-    # 条件3: 最后一次重置的月份与当前月份不同
-    condition3 = current_month != last_reset_month
-
-    #条件4：最后一次重置的年份与当前年份不同
-    condition4 = current_year != last_reset_year
-    
-    # 只有当条件1、2都满足时才重置可签到状态
-    if condition1 and condition2:
-        check_in_data["lastResetDate"] = today_date.isoformat()
-        check_in_data["canCheckIn"] = True
-        sync_data["user"]["checkIn"]["canCheckIn"] = 1
-        for vs in sync_data["user"]["activity"]["CHECKIN_VS"].values():
-            if isinstance(vs, dict) and "canVote" in vs:
-                vs["canVote"] = 1
-
-        write_json(server_data, SERVER_DATA_PATH)
-        write_json(sync_data, SYNC_DATA_TEMPLATE_PATH)
-
-    # 当条件3满足且非默认数据时，重置签到进度到当前月份
-    if condition3 and not_default:
-        sync_data["user"]["checkIn"]["checkInHistory"] = []
-        sync_data["user"]["checkIn"]["checkInRewardIndex"] = 0
-
-        check_in_cnt = int(sync_data["user"]["checkIn"]["checkInGroupId"][-2:])
-
-        # 当条件4满足时，进行额外修正处理
-        if condition4:
-            year_cnt = current_year - last_reset_year
-            month_offset = (12 * year_cnt) - last_reset_month
-
-        # 当条件4不满足时，正常进行月份更迭处理
-        else:
-            month_offset = current_month - last_reset_month
-            check_in_cnt = check_in_cnt + month_offset
-
-        sync_data["user"]["checkIn"]["checkInGroupId"] = "signin" + str(check_in_cnt)
-
-    # 如果今天已经签到过，则跳过
-    else:
-        pass

@@ -83,7 +83,7 @@ def finishNormalGacha():
     json_body = json.loads(request.data)
     slot_id = json_body["slotId"]
 
-    user_data = read_json(USER_JSON_PATH, encoding="utf8")
+    user_data = read_json(USER_JSON_PATH)
     chars = user_data["user"]["troop"]["chars"]  # 玩家角色数据
     building_chars = user_data["user"]["building"]["chars"]  # 建筑角色数据
     avail_char_info = read_json(NORMALGACHA_PATH)["detailInfo"]["availCharInfo"]["perAvailList"]  # 可用角色信息
@@ -369,7 +369,7 @@ def Gacha(ticket_type, use_diamond_shard, json_body):
         }
 
     # 读取卡池数据
-    pool_json = read_json(pool_path, encoding='utf-8')
+    pool_json = read_json(pool_path)
 
     # 获取目标卡池的保底数，如果不存在则设置为 0
     gacha_count = ex_gacha_data.setdefault(gacha_type, 0)
@@ -817,7 +817,7 @@ def cate():
 
 
 def history():
-    gacha_history_data = read_json(GACHA_HISTORY_PATH, encoding='utf-8')
+    gacha_history_data = read_json(GACHA_HISTORY_PATH)
     gacha_table = get_memory("gacha_table")
     category = request.args.get("category")  # 卡池id
     

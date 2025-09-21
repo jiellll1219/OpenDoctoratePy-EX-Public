@@ -1,24 +1,24 @@
 # DoctoratePy-EX-Public
 
-[中文](https://github.com/jiellll1219/OpenDoctoratePy-EX-Public/tree/main/README.md) | [EN](https://github.com/jiellll1219/OpenDoctoratePy-EX-Public/tree/main/docs/README_EN.md) |
+[简中](https://github.com/jiellll1219/OpenDoctoratePy-EX-Public/tree/main/README.md) | [EN](https://github.com/jiellll1219/OpenDoctoratePy-EX-Public/blob/main/docs/README_EN.md)
 
 [Update Log (CN Only)](https://github.com/jiellll1219/OpenDoctoratePy-EX-Public/tree/main/docs/updata_log.md)
 
-⚠Machine translation warning: This README is supported by machine translation⚠
+This project aims to serve as a branch of OpenDoctoratePy, extending and improving its functionality.  
+The short-term goal is to prevent being kicked back to the login screen due to 404 or unknown errors as much as possible.  
+The long-term goal is to implement a single-player local server similar to the SPT-AKI project.
 
-This project serves as a branch of OpenDoctoratePy, aiming to expand and improve its functionality. The short-term goal is to prevent being kicked back to the login interface due to 404 or unknown errors as much as possible, while the long-term goal is to achieve a single-player local service similar to the SPT-AKI project.
+Part of the code and data structures in this repository reference [LocalArknight](https://github.com/jiellll1219/LocalArknight).
 
-The code and data structure for some features of this repository are based on [LocalArknight](https://github.com/jiellll1219/LocalArknight).
+Development is purely for personal interest. My technical ability is limited, and updates are irregular. If you encounter issues, please open an issue, but I cannot guarantee bugs will be fixed immediately (as a student, I only have free time during holidays and after classes to ~~pile up code~~ write).
 
-Development is purely driven by personal interest, and updates are made sporadically due to limited skills. If you encounter issues, please raise an issue, but I cannot guarantee prompt bug fixes (as a student, I only have free time during vacations or after school to write code).
+This repository welcomes PRs from developers. Co-developing DoctoratePy is the reason I created this repository.
 
-This repository welcomes developers to propose pull requests. Collaborating on DoctoratePy is the original intention behind creating this repository.
+If you need to contact me, please open an issue or send me an email: jiege0019@gmail.com
 
-If you need to contact me, please raise an issue or send an email to jiege0019@gmail.com.
+There is no discussion group for this project, and I (the repository owner) do not support any reselling behavior. Such actions are detrimental to the project’s development. If I (the repository owner) discover that reselling has become widespread and unstoppable, this repository will be archived.
 
-This project has no community groups and prohibits any profit-driven redistribution or secondary development.
-
-If you want to contribute code but lack data, you can at [Here](https://tptpmmpc.ap-southeast-1.clawcloudrun.com/) to get the il2cpp file, I will upload the il2cpp files for each version irregularly.
+If you wish to contribute code but lack data, you can download il2cpp files at [this link](https://tptpmmpc.ap-southeast-1.clawcloudrun.com/). I will periodically upload il2cpp files for each version.
 
 ## Expansion Progress
 
@@ -33,100 +33,69 @@ If you want to contribute code but lack data, you can at [Here](https://tptpmmpc
 | CheckIn | Completed | Done | Tested |
 | Activity CheckIn | Continuous updates | Mostly Done |  |
 | Limited-time event | Continuous updates |  |  |
+| Roguelike Mode | In Progress | Playable Only |  |
+| Missions | In Progress |  |  |
 | SandBox | Paused |  |  |
 | Friends | Completed | Done | Tested |
 
-## Declaration for Top-up System Code
+## Recharge System Code Statement
 
-# **The top-up system in this repository is completely unusable in a real payment environment. Please do not attempt to port this part of the code to your private repository. I will not upload the implementation code for this part to the public repository, as I do not want this repository to be subject to a DMCA Takedown.**
+# **The recharge system in this repository is completely unusable in real payment environments. Do not attempt to port this part of the code into your private repository. I will not upload this part of the implementation code to the public repository. I do not want this repository to be DMCA’d.**
 
-## Usage Guide Example
+## Usage Guide
 
-Please make sure that you are using a version of Python 3.11.0 or later, and that the datetime module of Python may be missing if it is lower than 3.11.0  
-1. Search for GameData or dump game resources on your own to obtain the 'Excel' folder and its  contents, and place the 'Excel' folder in the 'data' directory  
-2. Use the pip command to install the required modules ` pip install -r requirements.txt`  
-3. Start the server by running 'start_dacal_Server. abt'  
-4. Find a way to route the game to the server on your own, this repository does not provide a solution
+Before using:  
+Please ensure your Python version is **>= 3.11.0**. Versions below 3.11.0 may lack certain built-in functions.  
+If you configure the environment using `steup_poetry.cmd` in the following steps, you must also use `start_server_poetry.cmd` to start the server. The pip configuration method is retained only as a fallback and is **not recommended**.
 
-If you think this is troublesome, you can also connect to my public server to experience it. The server address is `http://8.138.148.178:8443/`. My function development progress will also be synchronized to this server in ~~real time~~ sometime. Note! The version of this server is still a single-player version and does not support multi-user play. This server is located in China. The code structure used by the server is not completely consistent with the code of this warehouse, but the functions are basically the same
+1. Find GameData or dump game resources to obtain the `excel` folder and its contents, then place the `excel` folder into the `data` directory.  
+2. Run `steup_poetry.cmd` or `steup_pip.cmd` to configure the environment.  
+3. Run `start_server_poetry.cmd` or `start_local_server.cmd` to start the server.  
+4. Find your own way to route the game to the server. This repository does not provide a solution.  
 
-## Data Structure Explanation
+## Config Parameters Explanation
 
-The storage structure for some data in this project is based on [LocalArknight](https://github.com/jiellll1219/LocalArknight).
-
-For detailed file structures and related files, please refer to this repository: [LocalArknight-res](https://github.com/jiellll1219/LocalArknight-res).
-
-The game version of user.json provided by this repository is CN 2.4.41
-
-## EX_Config Parameter Explanation
+These parameters are located in the `server` dictionary of `config.json`.
 
 ### virtualtime
 
-Used for enabling old gacha pools. When the value is less than 0, real-time is returned.
+Used for enabling old banners.  
+If the value is less than 0, it returns the real-time system clock.
 
-It may cause issues with infrastructure. Avoid reducing the value unnecessarily once set.
+May cause issues with Infrastructure. Do not arbitrarily reduce this value after confirmation.
 
-Compatible with more time formats. You can directly input timestamps or formats like `"2024/02/02 12:12:12"` or `"2024-02-02 12:12:12"`. Ensure to use English double quotes `""`, include a space between date and time, and ensure the entered time is complete and reasonable.
+Supports more time formats. You can input a timestamp directly, or strings like `"2024/02/02 12:12:12"` or `"2024-02-02 12:12:12"`.  
+Note: When using such strings, enclose them in double quotes `""`. A space is required between the date and time. Ensure the input is complete and reasonable.
 
 ### useMemoryCache
 
-Control whether to use memory caching function, default to false (set to off). When enabled (set to true), this function will occupy at least 0.4GB of memory after starting the server, and will slightly reduce CPU usage, syncdata function time, and other functions that read table files. When this feature is not enabled, the memory usage after startup is around 80MB, and the maximum memory consumption is around 0.2GB. Please enable it as appropriate.
+Controls whether to use memory caching. Default is `false` (disabled).  
+When enabled (`true`), the server will occupy at least **0.4GB memory** at startup, but it will slightly reduce CPU usage, `syncdata` function time, and other table-reading function times.  
+When disabled, memory usage is about **80MB** at startup, peaking at around **0.2GB**. Enable based on your needs.
 
-### useExistingCharData
+The optimized `syncdata` function already has acceptable performance.  
+- On a 3.1GHz CPU, `syncData` takes about **1.667709s**.  
+- On a 1.5GHz CPU, `syncData` takes about **3.695747s**.  
+(Test version: 2.4.61)
 
-When synchronizing data (SyncData), the default setting is false (set to off). Whether to use role data saved in user.exe for personalized role settings. When enabled (set to true) with role data, this feature can speed up function execution
+## GPLv3 License Statement
 
-## Keys in user.json
+This project is licensed under the **GNU General Public License v3 (GPLv3)**.
 
-In the user dictionary of this file, the following items exist:
+This license only applies to **distribution** and imposes no restrictions on **internal use**.
 
-```json
-"dungeon": {},
-"activity": {},
-"status": {},
-"troop": {},
-"npcAudio": {},
-"pushFlags": {},
-"equipment": {},
-"skin": {},
-"shop": {},
-"mission": {},
-"social": {},
-"building": {},
-"dexNav": {},
-"crisis": {},
-"crisisV2": {},
-"nameCardStyle": {},
-"tshop": {},
-"gacha": {},
-"backflow": {},
-"mainline": {},
-"avatar": {},
-"background": {},
-"homeTheme": {},
-"rlv2": {},
-"deepSea": {},
-"tower": {},
-"siracusaMap": {},
-"sandboxPerm": {},
-"openServer": {},
-"trainingGround": {},
-"storyreview": {},
-"medal": {},
-"inventory": {},
-"limitedBuff": {},
-"carousel": {},
-"car": {},
-"collectionReward": {},
-"consumable": {},
-"ticket": {},
-"aprilFool": {},
-"retro": {},
-"campaignsV2": {},
-"recruit": {},
-"checkIn": {},
-"share": {},
-"charRotation": {},
-"charm": {},
-"firework": {},
-"event": {}
+According to GPLv3, anyone who **distributes** programs based on this repository’s code (whether modified or not) **must** provide the complete corresponding source code.
+
+In addition to the GPLv3 terms, as the repository holder, **we require** that any **distributed** version of this repository (whether source code, compiled, or packaged) must clearly:
+
+1.  **Provide the source repository link**:  
+    `https://github.com/jiellll1219/OpenDoctoratePy-EX-Public`
+
+2.  **Include this copyright statement and the full GPLv3 license text**.
+
+According to GPLv3 Section 8, if you fail to comply with the license terms during **distribution**, your rights under this license are automatically terminated.  
+However, if you cease all violations and remedy them within **30 days** of becoming aware or being notified, your rights will be automatically reinstated.
+
+For entities engaging in **willful or repeated violations**, all rights granted under GPLv3 will be **permanently terminated**, with no automatic reinstatement. This decision is at the sole discretion of the repository holder.
+
+This statement is an interpretation and emphasis of the GPLv3 terms and does not replace them. Please read and fully understand the [full GPLv3 license](https://www.gnu.org/licenses/gpl-3.0.html) before proceeding.

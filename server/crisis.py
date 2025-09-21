@@ -63,7 +63,7 @@ def crisisBattleStart():
     data = request.data
     data = request.get_json()
     selected_crisis = read_json(CONFIG_PATH)["crisisConfig"]["selectedCrisis"]
-    rune_data = read_json(f"{CRISIS_JSON_BASE_PATH}{selected_crisis}.json", encoding="utf8")["data"]["stageRune"][data["stageId"]]
+    rune_data = read_json(f"{CRISIS_JSON_BASE_PATH}{selected_crisis}.json")["data"]["stageRune"][data["stageId"]]
 
     total_risks = 0
     for each_rune in data["rune"]:

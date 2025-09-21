@@ -224,7 +224,7 @@ app.add_url_rule("/quest/finishStoryStage", methods = ["POST"], view_func = stor
 app.add_url_rule("/user/bindBirthday", methods = ["POST"], view_func = user.bindBirthday)
 app.add_url_rule("/user/auth", methods = ["POST"], view_func = user.Auth)
 app.add_url_rule("/user/agreement", methods = ["GET"], view_func = user.Agreement)
-app.add_url_rule("/user/checkIn", methods = ["POST"], view_func = user.CheckIn)
+app.add_url_rule("/user/checkIn", methods = ["POST"], view_func = user.checkin.userCheckIn)
 app.add_url_rule("/user/changeSecretary", methods = ["POST"], view_func = user.ChangeSecretary)
 app.add_url_rule("/user/login", methods = ["POST"], view_func = user.Login)
 app.add_url_rule("/user/changeAvatar", methods = ["POST"], view_func = user.ChangeAvatar)

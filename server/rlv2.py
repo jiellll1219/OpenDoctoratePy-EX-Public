@@ -589,7 +589,7 @@ def rlv2CloseRecruitTicket():
 
 
 def getMap(theme):
-    with open (RL_TABLE_PATH, encoding='utf-8') as a:
+    with open (RL_TABLE_PATH) as a:
         rlv2_table = json.load(a)
     stages = [i for i in rlv2_table["details"][theme]["stages"]]
     match theme:
