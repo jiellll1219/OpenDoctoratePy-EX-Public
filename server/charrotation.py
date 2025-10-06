@@ -129,7 +129,7 @@ def updatePreset():
         sync_data["user"]["charRotation"]["preset"][inst_id]["background"] = json_body["data"]["background"]
         result["playerDataDelta"]["modified"]["background"] = {}
         result["playerDataDelta"]["modified"]["background"]["selected"] = ""
-        result["playerDataDelta"]["modified"]["background"]["selected"] = sync_data["user"]["background"]["selected"] = json_body["data"]["homeTheme"]
+        result["playerDataDelta"]["modified"]["background"]["selected"] = sync_data["user"]["background"]["selected"] = json_body["data"]["background"]
 
     if json_body["data"]["homeTheme"] is not None:
 

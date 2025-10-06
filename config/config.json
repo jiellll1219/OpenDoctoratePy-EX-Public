@@ -109,11 +109,6 @@
         "activityMinStartTs": 1712203200,
         "background": "bg_sui_1",
         "fakeTime": -1,
-        "restorePreviousStates": {
-            "is2": false,
-            "squadsAndFavs": false,
-            "ui": false
-        },
         "secretary": "char_4172_xingzh",
         "secretarySkinId": "char_4172_xingzh#1",
         "theme": "tm_sui_1"

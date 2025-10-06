@@ -1,4 +1,4 @@
-from flask import request
+from flask import request, jsonify
 from virtualtime import time
 from utils import read_json, write_json, run_after_response
 from constants import (
@@ -7,15 +7,15 @@ from constants import (
 import random
 
 class CheckInReward():
-    # 这个类用于处理活动签到奖励
-    def __init__(self):
-        # 需要用到用户数据时，传参里添加self，使用 self.user_data 获取用户数据
-        self.user_data = read_json(SYNC_DATA_TEMPLATE_PATH)
+    # 这个类用于处理签到奖励
         
-    def getCheckInReward(self):
+    def getCheckInReward():
         json_body = request.get_json()
-        user_data = self.user_data
+        user_data = read_json(SYNC_DATA_TEMPLATE_PATH)
         access_id = json_body["activityId"]
+
+        items = []
+        modified = {}
 
         if access_id == "act2access":
             rewardsCnt = user_data["user"]["activity"]["CHECKIN_ACCESS"]["act2access"]["rewardsCount"]
@@ -54,16 +54,20 @@ class CheckInReward():
 
         return result
 
-    def getActivityCheckInReward(self):
+    def getActivityCheckInReward():
 
         json_body = request.get_json()
+        
+        items = []
 
         activity_id = json_body["activityId"]
         target_index = json_body["index"]
-        user_data = self.user_data
+        dyn_opt = json_body["dynOpt"]
+        user_data = read_json(SYNC_DATA_TEMPLATE_PATH)
         activity_data = user_data["user"]["activity"]["CHECKIN_ONLY"][activity_id]
 
         activity_data["history"][target_index] = 0
+        activity_data["dynOpt"].append(dyn_opt)
 
         result = {
             "playerDataDelta": {
@@ -75,61 +79,98 @@ class CheckInReward():
                     }
                 },
                 "deleted": {}
-            }
+            },
+            "items": items
         }
+
+        run_after_response(write_json, user_data, SYNC_DATA_TEMPLATE_PATH)
 
         return result
     
-    def getReward(self):
-        # 签到墙奖励
+    def _act53sign():
+        pass
+    
+    def getReward():
+
         json_body = request.get_json()
-        # {'prayArray': [0, 1], 'activityId': 'act11pray'}
-        user_data = self.user_data
+
+        user_data = read_json(SYNC_DATA_TEMPLATE_PATH)
         activity_id = json_body["activityId"]
-        activity_data = user_data["user"]["activity"]["PRAY_ONLY"][activity_id]
+        items = []
 
-        activity_data["lastTs"] = time()
-        activity_data["praying"] = True
+        match activity_id:
+            case activity_id if activity_id.endswith("pray"):
+                activity_type = "PRAY_ONLY"
+                activity_data = user_data["user"]["activity"][activity_type][activity_id]
 
-        count_list = [200, 300, 400, 500, 600, 700, 800]
-        random.shuffle(count_list)
-        count_1 = random.choice(count_list)
-        random.shuffle(count_list)
-        count_2 = random.choice(count_list)
-        if count_1 >= count_2:
-            activity_data["prayMaxIndex"] = json_body["prayArray"][0]
-        else:
-            activity_data["prayMaxIndex"] = json_body["prayArray"][1]
+                activity_data["lastTs"] = time()
+                activity_data["praying"] = True
 
-        activity_data["prayArray"] = [
-            {
-                "index": json_body["prayArray"][0],
-                "count": count_1
-            },
-            {
-                "index": json_body["prayArray"][1],
-                "count": count_2
-            }
-        ]
+                count_list = [200,300, 400, 500, 600, 700, 800]
+                random.shuffle(count_list)
+                count_1 = random.choice(count_list)
+                random.shuffle(count_list)
+                count_2 = random.choice(count_list)
+                if count_1 >= count_2:
+                    activity_data["prayMaxIndex"] = json_body["prayArray"][0]
+                    count = count_1
+                else:
+                    activity_data["prayMaxIndex"] = json_body["prayArray"][1]
+                    count = count_2
+
+                activity_data["prayArray"] = [
+                    {
+                        "index": json_body["prayArray"][0],
+                        "count": count_1
+                    },
+                    {
+                        "index": json_body["prayArray"][1],
+                        "count": count_2
+                    }
+                ]
+                items.append({
+                    "type": "DIAMOND_SHD",
+                    "id": "4003",
+                    "count": count
+                })
+
+            case activity_id if activity_id.endswith("login"):
+                activity_type = "LOGIN_ONLY"
+                activity_data = user_data["user"]["activity"][activity_type][activity_id]
+                activity_data["reward"] = 0
 
         result = {
             "playerDataDelta": {
                 "modified": {
                     "activity": {
-                        "PRAY_ONLY": {
+                        activity_type: {
                             activity_id: activity_data
                         }
                     }
                 },
                 "deleted": {}
-            }
+            },
+            "items": items
         }
-
+        print(result)
         return result
 
-    def sign(self):
+    def sign():
         json_body = request.get_json()
-        user_data = self.user_data
+        user_data = read_json(SYNC_DATA_TEMPLATE_PATH)
+        # {'actId': 'act3signvs', 'tasteChoice': 2} 咸粽子
+        # {'actId': 'act3signvs', 'tasteChoice': 1} 甜粽子
+        # "act3signvs": {
+        #             "sweetVote": 0,
+        #             "saltyVote": 0,
+        #             "canVote": 1,
+        #             "todayVoteState": 0,
+        #             "voteRewardState": 0,
+        #             "signedCnt": 0,
+        #             "availSignCnt": 1,
+        #             "socialState": 2,
+        #             "actDay": 1
+        #         }
         act_id = json_body["actId"]
         act_data = user_data["user"]["activity"]["CHECKIN_VS"][act_id]
 
@@ -139,7 +180,6 @@ class CheckInReward():
             act_data["sweetVote"] += 1
         else:
             act_data["saltyVote"] += 1
-        act_data["voteRewardState"] = 0
 
         result = {
             "playerDataDelta": {
@@ -167,7 +207,6 @@ class CheckInReward():
         }
 
         return result
-
 
 class enemyDuel():
     def singleBattleStart():
@@ -221,852 +260,69 @@ class enemyDuel():
     
 class act35side():
 
-    def __init__(self):
-        # 回合数据
-        self.round_data_map = {
-            "challenge_1_r1": {
-                "material_fire_1": 100,
-                "material_leaf_1": 0,
-                "material_clst_1": 0,
-                "material_sand": 0
-            },
-            "challenge_1_r2": {
-                "material_fire_1": 100,
-                "material_leaf_1": 0,
-                "material_clst_1": 0,
-                "material_sand": 0
-            },
-            "challenge_3_r1": {
-                "material_fire_1": 100,
-                "material_leaf_1": 0,
-                "material_clst_1": 0,
-                "material_sand": 0
-            },
-            "challenge_3_r2": {
-                "material_fire_1": 100,
-                "material_leaf_1": 0,
-                "material_clst_1": 0,
-                "material_sand": 0
-            },
-            "challenge_3_r3": {
-                "material_fire_1": 100,
-                "material_leaf_1": 0,
-                "material_clst_1": 0,
-                "material_sand": 0
-            },
-            "challenge_3_r4": {
-                "material_fire_1": 100,
-                "material_leaf_1": 0,
-                "material_clst_1": 0,
-                "material_sand": 0
-            },
-            "challenge_3_r5": {
-                "material_fire_1": 100,
-                "material_leaf_1": 0,
-                "material_clst_1": 0,
-                "material_sand": 0
-            },
-            "challenge_4_r1": {
-                "material_fire_1": 0,
-                "material_leaf_1": 100,
-                "material_clst_1": 0,
-                "material_sand": 0
-            },
-            "challenge_4_r2": {
-                "material_fire_1": 0,
-                "material_leaf_1": 100,
-                "material_clst_1": 0,
-                "material_sand": 0
-            },
-            "challenge_4_r3": {
-                "material_fire_1": 18,
-                "material_leaf_1": 50,
-                "material_clst_1": 13,
-                "material_sand": 19
-            },
-            "challenge_4_r4": {
-                "material_fire_1": 14,
-                "material_leaf_1": 50,
-                "material_clst_1": 21,
-                "material_sand": 15
-            },
-            "challenge_4_r5": {
-                "material_fire_1": 20,
-                "material_leaf_1": 50,
-                "material_clst_1": 17,
-                "material_sand": 13
-            },
-            "challenge_5_r1": {
-                "material_fire_1": 0,
-                "material_leaf_1": 0,
-                "material_clst_1": 0,
-                "material_sand": 100
-            },
-            "challenge_5_r2": {
-                "material_fire_1": 0,
-                "material_leaf_1": 50,
-                "material_clst_1": 0,
-                "material_sand": 50
-            },
-            "challenge_5_r3": {
-                "material_fire_1": 18,
-                "material_leaf_1": 13,
-                "material_clst_1": 19,
-                "material_sand": 50
-            },
-            "challenge_5_r4": {
-                "material_fire_1": 14,
-                "material_leaf_1": 21,
-                "material_clst_1": 15,
-                "material_sand": 50
-            },
-            "challenge_5_r5": {
-                "material_fire_1": 20,
-                "material_leaf_1": 17,
-                "material_clst_1": 13,
-                "material_sand": 50
-            },
-            "challenge_6_r1": {
-                "material_fire_1": 0,
-                "material_leaf_1": 0,
-                "material_clst_1": 50,
-                "material_sand": 50
-            },
-            "challenge_6_r2": {
-                "material_fire_1": 0,
-                "material_leaf_1": 70,
-                "material_clst_1": 30,
-                "material_sand": 0
-            },
-            "challenge_6_r3": {
-                "material_fire_1": 18,
-                "material_leaf_1": 13,
-                "material_clst_1": 50,
-                "material_sand": 19
-            },
-            "challenge_6_r4": {
-                "material_fire_1": 14,
-                "material_leaf_1": 21,
-                "material_clst_1": 50,
-                "material_sand": 15
-            },
-            "challenge_6_r5": {
-                "material_fire_1": 20,
-                "material_leaf_1": 17,
-                "material_clst_1": 50,
-                "material_sand": 13
-            },
-            "challenge_7_r1": None,
-            "challenge_7_r2": None,
-            "challenge_7_r3": None,
-            "challenge_7_r4": None,
-            "challenge_7_r5": None,
-            "challenge_7_r6": None,
-            "challenge_7_r7": None,
-            "challenge_7_r8": None,
-            "challenge_7_r9": None,
-            "challenge_7_r10": None,
-            "challenge_7_r11": None,
-            "challenge_7_r12": None,
-            "challenge_7_r13": None,
-            "challenge_7_r14": None,
-            "challenge_7_r15": {
-                "material_fire_1": 70,
-                "material_leaf_1": 10,
-                "material_clst_1": 10,
-                "material_sand": 10
-            },
-            "challenge_7_r16": None,
-            "challenge_7_r17": None,
-            "challenge_7_r18": None,
-            "challenge_7_r19": {
-                "material_fire_1": 10,
-                "material_leaf_1": 70,
-                "material_clst_1": 10,
-                "material_sand": 10
-            },
-            "challenge_7_r20": None,
-            "challenge_7_r21": None,
-            "challenge_7_r22": None,
-            "challenge_7_r23": {
-                "material_fire_1": 10,
-                "material_leaf_1": 10,
-                "material_clst_1": 10,
-                "material_sand": 70
-            },
-            "challenge_7_r24": None,
-            "challenge_7_r25": None,
-            "challenge_7_r26": None,
-            "challenge_7_r27": {
-                "material_fire_1": 70,
-                "material_leaf_1": 10,
-                "material_clst_1": 10,
-                "material_sand": 10
-            },
-            "challenge_7_r28": None,
-            "challenge_7_r29": None,
-            "challenge_7_r30": None,
-            "challenge_7_r31": {
-                "material_fire_1": 10,
-                "material_leaf_1": 70,
-                "material_clst_1": 10,
-                "material_sand": 10
-            },
-            "challenge_7_r32": None,
-            "challenge_7_r33": None,
-            "challenge_7_r34": None,
-            "challenge_7_r35": {
-                "material_fire_1": 10,
-                "material_leaf_1": 10,
-                "material_clst_1": 10,
-                "material_sand": 70
-            },
-            "challenge_7_r36": None,
-            "challenge_7_r37": None,
-            "challenge_7_r38": None,
-            "challenge_7_r39": None,
-            "challenge_7_r40": None,
-            "challenge_8_r1": None,
-            "challenge_8_r2": None,
-            "challenge_8_r3": {
-                "material_fire_1": 70,
-                "material_leaf_1": 10,
-                "material_clst_1": 10,
-                "material_sand": 10
-            },
-            "challenge_8_r4": None,
-            "challenge_8_r5": None,
-            "challenge_8_r6": {
-                "material_fire_1": 10,
-                "material_leaf_1": 70,
-                "material_clst_1": 10,
-                "material_sand": 10
-            },
-            "challenge_8_r7": None,
-            "challenge_8_r8": None,
-            "challenge_8_r9": {
-                "material_fire_1": 10,
-                "material_leaf_1": 10,
-                "material_clst_1": 10,
-                "material_sand": 70
-            },
-            "challenge_8_r10": None,
-            "challenge_8_r11": None,
-            "challenge_8_r12": {
-                "material_fire_1": 10,
-                "material_leaf_1": 10,
-                "material_clst_1": 70,
-                "material_sand": 10
-            },
-            "challenge_8_r13": None,
-            "challenge_8_r14": None,
-            "challenge_8_r15": None,
-            "challenge_8_r16": None,
-            "challenge_8_r17": None,
-            "challenge_8_r18": None,
-            "challenge_8_r19": None,
-            "challenge_8_r20": None,
-            "challenge_8_r21": None,
-            "challenge_8_r22": None,
-            "challenge_8_r23": None,
-            "challenge_8_r24": None,
-            "challenge_8_r25": None,
-            "challenge_8_r26": None,
-            "challenge_8_r27": None,
-            "challenge_8_r28": None,
-            "challenge_8_r29": None,
-            "challenge_8_r30": None,
-            "challenge_8_r31": None,
-            "challenge_8_r32": None,
-            "challenge_8_r33": None,
-            "challenge_8_r34": None,
-            "challenge_8_r35": None,
-            "challenge_8_r36": None,
-            "challenge_8_r37": None,
-            "challenge_8_r38": None,
-            "challenge_8_r39": None,
-            "challenge_8_r40": None,
-            "challenge_9_r1": {
-                "material_fire_1": 50,
-                "material_leaf_1": 17,
-                "material_clst_1": 13,
-                "material_sand": 20
-            },
-            "challenge_9_r2": {
-                "material_fire_1": 50,
-                "material_leaf_1": 20,
-                "material_clst_1": 13,
-                "material_sand": 17
-            },
-            "challenge_9_r3": {
-                "material_fire_1": 30,
-                "material_leaf_1": 40,
-                "material_clst_1": 20,
-                "material_sand": 10
-            },
-            "challenge_9_r4": {
-                "material_fire_1": 30,
-                "material_leaf_1": 15,
-                "material_clst_1": 40,
-                "material_sand": 15
-            },
-            "challenge_9_r5": {
-                "material_fire_1": 30,
-                "material_leaf_1": 10,
-                "material_clst_1": 20,
-                "material_sand": 40
-            },
-            "challenge_10_r1": {
-                "material_fire_1": 25,
-                "material_leaf_1": 25,
-                "material_clst_1": 25,
-                "material_sand": 25
-            },
-            "challenge_10_r2": None,
-            "challenge_10_r3": None,
-            "challenge_10_r4": {
-                "material_fire_1": 50,
-                "material_leaf_1": 20,
-                "material_clst_1": 10,
-                "material_sand": 20
-            },
-            "challenge_10_r5": None,
-            "challenge_10_r6": None,
-            "challenge_10_r7": {
-                "material_fire_1": 20,
-                "material_leaf_1": 50,
-                "material_clst_1": 10,
-                "material_sand": 20
-            },
-            "challenge_10_r8": None,
-            "challenge_10_r9": None,
-            "challenge_10_r10": {
-                "material_fire_1": 20,
-                "material_leaf_1": 20,
-                "material_clst_1": 10,
-                "material_sand": 50
-            },
-            "challenge_10_r11": None,
-            "challenge_10_r12": None,
-            "challenge_10_r13": None,
-            "challenge_10_r14": None,
-            "challenge_10_r15": None,
-            "challenge_10_r16": None,
-            "challenge_10_r17": None,
-            "challenge_10_r18": None,
-            "challenge_10_r19": None,
-            "challenge_10_r20": None,
-            "challenge_10_r21": None,
-            "challenge_10_r22": None,
-            "challenge_10_r23": None,
-            "challenge_10_r24": None,
-            "challenge_10_r25": None,
-            "challenge_10_r26": None,
-            "challenge_10_r27": None,
-            "challenge_10_r28": None,
-            "challenge_10_r29": None,
-            "challenge_10_r30": None,
-            "challenge_10_r31": None,
-            "challenge_10_r32": None,
-            "challenge_10_r33": None,
-            "challenge_10_r34": None,
-            "challenge_10_r35": None,
-            "challenge_10_r36": None,
-            "challenge_10_r37": None,
-            "challenge_10_r38": None,
-            "challenge_10_r39": None,
-            "challenge_10_r40": None
-        }
-        # 初始卡片
-        self.Initial_card = {
-            "challenge_1": ["card_fire_2"],
-            "challenge_3": ["card_fire_1", "card_fire_2"],
-            "challenge_4": ["card_leaf_1", "card_leaf_2"],
-            "challenge_5": ["card_clst_1", "card_clst_2"],
-            "challenge_6": ["card_sand_1", "card_sand_1"],
-            "challenge_7": None,
-            "challenge_8": None,
-            "challenge_9": None,
-            "challenge_10": None,
-        }
-        # 卡片数据
-        self.prepared_card_data = {
-            "card_fire_1": {
-                "1": {
-                    "inputs": {
-                        "material_fire_1": 1
-                    },
-                    "outputs": {
-                        "material_fire_2": 1
-                    },
-                    "multiplier": 1.0
-                },
-                "2": {
-                    "inputs": {
-                        "material_fire_1": 1
-                    },
-                    "outputs": {
-                        "material_fire_2": 1
-                    },
-                    "multiplier": 1.0
-                },
-                "3": {
-                    "inputs": {
-                        "material_fire_1": 1
-                    },
-                    "outputs": {
-                        "material_fire_2": 1
-                    },
-                    "multiplier": 2.0
-                }
-            },
-            "card_fire_2": {
-                "1": {
-                    "inputs": {
-                        "material_fire_2": 1
-                    },
-                    "outputs": {
-                        "material_fire_3": 1
-                    },
-                    "multiplier": 1.0
-                },
-                "2": {
-                    "inputs": {
-                        "material_fire_2": 1
-                    },
-                    "outputs": {
-                        "material_fire_3": 1
-                    },
-                    "multiplier": 2.0
-                },
-                "3": {
-                    "inputs": {
-                        "material_fire_2": 1
-                    },
-                    "outputs": {
-                        "material_fire_3": 1
-                    },
-                    "multiplier": 2.0
-                }
-            },
-            "card_fire_3": {
-                "1": {
-                    "inputs": {
-                        "material_fire_3": 1
-                    },
-                    "outputs": {
-                        "material_fire_4": 1
-                    },
-                    "multiplier": 1.0
-                },
-                "2": {
-                    "inputs": {
-                        "material_fire_3": 1
-                    },
-                    "outputs": {
-                        "material_fire_4": 1
-                    },
-                    "multiplier": 2.4
-                },
-                "3": {
-                    "inputs": {
-                        "material_fire_3": 1
-                    },
-                    "outputs": {
-                        "material_fire_4": 1
-                    },
-                    "multiplier": 2.4
-                }
-            },
-            "card_fire_4": {
-                "1": {
-                    "inputs": {
-                        "material_fire_4": 1
-                    },
-                    "outputs": {
-                        "material_fire_5": 1
-                    },
-                    "multiplier": 1.0
-                },
-                "2": {
-                    "inputs": {
-                        "material_fire_4": 1
-                    },
-                    "outputs": {
-                        "material_fire_5": 1
-                    },
-                    "multiplier": 1.0
-                },
-                "3": {
-                    "inputs": {
-                        "material_fire_4": 1
-                    },
-                    "outputs": {
-                        "material_fire_5": 1
-                    },
-                    "multiplier": 1.0
-                }
-            },
-            "card_leaf_1": {
-                "1": {
-                    "inputs": {
-                        "material_leaf_1": 10
-                    },
-                    "outputs": {
-                        "material_leaf_2": 5,
-                        "material_sand": 5
-                    },
-                    "multiplier": 1.0
-                },
-                "2": {
-                    "inputs": {
-                        "material_leaf_1": 10
-                    },
-                    "outputs": {
-                        "material_leaf_2": 8,
-                        "material_sand": 2
-                    },
-                    "multiplier": 1.0
-                },
-                "3": {
-                    "inputs": {
-                        "material_leaf_1": 1
-                    },
-                    "outputs": {
-                        "material_leaf_2": 1
-                    },
-                    "multiplier": 1.0
-                }
-            },
-            "card_leaf_2": {
-                "1": {
-                    "inputs": {
-                        "material_leaf_2": 10
-                    },
-                    "outputs": {
-                        "material_leaf_3": 4,
-                        "material_sand": 6
-                    },
-                    "multiplier": 1.0
-                },
-                "2": {
-                    "inputs": {
-                        "material_leaf_2": 10
-                    },
-                    "outputs": {
-                        "material_leaf_3": 6,
-                        "material_sand": 4
-                    },
-                    "multiplier": 1.0
-                },
-                "3": {
-                    "inputs": {
-                        "material_leaf_2": 10
-                    },
-                    "outputs": {
-                        "material_leaf_3": 8,
-                        "material_sand": 2
-                    },
-                    "multiplier": 1.0
-                }
-            },
-            "card_leaf_3": {
-                "1": {
-                    "inputs": {
-                        "material_leaf_3": 10
-                    },
-                    "outputs": {
-                        "material_leaf_4": 3,
-                        "material_sand": 7
-                    },
-                    "multiplier": 1.0
-                },
-                "2": {
-                    "inputs": {
-                        "material_leaf_3": 10
-                    },
-                    "outputs": {
-                        "material_leaf_4": 5,
-                        "material_sand": 5
-                    },
-                    "multiplier": 1.0
-                },
-                "3": {
-                    "inputs": {
-                        "material_leaf_3": 10
-                    },
-                    "outputs": {
-                        "material_leaf_4": 7,
-                        "material_sand": 3
-                    },
-                    "multiplier": 1.0
-                }
-            },
-            "card_clst_1": {
-                "1": {
-                    "inputs": {
-                        "material_clst_1": 1,
-                        "material_sand": 1
-                    },
-                    "outputs": {
-                        "material_clst_2": 1
-                    },
-                    "multiplier": 1.0
-                },
-                "2": {
-                    "inputs": {
-                        "material_clst_1": 1,
-                        "material_sand": 1
-                    },
-                    "outputs": {
-                        "material_clst_2": 1
-                    },
-                    "multiplier": 1.0
-                },
-                "3": {
-                    "inputs": {
-                        "material_clst_1": 1,
-                        "material_sand": 1
-                    },
-                    "outputs": {
-                        "material_clst_2": 1
-                    },
-                    "multiplier": 1.0
-                }
-            },
-            "card_clst_2": {
-                "1": {
-                    "inputs": {
-                        "material_clst_2": 1,
-                        "material_leaf_2": 1
-                    },
-                    "outputs": {
-                        "material_clst_3": 1
-                    },
-                    "multiplier": 1.0
-                },
-                "2": {
-                    "inputs": {
-                        "material_clst_2": 1,
-                        "material_leaf_2": 1
-                    },
-                    "outputs": {
-                        "material_clst_3": 1
-                    },
-                    "multiplier": 1.0
-                },
-                "3": {
-                    "inputs": {
-                        "material_clst_2": 1,
-                        "material_leaf_2": 1
-                    },
-                    "outputs": {
-                        "material_clst_3": 1
-                    },
-                    "multiplier": 1.0
-                }
-            },
-            "card_clst_3": {
-                "1": {
-                    "inputs": {
-                        "material_clst_3": 1,
-                        "material_fire_4": 1
-                    },
-                    "outputs": {
-                        "material_clst_4": 1
-                    },
-                    "multiplier": 1.0
-                },
-                "2": {
-                    "inputs": {
-                        "material_clst_3": 1,
-                        "material_fire_4": 1
-                    },
-                    "outputs": {
-                        "material_clst_4": 1
-                    },
-                    "multiplier": 1.0
-                },
-                "3": {
-                    "inputs": {
-                        "material_clst_3": 1,
-                        "material_fire_4": 1
-                    },
-                    "outputs": {
-                        "material_clst_4": 1
-                    },
-                    "multiplier": 1.0
-                }
-            },
-            "card_sand_1": {
-                "1": {
-                    "inputs": {
-                        "material_sand": 1
-                    },
-                    "outputs": {
-                        "material_sand": 2
-                    },
-                    "multiplier": 1.0
-                },
-                "2": {
-                    "inputs": {
-                        "material_sand": 1
-                    },
-                    "outputs": {
-                        "material_sand": 3
-                    },
-                    "multiplier": 1.0
-                },
-                "3": {
-                    "inputs": {
-                        "material_sand": 1
-                    },
-                    "outputs": {
-                        "material_sand": 5
-                    },
-                    "multiplier": 1.0
-                }
-            },
-            "card_sand_2": {
-                "1": {
-                    "inputs": {
-                        "material_sand": 1
-                    },
-                    "outputs": {
-                        "material_sand": 3
-                    },
-                    "multiplier": 1.0
-                },
-                "2": {
-                    "inputs": {
-                        "material_sand": 1
-                    },
-                    "outputs": {
-                        "material_sand": 5
-                    },
-                    "multiplier": 1.0
-                },
-                "3": {
-                    "inputs": {
-                        "material_sand": 1
-                    },
-                    "outputs": {
-                        "material_sand": 8
-                    },
-                    "multiplier": 1.0
-                }
-            },
-            "card_sand_3": {
-                "1": {
-                    "inputs": {
-                        "material_sand": 1
-                    },
-                    "outputs": {
-                        "material_sand": 5
-                    },
-                    "multiplier": 1.0
-                },
-                "2": {
-                    "inputs": {
-                        "material_sand": 1
-                    },
-                    "outputs": {
-                        "material_sand": 9
-                    },
-                    "multiplier": 1.0
-                },
-                "3": {
-                    "inputs": {
-                        "material_sand": 1
-                    },
-                    "outputs": {
-                        "material_sand": 9
-                    },
-                    "multiplier": 1.0
-                }
+    from data.act_data import round_data_map, Initial_card, prepared_card_data, material_price, material_list, shop_data, coin_data, card_data
+
+    def _build_prepared_card_data() -> dict:
+
+        data = {}
+
+        def make_simple(inp: str, out: str, mults: list[float]) -> dict:
+            """单输入单输出卡牌"""
+            return {
+                str(i + 1): {"inputs": {inp: 1}, "outputs": {out: 1}, "multiplier": mult}
+                for i, mult in enumerate(mults)
             }
-        }
-        # 材料分数
-        self.material_price = {
-            "material_fire_1": 1,
-            "material_fire_2": 2,
-            "material_fire_3": 10,
-            "material_fire_4": 35,
-            "material_fire_5": 85,
-            "material_clst_1": 1,
-            "material_clst_2": 3,
-            "material_clst_3": 22,
-            "material_clst_4": 105,
-            "material_leaf_1": 1,
-            "material_leaf_2": 5,
-            "material_leaf_3": 50,
-            "material_leaf_4": 500,
-            "material_sand": 1
-        }
-        # 初始材料
-        self.material_list = {
-            "challenge_1": [{
-                "material_fire_1": 100,
-                "material_leaf_1": 0,
-                "material_clst_1": 0,
-                "material_sand": 0
-            }],
-            "challenge_3": [{
-                "material_fire_1": 100,
-                "material_leaf_1": 0,
-                "material_clst_1": 0,
-                "material_sand": 0
-            }],
-            "challenge_4": [{
-                "material_fire_1": 0,
-                "material_leaf_1": 100,
-                "material_clst_1": 0,
-                "material_sand": 0
-            }],
-            "challenge_5": [{
-                "material_fire_1": 0,
-                "material_leaf_1": 0,
-                "material_clst_1": 0,
-                "material_sand": 100
-            }],
-            "challenge_6": [{
-                "material_fire_1": 0,
-                "material_leaf_1": 0,
-                "material_clst_1": 50,
-                "material_sand": 50
-            }],
-            "challenge_7": [{
-                
-            }]
-        }
-        # 商店花费数据
-        # 设计思路：刷新和购买独立一个self变量，刷新与购买时修改对应变量，nextround触发时清零，变量作为偏移从这个列表获取价格，超出最大范围取最后一位作为价格
-        self.shop_data = {
-            "fresh": [1,1,2,2,2,3,3,3,3,3,6,6,6,6,6,6,6,10],
-            "buy": [2,3,4,4,4,5,5,5,5,10,10,10,10,10,16],
-            "slot": [8,18,28,40]
-        }
-        # 加钱数据
-        self.coin_data = {
-            "challenge_1": [10,10],
-            "challenge_3": [10,10,10,10,10],
-            "challenge_4": [10,10,10,10,10],
-            "challenge_5": [10,10,10,10,10],
-            "challenge_6": [10,10,10,10,10],
-            "challenge_7": [10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10],
-            "challenge_8": [10,10,10,10,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15],
-            "challenge_9": [30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30],
-            "challenge_10": [30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30],
-        }
-        # 卡牌组数据
-        self.card_data = {
-            "fire": ["card_fire_1","card_fire_2","card_fire_3","card_fire_4","card_fire_5"],
-            "leaf": ["card_leaf_1","card_leaf_2","card_leaf_3","card_leaf_4"],
-            "clst": ["card_clst_1","card_clst_2","card_clst_3","card_clst_4"],
-            "sand": ["card_sand_1","card_sand_2","card_sand_3","card_sand_4"]
+
+        def make_simple2(inputs: dict, outputs: dict) -> dict:
+            """多输入多输出卡牌（所有等级相同）"""
+            return {
+                str(i): {"inputs": dict(inputs), "outputs": dict(outputs), "multiplier": 1.0}
+                for i in range(1, 4)
+            }
+        data.update({
+            "card_fire_1": make_simple("material_fire_1", "material_fire_2", [1.0, 1.0, 2.0]),
+            "card_fire_2": make_simple("material_fire_2", "material_fire_3", [1.0, 2.0, 2.0]),
+            "card_fire_3": make_simple("material_fire_3", "material_fire_4", [1.0, 2.4, 2.4]),
+            "card_fire_4": make_simple("material_fire_4", "material_fire_5", [1.0, 1.0, 1.0]),
+        })
+
+        data["card_leaf_1"] = {
+            "1": {"inputs": {"material_leaf_1": 10}, "outputs": {"material_leaf_2": 5, "material_sand": 5}, "multiplier": 1.0},
+            "2": {"inputs": {"material_leaf_1": 10}, "outputs": {"material_leaf_2": 8, "material_sand": 2}, "multiplier": 1.0},
+            "3": {"inputs": {"material_leaf_1": 1},  "outputs": {"material_leaf_2": 1}, "multiplier": 1.0},
         }
 
-    def _random_card(self, carving_data):
+        leaf_rules = {
+            "card_leaf_2": [(4, 6), (6, 4), (8, 2)],
+            "card_leaf_3": [(3, 7), (5, 5), (7, 3)],
+        }
+
+        for card_name, ratios in leaf_rules.items():
+            n = int(card_name.split("_")[-1])
+            data[card_name] = {
+                str(i + 1): {
+                    "inputs": {f"material_leaf_{n}": 10},
+                    "outputs": {f"material_leaf_{n+1}": a, "material_sand": b},
+                    "multiplier": 1.0,
+                }
+                for i, (a, b) in enumerate(ratios)
+            }
+
+        data.update({
+            "card_clst_1": make_simple2({"material_clst_1": 1, "material_sand": 1}, {"material_clst_2": 1}),
+            "card_clst_2": make_simple2({"material_clst_2": 1, "material_leaf_2": 1}, {"material_clst_3": 1}),
+            "card_clst_3": make_simple2({"material_clst_3": 1, "material_fire_4": 1}, {"material_clst_4": 1}),
+        })
+
+        data.update({
+            "card_sand_1": make_simple("material_sand", "material_sand", [2, 3, 5]),
+            "card_sand_2": make_simple("material_sand", "material_sand", [3, 5, 8]),
+            "card_sand_3": make_simple("material_sand", "material_sand", [5, 9, 9]),
+        })
+
+        return data
+    
+    def _random_card(carving_data):
         max_lv_card = []
         # 获取满级卡信息
         card_info = carving_data["card"]
@@ -1080,13 +336,13 @@ class act35side():
                 return [None] * count
             if pool_name == "all":
                 card_data = (
-                    self.card_data["fire"] +
-                    self.card_data["leaf"] +
-                    self.card_data["clst"] +
-                    self.card_data["sand"]
+                    act35side.card_data["fire"] +
+                    act35side.card_data["leaf"] +
+                    act35side.card_data["clst"] +
+                    act35side.card_data["sand"]
                 )
             else:
-                card_data = self.card_data[pool_name]
+                card_data = act35side.card_data[pool_name]
             random_list = list(set(card_data) - set(max_lv_card1))
             random.shuffle(random_list)
             return random_list[:count]
@@ -1114,7 +370,7 @@ class act35side():
 
         return good
 
-    def act35sideCreate(self):
+    def act35sideCreate():
         json_body = request.get_json()
         activity_id = json_body["activityId"]
         challenge_id = json_body["challengeId"]
@@ -1129,7 +385,7 @@ class act35side():
             "material_clst_1": 0,
             "material_sand": 0
         }
-        if self.round_data_map[challenge_id + "_r1"] is None:
+        if act35side.round_data_map[challenge_id + "_r1"] is None:
             keys = list(material.keys())
             n = len(keys)
 
@@ -1179,7 +435,7 @@ class act35side():
                 material[key] = values[i]
 
         else:
-            material = self.round_data_map[challenge_id + "_r1"]
+            material = act35side.round_data_map[challenge_id + "_r1"]
 
 
         # 特殊关卡卡牌处理
@@ -1211,8 +467,8 @@ class act35side():
                 free_cnt = 2
         
         good = []
-        if self.Initial_card[challenge_id] is not None:
-            for card_id in self.Initial_card[challenge_id]:
+        if act35side.Initial_card[challenge_id] is not None:
+            for card_id in act35side.Initial_card[challenge_id]:
                 good.append({
                     "id": card_id,
                     "price": 0
@@ -1261,7 +517,7 @@ class act35side():
         run_after_response(write_json, user_data, SYNC_DATA_TEMPLATE_PATH)
         return result
 
-    def act35sidesettle(self):
+    def act35sidesettle():
         json_body = request.get_json()
         activity_id = json_body["activityId"]
 
@@ -1299,14 +555,14 @@ class act35side():
         run_after_response(write_json, user_data, SYNC_DATA_TEMPLATE_PATH)
         return result
     
-    def act35sideToBuy(self):
+    def act35sideToBuy():
         json_body = request.get_json()
         activity_id = json_body["activityId"]
         user_data = read_json(SYNC_DATA_TEMPLATE_PATH)
         carving_data = user_data["user"]["activity"]["TYPE_ACT35SIDE"][activity_id]["carving"]
         
         # 商店卡牌刷新
-        good_list = self._random_card(carving_data)
+        good_list = act35side._random_card(carving_data)
         good = []
         if carving_data["shop"]["freeCardCnt"] > 0:
             for card_id in good_list:
@@ -1334,10 +590,14 @@ class act35side():
         carving_data["shop"]["good"] = good
         carving_data["shop"]["coin"] = 0
 
+        result = {
+            
+        }
+        carving_data["shop"]["good"] = good
 
         # 操作台槽位
         if carving_data["slotCnt"] < 8:
-            carving_data["shop"]["slotPrice"] = self.shop_data["slot"][carving_data["slotCnt"] - 2]
+            carving_data["shop"]["slotPrice"] = act35side.shop_data["slot"][carving_data["slotCnt"] - 2]
 
 
         result = {
@@ -1361,13 +621,13 @@ class act35side():
         run_after_response(write_json, user_data, SYNC_DATA_TEMPLATE_PATH)
         return result
     
-    def act35siderefreshShop(self):
+    def act35siderefreshShop():
         json_body = request.get_json()
         activity_id = json_body["activityId"]
 
         user_data = read_json(SYNC_DATA_TEMPLATE_PATH)
         carving_data = user_data["user"]["activity"]["TYPE_ACT35SIDE"][activity_id]["carving"]
-        good_list = self._random_card(carving_data)
+        good_list = act35side._random_card(carving_data)
         good = []
         if carving_data["shop"]["freeCardCnt"] > 0:
             for card_id in good_list:
@@ -1403,7 +663,7 @@ class act35side():
 
         return result
     
-    def act35sidebuySlot(self):
+    def act35sidebuySlot():
         json_body = request.get_json()
         activity_id = json_body["activityId"]
 
@@ -1435,7 +695,7 @@ class act35side():
         run_after_response(write_json, user_data, SYNC_DATA_TEMPLATE_PATH)
         return result
 
-    def act35sidebuyCard(self):
+    def act35sidebuyCard():
         json_body = request.get_json()
         # {'activityId': 'act35sre', 'slot': 0}
         activity_id = json_body["activityId"]
@@ -1494,7 +754,7 @@ class act35side():
         run_after_response(write_json, user_data, SYNC_DATA_TEMPLATE_PATH)
         return result
     
-    def act35sidetoProcess(self):
+    def act35sidetoProcess():
         json_body = request.get_json()
         activity_id = json_body["activityId"]
 
@@ -1522,14 +782,133 @@ class act35side():
         run_after_response(write_json, user_data, SYNC_DATA_TEMPLATE_PATH)
         return result
 
-    def act35sideprocess(self):
+    def act35sideprocess_old():
+        json_body = request.get_json()
+        activity_id = json_body["activityId"]
+        cards = json_body["cards"]
+
+        user_data = read_json(SYNC_DATA_TEMPLATE_PATH)
+        carving_data = user_data["user"]["activity"]["TYPE_ACT35SIDE"][activity_id]["carving"]
+
+        card_info = carving_data["card"]
+        materials = carving_data["material"]
+        slot_cnt = carving_data["slotCnt"]
+        empty_slots = slot_cnt - len(cards)
+
+        card_data_map = act35side.prepared_card_data
+        material_data_map = act35side.material_price
+
+        frames = []
+
+        # 上一回合总分
+        base_score = carving_data["score"]
+        total_score = base_score
+
+        # 非工艺区生效卡处理
+        pre_exec_cards = []
+        for card, lv in card_info.items():
+            lv = str(lv)
+            if card in card_data_map and card_data_map[card][lv]["pre_exec"]:
+                if card not in cards:
+                    pre_exec_cards.append(card)
+
+        ordered_cards = pre_exec_cards + cards
+
+        # 遍历卡列表
+        for card in ordered_cards:
+            lv = str(card_info[card])
+            card_cfg = card_data_map[card][lv]
+            if not card_cfg:
+                continue
+
+            inputs = card_cfg["inputs"]
+            outputs = card_cfg["outputs"]
+            multiplier = card_cfg["multiplier"]
+            extra_outputs = card_cfg["extra_outputs"]
+            flat_score = card_cfg["flat_score"]
+            series_bonus = card_cfg["series_bonus"]
+
+            product = {}
+            # 如果材料足够，则循环合成
+            while all(materials.get(mat, 0) >= need for mat, need in inputs.items()):
+                # 扣输入
+                for mat, need in inputs.items():
+                    materials[mat] -= need
+
+                # 正常产出
+                for mat, out in outputs.items():
+                    amount = int(out * multiplier)
+                    materials[mat] = materials.get(mat, 0) + amount
+                    product[mat] = product.get(mat, 0) + amount
+
+                # 额外产出
+                for mat, out in extra_outputs.items():
+                    materials[mat] = materials.get(mat, 0) + out
+                    product[mat] = product.get(mat, 0) + out
+
+            # 计算当前库存的估值
+            step_score = 0
+            for mat, num in materials.items():
+                base_val = material_data_map.get(mat, 0)
+                for prefix, bonus in series_bonus.items():
+                    if mat.startswith(prefix):
+                        base_val += bonus
+                        break
+                step_score += base_val * num
+
+            # 空槽位加分
+            step_score += empty_slots * flat_score
+
+            # 基础分 + 当前估值
+            total_score = base_score + step_score
+
+            frames.append({
+                "card": card,
+                "product": product,
+                "score": total_score,  
+                "type": 0
+            })
+
+        # 更新 carving_data 的 总分
+        carving_data["score"] = total_score
+
+        # 加钱
+        coin = act35side.coin_data[carving_data["id"]][carving_data["round"] - 1]
+        carving_data["shop"]["coin"] += coin
+        carving_data["roundCoinAdd"] += coin
+
+        result = {
+            "playerDataDelta": {
+                "modified": {
+                    "activity": {
+                        "TYPE_ACT35SIDE": {
+                            activity_id: {
+                                "carving": {
+                                    "score": frames[-1]["score"],
+                                    "shop": carving_data["shop"],
+                                    "roundCoinAdd": carving_data["roundCoinAdd"],
+                                    "state": 3
+                                }
+                            }
+                        }
+                    }
+                },
+                "deleted": {}
+            },
+            "frames": frames
+        }
+
+        # run_after_response(write_json, user_data, SYNC_DATA_TEMPLATE_PATH)
+        return result
+    
+    def act35sideprocess():
         json_body = request.get_json()
         activity_id = json_body["activityId"]
         cards:list[str] = json_body["cards"]
 
         # 读取数据
-        card_data_map = self.prepared_card_data
-        material_data_map = self.material_price
+        card_data_map = act35side.prepared_card_data
+        material_data_map = act35side.material_price
         user_data = read_json(SYNC_DATA_TEMPLATE_PATH)
         carving_data = dict(user_data["user"]["activity"]["TYPE_ACT35SIDE"][activity_id]["carving"])
 
@@ -1694,7 +1073,7 @@ class act35side():
         carving_data["score"] = total_score
 
         # 加钱
-        coin = self.coin_data[carving_data["id"]][carving_data["round"] - 1]
+        coin = act35side.coin_data[carving_data["id"]][carving_data["round"] - 1]
         carving_data["shop"]["coin"] += coin
         carving_data["roundCoinAdd"] += coin
 
@@ -1716,10 +1095,11 @@ class act35side():
             "frames": frames
         }
 
-        run_after_response(write_json, user_data, SYNC_DATA_TEMPLATE_PATH)
+        # run_after_response(write_json, user_data, SYNC_DATA_TEMPLATE_PATH)
         return result
-    
-    def act35nextRound(self):
+
+
+    def act35nextRound():
         json_body = request.get_json()
         activity_id = json_body["activityId"]
 
@@ -1737,7 +1117,7 @@ class act35side():
             "material_clst_1": 0,
             "material_sand": 0
         }
-        if self.round_data_map[challenge_id + "_r" + str(carving_data["round"])] is None:
+        if act35side.round_data_map[challenge_id + "_r" + str(carving_data["round"])] is None:
             keys = list(material.keys())
             n = len(keys)
 
@@ -1786,7 +1166,7 @@ class act35side():
             for i, key in enumerate(keys):
                 material[key] = values[i]
         else:
-            material = self.round_data_map[challenge_id + "_r" + str(carving_data["round"])]
+            material = act35side.round_data_map[challenge_id + "_r" + str(carving_data["round"])]
 
         result = {
             "playerDataDelta": {
@@ -1811,3 +1191,522 @@ class act35side():
         run_after_response(write_json, user_data, SYNC_DATA_TEMPLATE_PATH)
         return result
  
+class vhalfidle:
+
+    from data.level import evolve_0, evolve_1, evolve_2
+    from data.act_data import spec_char, vhalfidle_pools
+
+    def refreshProduct():
+        json_body = request.get_json()
+        activity_id = json_body["activityId"]
+        sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
+        
+        act_info = sync_data["user"]["activity"]["HALFIDLE_VERIFY1"][activity_id]
+        production = act_info["production"]
+
+        now_ts = time()
+        last_ts = production["harvestTs"]
+        diff_mult = (now_ts - last_ts) / 3600
+        production["refreshTs"] = now_ts
+
+        for key, value in production["rate"].items():
+            cnt = int(value * diff_mult)
+            production["product"].update({key: cnt})
+
+
+        result = {
+            "playerDataDelta": {
+                "modified": {
+                    "activity": {
+                        "HALFIDLE_VERIFY1": {
+                            activity_id: {
+                                "production": production
+                            }
+                        }
+                    }
+                },
+                "deleted": {}
+            }
+        }
+
+        run_after_response(write_json, sync_data, SYNC_DATA_TEMPLATE_PATH)
+
+        return result
+    
+    def harvest():
+        json_body = request.get_json()
+        activity_id = json_body["activityId"]
+        sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
+        
+        act_info = sync_data["user"]["activity"]["HALFIDLE_VERIFY1"][activity_id]
+        production = act_info["production"]
+
+        keys_to_remove = []
+        items = []
+        milestoneAdd = 0
+
+        for key, value in production["product"].items():
+            if key == "act1vhalfidle_token_point":
+                milestoneAdd = production["product"][key]
+                items.append({
+                    "itemId": key,
+                    "count": production["product"][key]
+                })
+            cnt = int(value + act_info["inventory"].get(key, 0))
+            act_info["inventory"].update({key: cnt})
+            items.append({
+                "itemId": key,
+                "count": production["product"][key]
+            })
+            keys_to_remove.append(key)
+
+        production["product"] = {}
+        
+        production["harvestTs"] = time()
+        production["refreshTs"] = time()
+
+        result = {
+            "playerDataDelta": {
+                "modified": {
+                    "activity": {
+                        "HALFIDLE_VERIFY1": {
+                            activity_id: {
+                                "inventory": act_info["inventory"],
+                                "production": production
+                            }
+                        }
+                    }
+                },
+                "deleted": {}
+            },
+            "milestoneAdd": milestoneAdd,
+            "items": items
+        }
+
+        run_after_response(write_json, sync_data, SYNC_DATA_TEMPLATE_PATH)
+
+        return result
+
+    def unlockTech():
+        json_body = request.get_json()
+        activity_id = json_body["activityId"]
+        # {'activityId': 'act1vhalfidle', 'techId': 'node_1_2'}
+        sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
+
+        act_info = sync_data["user"]["activity"]["HALFIDLE_VERIFY1"][activity_id]
+        tech_list = act_info["tech"]["unlock"]
+
+        tech_list.append(json_body["techId"])
+
+        result = {
+            "playerDataDelta": {
+                "modified": {
+                    "activity": {
+                        "HALFIDLE_VERIFY1": {
+                            activity_id: {
+                                "tech": {
+                                    "unlock": tech_list
+                                }
+                            }
+                        }
+                    }
+                },
+                "deleted": {}
+            }
+        }
+
+
+        run_after_response(write_json, sync_data, SYNC_DATA_TEMPLATE_PATH)
+
+        return result
+    
+    def recruitNormal():
+        json_body = request.get_json()
+        # {'activityId': 'act1vhalfidle', 'poolId': 'gachaPac1', 'count': 1}
+        activity_id = json_body["activityId"]
+        pool_id = json_body["poolId"]
+        count = json_body["count"]
+        sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
+        
+        act_info = sync_data["user"]["activity"]["HALFIDLE_VERIFY1"][activity_id]
+        troop_chars = sync_data["user"]["troop"]["chars"]
+        act_chars = act_info["troop"]["char"]
+        act_char_cnt = len(act_chars)
+        poolTimes = act_info["recruit"]["poolTimes"]
+
+        vhalfidle_pools = vhalfidle_pools
+        spec_char = spec_char
+
+        if act_info["inventory"]["gacha_normal"] >= count * 20:
+            act_info["inventory"]["gacha_normal"] -= count * 20
+        else:
+            return jsonify({"result": 1, "errMsg": "封装矿核不足"}), 404
+
+        # 初始数据定义
+        newChar = []
+        oldChar = []
+        char_id_list = set({})
+        have_chars = set({})
+
+        def add_char(char_set:set, act_char_cnt:int):
+            for char_id in char_set:
+                newChar.append(char_id)
+        
+                act_char_cnt += 1
+                char_info = {
+                    "instId": act_char_cnt,
+                    "charId": char_id,
+                    "level": 1,
+                    "skillLvl": 1,
+                    "evolvePhase": 0,
+                    "isAssist": False,
+                    "defaultEquipId": "",
+                    "defaultSkillId": ""
+                }
+
+                act_chars[str(act_char_cnt)] = {}
+                act_chars[str(act_char_cnt)] = char_info
+                
+        if pool_id in vhalfidle_pools:
+            pool_set = vhalfidle_pools[pool_id]
+            # ------------------------------ 
+            # 重复干员检查
+            for key, value in act_chars.items():
+                if value["charId"] in pool_set:
+                    pool_set.remove(value["charId"])
+            
+            add_char(pool_set, act_char_cnt)
+        else:
+            # 获取可选角色id
+            for key, value in troop_chars.items():
+                char_id_list.add(troop_chars[key]["charId"])
+            # 使用差集运算删除特殊干员，再转list
+            filtered_char_list = [key for key in char_id_list if key not in spec_char]
+
+            # 获取活动中已选角色id
+            for key, value in act_chars.items():
+                have_chars.add(act_chars[key]["charId"])
+
+            # 随机选择指定数量的角色id
+            random_char = random.choices(filtered_char_list, k=count)
+            # 差集计算，获取活动中未拥有的角色id
+            char_set = set(random_char).difference(have_chars)
+
+            # 添加干员
+            add_char(char_set, act_char_cnt)
+
+            old_char_list = [key for key in random_char if key not in char_set]
+            for char_id in old_char_list:
+                oldChar.append(char_id)
+
+            poolTimes["normalGachaPool"] += json_body["count"]
+
+        ticketCount = len(oldChar)
+
+        result = {
+            "playerDataDelta": {
+                "modified": {
+                    "activity": {
+                        "HALFIDLE_VERIFY1": {
+                            activity_id: {
+                                "troop": {
+                                    "char": act_chars
+                                },
+                                "recruit": {
+                                    "poolTimes": poolTimes
+                                }
+                            }
+                        }
+                    }
+                },
+                "deleted": {}
+            },
+            "pushMessage": [],
+            "newChar": newChar,
+            "oldChar": oldChar,
+            "ticketCount": ticketCount
+        }
+        
+        run_after_response(write_json, sync_data, SYNC_DATA_TEMPLATE_PATH)
+
+        return result
+
+    def recruitDirect():
+        json_body = request.get_json()
+
+        sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
+        activity_id = json_body["activityId"]
+        char_id = json_body["charId"]
+        
+        act_info = sync_data["user"]["activity"]["HALFIDLE_VERIFY1"][activity_id]
+        act_chars = act_info["troop"]["char"]
+        poolTimes = act_info["recruit"]["poolTimes"]
+        act_char_cnt = len(act_chars)
+
+        if act_info["inventory"]["gacha_direct"] >= 100:
+            act_info["inventory"]["gacha_direct"] -= 100
+        else:
+            return jsonify({"result": 1, "errMsg": "特约邀请函不足"}), 404
+
+        newChar = []
+        newChar.append(char_id)
+        
+        act_char_cnt += 1
+        act_chars[str(act_char_cnt)] = {}
+        act_chars[str(act_char_cnt)] = {
+            "instId": act_char_cnt,
+            "charId": char_id,
+            "level": 1,
+            "skillLvl": 1,
+            "evolvePhase": 0,
+            "isAssist": False,
+            "defaultEquipId": "",
+            "defaultSkillId": ""
+        }
+
+        poolTimes["directionGachaPool"] += 1
+
+        result = {
+            "playerDataDelta": {
+                "modified": {
+                    "activity": {
+                        "HALFIDLE_VERIFY1": {
+                            activity_id: {
+                                "troop": {
+                                    "char": act_chars
+                                },
+                                "recruit": {
+                                    "poolTimes": poolTimes
+                                }
+                            }
+                        }
+                    }
+                },
+                "deleted": {}
+            },
+            "charId": char_id
+        }
+
+        run_after_response(write_json, sync_data, SYNC_DATA_TEMPLATE_PATH)
+
+        return result
+    
+    def vhalfidlebattleStart():
+        json_body = request.get_json()
+
+        global stage_id
+        stage_id = json_body["stageId"]
+
+        result = {
+            "apFailReturn": 0,
+            "battleId": "abcdefgh-1234-5678-a1b2c3d4e5f6",
+            "inApProtectPeriod": False,
+            "isApProtect": 0,
+            "notifyPowerScoreNotEnoughIfFailed": False,
+            "playerDataDelta": {"modified": {}, "deleted": {}},
+            "result": 0,
+        }
+
+        return result
+    
+    def vhalfidlebattleFinish():
+        json_body = request.get_json()
+        
+        activity_id = json_body["activityId"]
+        sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
+        act_info = sync_data["user"]["activity"]["HALFIDLE_VERIFY1"][activity_id]
+
+        global stage_id
+        if act_info["stage"][stage_id]["rate"] is None:
+            act_info["stage"][stage_id]["rate"] = {}
+            for key, value in json_body["halfidleData"]["resourceNumDict"].items():
+                if value > 0:
+                    act_info["stage"][stage_id]["rate"].update({key: value})
+
+        # 更新BOSS击杀状态
+        bossState = max(json_body["halfidleData"]["bossState"], act_info["stage"][stage_id]["bossState"])
+        act_info["stage"][stage_id]["bossState"] = bossState
+
+        result = {
+            "playerDataDelta": {
+                "modified": {
+                    "activity": {
+                        "HALFIDLE_VERIFY1": {
+                            activity_id: {
+                                "stage": {
+                                    stage_id: act_info["stage"][stage_id]
+                                }
+                            }
+                        }
+                    }
+                },
+                "deleted": {}
+            },
+            "pushMessage": [],
+            "result": 0,
+            "apFailReturn": 0,
+            "itemReturn": [],
+            "rewards": [],
+            "unusualRewards": [],
+            "overrideRewards": [],
+            "additionalRewards": [],
+            "diamondMaterialRewards": [],
+            "furnitureRewards": [],
+            "goldScale": 0.0,
+            "expScale": 0.0,
+            "firstRewards": [],
+            "unlockStages": [],
+            "pryResult": [],
+            "alert": [],
+            "suggestFriend": False,
+            "extra": {},
+            "charLvUp": [],
+            "bossState": bossState,
+            "progress": 2,
+            "milestoneAdd": 0,
+            "items": []
+        }
+
+        run_after_response(write_json, sync_data, SYNC_DATA_TEMPLATE_PATH)
+
+        return result
+    
+    def upgradeChar():
+        json_body = request.get_json()
+        cahr_id = json_body["charId"]
+        dest_level = json_body["destLvl"]
+        sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
+        activity_id = json_body["activityId"]
+
+        cost = 0
+        
+        act_info = sync_data["user"]["activity"]["HALFIDLE_VERIFY1"][activity_id]
+        act_chars = act_info["troop"]["char"]
+
+        for key, value in act_chars.items():
+            if value["charId"] == cahr_id:
+                char_info = value
+                cahr_str_id = key
+                break
+
+        level_list_map = {
+            0: vhalfidle.evolve_0,
+            1: vhalfidle.evolve_1, 
+            2: vhalfidle.evolve_2
+        }
+
+        level_list = level_list_map[char_info["evolvePhase"]]
+        discount = char_info["evolvePhase"] < 2
+
+        # 计算升级所需总成本
+        now_level = char_info["level"]
+        cost = sum(level_list[lv] for lv in range(now_level + 1, dest_level))
+
+        # 应用折扣并扣除经验
+        char_info["level"] = dest_level
+        discount_rate = 0.9 if discount else 1.0
+        act_info["inventory"]["level_exp"] -= int(cost * discount_rate)
+
+        result = {
+            "playerDataDelta": {
+                "modified": {
+                    "activity": {
+                        "HALFIDLE_VERIFY1": {
+                            activity_id: {
+                                "troop": {
+                                    "char": {
+                                        cahr_str_id: char_info
+                                    }
+                                },
+                                "inventory": {
+                                    "level_exp": act_info["inventory"]["level_exp"]
+                                }
+                            }
+                        }
+                    }
+                },
+                "deleted": {}
+            }
+        }
+
+        run_after_response(write_json, sync_data, SYNC_DATA_TEMPLATE_PATH)
+
+        return result
+    
+    def upgradeSkill():
+        json_body = request.get_json()
+        sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
+        activity_id = json_body["activityId"]
+        
+        act_info = sync_data["user"]["activity"]["HALFIDLE_VERIFY1"][activity_id]
+        act_chars = act_info["troop"]["char"]
+
+        for key, value in act_chars.items():
+            if value["charId"] == json_body["charId"]:
+                value["skillLvl"] = json_body["destLvl"]
+                act_chars[key] = value
+                cahr_str_id = key
+                break
+
+        result = {
+            "playerDataDelta": {
+                "modified": {
+                    "activity": {
+                        "HALFIDLE_VERIFY1": {
+                            activity_id: {
+                                "troop": {
+                                    "char": {
+                                        cahr_str_id: act_chars[key]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "deleted": {}
+            }
+        }
+
+        run_after_response(write_json, sync_data, SYNC_DATA_TEMPLATE_PATH)
+
+        return result
+    
+    def evolveChar():
+        json_body = request.get_json()
+
+        activity_id = json_body["activityId"]
+        sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
+
+        act_info = sync_data["user"]["activity"]["HALFIDLE_VERIFY1"][activity_id]
+        act_chars = act_info["troop"]["char"]
+
+        for key, value in act_chars.items():
+            if value["charId"] == json_body["charId"]:
+                value["evolvePhase"] = json_body["destEvolvePhase"]
+                value["level"] = 1
+                act_chars[key] = value
+                cahr_str_id = key
+                break
+
+        result = {
+            "playerDataDelta": {
+                "modified": {
+                    "activity": {
+                        "HALFIDLE_VERIFY1": {
+                            activity_id: {
+                                "troop": {
+                                    "char": {
+                                        cahr_str_id: act_chars[key]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "deleted": {}
+            }
+        }
+
+        run_after_response(write_json, sync_data, SYNC_DATA_TEMPLATE_PATH)
+
+        return result

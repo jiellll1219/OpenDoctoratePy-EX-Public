@@ -551,10 +551,6 @@ def accountSyncData():
     secretarySkinId = config["userConfig"]["secretarySkinId"]
     theme = config["userConfig"]["theme"]
 
-    if "user" in saved_data and config["userConfig"]["restorePreviousStates"]["ui"]:
-        secretarySkinId = saved_data["user"]["status"]["secretarySkinId"]
-        theme = saved_data["user"]["homeTheme"]["selected"]
-
     if (current_preset := player_data["user"]["charRotation"]["preset"].get(
             player_data["user"]["charRotation"]["current"]
     )):
