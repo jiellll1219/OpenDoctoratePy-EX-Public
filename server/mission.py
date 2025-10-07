@@ -169,7 +169,7 @@ class mission_manger:
                     value['state'] = 2
 
         if mission_type is None:
-            mission_data = sync_data["user"]["mission"]["missions"]
+            mission_data = sync_data["user"]["mission"]
 
             for key, value in mission_data["missionRewards"]["rewards"]["DAYLY"].items():
                 mission_data["missionRewards"]["rewards"]["DAYLY"][key] = 0
@@ -183,8 +183,8 @@ class mission_manger:
         else:
             mission_data = sync_data["user"]["mission"]["missions"][mission_type]
 
-            for key, value in sync_data["user"]["mission"]["missions"]["missionRewards"]["rewards"][mission_type].items():
-                sync_data["user"]["mission"]["missions"]["missionRewards"]["rewards"][mission_type][key] = 0
+            for key, value in sync_data["user"]["mission"]["missionRewards"]["rewards"][mission_type].items():
+                sync_data["user"]["mission"]["missionRewards"]["rewards"][mission_type][key] = 0
             process_data(mission_data, self.daily_start_list if mission_type == "DAILY" else self.weekly_start_list)
 
         run_after_response(write_json, sync_data, SYNC_DATA_TEMPLATE_PATH)
