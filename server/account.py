@@ -524,6 +524,7 @@ def accountSyncData():
     charId2instId = {}
     for character_index, character in player_data["user"]["troop"]["chars"].items():
         charId2instId[character["charId"]] = character["instId"]
+    # 修改 #selectedCode 中的循环部分
     for i in squads_data:
         j = 0
         for slot in squads_data[i]["slots"]:
@@ -534,10 +535,11 @@ def accountSyncData():
             if charId in charId2instId:
                 instId = charId2instId[charId]
                 slot["charInstId"] = instId
-                if (
-                        slot["currentEquip"]
-                        not in player_data["user"]["troop"]["chars"][instId]["equip"]
-                ):
+                # 添加安全检查，确保角色存在且有装备字段
+                instId_str = str(instId)  # 确保使用字符串键
+                if (instId_str in player_data["user"]["troop"]["chars"] and
+                        "equip" in player_data["user"]["troop"]["chars"][instId_str] and
+                        slot["currentEquip"] not in player_data["user"]["troop"]["chars"][instId_str]["equip"]):
                     slot["currentEquip"] = None
             else:
                 squads_data[i]["slots"][j] = None

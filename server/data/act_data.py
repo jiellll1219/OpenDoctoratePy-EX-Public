@@ -862,5 +862,11 @@ vhalfidle_pools = {
     "gachaPac3": {"char_4010_etlchi", "char_497_ctable", "char_4131_odda"},
     "gachaPac4": {"char_4055_bgsnow", "char_1011_lava2", "char_1024_hbisc2"},
     "gachaPac5": {"char_350_surtr", "char_311_mudrok", "char_400_weedy"},
-    "gachaPac6": {"char_003_kalts", "char_4146_nymph", "char_2013_cerber"}
+    "gachaPac6": {"char_003_kalts", "char_4146_nymph", "char_2013_cerber"},
+    "newPlayerGachaPool": {
+        "char_103_angel", "char_300_phenxi", "char_134_ifrit",
+       "char_180_amgoat", "char_472_pasngr", "char_291_aglina",
+       "char_250_phatom", "char_202_demkni","char_264_f12yin",
+       "char_172_svrash", "char_293_thorns", "char_017_huang"
+    }
 }

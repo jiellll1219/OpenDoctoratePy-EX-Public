@@ -8,7 +8,7 @@ import random
 
 class CheckInReward():
     # 这个类用于处理签到奖励
-        
+
     def getCheckInReward():
         json_body = request.get_json()
         user_data = read_json(SYNC_DATA_TEMPLATE_PATH)
@@ -1190,9 +1190,9 @@ class act35side():
 
         run_after_response(write_json, user_data, SYNC_DATA_TEMPLATE_PATH)
         return result
- 
-class vhalfidle:
 
+
+class vhalfidle:
     from data.level import evolve_0, evolve_1, evolve_2
     from data.act_data import spec_char, vhalfidle_pools
 
@@ -1200,7 +1200,7 @@ class vhalfidle:
         json_body = request.get_json()
         activity_id = json_body["activityId"]
         sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
-        
+
         act_info = sync_data["user"]["activity"]["HALFIDLE_VERIFY1"][activity_id]
         production = act_info["production"]
 
@@ -1212,7 +1212,6 @@ class vhalfidle:
         for key, value in production["rate"].items():
             cnt = int(value * diff_mult)
             production["product"].update({key: cnt})
-
 
         result = {
             "playerDataDelta": {
@@ -1232,12 +1231,12 @@ class vhalfidle:
         run_after_response(write_json, sync_data, SYNC_DATA_TEMPLATE_PATH)
 
         return result
-    
+
     def harvest():
         json_body = request.get_json()
         activity_id = json_body["activityId"]
         sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
-        
+
         act_info = sync_data["user"]["activity"]["HALFIDLE_VERIFY1"][activity_id]
         production = act_info["production"]
 
@@ -1261,7 +1260,7 @@ class vhalfidle:
             keys_to_remove.append(key)
 
         production["product"] = {}
-        
+
         production["harvestTs"] = time()
         production["refreshTs"] = time()
 
@@ -1315,28 +1314,27 @@ class vhalfidle:
             }
         }
 
-
         run_after_response(write_json, sync_data, SYNC_DATA_TEMPLATE_PATH)
 
         return result
-    
+
+
     def recruitNormal():
         json_body = request.get_json()
-        # {'activityId': 'act1vhalfidle', 'poolId': 'gachaPac1', 'count': 1}
         activity_id = json_body["activityId"]
         pool_id = json_body["poolId"]
         count = json_body["count"]
         sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
-        
+
         act_info = sync_data["user"]["activity"]["HALFIDLE_VERIFY1"][activity_id]
         troop_chars = sync_data["user"]["troop"]["chars"]
         act_chars = act_info["troop"]["char"]
-        act_char_cnt = len(act_chars)
         poolTimes = act_info["recruit"]["poolTimes"]
 
-        vhalfidle_pools = vhalfidle_pools
-        spec_char = spec_char
+        vhalfidle_pools = vhalfidle.vhalfidle_pools
+        spec_char = vhalfidle.spec_char
 
+        # 资源检查
         if act_info["inventory"]["gacha_normal"] >= count * 20:
             act_info["inventory"]["gacha_normal"] -= count * 20
         else:
@@ -1345,61 +1343,66 @@ class vhalfidle:
         # 初始数据定义
         newChar = []
         oldChar = []
-        char_id_list = set({})
-        have_chars = set({})
+        have_chars = set()
 
-        def add_char(char_set:set, act_char_cnt:int):
-            for char_id in char_set:
-                newChar.append(char_id)
-        
-                act_char_cnt += 1
-                char_info = {
-                    "instId": act_char_cnt,
-                    "charId": char_id,
-                    "level": 1,
-                    "skillLvl": 1,
-                    "evolvePhase": 0,
-                    "isAssist": False,
-                    "defaultEquipId": "",
-                    "defaultSkillId": ""
-                }
+        # 获取已有角色ID集合
+        for key, value in act_chars.items():
+            have_chars.add(act_chars[key]["charId"])
 
-                act_chars[str(act_char_cnt)] = {}
-                act_chars[str(act_char_cnt)] = char_info
-                
-        if pool_id in vhalfidle_pools:
-            pool_set = vhalfidle_pools[pool_id]
-            # ------------------------------ 
-            # 重复干员检查
-            for key, value in act_chars.items():
-                if value["charId"] in pool_set:
-                    pool_set.remove(value["charId"])
-            
-            add_char(pool_set, act_char_cnt)
-        else:
+        # 卡池逻辑
+        if pool_id in [f"gachaPac{i}" for i in range(1, 7)]:
+            # 定向卡池：一次性获取该卡池的所有角色
+            pool_set = vhalfidle_pools.get(pool_id, set()).copy()
+
+            for char_id in pool_set:
+                if char_id not in have_chars:
+                    newChar.append(char_id)
+                    vhalfidle._add_char_to_activity(act_info, sync_data, char_id)
+                    have_chars.add(char_id)
+                else:
+                    oldChar.append(char_id)
+
+        elif pool_id == "normalGachaPool":
+            # 普通卡池：随机抽取
             # 获取可选角色id
+            char_id_list = set()
             for key, value in troop_chars.items():
                 char_id_list.add(troop_chars[key]["charId"])
             # 使用差集运算删除特殊干员，再转list
             filtered_char_list = [key for key in char_id_list if key not in spec_char]
 
-            # 获取活动中已选角色id
-            for key, value in act_chars.items():
-                have_chars.add(act_chars[key]["charId"])
-
             # 随机选择指定数量的角色id
             random_char = random.choices(filtered_char_list, k=count)
-            # 差集计算，获取活动中未拥有的角色id
-            char_set = set(random_char).difference(have_chars)
 
-            # 添加干员
-            add_char(char_set, act_char_cnt)
-
-            old_char_list = [key for key in random_char if key not in char_set]
-            for char_id in old_char_list:
-                oldChar.append(char_id)
+            # 添加角色
+            for char_id in random_char:
+                if char_id not in have_chars:
+                    newChar.append(char_id)
+                    vhalfidle._add_char_to_activity(act_info, sync_data, char_id)
+                    have_chars.add(char_id)
+                else:
+                    oldChar.append(char_id)
 
             poolTimes["normalGachaPool"] += json_body["count"]
+
+        elif pool_id == "newPlayerGachaPool":
+            # 专项任命卡池：随机抽取
+            pool_set = vhalfidle_pools.get(pool_id, set())
+            char_data = list(pool_set) if pool_set else []
+
+            for _ in range(count):
+                if char_data:
+                    selected_char = random.choice(char_data)
+                    if selected_char not in have_chars:
+                        newChar.append(selected_char)
+                        vhalfidle._add_char_to_activity(act_info, sync_data, selected_char)
+                        have_chars.add(selected_char)
+                    else:
+                        oldChar.append(selected_char)
+                else:
+                    return jsonify({"result": 1, "errMsg": "专项任命卡池为空"}), 404
+
+            poolTimes["newPlayerGachaPool"] = poolTimes.get("newPlayerGachaPool", 0) + count
 
         ticketCount = len(oldChar)
 
@@ -1414,7 +1417,8 @@ class vhalfidle:
                                 },
                                 "recruit": {
                                     "poolTimes": poolTimes
-                                }
+                                },
+                                "inventory": act_info["inventory"]
                             }
                         }
                     }
@@ -1426,7 +1430,7 @@ class vhalfidle:
             "oldChar": oldChar,
             "ticketCount": ticketCount
         }
-        
+
         run_after_response(write_json, sync_data, SYNC_DATA_TEMPLATE_PATH)
 
         return result
@@ -1437,11 +1441,10 @@ class vhalfidle:
         sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
         activity_id = json_body["activityId"]
         char_id = json_body["charId"]
-        
+
         act_info = sync_data["user"]["activity"]["HALFIDLE_VERIFY1"][activity_id]
         act_chars = act_info["troop"]["char"]
         poolTimes = act_info["recruit"]["poolTimes"]
-        act_char_cnt = len(act_chars)
 
         if act_info["inventory"]["gacha_direct"] >= 100:
             act_info["inventory"]["gacha_direct"] -= 100
@@ -1450,19 +1453,9 @@ class vhalfidle:
 
         newChar = []
         newChar.append(char_id)
-        
-        act_char_cnt += 1
-        act_chars[str(act_char_cnt)] = {}
-        act_chars[str(act_char_cnt)] = {
-            "instId": act_char_cnt,
-            "charId": char_id,
-            "level": 1,
-            "skillLvl": 1,
-            "evolvePhase": 0,
-            "isAssist": False,
-            "defaultEquipId": "",
-            "defaultSkillId": ""
-        }
+
+
+        vhalfidle._add_char_to_activity(act_info, sync_data, char_id)
 
         poolTimes["directionGachaPool"] += 1
 
@@ -1477,7 +1470,8 @@ class vhalfidle:
                                 },
                                 "recruit": {
                                     "poolTimes": poolTimes
-                                }
+                                },
+                                "inventory": act_info["inventory"]
                             }
                         }
                     }
@@ -1490,7 +1484,7 @@ class vhalfidle:
         run_after_response(write_json, sync_data, SYNC_DATA_TEMPLATE_PATH)
 
         return result
-    
+
     def vhalfidlebattleStart():
         json_body = request.get_json()
 
@@ -1508,15 +1502,30 @@ class vhalfidle:
         }
 
         return result
-    
+
     def vhalfidlebattleFinish():
         json_body = request.get_json()
-        
+
         activity_id = json_body["activityId"]
         sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
         act_info = sync_data["user"]["activity"]["HALFIDLE_VERIFY1"][activity_id]
 
         global stage_id
+
+        halfidle_data = json_body.get("halfidleData", {})
+        bossState = halfidle_data["bossState"]
+        battleProcess = halfidle_data["battleProcess"]
+        resourceNumDict = halfidle_data["resourceNumDict"]
+        global settle_info
+        # 构造 settleInfo 数据
+        settle_info = {
+            "stageId": stage_id,
+            "rate": resourceNumDict,
+            "bossState": bossState,
+            "progress": battleProcess
+        }
+        act_info["settleInfo"] = settle_info
+
         if act_info["stage"][stage_id]["rate"] is None:
             act_info["stage"][stage_id]["rate"] = {}
             for key, value in json_body["halfidleData"]["resourceNumDict"].items():
@@ -1535,7 +1544,8 @@ class vhalfidle:
                             activity_id: {
                                 "stage": {
                                     stage_id: act_info["stage"][stage_id]
-                                }
+                                },
+                                "settleInfo": settle_info
                             }
                         }
                     }
@@ -1566,11 +1576,12 @@ class vhalfidle:
             "milestoneAdd": 0,
             "items": []
         }
+        # 将 settle_info 也存入 session
 
         run_after_response(write_json, sync_data, SYNC_DATA_TEMPLATE_PATH)
 
         return result
-    
+
     def upgradeChar():
         json_body = request.get_json()
         cahr_id = json_body["charId"]
@@ -1579,7 +1590,7 @@ class vhalfidle:
         activity_id = json_body["activityId"]
 
         cost = 0
-        
+
         act_info = sync_data["user"]["activity"]["HALFIDLE_VERIFY1"][activity_id]
         act_chars = act_info["troop"]["char"]
 
@@ -1591,7 +1602,7 @@ class vhalfidle:
 
         level_list_map = {
             0: vhalfidle.evolve_0,
-            1: vhalfidle.evolve_1, 
+            1: vhalfidle.evolve_1,
             2: vhalfidle.evolve_2
         }
 
@@ -1632,12 +1643,12 @@ class vhalfidle:
         run_after_response(write_json, sync_data, SYNC_DATA_TEMPLATE_PATH)
 
         return result
-    
+
     def upgradeSkill():
         json_body = request.get_json()
         sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
         activity_id = json_body["activityId"]
-        
+
         act_info = sync_data["user"]["activity"]["HALFIDLE_VERIFY1"][activity_id]
         act_chars = act_info["troop"]["char"]
 
@@ -1670,7 +1681,7 @@ class vhalfidle:
         run_after_response(write_json, sync_data, SYNC_DATA_TEMPLATE_PATH)
 
         return result
-    
+
     def evolveChar():
         json_body = request.get_json()
 
@@ -1704,6 +1715,224 @@ class vhalfidle:
                     }
                 },
                 "deleted": {}
+            }
+        }
+
+        run_after_response(write_json, sync_data, SYNC_DATA_TEMPLATE_PATH)
+
+        return result
+
+    def replaceRate():
+        """数据替换"""
+        # 获取请求数据
+        json_body = request.get_json()
+
+        activity_id = json_body.get("activityId", "")
+        stage_id = json_body.get("stageId", "")
+        replace = json_body.get("replace", 0)
+
+        global settle_info
+
+        sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
+        # 获取活动数据
+        activity_data = sync_data["user"]["activity"]["HALFIDLE_VERIFY1"].get(activity_id, {})
+
+        # 如果replace为1或settleInfo为null，则更新settleInfo
+        if replace == 1:
+            # 更新sync_data
+            stage = activity_data["stage"][stage_id]
+            stage["rate"] = settle_info["rate"]
+            stage["bossState"] = settle_info["bossState"]
+            activity_data["settleInfo"] = None
+        else:
+            # 如果replace为0且settleInfo已存在，则不覆盖
+            activity_data["settleInfo"] = None
+            return {
+                "playerDataDelta": {
+                    "modified": {},
+                    "deleted": {}
+                }
+            }
+
+        data = {
+            "playerDataDelta": {
+                "modified": {
+                    "activity": {
+                        "HALFIDLE_VERIFY1": {
+                            activity_id: activity_data
+                        }
+                    }
+                },
+                "deleted": {}
+            }
+        }
+
+        run_after_response(write_json, sync_data, SYNC_DATA_TEMPLATE_PATH)
+
+        return data
+
+    def _add_char_to_activity(activity_data, user_data, char_id):
+        """
+        角色添加逻辑
+        将角色添加到活动数据中，如果角色已存在则不添加
+        """
+        # 确保 troop/char 结构存在
+        troop = activity_data.get("troop", {})
+        troop.get("char", {})
+
+        # ① 检查是否已有相同角色（防止重复添加）
+        for char_info in troop["char"].values():
+            if char_info.get("charId") == char_id:
+                return  # 已存在则直接跳过
+
+        # ② 从用户主数据中查找对应角色
+        chars_from_sync = user_data.get("user", {}).get("troop", {}).get("chars", {})
+        target_char_info = next(
+            (info for info in chars_from_sync.values() if info.get("charId") == char_id),
+            None
+        )
+        if not target_char_info:
+            return  # 找不到对应角色则跳过
+
+        inst_id = str(target_char_info["instId"])
+
+        # ③ 构建活动角色信息
+        new_char_info = {
+            "instId": target_char_info["instId"],
+            "charId": target_char_info["charId"],
+            "level": target_char_info.get("level", 1),
+            "evolvePhase": target_char_info.get("evolvePhase", 0),
+            "skillLvl": 10 if target_char_info.get("evolvePhase", 0) == 2 else 7,
+            "isAssist": False,
+            "defaultSkillId": "",
+            "defaultEquipId": "",
+        }
+
+        # ④ 处理默认技能
+        default_skill_index = target_char_info.get("defaultSkillIndex", -1)
+        if default_skill_index != -1 and "skills" in target_char_info:
+            skills = target_char_info["skills"]
+            if len(skills) > default_skill_index:
+                new_char_info["defaultSkillId"] = skills[default_skill_index].get("skillId", "")
+
+        # ⑤ 处理默认模组
+        if target_char_info.get("currentEquip"):
+            new_char_info["defaultEquipId"] = target_char_info["currentEquip"]
+
+        # ⑥ 添加到活动数据
+        troop["char"][inst_id] = new_char_info
+
+    def setAssistChar():
+        """助战逻辑"""
+        json_body = request.get_json()
+        sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
+
+        # 获取请求参数
+        activity_id = json_body.get("activityId", "")
+        index = json_body.get("index", 0)  # 助战位索引(0-3)
+        assist_friend = json_body.get("assistFriend", None)
+
+        # 确保 activity_id 存在
+        activity_map = sync_data["user"]["activity"].get("HALFIDLE_VERIFY1", {})
+        activity_data = activity_map.get(activity_id, {})
+
+        # 确保 troop 结构存在
+        troop = activity_data.get("troop", {})
+        troop.get("assist", [None, None, None, None])
+        troop.get("char", {})
+
+        # 跟踪被删除的角色实例ID
+        deleted_char_inst_ids = []
+
+        # ========== 情况 1：清除助战位 ==========
+        if assist_friend is None:
+            old_assist_char = troop["assist"][index] if index < len(troop["assist"]) else None
+
+            if old_assist_char is not None:
+                old_char_id = old_assist_char.get("charId", "")
+                # 删除 troop.char 中的 isAssist 角色
+                for inst_id, char_info in list(troop["char"].items()):
+                    if (
+                            char_info.get("charId") == old_char_id
+                            and char_info.get("isAssist", False)
+                    ):
+                        deleted_char_inst_ids.append(inst_id)
+                        troop["char"].pop(inst_id, None)
+                        break
+
+            # 清除助战位
+            if index < len(troop["assist"]):
+                troop["assist"][index] = None
+
+        # ========== 情况 2：设置新的助战角色 ==========
+        else:
+            assist_char = assist_friend.get("assistChar", {})
+            char_id = assist_char.get("charId", "")
+
+            # 确保 assist 数组长度为4
+            while len(troop["assist"]) < 4:
+                troop["assist"].append(None)
+
+            # 若该角色已在其他助战位上，清除旧槽（换位情况）
+            for i in range(len(troop["assist"])):
+                if i != index and troop["assist"][i] is not None:
+                    if troop["assist"][i].get("charId") == char_id:
+                        troop["assist"][i] = None
+                        break
+
+            # 清理当前槽原有的助战角色
+            old_assist_char = troop["assist"][index]
+            if old_assist_char is not None:
+                old_char_id = old_assist_char.get("charId", "")
+                for inst_id, char_info in list(troop["char"].items()):
+                    if (
+                            char_info.get("charId") == old_char_id
+                            and char_info.get("isAssist", False)
+                    ):
+                        deleted_char_inst_ids.append(inst_id)
+                        troop["char"].pop(inst_id, None)
+                        break
+
+            # 设置新的助战角色
+            troop["assist"][index] = assist_char
+
+            # 添加该角色（函数内部已自动去重）
+            vhalfidle._add_char_to_activity(activity_data, sync_data, char_id)
+
+            # 将添加的角色标记为 isAssist = True
+            for char_info in troop["char"].values():
+                if char_info.get("charId") == char_id:
+                    char_info["isAssist"] = True
+                    break
+
+        # 保存更新
+        sync_data["user"]["activity"]["HALFIDLE_VERIFY1"][activity_id] = activity_data
+
+        deleted = {
+            "activity": {
+                "HALFIDLE_VERIFY1": {
+                    activity_id: {
+                        "troop": {
+                            "char": deleted_char_inst_ids
+                        }
+                    }
+                }
+            }
+        } if deleted_char_inst_ids else {}
+
+        # 构造返回数据
+        result = {
+            "playerDataDelta": {
+                "modified": {
+                    "activity": {
+                        "HALFIDLE_VERIFY1": {
+                            activity_id: {
+                                "troop": troop
+                            }
+                        }
+                    },
+                },
+                "deleted": deleted
             }
         }
 

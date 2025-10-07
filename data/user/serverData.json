@@ -1,7 +1,8 @@
 {
     "checkInData": {
+        "canCheckIn": true,
         "lastCheckInTs": 0,
-        "lastResetDate": "2000-01-01"
+        "lastResetDate": "2025-10-07"
     },
     "checkInItems": {
         "act3signvs": [
@@ -337,13 +338,13 @@
             },
             "skin": "char_2014_nian@cfa#1"
         },
-        "maxLevel": 12,
         "buff": [
             "act1break_rune08",
             "act1break_rune13",
             "act1break_rune06",
             "act1break_rune09"
         ],
+        "maxLevel": 12,
         "squad": [
             {
                 "charId": "char_4132_ascln",

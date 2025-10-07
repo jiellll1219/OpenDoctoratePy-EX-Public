@@ -12,6 +12,16 @@
     修改：  
     1、移除restorePreviousStates
 
+    本月第二次更新
+    修复：  
+    1、accountSyncdata添加安全检查，确保角色存在且有装备字段 
+    2、user.py的datetime导入
+    3、mission的数据数据获取
+
+    添加：  
+    1、进一步完善次生预案，支持更多路由
+    2、完善user数据，添加次生预案数据，更新config版本
+
 - 2025 年 9 月 21 日
 
     修复：  

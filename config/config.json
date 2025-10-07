@@ -32,7 +32,7 @@
             "content": {
                 "configVer": "5",
                 "configs": {
-                    "V064": {
+                    "V065": {
                         "network": {
                             "an": "{server}/config/prod/announce_meta/{0}/announcement.meta.json",
                             "as": "{server}",
@@ -51,7 +51,7 @@
                         "override": true
                     }
                 },
-                "funcVer": "V064"
+                "funcVer": "V065"
             },
             "sign": "Yu9qJf+JL6E8rwO/RiQu3Bq4en4tr4+wpfHfg9cPc1jtWlA2FDaf+Hh8H1wibz/K3yaHeN0r6NeWp5/wpX01OXssqCw0pAA34ypPcBq03GdsGbHPjOOdD27QTS7bE5ymXhfLJkHyXfB9ejK65xyHwFw6ceRFUOx+dEfJUdT8QhA="
         },
@@ -105,10 +105,10 @@
         "season": "tower_season_5"
     },
     "userConfig": {
-        "activityMaxStartTs": 1715284799,
-        "activityMinStartTs": 1712203200,
-        "background": "bg_sui_1",
+        "activityMinStartTs": 1756353600,
+        "activityMaxStartTs": 1758743999,
         "fakeTime": -1,
+        "background": "bg_sui_1",
         "secretary": "char_4172_xingzh",
         "secretarySkinId": "char_4172_xingzh#1",
         "theme": "tm_sui_1"
@@ -116,7 +116,7 @@
     "version": {
         "android": {
             "clientVersion": "2.6.41",
-            "resVersion": "25-09-17-05-25-13_d72007"
+            "resVersion": "25-09-28-12-13-16_6485b3"
         }
     },
     "versionGlobal": {
