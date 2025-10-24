@@ -447,9 +447,6 @@ def exchangeDiamondShard():
     json_body = json.loads(request.data)
     user_sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
 
-    #debug code
-    print(request.data)
-
     use_count = json_body["count"]
     user_androidDiamond = user_sync_data["user"]["status"]["androidDiamond"]
 

@@ -683,7 +683,7 @@ def batchRestChar():
 
 def buildRoom():
     json_body = request.get_json()
-    print(json_body)
+
     # {'roomSlotId': 'slot_47', 'roomId': 'PRIVATE'}
     user_data = read_json(USER_JSON_PATH)
     building_data = user_data["user"]["building"]

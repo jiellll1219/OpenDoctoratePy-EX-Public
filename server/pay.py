@@ -40,15 +40,11 @@ def getcreateOrder():
     "orderIdList": []
     }
 
-    print(data)
-
     return data
 
 def queryshowappproduct():
 
     json_body = json.loads(request.data)
-    print(json_body)
-
     result = {
         "data": {
             "amount": 114514,

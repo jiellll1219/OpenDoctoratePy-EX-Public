@@ -152,7 +152,7 @@ class CheckInReward():
             },
             "items": items
         }
-        print(result)
+
         return result
 
     def sign():
