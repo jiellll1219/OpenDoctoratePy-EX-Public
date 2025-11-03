@@ -208,6 +208,34 @@ class CheckInReward():
 
         return result
 
+class SwitchOnly:
+    def getSwitchOnlyReward():
+        json_body = request.get_json()
+
+        user_data = read_json(SYNC_DATA_TEMPLATE_PATH)
+        activity_id = json_body["activityId"]
+        reward_id = json_body["reward"]
+        activity_data = user_data["user"]["activity"]["SWITCH_ONLY"][activity_id]
+
+        activity_data["rewards"][reward_id] = 0
+
+        result = {
+            "playerDataDelta": {
+                "modified": {
+                    "activity": {
+                        "SWITCH_ONLY": {
+                            activity_id: activity_data
+                        }
+                    }
+                },
+                "deleted": {}
+            }
+        }
+
+        run_after_response(write_json, user_data, SYNC_DATA_TEMPLATE_PATH)
+
+        return result
+
 class enemyDuel():
     def singleBattleStart():
 
@@ -1191,7 +1219,6 @@ class act35side():
         run_after_response(write_json, user_data, SYNC_DATA_TEMPLATE_PATH)
         return result
 
-
 class vhalfidle:
     from data.level import evolve_0, evolve_1, evolve_2
     from data.act_data import spec_char, vhalfidle_pools
@@ -1939,3 +1966,40 @@ class vhalfidle:
         run_after_response(write_json, sync_data, SYNC_DATA_TEMPLATE_PATH)
 
         return result
+
+class multiplayer:
+
+    def refreshInfo():
+
+        return {}
+    
+    def refreshInviteList():
+
+        return {}
+    
+    def getInfo():
+
+        return{}
+    
+    def guideBattleStart():
+        data = {
+            "apFailReturn": 0,
+            "battleId": "abcdefgh-1234-5678-a1b2c3d4e5f6",
+            "inApProtectPeriod": False,
+            "isApProtect": 0,
+            "notifyPowerScoreNotEnoughIfFailed": False,
+            "playerDataDelta": {"modified": {}, "deleted": {}},
+            "result": 0,
+        }
+        
+        return data
+
+    def guideBattleFinish():
+        json_body = request.get_json()
+
+        return {
+            "playerDataDelta": {
+                "modified": {},
+                "deleted": {}
+            }
+        }

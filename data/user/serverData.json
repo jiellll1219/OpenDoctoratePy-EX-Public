@@ -1,7 +1,5 @@
 {
     "checkInData": {
-        "canCheckIn": true,
-        "lastCheckInTs": 0,
         "lastResetDate": "2025-10-07"
     },
     "checkInItems": {

@@ -169,23 +169,22 @@ class mission_manger:
                     value['state'] = 2
 
         if mission_type is None:
-            mission_data = sync_data["user"]["mission"]
+            mission_data:dict = sync_data["user"]["mission"]
 
             for key, value in mission_data["missionRewards"]["rewards"]["DAYLY"].items():
                 mission_data["missionRewards"]["rewards"]["DAYLY"][key] = 0
-            process_data(mission_data["DAILY"], self.daily_start_list)
+            process_data(mission_data["missions"]["DAILY"], self.daily_start_list)
 
             for key, value in mission_data["missionRewards"]["rewards"]["WEEKLY"].items():
                 mission_data["missionRewards"]["rewards"]["WEEKLY"][key] = 0
-            process_data(mission_data["WEEKLY"], self.weekly_start_list)
+            process_data(mission_data["missions"]["WEEKLY"], self.weekly_start_list)
             
             
         else:
-            mission_data = sync_data["user"]["mission"]["missions"][mission_type]
+            mission_data:dict = sync_data["user"]["mission"]
 
-            for key, value in sync_data["user"]["mission"]["missionRewards"]["rewards"][mission_type].items():
-                sync_data["user"]["mission"]["missionRewards"]["rewards"][mission_type][key] = 0
-            process_data(mission_data, self.daily_start_list if mission_type == "DAILY" else self.weekly_start_list)
+            for key, value in mission_data["missionRewards"]["rewards"][mission_type].items():
+                mission_data["missionRewards"]["rewards"][mission_type][key] = 0
+            process_data(mission_data["missions"][mission_type], self.daily_start_list if mission_type == "DAILY" else self.weekly_start_list)
 
-        run_after_response(write_json, sync_data, SYNC_DATA_TEMPLATE_PATH)
-        return 0
+        return mission_data

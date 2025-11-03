@@ -28,10 +28,7 @@ def read_json(path: str) -> Dict[str, Any]:
 
 def write_json(data: Any, path: str, indent: int = 4):
     with open(path, "wb") as f:
-        if indent:
-            f.write(format(json_encoder.encode(data), indent=indent))
-        else:
-            f.write(json_encoder.encode(data))
+        f.write(format(json_encoder.encode(data), indent=indent))
 
 def decrypt_battle_data(data: str, login_time: int = read_json(USER_JSON_PATH)["user"]["pushFlags"]["status"]):
     

@@ -47,7 +47,6 @@ class checkin:
     # 服务端函数
     def update_check_in_status():
         default_data = {
-            "lastCheckInTs": 0,
             "lastResetDate": "2000-01-01"
         }
         
@@ -66,6 +65,7 @@ class checkin:
         today_date = now_local.date()
         current_month = now_local.month
         current_year = now_local.year
+        current_day = now_local.day
         
         # 处理lastResetDate
         last_reset_date = datetime.strptime(
@@ -73,6 +73,7 @@ class checkin:
         ).date() 
         last_reset_month = last_reset_date.month    # 最后一次签到的月份
         last_reset_year = last_reset_date.year      # 最后一次签到的年份
+        last_rest_day = last_reset_date.day         # 最后一次签到的日期
         
         # 计算今天的4AM（本地时区）
         today_4am = datetime.combine(today_date, datetime.min.time()).replace(
@@ -92,47 +93,46 @@ class checkin:
         
         # 条件1: 当前时间已经过了今天4AM
         condition1 = now_local >= today_4am
-        
         # 条件2: 上次重置日期不是今天
         condition2 = last_reset_date != today_date
-        
         # 条件3: 最后一次重置的月份与当前月份不同
         condition3 = current_month != last_reset_month
-
         #条件4：最后一次重置的年份与当前年份不同
         condition4 = current_year != last_reset_year
+        # 条件5：重置日期不是昨天
+        condition5 = current_day - last_rest_day > 0
         
-        # 只有当条件1、2都满足时才重置可签到状态
-        if condition1 and condition2:
+        # 只有当条件1、2都满足或满足条件5时才重置可签到状态
+        if condition1 and condition2 or condition5:
             check_in_data["lastResetDate"] = today_date.isoformat()
-            check_in_data["canCheckIn"] = True
             sync_data["user"]["checkIn"]["canCheckIn"] = 1
             for vs in sync_data["user"]["activity"]["CHECKIN_VS"].values():
                 if isinstance(vs, dict) and "canVote" in vs:
                     vs["canVote"] = 1
 
-            mission_manger().re_set_state("DAILY")
+            mission_data = mission_manger().re_set_state("DAILY")
+            sync_data["user"]["mission"] = mission_data
 
-        # 当条件3满足且非默认数据时，重置签到进度到当前月份
-        if condition3 and not_default:
-            check_in_data["lastResetDate"] = today_date.isoformat()
-            sync_data["user"]["checkIn"]["checkInHistory"] = []
-            sync_data["user"]["checkIn"]["checkInRewardIndex"] = 0
-            sync_data["user"]["checkIn"]["canCheckIn"] = 1
+            # 当条件3满足且非默认数据时，重置签到进度到当前月份
+            if condition3 and not_default:
+                check_in_data["lastResetDate"] = today_date.isoformat()
+                sync_data["user"]["checkIn"]["checkInHistory"] = []
+                sync_data["user"]["checkIn"]["checkInRewardIndex"] = 0
+                sync_data["user"]["checkIn"]["canCheckIn"] = 1
 
-            check_in_cnt = int(sync_data["user"]["checkIn"]["checkInGroupId"][-2:])
+                check_in_cnt = int(sync_data["user"]["checkIn"]["checkInGroupId"][-2:])
 
-            # 当条件4满足时，进行额外修正处理
-            if condition4:
-                year_cnt = current_year - last_reset_year
-                month_offset = (12 * year_cnt) - last_reset_month
+                # 当条件4满足时，进行额外修正处理
+                if condition4:
+                    year_cnt = current_year - last_reset_year
+                    month_offset = (12 * year_cnt) - last_reset_month
 
-            # 当条件4不满足时，正常进行月份更迭处理
-            else:
-                month_offset = current_month - last_reset_month
-                check_in_cnt += month_offset
+                # 当条件4不满足时，正常进行月份更迭处理
+                else:
+                    month_offset = current_month - last_reset_month
+                    check_in_cnt += month_offset
 
-            sync_data["user"]["checkIn"]["checkInGroupId"] = "signin" + str(check_in_cnt)
+                sync_data["user"]["checkIn"]["checkInGroupId"] = "signin" + str(check_in_cnt)
 
         # 如果今天已经签到过，则跳过
         else:
