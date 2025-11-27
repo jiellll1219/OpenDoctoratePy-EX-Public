@@ -14112,6 +14112,2837 @@
       }
     }
   },
+  "shop_act2mainss": {
+    "shopId": "shop_act2mainss",
+    "shopName": "可露希尔仓库",
+    "type": "SHOP_RARITY_GROUP",
+    "price": {
+      "id": "act2mainss_token",
+      "count": 1,
+      "type": "ACTIVITY_ITEM"
+    },
+    "iconColorCodes": "ca8d43",
+    "buttonColorCodes": "ca8d43",
+    "startTime": 1743998400,
+    "endTime": 1745783999,
+    "allPriceDict": [
+      {
+        "startTime": 1743998400,
+        "maxPrice": 4319
+      }
+    ],
+    "shopGroup": {
+      "act2mainss_tag_1": {
+        "shopGroupId": "act2mainss_tag_1",
+        "sortId": 1,
+        "preGroup": null,
+        "bkgIconId": null,
+        "startTime": 1743998400,
+        "lockDesc": null,
+        "shopGood": {
+          "act2mainss_1": {
+            "goodId": "act2mainss_1",
+            "displayName": null,
+            "sortId": 1,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "char_378_asbest@whirlwind#3",
+              "count": 1,
+              "type": "CHAR_SKIN"
+            },
+            "progressGoodId": null,
+            "price": 500,
+            "availCount": 1
+          },
+          "act2mainss_2": {
+            "goodId": "act2mainss_2",
+            "displayName": null,
+            "sortId": 2,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "tm_mainline_1",
+              "count": 1,
+              "type": "HOME_THEME"
+            },
+            "progressGoodId": null,
+            "price": 500,
+            "availCount": 1
+          },
+          "act2mainss_3": {
+            "goodId": "act2mainss_3",
+            "displayName": null,
+            "sortId": 3,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "ap_supply_lt_010",
+              "count": 1,
+              "type": "AP_SUPPLY"
+            },
+            "progressGoodId": null,
+            "price": 7,
+            "availCount": 20
+          },
+          "act2mainss_4": {
+            "goodId": "act2mainss_4",
+            "displayName": null,
+            "sortId": 4,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "mod_unlock_token",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 100,
+            "availCount": 2
+          },
+          "act2mainss_5": {
+            "goodId": "act2mainss_5",
+            "displayName": null,
+            "sortId": 5,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30155",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 200,
+            "availCount": 2
+          },
+          "act2mainss_6": {
+            "goodId": "act2mainss_6",
+            "displayName": null,
+            "sortId": 6,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "31034",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 75,
+            "availCount": 3
+          },
+          "act2mainss_7": {
+            "goodId": "act2mainss_7",
+            "displayName": null,
+            "sortId": 7,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30104",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 65,
+            "availCount": 3
+          },
+          "act2mainss_8": {
+            "goodId": "act2mainss_8",
+            "displayName": null,
+            "sortId": 8,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_kaltsroom_ceilinglight_01",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 60,
+            "availCount": 1
+          },
+          "act2mainss_9": {
+            "goodId": "act2mainss_9",
+            "displayName": null,
+            "sortId": 9,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_kaltsroom_carpet_01",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 80,
+            "availCount": 1
+          },
+          "act2mainss_10": {
+            "goodId": "act2mainss_10",
+            "displayName": null,
+            "sortId": 10,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_kaltsroom_sample_02",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 110,
+            "availCount": 1
+          },
+          "act2mainss_11": {
+            "goodId": "act2mainss_11",
+            "displayName": null,
+            "sortId": 11,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_kaltsroom_display_01",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 125,
+            "availCount": 1
+          },
+          "act2mainss_12": {
+            "goodId": "act2mainss_12",
+            "displayName": null,
+            "sortId": 12,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_kaltsroom_sample_01",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 125,
+            "availCount": 1
+          },
+          "act2mainss_13": {
+            "goodId": "act2mainss_13",
+            "displayName": null,
+            "sortId": 13,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_kaltsroom_cabinet_01",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 180,
+            "availCount": 1
+          }
+        },
+        "progressGoods": {}
+      },
+      "act2mainss_tag_2": {
+        "shopGroupId": "act2mainss_tag_2",
+        "sortId": 2,
+        "preGroup": null,
+        "bkgIconId": null,
+        "startTime": 1743998400,
+        "lockDesc": null,
+        "shopGood": {
+          "act2mainss_14": {
+            "goodId": "act2mainss_14",
+            "displayName": null,
+            "sortId": 14,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "mod_update_token_2",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 30,
+            "availCount": 8
+          },
+          "act2mainss_15": {
+            "goodId": "act2mainss_15",
+            "displayName": null,
+            "sortId": 15,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "mod_update_token_1",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 10,
+            "availCount": 40
+          },
+          "act2mainss_16": {
+            "goodId": "act2mainss_16",
+            "displayName": null,
+            "sortId": 16,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30063",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 25,
+            "availCount": 5
+          },
+          "act2mainss_17": {
+            "goodId": "act2mainss_17",
+            "displayName": null,
+            "sortId": 17,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "31083",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 25,
+            "availCount": 5
+          },
+          "act2mainss_18": {
+            "goodId": "act2mainss_18",
+            "displayName": null,
+            "sortId": 18,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "31053",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 20,
+            "availCount": 5
+          },
+          "act2mainss_19": {
+            "goodId": "act2mainss_19",
+            "displayName": null,
+            "sortId": 19,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "4001",
+              "count": 2000,
+              "type": "GOLD"
+            },
+            "progressGoodId": null,
+            "price": 5,
+            "availCount": 20
+          },
+          "act2mainss_20": {
+            "goodId": "act2mainss_20",
+            "displayName": null,
+            "sortId": 20,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "2004",
+              "count": 1,
+              "type": "CARD_EXP"
+            },
+            "progressGoodId": null,
+            "price": 5,
+            "availCount": 10
+          },
+          "act2mainss_21": {
+            "goodId": "act2mainss_21",
+            "displayName": null,
+            "sortId": 21,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "2003",
+              "count": 2,
+              "type": "CARD_EXP"
+            },
+            "progressGoodId": null,
+            "price": 5,
+            "availCount": 20
+          },
+          "act2mainss_22": {
+            "goodId": "act2mainss_22",
+            "displayName": null,
+            "sortId": 22,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "3303",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 6,
+            "availCount": 10
+          },
+          "act2mainss_23": {
+            "goodId": "act2mainss_23",
+            "displayName": null,
+            "sortId": 23,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "3302",
+              "count": 2,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 6,
+            "availCount": 20
+          },
+          "act2mainss_24": {
+            "goodId": "act2mainss_24",
+            "displayName": null,
+            "sortId": 24,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30012",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 3,
+            "availCount": 10
+          },
+          "act2mainss_25": {
+            "goodId": "act2mainss_25",
+            "displayName": null,
+            "sortId": 25,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30032",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 4,
+            "availCount": 10
+          },
+          "act2mainss_26": {
+            "goodId": "act2mainss_26",
+            "displayName": null,
+            "sortId": 26,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30042",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 6,
+            "availCount": 10
+          },
+          "act2mainss_27": {
+            "goodId": "act2mainss_27",
+            "displayName": null,
+            "sortId": 27,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "3401",
+              "count": 10,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 4,
+            "availCount": 20
+          }
+        },
+        "progressGoods": {}
+      },
+      "act2mainss_tag_3": {
+        "shopGroupId": "act2mainss_tag_3",
+        "sortId": 3,
+        "preGroup": null,
+        "bkgIconId": "mainss_exclusive",
+        "startTime": 1743998400,
+        "lockDesc": null,
+        "shopGood": {
+          "act2mainss_28": {
+            "goodId": "act2mainss_28",
+            "displayName": null,
+            "sortId": 28,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "itempack_main_1",
+              "count": 1,
+              "type": "ITEM_PACK"
+            },
+            "progressGoodId": null,
+            "price": 100,
+            "availCount": -1
+          },
+          "act2mainss_29": {
+            "goodId": "act2mainss_29",
+            "displayName": null,
+            "sortId": 29,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30073",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 50,
+            "availCount": -1
+          },
+          "act2mainss_30": {
+            "goodId": "act2mainss_30",
+            "displayName": null,
+            "sortId": 30,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "4001",
+              "count": 10,
+              "type": "GOLD"
+            },
+            "progressGoodId": null,
+            "price": 1,
+            "availCount": -1
+          }
+        },
+        "progressGoods": {}
+      }
+    }
+  },
+  "shop_act33sre": {
+    "shopId": "shop_act33sre",
+    "shopName": "机动后勤营地",
+    "type": "SHOP_RARITY_GROUP",
+    "price": {
+      "id": "act33side_token_sugar_rep_1",
+      "count": 1,
+      "type": "ACTIVITY_ITEM"
+    },
+    "iconColorCodes": "ca8d43",
+    "buttonColorCodes": "ca8d43",
+    "startTime": 1745222400,
+    "endTime": 1746388799,
+    "allPriceDict": [
+      {
+        "startTime": 1745222400,
+        "maxPrice": 3156
+      }
+    ],
+    "shopGroup": {
+      "act33sre_tag_1": {
+        "shopGroupId": "act33sre_tag_1",
+        "sortId": 1,
+        "preGroup": null,
+        "bkgIconId": null,
+        "startTime": 1745222400,
+        "lockDesc": null,
+        "shopGood": {
+          "act33sre_1": {
+            "goodId": "act33sre_1",
+            "displayName": null,
+            "sortId": 1,
+            "goodType": "PROGRESS",
+            "item": null,
+            "progressGoodId": "char_odda_progress",
+            "price": 0,
+            "availCount": 0
+          },
+          "act33sre_2": {
+            "goodId": "act33sre_2",
+            "displayName": null,
+            "sortId": 2,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "7003",
+              "count": 1,
+              "type": "TKT_GACHA"
+            },
+            "progressGoodId": null,
+            "price": 150,
+            "availCount": 3
+          },
+          "act33sre_3": {
+            "goodId": "act33sre_3",
+            "displayName": null,
+            "sortId": 3,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30115",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 100,
+            "availCount": 1
+          },
+          "act33sre_4": {
+            "goodId": "act33sre_4",
+            "displayName": null,
+            "sortId": 4,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30014",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 25,
+            "availCount": 3
+          },
+          "act33sre_5": {
+            "goodId": "act33sre_5",
+            "displayName": null,
+            "sortId": 5,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30094",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 35,
+            "availCount": 3
+          },
+          "act33sre_6": {
+            "goodId": "act33sre_6",
+            "displayName": null,
+            "sortId": 6,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "31024",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 35,
+            "availCount": 3
+          },
+          "act33sre_7": {
+            "goodId": "act33sre_7",
+            "displayName": null,
+            "sortId": 7,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_ScarMarket_storagetable_01",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 60,
+            "availCount": 1
+          },
+          "act33sre_8": {
+            "goodId": "act33sre_8",
+            "displayName": null,
+            "sortId": 8,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_ScarMarket_ironbox_01",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 60,
+            "availCount": 1
+          },
+          "act33sre_9": {
+            "goodId": "act33sre_9",
+            "displayName": null,
+            "sortId": 9,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_ScarMarket_collectioncabinet_01",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 80,
+            "availCount": 1
+          },
+          "act33sre_10": {
+            "goodId": "act33sre_10",
+            "displayName": null,
+            "sortId": 10,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_ScarMarket_partitionwall_01",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 80,
+            "availCount": 1
+          },
+          "act33sre_11": {
+            "goodId": "act33sre_11",
+            "displayName": null,
+            "sortId": 11,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_ScarMarket_wallpaper_01",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 90,
+            "availCount": 1
+          },
+          "act33sre_12": {
+            "goodId": "act33sre_12",
+            "displayName": null,
+            "sortId": 12,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_ScarMarket_floor_01",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 90,
+            "availCount": 1
+          }
+        },
+        "progressGoods": {
+          "char_odda_progress": [
+            {
+              "order": 1,
+              "price": 200,
+              "displayName": "奥达的信物",
+              "item": {
+                "id": "p_char_4131_odda",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            },
+            {
+              "order": 2,
+              "price": 240,
+              "displayName": "奥达的信物",
+              "item": {
+                "id": "p_char_4131_odda",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            },
+            {
+              "order": 3,
+              "price": 280,
+              "displayName": "奥达的信物",
+              "item": {
+                "id": "p_char_4131_odda",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            },
+            {
+              "order": 4,
+              "price": 320,
+              "displayName": "奥达的信物",
+              "item": {
+                "id": "p_char_4131_odda",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            },
+            {
+              "order": 5,
+              "price": 360,
+              "displayName": "奥达的信物",
+              "item": {
+                "id": "p_char_4131_odda",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            }
+          ]
+        }
+      },
+      "act33sre_tag_2": {
+        "shopGroupId": "act33sre_tag_2",
+        "sortId": 2,
+        "preGroup": null,
+        "bkgIconId": null,
+        "startTime": 1745222400,
+        "lockDesc": null,
+        "shopGood": {
+          "act33sre_13": {
+            "goodId": "act33sre_13",
+            "displayName": null,
+            "sortId": 13,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30033",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 8,
+            "availCount": 5
+          },
+          "act33sre_14": {
+            "goodId": "act33sre_14",
+            "displayName": null,
+            "sortId": 14,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "31033",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 10,
+            "availCount": 5
+          },
+          "act33sre_15": {
+            "goodId": "act33sre_15",
+            "displayName": null,
+            "sortId": 15,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "4001",
+              "count": 5000,
+              "type": "GOLD"
+            },
+            "progressGoodId": null,
+            "price": 7,
+            "availCount": 20
+          },
+          "act33sre_16": {
+            "goodId": "act33sre_16",
+            "displayName": null,
+            "sortId": 16,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "2004",
+              "count": 2,
+              "type": "CARD_EXP"
+            },
+            "progressGoodId": null,
+            "price": 5,
+            "availCount": 5
+          },
+          "act33sre_17": {
+            "goodId": "act33sre_17",
+            "displayName": null,
+            "sortId": 17,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "2003",
+              "count": 2,
+              "type": "CARD_EXP"
+            },
+            "progressGoodId": null,
+            "price": 3,
+            "availCount": 10
+          },
+          "act33sre_18": {
+            "goodId": "act33sre_18",
+            "displayName": null,
+            "sortId": 18,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "2002",
+              "count": 2,
+              "type": "CARD_EXP"
+            },
+            "progressGoodId": null,
+            "price": 1,
+            "availCount": 20
+          },
+          "act33sre_19": {
+            "goodId": "act33sre_19",
+            "displayName": null,
+            "sortId": 19,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "3303",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 4,
+            "availCount": 10
+          },
+          "act33sre_20": {
+            "goodId": "act33sre_20",
+            "displayName": null,
+            "sortId": 20,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "3302",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 2,
+            "availCount": 20
+          }
+        },
+        "progressGoods": {}
+      },
+      "act33sre_tag_3": {
+        "shopGroupId": "act33sre_tag_3",
+        "sortId": 3,
+        "preGroup": null,
+        "bkgIconId": null,
+        "startTime": 1745222400,
+        "lockDesc": null,
+        "shopGood": {
+          "act33sre_21": {
+            "goodId": "act33sre_21",
+            "displayName": null,
+            "sortId": 21,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30022",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 3,
+            "availCount": 8
+          },
+          "act33sre_22": {
+            "goodId": "act33sre_22",
+            "displayName": null,
+            "sortId": 22,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30042",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 3,
+            "availCount": 8
+          },
+          "act33sre_23": {
+            "goodId": "act33sre_23",
+            "displayName": null,
+            "sortId": 23,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30052",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 3,
+            "availCount": 8
+          },
+          "act33sre_24": {
+            "goodId": "act33sre_24",
+            "displayName": null,
+            "sortId": 24,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "3221",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 6,
+            "availCount": 5
+          }
+        },
+        "progressGoods": {}
+      },
+      "act33sre_tag_4": {
+        "shopGroupId": "act33sre_tag_4",
+        "sortId": 4,
+        "preGroup": null,
+        "bkgIconId": null,
+        "startTime": 1745222400,
+        "lockDesc": null,
+        "shopGood": {
+          "act33sre_25": {
+            "goodId": "act33sre_25",
+            "displayName": null,
+            "sortId": 25,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30073",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 25,
+            "availCount": -1
+          },
+          "act33sre_26": {
+            "goodId": "act33sre_26",
+            "displayName": null,
+            "sortId": 26,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "4001",
+              "count": 20,
+              "type": "GOLD"
+            },
+            "progressGoodId": null,
+            "price": 1,
+            "availCount": -1
+          }
+        },
+        "progressGoods": {}
+      }
+    }
+  },
+  "shop_act42side": {
+    "shopId": "shop_act42side",
+    "shopName": "甜梦会堂",
+    "type": "SHOP_RARITY_GROUP",
+    "price": {
+      "id": "act42side_token_pacifier",
+      "count": 1,
+      "type": "ACTIVITY_ITEM"
+    },
+    "iconColorCodes": "ca8d43",
+    "buttonColorCodes": "ca8d43",
+    "startTime": 1746072000,
+    "endTime": 1748462399,
+    "allPriceDict": [
+      {
+        "startTime": 1746072000,
+        "maxPrice": 9149
+      }
+    ],
+    "shopGroup": {
+      "act42side_tag_1": {
+        "shopGroupId": "act42side_tag_1",
+        "sortId": 1,
+        "preGroup": null,
+        "bkgIconId": null,
+        "startTime": 1746072000,
+        "lockDesc": null,
+        "shopGood": {
+          "act42side_1": {
+            "goodId": "act42side_1",
+            "displayName": null,
+            "sortId": 1,
+            "goodType": "PROGRESS",
+            "item": null,
+            "progressGoodId": "char_rmixer_progress",
+            "price": 0,
+            "availCount": 0
+          },
+          "act42side_2": {
+            "goodId": "act42side_2",
+            "displayName": null,
+            "sortId": 2,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "char_356_broca@marthe#4",
+              "count": 1,
+              "type": "CHAR_SKIN"
+            },
+            "progressGoodId": null,
+            "price": 500,
+            "availCount": 1
+          },
+          "act42side_3": {
+            "goodId": "act42side_3",
+            "displayName": null,
+            "sortId": 3,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "char_002_amiya@epoque#4",
+              "count": 1,
+              "type": "CHAR_SKIN"
+            },
+            "progressGoodId": null,
+            "price": 500,
+            "availCount": 1
+          },
+          "act42side_4": {
+            "goodId": "act42side_4",
+            "displayName": null,
+            "sortId": 4,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "7003",
+              "count": 1,
+              "type": "TKT_GACHA"
+            },
+            "progressGoodId": null,
+            "price": 150,
+            "availCount": 3
+          },
+          "act42side_5": {
+            "goodId": "act42side_5",
+            "displayName": null,
+            "sortId": 5,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "mod_unlock_token",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 75,
+            "availCount": 3
+          },
+          "act42side_6": {
+            "goodId": "act42side_6",
+            "displayName": null,
+            "sortId": 6,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30165",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 100,
+            "availCount": 5
+          },
+          "act42side_7": {
+            "goodId": "act42side_7",
+            "displayName": null,
+            "sortId": 7,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30104",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 35,
+            "availCount": 10
+          },
+          "act42side_8": {
+            "goodId": "act42side_8",
+            "displayName": null,
+            "sortId": 8,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "31014",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 30,
+            "availCount": 10
+          },
+          "act42side_9": {
+            "goodId": "act42side_9",
+            "displayName": null,
+            "sortId": 9,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "31034",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 40,
+            "availCount": 10
+          },
+          "act42side_10": {
+            "goodId": "act42side_10",
+            "displayName": null,
+            "sortId": 10,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "31064",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 30,
+            "availCount": 10
+          },
+          "act42side_11": {
+            "goodId": "act42side_11",
+            "displayName": null,
+            "sortId": 11,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_gunworkshop_wallpaper_01",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 90,
+            "availCount": 1
+          },
+          "act42side_12": {
+            "goodId": "act42side_12",
+            "displayName": null,
+            "sortId": 12,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_gunworkshop_gunshelf_01",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 80,
+            "availCount": 1
+          },
+          "act42side_13": {
+            "goodId": "act42side_13",
+            "displayName": null,
+            "sortId": 13,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_gunworkshop_cabinet_01",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 70,
+            "availCount": 1
+          },
+          "act42side_14": {
+            "goodId": "act42side_14",
+            "displayName": null,
+            "sortId": 14,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_gunworkshop_shelf_01",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 50,
+            "availCount": 1
+          },
+          "act42side_15": {
+            "goodId": "act42side_15",
+            "displayName": null,
+            "sortId": 15,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_gunworkshop_floorlamp_01",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 45,
+            "availCount": 1
+          }
+        },
+        "progressGoods": {
+          "char_rmixer_progress": [
+            {
+              "order": 1,
+              "price": 250,
+              "displayName": "信仰搅拌机的信物",
+              "item": {
+                "id": "p_char_4194_rmixer",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            },
+            {
+              "order": 2,
+              "price": 300,
+              "displayName": "信仰搅拌机的信物",
+              "item": {
+                "id": "p_char_4194_rmixer",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            },
+            {
+              "order": 3,
+              "price": 350,
+              "displayName": "信仰搅拌机的信物",
+              "item": {
+                "id": "p_char_4194_rmixer",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            },
+            {
+              "order": 4,
+              "price": 400,
+              "displayName": "信仰搅拌机的信物",
+              "item": {
+                "id": "p_char_4194_rmixer",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            },
+            {
+              "order": 5,
+              "price": 450,
+              "displayName": "信仰搅拌机的信物",
+              "item": {
+                "id": "p_char_4194_rmixer",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            }
+          ]
+        }
+      },
+      "act42side_tag_2": {
+        "shopGroupId": "act42side_tag_2",
+        "sortId": 2,
+        "preGroup": null,
+        "bkgIconId": null,
+        "startTime": 1746072000,
+        "lockDesc": null,
+        "shopGood": {
+          "act42side_16": {
+            "goodId": "act42side_16",
+            "displayName": null,
+            "sortId": 16,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "mod_update_token_2",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 15,
+            "availCount": 10
+          },
+          "act42side_17": {
+            "goodId": "act42side_17",
+            "displayName": null,
+            "sortId": 17,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "mod_update_token_1",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 5,
+            "availCount": 60
+          },
+          "act42side_18": {
+            "goodId": "act42side_18",
+            "displayName": null,
+            "sortId": 18,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30063",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 15,
+            "availCount": 15
+          },
+          "act42side_19": {
+            "goodId": "act42side_19",
+            "displayName": null,
+            "sortId": 19,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "31013",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 12,
+            "availCount": 15
+          },
+          "act42side_20": {
+            "goodId": "act42side_20",
+            "displayName": null,
+            "sortId": 20,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "31023",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 10,
+            "availCount": 15
+          },
+          "act42side_21": {
+            "goodId": "act42side_21",
+            "displayName": null,
+            "sortId": 21,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "31073",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 12,
+            "availCount": 15
+          },
+          "act42side_22": {
+            "goodId": "act42side_22",
+            "displayName": null,
+            "sortId": 22,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "4001",
+              "count": 5000,
+              "type": "GOLD"
+            },
+            "progressGoodId": null,
+            "price": 7,
+            "availCount": 120
+          },
+          "act42side_23": {
+            "goodId": "act42side_23",
+            "displayName": null,
+            "sortId": 23,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "2004",
+              "count": 2,
+              "type": "CARD_EXP"
+            },
+            "progressGoodId": null,
+            "price": 5,
+            "availCount": 30
+          },
+          "act42side_24": {
+            "goodId": "act42side_24",
+            "displayName": null,
+            "sortId": 24,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "2003",
+              "count": 2,
+              "type": "CARD_EXP"
+            },
+            "progressGoodId": null,
+            "price": 3,
+            "availCount": 50
+          },
+          "act42side_25": {
+            "goodId": "act42side_25",
+            "displayName": null,
+            "sortId": 25,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "2002",
+              "count": 2,
+              "type": "CARD_EXP"
+            },
+            "progressGoodId": null,
+            "price": 1,
+            "availCount": 150
+          },
+          "act42side_26": {
+            "goodId": "act42side_26",
+            "displayName": null,
+            "sortId": 26,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "3303",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 4,
+            "availCount": 25
+          },
+          "act42side_27": {
+            "goodId": "act42side_27",
+            "displayName": null,
+            "sortId": 27,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "3302",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 2,
+            "availCount": 50
+          }
+        },
+        "progressGoods": {}
+      },
+      "act42side_tag_3": {
+        "shopGroupId": "act42side_tag_3",
+        "sortId": 3,
+        "preGroup": null,
+        "bkgIconId": null,
+        "startTime": 1746072000,
+        "lockDesc": null,
+        "shopGood": {
+          "act42side_28": {
+            "goodId": "act42side_28",
+            "displayName": null,
+            "sortId": 28,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30012",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 2,
+            "availCount": 40
+          },
+          "act42side_29": {
+            "goodId": "act42side_29",
+            "displayName": null,
+            "sortId": 29,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30022",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 3,
+            "availCount": 30
+          },
+          "act42side_30": {
+            "goodId": "act42side_30",
+            "displayName": null,
+            "sortId": 30,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30032",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 3,
+            "availCount": 30
+          },
+          "act42side_31": {
+            "goodId": "act42side_31",
+            "displayName": null,
+            "sortId": 31,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30042",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 3,
+            "availCount": 25
+          },
+          "act42side_32": {
+            "goodId": "act42side_32",
+            "displayName": null,
+            "sortId": 32,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30052",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 3,
+            "availCount": 25
+          },
+          "act42side_33": {
+            "goodId": "act42side_33",
+            "displayName": null,
+            "sortId": 33,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30062",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 4,
+            "availCount": 20
+          },
+          "act42side_34": {
+            "goodId": "act42side_34",
+            "displayName": null,
+            "sortId": 34,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "3231",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 6,
+            "availCount": 5
+          },
+          "act42side_35": {
+            "goodId": "act42side_35",
+            "displayName": null,
+            "sortId": 35,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "3401",
+              "count": 10,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 2,
+            "availCount": 200
+          }
+        },
+        "progressGoods": {}
+      },
+      "act42side_tag_4": {
+        "shopGroupId": "act42side_tag_4",
+        "sortId": 4,
+        "preGroup": null,
+        "bkgIconId": null,
+        "startTime": 1746072000,
+        "lockDesc": null,
+        "shopGood": {
+          "act42side_36": {
+            "goodId": "act42side_36",
+            "displayName": null,
+            "sortId": 36,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30083",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 30,
+            "availCount": -1
+          },
+          "act42side_37": {
+            "goodId": "act42side_37",
+            "displayName": null,
+            "sortId": 37,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30073",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 25,
+            "availCount": -1
+          },
+          "act42side_38": {
+            "goodId": "act42side_38",
+            "displayName": null,
+            "sortId": 38,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "4001",
+              "count": 20,
+              "type": "GOLD"
+            },
+            "progressGoodId": null,
+            "price": 1,
+            "availCount": -1
+          }
+        },
+        "progressGoods": {}
+      }
+    }
+  },
+  "shop_act44side": {
+    "shopId": "shop_act44side",
+    "shopName": "特典中古市场",
+    "type": "SHOP_RARITY_GROUP",
+    "price": {
+      "id": "act44side_token_ticket",
+      "count": 1,
+      "type": "ACTIVITY_ITEM"
+    },
+    "iconColorCodes": "ca8d43",
+    "buttonColorCodes": "ca8d43",
+    "startTime": 1754107200,
+    "endTime": 1756497599,
+    "allPriceDict": [
+      {
+        "startTime": 1754107200,
+        "maxPrice": 8854
+      }
+    ],
+    "shopGroup": {
+      "act44side_tag_1": {
+        "shopGroupId": "act44side_tag_1",
+        "sortId": 1,
+        "preGroup": null,
+        "bkgIconId": null,
+        "startTime": 1754107200,
+        "lockDesc": null,
+        "shopGood": {
+          "act44side_1": {
+            "goodId": "act44side_1",
+            "displayName": null,
+            "sortId": 1,
+            "goodType": "PROGRESS",
+            "item": null,
+            "progressGoodId": "char_makiri_progress",
+            "price": 0,
+            "availCount": 0
+          },
+          "act44side_2": {
+            "goodId": "act44side_2",
+            "displayName": null,
+            "sortId": 2,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "char_274_astesi@epoque#23",
+              "count": 1,
+              "type": "CHAR_SKIN"
+            },
+            "progressGoodId": null,
+            "price": 500,
+            "availCount": 1
+          },
+          "act44side_3": {
+            "goodId": "act44side_3",
+            "displayName": null,
+            "sortId": 3,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "char_208_melan@epoque#1",
+              "count": 1,
+              "type": "CHAR_SKIN"
+            },
+            "progressGoodId": null,
+            "price": 500,
+            "availCount": 1
+          },
+          "act44side_4": {
+            "goodId": "act44side_4",
+            "displayName": null,
+            "sortId": 4,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "7003",
+              "count": 1,
+              "type": "TKT_GACHA"
+            },
+            "progressGoodId": null,
+            "price": 150,
+            "availCount": 3
+          },
+          "act44side_5": {
+            "goodId": "act44side_5",
+            "displayName": null,
+            "sortId": 5,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "mod_unlock_token",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 75,
+            "availCount": 3
+          },
+          "act44side_6": {
+            "goodId": "act44side_6",
+            "displayName": null,
+            "sortId": 6,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30145",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 100,
+            "availCount": 5
+          },
+          "act44side_7": {
+            "goodId": "act44side_7",
+            "displayName": null,
+            "sortId": 7,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30044",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 40,
+            "availCount": 10
+          },
+          "act44side_8": {
+            "goodId": "act44side_8",
+            "displayName": null,
+            "sortId": 8,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30094",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 35,
+            "availCount": 10
+          },
+          "act44side_9": {
+            "goodId": "act44side_9",
+            "displayName": null,
+            "sortId": 9,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "31044",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 35,
+            "availCount": 10
+          },
+          "act44side_10": {
+            "goodId": "act44side_10",
+            "displayName": null,
+            "sortId": 10,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "31064",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 30,
+            "availCount": 10
+          },
+          "act44side_11": {
+            "goodId": "act44side_11",
+            "displayName": null,
+            "sortId": 11,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_odenShop_ceilingLight_03",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 30,
+            "availCount": 1
+          },
+          "act44side_12": {
+            "goodId": "act44side_12",
+            "displayName": null,
+            "sortId": 12,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_odenShop_bench_01",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 60,
+            "availCount": 1
+          },
+          "act44side_13": {
+            "goodId": "act44side_13",
+            "displayName": null,
+            "sortId": 13,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_odenShop_plant_01",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 75,
+            "availCount": 1
+          },
+          "act44side_14": {
+            "goodId": "act44side_14",
+            "displayName": null,
+            "sortId": 14,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_odenShop_wallpaper_01",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 100,
+            "availCount": 1
+          }
+        },
+        "progressGoods": {
+          "char_makiri_progress": [
+            {
+              "order": 1,
+              "price": 200,
+              "displayName": "松桐的信物",
+              "item": {
+                "id": "p_char_4199_makiri",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            },
+            {
+              "order": 2,
+              "price": 240,
+              "displayName": "松桐的信物",
+              "item": {
+                "id": "p_char_4199_makiri",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            },
+            {
+              "order": 3,
+              "price": 280,
+              "displayName": "松桐的信物",
+              "item": {
+                "id": "p_char_4199_makiri",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            },
+            {
+              "order": 4,
+              "price": 320,
+              "displayName": "松桐的信物",
+              "item": {
+                "id": "p_char_4199_makiri",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            },
+            {
+              "order": 5,
+              "price": 360,
+              "displayName": "松桐的信物",
+              "item": {
+                "id": "p_char_4199_makiri",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            }
+          ]
+        }
+      },
+      "act44side_tag_2": {
+        "shopGroupId": "act44side_tag_2",
+        "sortId": 2,
+        "preGroup": null,
+        "bkgIconId": null,
+        "startTime": 1754107200,
+        "lockDesc": null,
+        "shopGood": {
+          "act44side_15": {
+            "goodId": "act44side_15",
+            "displayName": null,
+            "sortId": 15,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "mod_update_token_2",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 15,
+            "availCount": 10
+          },
+          "act44side_16": {
+            "goodId": "act44side_16",
+            "displayName": null,
+            "sortId": 16,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "mod_update_token_1",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 5,
+            "availCount": 60
+          },
+          "act44side_17": {
+            "goodId": "act44side_17",
+            "displayName": null,
+            "sortId": 17,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30063",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 15,
+            "availCount": 15
+          },
+          "act44side_18": {
+            "goodId": "act44side_18",
+            "displayName": null,
+            "sortId": 18,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30103",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 15,
+            "availCount": 15
+          },
+          "act44side_19": {
+            "goodId": "act44side_19",
+            "displayName": null,
+            "sortId": 19,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "31013",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 12,
+            "availCount": 15
+          },
+          "act44side_20": {
+            "goodId": "act44side_20",
+            "displayName": null,
+            "sortId": 20,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "31073",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 12,
+            "availCount": 15
+          },
+          "act44side_21": {
+            "goodId": "act44side_21",
+            "displayName": null,
+            "sortId": 21,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "4001",
+              "count": 5000,
+              "type": "GOLD"
+            },
+            "progressGoodId": null,
+            "price": 7,
+            "availCount": 120
+          },
+          "act44side_22": {
+            "goodId": "act44side_22",
+            "displayName": null,
+            "sortId": 22,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "2004",
+              "count": 2,
+              "type": "CARD_EXP"
+            },
+            "progressGoodId": null,
+            "price": 5,
+            "availCount": 30
+          },
+          "act44side_23": {
+            "goodId": "act44side_23",
+            "displayName": null,
+            "sortId": 23,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "2003",
+              "count": 2,
+              "type": "CARD_EXP"
+            },
+            "progressGoodId": null,
+            "price": 3,
+            "availCount": 50
+          },
+          "act44side_24": {
+            "goodId": "act44side_24",
+            "displayName": null,
+            "sortId": 24,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "2002",
+              "count": 2,
+              "type": "CARD_EXP"
+            },
+            "progressGoodId": null,
+            "price": 1,
+            "availCount": 150
+          },
+          "act44side_25": {
+            "goodId": "act44side_25",
+            "displayName": null,
+            "sortId": 25,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "3303",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 4,
+            "availCount": 25
+          },
+          "act44side_26": {
+            "goodId": "act44side_26",
+            "displayName": null,
+            "sortId": 26,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "3302",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 2,
+            "availCount": 50
+          }
+        },
+        "progressGoods": {}
+      },
+      "act44side_tag_3": {
+        "shopGroupId": "act44side_tag_3",
+        "sortId": 3,
+        "preGroup": null,
+        "bkgIconId": null,
+        "startTime": 1754107200,
+        "lockDesc": null,
+        "shopGood": {
+          "act44side_27": {
+            "goodId": "act44side_27",
+            "displayName": null,
+            "sortId": 27,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30012",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 2,
+            "availCount": 40
+          },
+          "act44side_28": {
+            "goodId": "act44side_28",
+            "displayName": null,
+            "sortId": 28,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30022",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 3,
+            "availCount": 30
+          },
+          "act44side_29": {
+            "goodId": "act44side_29",
+            "displayName": null,
+            "sortId": 29,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30032",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 3,
+            "availCount": 30
+          },
+          "act44side_30": {
+            "goodId": "act44side_30",
+            "displayName": null,
+            "sortId": 30,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30042",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 3,
+            "availCount": 25
+          },
+          "act44side_31": {
+            "goodId": "act44side_31",
+            "displayName": null,
+            "sortId": 31,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30052",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 3,
+            "availCount": 25
+          },
+          "act44side_32": {
+            "goodId": "act44side_32",
+            "displayName": null,
+            "sortId": 32,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30062",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 4,
+            "availCount": 20
+          },
+          "act44side_33": {
+            "goodId": "act44side_33",
+            "displayName": null,
+            "sortId": 33,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "3211",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 6,
+            "availCount": 5
+          },
+          "act44side_34": {
+            "goodId": "act44side_34",
+            "displayName": null,
+            "sortId": 34,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "3401",
+              "count": 10,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 2,
+            "availCount": 200
+          }
+        },
+        "progressGoods": {}
+      },
+      "act44side_tag_4": {
+        "shopGroupId": "act44side_tag_4",
+        "sortId": 4,
+        "preGroup": null,
+        "bkgIconId": null,
+        "startTime": 1754107200,
+        "lockDesc": null,
+        "shopGood": {
+          "act44side_35": {
+            "goodId": "act44side_35",
+            "displayName": null,
+            "sortId": 35,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30083",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 30,
+            "availCount": -1
+          },
+          "act44side_36": {
+            "goodId": "act44side_36",
+            "displayName": null,
+            "sortId": 36,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30073",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 25,
+            "availCount": -1
+          },
+          "act44side_37": {
+            "goodId": "act44side_37",
+            "displayName": null,
+            "sortId": 37,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "4001",
+              "count": 20,
+              "type": "GOLD"
+            },
+            "progressGoodId": null,
+            "price": 1,
+            "availCount": -1
+          }
+        },
+        "progressGoods": {}
+      }
+    }
+  },
+  "shop_act45side": {
+    "shopId": "shop_act45side",
+    "shopName": "卡尔顿美术馆",
+    "type": "SHOP_RARITY_GROUP",
+    "price": {
+      "id": "act45side_token_puzzlepieces",
+      "count": 1,
+      "type": "ACTIVITY_ITEM"
+    },
+    "iconColorCodes": "ca8d43",
+    "buttonColorCodes": "ca8d43",
+    "startTime": 1756958400,
+    "endTime": 1758743999,
+    "allPriceDict": [
+      {
+        "startTime": 1756958400,
+        "maxPrice": 7899
+      }
+    ],
+    "shopGroup": {
+      "act45side_tag_1": {
+        "shopGroupId": "act45side_tag_1",
+        "sortId": 1,
+        "preGroup": null,
+        "bkgIconId": null,
+        "startTime": 1756958400,
+        "lockDesc": null,
+        "shopGood": {
+          "act45side_1": {
+            "goodId": "act45side_1",
+            "displayName": null,
+            "sortId": 1,
+            "goodType": "PROGRESS",
+            "item": null,
+            "progressGoodId": "char_amoris_progress",
+            "price": 0,
+            "availCount": 0
+          },
+          "act45side_2": {
+            "goodId": "act45side_2",
+            "displayName": null,
+            "sortId": 2,
+            "goodType": "PROGRESS",
+            "item": null,
+            "progressGoodId": "char_tmoris_progress",
+            "price": 0,
+            "availCount": 0
+          },
+          "act45side_3": {
+            "goodId": "act45side_3",
+            "displayName": null,
+            "sortId": 3,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "7003",
+              "count": 1,
+              "type": "TKT_GACHA"
+            },
+            "progressGoodId": null,
+            "price": 150,
+            "availCount": 3
+          },
+          "act45side_4": {
+            "goodId": "act45side_4",
+            "displayName": null,
+            "sortId": 4,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "mod_unlock_token",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 75,
+            "availCount": 2
+          },
+          "act45side_5": {
+            "goodId": "act45side_5",
+            "displayName": null,
+            "sortId": 5,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30115",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 100,
+            "availCount": 5
+          },
+          "act45side_6": {
+            "goodId": "act45side_6",
+            "displayName": null,
+            "sortId": 6,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30054",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 35,
+            "availCount": 10
+          },
+          "act45side_7": {
+            "goodId": "act45side_7",
+            "displayName": null,
+            "sortId": 7,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "31034",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 40,
+            "availCount": 10
+          },
+          "act45side_8": {
+            "goodId": "act45side_8",
+            "displayName": null,
+            "sortId": 8,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "31064",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 30,
+            "availCount": 10
+          },
+          "act45side_9": {
+            "goodId": "act45side_9",
+            "displayName": null,
+            "sortId": 9,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_dreamCastle_carpet_01",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 75,
+            "availCount": 1
+          },
+          "act45side_10": {
+            "goodId": "act45side_10",
+            "displayName": null,
+            "sortId": 10,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_dreamCastle_bookcase_02",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 65,
+            "availCount": 1
+          },
+          "act45side_11": {
+            "goodId": "act45side_11",
+            "displayName": null,
+            "sortId": 11,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_dreamCastle_table_01",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 55,
+            "availCount": 1
+          },
+          "act45side_12": {
+            "goodId": "act45side_12",
+            "displayName": null,
+            "sortId": 12,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_dreamCastle_chair_02",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 30,
+            "availCount": 5
+          }
+        },
+        "progressGoods": {
+          "char_amoris_progress": [
+            {
+              "order": 1,
+              "price": 200,
+              "displayName": "祐天寺若麦的信物",
+              "item": {
+                "id": "p_char_4185_amoris",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            },
+            {
+              "order": 2,
+              "price": 240,
+              "displayName": "祐天寺若麦的信物",
+              "item": {
+                "id": "p_char_4185_amoris",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            },
+            {
+              "order": 3,
+              "price": 280,
+              "displayName": "祐天寺若麦的信物",
+              "item": {
+                "id": "p_char_4185_amoris",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            },
+            {
+              "order": 4,
+              "price": 320,
+              "displayName": "祐天寺若麦的信物",
+              "item": {
+                "id": "p_char_4185_amoris",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            },
+            {
+              "order": 5,
+              "price": 360,
+              "displayName": "祐天寺若麦的信物",
+              "item": {
+                "id": "p_char_4185_amoris",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            }
+          ],
+          "char_tmoris_progress": [
+            {
+              "order": 1,
+              "price": 200,
+              "displayName": "八幡海铃的信物",
+              "item": {
+                "id": "p_char_4186_tmoris",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            },
+            {
+              "order": 2,
+              "price": 240,
+              "displayName": "八幡海铃的信物",
+              "item": {
+                "id": "p_char_4186_tmoris",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            },
+            {
+              "order": 3,
+              "price": 280,
+              "displayName": "八幡海铃的信物",
+              "item": {
+                "id": "p_char_4186_tmoris",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            },
+            {
+              "order": 4,
+              "price": 320,
+              "displayName": "八幡海铃的信物",
+              "item": {
+                "id": "p_char_4186_tmoris",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            },
+            {
+              "order": 5,
+              "price": 360,
+              "displayName": "八幡海铃的信物",
+              "item": {
+                "id": "p_char_4186_tmoris",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            }
+          ]
+        }
+      },
+      "act45side_tag_2": {
+        "shopGroupId": "act45side_tag_2",
+        "sortId": 2,
+        "preGroup": null,
+        "bkgIconId": null,
+        "startTime": 1756958400,
+        "lockDesc": null,
+        "shopGood": {
+          "act45side_13": {
+            "goodId": "act45side_13",
+            "displayName": null,
+            "sortId": 13,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "mod_update_token_2",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 15,
+            "availCount": 10
+          },
+          "act45side_14": {
+            "goodId": "act45side_14",
+            "displayName": null,
+            "sortId": 14,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "mod_update_token_1",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 5,
+            "availCount": 60
+          },
+          "act45side_15": {
+            "goodId": "act45side_15",
+            "displayName": null,
+            "sortId": 15,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30013",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 7,
+            "availCount": 15
+          },
+          "act45side_16": {
+            "goodId": "act45side_16",
+            "displayName": null,
+            "sortId": 16,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30043",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 10,
+            "availCount": 10
+          },
+          "act45side_17": {
+            "goodId": "act45side_17",
+            "displayName": null,
+            "sortId": 17,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "4001",
+              "count": 5000,
+              "type": "GOLD"
+            },
+            "progressGoodId": null,
+            "price": 7,
+            "availCount": 100
+          },
+          "act45side_18": {
+            "goodId": "act45side_18",
+            "displayName": null,
+            "sortId": 18,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "2004",
+              "count": 2,
+              "type": "CARD_EXP"
+            },
+            "progressGoodId": null,
+            "price": 5,
+            "availCount": 25
+          },
+          "act45side_19": {
+            "goodId": "act45side_19",
+            "displayName": null,
+            "sortId": 19,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "2003",
+              "count": 2,
+              "type": "CARD_EXP"
+            },
+            "progressGoodId": null,
+            "price": 3,
+            "availCount": 50
+          },
+          "act45side_20": {
+            "goodId": "act45side_20",
+            "displayName": null,
+            "sortId": 20,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "2002",
+              "count": 2,
+              "type": "CARD_EXP"
+            },
+            "progressGoodId": null,
+            "price": 1,
+            "availCount": 120
+          },
+          "act45side_21": {
+            "goodId": "act45side_21",
+            "displayName": null,
+            "sortId": 21,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "3303",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 4,
+            "availCount": 25
+          },
+          "act45side_22": {
+            "goodId": "act45side_22",
+            "displayName": null,
+            "sortId": 22,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "3302",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 2,
+            "availCount": 50
+          }
+        },
+        "progressGoods": {}
+      },
+      "act45side_tag_3": {
+        "shopGroupId": "act45side_tag_3",
+        "sortId": 3,
+        "preGroup": null,
+        "bkgIconId": null,
+        "startTime": 1756958400,
+        "lockDesc": null,
+        "shopGood": {
+          "act45side_23": {
+            "goodId": "act45side_23",
+            "displayName": null,
+            "sortId": 23,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30022",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 3,
+            "availCount": 25
+          },
+          "act45side_24": {
+            "goodId": "act45side_24",
+            "displayName": null,
+            "sortId": 24,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30042",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 3,
+            "availCount": 25
+          },
+          "act45side_25": {
+            "goodId": "act45side_25",
+            "displayName": null,
+            "sortId": 25,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30062",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 4,
+            "availCount": 25
+          },
+          "act45side_26": {
+            "goodId": "act45side_26",
+            "displayName": null,
+            "sortId": 26,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "3221",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 6,
+            "availCount": 5
+          },
+          "act45side_27": {
+            "goodId": "act45side_27",
+            "displayName": null,
+            "sortId": 27,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "3281",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 6,
+            "availCount": 5
+          },
+          "act45side_28": {
+            "goodId": "act45side_28",
+            "displayName": null,
+            "sortId": 28,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "3401",
+              "count": 10,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 2,
+            "availCount": 200
+          }
+        },
+        "progressGoods": {}
+      },
+      "act45side_tag_4": {
+        "shopGroupId": "act45side_tag_4",
+        "sortId": 4,
+        "preGroup": null,
+        "bkgIconId": null,
+        "startTime": 1756958400,
+        "lockDesc": null,
+        "shopGood": {
+          "act45side_29": {
+            "goodId": "act45side_29",
+            "displayName": null,
+            "sortId": 29,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30083",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 30,
+            "availCount": -1
+          },
+          "act45side_30": {
+            "goodId": "act45side_30",
+            "displayName": null,
+            "sortId": 30,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30073",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 25,
+            "availCount": -1
+          },
+          "act45side_31": {
+            "goodId": "act45side_31",
+            "displayName": null,
+            "sortId": 31,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "4001",
+              "count": 20,
+              "type": "GOLD"
+            },
+            "progressGoodId": null,
+            "price": 1,
+            "availCount": -1
+          }
+        },
+        "progressGoods": {}
+      }
+    }
+  },
   "shop_act3mainss": {
     "shopId": "shop_act3mainss",
     "shopName": "人道援助",
@@ -14121,12 +16952,23 @@
       "count": 1,
       "type": "ACTIVITY_ITEM"
     },
+    "iconColorCodes": "ca8d43",
+    "buttonColorCodes": "ca8d43",
+    "startTime": 1759964400,
+    "endTime": 1761767999,
+    "allPriceDict": [
+      {
+        "startTime": 1759964400,
+        "maxPrice": 3554
+      }
+    ],
     "shopGroup": {
       "act3mainss_tag_1": {
         "shopGroupId": "act3mainss_tag_1",
         "sortId": 1,
         "preGroup": null,
         "bkgIconId": null,
+        "startTime": 1759964400,
         "lockDesc": null,
         "shopGood": {
           "act3mainss_1": {
@@ -14277,6 +17119,7 @@
         "sortId": 2,
         "preGroup": null,
         "bkgIconId": null,
+        "startTime": 1759964400,
         "lockDesc": null,
         "shopGood": {
           "act3mainss_11": {
@@ -14483,6 +17326,7 @@
         "sortId": 3,
         "preGroup": null,
         "bkgIconId": "mainss_exclusive",
+        "startTime": 1759964400,
         "lockDesc": null,
         "shopGood": {
           "act3mainss_25": {
@@ -14544,11 +17388,1174 @@
         },
         "progressGoods": {}
       }
+    }
+  },
+  "shop_act46side": {
+    "shopId": "shop_act46side",
+    "shopName": "观测站后勤处",
+    "type": "SHOP_RARITY_GROUP",
+    "price": {
+      "id": "act46side_token_detector",
+      "count": 1,
+      "type": "ACTIVITY_ITEM"
+    },
+    "iconColorCodes": "a42626",
+    "buttonColorCodes": "a42626",
+    "startTime": 1761951600,
+    "endTime": 1764359999,
+    "allPriceDict": [
+      {
+        "startTime": 1761951600,
+        "maxPrice": 9014
+      }
+    ],
+    "shopGroup": {
+      "act46side_tag_1": {
+        "shopGroupId": "act46side_tag_1",
+        "sortId": 1,
+        "preGroup": null,
+        "bkgIconId": null,
+        "startTime": 1761951600,
+        "lockDesc": null,
+        "shopGood": {
+          "act46side_1": {
+            "goodId": "act46side_1",
+            "displayName": null,
+            "sortId": 1,
+            "goodType": "PROGRESS",
+            "item": null,
+            "progressGoodId": "char_halo2_progress",
+            "price": 0,
+            "availCount": 0
+          },
+          "act46side_2": {
+            "goodId": "act46side_2",
+            "displayName": null,
+            "sortId": 2,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "char_209_ardign@snow#1",
+              "count": 1,
+              "type": "CHAR_SKIN"
+            },
+            "progressGoodId": null,
+            "price": 500,
+            "availCount": 1
+          },
+          "act46side_3": {
+            "goodId": "act46side_3",
+            "displayName": null,
+            "sortId": 3,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "char_235_jesica@nian#2",
+              "count": 1,
+              "type": "CHAR_SKIN"
+            },
+            "progressGoodId": null,
+            "price": 500,
+            "availCount": 1
+          },
+          "act46side_4": {
+            "goodId": "act46side_4",
+            "displayName": null,
+            "sortId": 4,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "7003",
+              "count": 1,
+              "type": "TKT_GACHA"
+            },
+            "progressGoodId": null,
+            "price": 150,
+            "availCount": 3
+          },
+          "act46side_5": {
+            "goodId": "act46side_5",
+            "displayName": null,
+            "sortId": 5,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "mod_unlock_token",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 75,
+            "availCount": 3
+          },
+          "act46side_6": {
+            "goodId": "act46side_6",
+            "displayName": null,
+            "sortId": 6,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30155",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 100,
+            "availCount": 5
+          },
+          "act46side_7": {
+            "goodId": "act46side_7",
+            "displayName": null,
+            "sortId": 7,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30054",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 35,
+            "availCount": 10
+          },
+          "act46side_8": {
+            "goodId": "act46side_8",
+            "displayName": null,
+            "sortId": 8,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "31024",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 35,
+            "availCount": 10
+          },
+          "act46side_9": {
+            "goodId": "act46side_9",
+            "displayName": null,
+            "sortId": 9,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "31044",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 35,
+            "availCount": 10
+          },
+          "act46side_10": {
+            "goodId": "act46side_10",
+            "displayName": null,
+            "sortId": 10,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "31064",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 30,
+            "availCount": 10
+          },
+          "act46side_11": {
+            "goodId": "act46side_11",
+            "displayName": null,
+            "sortId": 11,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_tradeLounge_carpet_01",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 55,
+            "availCount": 1
+          },
+          "act46side_12": {
+            "goodId": "act46side_12",
+            "displayName": null,
+            "sortId": 12,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_tradeLounge_projector_01",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 65,
+            "availCount": 1
+          },
+          "act46side_13": {
+            "goodId": "act46side_13",
+            "displayName": null,
+            "sortId": 13,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_tradeLounge_coffeeTable_01",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 70,
+            "availCount": 1
+          },
+          "act46side_14": {
+            "goodId": "act46side_14",
+            "displayName": null,
+            "sortId": 14,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_tradeLounge_wallpaper_01",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 75,
+            "availCount": 1
+          },
+          "act46side_15": {
+            "goodId": "act46side_15",
+            "displayName": null,
+            "sortId": 15,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_tradeLounge_floor_01",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 75,
+            "availCount": 1
+          }
+        },
+        "progressGoods": {
+          "char_halo2_progress": [
+            {
+              "order": 1,
+              "price": 250,
+              "displayName": "溯光星源的信物",
+              "item": {
+                "id": "p_char_1047_halo2",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            },
+            {
+              "order": 2,
+              "price": 300,
+              "displayName": "溯光星源的信物",
+              "item": {
+                "id": "p_char_1047_halo2",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            },
+            {
+              "order": 3,
+              "price": 350,
+              "displayName": "溯光星源的信物",
+              "item": {
+                "id": "p_char_1047_halo2",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            },
+            {
+              "order": 4,
+              "price": 400,
+              "displayName": "溯光星源的信物",
+              "item": {
+                "id": "p_char_1047_halo2",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            },
+            {
+              "order": 5,
+              "price": 450,
+              "displayName": "溯光星源的信物",
+              "item": {
+                "id": "p_char_1047_halo2",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            }
+          ]
+        }
+      },
+      "act46side_tag_2": {
+        "shopGroupId": "act46side_tag_2",
+        "sortId": 2,
+        "preGroup": null,
+        "bkgIconId": null,
+        "startTime": 1761951600,
+        "lockDesc": null,
+        "shopGood": {
+          "act46side_16": {
+            "goodId": "act46side_16",
+            "displayName": null,
+            "sortId": 16,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "mod_update_token_2",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 15,
+            "availCount": 10
+          },
+          "act46side_17": {
+            "goodId": "act46side_17",
+            "displayName": null,
+            "sortId": 17,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "mod_update_token_1",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 5,
+            "availCount": 60
+          },
+          "act46side_18": {
+            "goodId": "act46side_18",
+            "displayName": null,
+            "sortId": 18,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30043",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 10,
+            "availCount": 15
+          },
+          "act46side_19": {
+            "goodId": "act46side_19",
+            "displayName": null,
+            "sortId": 19,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30053",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 10,
+            "availCount": 15
+          },
+          "act46side_20": {
+            "goodId": "act46side_20",
+            "displayName": null,
+            "sortId": 20,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "31023",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 10,
+            "availCount": 15
+          },
+          "act46side_21": {
+            "goodId": "act46side_21",
+            "displayName": null,
+            "sortId": 21,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "31043",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 12,
+            "availCount": 15
+          },
+          "act46side_22": {
+            "goodId": "act46side_22",
+            "displayName": null,
+            "sortId": 22,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "4001",
+              "count": 5000,
+              "type": "GOLD"
+            },
+            "progressGoodId": null,
+            "price": 7,
+            "availCount": 120
+          },
+          "act46side_23": {
+            "goodId": "act46side_23",
+            "displayName": null,
+            "sortId": 23,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "2004",
+              "count": 2,
+              "type": "CARD_EXP"
+            },
+            "progressGoodId": null,
+            "price": 5,
+            "availCount": 30
+          },
+          "act46side_24": {
+            "goodId": "act46side_24",
+            "displayName": null,
+            "sortId": 24,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "2003",
+              "count": 2,
+              "type": "CARD_EXP"
+            },
+            "progressGoodId": null,
+            "price": 3,
+            "availCount": 50
+          },
+          "act46side_25": {
+            "goodId": "act46side_25",
+            "displayName": null,
+            "sortId": 25,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "2002",
+              "count": 2,
+              "type": "CARD_EXP"
+            },
+            "progressGoodId": null,
+            "price": 1,
+            "availCount": 150
+          },
+          "act46side_26": {
+            "goodId": "act46side_26",
+            "displayName": null,
+            "sortId": 26,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "3303",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 4,
+            "availCount": 25
+          },
+          "act46side_27": {
+            "goodId": "act46side_27",
+            "displayName": null,
+            "sortId": 27,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "3302",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 2,
+            "availCount": 50
+          }
+        },
+        "progressGoods": {}
+      },
+      "act46side_tag_3": {
+        "shopGroupId": "act46side_tag_3",
+        "sortId": 3,
+        "preGroup": null,
+        "bkgIconId": null,
+        "startTime": 1761951600,
+        "lockDesc": null,
+        "shopGood": {
+          "act46side_28": {
+            "goodId": "act46side_28",
+            "displayName": null,
+            "sortId": 28,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30012",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 2,
+            "availCount": 40
+          },
+          "act46side_29": {
+            "goodId": "act46side_29",
+            "displayName": null,
+            "sortId": 29,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30022",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 3,
+            "availCount": 30
+          },
+          "act46side_30": {
+            "goodId": "act46side_30",
+            "displayName": null,
+            "sortId": 30,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30032",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 3,
+            "availCount": 30
+          },
+          "act46side_31": {
+            "goodId": "act46side_31",
+            "displayName": null,
+            "sortId": 31,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30042",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 3,
+            "availCount": 25
+          },
+          "act46side_32": {
+            "goodId": "act46side_32",
+            "displayName": null,
+            "sortId": 32,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30052",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 3,
+            "availCount": 25
+          },
+          "act46side_33": {
+            "goodId": "act46side_33",
+            "displayName": null,
+            "sortId": 33,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30062",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 4,
+            "availCount": 20
+          },
+          "act46side_34": {
+            "goodId": "act46side_34",
+            "displayName": null,
+            "sortId": 34,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "3271",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 6,
+            "availCount": 5
+          },
+          "act46side_35": {
+            "goodId": "act46side_35",
+            "displayName": null,
+            "sortId": 35,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "3401",
+              "count": 10,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 2,
+            "availCount": 200
+          }
+        },
+        "progressGoods": {}
+      },
+      "act46side_tag_4": {
+        "shopGroupId": "act46side_tag_4",
+        "sortId": 4,
+        "preGroup": null,
+        "bkgIconId": null,
+        "startTime": 1761951600,
+        "lockDesc": null,
+        "shopGood": {
+          "act46side_36": {
+            "goodId": "act46side_36",
+            "displayName": null,
+            "sortId": 36,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30093",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 35,
+            "availCount": -1
+          },
+          "act46side_37": {
+            "goodId": "act46side_37",
+            "displayName": null,
+            "sortId": 37,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30083",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 30,
+            "availCount": -1
+          },
+          "act46side_38": {
+            "goodId": "act46side_38",
+            "displayName": null,
+            "sortId": 38,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30073",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 25,
+            "availCount": -1
+          },
+          "act46side_39": {
+            "goodId": "act46side_39",
+            "displayName": null,
+            "sortId": 39,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "4001",
+              "count": 20,
+              "type": "GOLD"
+            },
+            "progressGoodId": null,
+            "price": 1,
+            "availCount": -1
+          }
+        },
+        "progressGoods": {}
+      }
+    }
+  },
+  "shop_act38sre": {
+    "shopId": "shop_act38sre",
+    "shopName": "狂欢夜集市",
+    "type": "SHOP_RARITY_GROUP",
+    "price": {
+      "id": "act38side_token_ticket_rep_1",
+      "count": 1,
+      "type": "ACTIVITY_ITEM"
     },
     "iconColorCodes": "ca8d43",
     "buttonColorCodes": "ca8d43",
-    "startTime": 1759964400,
-    "endTime": 1761767999,
-    "groupExtraData": null
+    "startTime": 1764057600,
+    "endTime": 1765223999,
+    "allPriceDict": [
+      {
+        "startTime": 1764057600,
+        "maxPrice": 3561
+      }
+    ],
+    "shopGroup": {
+      "act38sre_tag_1": {
+        "shopGroupId": "act38sre_tag_1",
+        "sortId": 1,
+        "preGroup": null,
+        "bkgIconId": null,
+        "startTime": 1764057600,
+        "lockDesc": null,
+        "shopGood": {
+          "act38sre_1": {
+            "goodId": "act38sre_1",
+            "displayName": null,
+            "sortId": 1,
+            "goodType": "PROGRESS",
+            "item": null,
+            "progressGoodId": "char_crosly_progress",
+            "price": 0,
+            "availCount": 0
+          },
+          "act38sre_2": {
+            "goodId": "act38sre_2",
+            "displayName": null,
+            "sortId": 2,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "7003",
+              "count": 1,
+              "type": "TKT_GACHA"
+            },
+            "progressGoodId": null,
+            "price": 150,
+            "availCount": 3
+          },
+          "act38sre_3": {
+            "goodId": "act38sre_3",
+            "displayName": null,
+            "sortId": 3,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30135",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 100,
+            "availCount": 1
+          },
+          "act38sre_4": {
+            "goodId": "act38sre_4",
+            "displayName": null,
+            "sortId": 4,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30104",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 35,
+            "availCount": 3
+          },
+          "act38sre_5": {
+            "goodId": "act38sre_5",
+            "displayName": null,
+            "sortId": 5,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "31034",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 40,
+            "availCount": 3
+          },
+          "act38sre_6": {
+            "goodId": "act38sre_6",
+            "displayName": null,
+            "sortId": 6,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "31094",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 35,
+            "availCount": 3
+          },
+          "act38sre_7": {
+            "goodId": "act38sre_7",
+            "displayName": null,
+            "sortId": 7,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_tailorShop_ceilingLight_01",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 20,
+            "availCount": 2
+          },
+          "act38sre_8": {
+            "goodId": "act38sre_8",
+            "displayName": null,
+            "sortId": 8,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_tailorShop_caneHolder_01",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 45,
+            "availCount": 1
+          },
+          "act38sre_9": {
+            "goodId": "act38sre_9",
+            "displayName": null,
+            "sortId": 9,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_tailorShop_window_01",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 80,
+            "availCount": 1
+          },
+          "act38sre_10": {
+            "goodId": "act38sre_10",
+            "displayName": null,
+            "sortId": 10,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_tailorShop_changingRoom_01",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 100,
+            "availCount": 1
+          },
+          "act38sre_11": {
+            "goodId": "act38sre_11",
+            "displayName": null,
+            "sortId": 11,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_tailorShop_sofa_01",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 100,
+            "availCount": 1
+          },
+          "act38sre_12": {
+            "goodId": "act38sre_12",
+            "displayName": null,
+            "sortId": 12,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "furni_tailorShop_collectioncabinet_01",
+              "count": 1,
+              "type": "FURN"
+            },
+            "progressGoodId": null,
+            "price": 160,
+            "availCount": 1
+          }
+        },
+        "progressGoods": {
+          "char_crosly_progress": [
+            {
+              "order": 1,
+              "price": 250,
+              "displayName": "弑君者的信物",
+              "item": {
+                "id": "p_char_1502_crosly",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            },
+            {
+              "order": 2,
+              "price": 300,
+              "displayName": "弑君者的信物",
+              "item": {
+                "id": "p_char_1502_crosly",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            },
+            {
+              "order": 3,
+              "price": 350,
+              "displayName": "弑君者的信物",
+              "item": {
+                "id": "p_char_1502_crosly",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            },
+            {
+              "order": 4,
+              "price": 400,
+              "displayName": "弑君者的信物",
+              "item": {
+                "id": "p_char_1502_crosly",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            },
+            {
+              "order": 5,
+              "price": 450,
+              "displayName": "弑君者的信物",
+              "item": {
+                "id": "p_char_1502_crosly",
+                "count": 1,
+                "type": "MATERIAL"
+              }
+            }
+          ]
+        }
+      },
+      "act38sre_tag_2": {
+        "shopGroupId": "act38sre_tag_2",
+        "sortId": 2,
+        "preGroup": null,
+        "bkgIconId": null,
+        "startTime": 1764057600,
+        "lockDesc": null,
+        "shopGood": {
+          "act38sre_13": {
+            "goodId": "act38sre_13",
+            "displayName": null,
+            "sortId": 13,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30023",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 8,
+            "availCount": 5
+          },
+          "act38sre_14": {
+            "goodId": "act38sre_14",
+            "displayName": null,
+            "sortId": 14,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "31053",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 12,
+            "availCount": 5
+          },
+          "act38sre_15": {
+            "goodId": "act38sre_15",
+            "displayName": null,
+            "sortId": 15,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "4001",
+              "count": 5000,
+              "type": "GOLD"
+            },
+            "progressGoodId": null,
+            "price": 7,
+            "availCount": 20
+          },
+          "act38sre_16": {
+            "goodId": "act38sre_16",
+            "displayName": null,
+            "sortId": 16,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "2004",
+              "count": 2,
+              "type": "CARD_EXP"
+            },
+            "progressGoodId": null,
+            "price": 5,
+            "availCount": 5
+          },
+          "act38sre_17": {
+            "goodId": "act38sre_17",
+            "displayName": null,
+            "sortId": 17,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "2003",
+              "count": 2,
+              "type": "CARD_EXP"
+            },
+            "progressGoodId": null,
+            "price": 3,
+            "availCount": 10
+          },
+          "act38sre_18": {
+            "goodId": "act38sre_18",
+            "displayName": null,
+            "sortId": 18,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "2002",
+              "count": 2,
+              "type": "CARD_EXP"
+            },
+            "progressGoodId": null,
+            "price": 1,
+            "availCount": 20
+          },
+          "act38sre_19": {
+            "goodId": "act38sre_19",
+            "displayName": null,
+            "sortId": 19,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "3303",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 4,
+            "availCount": 10
+          },
+          "act38sre_20": {
+            "goodId": "act38sre_20",
+            "displayName": null,
+            "sortId": 20,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "3302",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 2,
+            "availCount": 20
+          }
+        },
+        "progressGoods": {}
+      },
+      "act38sre_tag_3": {
+        "shopGroupId": "act38sre_tag_3",
+        "sortId": 3,
+        "preGroup": null,
+        "bkgIconId": null,
+        "startTime": 1764057600,
+        "lockDesc": null,
+        "shopGood": {
+          "act38sre_21": {
+            "goodId": "act38sre_21",
+            "displayName": null,
+            "sortId": 21,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30012",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 2,
+            "availCount": 8
+          },
+          "act38sre_22": {
+            "goodId": "act38sre_22",
+            "displayName": null,
+            "sortId": 22,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30042",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 3,
+            "availCount": 8
+          },
+          "act38sre_23": {
+            "goodId": "act38sre_23",
+            "displayName": null,
+            "sortId": 23,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30062",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 4,
+            "availCount": 8
+          },
+          "act38sre_24": {
+            "goodId": "act38sre_24",
+            "displayName": null,
+            "sortId": 24,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "3281",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 6,
+            "availCount": 5
+          }
+        },
+        "progressGoods": {}
+      },
+      "act38sre_tag_4": {
+        "shopGroupId": "act38sre_tag_4",
+        "sortId": 4,
+        "preGroup": null,
+        "bkgIconId": null,
+        "startTime": 1764057600,
+        "lockDesc": null,
+        "shopGood": {
+          "act38sre_25": {
+            "goodId": "act38sre_25",
+            "displayName": null,
+            "sortId": 25,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30093",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 35,
+            "availCount": -1
+          },
+          "act38sre_26": {
+            "goodId": "act38sre_26",
+            "displayName": null,
+            "sortId": 26,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30083",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 30,
+            "availCount": -1
+          },
+          "act38sre_27": {
+            "goodId": "act38sre_27",
+            "displayName": null,
+            "sortId": 27,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "30073",
+              "count": 1,
+              "type": "MATERIAL"
+            },
+            "progressGoodId": null,
+            "price": 25,
+            "availCount": -1
+          },
+          "act38sre_28": {
+            "goodId": "act38sre_28",
+            "displayName": null,
+            "sortId": 28,
+            "goodType": "NORMAL",
+            "item": {
+              "id": "4001",
+              "count": 20,
+              "type": "GOLD"
+            },
+            "progressGoodId": null,
+            "price": 1,
+            "availCount": -1
+          }
+        },
+        "progressGoods": {}
+      }
+    }
   }
 }
