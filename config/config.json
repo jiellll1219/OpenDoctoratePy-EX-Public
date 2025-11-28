@@ -1,128 +1,128 @@
 {
-    "assets": {
-        "autoUpdate": false,
-        "downloadLocally": false,
-        "enableMods": false,
-        "skipModCacheValidation": false
-    },
-    "charConfig": {
-        "customUnitInfo": {},
-        "duplicateUnits": [],
-        "evolvePhase": -1,
-        "favorPoint": 25570,
-        "level": -1,
-        "mainSkillLvl": 7,
-        "potentialRank": 5,
-        "skillsSpecializeLevel": 3
-    },
-    "crisisConfig": {
-        "selectedCrisis": "cc12"
-    },
-    "crisisV2Config": {
-        "selectedCrisis": "cc4"
-    },
-    "gacha": {
-        "2rarity": 0,
-        "3rarity": 0,
-        "4rarity": 0,
-        "5rarity": 1.0
-    },
-    "networkConfig": {
-        "cn": {
-            "content": {
-                "configVer": "5",
-                "configs": {
-                    "V065": {
-                        "network": {
-                            "an": "{server}/config/prod/announce_meta/{0}/announcement.meta.json",
-                            "as": "{server}",
-                            "gs": "{server}",
-                            "hu": "{server}/assetbundle/official",
-                            "hv": "{server}/config/prod/official/{0}/version",
-                            "of": "https://ak.hypergryph.com/index.html",
-                            "pkgAd": "https://ak.hypergryph.com/download",
-                            "pkgIOS": "https://apps.apple.com/cn/app/id1454663939",
-                            "prean": "{server}",
-                            "rc": "{server}/config/prod/official/remote_config",
-                            "secure": false,
-                            "sl": "https://ak.hypergryph.com/protocol/service",
-                            "u8": "{server}/u8"
-                        },
-                        "override": true
-                    }
-                },
-                "funcVer": "V065"
+  "assets": {
+    "autoUpdate": false,
+    "downloadLocally": false,
+    "enableMods": false,
+    "skipModCacheValidation": false
+  },
+  "charConfig": {
+    "customUnitInfo": {},
+    "duplicateUnits": [],
+    "evolvePhase": -1,
+    "favorPoint": 25570,
+    "level": -1,
+    "mainSkillLvl": 7,
+    "potentialRank": 5,
+    "skillsSpecializeLevel": 3
+  },
+  "crisisConfig": {
+    "selectedCrisis": "cc12"
+  },
+  "crisisV2Config": {
+    "selectedCrisis": "cc4"
+  },
+  "gacha": {
+    "2rarity": 0,
+    "3rarity": 0,
+    "4rarity": 0,
+    "5rarity": 1.0
+  },
+  "networkConfig": {
+    "cn": {
+      "content": {
+        "configVer": "5",
+        "configs": {
+          "V067": {
+            "network": {
+              "an": "{server}/config/prod/announce_meta/{0}/announcement.meta.json",
+              "as": "{server}",
+              "gs": "{server}",
+              "hu": "{server}/assetbundle/official",
+              "hv": "{server}/config/prod/official/{0}/version",
+              "of": "https://ak.hypergryph.com/index.html",
+              "pkgAd": "https://ak.hypergryph.com/download",
+              "pkgIOS": "https://apps.apple.com/cn/app/id1454663939",
+              "prean": "{server}",
+              "rc": "{server}/config/prod/official/remote_config",
+              "secure": false,
+              "sl": "https://ak.hypergryph.com/protocol/service",
+              "u8": "{server}/u8"
             },
-            "sign": "Yu9qJf+JL6E8rwO/RiQu3Bq4en4tr4+wpfHfg9cPc1jtWlA2FDaf+Hh8H1wibz/K3yaHeN0r6NeWp5/wpX01OXssqCw0pAA34ypPcBq03GdsGbHPjOOdD27QTS7bE5ymXhfLJkHyXfB9ejK65xyHwFw6ceRFUOx+dEfJUdT8QhA="
+            "override": true
+          }
         },
-        "global": {
-            "content": {
-                "configVer": "1",
-                "configs": {
-                    "V044": {
-                        "network": {
-                            "an": "{server}/config/prod/announce_meta/{0}/announcement.meta.json",
-                            "as": "{server}",
-                            "gs": "{server}",
-                            "hu": "{server}/assetbundle/official",
-                            "hv": "{server}/config/prod/official/{0}/version",
-                            "of": "https://www.arknights.global",
-                            "pkgAd": null,
-                            "pkgIOS": null,
-                            "prean": "{server}/config/prod/announce_meta/{0}/preannouncement.meta.json",
-                            "rc": "{server}/config/prod/official/remote_config",
-                            "secure": false,
-                            "sl": "https://www.arknights.global/terms_of_service",
-                            "u8": "{server}/u8"
-                        },
-                        "override": true
-                    }
-                },
-                "funcVer": "V044"
+        "funcVer": "V067"
+      },
+      "sign": "Yu9qJf+JL6E8rwO/RiQu3Bq4en4tr4+wpfHfg9cPc1jtWlA2FDaf+Hh8H1wibz/K3yaHeN0r6NeWp5/wpX01OXssqCw0pAA34ypPcBq03GdsGbHPjOOdD27QTS7bE5ymXhfLJkHyXfB9ejK65xyHwFw6ceRFUOx+dEfJUdT8QhA="
+    },
+    "global": {
+      "content": {
+        "configVer": "1",
+        "configs": {
+          "V044": {
+            "network": {
+              "an": "{server}/config/prod/announce_meta/{0}/announcement.meta.json",
+              "as": "{server}",
+              "gs": "{server}",
+              "hu": "{server}/assetbundle/official",
+              "hv": "{server}/config/prod/official/{0}/version",
+              "of": "https://www.arknights.global",
+              "pkgAd": null,
+              "pkgIOS": null,
+              "prean": "{server}/config/prod/announce_meta/{0}/preannouncement.meta.json",
+              "rc": "{server}/config/prod/official/remote_config",
+              "secure": false,
+              "sl": "https://www.arknights.global/terms_of_service",
+              "u8": "{server}/u8"
             },
-            "sign": "sign"
-        }
-    },
-    "remote": {
-        "HGDownload_1": 10000,
-        "HGDownload_2": 10000,
-        "enableGameBI": true,
-        "enableMarquee": false,
-        "enableNavtieLicense": false,
-        "fapv2": 1
-    },
-    "rlv2Config": {
-        "allChars": true
-    },
-    "server": {
-        "host": "0.0.0.0",
-        "mode": "cn",
-        "port": 8443,
-        "virtualtime": -114514,
-        "useMemoryCache": false
-    },
-    "towerConfig": {
-        "season": "tower_season_5"
-    },
-    "userConfig": {
-        "activityMinStartTs": 1756353600,
-        "activityMaxStartTs": 1758743999,
-        "fakeTime": -1,
-        "background": "bg_sui_1",
-        "secretary": "char_4172_xingzh",
-        "secretarySkinId": "char_4172_xingzh#1",
-        "theme": "tm_sui_1"
-    },
-    "version": {
-        "android": {
-            "clientVersion": "2.6.71",
-            "resVersion": "25-10-31-10-13-38_6636d3"
-        }
-    },
-    "versionGlobal": {
-        "android": {
-            "clientVersion": "22.1.21",
-            "resVersion": "24-04-12-10-37-11-be18f0"
-        }
+            "override": true
+          }
+        },
+        "funcVer": "V044"
+      },
+      "sign": "sign"
     }
+  },
+  "remote": {
+    "HGDownload_1": 10000,
+    "HGDownload_2": 10000,
+    "enableGameBI": true,
+    "enableMarquee": false,
+    "enableNavtieLicense": false,
+    "fapv2": 1
+  },
+  "rlv2Config": {
+    "allChars": true
+  },
+  "server": {
+    "host": "0.0.0.0",
+    "mode": "cn",
+    "port": 8443,
+    "virtualtime": -114514,
+    "useMemoryCache": false
+  },
+  "towerConfig": {
+    "season": "tower_season_5"
+  },
+  "userConfig": {
+    "activityMinStartTs": 1756353600,
+    "activityMaxStartTs": 1758743999,
+    "fakeTime": -1,
+    "background": "bg_sui_1",
+    "secretary": "char_4172_xingzh",
+    "secretarySkinId": "char_4172_xingzh#1",
+    "theme": "tm_sui_1"
+  },
+  "version": {
+    "android": {
+      "clientVersion": "2.6.71",
+      "resVersion": "25-11-21-15-21-44_ee1197"
+    }
+  },
+  "versionGlobal": {
+    "android": {
+      "clientVersion": "22.1.21",
+      "resVersion": "24-04-12-10-37-11-be18f0"
+    }
+  }
 }
