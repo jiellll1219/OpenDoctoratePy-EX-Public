@@ -1,0 +1,92 @@
+name: Auto Update Config
+permissions:
+  contents: write
+
+on:
+  schedule:
+    - cron: "0 22 * * *"    # UTC 22:00，北京时间 06:00
+    - cron: "0 8 * * *"     # UTC 08:00，北京时间 16:00
+    - cron: "30 11 * * *"   # UTC 11:30，北京时间 19:30
+  workflow_dispatch:
+
+jobs:
+  auto-update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Fetch latest versions
+        id: fetch
+        run: |
+          # 获取远程版本信息
+          curl -s "https://ak-conf.hypergryph.com/config/prod/official/Android/version" -o android_version.json
+          curl -s "https://ak-conf.hypergryph.com/config/prod/official/network_config" -o network_config.json
+
+          # 提取字段
+          resVersion=$(jq -r '.resVersion' android_version.json)
+          clientVersion=$(jq -r '.clientVersion' android_version.json)
+          funcVer=$(jq -r '.content' network_config.json | jq -r '.funcVer')
+
+          echo "resVersion=$resVersion" >> $GITHUB_ENV
+          echo "clientVersion=$clientVersion" >> $GITHUB_ENV
+          echo "funcVer=$funcVer" >> $GITHUB_ENV
+
+      - name: Update config.json
+        id: update
+        run: |
+          file="config/config.json"
+
+          # 原始数据
+          old_res=$(jq -r '.version.android.resVersion' $file)
+          old_client=$(jq -r '.version.android.clientVersion' $file)
+          old_func=$(jq -r '.networkConfig.cn.content.funcVer' $file)
+
+          changed=false
+
+          # 更新 resVersion 和 clientVersion
+          if [ "$old_res" != "$resVersion" ]; then
+            jq --arg v "$resVersion" '.version.android.resVersion = $v' $file > tmp && mv tmp $file
+            changed=true
+          fi
+
+          if [ "$old_client" != "$clientVersion" ]; then
+            jq --arg v "$clientVersion" '.version.android.clientVersion = $v' $file > tmp && mv tmp $file
+            changed=true
+          fi
+
+          # 更新 funcVer 并迁移 configs
+          if [ "$old_func" != "$funcVer" ]; then
+            jq --arg new "$funcVer" --arg old "$old_func" '
+              .networkConfig.cn.content.funcVer = $new |
+              .networkConfig.cn.content.configs[$new] = .networkConfig.cn.content.configs[$old] |
+              del(.networkConfig.cn.content.configs[$old])
+            ' $file > tmp && mv tmp $file
+            changed=true
+          fi
+
+          echo "changed=$changed" >> $GITHUB_ENV
+
+      - name: Commit and push changes
+        if: env.changed == 'true'
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          git checkout main
+          git pull --rebase --autostash origin main
+
+          git add config/config.json
+          git commit -m "自动更新 config.json (resVer=${{ env.resVersion }}, clientVer=${{ env.clientVersion }}, funcVer=${{ env.funcVer }})" || echo "No changes"
+          git push origin main
+
+      - name: No changes
+        if: env.changed != 'true'
+        run: echo "No updates detected."

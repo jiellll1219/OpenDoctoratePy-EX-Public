@@ -16,7 +16,7 @@
 
 此项目无任何交流群，且我（仓库所有者）不支持任何倒卖行为，这并不利于项目的发展，如果我（仓库所有者）发现并认为倒卖行为已经泛滥到不可阻止的情况，将会归档此仓库
 
-如果您希望为此仓库贡献代码，但苦于没有数据，可以在 [此处](https://tptpmmpc.ap-southeast-1.clawcloudrun.com/) 下载il2cpp文件，我会不定时上传每个版本的il2cpp文件
+如果您希望为此仓库贡献代码，但苦于没有数据，可以在 [此处](https://dhjuisgf.ap-northeast-1.clawcloudrun.com/) 下载il2cpp文件，我会不定时上传每个版本的il2cpp文件
 
 ## 拓展进度
 

@@ -18,7 +18,7 @@ If you need to contact me, please open an issue or send me an email: jiege0019@g
 
 There is no discussion group for this project, and I (the repository owner) do not support any reselling behavior. Such actions are detrimental to the project’s development. If I (the repository owner) discover that reselling has become widespread and unstoppable, this repository will be archived.
 
-If you wish to contribute code but lack data, you can download il2cpp files at [this link](https://tptpmmpc.ap-southeast-1.clawcloudrun.com/). I will periodically upload il2cpp files for each version.
+If you wish to contribute code but lack data, you can download il2cpp files at [this link](https://dhjuisgf.ap-northeast-1.clawcloudrun.com/). I will periodically upload il2cpp files for each version.
 
 ## Expansion Progress
 
