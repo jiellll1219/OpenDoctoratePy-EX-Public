@@ -4,7 +4,7 @@ permissions:
 
 on:
   schedule:
-    - cron: "0 22 * * *"    # UTC 22:00，北京时间 06:00
+    - cron: "30 22 * * *"    # UTC 22:00，北京时间 06:30
     - cron: "0 8 * * *"     # UTC 08:00，北京时间 16:00
     - cron: "30 11 * * *"   # UTC 11:30，北京时间 19:30
   workflow_dispatch:

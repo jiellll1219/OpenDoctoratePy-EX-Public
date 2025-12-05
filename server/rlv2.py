@@ -1,8 +1,9 @@
 from flask import request
 from copy import deepcopy
 from virtualtime import time
+from time import time as real_time
+import data.rlv2_data
 import random
-import json
 
 from constants import (
     RLV2_JSON_PATH,
@@ -13,7 +14,7 @@ from constants import (
     RLV2_SETTINGS_PATH
 )
 
-from utils import read_json, write_json, decrypt_battle_data, get_memory
+from utils import read_json, write_json, decrypt_battle_data
 
 
 def rlv2GiveUpGame():
@@ -37,69 +38,6 @@ def rlv2GiveUpGame():
             "deleted": {},
         },
     }
-
-
-def getChars(use_user_defaults=False):
-    user_data = read_json(USER_JSON_PATH)
-    chars = [
-        user_data["user"]["troop"]["chars"][i]
-        for i in user_data["user"]["troop"]["chars"]
-    ]
-    if use_user_defaults:
-        rlv2_user_settings = read_json(RLV2_USER_SETTINGS_PATH)
-        initialChars = set(rlv2_user_settings["initialChars"])
-        chars_tmp = []
-        for char in chars:
-            if char["charId"] in initialChars:
-                chars_tmp.append(char)
-        chars = chars_tmp
-    for i in range(len(chars)):
-        char = chars[i]
-        if char["evolvePhase"] == 2:
-            char_alt = deepcopy(char)
-            char_alt["evolvePhase"] = 1
-            char_alt["level"] -= 10
-            if len(char_alt["skills"]) == 3:
-                char_alt["defaultSkillIndex"] = 1
-                char_alt["skills"][-1]["unlock"] = 0
-            for skill in char_alt["skills"]:
-                skill["specializeLevel"] = 0
-            char_alt["currentEquip"] = None
-            chars.append(char_alt)
-            if char["charId"] == "char_002_amiya":
-                tmpls = list(char_alt["tmpl"].keys())
-                for j in tmpls:
-                    if len(char_alt["tmpl"][j]["skills"]) == 3:
-                        char_alt["tmpl"][j]["defaultSkillIndex"] = 1
-                        char_alt["tmpl"][j]["skills"][-1]["unlock"] = 0
-                    for skill in char_alt["tmpl"][j]["skills"]:
-                        skill["specializeLevel"] = 0
-                    char_alt["tmpl"][j]["currentEquip"] = None
-                char["currentTmpl"] = tmpls[0]
-                char_alt["currentTmpl"] = tmpls[0]
-                for j in range(1, len(tmpls)):
-                    for k in [char, char_alt]:
-                        char_alt_alt = deepcopy(k)
-                        char_alt_alt["currentTmpl"] = tmpls[j]
-                        chars.append(char_alt_alt)
-    for i, char in enumerate(chars):
-        char.update(
-            {
-                "instId": str(i),
-                "type": "NORMAL",
-                "upgradeLimited": False,
-                "upgradePhase": 1,
-                "isUpgrade": False,
-                "isCure": False,
-                "population": 0,
-                "charBuff": [],
-                "troopInstId": "0",
-            }
-        )
-        if char["evolvePhase"] < 2:
-            char["upgradeLimited"] = True
-            char["upgradePhase"] = 0
-    return chars
 
 
 def rlv2CreateGame():
@@ -304,8 +242,138 @@ def rlv2CreateGame():
             "equivalentGrade": mode_grade,
         },
         "buff": {"tmpHP": 0, "capsule": None, "squadBuff": []},
-        "module": {},
+        "module": {
+            "san": None,
+            "dice": None,
+            "totem": None,
+            "vision": None,
+            "chaos": None,
+            "fragment": None,
+            "disaster": None,
+            "nodeUpgrade": None,
+            "copper": None,
+            "wrath": None,
+            "sky": None
+        }
     }
+
+    match theme:
+        case "rogue_1":
+            pass
+        case "rogue_2":
+            rlv2["module"]["san"] = {"sanity": 100}
+            rlv2["module"]["dice"] = {"id": "", "count": 1}
+        case "rogue_3":
+            rlv2["module"]["totem"] = {"totemPiece": [], "predictTotemId": ""}
+            rlv2["module"]["vision"] = {"value": 0, "isMax": False}
+            rlv2["module"]["chaos"] = {
+                "value": 0,
+                "level": 0,
+                "curMaxValue": 4,
+                "chaosList": [],
+                "predict": "",
+                "deltaChaos": {
+                    "dValue": 0,
+                    "preLevel": 0,
+                    "afterLevel": 0,
+                    "dChaos": []
+                },
+                "lastBattleGain": 0
+            }
+        case "rogue_4":
+            rlv2["module"]["fragment"] = {
+                "totalWeight": 0,
+                "limitWeight": 3,
+                "overWeight": 4,
+                "fragments": {},
+                "troopWeights": {},
+                "troopCarry": [],
+                "sellCount": 0,
+                "currInspiration": None
+            }
+            rlv2["module"]["disaster"] = {
+                "curDisasterId": None,
+                "disperseStep": 0
+            }
+            rlv2["module"]["nodeUpgrade"] = {
+                "nodeTypeInfoMap": {
+                    "REST": {
+                        "tempUpgrade": "temp_update_3",
+                        "upgradeList": []
+                    },
+                    "BATTLE_SHOP": {
+                        "tempUpgrade": "temp_update_4",
+                        "upgradeList": []
+                    },
+                    "ALCHEMY": {
+                        "tempUpgrade": "temp_update_8",
+                        "upgradeList": []
+                    }
+                }
+            }
+        case "rogue_5":
+            rlv2["module"]["copper"] = {
+                "bag": {
+                    "c_0": {
+                    "id": "rogue_5_copper_B_06_a",
+                    "isDrawn": False,
+                    "layer": -1,
+                    "countDown": -1,
+                    "ts": time()
+                    },
+                    "c_1": {
+                    "id": "rogue_5_copper_B_07_a",
+                    "isDrawn": False,
+                    "layer": -1,
+                    "countDown": -1,
+                    "ts": time()
+                    },
+                    "c_2": {
+                    "id": "rogue_5_copper_B_08_a",
+                    "isDrawn": False,
+                    "layer": -1,
+                    "countDown": -1,
+                    "ts": time()
+                    },
+                    "c_3": {
+                    "id": "rogue_5_copper_B_09_a",
+                    "isDrawn": True,
+                    "layer": -1,
+                    "countDown": -1,
+                    "ts": time()
+                    },
+                    "c_4": {
+                    "id": "rogue_5_copper_B_10_a",
+                    "isDrawn": True,
+                    "layer": -1,
+                    "countDown": -1,
+                    "ts": time()
+                    },
+                    "c_5": {
+                    "id": "rogue_5_copper_B_01_a",
+                    "isDrawn": True,
+                    "layer": -1,
+                    "countDown": -1,
+                    "ts": time()
+                    },
+                    "c_6": {
+                    "id": "rogue_5_copper_B_09_a",
+                    "isDrawn": False,
+                    "layer": -1,
+                    "countDown": -1,
+                    "ts": time()
+                    }
+                },
+            "redrawCost": 0
+            }
+            rlv2["module"]["wrath"] = {
+                "wraths": [],
+                "newWrath": -1
+            }
+            rlv2["module"]["sky"] = {"zones": {}}
+        case _:
+            pass
+
     write_json(rlv2, RLV2_JSON_PATH)
 
     config = read_json(CONFIG_PATH)
@@ -323,22 +391,11 @@ def rlv2CreateGame():
                 ticket = "rogue_5_recruit_ticket_all"
             case _:
                 ticket = ""
-        chars = getChars(use_user_defaults=True)
+        chars = _rlv2.getChars(use_user_defaults=True)
         for i, char in enumerate(chars):
             ticket_id = f"t_{i}"
             char_id = str(i + 1)
             char["instId"] = char_id
-            rlv2["inventory"]["recruit"][ticket_id] = {
-                "index": f"t_{i}",
-                "id": ticket,
-                "state": 2,
-                "list": [],
-                "result": char,
-                "ts": time() - 300,
-                "from": "initial",
-                "mustExtra": 0,
-                "needAssist": True,
-            }
             rlv2["troop"]["chars"][char_id] = char
 
     data = {
@@ -403,48 +460,6 @@ def rlv2SelectChoice():
     return data
 
 
-def addTicket(rlv2, ticket_id):
-    theme = rlv2["game"]["theme"]
-    match theme:
-        case "rogue_1":
-            ticket = "rogue_1_recruit_ticket_all"
-        case "rogue_2":
-            ticket = "rogue_2_recruit_ticket_all"
-        case "rogue_3":
-            ticket = "rogue_3_recruit_ticket_all"
-        case "rogue_4":
-            ticket = "rogue_4_recruit_ticket_all"
-        case "rogue_5":
-            ticket = "rogue_5_recruit_ticket_all"
-        case _:
-            ticket = ""
-    rlv2["inventory"]["recruit"][ticket_id] = {
-        "index": ticket_id,
-        "id": ticket,
-        "state": 0,
-        "list": [],
-        "result": None,
-        "ts": time(),
-        "from": "initial",
-        "mustExtra": 0,
-        "needAssist": True,
-    }
-
-
-def getNextTicketIndex(rlv2):
-    d = set()
-    for e in rlv2["inventory"]["recruit"]:
-        d.add(int(e[2:]))
-    config = read_json(CONFIG_PATH)
-    if not config["rlv2Config"]["allChars"]:
-        i = 0
-    else:
-        i = 10000 - 1
-    while i in d:
-        i += 1
-    return f"t_{i}"
-
-
 def rlv2ChooseInitialRecruitSet():
     rlv2 = read_json(RLV2_JSON_PATH)
     rlv2["player"]["pending"].pop(0)
@@ -452,8 +467,8 @@ def rlv2ChooseInitialRecruitSet():
     config = read_json(CONFIG_PATH)
     if not config["rlv2Config"]["allChars"]:
         for i in range(3):
-            ticket_id = getNextTicketIndex(rlv2)
-            addTicket(rlv2, ticket_id)
+            ticket_id = _rlv2.getNextTicketIndex(rlv2)
+            _rlv2.addTicket(rlv2, ticket_id)
             rlv2["player"]["pending"][0]["content"]["initRecruit"]["tickets"].append(
                 ticket_id
             )
@@ -474,37 +489,13 @@ def rlv2ChooseInitialRecruitSet():
     return data
 
 
-def getNextPendingIndex(rlv2):
-    d = set()
-    for e in rlv2["player"]["pending"]:
-        d.add(int(e["index"][2:]))
-    i = 0
-    while i in d:
-        i += 1
-    return f"e_{i}"
-
-
-def activateTicket(rlv2, ticket_id):
-    pending_index = getNextPendingIndex(rlv2)
-    rlv2["player"]["pending"].insert(
-        0,
-        {
-            "index": pending_index,
-            "type": "RECRUIT",
-            "content": {"recruit": {"ticket": ticket_id}},
-        },
-    )
-    chars = getChars()
-    rlv2["inventory"]["recruit"][ticket_id]["state"] = 1
-    rlv2["inventory"]["recruit"][ticket_id]["list"] = chars
-
 
 def rlv2ActiveRecruitTicket():
     request_data = request.get_json()
     ticket_id = request_data["id"]
 
     rlv2 = read_json(RLV2_JSON_PATH)
-    activateTicket(rlv2, ticket_id)
+    _rlv2.activateTicket(rlv2, ticket_id)
     write_json(rlv2, RLV2_JSON_PATH)
 
     data = {
@@ -588,84 +579,6 @@ def rlv2CloseRecruitTicket():
     return data
 
 
-def getMap(theme):
-    with open (RL_TABLE_PATH) as a:
-        rlv2_table = json.load(a)
-    stages = [i for i in rlv2_table["details"][theme]["stages"]]
-    match theme:
-        case "rogue_1":
-            shop = 8
-        case "rogue_2":
-            shop = 4096
-        case "rogue_3":
-            shop = 4096
-        case "rogue_4":
-            shop = 4096
-        case "rogue_5":
-            shop = 4096
-        case _:
-            shop = 0
-    map = {}
-    zone = 1
-    j = 0
-    while j < len(stages):
-        zone_map = {"id": f"zone_{zone}", "index": zone, "nodes": {}, "variation": []}
-        nodes_list = [
-            {
-                "index": "0",
-                "pos": {"x": 0, "y": 0},
-                "next": [{"x": 1, "y": 0}],
-                "type": shop,
-            },
-            {"index": "100", "pos": {"x": 1, "y": 0}, "next": [], "type": shop},
-        ]
-        x_max = 9
-        y_max = 3
-        x = 1
-        y = 1
-        while j < len(stages):
-            stage = stages[j]
-            if y > y_max:
-                if x + 1 == x_max:
-                    break
-                x += 1
-                y = 0
-            node_type = 1
-            if rlv2_table["details"][theme]["stages"][stage]["isElite"]:
-                node_type = 2
-            elif rlv2_table["details"][theme]["stages"][stage]["isBoss"]:
-                node_type = 4
-            nodes_list.append(
-                {
-                    "index": f"{x}0{y}",
-                    "pos": {"x": x, "y": y},
-                    "next": [],
-                    "type": node_type,
-                    "stage": stage,
-                }
-            )
-            nodes_list[0]["next"].append({"x": x, "y": y})
-            y += 1
-            j += 1
-        x += 1
-        nodes_list[0]["next"].append({"x": x, "y": 0})
-        nodes_list.append(
-            {
-                "index": f"{x}00",
-                "pos": {"x": x, "y": 0},
-                "next": [],
-                "type": shop,
-                "zone_end": True,
-            }
-        )
-
-        for node in nodes_list:
-            zone_map["nodes"][node["index"]] = node
-        map[str(zone)] = zone_map
-        zone += 1
-    return map
-
-
 def rlv2FinishEvent():
     rlv2 = read_json(RLV2_JSON_PATH)
     rlv2["player"]["state"] = "WAIT_MOVE"
@@ -675,7 +588,7 @@ def rlv2FinishEvent():
     write_json(rlv2, RLV2_JSON_PATH)
 
     # too large, do not send it every time
-    rlv2["map"]["zones"] = getMap(theme)
+    rlv2["map"]["zones"] = _rlv2.getMap(theme)
 
     data = {
         "playerDataDelta": {
@@ -691,896 +604,6 @@ def rlv2FinishEvent():
     return data
 
 
-def getZone(stage_id):
-    rlv2_settings = read_json(RLV2_SETTINGS_PATH)
-    if stage_id in rlv2_settings["stageZone"]:
-        return rlv2_settings["stageZone"][stage_id]
-    if stage_id.find("_n_") != -1 or stage_id.find("_e_") != -1:
-        try:
-            return int(stage_id.split("_")[2])
-        except Exception:
-            pass
-    return -1
-
-
-def getBuffs(rlv2, stage_id):
-    rlv2_table = get_memory("roguelike_topic_table")
-    theme = rlv2["game"]["theme"]
-    buffs = []
-
-    if rlv2["inventory"]["trap"] is not None:
-        item_id = rlv2["inventory"]["trap"]["id"]
-        if item_id in rlv2_table["details"][theme]["relics"]:
-            buffs += rlv2_table["details"][theme]["relics"][item_id]["buffs"]
-    for i in rlv2["inventory"]["exploreTool"]:
-        item_id = rlv2["inventory"]["exploreTool"][i]["id"]
-        if item_id in rlv2_table["details"][theme]["relics"]:
-            buffs += rlv2_table["details"][theme]["relics"][item_id]["buffs"]
-
-    for i in rlv2["buff"]["squadBuff"]:
-        if i in rlv2_table["details"][theme]["squadBuffData"]:
-            buffs += rlv2_table["details"][theme]["squadBuffData"][i]["buffs"]
-
-    mode_grade = rlv2["game"]["eGrade"]
-    match theme:
-        case "rogue_1":
-            theme_buffs = []
-        case "rogue_2":
-            theme_buffs = [
-                # 0
-                ([], []),
-                # 1
-                (
-                    [
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "rogue_2_ep_damage_scale"},
-                                {"key": "ep_damage_scale", "value": 1.15},
-                            ],
-                        },
-                    ],
-                    [],
-                ),
-                # 2
-                ([], []),
-                # 3
-                (
-                    [
-                        {
-                            "key": "enemy_attribute_add",
-                            "blackboard": [{"key": "magic_resistance", "value": 10}],
-                        },
-                    ],
-                    [],
-                ),
-                # 4
-                ([], []),
-                # 5
-                (
-                    [
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_atk_down"},
-                                {"key": "atk", "value": 1.15},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "BOSS",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_def_down"},
-                                {"key": "def", "value": 1.15},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "BOSS",
-                                },
-                            ],
-                        },
-                    ],
-                    [],
-                ),
-                # 6
-                ([], []),
-                # 7
-                (
-                    [
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_move_speed_down"},
-                                {"key": "move_speed", "value": 1.15},
-                            ],
-                        },
-                    ],
-                    [],
-                ),
-                # 8
-                (
-                    [
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "rogue_2_ep_damage_scale"},
-                                {"key": "ep_damage_scale", "value": 1.3},
-                            ],
-                        },
-                    ],
-                    [1],
-                ),
-                # 9
-                (
-                    [
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_attack_speed_down"},
-                                {"key": "attack_speed", "value": 15},
-                            ],
-                        },
-                    ],
-                    [],
-                ),
-                # 10
-                ([], []),
-                # 11
-                (
-                    [
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_max_hp_down"},
-                                {"key": "max_hp", "value": 1.2},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "ELITE|BOSS",
-                                },
-                            ],
-                        },
-                    ],
-                    [],
-                ),
-                # 12
-                (
-                    [
-                        {
-                            "key": "enemy_attribute_add",
-                            "blackboard": [{"key": "magic_resistance", "value": 20}],
-                        },
-                    ],
-                    [3],
-                ),
-                # 13
-                (
-                    [
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "rogue_2_ep_damage_scale"},
-                                {"key": "ep_damage_scale", "value": 1.45},
-                            ],
-                        },
-                    ],
-                    [8],
-                ),
-                # 14
-                (
-                    [
-                        {
-                            "key": "level_char_limit_add",
-                            "blackboard": [{"key": "value", "value": -1}],
-                        },
-                    ],
-                    [],
-                ),
-                # 15
-                (
-                    [
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_atk_down"},
-                                {"key": "atk", "value": 1.2},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "ELITE|BOSS",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_def_down"},
-                                {"key": "def", "value": 1.2},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "ELITE|BOSS",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_max_hp_down"},
-                                {"key": "max_hp", "value": 1.2},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "ELITE|BOSS",
-                                },
-                            ],
-                        },
-                    ],
-                    [],
-                ),
-            ]
-        case "rogue_3":
-            theme_buffs = [
-                # 0
-                ([], []),
-                # 1
-                ([], []),
-                # 2
-                ([], []),
-                # 3
-                ([], []),
-                # 4
-                (
-                    [
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_atk_down"},
-                                {"key": "atk", "value": 1.1},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "ELITE",
-                                },
-                            ],
-                        },
-                    ],
-                    [],
-                ),
-                # 5
-                (
-                    [
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_atk_down"},
-                                {"key": "atk", "value": 1.05},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "NORMAL",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_max_hp_down"},
-                                {"key": "max_hp", "value": 1.05},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "NORMAL",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_atk_down"},
-                                {"key": "atk", "value": 1.15},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "ELITE",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_max_hp_down"},
-                                {"key": "max_hp", "value": 1.05},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "ELITE",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_atk_down"},
-                                {"key": "atk", "value": 1.05},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "BOSS",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_max_hp_down"},
-                                {"key": "max_hp", "value": 1.05},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "BOSS",
-                                },
-                            ],
-                        },
-                    ],
-                    [4],
-                ),
-                # 6
-                ([], []),
-                # 7
-                (
-                    [
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_def_down"},
-                                {"key": "def", "value": 1.1},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "NORMAL",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_def_down"},
-                                {"key": "def", "value": 1.1},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "ELITE",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_def_down"},
-                                {"key": "def", "value": 1.1},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "BOSS",
-                                },
-                            ],
-                        },
-                    ],
-                    [],
-                ),
-                # 8
-                (
-                    [
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {
-                                    "key": "key",
-                                    "valueStr": "enemy_damage_resistance[inf]",
-                                },
-                                {"key": "damage_resistance", "value": 0.05},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "NORMAL",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {
-                                    "key": "key",
-                                    "valueStr": "enemy_damage_resistance[inf]",
-                                },
-                                {"key": "damage_resistance", "value": 0.05},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "ELITE",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {
-                                    "key": "key",
-                                    "valueStr": "enemy_damage_resistance[inf]",
-                                },
-                                {"key": "damage_resistance", "value": 0.05},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "BOSS",
-                                },
-                            ],
-                        },
-                    ],
-                    [],
-                ),
-                # 9
-                (
-                    [
-                        {
-                            "key": "level_char_limit_add",
-                            "blackboard": [{"key": "value", "value": -1}],
-                        },
-                    ],
-                    [],
-                ),
-                # 10
-                (
-                    [
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_atk_down"},
-                                {"key": "atk", "value": 1.15},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "NORMAL",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_max_hp_down"},
-                                {"key": "max_hp", "value": 1.05},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "NORMAL",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_atk_down"},
-                                {"key": "atk", "value": 1.25},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "ELITE",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_max_hp_down"},
-                                {"key": "max_hp", "value": 1.05},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "ELITE",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_atk_down"},
-                                {"key": "atk", "value": 1.15},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "BOSS",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_max_hp_down"},
-                                {"key": "max_hp", "value": 1.05},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "BOSS",
-                                },
-                            ],
-                        },
-                    ],
-                    [5],
-                ),
-                # 11
-                (
-                    [
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {
-                                    "key": "key",
-                                    "valueStr": "enemy_damage_resistance[inf]",
-                                },
-                                {"key": "damage_resistance", "value": 0.05},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "NORMAL",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {
-                                    "key": "key",
-                                    "valueStr": "enemy_damage_resistance[inf]",
-                                },
-                                {"key": "damage_resistance", "value": 0.05},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "ELITE",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {
-                                    "key": "key",
-                                    "valueStr": "enemy_damage_resistance[inf]",
-                                },
-                                {"key": "damage_resistance", "value": 0.1},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "BOSS",
-                                },
-                            ],
-                        },
-                    ],
-                    [8],
-                ),
-                # 12
-                ([], []),
-                # 13
-                (
-                    [
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {
-                                    "key": "key",
-                                    "valueStr": "enemy_damage_resistance[inf]",
-                                },
-                                {"key": "damage_resistance", "value": 0.05},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "NORMAL",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {
-                                    "key": "key",
-                                    "valueStr": "enemy_damage_resistance[inf]",
-                                },
-                                {"key": "damage_resistance", "value": 0.1},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "ELITE",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {
-                                    "key": "key",
-                                    "valueStr": "enemy_damage_resistance[inf]",
-                                },
-                                {"key": "damage_resistance", "value": 0.15},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "BOSS",
-                                },
-                            ],
-                        },
-                    ],
-                    [11],
-                ),
-                # 14
-                (
-                    [
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_atk_down"},
-                                {"key": "atk", "value": 1.15},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "NORMAL",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_def_down"},
-                                {"key": "def", "value": 1.15},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "NORMAL",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_max_hp_down"},
-                                {"key": "max_hp", "value": 1.1},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "NORMAL",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_atk_down"},
-                                {"key": "atk", "value": 1.25},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "ELITE",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_def_down"},
-                                {"key": "def", "value": 1.15},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "ELITE",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_max_hp_down"},
-                                {"key": "max_hp", "value": 1.1},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "ELITE",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_atk_down"},
-                                {"key": "atk", "value": 1.15},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "BOSS",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_def_down"},
-                                {"key": "def", "value": 1.15},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "BOSS",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_max_hp_down"},
-                                {"key": "max_hp", "value": 1.1},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "BOSS",
-                                },
-                            ],
-                        },
-                    ],
-                    [7, 10],
-                ),
-                # 15
-                (
-                    [
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_atk_down"},
-                                {"key": "atk", "value": 1.25},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "NORMAL",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_def_down"},
-                                {"key": "def", "value": 1.25},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "NORMAL",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_max_hp_down"},
-                                {"key": "max_hp", "value": 1.2},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "NORMAL",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_atk_down"},
-                                {"key": "atk", "value": 1.35},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "ELITE",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_def_down"},
-                                {"key": "def", "value": 1.25},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "ELITE",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_max_hp_down"},
-                                {"key": "max_hp", "value": 1.2},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "ELITE",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_atk_down"},
-                                {"key": "atk", "value": 1.25},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "BOSS",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_def_down"},
-                                {"key": "def", "value": 1.25},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "BOSS",
-                                },
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_max_hp_down"},
-                                {"key": "max_hp", "value": 1.2},
-                                {
-                                    "key": "selector.enemy_level_type",
-                                    "valueStr": "BOSS",
-                                },
-                            ],
-                        },
-                    ],
-                    [14],
-                ),
-            ]
-        case "rogue_4":
-            theme_buffs = []
-        case _:
-            theme_buffs = []
-    for i in range(len(theme_buffs)):
-        if mode_grade < i:
-            break
-        for j in theme_buffs[i][1]:
-            theme_buffs[j] = ([], [])
-    for i in range(len(theme_buffs)):
-        if mode_grade < i:
-            break
-        buffs += theme_buffs[i][0]
-    zone = getZone(stage_id)
-    if theme == "rogue_1":
-        pass
-    elif theme == "rogue_2":
-        if zone == -1:
-            zone = 6
-        if mode_grade > 0:
-            value = 1 + 0.01 * mode_grade
-            for i in range(zone):
-                buffs += [
-                    {
-                        "key": "global_buff_normal",
-                        "blackboard": [
-                            {"key": "key", "valueStr": "enemy_atk_down"},
-                            {"key": "atk", "value": value},
-                        ],
-                    },
-                    {
-                        "key": "global_buff_normal",
-                        "blackboard": [
-                            {"key": "key", "valueStr": "enemy_max_hp_down"},
-                            {"key": "max_hp", "value": value},
-                        ],
-                    },
-                ]
-    elif theme == "rogue_3":
-        if zone == -1:
-            zone = 7
-        if mode_grade > 4:
-            value = 1 + 0.16 * (mode_grade - 4) / (15 - 4)
-            for i in range(zone):
-                buffs += [
-                    {
-                        "key": "global_buff_normal",
-                        "blackboard": [
-                            {"key": "key", "valueStr": "enemy_atk_down"},
-                            {"key": "atk", "value": value},
-                        ],
-                    },
-                    {
-                        "key": "global_buff_normal",
-                        "blackboard": [
-                            {"key": "key", "valueStr": "enemy_max_hp_down"},
-                            {"key": "max_hp", "value": value},
-                        ],
-                    },
-                ]
-    elif theme == "rogue_4":
-        if zone == -1:
-            zone = 7
-        if mode_grade > 4:
-            value = 1 + 0.16 * (mode_grade - 4) / (15 - 4)
-            for i in range(zone):
-                buffs += [
-                    {
-                        "key": "global_buff_normal",
-                        "blackboard": [
-                            {"key": "key", "valueStr": "enemy_atk_down"},
-                            {"key": "atk", "value": value},
-                        ],
-                    },
-                    {
-                        "key": "global_buff_normal",
-                        "blackboard": [
-                            {"key": "key", "valueStr": "enemy_max_hp_down"},
-                            {"key": "max_hp", "value": value},
-                        ],
-                    },
-                ]
-    return buffs
-
-
 def rlv2MoveAndBattleStart():
     request_data = request.get_json()
     stage_id = request_data["stageId"]
@@ -1591,8 +614,8 @@ def rlv2MoveAndBattleStart():
     rlv2["player"]["state"] = "PENDING"
     rlv2["player"]["cursor"]["position"] = {"x": x, "y": y}
     rlv2["player"]["trace"].append(rlv2["player"]["cursor"])
-    pending_index = getNextPendingIndex(rlv2)
-    buffs = getBuffs(rlv2, stage_id)
+    pending_index = _rlv2.getNextPendingIndex(rlv2)
+    buffs = _rlv2.getBuffs(rlv2, stage_id)
     theme = rlv2["game"]["theme"]
     match theme:
         case "rogue_1":
@@ -1711,7 +734,7 @@ def rlv2BattleFinish():
                 ticket = "rogue_4_recruit_ticket_all"
             case _:
                 ticket = ""
-        pending_index = getNextPendingIndex(rlv2)
+        pending_index = _rlv2.getNextPendingIndex(rlv2)
         rlv2["player"]["pending"].insert(
             0,
             {
@@ -1785,88 +808,6 @@ def rlv2FinishBattleReward():
     return data
 
 
-def getGoods(theme):
-    match theme:
-        case "rogue_1":
-            ticket = "rogue_1_recruit_ticket_all"
-            price_id = "rogue_1_gold"
-        case "rogue_2":
-            ticket = "rogue_2_recruit_ticket_all"
-            price_id = "rogue_2_gold"
-        case "rogue_3":
-            ticket = "rogue_3_recruit_ticket_all"
-            price_id = "rogue_3_gold"
-        case "rogue_4":
-            ticket = "rogue_4_recruit_ticket_all"
-            price_id = "rogue_4_gold"
-        case "rogue_5":
-            ticket = "rogue_5_recruit_ticket_all"
-            price_id = "rogue_5_gold"
-        case _:
-            ticket = ""
-            price_id = ""
-    goods = [
-        {
-            "index": "0",
-            "itemId": ticket,
-            "count": 1,
-            "priceId": price_id,
-            "priceCount": 0,
-            "origCost": 0,
-            "displayPriceChg": False,
-            "_retainDiscount": 1,
-        }
-    ]
-    i = 1
-    rlv2_table = read_json(RL_TABLE_PATH)
-    for j in rlv2_table["details"][theme]["archiveComp"]["relic"]["relic"]:
-        goods.append(
-            {
-                "index": str(i),
-                "itemId": j,
-                "count": 1,
-                "priceId": price_id,
-                "priceCount": 0,
-                "origCost": 0,
-                "displayPriceChg": False,
-                "_retainDiscount": 1,
-            }
-        )
-        i += 1
-    for j in rlv2_table["details"][theme]["difficultyUpgradeRelicGroups"]:
-        for k in rlv2_table["details"][theme]["difficultyUpgradeRelicGroups"][j][
-            "relicData"
-        ]:
-            goods.append(
-                {
-                    "index": str(i),
-                    "itemId": k["relicId"],
-                    "count": 1,
-                    "priceId": price_id,
-                    "priceCount": 0,
-                    "origCost": 0,
-                    "displayPriceChg": False,
-                    "_retainDiscount": 1,
-                }
-            )
-            i += 1
-    for j in rlv2_table["details"][theme]["archiveComp"]["trap"]["trap"]:
-        goods.append(
-            {
-                "index": str(i),
-                "itemId": j,
-                "count": 1,
-                "priceId": price_id,
-                "priceCount": 0,
-                "origCost": 0,
-                "displayPriceChg": False,
-                "_retainDiscount": 1,
-            }
-        )
-        i += 1
-    return goods
-
-
 def rlv2MoveTo():
     request_data = request.get_json()
     x = request_data["to"]["x"]
@@ -1876,9 +817,9 @@ def rlv2MoveTo():
     rlv2["player"]["state"] = "PENDING"
     rlv2["player"]["cursor"]["position"] = {"x": x, "y": y}
     theme = rlv2["game"]["theme"]
-    goods = getGoods(theme)
+    goods = _rlv2.getGoods(theme)
     rlv2["player"]["trace"].append(rlv2["player"]["cursor"])
-    pending_index = getNextPendingIndex(rlv2)
+    pending_index = _rlv2.getNextPendingIndex(rlv2)
     rlv2["player"]["pending"].insert(
         0,
         {
@@ -1916,26 +857,6 @@ def rlv2MoveTo():
     return data
 
 
-def getNextRelicIndex(rlv2):
-    d = set()
-    for e in rlv2["inventory"]["relic"]:
-        d.add(int(e[2:]))
-    i = 0
-    while i in d:
-        i += 1
-    return f"r_{i}"
-
-
-def getNextExploreToolIndex(rlv2):
-    d = set()
-    for e in rlv2["inventory"]["exploreTool"]:
-        d.add(int(e[2:]))
-    i = 0
-    while i in d:
-        i += 1
-    return f"e_{i}"
-
-
 def rlv2LeaveShop():
     rlv2 = read_json(RLV2_JSON_PATH)
     rlv2["player"]["state"] = "WAIT_MOVE"
@@ -1962,18 +883,19 @@ def rlv2LeaveShop():
 
     return data
 
-def rlv2BuyGoods():
-    request_data = request.get_json()
-    select = int(request_data["select"][0])
+def rlv2BuyGoods(select: int=None):
+    if select is None:
+        request_data = request.get_json()
+        select = int(request_data["select"][0])
 
     rlv2 = read_json(RLV2_JSON_PATH)
     item_id = rlv2["player"]["pending"][0]["content"]["shop"]["goods"][select]["itemId"]
     if item_id.find("_recruit_ticket_") != -1:
-        ticket_id = getNextTicketIndex(rlv2)
-        addTicket(rlv2, ticket_id)
-        activateTicket(rlv2, ticket_id)
+        ticket_id = _rlv2.getNextTicketIndex(rlv2)
+        _rlv2.addTicket(rlv2, ticket_id)
+        _rlv2.activateTicket(rlv2, ticket_id)
     elif item_id.find("_relic_") != -1:
-        relic_id = getNextRelicIndex(rlv2)
+        relic_id = _rlv2.getNextRelicIndex(rlv2)
         rlv2["inventory"]["relic"][relic_id] = {
             "index": relic_id,
             "id": item_id,
@@ -1988,7 +910,7 @@ def rlv2BuyGoods():
             "ts": 1695000000,
         }
     elif item_id.find("_explore_tool_") != -1:
-        explore_tool_id = getNextExploreToolIndex(rlv2)
+        explore_tool_id = rlv2.getNextExploreToolIndex(rlv2)
         rlv2["inventory"]["exploreTool"][explore_tool_id] = {
             "index": explore_tool_id,
             "id": item_id,
@@ -2021,16 +943,16 @@ def rlv2shopAction():
     except (KeyError, IndexError):
         return rlv2LeaveShop()
 
-
-def rlv2ChooseBattleReward():
-    request_data = request.get_json()
-    index = request_data["index"]
-
     rlv2 = read_json(RLV2_JSON_PATH)
-    if index == 0:
-        ticket_id = getNextTicketIndex(rlv2)
-        addTicket(rlv2, ticket_id)
-        activateTicket(rlv2, ticket_id)
+    rlv2["player"]["state"] = "WAIT_MOVE"
+    rlv2["player"]["pending"] = []
+    if rlv2["player"]["cursor"]["position"]["x"] > 1:
+        rlv2["player"]["cursor"]["zone"] += 1
+        rlv2["player"]["cursor"]["position"] = None
+    elif rlv2["player"]["cursor"]["position"]["x"] == 1:
+        rlv2["player"]["cursor"]["position"]["x"] = 0
+        rlv2["player"]["cursor"]["position"]["y"] = 0
+        rlv2["player"]["trace"].pop()
     write_json(rlv2, RLV2_JSON_PATH)
 
     data = {
@@ -2046,9 +968,36 @@ def rlv2ChooseBattleReward():
 
     return data
 
-def rlv2CopperRedraw():
+
+def rlv2ChooseBattleReward():
+    request_data = request.get_json()
+    index = request_data["index"]
+
+    rlv2 = read_json(RLV2_JSON_PATH)
+    if index == 0:
+        ticket_id = _rlv2.getNextTicketIndex(rlv2)
+        _rlv2.addTicket(rlv2, ticket_id)
+        _rlv2.activateTicket(rlv2, ticket_id)
+    write_json(rlv2, RLV2_JSON_PATH)
+
+    data = {
+        "playerDataDelta": {
+            "modified": {
+                "rlv2": {
+                    "current": rlv2,
+                }
+            },
+            "deleted": {},
+        }
+    }
+
+    return data
+
+
+def rlv2CopperRedraw(seed: int=time()):
 
     rlv2_data = read_json(RLV2_JSON_PATH)
+    random.seed(seed)
 
     bag = rlv2_data["module"]["copper"]["bag"]
     for key, value in bag.items():
@@ -2084,3 +1033,412 @@ def rlv2CopperRedraw():
     }
 
     return data
+
+
+class _rlv2:
+    def getNextRelicIndex(rlv2):
+        d = set()
+        for e in rlv2["inventory"]["relic"]:
+            d.add(int(e[2:]))
+        i = 0
+        while i in d:
+            i += 1
+        return f"r_{i}"
+
+    def getNextExploreToolIndex(rlv2):
+        d = set()
+        for e in rlv2["inventory"]["exploreTool"]:
+            d.add(int(e[2:]))
+        i = 0
+        while i in d:
+            i += 1
+        return f"e_{i}"
+    
+    def getChars(use_user_defaults=False):
+        user_data = read_json(USER_JSON_PATH)
+        chars = [
+            user_data["user"]["troop"]["chars"][i]
+            for i in user_data["user"]["troop"]["chars"]
+        ]
+        if use_user_defaults:
+            rlv2_user_settings = read_json(RLV2_USER_SETTINGS_PATH)
+            initialChars = set(rlv2_user_settings["initialChars"])
+            chars_tmp = []
+            for char in chars:
+                if char["charId"] in initialChars:
+                    chars_tmp.append(char)
+            chars = chars_tmp
+        for i in range(len(chars)):
+            char = chars[i]
+            if char["evolvePhase"] == 2:
+                char_alt = deepcopy(char)
+                char_alt["evolvePhase"] = 1
+                char_alt["level"] -= 10
+                if len(char_alt["skills"]) == 3:
+                    char_alt["defaultSkillIndex"] = 1
+                    char_alt["skills"][-1]["unlock"] = 0
+                for skill in char_alt["skills"]:
+                    skill["specializeLevel"] = 0
+                char_alt["currentEquip"] = None
+                chars.append(char_alt)
+                if char["charId"] == "char_002_amiya":
+                    tmpls = list(char_alt["tmpl"].keys())
+                    for j in tmpls:
+                        if len(char_alt["tmpl"][j]["skills"]) == 3:
+                            char_alt["tmpl"][j]["defaultSkillIndex"] = 1
+                            char_alt["tmpl"][j]["skills"][-1]["unlock"] = 0
+                        for skill in char_alt["tmpl"][j]["skills"]:
+                            skill["specializeLevel"] = 0
+                        char_alt["tmpl"][j]["currentEquip"] = None
+                    char["currentTmpl"] = tmpls[0]
+                    char_alt["currentTmpl"] = tmpls[0]
+                    for j in range(1, len(tmpls)):
+                        for k in [char, char_alt]:
+                            char_alt_alt = deepcopy(k)
+                            char_alt_alt["currentTmpl"] = tmpls[j]
+                            chars.append(char_alt_alt)
+        for i, char in enumerate(chars):
+            char.update(
+                {
+                    "instId": str(i),
+                    "type": "NORMAL",
+                    "upgradeLimited": False,
+                    "upgradePhase": 1,
+                    "isUpgrade": False,
+                    "isCure": False,
+                    "population": 0,
+                    "charBuff": [],
+                    "troopInstId": "0",
+                }
+            )
+            if char["evolvePhase"] < 2:
+                char["upgradeLimited"] = True
+                char["upgradePhase"] = 0
+        return chars
+
+    def addTicket(rlv2_data, ticket_id):
+        theme = rlv2_data["game"]["theme"]
+        match theme:
+            case "rogue_1":
+                ticket = "rogue_1_recruit_ticket_all"
+            case "rogue_2":
+                ticket = "rogue_2_recruit_ticket_all"
+            case "rogue_3":
+                ticket = "rogue_3_recruit_ticket_all"
+            case "rogue_4":
+                ticket = "rogue_4_recruit_ticket_all"
+            case "rogue_5":
+                ticket = "rogue_5_recruit_ticket_all"
+            case _:
+                ticket = ""
+        rlv2_data["inventory"]["recruit"][ticket_id] = {
+            "index": ticket_id,
+            "id": ticket,
+            "state": 0,
+            "list": [],
+            "result": None,
+            "ts": time(),
+            "from": "initial",
+            "mustExtra": 0,
+            "needAssist": True,
+        }
+
+    def getZone(stage_id):
+        rlv2_settings = read_json(RLV2_SETTINGS_PATH)
+        if stage_id in rlv2_settings["stageZone"]:
+            return rlv2_settings["stageZone"][stage_id]
+        if stage_id.find("_n_") != -1 or stage_id.find("_e_") != -1:
+            try:
+                return int(stage_id.split("_")[2])
+            except Exception:
+                pass
+        return -1
+
+    def getGoods(theme):
+        match theme:
+            case "rogue_1":
+                ticket = "rogue_1_recruit_ticket_all"
+                price_id = "rogue_1_gold"
+            case "rogue_2":
+                ticket = "rogue_2_recruit_ticket_all"
+                price_id = "rogue_2_gold"
+            case "rogue_3":
+                ticket = "rogue_3_recruit_ticket_all"
+                price_id = "rogue_3_gold"
+            case "rogue_4":
+                ticket = "rogue_4_recruit_ticket_all"
+                price_id = "rogue_4_gold"
+            case "rogue_5":
+                ticket = "rogue_5_recruit_ticket_all"
+                price_id = "rogue_5_gold"
+            case _:
+                ticket = ""
+                price_id = ""
+        goods = [
+            {
+                "index": "0",
+                "itemId": ticket,
+                "count": 1,
+                "priceId": price_id,
+                "priceCount": 0,
+                "origCost": 0,
+                "displayPriceChg": False,
+                "_retainDiscount": 1,
+            }
+        ]
+        i = 1
+        rlv2_table = read_json(RL_TABLE_PATH)
+        for j in rlv2_table["details"][theme]["archiveComp"]["relic"]["relic"]:
+            goods.append(
+                {
+                    "index": str(i),
+                    "itemId": j,
+                    "count": 1,
+                    "priceId": price_id,
+                    "priceCount": 0,
+                    "origCost": 0,
+                    "displayPriceChg": False,
+                    "_retainDiscount": 1,
+                }
+            )
+            i += 1
+        for j in rlv2_table["details"][theme]["difficultyUpgradeRelicGroups"]:
+            for k in rlv2_table["details"][theme]["difficultyUpgradeRelicGroups"][j][
+                "relicData"
+            ]:
+                goods.append(
+                    {
+                        "index": str(i),
+                        "itemId": k["relicId"],
+                        "count": 1,
+                        "priceId": price_id,
+                        "priceCount": 0,
+                        "origCost": 0,
+                        "displayPriceChg": False,
+                        "_retainDiscount": 1,
+                    }
+                )
+                i += 1
+        for j in rlv2_table["details"][theme]["archiveComp"]["trap"]["trap"]:
+            goods.append(
+                {
+                    "index": str(i),
+                    "itemId": j,
+                    "count": 1,
+                    "priceId": price_id,
+                    "priceCount": 0,
+                    "origCost": 0,
+                    "displayPriceChg": False,
+                    "_retainDiscount": 1,
+                }
+            )
+            i += 1
+        return goods
+
+    def getMap(theme):
+        rlv2_table = read_json(RL_TABLE_PATH)
+        stages = [i for i in rlv2_table["details"][theme]["stages"]]
+
+        # 商店类型
+        if theme != "rogue_1":
+            shop = 4096
+        else:
+            shop = 8
+
+        map = {}
+        zone = 1
+        j = 0
+        while j < len(stages):
+            zone_map = {"id": f"zone_{zone}", "index": zone, "nodes": {}, "variation": []}
+            nodes_list = [
+                {
+                    "index": "0",
+                    "pos": {"x": 0, "y": 0},
+                    "next": [{"x": 1, "y": 0}],
+                    "type": shop,
+                },
+                {"index": "100", "pos": {"x": 1, "y": 0}, "next": [], "type": shop},
+            ]
+            x_max = 9
+            y_max = 3
+            x = 1
+            y = 1
+            while j < len(stages):
+                stage = stages[j]
+                if y > y_max:
+                    if x + 1 == x_max:
+                        break
+                    x += 1
+                    y = 0
+                node_type = 1
+                if rlv2_table["details"][theme]["stages"][stage]["isElite"]:
+                    node_type = 2
+                elif rlv2_table["details"][theme]["stages"][stage]["isBoss"]:
+                    node_type = 4
+                nodes_list.append(
+                    {
+                        "index": f"{x}0{y}",
+                        "pos": {"x": x, "y": y},
+                        "next": [],
+                        "type": node_type,
+                        "stage": stage,
+                    }
+                )
+                nodes_list[0]["next"].append({"x": x, "y": y})
+                y += 1
+                j += 1
+            x += 1
+            nodes_list[0]["next"].append({"x": x, "y": 0})
+            nodes_list.append(
+                {
+                    "index": f"{x}00",
+                    "pos": {"x": x, "y": 0},
+                    "next": [],
+                    "type": shop,
+                    "zone_end": True,
+                }
+            )
+
+            for node in nodes_list:
+                zone_map["nodes"][node["index"]] = node
+            map[str(zone)] = zone_map
+            zone += 1
+        return map
+        
+    def getNextPendingIndex(rlv2):
+        d = set()
+        for e in rlv2["player"]["pending"]:
+            d.add(int(e["index"][2:]))
+        i = 0
+        while i in d:
+            i += 1
+        return f"e_{i}"
+
+    def activateTicket(rlv2, ticket_id):
+        pending_index = _rlv2.getNextPendingIndex(rlv2)
+        rlv2["player"]["pending"].insert(
+            0,
+            {
+                "index": pending_index,
+                "type": "RECRUIT",
+                "content": {"recruit": {"ticket": ticket_id}},
+            },
+        )
+        chars = _rlv2.getChars()
+        rlv2["inventory"]["recruit"][ticket_id]["state"] = 1
+        rlv2["inventory"]["recruit"][ticket_id]["list"] = chars
+
+    def getNextTicketIndex(rlv2):
+        d = set()
+        for e in rlv2["inventory"]["recruit"]:
+            d.add(int(e[2:]))
+        config = read_json(CONFIG_PATH)
+        if not config["rlv2Config"]["allChars"]:
+            i = 0
+        else:
+            i = 10000 - 1
+        while i in d:
+            i += 1
+        return f"t_{i}"
+
+    def getBuffs(rlv2, stage_id):
+        rlv2_table = read_json(RL_TABLE_PATH)
+        theme = rlv2["game"]["theme"]
+        buffs = []
+
+        if rlv2["inventory"]["trap"] is not None:
+            item_id = rlv2["inventory"]["trap"]["id"]
+            if item_id in rlv2_table["details"][theme]["relics"]:
+                buffs += rlv2_table["details"][theme]["relics"][item_id]["buffs"]
+        for i in rlv2["inventory"]["exploreTool"]:
+            item_id = rlv2["inventory"]["exploreTool"][i]["id"]
+            if item_id in rlv2_table["details"][theme]["relics"]:
+                buffs += rlv2_table["details"][theme]["relics"][item_id]["buffs"]
+
+        for i in rlv2["buff"]["squadBuff"]:
+            if i in rlv2_table["details"][theme]["squadBuffData"]:
+                buffs += rlv2_table["details"][theme]["squadBuffData"][i]["buffs"]
+
+        mode_grade = rlv2["game"]["eGrade"]
+
+        theme_buffs = data.rlv2_data["rogue_buffs"][theme]
+
+        for i in range(len(theme_buffs)):
+            if mode_grade < i:
+                break
+            for j in theme_buffs[i][1]:
+                theme_buffs[j] = ([], [])
+        for i in range(len(theme_buffs)):
+            if mode_grade < i:
+                break
+            buffs += theme_buffs[i][0]
+        zone = _rlv2.getZone(stage_id)
+        if theme == "rogue_1":
+            pass
+        elif theme == "rogue_2":
+            if zone == -1:
+                zone = 6
+            if mode_grade > 0:
+                value = 1 + 0.01 * mode_grade
+                for i in range(zone):
+                    buffs += [
+                        {
+                            "key": "global_buff_normal",
+                            "blackboard": [
+                                {"key": "key", "valueStr": "enemy_atk_down"},
+                                {"key": "atk", "value": value},
+                            ],
+                        },
+                        {
+                            "key": "global_buff_normal",
+                            "blackboard": [
+                                {"key": "key", "valueStr": "enemy_max_hp_down"},
+                                {"key": "max_hp", "value": value},
+                            ],
+                        },
+                    ]
+        elif theme == "rogue_3":
+            if zone == -1:
+                zone = 7
+            if mode_grade > 4:
+                value = 1 + 0.16 * (mode_grade - 4) / (15 - 4)
+                for i in range(zone):
+                    buffs += [
+                        {
+                            "key": "global_buff_normal",
+                            "blackboard": [
+                                {"key": "key", "valueStr": "enemy_atk_down"},
+                                {"key": "atk", "value": value},
+                            ],
+                        },
+                        {
+                            "key": "global_buff_normal",
+                            "blackboard": [
+                                {"key": "key", "valueStr": "enemy_max_hp_down"},
+                                {"key": "max_hp", "value": value},
+                            ],
+                        },
+                    ]
+        elif theme == "rogue_4":
+            if zone == -1:
+                zone = 7
+            if mode_grade > 4:
+                value = 1 + 0.16 * (mode_grade - 4) / (15 - 4)
+                for i in range(zone):
+                    buffs += [
+                        {
+                            "key": "global_buff_normal",
+                            "blackboard": [
+                                {"key": "key", "valueStr": "enemy_atk_down"},
+                                {"key": "atk", "value": value},
+                            ],
+                        },
+                        {
+                            "key": "global_buff_normal",
+                            "blackboard": [
+                                {"key": "key", "valueStr": "enemy_max_hp_down"},
+                                {"key": "max_hp", "value": value},
+                            ],
+                        },
+                    ]
+        return buffs

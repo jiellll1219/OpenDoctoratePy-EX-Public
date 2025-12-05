@@ -132,8 +132,9 @@ def get_memory(key: str) -> dict:
 
     :param key: 要获取的数据的名，如"activity_table"，返回"data/excel/activity_table.json"中的数据
     '''
-    useMemoryCache = read_json(CONFIG_PATH)["server"]["useMemoryCache"]
-    if useMemoryCache:
+    global memory_cache
+    useMemoryCache = memory_cache["config"]["server"]["useMemoryCache"]
+    if useMemoryCache or key == "config":
         # 从内存缓存中获取数据，如果不存在则尝试读取文件
         try:
             return memory_cache[key]
@@ -158,3 +159,8 @@ def get_memory(key: str) -> dict:
             raise KeyError(f"未找到文件: {file_path}")
         except Exception as e:
             raise ValueError(f"加载 {file_path} 时出错: {str(e)}")
+
+def load_config() -> None:
+    global memory_cache
+    memory_cache["config"] = read_json(CONFIG_PATH)
+    

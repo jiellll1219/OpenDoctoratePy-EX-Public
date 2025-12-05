@@ -1,23 +1,18 @@
 import re
 import logging
+from colorama import Fore, Back, Style, Cursor
 from datetime import datetime
 
 from flask import Flask
 
-from utils import read_json, preload_json_data, start_global_event_loop
-from constants import CONFIG_PATH
+from utils import preload_json_data, start_global_event_loop, load_config, memory_cache
 
 import account, background, building, campaignV2, char, charBuild, charm, \
         crisis, deepsea, gacha, mail, online, tower, quest, pay, rlv2, shop, story, \
         user, asset.assetbundle, config.prod, social, templateShop, other, sandbox, charrotation, \
         activity, vecbreak, mission
 
-server_config = read_json(CONFIG_PATH)
-
 app = Flask(__name__)
-host = server_config["server"]["host"]
-port = server_config["server"]["port"]
-useMemoryCache = server_config["server"]["useMemoryCache"]
 
 logger = logging.getLogger('werkzeug')
 logger.setLevel(logging.INFO)
@@ -27,8 +22,8 @@ app.add_url_rule("/app/getSettings", methods = ["POST"], view_func = user.appGet
 app.add_url_rule("/app/getCode", methods = ["POST"], view_func = user.appGetCode)
 
 app.add_url_rule("/account/login", methods = ["POST"], view_func = account.accountLogin)
-app.add_url_rule("/account/syncData", methods = ["POST"], view_func = account.accountSyncData)
-app.add_url_rule("/account/syncStatus", methods = ["POST"], view_func = account.accountSyncStatus)
+app.add_url_rule("/account/syncData", methods = ["POST"], view_func = account.accountSync.SyncData)
+app.add_url_rule("/account/syncStatus", methods = ["POST"], view_func = account.accountSync.SyncStatus)
 app.add_url_rule("/account/yostar_auth_request", methods = ["POST"], view_func = account.accountYostarAuthRequest)
 app.add_url_rule("/account/yostar_auth_submit", methods = ["POST"], view_func = account.accountYostarAuthSubmit)
 app.add_url_rule("/account/syncPushMessage", methods = ["POST"], view_func = account.syncPushMessage)
@@ -326,13 +321,24 @@ app.add_url_rule('/recalRune/battleFinish', methods=['POST'], view_func=crisis.r
 
 
 def writeLog(data):
-    print(f'[{datetime.now()}] {data}')
+    print(Style.RESET_ALL + f'[{datetime.now()}] {data}')
 
 if __name__ == "__main__":
+    print(Fore.YELLOW + \
+    "──────────────────────────\n" + \
+    "该软件开源免费\n" + \
+    "如果你花钱了，说明你被骗了\n" + \
+    "──────────────────────────")
+    writeLog("[SERVER] 启动协程")
     start_global_event_loop()
+    writeLog("[SERVER] 加载config.json")
+    load_config()
+    server_config = memory_cache["config"]
+    host = server_config["server"]["host"]
+    port = server_config["server"]["port"]
+    useMemoryCache = server_config["server"]["useMemoryCache"]
     if useMemoryCache:
-        writeLog('Loading all table data to memory')
+        writeLog("[SERVER] 加载全部table数据到内存中")
         preload_json_data()
-        writeLog('Sucessfully loaded all table data')
-    writeLog('[SERVER] Server started at http://' + host + ":" + str(port))
+    writeLog('[SERVER] 服务器启动于 http://' + host + ":" + str(port))
     app.run(host=host, port=port, debug=True)
