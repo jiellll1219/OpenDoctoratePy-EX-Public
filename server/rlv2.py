@@ -1,7 +1,6 @@
 from flask import request
 from copy import deepcopy
 from virtualtime import time
-from time import time as real_time
 import data.rlv2_data
 import random
 
@@ -14,7 +13,7 @@ from constants import (
     RLV2_SETTINGS_PATH
 )
 
-from utils import read_json, write_json, decrypt_battle_data
+from utils import read_json, write_json, decrypt_battle_data, get_memory
 
 
 def rlv2GiveUpGame():
@@ -1143,17 +1142,6 @@ class _rlv2:
             "needAssist": True,
         }
 
-    def getZone(stage_id):
-        rlv2_settings = read_json(RLV2_SETTINGS_PATH)
-        if stage_id in rlv2_settings["stageZone"]:
-            return rlv2_settings["stageZone"][stage_id]
-        if stage_id.find("_n_") != -1 or stage_id.find("_e_") != -1:
-            try:
-                return int(stage_id.split("_")[2])
-            except Exception:
-                pass
-        return -1
-
     def getGoods(theme):
         match theme:
             case "rogue_1":
@@ -1341,9 +1329,9 @@ class _rlv2:
             i += 1
         return f"t_{i}"
 
-    def getBuffs(rlv2, stage_id):
-        rlv2_table = read_json(RL_TABLE_PATH)
-        theme = rlv2["game"]["theme"]
+    def getBuffs(rlv2:dict, stage_id:str):
+        rlv2_table:dict = get_memory["roguelike_topic_table"]
+        theme:str = rlv2["game"]["theme"]
         buffs = []
 
         if rlv2["inventory"]["trap"] is not None:
@@ -1359,86 +1347,175 @@ class _rlv2:
             if i in rlv2_table["details"][theme]["squadBuffData"]:
                 buffs += rlv2_table["details"][theme]["squadBuffData"][i]["buffs"]
 
-        mode_grade = rlv2["game"]["eGrade"]
-
-        theme_buffs = data.rlv2_data["rogue_buffs"][theme]
-
-        for i in range(len(theme_buffs)):
-            if mode_grade < i:
-                break
-            for j in theme_buffs[i][1]:
-                theme_buffs[j] = ([], [])
-        for i in range(len(theme_buffs)):
-            if mode_grade < i:
-                break
-            buffs += theme_buffs[i][0]
-        zone = _rlv2.getZone(stage_id)
-        if theme == "rogue_1":
+        mode_grade:int = rlv2["game"]["eGrade"]
+        theme_buffs = data.rlv2_data["rogue_buffs"].get(theme, [])
+        
+        if theme_buffs is None:
             pass
-        elif theme == "rogue_2":
-            if zone == -1:
-                zone = 6
-            if mode_grade > 0:
-                value = 1 + 0.01 * mode_grade
-                for i in range(zone):
-                    buffs += [
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_atk_down"},
-                                {"key": "atk", "value": value},
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_max_hp_down"},
-                                {"key": "max_hp", "value": value},
-                            ],
-                        },
-                    ]
-        elif theme == "rogue_3":
-            if zone == -1:
-                zone = 7
-            if mode_grade > 4:
-                value = 1 + 0.16 * (mode_grade - 4) / (15 - 4)
-                for i in range(zone):
-                    buffs += [
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_atk_down"},
-                                {"key": "atk", "value": value},
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_max_hp_down"},
-                                {"key": "max_hp", "value": value},
-                            ],
-                        },
-                    ]
-        elif theme == "rogue_4":
-            if zone == -1:
-                zone = 7
-            if mode_grade > 4:
-                value = 1 + 0.16 * (mode_grade - 4) / (15 - 4)
-                for i in range(zone):
-                    buffs += [
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_atk_down"},
-                                {"key": "atk", "value": value},
-                            ],
-                        },
-                        {
-                            "key": "global_buff_normal",
-                            "blackboard": [
-                                {"key": "key", "valueStr": "enemy_max_hp_down"},
-                                {"key": "max_hp", "value": value},
-                            ],
-                        },
-                    ]
+        else:
+            for i in range(len(theme_buffs)):
+                if mode_grade < i:
+                    break
+                for j in theme_buffs[i][1]:
+                    theme_buffs[j] = ([], [])
+            for i in range(len(theme_buffs)):
+                if mode_grade < i:
+                    break
+                buffs += theme_buffs[i][0]
+
+        def getZone():
+            rlv2_settings = read_json(RLV2_SETTINGS_PATH)
+            if stage_id in rlv2_settings["stageZone"]:
+                return rlv2_settings["stageZone"][stage_id]
+            if stage_id.find("_n_") != -1 or stage_id.find("_e_") != -1:
+                try:
+                    return int(stage_id.split("_")[2])
+                except Exception:
+                    pass
+            return -1
+
+        zone = getZone()
+        match theme:
+            case "rogue_2":
+                if zone == -1:
+                    pass
+                elif 16 > mode_grade > 0:
+                    value = 1 + 0.01 * mode_grade
+                    for i in range(zone):
+                        buffs += [
+                            {
+                                "key": "global_buff_normal",
+                                "blackboard": [
+                                    {"key": "key", "valueStr": "enemy_atk_down"},
+                                    {"key": "atk", "value": value},
+                                ],
+                            },
+                            {
+                                "key": "global_buff_normal",
+                                "blackboard": [
+                                    {"key": "key", "valueStr": "enemy_max_hp_down"},
+                                    {"key": "max_hp", "value": value},
+                                ],
+                            },
+                        ]
+                elif mode_grade == 15:
+                    for i in range(zone):
+                        buffs += [
+                            {
+                                "key": "global_buff_normal",
+                                "blackboard": [
+                                    {"key": "key", "valueStr": "enemy_atk_down"},
+                                    {"key": "atk", "value": 1.2},
+                                ],
+                            },
+                            {
+                                "key": "global_buff_normal",
+                                "blackboard": [
+                                    {"key": "key", "valueStr": "enemy_max_hp_down"},
+                                    {"key": "max_hp", "value": 1.2},
+                                ],
+                            },
+                        ]
+                elif mode_grade > 16:
+                    value = 1 + 0.01 * (5 * mode_grade - 60)
+                    for i in range(zone):
+                        buffs += [
+                            {
+                                "key": "global_buff_normal",
+                                "blackboard": [
+                                    {"key": "key", "valueStr": "enemy_atk_down"},
+                                    {"key": "atk", "value": 1.2},
+                                ],
+                            },
+                            {
+                                "key": "global_buff_normal",
+                                "blackboard": [
+                                    {"key": "key", "valueStr": "enemy_max_hp_down"},
+                                    {"key": "max_hp", "value": value},
+                                ],
+                            },
+                        ]
+            case "rogue_3":
+                if zone == -1:
+                    pass
+                if mode_grade > 4:
+                    value = 1 + 0.16 * (mode_grade - 4) / 11 #(15 - 4)
+                    for i in range(zone):
+                        buffs += [
+                            {
+                                "key": "global_buff_normal",
+                                "blackboard": [
+                                    {"key": "key", "valueStr": "enemy_atk_down"},
+                                    {"key": "atk", "value": value},
+                                ],
+                            },
+                            {
+                                "key": "global_buff_normal",
+                                "blackboard": [
+                                    {"key": "key", "valueStr": "enemy_max_hp_down"},
+                                    {"key": "max_hp", "value": value},
+                                ],
+                            },
+                        ]
+            case "rogue_4":
+                if zone == -1:
+                    pass
+                if mode_grade > 4:
+                    if mode_grade < 8:
+                        value = mode_grade - 4
+                    elif 7 < mode_grade < 12:
+                        value = mode_grade - 3
+                    elif 11 < mode_grade < 15:
+                        value = 3 * mode_grade - 26 #10 + (mode_grade - 12) * 3
+                    else:
+                        value = mode_grade + 5
+                    value = 1 + value * 0.01
+                    for i in range(zone):
+                        buffs += [
+                            {
+                                "key": "global_buff_normal",
+                                "blackboard": [
+                                    {"key": "key", "valueStr": "enemy_atk_down"},
+                                    {"key": "atk", "value": value},
+                                ],
+                            },
+                            {
+                                "key": "global_buff_normal",
+                                "blackboard": [
+                                    {"key": "key", "valueStr": "enemy_max_hp_down"},
+                                    {"key": "max_hp", "value": value},
+                                ],
+                            },
+                        ]
+            case "rogue_5":
+                if zone == -1:
+                    pass
+                if mode_grade > 3:
+                    if mode_grade < 11:
+                        value = mode_grade - 3
+                    elif 10 < mode_grade < 15:
+                        value = mode_grade - 1
+                    else:
+                        value = mode_grade
+                    value = 1 + value * 0.01
+                    for i in range(zone):
+                        buffs += [
+                            {
+                                "key": "global_buff_normal",
+                                "blackboard": [
+                                    {"key": "key", "valueStr": "enemy_atk_down"},
+                                    {"key": "atk", "value": value},
+                                ],
+                            },
+                            {
+                                "key": "global_buff_normal",
+                                "blackboard": [
+                                    {"key": "key", "valueStr": "enemy_max_hp_down"},
+                                    {"key": "max_hp", "value": value},
+                                ],
+                            },
+                        ]
+            case _:
+                pass
+
         return buffs
