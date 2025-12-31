@@ -1,11 +1,10 @@
 import re
 import logging
 from colorama import Fore, Back, Style, Cursor
-from datetime import datetime
 
 from flask import Flask
 
-from utils import preload_json_data, start_global_event_loop, load_config, memory_cache
+from utils import preload_json_data, start_global_event_loop, load_config, writeLog, memory_cache
 
 import account, background, building, campaignV2, char, charBuild, charm, \
         crisis, deepsea, gacha, mail, online, tower, quest, pay, rlv2, shop, story, \
@@ -320,9 +319,6 @@ app.add_url_rule("/activity/vecBreakV2/battleFinish", methods = ["POST"], view_f
 app.add_url_rule('/recalRune/battleStart', methods=['POST'], view_func=crisis.recalRune_battleStart)
 app.add_url_rule('/recalRune/battleFinish', methods=['POST'], view_func=crisis.recalRune_battleFinish)
 
-
-def writeLog(data):
-    print(Style.RESET_ALL + f'[{datetime.now()}] {data}')
 
 if __name__ == "__main__":
     print(Fore.YELLOW + \

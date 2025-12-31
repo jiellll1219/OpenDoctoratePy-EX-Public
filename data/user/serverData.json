@@ -1,6 +1,6 @@
 {
     "checkInData": {
-        "lastResetDate": "2025-10-07"
+        "lastResetDate": "2025-12-31"
     },
     "checkInItems": {
         "act3signvs": [
@@ -318,6 +318,8 @@
             "NORM": 0
         }
     },
+    "rlv2_seed": "397c2dd294d31309a01aaa724c858549",
+    "seed_list": [],
     "vecbreakV2": {
         "assistChar": {
             "charId": "char_2014_nian",

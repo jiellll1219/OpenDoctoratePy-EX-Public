@@ -1,22 +1,31 @@
 from flask import request
 from copy import deepcopy
 from virtualtime import time
-import data.rlv2_data
 import random
+import os
+import re
+import hashlib
 
 from constants import (
+    SYNC_DATA_TEMPLATE_PATH,
     RLV2_JSON_PATH,
     RLV2_USER_SETTINGS_PATH,
-    USER_JSON_PATH,
-    RL_TABLE_PATH,
     CONFIG_PATH,
-    RLV2_SETTINGS_PATH
+    RLV2_SETTINGS_PATH,
+    SERVER_DATA_PATH
 )
 
-from utils import read_json, write_json, decrypt_battle_data, get_memory
+from utils import read_json, write_json, decrypt_battle_data, writeLog, get_memory, run_after_response
+import data.rlv2_data
 
 
 def rlv2GiveUpGame():
+    server_data = read_json(SERVER_DATA_PATH)
+    seed = server_data["rlv2_seed"]
+    server_data["seed_list"].insert(0, seed)
+    server_data["rlv2_seed"] = None
+
+    run_after_response(write_json, server_data, SERVER_DATA_PATH)
     return {
         "result": "ok",
         "playerDataDelta": {
@@ -48,116 +57,16 @@ def rlv2CreateGame():
         mode = "NORMAL"
     mode_grade = request_data["modeGrade"]
 
-    match theme:
-        case "rogue_1":
-            bands = [
-                "rogue_1_band_1",
-                "rogue_1_band_2",
-                "rogue_1_band_3",
-                "rogue_1_band_4",
-                "rogue_1_band_5",
-                "rogue_1_band_6",
-                "rogue_1_band_7",
-                "rogue_1_band_8",
-                "rogue_1_band_9",
-                "rogue_1_band_10",
-            ]
-            ending = random.choice(["ro_ending_1", "ro_ending_2", "ro_ending_3", "ro_ending_4"])
-        case "rogue_2":
-            bands = [
-                "rogue_2_band_1",
-                "rogue_2_band_2",
-                "rogue_2_band_3",
-                "rogue_2_band_4",
-                "rogue_2_band_5",
-                "rogue_2_band_6",
-                "rogue_2_band_7",
-                "rogue_2_band_8",
-                "rogue_2_band_9",
-                "rogue_2_band_10",
-                "rogue_2_band_11",
-                "rogue_2_band_12",
-                "rogue_2_band_13",
-                "rogue_2_band_14",
-                "rogue_2_band_15",
-                "rogue_2_band_16",
-                "rogue_2_band_17",
-                "rogue_2_band_18",
-                "rogue_2_band_19",
-                "rogue_2_band_20",
-                "rogue_2_band_21",
-                "rogue_2_band_22",
-            ]
-            ending = random.choice(["ro2_ending_1", "ro2_ending_2", "ro2_ending_3", "ro2_ending_4"])
-        case "rogue_3":
-            bands = [
-                "rogue_3_band_1",
-                "rogue_3_band_2",
-                "rogue_3_band_3",
-                "rogue_3_band_4",
-                "rogue_3_band_5",
-                "rogue_3_band_6",
-                "rogue_3_band_7",
-                "rogue_3_band_8",
-                "rogue_3_band_9",
-                "rogue_3_band_10",
-                "rogue_3_band_11",
-                "rogue_3_band_12",
-                "rogue_3_band_13",
-            ]
-            ending = random.choice(["ro3_ending_1", "ro3_ending_2", "ro3_ending_3", "ro3_ending_4"])
-        case "rogue_4":
-            bands = [
-                "rogue_4_band_1",
-                "rogue_4_band_2",
-                "rogue_4_band_3",
-                "rogue_4_band_4",
-                "rogue_4_band_5",
-                "rogue_4_band_6",
-                "rogue_4_band_7",
-                "rogue_4_band_8",
-                "rogue_4_band_9",
-                "rogue_4_band_10",
-                "rogue_4_band_11",
-                "rogue_4_band_12",
-                "rogue_4_band_14",
-                "rogue_4_band_15",
-                "rogue_4_band_16",
-                "rogue_4_band_17",
-                "rogue_4_band_18",
-                "rogue_4_band_19",
-                "rogue_4_band_20",
-                "rogue_4_band_21",
-                "rogue_4_band_22",
-            ]
-            ending = random.choice(["ro4_ending_1", "ro4_ending_2", "ro4_ending_3", "ro4_ending_4"])
-        case "rogue_5":
-            bands = [
-                "rogue_5_band_1",
-                "rogue_5_band_2",
-                "rogue_5_band_3",
-                "rogue_5_band_4",
-                "rogue_5_band_5",
-                "rogue_5_band_6",
-                "rogue_5_band_7",
-                "rogue_5_band_8",
-                "rogue_5_band_9",
-                "rogue_5_band_10",
-                "rogue_5_band_11",
-                "rogue_5_band_12",
-                "rogue_5_band_13",
-                "rogue_5_band_14",
-                "rogue_5_band_15",
-                "rogue_5_band_16",
-                "rogue_5_band_17",
-                "rogue_5_band_18",
-                "rogue_5_band_19",
-                "rogue_5_band_20",
-            ]
-            ending = random.choice(["ro5_ending_1", "ro5_ending_2", "ro5_ending_3"])
-        case _:
-            bands = []
-            ending = ""
+    ro_int = int(theme.split("_")[1])
+    band_length = [None, 11, 23, 14, 23, 21]
+    bands = []
+    ending = ""
+
+    if ro_int < len(band_length):
+        for band in range(1, band_length[ro_int]):
+            bands.append(f"rogue_{ro_int}_band_{band}")
+        # ending = random.choice([f"ro{ro_int}_ending_{i}" for i in range(1, 4)])
+        ending = f"ro{ro_int}_ending_1"
 
     rlv2 = {
         "player": {
@@ -395,6 +304,17 @@ def rlv2CreateGame():
             ticket_id = f"t_{i}"
             char_id = str(i + 1)
             char["instId"] = char_id
+            # rlv2["inventory"]["recruit"][ticket_id] = {
+            #     "index": f"t_{i}",
+            #     "id": ticket,
+            #     "state": 2,
+            #     "list": [],
+            #     "result": char,
+            #     "ts": time() - 300,
+            #     "from": "initial",
+            #     "mustExtra": 0,
+            #     "needAssist": True,
+            # }
             rlv2["troop"]["chars"][char_id] = char
 
     data = {
@@ -579,17 +499,27 @@ def rlv2CloseRecruitTicket():
 
 
 def rlv2FinishEvent():
+    server_data = read_json(SERVER_DATA_PATH)
     rlv2 = read_json(RLV2_JSON_PATH)
     rlv2["player"]["state"] = "WAIT_MOVE"
     rlv2["player"]["cursor"]["zone"] = 1
     rlv2["player"]["pending"] = []
     theme = rlv2["game"]["theme"]
-    write_json(rlv2, RLV2_JSON_PATH)
 
-    # too large, do not send it every time
-    rlv2["map"]["zones"] = _rlv2.getMap(theme)
+    # 可用节点类型测试用
+    if theme == "rogue_0":
+        zone = theme.split("_")[1]
+        rlv2["map"]["zones"] = data.rlv2_data.test_data(zone)
+    else:
+        # too large, do not send it every time
+        # rlv2["map"]["zones"] = _rlv2.getMap(theme)
+        rlv2["map"]["zones"], seed = _rlv2.getMap_new(theme, server_data["rlv2_seed"], rlv2["player"]["cursor"]["zone"])
+        server_data["rlv2_seed"] = seed
 
-    data = {
+    run_after_response(write_json, server_data, SERVER_DATA_PATH)
+    run_after_response(write_json, rlv2, RLV2_JSON_PATH)
+
+    result = {
         "playerDataDelta": {
             "modified": {
                 "rlv2": {
@@ -600,7 +530,7 @@ def rlv2FinishEvent():
         }
     }
 
-    return data
+    return result
 
 
 def rlv2MoveAndBattleStart():
@@ -857,17 +787,21 @@ def rlv2MoveTo():
 
 
 def rlv2LeaveShop():
+    server_data = read_json(SERVER_DATA_PATH)
     rlv2 = read_json(RLV2_JSON_PATH)
     rlv2["player"]["state"] = "WAIT_MOVE"
     rlv2["player"]["pending"] = []
     if rlv2["player"]["cursor"]["position"]["x"] > 1:
         rlv2["player"]["cursor"]["zone"] += 1
         rlv2["player"]["cursor"]["position"] = None
+        theme = rlv2["game"]["theme"]
+        rlv2["map"]["zones"], seed = _rlv2.getMap_new(theme, server_data["rlv2_seed"], rlv2["player"]["cursor"]["zone"])
     elif rlv2["player"]["cursor"]["position"]["x"] == 1:
         rlv2["player"]["cursor"]["position"]["x"] = 0
         rlv2["player"]["cursor"]["position"]["y"] = 0
         rlv2["player"]["trace"].pop()
-    write_json(rlv2, RLV2_JSON_PATH)
+    
+    run_after_response(write_json, rlv2, RLV2_JSON_PATH)
 
     data = {
         "playerDataDelta": {
@@ -993,10 +927,9 @@ def rlv2ChooseBattleReward():
     return data
 
 
-def rlv2CopperRedraw(seed: int=time()):
+def rlv2CopperRedraw():
 
     rlv2_data = read_json(RLV2_JSON_PATH)
-    random.seed(seed)
 
     bag = rlv2_data["module"]["copper"]["bag"]
     for key, value in bag.items():
@@ -1033,6 +966,11 @@ def rlv2CopperRedraw(seed: int=time()):
 
     return data
 
+def rlv2SetTroopCarry():
+    result = {}
+
+    return result
+
 
 class _rlv2:
     def getNextRelicIndex(rlv2):
@@ -1054,7 +992,7 @@ class _rlv2:
         return f"e_{i}"
     
     def getChars(use_user_defaults=False):
-        user_data = read_json(USER_JSON_PATH)
+        user_data = read_json(SYNC_DATA_TEMPLATE_PATH)
         chars = [
             user_data["user"]["troop"]["chars"][i]
             for i in user_data["user"]["troop"]["chars"]
@@ -1142,6 +1080,7 @@ class _rlv2:
             "needAssist": True,
         }
 
+
     def getGoods(theme):
         match theme:
             case "rogue_1":
@@ -1175,7 +1114,7 @@ class _rlv2:
             }
         ]
         i = 1
-        rlv2_table = read_json(RL_TABLE_PATH)
+        rlv2_table = get_memory("roguelike_topic_table")
         for j in rlv2_table["details"][theme]["archiveComp"]["relic"]["relic"]:
             goods.append(
                 {
@@ -1224,7 +1163,7 @@ class _rlv2:
         return goods
 
     def getMap(theme):
-        rlv2_table = read_json(RL_TABLE_PATH)
+        rlv2_table = get_memory("roguelike_topic_table")
         stages = [i for i in rlv2_table["details"][theme]["stages"]]
 
         # 商店类型
@@ -1293,6 +1232,267 @@ class _rlv2:
             zone += 1
         return map
         
+    def getMap_new(theme: str, seed: str = None, zone: int = 1):
+        rlv2_table = get_memory("roguelike_topic_table")
+        stages_list: list[str] = rlv2_table["details"][theme]["stages"].keys()
+
+        # 随机种子
+        if seed is None:
+            randomseed = os.urandom(16).hex()
+            writeLog(f"本次种子：{randomseed}")
+
+        random.seed(f"{randomseed}_{zone}")
+
+        # 商店类型
+        shop = 4096 if theme != "rogue_1" else 8
+        wish = 512 if theme != "rogue_1" else 64
+
+        zone_map = {
+            str(zone): {
+                "id": f"zone_{zone}",
+                "index": zone,
+                "nodes": {},
+                "variation": []
+            }
+        }
+
+        nodetemp = {
+            "index": "",
+            "pos": {"x": 0, "y": 0},
+            "next": [],
+            "type": 0,
+            "refresh": {"usedCount": 0, "count": 99, "cost": 1}
+        }
+
+        # 节点类型权重
+        type_weight: dict[int, int] = {}
+        type_weight.update({1:55, 2:15, 32:30, wish:20})
+
+        if zone > 1:
+            type_weight.setdefault(16, 20)
+            match theme:
+                case "rogue_1":
+                    type_weight.update({
+                        4: 10, 8: 10, 64: 10, 128: 10, 256: 10
+                    })
+                case "rogue_2":
+                    type_weight.update({
+                        4: 10, 1024: 10, 2048: 10, 4096: 10, 8192: 10, 16384: 10
+                    })
+                case "rogue_3":
+                    type_weight.update({
+                        4: 10, 1024: 10, 2048: 10, 4096: 10, 8192: 10, 65536: 10
+                    })
+                case "rogue_4":
+                    type_weight.update({
+                        4: 10, 128: 10, 256: 10, 1024: 10, 2048: 10, 
+                        4096: 10, 8192: 10, 131072: 10, 262144: 10
+                    })
+                case "rogue_5":
+                    type_weight.update({
+                        4: 10, 1024: 10, 2048: 10, 4096: 10, 8192: 10, 
+                        262144: 10, 524288: 10
+                    })
+                case _:
+                    pass
+
+        items = sorted(type_weight.items())
+        type_list = [k for k, _ in items]
+        type_weight = [v for _, v in items]
+
+
+        # 坐标最大值
+        x_max = [None, 2, 4, 4, 5] 
+        y_max = [None, 2, 3, 4, 4]
+
+        ro_num = theme.split("_")[1]
+        normal_list = [s for s in stages_list if s.startswith(f"ro{ro_num}_n_{zone}_")]
+        elite_list  = [s for s in stages_list if s.startswith(f"ro{ro_num}_e_{zone}_")]
+        boss_list   = [
+            s for s in stages_list
+            if re.fullmatch(rf"ro{ro_num}_b_[1-9]", s)
+        ]
+
+        # 路径数据
+        nodes_by_x: dict[int, list[int]] = {}
+        can_add_shop = True
+        zone_1 = True if zone == 1 else False
+
+        # 可复现非random随机
+        def rand_by_key(seed: str, *keys, mod: int) -> int:
+            h = hashlib.md5(f"{seed}_{'_'.join(map(str, keys))}".encode()).hexdigest()
+            return int(h, 16) % mod
+
+        # 随机节点生成
+        for x in range(0, x_max[zone]):
+            nodes_by_x[x] = []
+            is_end_col = (not zone_1 and x == x_max[zone] - 1)
+
+            # end_node 单独生成
+            if is_end_col:
+                match zone:
+                    case 2:
+                        end_type = 512
+                        end_count = 2
+                    case 3:
+                        end_type = 4
+                        end_count = 1
+                    case _:
+                        end_type = 0
+                        end_count = 1
+
+                for y in range(end_count):
+                    node = deepcopy(nodetemp)
+                    node_index = x * 100 + y
+
+                    node["pos"]["x"] = x
+                    node["pos"]["y"] = y
+                    node["index"] = str(node_index)
+                    node["type"] = end_type
+                    node["zone_end"] = True
+
+                    if end_type == 4:
+                        node["stage"] = random.choice(boss_list)
+
+                    zone_map[str(zone)]["nodes"][node["index"]] = node
+                    nodes_by_x[x].append(y)
+
+                continue
+
+            #普通列，正常 y_size 随机
+            y_size = rand_by_key(randomseed, zone, x, mod=y_max[zone]) + 1
+
+            if can_add_shop and x > 0:
+                type_list.append(shop)
+                type_weight.append(10)
+                can_add_shop = False
+
+            for y in range(y_size):
+                node = deepcopy(nodetemp)
+                node_index = x * 100 + y
+
+                node_type = random.choices(type_list, weights=type_weight, k=1)[0]
+
+                node["pos"]["x"] = x
+                node["pos"]["y"] = y
+                node["index"] = str(node_index)
+                node["type"] = node_type
+
+                match node_type:
+                    case 1:
+                        node["stage"] = random.choice(normal_list)
+                    case 2:
+                        node["stage"] = random.choice(elite_list)
+
+                zone_map[str(zone)]["nodes"][node["index"]] = node
+                nodes_by_x[x].append(y)
+
+        # 第一层固定节点
+        if zone_1:
+            end_type = 1048576 if ro_num == 5 else shop
+            z1_node = shop if ro_num == 5 else 32
+            zone1_nodes = {
+                "200": {
+                    "index": "200",
+                    "pos": {"x": 2, "y": 0},
+                    "next": [{"x": 3, "y": 0}],
+                    "type": z1_node,
+                    "refresh": {"usedCount": 0, "count": 99, "cost": 1}
+                },
+                "201": {
+                    "index": "201",
+                    "pos": {"x": 2, "y": 1},
+                    "next": [{"x": 3, "y": 0}],
+                    "type": z1_node,
+                    "refresh": {"usedCount": 0, "count": 99, "cost": 1}
+                },
+                "300": {
+                    "index": "300",
+                    "pos": {"x": 3, "y": 0},
+                    "next": [],
+                    "type": end_type,
+                    "zone_end": True
+                }
+            }
+
+            zone_map[str(zone)]["nodes"].update(zone1_nodes)
+            nodes_by_x[2] = [0, 1]
+            nodes_by_x[3] = [0]
+
+        # 路径分配
+        for idx, node in zone_map[str(zone)]["nodes"].items():
+            x:int = node["pos"]["x"]
+            y:int = node["pos"]["y"]
+
+            # zone1 固定节点，跳过
+            if zone == 1 and x >= 2:
+                continue
+
+            node["next"] = []
+
+            # 横向
+            if x + 1 in nodes_by_x:
+                candidates = []
+                for ny in (y - 1, y, y + 1):
+                    if ny in nodes_by_x[x + 1]:
+                        candidates.append({"x": x + 1, "y": ny})
+
+                if candidates:
+                    k = random.randint(1, min(2, len(candidates)))
+                    node["next"].extend(random.sample(candidates, k))
+
+            # 纵向
+            if x != 0:
+                for ny in (y - 1, y + 1):
+                    if ny in nodes_by_x.get(x, []):
+                        if random.random() < 0.6:
+                            edge = {"x": x, "y": ny}
+                            if random.random() < 0.5:
+                                edge["key"] = True
+                            node["next"].append(edge)
+
+        # 路径检查
+        for x in sorted(nodes_by_x.keys()):
+            if x == 0:
+                continue
+
+            # 收集本列已被指向的 y
+            has_incoming = set()
+            for node in zone_map[str(zone)]["nodes"].values():
+                if node["pos"]["x"] == x - 1:
+                    for e in node.get("next", []):
+                        if e["x"] == x:
+                            has_incoming.add(e["y"])
+
+            # 检查本列所有节点
+            for y in nodes_by_x[x]:
+                if y in has_incoming:
+                    continue
+
+                # 补一条来自 x-1 的连接
+                prev_candidates = []
+                for py in nodes_by_x[x - 1]:
+                    if abs(py - y) <= 1:
+                        prev_candidates.append(py)
+
+                if not prev_candidates:
+                    continue
+
+                py = random.choice(prev_candidates)
+                prev_idx = str((x - 1) * 100 + py)
+
+                zone_map[str(zone)]["nodes"][prev_idx]["next"].append({
+                    "x": x,
+                    "y": y
+                })
+
+        # 节点排序
+        for node in zone_map[str(zone)]["nodes"].values():
+            if "next" in node and node["next"]:
+                node["next"].sort(key=lambda e: (e["x"], e["y"]))
+
+        return zone_map, randomseed
+
     def getNextPendingIndex(rlv2):
         d = set()
         for e in rlv2["player"]["pending"]:
@@ -1330,7 +1530,7 @@ class _rlv2:
         return f"t_{i}"
 
     def getBuffs(rlv2:dict, stage_id:str):
-        rlv2_table:dict = get_memory["roguelike_topic_table"]
+        rlv2_table:dict = get_memory("roguelike_topic_table")
         theme:str = rlv2["game"]["theme"]
         buffs = []
 
@@ -1348,7 +1548,7 @@ class _rlv2:
                 buffs += rlv2_table["details"][theme]["squadBuffData"][i]["buffs"]
 
         mode_grade:int = rlv2["game"]["eGrade"]
-        theme_buffs = data.rlv2_data["rogue_buffs"].get(theme, [])
+        theme_buffs = data.rlv2_data.rogue_buffs.get(theme, [])
         
         if theme_buffs is None:
             pass

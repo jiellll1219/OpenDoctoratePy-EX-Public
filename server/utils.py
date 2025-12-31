@@ -6,6 +6,7 @@ import traceback
 import sys
 import os
 
+from colorama import Fore, Back, Style, Cursor
 from msgspec.json import Encoder, Decoder, format
 from typing import Optional
 from typing import Dict, Any
@@ -164,3 +165,6 @@ def load_config() -> None:
     global memory_cache
     memory_cache["config"] = read_json(CONFIG_PATH)
     
+
+def writeLog(data):
+    print(Style.RESET_ALL + f'[{datetime.now()}] {data}')

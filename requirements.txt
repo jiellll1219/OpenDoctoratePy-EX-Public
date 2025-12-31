@@ -3,3 +3,4 @@ requests
 pycryptodome
 py7zr
 msgspec
+colorama
