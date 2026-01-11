@@ -1,5 +1,29 @@
 # 更新日志
 
+- 2026 年 1 月 11 日
+
+   修复：  
+   1、在使用种子时会报错 NameError: name 'randomseed' is not defined
+
+   更新：  
+   1、游戏内公告  
+   2、`萨卡兹的无终奇语`与`界园志异`module功能修复  
+   3、卡池文件
+
+   添加：  
+   角色稀有度预处理，使用 get_memory("character_star") 获取数据，数据结构为 Dict[str, int]  
+   使用例子：
+   ```python
+   >>>  character_star = get_memory("character_star")
+   >>>  W_star = character_star["char_113_cqbw"]
+   >>>  print(W_star)
+   6
+   ```
+
+   修改：  
+   1、回滚class accountSync  
+   2、优化app.py中关于内存变量读取的规范
+
 - 2025 年 12 月 31 日
 
    更新：  

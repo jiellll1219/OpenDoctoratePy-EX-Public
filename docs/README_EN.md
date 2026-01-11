@@ -1,8 +1,8 @@
 # DoctoratePy-EX-Public
 
-[简中](https://github.com/jiellll1219/OpenDoctoratePy-EX-Public/tree/main/README.md) | [EN](https://github.com/jiellll1219/OpenDoctoratePy-EX-Public/blob/main/docs/README_EN.md)
+[简中](../README.md) | [EN](README_EN.md)  
+[更新日志(UpdateLog)](docs/updata_log.md)
 
-[Update Log (CN Only)](https://github.com/jiellll1219/OpenDoctoratePy-EX-Public/tree/main/docs/updata_log.md)
 
 This project aims to serve as a branch of OpenDoctoratePy, extending and improving its functionality.  
 The short-term goal is to prevent being kicked back to the login screen due to 404 or unknown errors as much as possible.  

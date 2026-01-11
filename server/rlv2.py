@@ -1,5 +1,6 @@
 from flask import request
 from copy import deepcopy
+from collections import deque
 from virtualtime import time
 import random
 import os
@@ -22,7 +23,9 @@ import data.rlv2_data
 def rlv2GiveUpGame():
     server_data = read_json(SERVER_DATA_PATH)
     seed = server_data["rlv2_seed"]
-    server_data["seed_list"].insert(0, seed)
+    deque_seed = deque(server_data["seed_list"])
+    deque_seed.appendleft(seed)
+    server_data["seed_list"] = list(deque_seed)
     server_data["rlv2_seed"] = None
 
     run_after_response(write_json, server_data, SERVER_DATA_PATH)
@@ -172,8 +175,8 @@ def rlv2CreateGame():
             rlv2["module"]["san"] = {"sanity": 100}
             rlv2["module"]["dice"] = {"id": "", "count": 1}
         case "rogue_3":
-            rlv2["module"]["totem"] = {"totemPiece": [], "predictTotemId": ""}
-            rlv2["module"]["vision"] = {"value": 0, "isMax": False}
+            rlv2["module"]["totem"] = {"totemPiece": [], "predictTotemId": "rogue_3_totem_B_E2"}
+            rlv2["module"]["vision"] = {"value": 3, "isMax": False}
             rlv2["module"]["chaos"] = {
                 "value": 0,
                 "level": 0,
@@ -194,7 +197,7 @@ def rlv2CreateGame():
                 "limitWeight": 3,
                 "overWeight": 4,
                 "fragments": {},
-                "troopWeights": {},
+                "troopWeights": {}, # 转到 _rlv2.ro4_troopWeights_calculate() 处理
                 "troopCarry": [],
                 "sellCount": 0,
                 "currInspiration": None
@@ -220,60 +223,7 @@ def rlv2CreateGame():
                 }
             }
         case "rogue_5":
-            rlv2["module"]["copper"] = {
-                "bag": {
-                    "c_0": {
-                    "id": "rogue_5_copper_B_06_a",
-                    "isDrawn": False,
-                    "layer": -1,
-                    "countDown": -1,
-                    "ts": time()
-                    },
-                    "c_1": {
-                    "id": "rogue_5_copper_B_07_a",
-                    "isDrawn": False,
-                    "layer": -1,
-                    "countDown": -1,
-                    "ts": time()
-                    },
-                    "c_2": {
-                    "id": "rogue_5_copper_B_08_a",
-                    "isDrawn": False,
-                    "layer": -1,
-                    "countDown": -1,
-                    "ts": time()
-                    },
-                    "c_3": {
-                    "id": "rogue_5_copper_B_09_a",
-                    "isDrawn": True,
-                    "layer": -1,
-                    "countDown": -1,
-                    "ts": time()
-                    },
-                    "c_4": {
-                    "id": "rogue_5_copper_B_10_a",
-                    "isDrawn": True,
-                    "layer": -1,
-                    "countDown": -1,
-                    "ts": time()
-                    },
-                    "c_5": {
-                    "id": "rogue_5_copper_B_01_a",
-                    "isDrawn": True,
-                    "layer": -1,
-                    "countDown": -1,
-                    "ts": time()
-                    },
-                    "c_6": {
-                    "id": "rogue_5_copper_B_09_a",
-                    "isDrawn": False,
-                    "layer": -1,
-                    "countDown": -1,
-                    "ts": time()
-                    }
-                },
-            "redrawCost": 0
-            }
+            rlv2["module"]["copper"] = None # 转到 _rlv2.ro5_drawCopper() 处理
             rlv2["module"]["wrath"] = {
                 "wraths": [],
                 "newWrath": -1
@@ -282,7 +232,7 @@ def rlv2CreateGame():
         case _:
             pass
 
-    write_json(rlv2, RLV2_JSON_PATH)
+    run_after_response(write_json ,rlv2, RLV2_JSON_PATH)
 
     config = read_json(CONFIG_PATH)
     if config["rlv2Config"]["allChars"]:
@@ -344,7 +294,7 @@ def rlv2ChooseInitialRelic():
         "count": 1,
         "ts": time(),
     }
-    write_json(rlv2, RLV2_JSON_PATH)
+    run_after_response(write_json ,rlv2, RLV2_JSON_PATH)
 
     data = {
         "playerDataDelta": {
@@ -363,7 +313,7 @@ def rlv2ChooseInitialRelic():
 def rlv2SelectChoice():
     rlv2 = read_json(RLV2_JSON_PATH)
 
-    # write_json(rlv2, RLV2_JSON_PATH)
+    # run_after_response(write_json ,rlv2, RLV2_JSON_PATH)
 
     data = {
         "playerDataDelta": {
@@ -392,7 +342,7 @@ def rlv2ChooseInitialRecruitSet():
                 ticket_id
             )
 
-    write_json(rlv2, RLV2_JSON_PATH)
+    run_after_response(write_json ,rlv2, RLV2_JSON_PATH)
 
     data = {
         "playerDataDelta": {
@@ -415,7 +365,7 @@ def rlv2ActiveRecruitTicket():
 
     rlv2 = read_json(RLV2_JSON_PATH)
     _rlv2.activateTicket(rlv2, ticket_id)
-    write_json(rlv2, RLV2_JSON_PATH)
+    run_after_response(write_json ,rlv2, RLV2_JSON_PATH)
 
     data = {
         "playerDataDelta": {
@@ -456,7 +406,7 @@ def rlv2RecruitChar():
     rlv2["inventory"]["recruit"][ticket_id]["list"] = []
     rlv2["inventory"]["recruit"][ticket_id]["result"] = char
     rlv2["troop"]["chars"][char_id] = char
-    write_json(rlv2, RLV2_JSON_PATH)
+    run_after_response(write_json ,rlv2, RLV2_JSON_PATH)
 
     data = {
         "chars": [char],
@@ -482,7 +432,7 @@ def rlv2CloseRecruitTicket():
     rlv2["inventory"]["recruit"][ticket_id]["state"] = 2
     rlv2["inventory"]["recruit"][ticket_id]["list"] = []
     rlv2["inventory"]["recruit"][ticket_id]["result"] = None
-    write_json(rlv2, RLV2_JSON_PATH)
+    run_after_response(write_json ,rlv2, RLV2_JSON_PATH)
 
     data = {
         "playerDataDelta": {
@@ -515,6 +465,34 @@ def rlv2FinishEvent():
         # rlv2["map"]["zones"] = _rlv2.getMap(theme)
         rlv2["map"]["zones"], seed = _rlv2.getMap_new(theme, server_data["rlv2_seed"], rlv2["player"]["cursor"]["zone"])
         server_data["rlv2_seed"] = seed
+        
+        match theme:
+            case "rogue_4":
+                troopWeights = _rlv2.ro4_troopWeights_calculate(rlv2)
+                rlv2["module"]["fragment"]["troopWeights"] = troopWeights
+            case "rogue_5":
+                coppper_bag, drawn_list = _rlv2.ro5_drawCopper(seed)
+                rlv2["player"]["state"] = "PENDING"
+                rlv2["module"]["copper"] = {}
+                rlv2["module"]["copper"]["bag"] = {}
+                rlv2["module"]["copper"]["bag"] = coppper_bag
+                rlv2["module"]["copper"]["redrawCost"] = 0
+                rlv2["player"]["pending"].insert(
+                    0,
+                    {
+                        "type": "DRAW_COPPER",
+                        "content": {
+                            "drawCopper": {
+                                "copper": drawn_list,
+                                "divineEventId": "rogue_5_levelEVE_2"
+                            }, 
+                            "done": False
+                        }
+                    }
+                )
+
+            case _:
+                pass
 
     run_after_response(write_json, server_data, SERVER_DATA_PATH)
     run_after_response(write_json, rlv2, RLV2_JSON_PATH)
@@ -628,7 +606,7 @@ def rlv2MoveAndBattleStart():
             },
         },
     )
-    write_json(rlv2, RLV2_JSON_PATH)
+    run_after_response(write_json ,rlv2, RLV2_JSON_PATH)
 
     data = {
         "playerDataDelta": {
@@ -652,17 +630,7 @@ def rlv2BattleFinish():
     if battle_data["completeState"] != 1:
         rlv2["player"]["pending"].pop(0)
         theme = rlv2["game"]["theme"]
-        match theme:
-            case "rogue_1":
-                ticket = "rogue_1_recruit_ticket_all"
-            case "rogue_2":
-                ticket = "rogue_2_recruit_ticket_all"
-            case "rogue_3":
-                ticket = "rogue_3_recruit_ticket_all"
-            case "rogue4":
-                ticket = "rogue_4_recruit_ticket_all"
-            case _:
-                ticket = ""
+        ticket = f"{theme}_recruit_ticket_all"
         pending_index = _rlv2.getNextPendingIndex(rlv2)
         rlv2["player"]["pending"].insert(
             0,
@@ -698,7 +666,8 @@ def rlv2BattleFinish():
         rlv2["player"]["cursor"]["position"]["x"] = 0
         rlv2["player"]["cursor"]["position"]["y"] = 0
         rlv2["player"]["trace"].pop()
-    write_json(rlv2, RLV2_JSON_PATH)
+
+    run_after_response(write_json ,rlv2, RLV2_JSON_PATH)
 
     data = {
         "playerDataDelta": {
@@ -721,7 +690,7 @@ def rlv2FinishBattleReward():
     rlv2["player"]["cursor"]["position"]["x"] = 0
     rlv2["player"]["cursor"]["position"]["y"] = 0
     rlv2["player"]["trace"].pop()
-    write_json(rlv2, RLV2_JSON_PATH)
+    run_after_response(write_json ,rlv2, RLV2_JSON_PATH)
 
     data = {
         "playerDataDelta": {
@@ -770,7 +739,7 @@ def rlv2MoveTo():
             },
         },
     )
-    write_json(rlv2, RLV2_JSON_PATH)
+    run_after_response(write_json ,rlv2, RLV2_JSON_PATH)
 
     data = {
         "playerDataDelta": {
@@ -850,7 +819,7 @@ def rlv2BuyGoods(select: int=None):
             "count": 1,
             "ts": 1695000000,
         }
-    write_json(rlv2, RLV2_JSON_PATH)
+    run_after_response(write_json ,rlv2, RLV2_JSON_PATH)
 
     data = {
         "playerDataDelta": {
@@ -886,7 +855,7 @@ def rlv2shopAction():
         rlv2["player"]["cursor"]["position"]["x"] = 0
         rlv2["player"]["cursor"]["position"]["y"] = 0
         rlv2["player"]["trace"].pop()
-    write_json(rlv2, RLV2_JSON_PATH)
+    run_after_response(write_json ,rlv2, RLV2_JSON_PATH)
 
     data = {
         "playerDataDelta": {
@@ -911,7 +880,7 @@ def rlv2ChooseBattleReward():
         ticket_id = _rlv2.getNextTicketIndex(rlv2)
         _rlv2.addTicket(rlv2, ticket_id)
         _rlv2.activateTicket(rlv2, ticket_id)
-    write_json(rlv2, RLV2_JSON_PATH)
+    run_after_response(write_json ,rlv2, RLV2_JSON_PATH)
 
     data = {
         "playerDataDelta": {
@@ -925,6 +894,30 @@ def rlv2ChooseBattleReward():
     }
 
     return data
+
+
+def rlv2CopperConfirmDraw():
+    rlv2 = read_json(RLV2_JSON_PATH)
+    
+    rlv2["player"]["pending"].pop(0)
+    rlv2["player"]["state"] = "WAIT_MOVE"
+
+    run_after_response(write_json, rlv2, RLV2_JSON_PATH)
+
+    result = {
+        "playerDataDelta": {
+            "modified": {
+                "rlv2": {
+                    "current":{
+                        "player": rlv2["player"]
+                    }
+                }
+            },
+            "deleted": {}
+        }
+    }
+
+    return result 
 
 
 def rlv2CopperRedraw():
@@ -967,6 +960,12 @@ def rlv2CopperRedraw():
     return data
 
 def rlv2SetTroopCarry():
+    result = {}
+
+    return result
+
+
+def rlv2getReward():
     result = {}
 
     return result
@@ -1240,6 +1239,8 @@ class _rlv2:
         if seed is None:
             randomseed = os.urandom(16).hex()
             writeLog(f"本次种子：{randomseed}")
+        else:
+            randomseed = seed
 
         random.seed(f"{randomseed}_{zone}")
 
@@ -1719,3 +1720,49 @@ class _rlv2:
                 pass
 
         return buffs
+
+    def ro5_drawCopper(randomseed:str):
+        coppper_bag = {}
+
+        random.seed(randomseed)
+        rlv2_table = get_memory("roguelike_topic_table")
+        all_copper = [i for i in rlv2_table["details"]["rogue_5"]["items"].keys() 
+                      if rlv2_table["details"]["rogue_5"]["items"][i]["type"] == "COPPER"]
+
+        # 随机选择7个copperid
+        copper_list = random.sample(all_copper, 7)
+
+        for i in range(7):
+            copper_data = {
+                "id": copper_list[i],
+                "isDrawn": False,
+                "layer": -1,
+                "countDown": -1,
+                "ts": time()
+                }
+                
+            coppper_bag[f"c_{i}"] = copper_data
+        
+        drawn_list = random.sample(list(coppper_bag.keys()), 3)
+
+        for copper in drawn_list:
+            coppper_bag[copper]["isDrawn"] = True
+
+        return coppper_bag, drawn_list
+    
+    def ro4_troopWeights_calculate(rlv2:dict):
+        character_table = get_memory("character_table")
+        character_star = get_memory("character_star")
+        troopWeights = {}
+        char_load_data = {"6": 6, "5": 5, "4": 4, "3": 2, "2": 2, "1": 2}
+
+        for key, value in rlv2["troop"]["chars"].items():
+            if value["charId"] == "char_4151_tinman":
+                troopWeights[key] = 10
+            else:
+                char_id = value["charId"]
+                char_star = str(character_star[char_id])
+                cahr_load = char_load_data[char_star]
+                troopWeights[key] = cahr_load
+
+        return troopWeights

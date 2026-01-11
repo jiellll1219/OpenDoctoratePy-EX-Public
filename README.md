@@ -1,9 +1,34 @@
 # DoctoratePy-EX-Public
 
-[简中](https://github.com/jiellll1219/OpenDoctoratePy-EX-Public/tree/main/README.md) | [EN](https://github.com/jiellll1219/OpenDoctoratePy-EX-Public/blob/main/docs/README_EN.md)
+[简中](README.md) | [EN](docs/README_EN.md)  
+[更新日志(UpdateLog)](docs/updata_log.md)
 
 <details>
 <summary><strong>最近三条更新日志(点击展开)：</strong></summary>
+
+- 2026 年 1 月 11 日
+
+   修复：  
+   1、在使用种子时会报错 NameError: name 'randomseed' is not defined
+
+   更新：  
+   1、游戏内公告  
+   2、`萨卡兹的无终奇语`与`界园志异`module功能修复  
+   3、卡池文件
+
+   添加：  
+   角色稀有度预处理，使用 get_memory("character_star") 获取数据，数据结构为 Dict[str, int]  
+   使用例子：
+   ```python
+   >>>  character_star = get_memory("character_star")
+   >>>  W_star = character_star["char_113_cqbw"]
+   >>>  print(W_star)
+   6
+   ```
+
+   修改：  
+   1、回滚class accountSync  
+   2、优化app.py中关于内存变量读取的规范
 
 - 2025 年 12 月 31 日
 
@@ -58,19 +83,6 @@
 
    修改：  
    1、自动更新config工作流现在只影响主仓库，不再影响全部fork仓库
-
-- 2025 年 12 月 5 日
-
-   更新：  
-   1、卡池文件  
-
-   修改：  
-   1、README许可证描述内容修正  
-   2、整理部分函数与代码，优化部分函数  
-   3、为部分未来功能添加可能用到的参数  
-   4、修改工作流启动时间6:00AM UTC+8为6:30AM UTC+8  
-
-   肉鸽的开发正在缓慢进行中
     
 </details>
 

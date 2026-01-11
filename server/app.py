@@ -4,7 +4,7 @@ from colorama import Fore, Back, Style, Cursor
 
 from flask import Flask
 
-from utils import preload_json_data, start_global_event_loop, load_config, writeLog, memory_cache
+from utils import preload_json_data, start_global_event_loop, load_config, writeLog, get_memory, character_star_calculate
 
 import account, background, building, campaignV2, char, charBuild, charm, \
         crisis, deepsea, gacha, mail, online, tower, quest, pay, rlv2, shop, story, \
@@ -90,6 +90,9 @@ app.add_url_rule("/config/prod/official/remote_config", methods = ["GET"], view_
 app.add_url_rule("/api/game/get_latest_game_info", methods = ["GET"], view_func= config.prod.get_latest_game_info)
 app.add_url_rule("/api/gate/meta/Android", methods = ["GET"], view_func= config.prod.prodGateMeta)
 app.add_url_rule("/api/remote_config/101/prod/default/Android/ak_sdk_config", methods = ["GET"], view_func= config.prod.ak_sdk_config)
+app.add_url_rule("/gameBulletin", methods=["GET"], view_func= config.prod.prodGameBulletin)
+app.add_url_rule("/analytics/collect", methods=["POST"], view_func= config.prod.prodAnalyticsCollect)
+app.add_url_rule("/api/game/<path:subpath>", methods=["GET"], view_func= config.prod.prodBulletinList)
 
 app.add_url_rule("/crisis/getInfo", methods = ["POST"], view_func = crisis.crisisGetCrisisInfo)
 app.add_url_rule("/crisis/battleStart", methods = ["POST"], view_func = crisis.crisisBattleStart)
@@ -328,9 +331,11 @@ if __name__ == "__main__":
     "──────────────────────────")
     writeLog("[SERVER] 启动协程")
     start_global_event_loop()
+    writeLog("[SERVER] 预处理数据")
+    character_star_calculate()
     writeLog("[SERVER] 加载config.json")
     load_config()
-    server_config = memory_cache["config"]
+    server_config = get_memory("config")
     host = server_config["server"]["host"]
     port = server_config["server"]["port"]
     useMemoryCache = server_config["server"]["useMemoryCache"]

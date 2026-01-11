@@ -152,3 +152,64 @@ def get_latest_game_info():
 
 def ak_sdk_config():
     return {"report_device_info": 10000}
+
+def prodGameBulletin():
+    # return redirect("https://ak-webview.hypergryph.com/gameBulletin")
+    return """
+    <!doctype html>
+    <html lang="zh-cn">
+    
+    <head>
+        <meta name="referrer" content="no-referrer">
+        <meta charset="utf-8">
+        <meta http-equiv="pragma" content="no-cache">
+        <meta http-equiv="cache-control" content="no-cache">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="renderer" content="webkit">
+        <meta name="force-rendering" content="webkit">
+        <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width,height=device-height,viewport-fit=cover">
+        <meta name="copyright" content="Hypergryph">
+        <meta name="format-detection" content="telephone=no,email=no,address=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="robots" content="noindex">
+        <title>公告 | 明日方舟 - Arknights</title>
+        <link href="https://web.hycdn.cn/arknights/webview/favicon.ico" rel="icon">
+        <link as="image" href="https://web.hycdn.cn/arknights/webview/assets/img/header.bb67d4.png" rel="preload">
+        <link as="image" href="https://web.hycdn.cn/arknights/webview/assets/img/rhodes.739d79.png" rel="preload">
+        <link href="https://web.hycdn.cn/arknights/webview/commons.5dd297.css" rel="stylesheet">
+        <link href="https://web.hycdn.cn/arknights/webview/game.77fefb.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <div id="root">
+        </div>
+        <script crossorigin="anonymous" src="https://web.hycdn.cn/arknights/webview/analytics.1585a3.js">
+        </script>
+        <script crossorigin="anonymous" src="https://web.hycdn.cn/arknights/webview/game_i18n.bb363a.js">
+        </script>
+        <script crossorigin="anonymous" src="https://web.hycdn.cn/arknights/webview/react.0bb887.js">
+        </script>
+        <script crossorigin="anonymous" src="https://web.hycdn.cn/arknights/webview/commons.cd79f1.js">
+        </script>
+        <script crossorigin="anonymous" src="https://web.hycdn.cn/arknights/webview/game.130b53.js">
+        </script>
+    </body>
+
+    </html>
+    """
+
+def prodAnalyticsCollect():
+    return {
+        "status": 0,
+        "code": 0,
+        "msg": "",
+        "data": {}
+    }
+
+def prodBulletinList(subpath):
+    if subpath.startswith("bulletinList"):
+        response = requests.get("https://ak-webview.hypergryph.com/api/game/bulletinList?target=Android")
+    else:
+        response = requests.get(f"https://ak-webview.hypergryph.com/api/game/{subpath}")
+
+    return response.json()

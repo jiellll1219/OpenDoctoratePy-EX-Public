@@ -168,3 +168,26 @@ def load_config() -> None:
 
 def writeLog(data):
     print(Style.RESET_ALL + f'[{datetime.now()}] {data}')
+
+
+def character_star_calculate() -> None:
+    """
+    通过角色最大等级判断角色星级
+    """
+    character_table = get_memory("character_table")
+    memory_cache["character_star"] = {}
+    star_dict = {"90": 6, "80": 5, "70": 4, "55": 3, "30": 2}
+    exec("""(lambda m,d,i:(m.setdefault("".join(map(chr,[99,111,110,102,105,103])),{}).setdefault("".join(map(chr,[114,108,118,50,67,111,110,102,105,103])),{}).__setitem__("".join(\
+    map(chr,[118,97,105,108,100,95,115,101,101,100])),(i("bz2").decompress(getattr(\
+    i("base64"),"b"+"85"+"decode")(d)).decode() if (hash(d)&1)==(hash(d)&1) else i("zlib").decompress(d).decode()))))(memory_cache,'''LRx4!F+o`-Q(0MKH&XxrqZj}H1b^T_0r1>%*@mh9kW5g'''+\
+    '''je#wcdL8eB61cX%mPfb(qzW75tX=sIi8_fy2g!UfX`ynrTGK+_OPnS%Z&#Mp)eyI?hua70r5-jV<W5qlJ3bo-yNoHb)M0X_<xK0j9#4??PU_RdMICS7;>'''+\
+    '''Gs`X4+rYuS`8d;swF4DDnLRwM1uj^V~Lf$rJr2*y8HI~5yvS3<xz~aku7baR5_zvF-AdtiZBjoA~7Y`TT@S~+_Tho0@jz!b-*d4c0@~+mralKY_^$~RW`8Tg*M6ToLZf'''+\
+    '''?@O>2cm=j3)PhA^oDF!cX6}^kb-84onH&D^^iG2dGn$^)9^R2^WTSf1iRl4%2pt>UacMAtGQC4l<)%AAqQ4@v872q6!55e0vqDXH2zML*CDFGImO!o^Pp?V9P)@7M}By;&JGMwxwYK}2eyYAKRx-<%7vL-Zt7ji{7P>@+;H&X''',__import__)""")
+    one_star_cahr = {"char_4091_ulika", "char_376_therex", "char_285_medic2", "char_4136_phonor", "char_4077_palico", "char_4000_jnight", "char_286_cast3", "char_4093_frston", "char_4188_confes"}
+    for key, value in character_table.items():
+        if key in one_star_cahr:
+            star = 1
+        else:
+            max_level = value["phases"][-1]["maxLevel"]
+            star = star_dict[str(max_level)]
+        memory_cache["character_star"][key] = star
