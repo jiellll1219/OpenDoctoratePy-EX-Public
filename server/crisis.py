@@ -4,7 +4,7 @@ from flask import request
 
 from constants import CONFIG_PATH, CRISIS_JSON_BASE_PATH, CRISIS_V2_JSON_BASE_PATH, RUNE_JSON_PATH, SHOP_PATH, \
     USER_JSON_PATH, CRISIS_V2_TABLE_PATH
-from utils import read_json, write_json, decrypt_battle_data
+from utils import read_json, write_json, decrypt_battle_data, run_after_response
 
 
 def crisisGetCrisisInfo():
@@ -69,7 +69,7 @@ def crisisBattleStart():
     for each_rune in data["rune"]:
         total_risks += rune_data[each_rune]["points"]
 
-    write_json({
+    run_after_response(write_json ,{
         "chosenCrisis": selected_crisis,
         "chosenRisks": data["rune"],
         "totalRisks": total_risks
@@ -132,7 +132,7 @@ def crisisV2_battleStart():
         "mapId": request_data["mapId"],
         "runeSlots": request_data["runeSlots"],
     }
-    write_json(battle_data, RUNE_JSON_PATH)
+    run_after_response(write_json ,battle_data, RUNE_JSON_PATH)
     return {
         "result": 0,
         "battleId": "abcdefgh-1234-5678-a1b2c3d4e5f6",
@@ -268,7 +268,7 @@ def recalRune_battleStart():
         "assistFriend": request_data.get("assistFriend")
     }
 
-    write_json(battle_data, RUNE_JSON_PATH)
+    run_after_response(write_json ,battle_data, RUNE_JSON_PATH)
 
     return {
         "result": 0,
@@ -355,7 +355,7 @@ def recalRune_battleFinish():
 
         # 更新用户数据
         user_data["user"]["recalRune"]["seasons"][season_id]["stage"][stage_id] = recalRune_update
-        write_json(user_data, USER_JSON_PATH)
+        run_after_response(write_json ,user_data, USER_JSON_PATH)
 
     # 构建响应
     response = {

@@ -3,7 +3,7 @@ from flask import request
 
 from virtualtime import time
 from constants import USER_JSON_PATH
-from utils import read_json, write_json
+from utils import read_json, write_json, run_after_response
 
 
 def charBuildBatchSetCharVoiceLan():
@@ -46,7 +46,7 @@ def charBuildaddonStoryUnlock():
 
     data["playerDataDelta"]["modified"]["troop"]["addon"].update(charId)
 
-    write_json(saved_data, USER_JSON_PATH)
+    run_after_response(write_json ,saved_data, USER_JSON_PATH)
 
     return data
 
@@ -78,7 +78,7 @@ def charBuildSetCharVoiceLan():
             }
         })
 
-    write_json(saved_data, USER_JSON_PATH)
+    run_after_response(write_json ,saved_data, USER_JSON_PATH)
 
     return data
 
@@ -109,7 +109,7 @@ def charBuildSetDefaultSkill():
     })
 
     saved_data["user"]["troop"]["chars"][str(charInstId)]["defaultSkillIndex"] = defaultSkillIndex
-    write_json(saved_data, USER_JSON_PATH)
+    run_after_response(write_json ,saved_data, USER_JSON_PATH)
 
     return data
 
@@ -142,7 +142,7 @@ def charBuildChangeCharSkin():
 
         result["playerDataDelta"]["modified"]["troop"]["chars"].update({str(charInstId): {"skin": skinId}})
 
-    write_json(saved_data, USER_JSON_PATH)
+    run_after_response(write_json ,saved_data, USER_JSON_PATH)
 
     return result
 
@@ -176,7 +176,7 @@ def charBuildSetEquipment():
     })
 
     saved_data["user"]["troop"]["chars"][str(charInstId)]["currentEquip"] = equipId
-    write_json(saved_data, USER_JSON_PATH)
+    run_after_response(write_json ,saved_data, USER_JSON_PATH)
 
     return data
 
@@ -203,7 +203,7 @@ def charBuildChangeCharTemplate():
 
     saved_data = read_json(USER_JSON_PATH)
     saved_data["user"]["troop"]["chars"][str(request_data["charInstId"])]["currentTmpl"] = request_data["templateId"]
-    write_json(saved_data, USER_JSON_PATH)
+    run_after_response(write_json ,saved_data, USER_JSON_PATH)
 
     return data
 

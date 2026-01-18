@@ -1,6 +1,6 @@
 from virtualtime import time
 from flask import request
-from utils import read_json, write_json, get_memory
+from utils import read_json, write_json, get_memory, run_after_response
 from constants import SYNC_DATA_TEMPLATE_PATH, USER_JSON_PATH
 import json
 
@@ -51,7 +51,7 @@ def Sync():
     # 将家具字典赋值给基建数据
     user_data["user"]["building"]["furniture"] = furniture
     # 将基建数据写入文件
-    write_json(user_data, USER_JSON_PATH)
+    run_after_response(write_json ,user_data, USER_JSON_PATH)
 
     result = {
         "playerDataDelta": {
@@ -117,8 +117,8 @@ def AssignChar():
         else:
             training_room["trainer"]["state"] = 3
 
-    write_json(user_sync_data, SYNC_DATA_TEMPLATE_PATH)
-    write_json(user_sync_data, USER_JSON_PATH)
+    run_after_response(write_json ,user_sync_data, SYNC_DATA_TEMPLATE_PATH)
+    run_after_response(write_json ,user_sync_data, USER_JSON_PATH)
 
     player_data_delta = {
         "modified": {
@@ -170,7 +170,7 @@ def ChangeDiySolution():
                 }
                 break
 
-    write_json(user_json_data, USER_JSON_PATH)
+    run_after_response(write_json ,user_json_data, USER_JSON_PATH)
 
     result = {
         "playerDataDelta": {
@@ -242,7 +242,7 @@ def ChangeManufactureSolution():
     user_sync_data["user"]['building']['rooms']['MANUFACTURE'][roomSlotId]['remainSolutionCnt'] = 0
     user_sync_data["user"]['building']['rooms']['MANUFACTURE'][roomSlotId]['outputSolutionCnt'] = solution_count
 
-    write_json(user_sync_data, SYNC_DATA_TEMPLATE_PATH)
+    run_after_response(write_json ,user_sync_data, SYNC_DATA_TEMPLATE_PATH)
 
     result = {
         "playerDataDelta": {
@@ -309,8 +309,8 @@ def SettleManufacture():
     user_sync_data["user"]["building"]["rooms"]["MANUFACTURE"][roomSlotId]["remainSolutionCnt"] = 0
     user_sync_data["user"]["building"]["rooms"]["MANUFACTURE"][roomSlotId]["outputSolutionCnt"] = 0
 
-    write_json(user_sync_data, SYNC_DATA_TEMPLATE_PATH)
-    write_json(user_sync_data, USER_JSON_PATH)
+    run_after_response(write_json ,user_sync_data, SYNC_DATA_TEMPLATE_PATH)
+    run_after_response(write_json ,user_sync_data, USER_JSON_PATH)
 
     result = {
         "playerDataDelta": {
@@ -344,8 +344,8 @@ def WorkshopSynthesis():
     user_sync_data["user"]["inventory"][workshop_formulas["itemId"]] += workshop_formulas["costs"] * work_count
     user_sync_data["user"]["status"]["gold"] -= workshop_formulas["goldCost"] * work_count
 
-    write_json(user_sync_data, SYNC_DATA_TEMPLATE_PATH)
-    write_json(user_sync_data, USER_JSON_PATH)
+    run_after_response(write_json ,user_sync_data, SYNC_DATA_TEMPLATE_PATH)
+    run_after_response(write_json ,user_sync_data, USER_JSON_PATH)
 
     result = {
         "playerDataDelta": {
@@ -395,7 +395,7 @@ def DeliveryOrder():
     user_sync_data["user"]["inventory"]["3003"] -= gold_num
     user_sync_data["user"]["status"]["gold"] += gold_num * 500
 
-    write_json(user_sync_data, SYNC_DATA_TEMPLATE_PATH)
+    run_after_response(write_json ,user_sync_data, SYNC_DATA_TEMPLATE_PATH)
         
     modified = {
         "building": user_sync_data["building"],
@@ -436,7 +436,7 @@ def DeliveryBatchOrder():
     #     user_sync_data["user"]["inventory"]["3003"] -= 6
     #     user_sync_data["user"]["status"]["gold"] += 3000
 
-    write_json(user_sync_data, SYNC_DATA_TEMPLATE_PATH)
+    run_after_response(write_json ,user_sync_data, SYNC_DATA_TEMPLATE_PATH)
         
     modified = {
         "building": user_sync_data["building"],
@@ -513,7 +513,7 @@ def setBuildingAssist():
     # 在传入的 type 位置写入 charInstId
     user_sync_data["user"]["building"]["assist"][type] = char_inst_id
 
-    write_json(user_sync_data, SYNC_DATA_TEMPLATE_PATH)
+    run_after_response(write_json ,user_sync_data, SYNC_DATA_TEMPLATE_PATH)
 
     # 处理 modified 数据
     user_sync_data_building = user_sync_data["user"]["building"]
@@ -542,7 +542,7 @@ def changeStrategy():
     user_sync_data = read_json(SYNC_DATA_TEMPLATE_PATH)
 
     user_sync_data["user"]["building"]["rooms"]["TRADING"][slot_id]["type"] = strategy
-    write_json(user_sync_data, SYNC_DATA_TEMPLATE_PATH)
+    run_after_response(write_json ,user_sync_data, SYNC_DATA_TEMPLATE_PATH)
 
     modified = user_sync_data["user"]["building"]["rooms"]["TRADING"][slot_id]
     result = {
@@ -563,7 +563,7 @@ def changRoomLevel():
 
     user_sync_data["user"]["building"]["roomSlots"][roomSlotId]["level"] = targetLevel
 
-    write_json(user_sync_data, SYNC_DATA_TEMPLATE_PATH)
+    run_after_response(write_json ,user_sync_data, SYNC_DATA_TEMPLATE_PATH)
     modified = user_sync_data["user"]["building"]["roomSlots"][roomSlotId]
 
     result = {
@@ -709,7 +709,7 @@ def setPrivateDormOwner():
 
     user_data["user"]["building"]["rooms"]["PRIVATE"][target_slot_id]["owners"] = [owners_id]
 
-    write_json(user_data, USER_JSON_PATH)
+    run_after_response(write_json ,user_data, USER_JSON_PATH)
 
     return {
         "playerDataDelta": {

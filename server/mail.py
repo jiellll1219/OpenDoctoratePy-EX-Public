@@ -3,7 +3,7 @@ from virtualtime import time
 from flask import request
 
 from constants import MAILLIST_PATH, MAILCOLLECTION_PATH
-from utils import read_json, write_json
+from utils import read_json, write_json, run_after_response
 
 
 # 获取邮件列表的元信息
@@ -134,7 +134,7 @@ def getItems(request_data, key):
         hasGift = 0
 
     # 将邮件列表数据写入文件
-    write_json(mail_data, MAILLIST_PATH)
+    run_after_response(write_json ,mail_data, MAILLIST_PATH)
 
     # 返回物品列表和是否有礼物
     return items, hasGift
@@ -219,7 +219,7 @@ def mailRemoveAllReceivedMail():
             mail_data["deletedIDs"].append(mailId)
 
     # 将邮件列表数据写入文件
-    write_json(mail_data, MAILLIST_PATH)
+    run_after_response(write_json ,mail_data, MAILLIST_PATH)
 
     # 构造返回数据
     data = {

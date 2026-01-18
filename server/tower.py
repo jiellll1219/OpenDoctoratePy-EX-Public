@@ -72,7 +72,7 @@ def createRecruitList():
             }
         )
     tower["tower"]["current"]["halftime"]["candidate"] = candidate
-    write_json(tower, TOWERDATA_PATH)
+    run_after_response(write_json ,tower, TOWERDATA_PATH)
 
 
 def towerCreateGame():
@@ -136,7 +136,7 @@ def towerCreateGame():
         },
         "currentStage": "",
     }
-    write_json(tower, TOWERDATA_PATH)
+    run_after_response(write_json ,tower, TOWERDATA_PATH)
 
     data = {
         "playerDataDelta": {
@@ -154,7 +154,7 @@ def towerInitGodCard():
 
     tower["tower"]["current"]["status"]["state"] = "INIT_BUFF"
     tower["tower"]["current"]["godCard"]["id"] = request_data["godCardId"]
-    write_json(tower, TOWERDATA_PATH)
+    run_after_response(write_json ,tower, TOWERDATA_PATH)
 
     data = {
         "playerDataDelta": {
@@ -174,7 +174,7 @@ def towerInitGame():
     tower["tower"]["current"]["status"]["state"] = "INIT_CARD"
     tower["tower"]["current"]["status"]["strategy"] = request_data["strategy"]
     tower["tower"]["current"]["status"]["tactical"] = request_data["tactical"]
-    write_json(tower, TOWERDATA_PATH)
+    run_after_response(write_json ,tower, TOWERDATA_PATH)
 
     data = {
         "playerDataDelta": {
@@ -231,7 +231,7 @@ def towerInitCard():
         }
         cnt += 1
 
-    write_json(tower, TOWERDATA_PATH)
+    run_after_response(write_json ,tower, TOWERDATA_PATH)
 
     data = {
         "playerDataDelta": {
@@ -254,7 +254,7 @@ def towerBattleStart():
     for stage in tower["tower"]["current"]["layer"]:
         if stage["id"] == request_data["stageId"]:
             stage["try"] += 1
-    write_json(tower, TOWERDATA_PATH)
+    run_after_response(write_json ,tower, TOWERDATA_PATH)
 
     data = {
         "playerDataDelta": {
@@ -277,7 +277,7 @@ def towerBattleFinish():
         tower["tower"]["current"]["layer"][
             tower["tower"]["current"]["status"]["coord"] - 1
         ]["try"] += 1
-        write_json(tower, TOWERDATA_PATH)
+        run_after_response(write_json ,tower, TOWERDATA_PATH)
 
         data = {
             "drop": [],
@@ -308,7 +308,7 @@ def towerBattleFinish():
 
         tower["tower"]["current"]["status"]["coord"] += 1
         tower["tower"]["current"]["halftime"]["count"] += 1
-        write_json(tower, TOWERDATA_PATH)
+        run_after_response(write_json ,tower, TOWERDATA_PATH)
         createRecruitList()
 
         data = {
@@ -371,7 +371,7 @@ def towerRecruit():
             "type": "CHAR",
         }
 
-    write_json(tower, TOWERDATA_PATH)
+    run_after_response(write_json ,tower, TOWERDATA_PATH)
     createRecruitList()
 
     data = {
@@ -390,7 +390,7 @@ def towerChooseSubGodCard():
 
     tower["tower"]["current"]["status"]["state"] = "STANDBY"
     tower["tower"]["current"]["godCard"]["subGodCardId"] = request_data["subGodCardId"]
-    write_json(tower, TOWERDATA_PATH)
+    run_after_response(write_json ,tower, TOWERDATA_PATH)
 
     data = {
         "playerDataDelta": {

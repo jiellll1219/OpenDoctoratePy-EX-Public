@@ -504,7 +504,7 @@ def SyncData():
 
     replay_data = read_json(BATTLE_REPLAY_JSON_PATH)
     replay_data["currentCharConfig"] = md5(b64encode(json.dumps(edit_json).encode())).hexdigest()
-    write_json(replay_data, BATTLE_REPLAY_JSON_PATH)
+    run_after_response(write_json ,replay_data, BATTLE_REPLAY_JSON_PATH)
 
     # Enable battle replays
     if replay_data["currentCharConfig"] in list(replay_data["saved"].keys()):

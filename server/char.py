@@ -1,7 +1,7 @@
 from flask import request
 
 from constants import USER_JSON_PATH
-from utils import read_json, write_json
+from utils import read_json, write_json, run_after_response
 
 
 def charChangeMarkStar():
@@ -37,6 +37,6 @@ def charChangeMarkStar():
                 }
             })
 
-    write_json(saved_data, USER_JSON_PATH)
+    run_after_response(write_json ,saved_data, USER_JSON_PATH)
 
     return data

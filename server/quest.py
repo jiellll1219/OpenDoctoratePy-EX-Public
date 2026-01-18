@@ -3,7 +3,7 @@ from virtualtime import time
 from flask import request
 
 from constants import BATTLE_REPLAY_JSON_PATH, USER_JSON_PATH, SYNC_DATA_TEMPLATE_PATH,ASSIST_PATH
-from utils import read_json, write_json, decrypt_battle_data, get_memory
+from utils import read_json, write_json, decrypt_battle_data, get_memory, run_after_response
 
 
 def questBattleStart():
@@ -24,7 +24,7 @@ def questBattleStart():
 
     replay_data = read_json(BATTLE_REPLAY_JSON_PATH)
     replay_data["current"] = request_data["stageId"]
-    write_json(replay_data, BATTLE_REPLAY_JSON_PATH)
+    run_after_response(write_json ,replay_data, BATTLE_REPLAY_JSON_PATH)
 
     return data
 
@@ -89,7 +89,7 @@ def questSaveBattleReplay():
             }
         })
     replay_data["current"] = None
-    write_json(replay_data, BATTLE_REPLAY_JSON_PATH)
+    run_after_response(write_json ,replay_data, BATTLE_REPLAY_JSON_PATH)
 
     return data
 
@@ -133,8 +133,8 @@ def questChangeSquadName():
 
         saved_data = read_json(USER_JSON_PATH)
         saved_data["user"]["troop"]["squads"][str(request_data["squadId"])]["name"] = request_data["name"]
-        write_json(saved_data, USER_JSON_PATH)
-        write_json(saved_data, SYNC_DATA_TEMPLATE_PATH)
+        run_after_response(write_json ,saved_data, USER_JSON_PATH)
+        run_after_response(write_json ,saved_data, SYNC_DATA_TEMPLATE_PATH)
 
         return data
 
@@ -162,8 +162,8 @@ def questSquadFormation():
 
         saved_data = read_json(USER_JSON_PATH)
         saved_data["user"]["troop"]["squads"][str(request_data["squadId"])]["slots"] = request_data["slots"]
-        write_json(saved_data, USER_JSON_PATH)
-        write_json(saved_data, SYNC_DATA_TEMPLATE_PATH)
+        run_after_response(write_json ,saved_data, USER_JSON_PATH)
+        run_after_response(write_json ,saved_data, SYNC_DATA_TEMPLATE_PATH)
 
         return data
 

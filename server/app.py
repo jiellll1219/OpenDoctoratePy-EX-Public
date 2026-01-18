@@ -21,8 +21,8 @@ app.add_url_rule("/app/getSettings", methods = ["POST"], view_func = user.appGet
 app.add_url_rule("/app/getCode", methods = ["POST"], view_func = user.appGetCode)
 
 app.add_url_rule("/account/login", methods = ["POST"], view_func = account.accountLogin)
-app.add_url_rule("/account/syncData", methods = ["POST"], view_func = account.accountSync.SyncData)
-app.add_url_rule("/account/syncStatus", methods = ["POST"], view_func = account.accountSync.SyncStatus)
+app.add_url_rule("/account/syncData", methods = ["POST"], view_func = account.SyncData)
+app.add_url_rule("/account/syncStatus", methods = ["POST"], view_func = account.SyncStatus)
 app.add_url_rule("/account/yostar_auth_request", methods = ["POST"], view_func = account.accountYostarAuthRequest)
 app.add_url_rule("/account/yostar_auth_submit", methods = ["POST"], view_func = account.accountYostarAuthSubmit)
 app.add_url_rule("/account/syncPushMessage", methods = ["POST"], view_func = account.syncPushMessage)
@@ -329,10 +329,6 @@ if __name__ == "__main__":
     "该软件开源免费\n" + \
     "如果你花钱了，说明你被骗了\n" + \
     "──────────────────────────")
-    writeLog("[SERVER] 启动协程")
-    start_global_event_loop()
-    writeLog("[SERVER] 预处理数据")
-    character_star_calculate()
     writeLog("[SERVER] 加载config.json")
     load_config()
     server_config = get_memory("config")
@@ -342,5 +338,9 @@ if __name__ == "__main__":
     if useMemoryCache:
         writeLog("[SERVER] 加载全部table数据到内存中")
         preload_json_data()
+    writeLog("[SERVER] 启动协程")
+    start_global_event_loop()
+    writeLog("[SERVER] 预处理数据")
+    character_star_calculate()
     writeLog('[SERVER] 服务器启动于 http://' + host + ":" + str(port))
     app.run(host=host, port=port, debug=True)

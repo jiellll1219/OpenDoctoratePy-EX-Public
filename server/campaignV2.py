@@ -1,7 +1,7 @@
 from flask import request
 
 from constants import BATTLE_REPLAY_JSON_PATH
-from utils import read_json, write_json
+from utils import read_json, write_json, run_after_response
 
 
 def campaignV2BattleStart():
@@ -19,7 +19,7 @@ def campaignV2BattleStart():
 
     replay_data = read_json(BATTLE_REPLAY_JSON_PATH)
     replay_data["current"] = request_data["stageId"]
-    write_json(replay_data, BATTLE_REPLAY_JSON_PATH)
+    run_after_response(write_json ,replay_data, BATTLE_REPLAY_JSON_PATH)
 
     return data
 

@@ -138,8 +138,8 @@ class checkin:
         else:
             pass
 
-        write_json(server_data, SERVER_DATA_PATH)
-        write_json(sync_data, SYNC_DATA_TEMPLATE_PATH)
+        run_after_response(write_json ,server_data, SERVER_DATA_PATH)
+        run_after_response(write_json ,sync_data, SYNC_DATA_TEMPLATE_PATH)
 
 
 def ChangeSecretary():
@@ -169,7 +169,7 @@ def ChangeSecretary():
             skinId.split("@")[0] if "@" in skinId else skinId.split("#")[0]
         )
         saved_data["user"]["status"]["secretarySkinId"] = skinId
-        write_json(saved_data, SYNC_DATA_TEMPLATE_PATH)
+        run_after_response(write_json ,saved_data, SYNC_DATA_TEMPLATE_PATH)
     return data
 
 
@@ -261,7 +261,7 @@ def ChangeAvatar():
 
     saved_data = read_json(USER_JSON_PATH)
     saved_data["user"]["status"]["avatar"] = avatar
-    write_json(saved_data, USER_JSON_PATH)
+    run_after_response(write_json ,saved_data, USER_JSON_PATH)
 
     data = {
         "playerDataDelta": {
@@ -460,8 +460,8 @@ def exchangeDiamondShard():
         user_sync_data["user"]["status"]["diamondShard"] += use_count * 180
         user_sync_data["user"]["status"]["iosDiamond"] = user_sync_data["user"]["status"]["androidDiamond"]
         
-    write_json(user_sync_data, SYNC_DATA_TEMPLATE_PATH)
-    write_json(user_sync_data, USER_JSON_PATH)
+    run_after_response(write_json ,user_sync_data, SYNC_DATA_TEMPLATE_PATH)
+    run_after_response(write_json ,user_sync_data, USER_JSON_PATH)
     
     result = {
         "playerDataDelta": {
@@ -496,8 +496,8 @@ def bindNickName():
         user_sync_data = (user_sync_data["user"]["status"]["nickNumber"], nickNumber)
         user_sync_data = (user_sync_data["user"]["status"]["nickName"], nickName)
 
-    write_json(user_sync_data, SYNC_DATA_TEMPLATE_PATH)
-    write_json(user_sync_data, USER_JSON_PATH)
+    run_after_response(write_json ,user_sync_data, SYNC_DATA_TEMPLATE_PATH)
+    run_after_response(write_json ,user_sync_data, USER_JSON_PATH)
 
     result = {
         "deleted": {},
@@ -519,8 +519,8 @@ def rebindNickName():
     user_sync_data["user"]["status"]["nickName"] = nick_name
     user_sync_data["user"]["inventory"]["renamingCard"] -= 1
 
-    write_json(user_sync_data, SYNC_DATA_TEMPLATE_PATH)
-    write_json(user_sync_data, USER_JSON_PATH)
+    run_after_response(write_json ,user_sync_data, SYNC_DATA_TEMPLATE_PATH)
+    run_after_response(write_json ,user_sync_data, USER_JSON_PATH)
 
     return {
         "playerDataDelta": {
@@ -553,7 +553,7 @@ def BuyAP():
     user_sync_data["user"]["status"]["lastApAddTime"] = now_time
     user_sync_data["user"]["status"]["buyApRemainTimes"] = user_sync_data["user"]["status"]["buyApRemainTimes"]
 
-    write_json(user_sync_data, SYNC_DATA_TEMPLATE_PATH)
+    run_after_response(write_json ,user_sync_data, SYNC_DATA_TEMPLATE_PATH)
 
     return {
         "playerDataDelta": {
@@ -707,7 +707,7 @@ def bindBirthday():
     user_data["user"]["status"]["birthday"]["month"] = int(json_body["month"])
     user_data["user"]["status"]["birthday"]["day"] = int(json_body["day"])
 
-    write_json(USER_JSON_PATH, user_data)
+    run_after_response(write_json ,USER_JSON_PATH, user_data)
 
     return {
         "playerDataDelta": {

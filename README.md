@@ -6,6 +6,18 @@
 <details>
 <summary><strong>最近三条更新日志(点击展开)：</strong></summary>
 
+- 2026 年 1 月 18 日
+
+    修复：  
+    1、app.py路由对 `accountSync` 回滚不完整导致的错误  
+    2、app.py启动顺序导致 `config` 无法读取的问题  
+
+    更新：  
+    1、大部分 `write_json` 函数调用处使用 `run_after_response` 以保证IO操作不会过多影响函数运行耗时  
+> [!WARNING]  
+> 注意：已将大部分 `write_json` 的调用替换为带 `run_after_response` 的版本，并已在模拟器和真机上完成测试。  
+对于尚未添加 `run_after_response` 的 `write_json` 调用位置，不建议进行替换，否则可能会引发非预期的问题。
+
 - 2026 年 1 月 11 日
 
    修复：  
@@ -71,18 +83,6 @@
 
    2、卡池文件  
    3、模块要求文件(requirements.txt、pyproject.toml)更新
-
-- 2025 年 12 月 12 日
-
-   更新：  
-   1、肉鸽getBuff函数修复
-
-   添加：  
-   1、增加2.6.82版本remote_config路由  
-   2、肉鸽层数数据补全  
-
-   修改：  
-   1、自动更新config工作流现在只影响主仓库，不再影响全部fork仓库
     
 </details>
 

@@ -79,7 +79,7 @@ def setCardShowMedal():
         user_data["user"]["social"]["medalBoard"] = {}
     user_data["user"]["social"]["medalBoard"]["type"] = json_body["type"]
     user_data["user"]["social"]["medalBoard"]["template"] = json_body["templateGroup"]
-    write_json(user_data, USER_JSON_PATH)
+    run_after_response(write_json ,user_data, USER_JSON_PATH)
 
     return {
         "playerDataDelta": {

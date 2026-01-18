@@ -85,7 +85,7 @@ def buyLowGood():
 
             break
 
-    write_json(user_json_data, USER_JSON_PATH)
+    run_after_response(write_json ,user_json_data, USER_JSON_PATH)
 
     result = {
         "playerDataDelta": {
@@ -127,7 +127,7 @@ def buyHighGood():
 
             break
 
-    write_json(user_json_data, SYNC_DATA_TEMPLATE_PATH)
+    run_after_response(write_json ,user_json_data, SYNC_DATA_TEMPLATE_PATH)
 
     result = {
         "playerDataDelta": {
@@ -169,7 +169,7 @@ def buyExtraGood():
 
             break
 
-    write_json(user_json_data, USER_JSON_PATH)
+    run_after_response(write_json ,user_json_data, USER_JSON_PATH)
 
     result = {
         "playerDataDelta": {
@@ -211,7 +211,7 @@ def buyClassicGood():
 
             break
 
-    write_json(user_json_data, USER_JSON_PATH)
+    run_after_response(write_json ,user_json_data, USER_JSON_PATH)
 
     result = {
         "playerDataDelta": {
@@ -272,7 +272,7 @@ def buyFurniGroup():
         buy_furni_group(request_info)
 
         # 将更新后的数据保存回文件
-        write_json(USER_JSON_PATH, user_json_data)
+        run_after_response(write_json ,USER_JSON_PATH, user_json_data)
 
     items = []
 
@@ -316,7 +316,7 @@ def buyFurniGood():
 
         update_data(request_info)
 
-        write_json(USER_JSON_PATH, user_json_data)
+        run_after_response(write_json ,USER_JSON_PATH, user_json_data)
 
     items = []
 

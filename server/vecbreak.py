@@ -277,7 +277,7 @@ def vecV2battleFinish():
         }
 
         battle_data = None
-        write_json(server_data, SERVER_DATA_PATH)
+        run_after_response(write_json ,server_data, SERVER_DATA_PATH)
 
     if run:
         run_after_response(run_after, stage_num)

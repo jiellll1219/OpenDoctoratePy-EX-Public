@@ -1,4 +1,4 @@
-from utils import read_json, write_json
+from utils import read_json, write_json, run_after_response
 from flask import request
 from constants import SYNC_DATA_TEMPLATE_PATH
 import re
@@ -21,7 +21,7 @@ def setCurrent():
     sync_data["user"]["background"]["selected"] = sync_data["user"]["charRotation"]["preset"][target_instid]["background"]
     sync_data["user"]["homeTheme"]["selected"] = sync_data["user"]["charRotation"]["preset"][target_instid]["homeTheme"]
 
-    write_json(sync_data, SYNC_DATA_TEMPLATE_PATH)
+    run_after_response(write_json ,sync_data, SYNC_DATA_TEMPLATE_PATH)
 
     return {
         "playerDataDelta": {
@@ -69,7 +69,7 @@ def createPreset():
     sync_data["user"]["charRotation"]["preset"][new_id] = charrotation_data["preset"][new_id] = defult_preset_data
 
     sync_data["user"]["charRotation"] = charrotation_data
-    write_json(sync_data, SYNC_DATA_TEMPLATE_PATH)
+    run_after_response(write_json ,sync_data, SYNC_DATA_TEMPLATE_PATH)
 
     return {
         "playerDataDelta": {
@@ -89,7 +89,7 @@ def deletePreset():
 
     sync_data["user"]["charRotation"]["preset"].pop(target_instid)
 
-    write_json(sync_data, SYNC_DATA_TEMPLATE_PATH)
+    run_after_response(write_json ,sync_data, SYNC_DATA_TEMPLATE_PATH)
 
     return {
         "playerDataDelta": {
@@ -154,6 +154,6 @@ def updatePreset():
 
     result["playerDataDelta"]["modified"]["charRotation"] = sync_data["user"]["charRotation"]
 
-    write_json(sync_data, SYNC_DATA_TEMPLATE_PATH)
+    run_after_response(write_json ,sync_data, SYNC_DATA_TEMPLATE_PATH)
     
     return result

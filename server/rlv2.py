@@ -936,7 +936,7 @@ def rlv2CopperRedraw():
         copper.append(key)
         bag[key]["isDrawn"] = True
 
-    write_json(rlv2_data, RLV2_JSON_PATH)
+    run_after_response(write_json ,rlv2_data, RLV2_JSON_PATH)
 
     data = {
         "copper": copper,
