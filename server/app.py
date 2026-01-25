@@ -15,7 +15,7 @@ app = Flask(__name__)
 
 logger = logging.getLogger('werkzeug')
 logger.setLevel(logging.INFO)
-logger.addFilter(lambda record: not re.match(r'.*(/syncPushMessage|/pb/async|/event|/batch_event).*', record.getMessage()))
+logger.addFilter(lambda record: not re.match(r'.*(/syncPushMessage|/pb/async|/event|/batch_event|/deviceprofile/v4).*', record.getMessage()))
 
 app.add_url_rule("/app/getSettings", methods = ["POST"], view_func = user.appGetSettings)
 app.add_url_rule("/app/getCode", methods = ["POST"], view_func = user.appGetCode)
@@ -303,6 +303,7 @@ app.add_url_rule("/social/setCardShowMedal", methods = ["POST"], view_func = soc
 # app.add_url_rule("/event", methods = ["POST"], view_func = other.event)
 # app.add_url_rule("/batch_event", methods = ["POST"], view_func = other.batch_event)
 # app.add_url_rule("/beat", methods = ["POST"], view_func = other.beat)
+# app.add_url_rule("/deviceprofile/v4", methdos=["POST"], view_func=other.deviceprofile)
 
 app.add_url_rule("/charRotation/setCurrent", methods = ["POST"], view_func = charrotation.setCurrent)
 app.add_url_rule("/charRotation/createPreset", methods = ["POST"], view_func = charrotation.createPreset)

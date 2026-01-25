@@ -67,3 +67,7 @@ def beat():
     "msg": "ok",
     "next": 257
     }
+
+def deviceprofile():
+
+    return {}

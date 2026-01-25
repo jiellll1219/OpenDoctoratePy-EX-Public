@@ -311,22 +311,154 @@ def rlv2ChooseInitialRelic():
 
 
 def rlv2SelectChoice():
+    # 警告：不期而遇事件数量极其庞大，处理逻辑几乎没有通解
+    json_body = request.get_json()
+    choice:str = json_body["choice"]
     rlv2 = read_json(RLV2_JSON_PATH)
+    rlv2_table = get_memory("roguelike_topic_table")
 
-    # run_after_response(write_json ,rlv2, RLV2_JSON_PATH)
-
-    data = {
-        "playerDataDelta": {
-            "modified": {
-                "rlv2": {
-                    "current": rlv2,
-                }
-            },
-            "deleted": {},
+    reslut = {
+            "playerDataDelta": {
+                "modified": {
+                    "rlv2": {
+                        "current": {}
+                    }
+                },
+                "deleted": {},
+            }
         }
-    }
 
-    return data
+    def add_data(data:dict):
+        reslut["playerDataDelta"]["modified"]["rlv2"]["current"].update(data)
+
+    def leave():
+        rlv2["player"]["state"] = "WAIT_MOVE"
+        add_data({
+            "player": {
+                "state": rlv2["player"]["state"]
+            }
+        })
+
+    rlv2["player"]["pending"].pop(0)
+    theme = rlv2["game"]["theme"]
+    # 离开事件
+    if choice == "choice_leave" or rlv2_table["details"][theme]["choices"][choice]["displayData"]["funcIconId"] == "leave":
+        leave()
+    else:
+        match choice:
+            # 战斗事件
+            case bat if rlv2_table["details"][theme]["choices"][choice]["displayData"]["funcIconId"] == "battle":
+                scene_id = rlv2_table["details"][theme]["choices"][choice]["nextSceneId"]
+                # 如果还有scene
+                if scene_id is not None:
+                    pending_event = {
+                            "type": "SCENE",
+                            "content": {
+                                "scene": {
+                                    "id": scene_id,
+                                    "choices": {},
+                                    "choiceAdditional": {}
+                                },
+                                "done": False,
+                                "popReport": False
+                            }
+                        }
+                    coi_f = choice[:-2]
+                    for coi in rlv2_table["details"][theme]["choices"].keys():
+                        if coi_f in coi:
+                            if "战斗" in rlv2_table["details"][theme]["choices"]["description"]:
+                                new_choices = coi
+                                break
+                    pending_event["content"]["scene"]["choices"][new_choices] = True
+                    pending_event["content"]["scene"]["choiceAdditional"][new_choices] = {
+                        "rewards": []
+                    }
+                    rlv2["player"]["pending"].insert(0, pending_event)
+                    add_data({
+                        "player": {
+                            "pending": rlv2["player"]["pending"]
+                        }
+                    })
+                # 没有scene就该开打了
+                else:
+                    stage_num = (choice.split("_")[-2])[-1]
+                    if int(choice.split("_")[-1]) > 3:
+                        stage_id = f"ro{theme[-1]}_e_t_{stage_num}"
+                    else:
+                        stage_id = f"ro{theme[-1]}_t_{stage_num}"
+                    
+                    x = rlv2["player"]["cursor"]["position"]["x"]
+                    y = rlv2["player"]["cursor"]["position"]["y"]
+                    node_id = str(x*100 + y)
+                    zone = str(rlv2["player"]["cursor"]["zone"])
+                    rlv2["map"]["zones"][zone]["nodes"][node_id]["stage"] = stage_id
+                    buffs = _rlv2.getBuffs(rlv2, stage_id)
+                    pending_event = {
+                        "type": "BATTLE",
+                        "content": {
+                                "battle": {
+                                "boxInfo": [],
+                                "chestCnt": 100,
+                                "diceRoll": [],
+                                "goldTrapCnt": 100,
+                                "sanity": 0,
+                                "state": 1,
+                                "tmpChar": [],
+                                "unKeepBuff": buffs
+                            },
+                            "done": False,
+                            "popReport": False
+                        }
+                    }
+                    rlv2["player"]["pending"].insert(0, pending_event)
+                    add_data({
+                        "map": {
+                            "zones": {
+                                zone: {
+                                    "nodes": {
+                                        node_id: rlv2["map"]["zones"][zone]["nodes"][node_id]
+                                    }
+                                }
+                            }
+                        },
+                        "player": {
+                            "pending": rlv2["player"]["pending"]
+                        }
+                    })
+            case _:
+                scene_id = rlv2_table["details"][theme]["choices"][choice]["nextSceneId"]
+                if scene_id is not None:
+                    pending_event = {
+                        "type": "SCENE",
+                        "content": {
+                            "scene": {
+                                "id": scene_id,
+                                "choices": {
+                                    "choice_leave": True
+                                    },
+                                "choiceAdditional": {
+                                    "choice_leave": {
+                                        "rewards": []
+                                    }
+                                }
+                            },
+                            "done": False,
+                            "popReport": False
+                        }
+                    }
+                    rlv2["player"]["pending"].insert(0, pending_event)
+                    add_data({
+                        "player": {
+                            "pending": rlv2["player"]["pending"]
+                        }
+                    })
+                else:
+                    leave()
+
+
+    run_after_response(write_json ,rlv2, RLV2_JSON_PATH)
+
+    return reslut
 
 
 def rlv2ChooseInitialRecruitSet():
@@ -711,34 +843,154 @@ def rlv2MoveTo():
     x = request_data["to"]["x"]
     y = request_data["to"]["y"]
 
+    server_data = read_json(SERVER_DATA_PATH)
     rlv2 = read_json(RLV2_JSON_PATH)
+    rlv2_table = get_memory("roguelike_topic_table")
     rlv2["player"]["state"] = "PENDING"
     rlv2["player"]["cursor"]["position"] = {"x": x, "y": y}
     theme = rlv2["game"]["theme"]
-    goods = _rlv2.getGoods(theme)
-    rlv2["player"]["trace"].append(rlv2["player"]["cursor"])
-    pending_index = _rlv2.getNextPendingIndex(rlv2)
-    rlv2["player"]["pending"].insert(
-        0,
-        {
-            "index": pending_index,
-            "type": "SHOP",
-            "content": {
-                "shop": {
-                    "bank": {
-                        "open": False,
-                        "canPut": False,
-                        "canWithdraw": False,
-                        "withdraw": 0,
-                        "cost": 1,
-                    },
-                    "id": "just_a_shop",
-                    "goods": goods,
-                    "_done": False,
+    randomseed = server_data["rlv2_seed"]
+    zone = rlv2["player"]["cursor"]["zone"]
+    # 设定种子
+    random.seed(f"{randomseed}_{zone}_{theme}_{str(x)}{str(y)}")
+
+    def getGoods():
+        ticket = f"{theme}_recruit_ticket_all"
+        price_id = f"{theme}_gold"
+        goods = [
+            {
+                "index": "0",
+                "itemId": ticket,
+                "count": 1,
+                "priceId": price_id,
+                "priceCount": 0,
+                "origCost": 0,
+                "displayPriceChg": False,
+                "_retainDiscount": 1,
+            }
+        ]
+        i = 1
+        for j in rlv2_table["details"][theme]["archiveComp"]["relic"]["relic"]:
+            goods.append(
+                {
+                    "index": str(i),
+                    "itemId": j,
+                    "count": 1,
+                    "priceId": price_id,
+                    "priceCount": 0,
+                    "origCost": 0,
+                    "displayPriceChg": False,
+                    "_retainDiscount": 1,
                 }
-            },
-        },
-    )
+            )
+            i += 1
+        for j in rlv2_table["details"][theme]["difficultyUpgradeRelicGroups"]:
+            for k in rlv2_table["details"][theme]["difficultyUpgradeRelicGroups"][j][
+                "relicData"
+            ]:
+                goods.append(
+                    {
+                        "index": str(i),
+                        "itemId": k["relicId"],
+                        "count": 1,
+                        "priceId": price_id,
+                        "priceCount": 0,
+                        "origCost": 0,
+                        "displayPriceChg": False,
+                        "_retainDiscount": 1,
+                    }
+                )
+                i += 1
+        for j in rlv2_table["details"][theme]["archiveComp"]["trap"]["trap"]:
+            goods.append(
+                {
+                    "index": str(i),
+                    "itemId": j,
+                    "count": 1,
+                    "priceId": price_id,
+                    "priceCount": 0,
+                    "origCost": 0,
+                    "displayPriceChg": False,
+                    "_retainDiscount": 1,
+                }
+            )
+            i += 1
+        return goods
+        
+    node_id = str(x * 100 + y)
+    zone = str(rlv2["player"]["cursor"]["zone"])
+    node_type:int = rlv2["map"]["zones"][zone]["nodes"][node_id]["type"]
+    match node_type:
+        case 16:
+            pass
+        case 32:
+            choices = {}
+            choiceAdditional = {}
+            scene_id_list = []
+            # 获取当前theme全部不期而遇事件
+            for keys in rlv2_table["details"][theme]["choiceScenes"].keys():
+                if keys.endswith("_enter"):
+                    scene_id_list.append(keys)
+            # 抽一个不期而遇事件
+            scene_id:str = random.choice(scene_id_list)
+            parts = scene_id.split("_", 3)
+            choices_f = f"{parts[1]}_{parts[2]}"
+            # 获取当前不期而遇事件所有选项
+            for choices_id in rlv2_table["details"][theme]["choices"].keys():
+                # 如果选项的sceneId有当前不期而遇事件的关键词（choices_f）
+                if choices_f in choices_id:
+                    # 大部分事件为3个初始选项，少部分事件只有2个
+                    # ！待解决 可能出现不该出现的选项
+                    if int(choices_id[-1]) < 4:
+                        if rlv2_table["details"][theme]["choices"][choices_id]["nextSceneId"] is not None:
+                            choices.update({choices_id: True})
+                            choiceAdditional.update({choices_id: {"rewards": []}})
+            pending_event = {
+                "type": "SCENE",
+                "content": {
+                    "scene": {
+                        "id": scene_id,
+                        "choices": choices,
+                        "choiceAdditional": choiceAdditional,
+                        "popReport": False,
+                        "done": False
+                    }
+                }
+            }
+            rlv2["player"]["pending"].insert(0, pending_event)
+        case 512:
+            pass
+        case 8 | 4096:
+            goods = getGoods()
+            rlv2["player"]["trace"].append(rlv2["player"]["cursor"])
+            pending_event = {
+                "type": "SHOP",
+                "content": {
+                    "shop": {
+                        "bank": {
+                            "open": True,
+                            "canPut": False,
+                            "canWithdraw": False,
+                            "withdraw": 0,
+                            "cost": 1,
+                        },
+                        "id": "just_a_shop",
+                        "goods": goods,
+                        "popReport": False,
+                        "done": False,
+                    }
+                },
+            }
+            rlv2["player"]["pending"].insert(0, pending_event)
+        case 131072:
+            pass
+        case 262144:
+            pass
+        case 524288:
+            pass
+        case _:
+            pass
+
     run_after_response(write_json ,rlv2, RLV2_JSON_PATH)
 
     data = {
@@ -1079,88 +1331,6 @@ class _rlv2:
             "needAssist": True,
         }
 
-
-    def getGoods(theme):
-        match theme:
-            case "rogue_1":
-                ticket = "rogue_1_recruit_ticket_all"
-                price_id = "rogue_1_gold"
-            case "rogue_2":
-                ticket = "rogue_2_recruit_ticket_all"
-                price_id = "rogue_2_gold"
-            case "rogue_3":
-                ticket = "rogue_3_recruit_ticket_all"
-                price_id = "rogue_3_gold"
-            case "rogue_4":
-                ticket = "rogue_4_recruit_ticket_all"
-                price_id = "rogue_4_gold"
-            case "rogue_5":
-                ticket = "rogue_5_recruit_ticket_all"
-                price_id = "rogue_5_gold"
-            case _:
-                ticket = ""
-                price_id = ""
-        goods = [
-            {
-                "index": "0",
-                "itemId": ticket,
-                "count": 1,
-                "priceId": price_id,
-                "priceCount": 0,
-                "origCost": 0,
-                "displayPriceChg": False,
-                "_retainDiscount": 1,
-            }
-        ]
-        i = 1
-        rlv2_table = get_memory("roguelike_topic_table")
-        for j in rlv2_table["details"][theme]["archiveComp"]["relic"]["relic"]:
-            goods.append(
-                {
-                    "index": str(i),
-                    "itemId": j,
-                    "count": 1,
-                    "priceId": price_id,
-                    "priceCount": 0,
-                    "origCost": 0,
-                    "displayPriceChg": False,
-                    "_retainDiscount": 1,
-                }
-            )
-            i += 1
-        for j in rlv2_table["details"][theme]["difficultyUpgradeRelicGroups"]:
-            for k in rlv2_table["details"][theme]["difficultyUpgradeRelicGroups"][j][
-                "relicData"
-            ]:
-                goods.append(
-                    {
-                        "index": str(i),
-                        "itemId": k["relicId"],
-                        "count": 1,
-                        "priceId": price_id,
-                        "priceCount": 0,
-                        "origCost": 0,
-                        "displayPriceChg": False,
-                        "_retainDiscount": 1,
-                    }
-                )
-                i += 1
-        for j in rlv2_table["details"][theme]["archiveComp"]["trap"]["trap"]:
-            goods.append(
-                {
-                    "index": str(i),
-                    "itemId": j,
-                    "count": 1,
-                    "priceId": price_id,
-                    "priceCount": 0,
-                    "origCost": 0,
-                    "displayPriceChg": False,
-                    "_retainDiscount": 1,
-                }
-            )
-            i += 1
-        return goods
-
     def getMap(theme):
         rlv2_table = get_memory("roguelike_topic_table")
         stages = [i for i in rlv2_table["details"][theme]["stages"]]
@@ -1242,7 +1412,7 @@ class _rlv2:
         else:
             randomseed = seed
 
-        random.seed(f"{randomseed}_{zone}")
+        random.seed(f"{randomseed}_{zone}_{theme}")
 
         # 商店类型
         shop = 4096 if theme != "rogue_1" else 8
@@ -1251,14 +1421,12 @@ class _rlv2:
         zone_map = {
             str(zone): {
                 "id": f"zone_{zone}",
-                "index": zone,
                 "nodes": {},
                 "variation": []
             }
         }
 
         nodetemp = {
-            "index": "",
             "pos": {"x": 0, "y": 0},
             "next": [],
             "type": 0,
@@ -1267,7 +1435,7 @@ class _rlv2:
 
         # 节点类型权重
         type_weight: dict[int, int] = {}
-        type_weight.update({1:55, 2:15, 32:30, wish:20})
+        type_weight.update({1:60, 2:15, 32:20, wish:20})
 
         if zone > 1:
             type_weight.setdefault(16, 20)
@@ -1303,8 +1471,7 @@ class _rlv2:
 
 
         # 坐标最大值
-        x_max = [None, 2, 4, 4, 5] 
-        y_max = [None, 2, 3, 4, 4]
+        y_max = [None, 2, 3, 4, 4, 4, 4, 4, 4]
 
         ro_num = theme.split("_")[1]
         normal_list = [s for s in stages_list if s.startswith(f"ro{ro_num}_n_{zone}_")]
@@ -1325,9 +1492,9 @@ class _rlv2:
             return int(h, 16) % mod
 
         # 随机节点生成
-        for x in range(0, x_max[zone]):
+        for x in range(0, zone * 2):
             nodes_by_x[x] = []
-            is_end_col = (not zone_1 and x == x_max[zone] - 1)
+            is_end_col = (not zone_1 and x == zone * 2 - 1)
 
             # end_node 单独生成
             if is_end_col:
@@ -1446,46 +1613,70 @@ class _rlv2:
             if x != 0:
                 for ny in (y - 1, y + 1):
                     if ny in nodes_by_x.get(x, []):
-                        if random.random() < 0.6:
+                        if random.random() < 0.3:
                             edge = {"x": x, "y": ny}
                             if random.random() < 0.5:
                                 edge["key"] = True
                             node["next"].append(edge)
 
         # 路径检查
-        for x in sorted(nodes_by_x.keys()):
+        incoming = {idx: False for idx in zone_map[str(zone)]["nodes"]}
+
+        for src in zone_map[str(zone)]["nodes"].values():
+            sx = src["pos"]["x"]
+            for e in src.get("next", []):
+                if e["x"] == sx + 1:
+                    tidx = str(e["x"] * 100 + e["y"])
+                    if tidx in incoming:
+                        incoming[tidx] = True
+        def has_outgoing(node):
+            x = node["pos"]["x"]
+            return any(e["x"] == x + 1 for e in node.get("next", []))
+        x_last = max(nodes_by_x.keys())
+        for idx, node in zone_map[str(zone)]["nodes"].items():
+            x = node["pos"]["x"]
+            y = node["pos"]["y"]
+
+            in_ok  = incoming.get(idx, False)
+            out_ok = has_outgoing(node)
+            # x为0时只要求 outgoing
             if x == 0:
+                if out_ok:
+                    continue
+
+                ny = min(nodes_by_x[x + 1], key=lambda v: abs(v - y))
+                node["next"].append({"x": x + 1, "y": ny})
                 continue
 
-            # 收集本列已被指向的 y
-            has_incoming = set()
-            for node in zone_map[str(zone)]["nodes"].values():
-                if node["pos"]["x"] == x - 1:
-                    for e in node.get("next", []):
-                        if e["x"] == x:
-                            has_incoming.add(e["y"])
-
-            # 检查本列所有节点
-            for y in nodes_by_x[x]:
-                if y in has_incoming:
+            # x为last时只要求 incoming
+            if x == x_last:
+                if in_ok:
                     continue
 
-                # 补一条来自 x-1 的连接
-                prev_candidates = []
-                for py in nodes_by_x[x - 1]:
-                    if abs(py - y) <= 1:
-                        prev_candidates.append(py)
-
-                if not prev_candidates:
-                    continue
-
-                py = random.choice(prev_candidates)
+                py = min(nodes_by_x[x - 1], key=lambda v: abs(v - y))
                 prev_idx = str((x - 1) * 100 + py)
-
                 zone_map[str(zone)]["nodes"][prev_idx]["next"].append({
                     "x": x,
                     "y": y
                 })
+                continue
+
+            # 中间列的 incoming 和 outgoing 都要有横向连接
+            if not in_ok:
+                py = min(nodes_by_x[x - 1], key=lambda v: abs(v - y))
+                prev_idx = str((x - 1) * 100 + py)
+                zone_map[str(zone)]["nodes"][prev_idx]["next"].append({
+                    "x": x,
+                    "y": y
+                })
+
+            if not out_ok:
+                ny = min(nodes_by_x[x + 1], key=lambda v: abs(v - y))
+                node["next"].append({
+                    "x": x + 1,
+                    "y": ny
+                })
+
 
         # 节点排序
         for node in zone_map[str(zone)]["nodes"].values():
