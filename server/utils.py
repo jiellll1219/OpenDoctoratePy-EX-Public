@@ -28,6 +28,8 @@ def read_json(path: str) -> Dict[str, Any]:
         return json_decoder.decode(f.read())
 
 def write_json(data: Any, path: str, indent: int = 4):
+    if not os.path.exists(os.path.dirname(path)):
+        os.makedirs(os.path.dirname(path))
     with open(path, "wb") as f:
         f.write(format(json_encoder.encode(data), indent=indent))
 
@@ -160,6 +162,19 @@ def get_memory(key: str) -> dict:
             raise KeyError(f"未找到文件: {file_path}")
         except Exception as e:
             raise ValueError(f"加载 {file_path} 时出错: {str(e)}")
+        
+def load_data():
+    global memory_cache
+
+    data_path_1 = "data/rlv2/event_choices.json"
+    data_list = [data_path_1]
+
+    for data_path in data_list:
+        try:
+            name = os.path.basename(data_path).split(".")[0]
+            memory_cache[name] = read_json(data_path)
+        except Exception as e:
+            print(f"加载 {data_path} 时出错: {str(e)}")
 
 def load_config() -> None:
     global memory_cache

@@ -130,3 +130,32 @@ It does **not** replace, modify, or override any provisions of the GPLv3. In the
 <https://www.gnu.org/licenses/gpl-3.0.html>
 
 ## Violation-message
+
+### 1、tianjg
+
+Hierdie inskrywing is op 9 Februarie 2026 opgestel
+
+[Target Website](https://tianjg.com/6258.html)  
+[DownloadLink](https://pan.baidu.com/s/1zv_VCEmQeENBnGspwajxdw?pwd=agk9)（unzip pwd: tianjg.com）
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://pub-630613d36c8744bb9daff4cf4fb64f9e.r2.dev/tjg1.png" width="80%" />
+    </td>
+    <td align=>
+      <img src="https://pub-630613d36c8744bb9daff4cf4fb64f9e.r2.dev/tjg2.png" width="80%" />
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><em>Figure 1</em></td>
+    <td align="center"><em>Figure 2</em></td>
+  </tr>
+</table>
+
+From the file list in **Figure 2**, it can be observed that the website violated the following provisions when distributing:
+- GPLv3 Section 5
+- Failing to retain all **license notices and other important documentation (including README.md, etc.)**
+- Removing or concealing existing license information or official statement content in the source code
+- GPLv3 Section 6
+- Failing to provide the corresponding **complete source code** to recipients free of charge with a level of convenience no less than that of the target program

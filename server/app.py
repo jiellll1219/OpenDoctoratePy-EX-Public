@@ -4,7 +4,7 @@ from colorama import Fore, Back, Style, Cursor
 
 from flask import Flask
 
-from utils import preload_json_data, start_global_event_loop, load_config, writeLog, get_memory, character_star_calculate
+from utils import *
 
 import account, background, building, campaignV2, char, charBuild, charm, \
         crisis, deepsea, gacha, mail, online, tower, quest, pay, rlv2, shop, story, \
@@ -303,7 +303,7 @@ app.add_url_rule("/social/setCardShowMedal", methods = ["POST"], view_func = soc
 # app.add_url_rule("/event", methods = ["POST"], view_func = other.event)
 # app.add_url_rule("/batch_event", methods = ["POST"], view_func = other.batch_event)
 # app.add_url_rule("/beat", methods = ["POST"], view_func = other.beat)
-# app.add_url_rule("/deviceprofile/v4", methdos=["POST"], view_func=other.deviceprofile)
+# app.add_url_rule("/deviceprofile/v4", methods=["POST"], view_func=other.deviceprofile)
 
 app.add_url_rule("/charRotation/setCurrent", methods = ["POST"], view_func = charrotation.setCurrent)
 app.add_url_rule("/charRotation/createPreset", methods = ["POST"], view_func = charrotation.createPreset)
@@ -332,6 +332,8 @@ if __name__ == "__main__":
     "──────────────────────────")
     writeLog("[SERVER] 加载config.json")
     load_config()
+    writeLog("[SERVER] 加载普通数据")
+    load_data()
     server_config = get_memory("config")
     host = server_config["server"]["host"]
     port = server_config["server"]["port"]

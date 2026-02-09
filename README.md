@@ -1,10 +1,25 @@
 # DoctoratePy-EX-Public
 
 [简中](README.md) | [EN](docs/README_EN.md)  
-[更新日志(UpdateLog)](docs/updata_log.md)
+[更新日志(UpdateLog)](docs/updata_log.md) [开发指南(DevelopmentGuide)](docs/DEVELOP.md)
 
 <details>
 <summary><strong>最近三条更新日志(点击展开)：</strong></summary>
+
+- 2026 年 2 月 9 日
+
+    修复：  
+    1、卡池系统 `history` 函数category未赋值导致出错的问题  
+    2、app.py 中 `/deviceprofile/v4` 路由methods拼写错的问题
+
+    更新：  
+    1、肉鸽 **不期而遇** 新的处理函数，目前仅支持 傀影与猩红孤钻（rogue_1） 和 水月与深蓝之树（rogue_2） 两个肉鸽。后续会调整数据编写计划，优先保证后续肉鸽 **不期而遇** 的基本可用，再逐步补完藏品、HP等其它数据  
+    - 新处理函数用到的数据的编写格式在 [这里](./DEVELOP.md#event_choices.json格式说明) 查看，该数据需要人工维护，且维护难度较高，在理解 **每个参数** 的作用前，不建议修改它。该数据可能会随后续肉鸽更新添加其它 **参数**  
+    2、优化 卡池系统 的代码样式
+
+    添加：  
+    1、增加 `load_data` 函数,用于加载自定义路径下的json文件到 **memory_cache**  
+    2、添加 开发指南 文档便于理解一些复杂的内容
 
 - 2026 年 1 月 25 日
 
@@ -36,30 +51,6 @@
 > [!WARNING]  
 > 注意：已将大部分 `write_json` 的调用替换为带 `run_after_response` 的版本，并已在模拟器和真机上完成测试。  
 对于尚未添加 `run_after_response` 的 `write_json` 调用位置，不建议进行替换，否则可能会引发非预期的问题。
-
-- 2026 年 1 月 11 日
-
-   修复：  
-   1、在使用种子时会报错 NameError: name 'randomseed' is not defined
-
-   更新：  
-   1、游戏内公告  
-   2、`萨卡兹的无终奇语`与`界园志异`module功能修复  
-   3、卡池文件
-
-   添加：  
-   角色稀有度预处理，使用 get_memory("character_star") 获取数据，数据结构为 Dict[str, int]  
-   使用例子：
-   ```python
-   >>>  character_star = get_memory("character_star")
-   >>>  W_star = character_star["char_113_cqbw"]
-   >>>  print(W_star)
-   6
-   ```
-
-   修改：  
-   1、回滚class accountSync  
-   2、优化app.py中关于内存变量读取的规范
     
 </details>
 
@@ -167,3 +158,33 @@
 <https://www.gnu.org/licenses/gpl-3.0.html>
 
 ## 名人堂
+
+### 1、天机阁
+
+此条目编写于 2026年2月9日
+
+[目标网页](https://tianjg.com/6258.html)  
+[百度网盘](https://pan.baidu.com/s/1zv_VCEmQeENBnGspwajxdw?pwd=agk9) [123云盘](https://www.123684.com/s/Gnz8Vv-A2Wc3) [夸克网盘](https://pan.quark.cn/s/e69503915336?pwd=iiv9)  
+解压密码 tianjg.com ，感谢一位要求匿名的热心人士提供网盘链接
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://pub-630613d36c8744bb9daff4cf4fb64f9e.r2.dev/tjg1.png" width="80%" />
+    </td>
+    <td align=>
+      <img src="https://pub-630613d36c8744bb9daff4cf4fb64f9e.r2.dev/tjg2.png" width="80%" />
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><em>图1</em></td>
+    <td align="center"><em>图2</em></td>
+  </tr>
+</table>
+
+从 **图2** 中的文件列表可看到，该网站在分发时违反了以下条款：  
+- GPLv3 第5条（Section 5）
+    - 未保留全部 **许可证声明及其他重要通知文件（包括 README.md 等）**
+    - 移除或隐藏源代码中已有的许可证信息或官方声明内容
+- GPLv3 第6条（Section 6）
+    - 未以不低于目标程序的便利性，向接收方免费提供对应的 **完整源代码**

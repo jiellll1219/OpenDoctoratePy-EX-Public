@@ -89,7 +89,6 @@ def rlv2CreateGame():
             "trace": [],
             "pending": [
                 {
-                    "index": "e_0",
                     "type": "GAME_INIT_RELIC",
                     "content": {
                         "initRelic": {
@@ -102,7 +101,6 @@ def rlv2CreateGame():
                     },
                 },
                 {
-                    "index": "e_1",
                     "type": "GAME_INIT_RECRUIT_SET",
                     "content": {
                         "initRecruitSet": {
@@ -112,7 +110,6 @@ def rlv2CreateGame():
                     },
                 },
                 {
-                    "index": "e_2",
                     "type": "GAME_INIT_RECRUIT",
                     "content": {
                         "initRecruit": {
@@ -311,12 +308,17 @@ def rlv2ChooseInitialRelic():
 
 
 def rlv2SelectChoice():
-    # 警告：不期而遇事件数量极其庞大，处理逻辑几乎没有通解
     json_body = request.get_json()
+    print(json_body)
+    # 数据
     choice:str = json_body["choice"]
+    is_bat = False
     rlv2 = read_json(RLV2_JSON_PATH)
+    server_data = read_json(SERVER_DATA_PATH)
     rlv2_table = get_memory("roguelike_topic_table")
+    event_choices = get_memory("event_choices")
 
+    # 响应
     reslut = {
             "playerDataDelta": {
                 "modified": {
@@ -329,63 +331,102 @@ def rlv2SelectChoice():
         }
 
     def add_data(data:dict):
+        """
+        为result添加传入的内容
+        """
         reslut["playerDataDelta"]["modified"]["rlv2"]["current"].update(data)
 
     def leave():
+        """
+        调用此函数可以离开事件
+        """
         rlv2["player"]["state"] = "WAIT_MOVE"
         add_data({
             "player": {
-                "state": rlv2["player"]["state"]
+                "state": rlv2["player"]["state"],
+                "pending": rlv2["player"]["pending"]
             }
         })
 
+    def dict_calc_inplace(a:dict, b:dict, sign:int=1):
+        """
+        用a字典 加/减 b字典中相同的相对路径的值, 不要传错层级! 这里没有纠错!
+
+        :param a: 用于加减的dict, 一般为rlv2["player"]["property"] rlv2["module"] rlv2["inventory"]["consumable"]
+        :param b: 要加减的dict, 一般为event_choices[theme]["choices"][choice]的lose或get
+        :param sign: 控制加减, lose传入-1 get传入1, 也可控制倍率
+        """
+        for key, value in a.items():
+            if isinstance(value, dict):
+                dict_calc_inplace(value, b[key], sign)
+            else:
+                a.get(key, 0) = value + sign * b[key]
+
+    def add_scene_event(scene_id:str, choices:list):
+        """
+        为 scene 事件添加选项
+
+        :param scene_id: 下一个场景的id
+        :param choices: 可选项列表
+        """
+        pending_event = {
+            "type": "SCENE",
+            "content": {
+                "scene": {
+                    "id": scene_id,
+                    "choices": {},
+                    "choiceAdditional": {}
+                },
+                "done": False,
+                "popReport": False
+            }
+        }
+        # 把全部可选项加到事件里
+        for coi in choices:
+            pending_event["content"]["scene"]["choices"][coi] = True
+            pending_event["content"]["scene"]["choiceAdditional"][coi] = {"rewards": []}
+        rlv2["player"]["pending"].insert(0, pending_event)
+
     rlv2["player"]["pending"].pop(0)
     theme = rlv2["game"]["theme"]
-    # 离开事件
-    if choice == "choice_leave" or rlv2_table["details"][theme]["choices"][choice]["displayData"]["funcIconId"] == "leave":
+    random_seed = server_data["rlv2_seed"]
+    random.seed(random_seed)
+
+    # 战斗事件检测
+    if choice != "choice_leave":
+        if "bat" in choice:
+            is_bat = True
+        elif isinstance(event_choices[theme]["choices"][choice]["choices"], str):
+            is_bat = True
+        
+    # 如果 choice 是离开类事件则直接离开
+    if choice == "choice_leave":
         leave()
+    # 否则进行match case判断
     else:
         match choice:
-            # 战斗事件
-            case bat if rlv2_table["details"][theme]["choices"][choice]["displayData"]["funcIconId"] == "battle":
+            # 如果是战斗事件
+            case bat if is_bat is True:
                 scene_id = rlv2_table["details"][theme]["choices"][choice]["nextSceneId"]
-                # 如果还有scene
+                # 如果 nextSceneId 不为空, 则继续 SCENE 事件
                 if scene_id is not None:
-                    pending_event = {
-                            "type": "SCENE",
-                            "content": {
-                                "scene": {
-                                    "id": scene_id,
-                                    "choices": {},
-                                    "choiceAdditional": {}
-                                },
-                                "done": False,
-                                "popReport": False
-                            }
-                        }
-                    coi_f = choice[:-2]
-                    for coi in rlv2_table["details"][theme]["choices"].keys():
-                        if coi_f in coi:
-                            if "战斗" in rlv2_table["details"][theme]["choices"]["description"]:
-                                new_choices = coi
-                                break
-                    pending_event["content"]["scene"]["choices"][new_choices] = True
-                    pending_event["content"]["scene"]["choiceAdditional"][new_choices] = {
-                        "rewards": []
-                    }
-                    rlv2["player"]["pending"].insert(0, pending_event)
+                    add_scene_event(scene_id, event_choices[theme]["choices"][choice]["choices"])
                     add_data({
                         "player": {
                             "pending": rlv2["player"]["pending"]
                         }
                     })
-                # 没有scene就该开打了
+                # 否则进入 BATTLE 事件
                 else:
-                    stage_num = (choice.split("_")[-2])[-1]
-                    if int(choice.split("_")[-1]) > 3:
-                        stage_id = f"ro{theme[-1]}_e_t_{stage_num}"
-                    else:
-                        stage_id = f"ro{theme[-1]}_t_{stage_num}"
+                    stage_id:str = event_choices[theme]["choices"][choice]["choices"]
+                    # 以下划线结尾的字符串作为关键词匹配
+                    if stage_id[-1] == "_":
+                        id_random_list = []
+                        # 把有关键词的关卡id加到list中并随机选一个
+                        for id in list(rlv2_table["details"][theme]["stages"].keys()):
+                            if stage_id in id:
+                                id_random_list.append(id)
+                        stage_id = random.choice(id_random_list)
                     
                     x = rlv2["player"]["cursor"]["position"]["x"]
                     y = rlv2["player"]["cursor"]["position"]["y"]
@@ -427,34 +468,110 @@ def rlv2SelectChoice():
                     })
             case _:
                 scene_id = rlv2_table["details"][theme]["choices"][choice]["nextSceneId"]
+                # 如果 next scene 不为 None
                 if scene_id is not None:
-                    pending_event = {
-                        "type": "SCENE",
-                        "content": {
-                            "scene": {
-                                "id": scene_id,
-                                "choices": {
-                                    "choice_leave": True
-                                    },
-                                "choiceAdditional": {
-                                    "choice_leave": {
-                                        "rewards": []
-                                    }
+                    # --------------------
+                    lose:dict = event_choices[theme]["choices"][choice]["lose"]
+                    get:str|dict|list|int = event_choices[theme]["choices"][choice]["get"]
+                    m_lose:dict = event_choices[theme]["choices"][choice].get("m_lose")
+                    m_get:dict = event_choices[theme]["choices"][choice].get("m_get")
+                    i_get:dict = event_choices[theme]["choices"][choice].get("i_get")
+                    i_lose:dict = event_choices[theme]["choices"][choice].get("i_lose")
+                    # 肉鸽特色机制处理
+                    if m_lose is not None:
+                        dict_calc_inplace(rlv2["module"], m_lose, -1)
+                    if m_get is not None:
+                        dict_calc_inplace(rlv2["module"], m_get, 1)
+                    if i_get is not None:
+                        dict_calc_inplace(rlv2["inventory"], i_get, 1)
+                    if i_lose is not None:
+                        dict_calc_inplace(rlv2["inventory"], i_lose, -1)
+                    # 正常lose get处理
+                    # 减东西
+                    if lose is not None:
+                        if isinstance(lose, dict):
+                            dict_calc_inplace(rlv2["player"]["property"], lose, -1)
+                            # 如果源石锭为负数, 调回0, 预防需要扣除全部源石锭的事件导致负数
+                            if rlv2["player"]["property"]["gold"] < 0:
+                                rlv2["player"]["property"]["gold"] = 0
+                        if isinstance(lose, str):
+                            pass
+                    # 给东西
+                    if get is not None:
+                        if isinstance(get, dict): 
+                            dict_calc_inplace(rlv2["player"]["property"], get, 1)
+                            add_data({
+                                "player": {
+                                    "property": rlv2["player"]["property"]
                                 }
-                            },
-                            "done": False,
-                            "popReport": False
-                        }
-                    }
-                    rlv2["player"]["pending"].insert(0, pending_event)
+                            })
+                        else:
+                            item_list = []
+                            if isinstance(get, str):
+                                match theme:
+                                    case "rouge_1":
+                                        for item_id in rlv2_table["details"][theme]["items"].keys():
+                                            if get in item_id:
+                                                item_list.append(item_id)
+                                        item_id = random.choice(item_list)
+                                        # _new_data = _rlv2.add_item(rlv2, item_id)
+                                    case "rogue_2":
+                                        curse:bool = event_choices[theme]["choices"][choice].get("curse", False)
+                                        if curse:
+                                            for item_id in rlv2_table["details"][theme]["items"].keys():
+                                                if get in item_id:
+                                                    item_list.append(item_id)
+                                        else:
+                                            for item_id in rlv2_table["details"][theme]["items"].keys():
+                                                if "curse_" not in item_id:
+                                                    if get in item_id:
+                                                        item_list.append(item_id)
+                                        item_id = random.choice(item_list)
+                                        # _new_data = _rlv2.add_item(rlv2, item_id)
+                            elif isinstance(get, int):
+                                # for item_id in range(get):
+                                #     item_key:str = event_choices[theme]["choices"][choice]["get_id"][get]
+                                #     for item_id in rlv2_table["details"][theme]["items"].keys():
+                                #         if item_key in item_id:
+                                #             item_list.append(item_id)
+                                #     item_id = random.choice(item_list)
+                                #     # _new_data = _rlv2.add_item(rlv2, item_id)
+                                match theme:
+                                    case "rouge_1":
+                                        pass
+                                    case "rogue_2":
+                                        for cnt in range(get):
+                                            item_choicce_info:dict = event_choices[theme]["choices"][choice]["get_id"][cnt]
+                                            item_key:str = item_choicce_info["get"]
+                                            curse:bool = item_choicce_info["curse"]
+                                            if curse:
+                                                for item_id in rlv2_table["details"][theme]["items"].keys():
+                                                    if item_key in item_id:
+                                                        if "curse_" in item_id:
+                                                            continue
+                                                        else:
+                                                            item_list.append(item_id)
+                                            else:
+                                                for item_id in rlv2_table["details"][theme]["items"].keys():
+                                                    if "curse_" not in item_id:
+                                                        if item_key in item_id:
+                                                            item_list.append(item_id)
+                                            item_id = random.choice(item_list)
+                                            # _new_data = _rlv2.add_item(rlv2, item_id)
+                            else:
+                                item_list = get
+                                item_id = random.choice(item_list)
+                                # _new_data = _rlv2.add_item(rlv2, item_id)
+                    # --------------------
+                    add_scene_event(scene_id, event_choices[theme]["choices"][choice]["choices"])
                     add_data({
                         "player": {
                             "pending": rlv2["player"]["pending"]
                         }
                     })
+                # 为 None 则离开事件
                 else:
                     leave()
-
 
     run_after_response(write_json ,rlv2, RLV2_JSON_PATH)
 
@@ -646,45 +763,51 @@ def rlv2FinishEvent():
 def rlv2MoveAndBattleStart():
     request_data = request.get_json()
     stage_id = request_data["stageId"]
-    x = request_data["to"]["x"]
-    y = request_data["to"]["y"]
 
     rlv2 = read_json(RLV2_JSON_PATH)
     rlv2["player"]["state"] = "PENDING"
-    rlv2["player"]["cursor"]["position"] = {"x": x, "y": y}
+    can_box = False
+    box_info = []
+    if request_data["to"] is not None:
+        x = request_data["to"]["x"]
+        y = request_data["to"]["y"]
+        rlv2["player"]["cursor"]["position"] = {"x": x, "y": y}
+        can_box = True
+    else:
+        rlv2["player"]["pending"].pop(0)
     rlv2["player"]["trace"].append(rlv2["player"]["cursor"])
-    pending_index = _rlv2.getNextPendingIndex(rlv2)
     buffs = _rlv2.getBuffs(rlv2, stage_id)
     theme = rlv2["game"]["theme"]
-    match theme:
-        case "rogue_1":
-            box_info = {}
-        case "rogue_2":
-            box_info = {
-                random.choice(
-                    ["trap_065_normbox", "trap_066_rarebox", "trap_068_badbox"]
-                ): 100
-            }
-        case "rogue_3":
-            box_info = {
-                random.choice(
-                    ["trap_108_smbox", "trap_109_smrbox", "trap_110_smbbox"]
-                ): 100
-            }
-        case "rogue_4":
-            box_info = {
-                random.choice(
-                    ["trap_757_skzbox", "trap_758_skzmbx", "trap_759_skzwyx"]
-                ): 100
-            },
-        case "rogue_5":
-            box_info = {
-                random.choice(
-                    ["rogue_5_stash_recruit", "pool_recruit_1"]
-                ): 100
-            }
-        case _:
-            box_info = {}
+    if can_box == True:
+        match theme:
+            case "rogue_1":
+                box_info = {}
+            case "rogue_2":
+                box_info = {
+                    random.choice(
+                        ["trap_065_normbox", "trap_066_rarebox", "trap_068_badbox"]
+                    ): 100
+                }
+            case "rogue_3":
+                box_info = {
+                    random.choice(
+                        ["trap_108_smbox", "trap_109_smrbox", "trap_110_smbbox"]
+                    ): 100
+                }
+            case "rogue_4":
+                box_info = {
+                    random.choice(
+                        ["trap_757_skzbox", "trap_758_skzmbx", "trap_759_skzwyx"]
+                    ): 100
+                },
+            case "rogue_5":
+                box_info = {
+                    random.choice(
+                        ["rogue_5_stash_recruit", "pool_recruit_1"]
+                    ): 100
+                }
+            case _:
+                box_info = {}
     dice_roll = []
     if theme == "rogue_2":
         dice_upgrade_count = 0
@@ -722,7 +845,6 @@ def rlv2MoveAndBattleStart():
     rlv2["player"]["pending"].insert(
         0,
         {
-            "index": pending_index,
             "type": "BATTLE",
             "content": {
                 "battle": {
@@ -734,9 +856,11 @@ def rlv2MoveAndBattleStart():
                     "tmpChar": [],
                     "sanity": 0,
                     "unKeepBuff": buffs,
-                }
-            },
-        },
+                },
+                "done": False,
+                "popReport": False
+            }
+        }
     )
     run_after_response(write_json ,rlv2, RLV2_JSON_PATH)
 
@@ -744,7 +868,9 @@ def rlv2MoveAndBattleStart():
         "playerDataDelta": {
             "modified": {
                 "rlv2": {
-                    "current": rlv2,
+                    "current": {
+                        "player": rlv2["player"]
+                    },
                 }
             },
             "deleted": {},
@@ -763,11 +889,9 @@ def rlv2BattleFinish():
         rlv2["player"]["pending"].pop(0)
         theme = rlv2["game"]["theme"]
         ticket = f"{theme}_recruit_ticket_all"
-        pending_index = _rlv2.getNextPendingIndex(rlv2)
         rlv2["player"]["pending"].insert(
             0,
             {
-                "index": pending_index,
                 "type": "BATTLE_REWARD",
                 "content": {
                     "battleReward": {
@@ -795,10 +919,9 @@ def rlv2BattleFinish():
     else:
         rlv2["player"]["state"] = "WAIT_MOVE"
         rlv2["player"]["pending"] = []
-        rlv2["player"]["cursor"]["position"]["x"] = 0
-        rlv2["player"]["cursor"]["position"]["y"] = 0
+        # rlv2["player"]["cursor"]["position"]["x"] = 0
+        # rlv2["player"]["cursor"]["position"]["y"] = 0
         rlv2["player"]["trace"].pop()
-
     run_after_response(write_json ,rlv2, RLV2_JSON_PATH)
 
     data = {
@@ -846,6 +969,7 @@ def rlv2MoveTo():
     server_data = read_json(SERVER_DATA_PATH)
     rlv2 = read_json(RLV2_JSON_PATH)
     rlv2_table = get_memory("roguelike_topic_table")
+    event_choices = get_memory("event_choices")
     rlv2["player"]["state"] = "PENDING"
     rlv2["player"]["cursor"]["position"] = {"x": x, "y": y}
     theme = rlv2["game"]["theme"]
@@ -928,23 +1052,15 @@ def rlv2MoveTo():
             choiceAdditional = {}
             scene_id_list = []
             # 获取当前theme全部不期而遇事件
-            for keys in rlv2_table["details"][theme]["choiceScenes"].keys():
-                if keys.endswith("_enter"):
-                    scene_id_list.append(keys)
+            scene_id_list = list(event_choices[theme]["enter"].keys())
             # 抽一个不期而遇事件
             scene_id:str = random.choice(scene_id_list)
-            parts = scene_id.split("_", 3)
-            choices_f = f"{parts[1]}_{parts[2]}"
             # 获取当前不期而遇事件所有选项
-            for choices_id in rlv2_table["details"][theme]["choices"].keys():
-                # 如果选项的sceneId有当前不期而遇事件的关键词（choices_f）
-                if choices_f in choices_id:
-                    # 大部分事件为3个初始选项，少部分事件只有2个
-                    # ！待解决 可能出现不该出现的选项
-                    if int(choices_id[-1]) < 4:
-                        if rlv2_table["details"][theme]["choices"][choices_id]["nextSceneId"] is not None:
-                            choices.update({choices_id: True})
-                            choiceAdditional.update({choices_id: {"rewards": []}})
+            choices_list:list = event_choices[theme]["enter"][scene_id]
+            # 添加全部可选项
+            for choices_id in choices_list:
+                choices.update({choices_id: True})
+                choiceAdditional.update({choices_id: {"rewards": []}})
             pending_event = {
                 "type": "SCENE",
                 "content": {
@@ -1306,19 +1422,7 @@ class _rlv2:
 
     def addTicket(rlv2_data, ticket_id):
         theme = rlv2_data["game"]["theme"]
-        match theme:
-            case "rogue_1":
-                ticket = "rogue_1_recruit_ticket_all"
-            case "rogue_2":
-                ticket = "rogue_2_recruit_ticket_all"
-            case "rogue_3":
-                ticket = "rogue_3_recruit_ticket_all"
-            case "rogue_4":
-                ticket = "rogue_4_recruit_ticket_all"
-            case "rogue_5":
-                ticket = "rogue_5_recruit_ticket_all"
-            case _:
-                ticket = ""
+        ticket = f"{theme}_recruit_ticket_all"
         rlv2_data["inventory"]["recruit"][ticket_id] = {
             "index": ticket_id,
             "id": ticket,
@@ -1373,7 +1477,7 @@ class _rlv2:
                     node_type = 4
                 nodes_list.append(
                     {
-                        "index": f"{x}0{y}",
+                        "index": str(x * 100 + y),
                         "pos": {"x": x, "y": y},
                         "next": [],
                         "type": node_type,
@@ -1685,21 +1789,10 @@ class _rlv2:
 
         return zone_map, randomseed
 
-    def getNextPendingIndex(rlv2):
-        d = set()
-        for e in rlv2["player"]["pending"]:
-            d.add(int(e["index"][2:]))
-        i = 0
-        while i in d:
-            i += 1
-        return f"e_{i}"
-
     def activateTicket(rlv2, ticket_id):
-        pending_index = _rlv2.getNextPendingIndex(rlv2)
         rlv2["player"]["pending"].insert(
             0,
             {
-                "index": pending_index,
                 "type": "RECRUIT",
                 "content": {"recruit": {"ticket": ticket_id}},
             },
@@ -1911,6 +2004,10 @@ class _rlv2:
                 pass
 
         return buffs
+    
+    def add_item(rlv2:dict, item:str):
+        #TODO: 写添加藏品逻辑
+        return {}
 
     def ro5_drawCopper(randomseed:str):
         coppper_bag = {}
@@ -1936,19 +2033,18 @@ class _rlv2:
         
         drawn_list = random.sample(list(coppper_bag.keys()), 3)
 
-        for copper in drawn_list:
+        for copper in drawn_list:#wz
             coppper_bag[copper]["isDrawn"] = True
 
         return coppper_bag, drawn_list
     
     def ro4_troopWeights_calculate(rlv2:dict):
-        character_table = get_memory("character_table")
         character_star = get_memory("character_star")
         troopWeights = {}
         char_load_data = {"6": 6, "5": 5, "4": 4, "3": 2, "2": 2, "1": 2}
 
         for key, value in rlv2["troop"]["chars"].items():
-            if value["charId"] == "char_4151_tinman":
+            if value["charId"] == "char_4151_tinman":#wz
                 troopWeights[key] = 10
             else:
                 char_id = value["charId"]
@@ -1957,3 +2053,5 @@ class _rlv2:
                 troopWeights[key] = cahr_load
 
         return troopWeights
+
+
