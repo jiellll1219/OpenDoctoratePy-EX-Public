@@ -6,6 +6,17 @@
 <details>
 <summary><strong>最近三条更新日志(点击展开)：</strong></summary>
 
+- 2026 年 2 月 10 日
+
+    修复：  
+    1、启动时出现 **AttributeError: 'function' object has no attribute 'getLogger'** 错误  
+    2、肉鸽不期而遇处理函数（第363行）语法不正确的问题  
+    3、部分设备在使用时会出现 **FileNotFoundError : [Errno 2] No such file or directory: 'data/crisisV2/cc?.json '** 的问题
+
+    更新：  
+    1、卡池文件  
+    2、部分商店数据
+
 - 2026 年 2 月 9 日
 
     修复：  
@@ -39,19 +50,6 @@
 > [!CAUTION]  
 > 警告：由于 **不期而遇** 事件繁杂、逻辑各异，当前处理 **不期而遇** 的函数无法正确处理全部事件，可能但不限于出现以下开局状况：被坎诺特催债，遇到“美人关”、未来猎手等高难战斗事件  
 > 请**谨慎**选择是否游玩 **不期而遇** 节点
-
-- 2026 年 1 月 18 日
-
-    修复：  
-    1、app.py路由对 `accountSync` 回滚不完整导致的错误  
-    2、app.py启动顺序导致 `config` 无法读取的问题  
-
-    更新：  
-    1、大部分 `write_json` 函数调用处使用 `run_after_response` 以保证IO操作不会过多影响函数运行耗时  
-> [!WARNING]  
-> 注意：已将大部分 `write_json` 的调用替换为带 `run_after_response` 的版本，并已在模拟器和真机上完成测试。  
-对于尚未添加 `run_after_response` 的 `write_json` 调用位置，不建议进行替换，否则可能会引发非预期的问题。
-    
 </details>
 
 本项目旨在作为OpenDoctoratePy的分支，拓展与完善功能。短期目标为尽可能防止因404或未知错误被踹回登录界面，长期目标为实现类似SPT-AKI项目的单人游玩本地服务

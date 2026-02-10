@@ -1,5 +1,4 @@
 import re
-import logging
 from colorama import Fore, Back, Style, Cursor
 
 from flask import Flask
@@ -13,6 +12,7 @@ import account, background, building, campaignV2, char, charBuild, charm, \
 
 app = Flask(__name__)
 
+import logging
 logger = logging.getLogger('werkzeug')
 logger.setLevel(logging.INFO)
 logger.addFilter(lambda record: not re.match(r'.*(/syncPushMessage|/pb/async|/event|/batch_event|/deviceprofile/v4).*', record.getMessage()))

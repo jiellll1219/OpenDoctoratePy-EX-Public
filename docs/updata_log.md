@@ -1,5 +1,16 @@
 # 更新日志
 
+- 2026 年 2 月 10 日
+
+    修复：  
+    1、启动时出现 **AttributeError: 'function' object has no attribute 'getLogger'** 错误  
+    2、肉鸽不期而遇处理函数（第363行）语法不正确的问题  
+    3、部分设备在使用时会出现 **FileNotFoundError : [Errno 2] No such file or directory: 'data/crisisV2/cc?.json '** 的问题
+
+    更新：  
+    1、卡池文件  
+    2、部分商店数据
+
 - 2026 年 2 月 9 日
 
     修复：  

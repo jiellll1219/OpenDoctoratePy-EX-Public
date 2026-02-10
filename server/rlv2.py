@@ -360,7 +360,8 @@ def rlv2SelectChoice():
             if isinstance(value, dict):
                 dict_calc_inplace(value, b[key], sign)
             else:
-                a.get(key, 0) = value + sign * b[key]
+                r = a.get(key, 0) + sign * b[key]
+                a[key] = r
 
     def add_scene_event(scene_id:str, choices:list):
         """
@@ -529,13 +530,6 @@ def rlv2SelectChoice():
                                         item_id = random.choice(item_list)
                                         # _new_data = _rlv2.add_item(rlv2, item_id)
                             elif isinstance(get, int):
-                                # for item_id in range(get):
-                                #     item_key:str = event_choices[theme]["choices"][choice]["get_id"][get]
-                                #     for item_id in rlv2_table["details"][theme]["items"].keys():
-                                #         if item_key in item_id:
-                                #             item_list.append(item_id)
-                                #     item_id = random.choice(item_list)
-                                #     # _new_data = _rlv2.add_item(rlv2, item_id)
                                 match theme:
                                     case "rouge_1":
                                         pass
