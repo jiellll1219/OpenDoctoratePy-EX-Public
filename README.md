@@ -159,30 +159,7 @@
 
 ### 1、天机阁
 
-此条目编写于 2026年2月9日
+此条目编写于 2026年2月9日  
+最后修改于 2026年2月
 
-[目标网页](https://tianjg.com/6258.html)  
-[百度网盘](https://pan.baidu.com/s/1zv_VCEmQeENBnGspwajxdw?pwd=agk9) [123云盘](https://www.123684.com/s/Gnz8Vv-A2Wc3) [夸克网盘](https://pan.quark.cn/s/e69503915336?pwd=iiv9)  
-解压密码 tianjg.com ，感谢一位要求匿名的热心人士提供网盘链接
-
-<table>
-  <tr>
-    <td align="center">
-      <img src="https://pub-630613d36c8744bb9daff4cf4fb64f9e.r2.dev/tjg1.png" width="80%" />
-    </td>
-    <td align=>
-      <img src="https://pub-630613d36c8744bb9daff4cf4fb64f9e.r2.dev/tjg2.png" width="80%" />
-    </td>
-  </tr>
-  <tr>
-    <td align="center"><em>图1</em></td>
-    <td align="center"><em>图2</em></td>
-  </tr>
-</table>
-
-从 **图2** 中的文件列表可看到，该网站在分发时违反了以下条款：  
-- GPLv3 第5条（Section 5）
-    - 未保留全部 **许可证声明及其他重要通知文件（包括 README.md 等）**
-    - 移除或隐藏源代码中已有的许可证信息或官方声明内容
-- GPLv3 第6条（Section 6）
-    - 未以不低于目标程序的便利性，向接收方免费提供对应的 **完整源代码**
+分发者已改正，公示信息移除

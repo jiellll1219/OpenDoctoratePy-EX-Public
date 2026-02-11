@@ -77,11 +77,11 @@ after_this_request 回调触发
         "choices": {//每个选择的效果和下一个可用选项
             "choice_ro?_???_1": { //choice的id
                 "choices": ["choice_leave", "choice_ro?_???_?"], //list类型，接下来可选的选项。str类型，战斗关卡id
-                "lose": null, // str类型，扣除对应物品。dict类型，扣除[player][property]下对应路径的值
+                "lose": null, // str类型，扣除对应物品。dict类型，扣除["player"]["property"]下对应路径的值
                 "m_lose": {}, //非必定存在的dict，扣除module下对应路径的值
                 "get": null, // 最复杂的key，可以是 str|dict|list|int 中任何一个类型
                 // str：藏品id或关键词，统一通过 if get in item_id: 和 item_id = random.choice(item_list) 选出藏品str id
-                // dict：增加[player][property]下对应路径的值
+                // dict：增加["player"]["property"]下对应路径的值
                 // list：跳过 if get in item_id: 直接赋值 item_list 进行 item_id = random.choice(item_list) 选出藏品str id
                 // int：get_id 字典使用 range(get) 的边界，控制给多少个藏品，和 get_id 一起出现，注意不要下标越界
                 "m_get": {}, //非必定存在的dict，增加module下对应路径的值
@@ -91,8 +91,8 @@ after_this_request 回调触发
                     //curse和下述的 curse 一致
                 ],
                 "curse": false, //curse为水月肉鸽（rogue_2）独有，控制是否是 受诅藏品（debuff藏品）
-                "i_get": {},
-                "i_lose": {}
+                "i_get": {}, //dict类型，给["inventory"]["consumable"]添加道具，通常为每个肉鸽专属资源（水月的钥匙、界园的票券）
+                "i_lose": {} //dict类型，扣除["inventory"]["consumable"]对应的道具
             }
         }
     }
@@ -101,4 +101,8 @@ after_this_request 回调触发
 
 ## 代码
 
-已尽力避免使用其它第三方库实现功能，且会为大型函数添加逐行注释或每段注释，应该没有什么代码看不懂吧？
+~~已尽力避免使用其它第三方库实现功能，且会为大型函数添加逐行注释或每段注释，应该没有什么代码看不懂吧？~~
+
+### rlv2.py
+
+在这个文件中的函数，只有直接处理路由的函数不在 **class _rlv2** 中，如果需要添加多个函数会用到的逻辑，请添加到 **class _rlv2** 中，如果只是该函数会用到，请使用闭包形式，后续有其它函数用到时再修补并移动到 **class _rlv2** 中
