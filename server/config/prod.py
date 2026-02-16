@@ -2,10 +2,10 @@ import re
 import json
 import requests
 
-from flask import request
+from flask import request, redirect
 from random import shuffle
 from constants import CONFIG_PATH
-from utils import read_json, write_json
+from utils import read_json, write_json, dump_json, get_memory
 
 
 def randomHash():
@@ -27,7 +27,7 @@ def prodRefreshConfig():
 
 def prodAndroidVersion():
 
-    server_config = read_json(CONFIG_PATH)
+    server_config = get_memory("config")
     version = server_config["version"]["android"]
 
     if server_config["assets"]["enableMods"]:
@@ -35,10 +35,12 @@ def prodAndroidVersion():
 
     return version
 
+def redirect_rote():
+    return redirect("/config/prod/official/network_config")
 
 def prodNetworkConfig():
 
-    server_config = read_json(CONFIG_PATH)
+    server_config = get_memory("config")
 
     mode = server_config["server"]["mode"]
     server = request.host_url[:-1]
@@ -47,9 +49,9 @@ def prodNetworkConfig():
 
     if server_config["assets"]["autoUpdate"]:
         if mode == "cn":
-            version = requests.get("https://ak-conf.hypergryph.com/config/prod/official/Android/version")
+            version = requests.get("https://ak-conf.hypergryph.com/config/prod/official/Android/version", verify=False)
         elif mode == "global":
-            version = requests.get("https://ark-us-static-online.yo-star.com/assetbundle/official/Android/version")
+            version = requests.get("https://ark-us-static-online.yo-star.com/assetbundle/official/Android/version", verify=False)
         server_config["version"]["android"] = version
 
         write_json(server_config, CONFIG_PATH)
@@ -59,44 +61,55 @@ def prodNetworkConfig():
         if isinstance(url, str) and url.find("{server}") >= 0:
             network_config["content"]["configs"][funcVer]["network"][index] = re.sub("{server}", server, url)
 
-    network_config["content"] = json.dumps(network_config["content"])
-
-    return json.dumps(network_config)
+    result = network_config.copy()
+    result["content"] = dump_json(result["content"])
+    result = dump_json(result)
+    return result
 
 
 def prodRemoteConfig():
 
-    remote = read_json(CONFIG_PATH)["remote"]
+    remote:dict = get_memory("config")["remote"].copy()
+    return dump_json(remote)
 
-    return json.dumps(remote)
+def prodAudit(subpath):
+
+        response = requests.get(f"https://ak-asset.hypergryph.com/audit/official/Windows/{subpath}", verify=False)
+        return response.json()
+
+    # TODO: 等windows版本数据可以自动更新后再用
+    # server_config = get_memory("config")
+    # result = server_config["version"]["windows"]
+
+    # return result
 
 
 def prodPreAnnouncement():
 
-    server_config = read_json(CONFIG_PATH)
+    server_config = get_memory("config")
     mode = server_config["server"]["mode"]
     match mode:
         case "cn":
-            data = requests.get("https://ak-conf.hypergryph.com/config/prod/announce_meta/Android/preannouncement.meta.json")
+            data = requests.get("https://ak-conf.hypergryph.com/config/prod/announce_meta/Android/preannouncement.meta.json", verify=False)
         case "global":
-            data = requests.get("https://ark-us-static-online.yo-star.com/announce/Android/preannouncement.meta.json")
+            data = requests.get("https://ark-us-static-online.yo-star.com/announce/Android/preannouncement.meta.json", verify=False)
         case _:
-            data = requests.get("https://ak-conf.hypergryph.com/config/prod/announce_meta/Android/preannouncement.meta.json")
+            data = requests.get("https://ak-conf.hypergryph.com/config/prod/announce_meta/Android/preannouncement.meta.json", verify=False)
 
     return data
 
 
 def prodAnnouncement():
 
-    server_config = read_json(CONFIG_PATH)
+    server_config = get_memory("config")
     mode = server_config["server"]["mode"]
     match mode:
         case "cn":
-            data = requests.get("https://ak-conf.hypergryph.com/config/prod/announce_meta/Android/preannouncement.meta.json")
+            data = requests.get("https://ak-conf.hypergryph.com/config/prod/announce_meta/Android/preannouncement.meta.json", verify=False)
         case "global":
-            data = requests.get("https://ark-us-static-online.yo-star.com/announce/Android/preannouncement.meta.json")
+            data = requests.get("https://ark-us-static-online.yo-star.com/announce/Android/preannouncement.meta.json", verify=False)
         case _:
-            data = requests.get("https://ak-conf.hypergryph.com/config/prod/announce_meta/Android/preannouncement.meta.json")
+            data = requests.get("https://ak-conf.hypergryph.com/config/prod/announce_meta/Android/preannouncement.meta.json", verify=False)
 
     return data
 
@@ -109,7 +122,7 @@ def prodGateMeta():
 
 def get_latest_game_info():
 
-    server_config = read_json(CONFIG_PATH)
+    server_config = get_memory("config")
     mode = server_config["server"]["mode"]
     match mode:
         case "cn":
@@ -121,19 +134,6 @@ def get_latest_game_info():
     funcVer = server_config["networkConfig"][mode]["content"]["funcVer"]
 
     main_version  = funcVer.lstrip("V").lstrip("0") or "0"[:2]
-    
-    # result = OrderedDict([
-    #     ("version", ""),
-    #     ("action", 3),
-    #     ("update_type", 0),
-    #     ("update_info", OrderedDict([
-    #         ("package", None),
-    #         ("patch", None),
-    #         ("custom_info", ""),
-    #         ("source_package", None),
-    #     ])),
-    #     ("client_version", "")
-    # ])
 
     result = {
         "version": f"{main_version}.0.0",
@@ -208,8 +208,8 @@ def prodAnalyticsCollect():
 
 def prodBulletinList(subpath):
     if subpath.startswith("bulletinList"):
-        response = requests.get("https://ak-webview.hypergryph.com/api/game/bulletinList?target=Android")
+        response = requests.get("https://ak-webview.hypergryph.com/api/game/bulletinList?target=Android", verify=False)
     else:
-        response = requests.get(f"https://ak-webview.hypergryph.com/api/game/{subpath}")
+        response = requests.get(f"https://ak-webview.hypergryph.com/api/game/{subpath}", verify=False)
 
     return response.json()

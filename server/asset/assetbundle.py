@@ -79,7 +79,7 @@ downloading_files_lock=Lock()
 def downloadFile(url, filePath):
 
     writeLog('\033[1;33mDownload {}\033[0;0m'.format(os.path.basename(filePath)))
-    file = requests.get(url, headers=header, stream=True)
+    file = requests.get(url, headers=header, stream=True, verify=False)
 
     with open(filePath, 'wb') as f:
         for chunk in file.iter_content(chunk_size=4096):
@@ -96,7 +96,7 @@ def export(url, basePath, fileName, filePath, assetsHash, redownload = False):
         if os.path.exists(filePath):
             hot_update_list = read_json(filePath)
         else:
-            hot_update_list = requests.get(url, headers=header).json()
+            hot_update_list = requests.get(url, headers=header, verify=False).json()
             write_json(hot_update_list, filePath)
             
         abInfoList = hot_update_list["abInfos"]

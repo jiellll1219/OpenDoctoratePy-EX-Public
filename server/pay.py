@@ -1,7 +1,6 @@
 from flask import request
 from virtualtime import time
 from utils import read_json, write_json
-from admin.GiveItem import GiveItem
 import json
 
 from constants import ALLPRODUCTLIST_PATH, SHOP_PATH, SYNC_DATA_TEMPLATE_PATH

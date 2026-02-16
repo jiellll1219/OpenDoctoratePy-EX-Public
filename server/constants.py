@@ -26,6 +26,7 @@ RUNE_JSON_PATH = "data/user/rune.json"
 RLV2_CHOICEBUFFS = "data/rlv2/choiceBuffs.json"
 RLV2_RECRUITGROUPS = "data/rlv2/recruitGroups.json"
 RLV2_NODESINFO = "data/rlv2/nodesInfo.json"
+EVENT_CHOICES = "data/rlv2/event_choices.json"
 
 # TOWER Data
 TOWERDATA_PATH = "data/tower/towerData.json"

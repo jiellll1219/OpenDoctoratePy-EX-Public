@@ -280,14 +280,14 @@ def ChangeAvatar():
 def appGetSettings():
 
     data = request.data
-    data = requests.get("https://passport.arknights.global/app/getSettings").json()
+    data = requests.get("https://passport.arknights.global/app/getSettings", verify=False).json()
     return data
 
 
 def appGetCode():
 
     data = request.data
-    data = requests.get("https://passport.arknights.global/app/getCode").json()
+    data = requests.get("https://passport.arknights.global/app/getCode", verify=False).json()
     return data
 
 

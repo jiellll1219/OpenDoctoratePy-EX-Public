@@ -10,6 +10,9 @@ import account, background, building, campaignV2, char, charBuild, charm, \
         user, asset.assetbundle, config.prod, social, templateShop, other, sandbox, charrotation, \
         activity, vecbreak, mission
 
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
 app = Flask(__name__)
 
 import logging
@@ -80,11 +83,17 @@ app.add_url_rule("/charBuild/changeCharTemplate", methods = ["POST"], view_func 
 
 app.add_url_rule("/charm/setSquad", methods = ["POST"], view_func = charm.charmSetSquad)
 
+app.add_url_rule("/", methods=["GET"], view_func=config.prod.redirect_rote)
 app.add_url_rule("/config/prod/announce_meta/Android/preannouncement.meta.json", methods = ["GET"], view_func = config.prod.prodPreAnnouncement)
 app.add_url_rule("/config/prod/announce_meta/Android/announcement.meta.json", methods = ["GET"], view_func = config.prod.prodAnnouncement)
 app.add_url_rule("/api/remote_config/1/prod/default/Android/remote_config", methods=["GET"], view_func=config.prod.prodRemoteConfig)
+app.add_url_rule("/api/remote_config/1/prod/default/Windows/remote_config", methods=["GET"], view_func=config.prod.prodRemoteConfig)
 app.add_url_rule("/config/prod/official/Android/version", methods = ["GET"], view_func = config.prod.prodAndroidVersion)
-app.add_url_rule("/config/prod/official/network_config", methods = ["GET"], view_func = config.prod.prodNetworkConfig)
+app.add_url_rule("/config/prod/official/network_config", methods=["GET"], view_func=config.prod.prodNetworkConfig)
+app.add_url_rule("/config/prod/b/network_config", methods=["GET"], view_func=config.prod.prodNetworkConfig)
+app.add_url_rule("/api/remote_config/1/prod/default/Windows/network_config", methods=["GET"], view_func=config.prod.prodNetworkConfig)
+app.add_url_rule("/api/remote_config/1/prod/bilibili/Windows/network_config", methods=["GET"], view_func=config.prod.prodNetworkConfig)
+app.add_url_rule("/audit/official/Windows/<path:subpath>", methods=["GET"], view_func=config.prod.prodAudit)
 app.add_url_rule("/config/prod/official/refresh_config", methods = ["GET"], view_func = config.prod.prodRefreshConfig)
 app.add_url_rule("/config/prod/official/remote_config", methods = ["GET"], view_func = config.prod.prodRemoteConfig)
 app.add_url_rule("/api/game/get_latest_game_info", methods = ["GET"], view_func= config.prod.get_latest_game_info)
@@ -224,13 +233,7 @@ app.add_url_rule("/rlv2/copper/redraw", methods = ["POST"], view_func = rlv2.rlv
 
 app.add_url_rule("/shop/getGoodPurchaseState", methods=["POST"], view_func=shop.getGoodPurchaseState)
 app.add_url_rule("/shop/get<string:shop_type>GoodList", methods=["POST"], view_func=shop.getShopGoodList)
-app.add_url_rule("/shop/buySkinGood", methods=["POST"], view_func=shop.buySkinGood)
-app.add_url_rule("/shop/buyLowGood", methods=["POST"], view_func=shop.buyLowGood)
-app.add_url_rule("/shop/buyHighGood", methods=["POST"], view_func=shop.buyHighGood)
-app.add_url_rule("/shop/buyExtraGood", methods=["POST"], view_func=shop.buyExtraGood)
-app.add_url_rule("/shop/buyClassicGood", methods=["POST"], view_func=shop.buyClassicGood)
-app.add_url_rule("/shop/buyFurniGood", methods=["POST"], view_func=shop.buyFurniGood)
-app.add_url_rule("/shop/buyFurniGroup", methods=["POST"], view_func=shop.buyFurniGroup)
+app.add_url_rule("/shop/buy<string:shop_type>Good", methods=["POST"], view_func=shop.buyShopGood)
 
 app.add_url_rule("/templateShop/getGoodList", methods = ["POST"], view_func = templateShop.getGoodList)
 app.add_url_rule("/templateShop/BuyGood", methods = ["POST"], view_func = templateShop.buyGood)

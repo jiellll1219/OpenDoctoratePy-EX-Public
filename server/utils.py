@@ -18,10 +18,13 @@ from datetime import datetime, UTC
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import unpad
 
-from constants import USER_JSON_PATH, CONFIG_PATH
+from constants import USER_JSON_PATH, CONFIG_PATH, EVENT_CHOICES, SHOP_PATH
 
 json_encoder = Encoder(order="deterministic")
 json_decoder = Decoder(strict=False)
+
+def dump_json(data):
+    return json_encoder.encode(data).decode(encoding="utf-8")
 
 def read_json(path: str) -> Dict[str, Any]:
     with open(path, "rb") as f:
@@ -166,8 +169,7 @@ def get_memory(key: str) -> dict:
 def load_data():
     global memory_cache
 
-    data_path_1 = "data/rlv2/event_choices.json"
-    data_list = [data_path_1]
+    data_list = [EVENT_CHOICES, SHOP_PATH]
 
     for data_path in data_list:
         try:
