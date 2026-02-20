@@ -3,6 +3,9 @@
 [简中](README.md) | [EN](docs/README_EN.md)  
 [更新日志(UpdateLog)](docs/updata_log.md) [开发指南(DevelopmentGuide)](docs/DEVELOP.md)
 
+# [王楚钦攻略组](https://space.bilibili.com/234823387)和[喀兰贸易-银老板](https://space.bilibili.com/14788654)两个傻逼给老子听好了！以后的更新全部转到自有gitea，那么喜欢“造福于民”就自己修服务端吧！既然那么喜欢打超时空合约，那以后的危机合约数据自己抓去吧
+[来龙去脉](https://jiellll1219.pages.dev/post/1/)
+
 <details>
 <summary><strong>最近三条更新日志(点击展开)：</strong></summary>
 
